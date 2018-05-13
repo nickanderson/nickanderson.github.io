@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cli on </title>
+    <link>http://www.cmdln.org/tags/cli/</link>
+    <description>Recent content in Cli on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 06 Apr 2010 17:53:36 +0000</lastBuildDate>
+    
+	<atom:link href="http://www.cmdln.org/tags/cli/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How to get console on linux domU with XenServer (xm console equivlent)</title>
+      <link>http://www.cmdln.org/2010/04/06/how-to-get-console-on-linux-domu-with-xenserver-xm-console-equivlent/</link>
+      <pubDate>Tue, 06 Apr 2010 17:53:36 +0000</pubDate>
+      
+      <guid>http://www.cmdln.org/2010/04/06/how-to-get-console-on-linux-domu-with-xenserver-xm-console-equivlent/</guid>
+      <description>Besides the gui/vnc consoles you can still use the equivlent of xm console in Citrix XenServer.
+On the host console:
+ xe vm-list to get the list of domins running (just note the uuid of the domain you want). list_domains will list the domain name and the uuid of the domains. Match up your uuid so you get the proper dom_id xm console equivlent is /usr/lib/xen/bin/xenconsole dom_id  Its not in the root users $PATH though I think it ought to be.</description>
+    </item>
+    
+    <item>
+      <title>Flashback: Automatic session logging and monitoring with GNU screen for the paranoid</title>
+      <link>http://www.cmdln.org/2010/03/02/flashback-automatic-session-logging-and-monitoring-with-gnu-screen-for-the-paranoid/</link>
+      <pubDate>Tue, 02 Mar 2010 14:31:02 +0000</pubDate>
+      
+      <guid>http://www.cmdln.org/2010/03/02/flashback-automatic-session-logging-and-monitoring-with-gnu-screen-for-the-paranoid/</guid>
+      <description>Another day, another flashback. I don&amp;#8217;t know about you but at times I have had some very odd and uncomfortable requests from vendors. It&amp;#8217;s not wholly uncommon for them to want to log into your system to diagnose an issue for themselves. Or perhaps for whatever reason your manager says hey give this random outside person access to some important box. As a SA you get used to extremely odd requests and figure out how to just solve the problem.</description>
+    </item>
+    
+  </channel>
+</rss>

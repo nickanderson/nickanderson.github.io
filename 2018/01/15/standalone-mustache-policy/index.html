@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title> Standalone Mustache Policy &middot;  </title>
+
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.34" />
+
+
+<script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="http://www.cmdln.org/css/nix.css">
+<link rel="stylesheet" href="http://www.cmdln.org/css/syntax.css">
+
+
+<link href="https://fonts.googleapis.com/css?family=Inconsolata|Open+Sans|Roboto|Montserrat|Concert+One" rel="stylesheet">
+
+
+
+
+    </head>
+
+    <body>
+        <header>
+<nav class="navbar navbar-default navbar-fixed-top navbar-inverse font-header">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" id="green-terminal" href=http://www.cmdln.org>nick@cmdln.org ~ $</a>
+		</div>
+
+		
+		<div class="collapse navbar-collapse" id="navbar-collapse-1">
+			<ul class="nav navbar-nav navbar-right">
+				<li>
+					<a href="http://www.cmdln.org">/home/nick</a>
+				</li>
+				
+				
+				<li >
+					<a href="/post/">~/posts</a>
+				</li>
+				
+
+			</ul>
+		</div>
+	</div>
+</nav>
+</header>
+
+        <div class="container wrapper">
+            <h1><a href="http://www.cmdln.org/2018/01/15/standalone-mustache-policy/">Standalone Mustache Policy</a></h1>
+            <span class="post-date">Jan 15, 2018 </span>
+            <div class="post-content">
+                <p>> Does CFEngine provide tool to render a mustache template?</p>
+
+<p>No, CFEngine doesn't have a standalone tool to render mustache. <a href="https://mustache.github.io/#demo" title="This online demo">This online demo</a>
+is a good place to quickly prototype a simple template and data set.</p>
+
+<p>Another option is to use a stand-alone policy file.</p>
+
+<p>Name the file whatever you like. It looks for json in a file named 
+the same
+suffixed with <code>.json</code>, it looks for a mustache template named the 
+same suffixed
+with <code>.mustache</code>, and it renders to a file named the same suffixed 
+with <code>.txt</code>.</p>
+
+<p>So if you name the file <code>/tmp/standalone-mustache.cf</code> it will look 
+for
+=/tmp/standalone-mustache.cf.json=, 
+=/tmp/standalone-mustache.cf.mustache=, and
+render <code>/tmp/standalone-mustache.cf.txt</code>.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1</span><span class="lnt"> 2</span><span class="lnt"> 3</span><span class="lnt"> 4</span><span class="lnt"> 5</span><span class="lnt"> 6</span><span class="lnt"> 7</span><span class="lnt"> 8</span><span class="lnt"> 9</span><span class="lnt">10</span><span class="lnt">11</span><span class="lnt">12</span><span class="lnt">13</span><span class="lnt">14</span><span class="lnt">15</span><span class="lnt">16</span><span class="lnt">17</span><span class="lnt">18</span><span class="lnt">19</span><span class="lnt">20</span><span class="lnt">21</span><span class="lnt">22</span><span class="lnt">23</span><span class="lnt">24</span><span class="lnt">25</span><span class="lnt">26</span><span class="lnt">27</span><span class="lnt">28</span><span class="lnt">29</span><span class="lnt">30</span><span class="lnt">31</span><span class="lnt">32</span><span class="lnt">33</span><span class="lnt">34</span><span class="lnt">35</span><span class="lnt">36</span><span class="lnt">37</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="c"># Standalone policy file for prototyping mustache
+</span><span class="c"></span>  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">main</span>
+  <span class="p">{</span>
+    <span class="kd">vars</span><span class="p">:</span>
+        <span class="p">&#34;</span><span class="nv">datafile</span><span class="p">&#34;</span> <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;</span><span class="si">$(this.promise_filename)</span><span class="s">.json&#34;</span><span class="p">;</span>
+        <span class="p">&#34;</span><span class="nv">template</span><span class="p">&#34;</span> <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;</span><span class="si">$(this.promise_filename)</span><span class="s">.mustache&#34;</span><span class="p">;</span>
+        <span class="p">&#34;</span><span class="nv">target</span><span class="p">&#34;</span> <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;</span><span class="si">$(this.promise_filename)</span><span class="s">.txt&#34;</span><span class="p">;</span>
+
+        <span class="s">&#34;data&#34;</span> <span class="kr">data</span> <span class="o">=&gt;</span> <span class="nf">readjson</span><span class="p">(</span> <span class="err">$</span><span class="p">(</span><span class="nf">datafile</span><span class="p">),</span> <span class="nf">inf</span><span class="p">);</span> 
+
+    <span class="kd">files</span><span class="p">:</span>
+        <span class="s">&#34;</span><span class="si">$(target)</span><span class="s">&#34;</span>
+          <span class="kr">create</span> <span class="o">=&gt;</span> <span class="s">&#34;true&#34;</span><span class="p">,</span>
+          <span class="kr">handle</span> <span class="o">=&gt;</span> <span class="s">&#34;render_target&#34;</span><span class="p">,</span>
+          <span class="kr">template_method</span> <span class="o">=&gt;</span> <span class="s">&#34;mustache&#34;</span><span class="p">,</span>
+          <span class="kr">edit_template</span> <span class="o">=&gt;</span> <span class="s">&#34;</span><span class="si">$(template)</span><span class="s">&#34;</span><span class="p">,</span>
+          <span class="kr">template_data</span> <span class="o">=&gt;</span> <span class="nv">@(data)</span><span class="p">;</span>
+
+    <span class="kd">reports</span><span class="p">:</span>
+        <span class="s">&#34;JSON data file missing. Looking for &#39;</span><span class="si">$(datafile)</span><span class="s">&#39;&#34;</span>
+          <span class="kr">if</span> <span class="o">=&gt;</span> <span class="nf">not</span><span class="p">(</span> <span class="nf">fileexists</span><span class="p">(</span> <span class="err">$</span><span class="p">(</span><span class="nf">datafile</span><span class="p">)</span> <span class="p">));</span>
+
+        <span class="s">&#34;Mustache template missing. Looking for &#39;</span><span class="si">$(template)</span><span class="s">&#39;&#34;</span>
+          <span class="kr">if</span> <span class="o">=&gt;</span> <span class="nf">not</span><span class="p">(</span> <span class="nf">fileexists</span><span class="p">(</span> <span class="err">$</span><span class="p">(</span><span class="nf">template</span><span class="p">)</span> <span class="p">));</span>
+
+        <span class="s">&#34;</span><span class="si">$(target)</span><span class="s">:&#34;</span>
+          <span class="kr">printfile</span> <span class="o">=&gt;</span> <span class="nf">cat</span><span class="p">(</span> <span class="err">$</span><span class="p">(</span><span class="nf">target</span><span class="p">)</span> <span class="p">),</span>
+          <span class="kr">depends_on</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="s">&#34;render_target&#34;</span> <span class="p">};</span>
+  <span class="p">}</span>
+
+  <span class="k">body</span> <span class="k">printfile</span> <span class="nf">cat</span><span class="p">(</span><span class="nv">file</span><span class="p">)</span>
+  <span class="c"># @brief Report the contents of a file
+</span><span class="c"></span>  <span class="c"># @param file The full path of the file to report
+</span><span class="c"></span>  <span class="p">{</span>
+          <span class="kr">file_to_print</span> <span class="o">=&gt;</span> <span class="s">&#34;</span><span class="si">$(file)</span><span class="s">&#34;</span><span class="p">;</span>
+          <span class="kr">number_of_lines</span> <span class="o">=&gt;</span> <span class="s">&#34;inf&#34;</span><span class="p">;</span>
+  <span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Now test the policy:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1</span><span class="lnt">2</span><span class="lnt">3</span><span class="lnt">4</span><span class="lnt">5</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">  <span class="nb">echo</span> <span class="s1">&#39;{ &#34;msg&#34;: &#34;hello world&#34; }&#39;</span> &gt; 
+  /tmp/standalone-mustache.cf.json
+  <span class="nb">echo</span> <span class="s1">&#39;{{{msg}}}&#39;</span> &gt; /tmp/standalone-mustache.cf.mustache
+  chmod <span class="m">600</span> /tmp/standalone-mustache.cf
+  cf-agent -KIf /tmp/standalone-mustache.cf</code></pre></td></tr></table>
+</div>
+</div>
+<p>Results in this output:</p>
+<pre class="example">
+    info: Created file '/tmp/standalone-mustache.cf.txt', mode 
+</pre>
+<p>0600</p>
+<pre class="example">
+    info: Updated rendering of '/tmp/standalone-mustache.cf.txt' 
+</pre>
+<p>from mustache template '/tmp/standalone-mustache.cf.mustache'</p>
+<pre class="example">
+R: /tmp/standalone-mustache.cf.txt:
+R: hello world
+</pre>
+
+            </div>
+            
+            <div class="post-comments">
+                
+            </div>
+            
+            <div class="push"></div>
+        </div>
+        <footer class="footer text-center">
+<p>Copyright &copy; 2018 Nick Anderson -
+<span class="credit">
+	Powered by
+	<a target="_blank" href="https://gohugo.io">Hugo</a>,
+	<a target="_blank" href="https://github.com/LordMathis/hugo-theme-nix/">Nix</a> theme,
+  and
+	<a target="_blank" href="http://orgmode.org/">org-mode</a>.
+</span>
+</p>
+</footer>
+
+    </body>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Win on </title>
+    <link>http://www.cmdln.org/tags/win/</link>
+    <description>Recent content in Win on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 15 Dec 2011 17:02:25 +0000</lastBuildDate>
+    
+	<atom:link href="http://www.cmdln.org/tags/win/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>NetApp &amp;#8211; Customer Service WIN!</title>
+      <link>http://www.cmdln.org/2011/12/15/netapp-customer-service-win/</link>
+      <pubDate>Thu, 15 Dec 2011 17:02:25 +0000</pubDate>
+      
+      <guid>http://www.cmdln.org/2011/12/15/netapp-customer-service-win/</guid>
+      <description>I just wanted to share my NetApp customer service experience since usually people only share negative experiences. I needed to download a mib for a NetApp today. I really don&amp;#8217;t like that I have to register an account just to download a mib but whatever. I was really upset after registering the account and entering a system-id to find that I didn&amp;#8217;t have access to download any mibs.
+I saw that feedback button glaring at me so decided to give it a shot, left a &amp;#8220;very dissatisfied&amp;#8221; about download experience review.</description>
+    </item>
+    
+    <item>
+      <title>My April Fools</title>
+      <link>http://www.cmdln.org/2011/04/05/myaprilfools/</link>
+      <pubDate>Tue, 05 Apr 2011 18:17:28 +0000</pubDate>
+      
+      <guid>http://www.cmdln.org/2011/04/05/myaprilfools/</guid>
+      <description>April 1st. I had a fairly eventful day, first I found that the phone system at $work has been mis-configured since it was installed. Second I got a call from someone I had worked with a few years back about a system that did not have backups that had a raid hiccup tanking the system a few days ago needing help with a restore.
+The phone system Several months back a new phone system was installed at my office.</description>
+    </item>
+    
+  </channel>
+</rss>

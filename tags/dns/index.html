@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="">
+
+	<head>
+		<title> Dns &middot;  </title>
+
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.34" />
+
+
+<script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="http://www.cmdln.org/css/nix.css">
+<link rel="stylesheet" href="http://www.cmdln.org/css/syntax.css">
+
+
+<link href="https://fonts.googleapis.com/css?family=Inconsolata|Open+Sans|Roboto|Montserrat|Concert+One" rel="stylesheet">
+
+
+
+
+	</head>
+
+	<body>
+		<header>
+<nav class="navbar navbar-default navbar-fixed-top navbar-inverse font-header">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" id="green-terminal" href=http://www.cmdln.org>nick@cmdln.org ~ $</a>
+		</div>
+
+		
+		<div class="collapse navbar-collapse" id="navbar-collapse-1">
+			<ul class="nav navbar-nav navbar-right">
+				<li>
+					<a href="http://www.cmdln.org">/home/nick</a>
+				</li>
+				
+				
+				<li >
+					<a href="/post/">~/posts</a>
+				</li>
+				
+
+			</ul>
+		</div>
+	</div>
+</nav>
+</header>
+
+		<div class="container wrapper">
+			<div class="row">
+				<div class="col-xs-12 text-center">
+					<h1 id=>Dns</h1>
+				</div>
+			</div>
+			<ul id="post-list">
+                	
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
+							<h4 class="post-link"><a href="http://www.cmdln.org/2010/08/01/clear-dns-cache-in-linux/">Clear DNS Cache in Linux</a></h4>
+							<h4 class="post-date">Aug 1, 2010</h4>
+						</div>
+						<div class="post-summary"><p>Had a slightly vexing issue the other day. During a migration the destination host ended up caching some stale DNS entries. I tried a quick restart of nscd to no avail, rebooted the VM, again no joy. Even overriding the host in /etc/hosts wasn&#8217;t working. Took a few minutes of digging but what did work was
+nscd -i hosts . Just something to remember if you ever seem to have a stubborn caching issue, rebooting/restarting wont always solve the issue.</p></div>
+						<div class="post-list-footer text-center">
+							<a href="http://www.cmdln.org/2010/08/01/clear-dns-cache-in-linux/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
+							<h4 class="post-link"><a href="http://www.cmdln.org/2010/03/03/flashback-backdoor-corporate-sabotage-with-dns/">Flashback: Backdoor Corporate Sabotage With DNS</a></h4>
+							<h4 class="post-date">Mar 3, 2010</h4>
+						</div>
+						<div class="post-summary"><p>This is just an old entry that I thought was interesting, and it appears its still relevant. Like a broken record, &#8220;economic times are rough&#8221;, what better way to boost your revenue than to exploit your customers. What better way to suppress a competitor than to increase a competitors infrastructure costs (with little visibility to boot). I did some repeated lookups this morning and got similar results.
+Backdoor Corporate Sabotage With DNS</p></div>
+						<div class="post-list-footer text-center">
+							<a href="http://www.cmdln.org/2010/03/03/flashback-backdoor-corporate-sabotage-with-dns/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
+							<h4 class="post-link"><a href="http://www.cmdln.org/2010/03/01/flashback-trust-not-dns-or-how-to-properly-move-a-website/">Flashback: Trust not DNS or How to properly move a website</a></h4>
+							<h4 class="post-date">Mar 2, 2010</h4>
+						</div>
+						<div class="post-summary"><p>Matt Simmons is trying to dust off some old articles he think some people may have missed. So I figure why not. A while back I talked about how to move a website (read DNS sucks , you need a reverse proxy). In fact I have talked about reverse proxies a few times since I tend to find them so useful. At any rate, this article stemmed from the first hand experience that opened my eyes to how bad DNS infrastructure really was.</p></div>
+						<div class="post-list-footer text-center">
+							<a href="http://www.cmdln.org/2010/03/01/flashback-trust-not-dns-or-how-to-properly-move-a-website/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
+							<h4 class="post-link"><a href="http://www.cmdln.org/2009/03/18/easy-to-remember-public-dns-servers/">Easy to remember public DNS servers</a></h4>
+							<h4 class="post-date">Mar 18, 2009</h4>
+						</div>
+						<div class="post-summary"><p>Its handy to keep some remote dns servers in your head for troubleshooting. Here are some pretty fast and easy to remember NS ips for you (they are on level3 network).
+4.2.2.1
+4.2.2.2
+4.2.2.3
+4.2.2.4
+4.2.2.5
+4.2.2.6</p></div>
+						<div class="post-list-footer text-center">
+							<a href="http://www.cmdln.org/2009/03/18/easy-to-remember-public-dns-servers/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
+							<h4 class="post-link"><a href="http://www.cmdln.org/2008/07/09/backdoor-corporate-sabotage-with-dns/">Backdoor corporate sabotage with DNS</a></h4>
+							<h4 class="post-date">Jul 10, 2008</h4>
+						</div>
+						<div class="post-summary"><p><p>I&#8217;m not really certain how common corporate sabotage is. Sure there are DOS attacks daily on this or that network or this or that server but what percentage of those are script kiddies and what percentage are well thought out planned attacks designed to cripple a competitor even if only for a short time. Typically DOS attacks are dealt with by Server and Network Admins adding black holes to offending networks. Recently while doing some research I stumbled on what seems to be a neglected DNS attack. One that the target may not become aware of until the next billing cycle or if carried out methodically months.</p></p></div>
+						<div class="post-list-footer text-center">
+							<a href="http://www.cmdln.org/2008/07/09/backdoor-corporate-sabotage-with-dns/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
+			</ul>
+            
+
+
+
+			<div class="push"></div>
+		</div>
+		<footer class="footer text-center">
+<p>Copyright &copy; 2018 Nick Anderson -
+<span class="credit">
+	Powered by
+	<a target="_blank" href="https://gohugo.io">Hugo</a>,
+	<a target="_blank" href="https://github.com/LordMathis/hugo-theme-nix/">Nix</a> theme,
+  and
+	<a target="_blank" href="http://orgmode.org/">org-mode</a>.
+</span>
+</p>
+</footer>
+
+	</body>
+</html>

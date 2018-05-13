@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>.Screenrc on </title>
+    <link>http://nickanderson.github.io/tags/.screenrc/</link>
+    <description>Recent content in .Screenrc on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 08 Feb 2008 14:04:26 +0000</lastBuildDate>
+    
+	<atom:link href="http://nickanderson.github.io/tags/.screenrc/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>A nice .screenrc</title>
+      <link>http://nickanderson.github.io/2008/02/08/a-nice-screenrc/</link>
+      <pubDate>Fri, 08 Feb 2008 14:04:26 +0000</pubDate>
+      
+      <guid>http://nickanderson.github.io/2008/02/08/a-nice-screenrc/</guid>
+      <description>Hopefully you already know about screen, its one of the best command line utilites I use. Here is a purty screenrc for you.
+.screenrc</description>
+    </item>
+    
+  </channel>
+</rss>

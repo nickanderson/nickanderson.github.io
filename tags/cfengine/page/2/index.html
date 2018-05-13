@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="">
+
+	<head>
+		<title> Cfengine &middot;  </title>
+
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.34" />
+
+
+<script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="http://www.cmdln.org/css/nix.css">
+<link rel="stylesheet" href="http://www.cmdln.org/css/syntax.css">
+
+
+<link href="https://fonts.googleapis.com/css?family=Inconsolata|Open+Sans|Roboto|Montserrat|Concert+One" rel="stylesheet">
+
+
+
+
+	</head>
+
+	<body>
+		<header>
+<nav class="navbar navbar-default navbar-fixed-top navbar-inverse font-header">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" id="green-terminal" href=http://www.cmdln.org>nick@cmdln.org ~ $</a>
+		</div>
+
+		
+		<div class="collapse navbar-collapse" id="navbar-collapse-1">
+			<ul class="nav navbar-nav navbar-right">
+				<li>
+					<a href="http://www.cmdln.org">/home/nick</a>
+				</li>
+				
+				
+				<li >
+					<a href="/post/">~/posts</a>
+				</li>
+				
+
+			</ul>
+		</div>
+	</div>
+</nav>
+</header>
+
+		<div class="container wrapper">
+			<div class="row">
+				<div class="col-xs-12 text-center">
+					<h1 id=>Cfengine</h1>
+				</div>
+			</div>
+			<ul id="post-list">
+                	
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
+							<h4 class="post-link"><a href="http://www.cmdln.org/2017/11/23/why-does-my-policy-generate-so-many-readjson-errors-and-how-can-i-prevent-them/">Why does my policy generate so many readjson() errors and how can I prevent them?</a></h4>
+							<h4 class="post-date">Nov 23, 2017</h4>
+						</div>
+						<div class="post-summary"><p>cf-agent -Kf ./example.cf error: readjson: data error parsing JSON file '/tmp/mydata.json': No data error: readjson: data error parsing JSON file '/tmp/mydata.json': No data error: readjson: data error parsing JSON file '/tmp/mydata.json': No data error: readjson: data error parsing JSON file '/tmp/mydata.json': No data error: readjson: data error parsing JSON file '/tmp/mydata.json': No data error: readjson: data error parsing JSON file '/tmp/mydata.json': No data error: readjson: data error parsing JSON file '/tmp/mydata.</p></div>
+						<div class="post-list-footer text-center">
+							<a href="http://www.cmdln.org/2017/11/23/why-does-my-policy-generate-so-many-readjson-errors-and-how-can-i-prevent-them/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
+							<h4 class="post-link"><a href="http://www.cmdln.org/2017/11/22/in-cfengine-how-do-i-enforce-posix-acls/">In CFEngine how do I enforce POSIX ACLs?</a></h4>
+							<h4 class="post-date">Nov 22, 2017</h4>
+						</div>
+						<div class="post-summary"><p>When using the acl_method overwrite you must supply user, group, all ( aka other ), and mask for a complete ACL specification.
+123456789101112131415161718192021222324 bundle agent main { vars: &#34;acl&#34; slist =&gt; { &#34;user:*:rwx&#34;, # System owner should have read write and execute access  &#34;group:*:rw&#34;, # System group should have read and write access but not execute  &#34;all:r&#34;, # All other users should have read access  &#34;mask:rwx&#34;, # The mask should be read write and execute  &#34;user:nickanderson:r&#34;, # The user nickanderson should explicitly have read access  &#34;user:a10042:---&#34;, # The user a10042 should explicitly have no access  }; files: &#34;/tmp/acl/dir&#34; acl =&gt; posix_acl_default_access( &#34;overwrite&#34;, @(acl) ); } body acl posix_acl_default_access( method, rules ) { acl_method =&gt; &#34;$(method)&#34;; acl_type =&gt; &#34;posix&#34;; acl_default =&gt; &#34;access&#34;; aces =&gt; { @(acl) }; }   We can use getfacl to inspect the permissions are as desired.</p></div>
+						<div class="post-list-footer text-center">
+							<a href="http://www.cmdln.org/2017/11/22/in-cfengine-how-do-i-enforce-posix-acls/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
+							<h4 class="post-link"><a href="http://www.cmdln.org/2017/11/21/in-cfengine-how-does-edit_backup-in-edit_defaults-work/">In CFEngine how does edit_backup in edit_defaults work?</a></h4>
+							<h4 class="post-date">Nov 21, 2017</h4>
+						</div>
+						<div class="post-summary"><p>This controls if and how files are backed up by cf-agent during file editing operations. If enabled previous versions of the file will be retained next to the file or in default_repository if it is defined in body agent control. Note as it relates to edited files it is only applicable when combined with =edit_line=. It has no effect when used with edit_template or copy_from.
+A value of true (the default behavior) will result in the agent retaining the previous version of the file suffixed with .</p></div>
+						<div class="post-list-footer text-center">
+							<a href="http://www.cmdln.org/2017/11/21/in-cfengine-how-does-edit_backup-in-edit_defaults-work/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
+							<h4 class="post-link"><a href="http://www.cmdln.org/2017/11/20/are-cfegine-classes-automatically-canonified/">Are CFEgine classes automatically canonified?</a></h4>
+							<h4 class="post-date">Nov 20, 2017</h4>
+						</div>
+						<div class="post-summary"><p>Is there implicit "canonify"-cation happening in in "classes:" promise type?  Yes the agent will automatically canonify classes that you define for your convenience.
+12345678910111213141516171819202122232425262728 bundle agent main # @brief show how classes are automatically canonified during definition  { vars: &#34;invalid_class_string&#34; string =&gt; &#34;my-invalid-class&#34;; classes: @if minimum_version(3.10) # Shorthand for &#34;myclass&#34; expression =&gt; &#34;any&#34;;  # Available since 3.10.0  &#34;$(invalid_class_string)-1&#34;; @endif &#34;$(invalid_class_string)-2&#34; expression =&gt; &#34;any&#34;; commands: &#34;/bin/true&#34; classes =&gt; results(&#34;bundle&#34;, &#34;my-invalid-class-from-promise-result&#34;); vars: &#34;c&#34; slist =&gt; classesmatching(&#34;my.</p></div>
+						<div class="post-list-footer text-center">
+							<a href="http://www.cmdln.org/2017/11/20/are-cfegine-classes-automatically-canonified/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
+							<h4 class="post-link"><a href="http://www.cmdln.org/2015/08/20/cfengine-fixin-my-freenas/">CFEngine fixin my FreeNAS</a></h4>
+							<h4 class="post-date">Aug 21, 2015</h4>
+						</div>
+						<div class="post-summary"><p>I recently built a new file server and I based it on the well renowned FreeNAS by iXsystems. It&#8217;s been pretty solid over the past few weeks but today I ran into an issue. The web ui stopped responding. Actually it turned out that the django service had stopped. Well, that was the perfect opportunity to use CFEngine to make sure I never have the issue again.
+I grabbed the cfengine community 3.</p></div>
+						<div class="post-list-footer text-center">
+							<a href="http://www.cmdln.org/2015/08/20/cfengine-fixin-my-freenas/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
+							<h4 class="post-link"><a href="http://www.cmdln.org/2013/10/29/digging-up-bundles-and-bodies/">Digging up bundles and bodies</a></h4>
+							<h4 class="post-date">Oct 29, 2013</h4>
+						</div>
+						<div class="post-summary"><p>You never know when the Zombie or Cloud Apocalypse is coming. It&#8217;s good to be able to locate those buried bodies quickly and easily. OK, enough bad jokes, but haven&#8217;t you ever looked at some CFEngine policy and wondered to yourself, exactly what does &#8220;delete =&gt; tidy&#8221; or some other body or bundle do?
+I have. I even wrote a crappy little perl script to locate the files that contained a specific body or bundle and then print out the single body or bundle.</p></div>
+						<div class="post-list-footer text-center">
+							<a href="http://www.cmdln.org/2013/10/29/digging-up-bundles-and-bodies/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
+							<h4 class="post-link"><a href="http://www.cmdln.org/2013/05/01/i-am-so-excited-and-i-just-cant-hide-it/">I am so excited! And I just cant hide it!</a></h4>
+							<h4 class="post-date">May 1, 2013</h4>
+						</div>
+						<div class="post-summary"><p>Today I start a new journey with some of the smartest people on the planet. I have accepted a position with CFEngine. Primarily I will be assisting customers with the evaluation, design, implementation and policy writing. If you know me from the CFEngine community, don&#8217;t worry I only plan to increase my activity and continue to help in any way I can. Now one of my favourite hobbies is my job!</p></div>
+						<div class="post-list-footer text-center">
+							<a href="http://www.cmdln.org/2013/05/01/i-am-so-excited-and-i-just-cant-hide-it/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
+							<h4 class="post-link"><a href="http://www.cmdln.org/2013/03/29/canonifying-a-list-with-cfengine-3/">Canonifying a list with CFEngine 3</a></h4>
+							<h4 class="post-date">Mar 29, 2013</h4>
+						</div>
+						<div class="post-summary"><p>John Sanders shared a pattern for canonifying lists in #CFEngine on irc.freenode.net yesterday. It&#8217;s a useful reference so I thought I would replicate it here.
+ 1 2 3 4 5 6  % cf-agent -KIf ./example_canonify_list.cf  R: canonified site: www_example_com  R: canonified site: www_example2_com  R: alternate canonified site: www_example_com  R: alternate canonified site: www_example2_com  !! Method invoked repairs        &lt;div class=&quot;gist-meta&quot;&gt; &lt;a href=&quot;https://gist.</p></div>
+						<div class="post-list-footer text-center">
+							<a href="http://www.cmdln.org/2013/03/29/canonifying-a-list-with-cfengine-3/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
+							<h4 class="post-link"><a href="http://www.cmdln.org/2013/03/13/working-around-getindices-with-dynamically-generated-arrays-in-cfengine-3/">Working around getindices with dynamically generated arrays in CFEngine 3</a></h4>
+							<h4 class="post-date">Mar 13, 2013</h4>
+						</div>
+						<div class="post-summary"><p>There is a known bug where getindices is unable to get the index of a dynamically generated array until the next pass. This comes up from time to time so I thought I would post an example using a pattern shared on the CFEngine help mailing list. The policy below shows 3 working examples. They are mostly similar, example0 shows the simplest workaround, example1 and example2 in addition show ways to suppress the &#8220;Duplicate selection of value for variable&#8221; messages.</p></div>
+						<div class="post-list-footer text-center">
+							<a href="http://www.cmdln.org/2013/03/13/working-around-getindices-with-dynamically-generated-arrays-in-cfengine-3/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
+							<h4 class="post-link"><a href="http://www.cmdln.org/2013/01/11/cfengine-3-4-2-changelog-for-breakfast/">CFEngine 3.4.2 Changelog for Breakfast</a></h4>
+							<h4 class="post-date">Jan 11, 2013</h4>
+						</div>
+						<div class="post-summary"><p>Changelogs are just as important as the most important meal of the day. OK so I don&#8217;t always eat breakfast, but I do make an effort to read changelogs. CFEngine 3.4.2 was released today.
+What I found interesting was that the default masterfiles policy has been updated. body executor control now calls $(sys.workdir)/inputs/update.cf instead of failsafe.cf. And $(sys.workdir)/failsafe/failsafe.cf (which was new as of 3.4.0) is gone. I think its a good change.</p></div>
+						<div class="post-list-footer text-center">
+							<a href="http://www.cmdln.org/2013/01/11/cfengine-3-4-2-changelog-for-breakfast/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
+			</ul>
+            
+
+<div class="pagination-wrapper text-center">
+  <ul class="pagination">
+      
+      <li>
+          <a href="/tags/cfengine/" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
+      </li>
+      
+      <li
+      >
+          <a href="/tags/cfengine/" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+      </li>
+      
+      <li
+      ><a href="/tags/cfengine/">1</a></li>
+      
+      <li
+      class="active"><a href="/tags/cfengine/page/2/">2</a></li>
+      
+      <li
+      ><a href="/tags/cfengine/page/3/">3</a></li>
+      
+      <li
+      ><a href="/tags/cfengine/page/4/">4</a></li>
+      
+      <li
+      >
+          <a href="/tags/cfengine/page/3/" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+      </li>
+      
+      <li>
+          <a href="/tags/cfengine/page/4/" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+      </li>
+      
+    </ul>
+</div>
+
+
+
+			<div class="push"></div>
+		</div>
+		<footer class="footer text-center">
+<p>Copyright &copy; 2018 Nick Anderson -
+<span class="credit">
+	Powered by
+	<a target="_blank" href="https://gohugo.io">Hugo</a>,
+	<a target="_blank" href="https://github.com/LordMathis/hugo-theme-nix/">Nix</a> theme,
+  and
+	<a target="_blank" href="http://orgmode.org/">org-mode</a>.
+</span>
+</p>
+</footer>
+
+	</body>
+</html>

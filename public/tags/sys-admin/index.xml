@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sys Admin on </title>
+    <link>http://nickanderson.github.io/tags/sys-admin/</link>
+    <description>Recent content in Sys Admin on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 29 Aug 2008 07:56:58 +0000</lastBuildDate>
+    
+	<atom:link href="http://nickanderson.github.io/tags/sys-admin/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>10 Traits of a Successful SysAdmin</title>
+      <link>http://nickanderson.github.io/2008/08/29/10-traits-of-a-successful-sysadmin/</link>
+      <pubDate>Fri, 29 Aug 2008 07:56:58 +0000</pubDate>
+      
+      <guid>http://nickanderson.github.io/2008/08/29/10-traits-of-a-successful-sysadmin/</guid>
+      <description>&lt;p&gt;I was recently asked how I became a Systems Administrator. I answered with the normal story of my life and moved on. However, it got me thinking about what has actually led me to where I am. A colleague of mine had recently mentioned how people love top x lists and best x lists so I sat down and came up with my list of top 10 traits of a Systems Administrator.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

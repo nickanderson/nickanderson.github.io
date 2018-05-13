@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title> Are CFEgine classes automatically canonified? &middot;  </title>
+
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.40.3" />
+
+
+<script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="http://nickanderson.github.io/css/nix.css">
+<link rel="stylesheet" href="http://nickanderson.github.io/css/syntax.css">
+
+
+<link href="https://fonts.googleapis.com/css?family=Inconsolata|Open+Sans|Roboto|Montserrat|Concert+One" rel="stylesheet">
+
+
+
+
+    </head>
+
+    <body>
+        <header>
+<nav class="navbar navbar-default navbar-fixed-top navbar-inverse font-header">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" id="green-terminal" href=http://nickanderson.github.io>nick@cmdln.org ~ $</a>
+		</div>
+
+		
+		<div class="collapse navbar-collapse" id="navbar-collapse-1">
+			<ul class="nav navbar-nav navbar-right">
+				<li>
+					<a href="http://nickanderson.github.io">/home/nick</a>
+				</li>
+				
+				
+				<li >
+					<a href="/post/">~/posts</a>
+				</li>
+				
+
+			</ul>
+		</div>
+	</div>
+</nav>
+</header>
+
+        <div class="container wrapper">
+            <h1><a href="http://nickanderson.github.io/2017/11/20/are-cfegine-classes-automatically-canonified/">Are CFEgine classes automatically canonified?</a></h1>
+            <span class="post-date">Nov 20, 2017 </span>
+            <div class="post-content">
+                <blockquote>
+<p>
+  Is there implicit "canonify"-cation happening in in "classes:" promise type?
+</p>
+</blockquote>
+
+<p>Yes the agent will automatically canonify classes that you define for your
+convenience.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">main</span>
+  <span class="c"># @brief show how classes are automatically canonified during definition
+</span><span class="c"></span>  <span class="p">{</span>
+    <span class="kd">vars</span><span class="p">:</span>
+      <span class="p">&#34;</span><span class="nv">invalid_class_string</span><span class="p">&#34;</span> <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;my-invalid-class&#34;</span><span class="p">;</span>
+
+    <span class="kd">classes</span><span class="p">:</span>
+
+  <span class="err">@</span><span class="nf">if</span> <span class="nf">minimum_version</span><span class="p">(</span><span class="mf">3.10</span><span class="p">)</span>
+        <span class="c"># Shorthand for &#34;myclass&#34; expression =&gt; &#34;any&#34;;
+</span><span class="c"></span>        <span class="c"># Available since 3.10.0
+</span><span class="c"></span>        <span class="s">&#34;</span><span class="si">$(invalid_class_string)</span><span class="s">-1&#34;</span><span class="p">;</span>
+  <span class="err">@</span><span class="nf">endif</span>
+
+        <span class="s">&#34;</span><span class="si">$(invalid_class_string)</span><span class="s">-2&#34;</span> <span class="kr">expression</span> <span class="o">=&gt;</span> <span class="s">&#34;any&#34;</span><span class="p">;</span>
+
+    <span class="kd">commands</span><span class="p">:</span>
+
+        <span class="s">&#34;/bin/true&#34;</span>
+          <span class="kr">classes</span> <span class="o">=&gt;</span> <span class="nf">results</span><span class="p">(</span><span class="s">&#34;bundle&#34;</span><span class="p">,</span> <span class="s">&#34;my-invalid-class-from-promise-result&#34;</span><span class="p">);</span>
+
+    <span class="kd">vars</span><span class="p">:</span>
+        <span class="p">&#34;</span><span class="nv">c</span><span class="p">&#34;</span> <span class="kt">slist</span> <span class="o">=&gt;</span> <span class="nf">classesmatching</span><span class="p">(</span><span class="s">&#34;my.*&#34;</span><span class="p">);</span>
+
+    <span class="kd">reports</span><span class="p">:</span>
+        <span class="s">&#34;CFEngine </span><span class="si">$(sys.cf_version)</span><span class="s">&#34;</span><span class="p">;</span>
+        <span class="s">&#34;Found defined class </span><span class="si">$(c)</span><span class="s">&#34;</span><span class="p">;</span>
+  <span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div><pre class="example">
+R: CFEngine 3.11.0
+R: Found defined class my_invalid_class_2
+R: Found defined class my_invalid_class_1
+R: Found defined class my_invalid_class_from_promise_result_repaired
+R: Found defined class my_invalid_class_from_promise_result_reached
+</pre>
+
+<p>However, it will NOT automatically canonify strings that are being checked as
+you can see in this example. You must explicitly canonify when checking.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">main</span>
+  <span class="p">{</span>
+    <span class="kd">vars</span><span class="p">:</span>
+        <span class="p">&#34;</span><span class="nv">my_invalid_class</span><span class="p">&#34;</span> <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;my-invalid-class&#34;</span><span class="p">;</span>
+
+    <span class="kd">classes</span><span class="p">:</span>
+        <span class="s">&#34;</span><span class="si">$(my_invalid_class)</span><span class="s">&#34;</span> <span class="kr">expression</span> <span class="o">=&gt;</span> <span class="s">&#34;any&#34;</span><span class="p">;</span>
+
+    <span class="kd">reports</span><span class="p">:</span>
+        <span class="s">&#34;The string </span><span class="si">$(my_invalid_class)</span><span class="s"> is a valid class&#34;</span>
+          <span class="kr">if</span> <span class="o">=&gt;</span> <span class="err">$</span><span class="p">(</span><span class="nf">my_invalid_class</span><span class="p">);</span>
+
+        <span class="s">&#34;The string </span><span class="si">$(my_invalid_class)</span><span class="s"> is NOT a valid class&#34;</span>
+          <span class="kr">if</span> <span class="o">=&gt;</span> <span class="nf">not</span><span class="p">(</span> <span class="err">$</span><span class="p">(</span><span class="nf">my_invalid_class</span><span class="p">)</span> <span class="p">);</span>
+
+        <span class="s">&#34;The string </span><span class="si">$(my_invalid_class)</span><span class="s"> when canonified is a valid class&#34;</span>
+          <span class="kr">if</span> <span class="o">=&gt;</span> <span class="nf">classify</span><span class="p">(</span> <span class="err">$</span><span class="p">(</span><span class="nf">my_invalid_class</span><span class="p">)</span> <span class="p">);</span>
+  <span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div><pre class="example">
+R: The string my-invalid-class is NOT a valid class
+R: The string my-invalid-class when canonified is a valid class
+</pre>
+
+            </div>
+            
+            <div class="post-comments">
+                
+            </div>
+            
+            <div class="push"></div>
+        </div>
+        <footer class="footer text-center">
+<p>Copyright &copy; 2018 Nick Anderson -
+<span class="credit">
+	Powered by
+	<a target="_blank" href="https://gohugo.io">Hugo</a>,
+	<a target="_blank" href="https://github.com/LordMathis/hugo-theme-nix/">Nix</a> theme,
+  and
+	<a target="_blank" href="http://orgmode.org/">org-mode</a>.
+</span>
+</p>
+</footer>
+
+    </body>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Imap on </title>
+    <link>http://nickanderson.github.io/tags/imap/</link>
+    <description>Recent content in Imap on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 08 Nov 2008 04:09:19 +0000</lastBuildDate>
+    
+	<atom:link href="http://nickanderson.github.io/tags/imap/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How I tamed my mutt</title>
+      <link>http://nickanderson.github.io/2008/11/07/how-i-tamed-my-mutt/</link>
+      <pubDate>Sat, 08 Nov 2008 04:09:19 +0000</pubDate>
+      
+      <guid>http://nickanderson.github.io/2008/11/07/how-i-tamed-my-mutt/</guid>
+      <description>&lt;p&gt;As you by now well know I try to mostly live at the console (well multiple x consoles). Mutt is my mail client of choice. I&amp;#8217;ve tried Thunderbird, Kmail, Evolution, Sylpheed, and pine. For whatever reason I feel most comfortable with mutt. I also use IMAP for both my personal and work accounts. Mutt was originally designed to deal with local mail and while it does a very good job with IMAP I don&amp;#8217;t like how it handles multiple accounts.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

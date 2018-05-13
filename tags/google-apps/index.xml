@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Google Apps on </title>
+    <link>http://www.cmdln.org/tags/google-apps/</link>
+    <description>Recent content in Google Apps on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 24 Sep 2010 03:42:57 +0000</lastBuildDate>
+    
+	<atom:link href="http://www.cmdln.org/tags/google-apps/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Migrating to Google Apps: changing mailto link</title>
+      <link>http://www.cmdln.org/2010/09/23/migrating-to-google-apps-changing-mailto-link/</link>
+      <pubDate>Fri, 24 Sep 2010 03:42:57 +0000</pubDate>
+      
+      <guid>http://www.cmdln.org/2010/09/23/migrating-to-google-apps-changing-mailto-link/</guid>
+      <description>At $work we are in the process of migrating to Google Apps. Of course I am an early adopter to work out bugs and be a resource for others as they make the migration. One of the issues identified is mailto links pointing to google apps. Its not hard to make the change in firefox.
+First you need to set ﻿﻿gecko.handlerService.allowRegisterFromDifferentHost to true in about:config (type about:config into your address bar).</description>
+    </item>
+    
+  </channel>
+</rss>

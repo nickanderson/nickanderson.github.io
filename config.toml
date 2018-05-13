@@ -1,0 +1,50 @@
+url = "https://nickanderson.github.io"
+baseurl = "http://nickanderson.github.io"
+name = "cmdln.org (a sysadmin blog)"
+description = "a system administrators mutterings"
+theme = "hugo-theme-nix"
+pygmentsOptions="linenos=table"
+pygmentsStyle = "friendly"
+pygmentsCodeFences = true
+pygmentsUseClasses = true
+# For github pages
+publishdir = "docs/"
+
+[permalinks]
+post = "/:year/:month/:day/:slug/"
+
+[params]
+    useChroma = true
+  # Nav links in the side bar
+
+  # hugo-theme-nix Params
+
+  GithubID = "nickanderson"
+  GnuPGFingerprint = "9EB3AD425D1CCC11"
+  GitlabId = "nickanderson"
+  BitbucketID = "nickanderson"
+  TwitterID = "@cmdln_"
+  #CodepenID = "your_codepen"
+  LinkedInID = "hithisisnick"
+  #GoogleplusID = "108486302777247876438"
+  #StackExchangeID = "486977/nick-anderson"
+  StackOverflowID = "2854727/nick-anderson"
+  # NOT SUPPORTED stackoverflow = "http://stackoverflow.com/users/2854727/nick-anderson"
+  #FacebookID = "your_facebook"
+  #InstagramID = "your_instagram"
+  #TelegramID = "your_telegram"
+  Name = "Nick Anderson"
+  HeaderUsername = "nick"
+  HeaderHostname = "cmdln.org"
+  Email = "nick@cmdln.org"
+  About = "Hi, I'm Nick. I love open source and I have a special penchant for *nix, CFEngine, org-mode. I like puzzles and analyzing systems."
+  ProfilePicture = "https://media.licdn.com/mpr/mpr/shrinknp_200_200/p/1/000/197/0db/0b997c5.jpg"
+  #GoogleAnalytics = "your_google_analytics_id"
+  #SlackURL = "https://join.slack.com/..."
+
+[menu]
+  [[menu.header]]
+    name = "posts"
+    weight = 0
+    url = "/post/"
+

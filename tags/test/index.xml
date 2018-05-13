@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Test on </title>
+    <link>http://www.cmdln.org/tags/test/</link>
+    <description>Recent content in Test on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 26 Oct 2008 02:49:58 +0000</lastBuildDate>
+    
+	<atom:link href="http://www.cmdln.org/tags/test/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>vimpress test</title>
+      <link>http://www.cmdln.org/2008/10/25/vimpress-test/</link>
+      <pubDate>Sun, 26 Oct 2008 02:49:58 +0000</pubDate>
+      
+      <guid>http://www.cmdln.org/2008/10/25/vimpress-test/</guid>
+      <description>This is just a test post from vimpress. Vimpress is a vim plugin to post to wordpress. Seems there is an issue with not supporting the more tag, but it is much easier to write a post in vim than it is to use the builtin editor.</description>
+    </item>
+    
+  </channel>
+</rss>

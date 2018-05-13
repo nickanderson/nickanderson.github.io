@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cfengine on </title>
+    <link>http://www.cmdln.org/tags/cfengine/</link>
+    <description>Recent content in Cfengine on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 29 Jan 2018 17:25:25 -0600</lastBuildDate>
+    
+	<atom:link href="http://www.cmdln.org/tags/cfengine/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Purging packages with the cfengine 3 apt_get package module</title>
+      <link>http://www.cmdln.org/2018/01/29/purging-packages-with-the-cfengine-3-apt_get-package-module/</link>
+      <pubDate>Mon, 29 Jan 2018 17:25:25 -0600</pubDate>
+      
+      <guid>http://www.cmdln.org/2018/01/29/purging-packages-with-the-cfengine-3-apt_get-package-module/</guid>
+      <description>How can I purge a package using the apt_get package_module? policy =&amp;gt; purge doesn&#39;t work.  present and absent are the package states, purge is an option for package manager. You should be able to use the options attribute since the =apt_get= package module supports it.
+12345678910 bundle agent main { packages: # Purging a package using the --purge option  &amp;#34;screen&amp;#34; policy =&amp;gt; &amp;#34;absent&amp;#34;, package_module =&amp;gt; apt_get, options =&amp;gt; { &amp;#34;--remove&amp;#34; }; }    Note that you can use any Configuration Item as well:</description>
+    </item>
+    
+    <item>
+      <title>Timeboxing Policy in Cfengine3</title>
+      <link>http://www.cmdln.org/2018/01/28/timeboxing-policy-in-cfengine3/</link>
+      <pubDate>Sun, 28 Jan 2018 09:50:27 +0000</pubDate>
+      
+      <guid>http://www.cmdln.org/2018/01/28/timeboxing-policy-in-cfengine3/</guid>
+      <description>How can I make cfengine do things during a specific time window?  You can find &#34;time based classes&#34; in the cf-promises --show-classes output, they are easily identified because they are tagged with time_based. For example:
+1 cf-promises --show-classes | grep time   | Day2 time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | GMT_Afternoon time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | GMT_Day2 time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | GMT_Hr14 time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | GMT_Hr14_Q1 time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | GMT_Lcycle_1 time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | GMT_March time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | GMT_Min10 time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | GMT_Min10_15 time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | GMT_Q1 time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | GMT_Thursday time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | GMT_Yr2017 time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | Hr08 time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | Hr08_Q1 time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | Hr8 time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | Lcycle_1 time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | March time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | Min10 time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | Min10_15 time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | Morning time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | Q1 time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | Thursday time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | Yr2017 time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass |  You can guard your promise with a time based class expression so that it can only execute during the 7:00 hour.</description>
+    </item>
+    
+    <item>
+      <title>Formatting Time in CFEngine3</title>
+      <link>http://www.cmdln.org/2018/01/27/formatting-time-in-cfengine3/</link>
+      <pubDate>Sat, 27 Jan 2018 10:00:24 +0000</pubDate>
+      
+      <guid>http://www.cmdln.org/2018/01/27/formatting-time-in-cfengine3/</guid>
+      <description>How do I format and convert time strings?  The strftime() function takes unix epoch format as input and can format the time using the standard strftime templates.
+1234567 bundle agent main { reports: &amp;#34;$(with)&amp;#34; with =&amp;gt; strftime( localtime, &amp;#34;%FT%R:%S%Z&amp;#34;, now() ); }  R: 2018-01-27T15:47:14CST  Unfortunately there is currently no native way to convert from other inputs formats. You can however, use an external command.
+12345678910111213 bundle agent main { vars: &amp;#34;mock_sys_last_policy_update&amp;#34; string =&amp;gt; &amp;#34;Sat Jan 27 20:18:37 2018&amp;#34;, comment =&amp;gt; &amp;#34;This is the same format that sys.</description>
+    </item>
+    
+    <item>
+      <title>Setting permissions using uid, username, gid, or groupname with cfengine 3</title>
+      <link>http://www.cmdln.org/2018/01/16/setting-permissions-using-uid-username-gid-or-groupname-with-cfengine-3/</link>
+      <pubDate>Tue, 16 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.cmdln.org/2018/01/16/setting-permissions-using-uid-username-gid-or-groupname-with-cfengine-3/</guid>
+      <description>Can we use uid/gid to set permissions instead of username and groupname?
+Yes, you sure can.
+1234567891011121314151617181920212223 bundle agent main { files: # Here we use username and groupname  &amp;#34;/tmp/example&amp;#34; create =&amp;gt; &amp;#34;true&amp;#34;, perms =&amp;gt; mog( &amp;#34;600&amp;#34;, &amp;#34;root&amp;#34;, &amp;#34;root&amp;#34; ); # Here we use uid and gid  &amp;#34;/tmp/example&amp;#34; perms =&amp;gt; mog( &amp;#34;600&amp;#34;, 1000, 136 ); } body perms mog(mode,user,group) # @brief Set the file&amp;#39;s mode, owner and group  # @param mode The new mode  # @param user The username of the new owner  # @param group The group name  { owners =&amp;gt; { &amp;#34;$(user)&amp;#34; }; groups =&amp;gt; { &amp;#34;$(group)&amp;#34; }; mode =&amp;gt; &amp;#34;$(mode)&amp;#34;; }   Run the above example:</description>
+    </item>
+    
+    <item>
+      <title>Standalone Mustache Policy</title>
+      <link>http://www.cmdln.org/2018/01/15/standalone-mustache-policy/</link>
+      <pubDate>Mon, 15 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.cmdln.org/2018/01/15/standalone-mustache-policy/</guid>
+      <description>Does CFEngine provide tool to render a mustache template?
+No, CFEngine doesn&#39;t have a standalone tool to render mustache. This online demo is a good place to quickly prototype a simple template and data set.
+Another option is to use a stand-alone policy file.
+Name the file whatever you like. It looks for json in a file named the same suffixed with .json, it looks for a mustache template named the same suffixed with .</description>
+    </item>
+    
+    <item>
+      <title>Check if a file contains a multi-line regex</title>
+      <link>http://www.cmdln.org/2017/12/22/check-if-a-file-contains-a-multi-line-regex/</link>
+      <pubDate>Fri, 22 Dec 2017 12:51:40 -0600</pubDate>
+      
+      <guid>http://www.cmdln.org/2017/12/22/check-if-a-file-contains-a-multi-line-regex/</guid>
+      <description>Is there any way to do a multiline regex check for a file in CFEngine?  There is no function for searching a file for content. The grep() function operates on lists, not files. However using readfile() and regcmp() I was sill able to search for a multi-line string using only native functionaity
+In the example below we first create a file with content that spans multiple lines. Then we read that file content into a variable and use a regular expression on the variable content.</description>
+    </item>
+    
+    <item>
+      <title>Cfengine Files Preserve With Explicit Perms</title>
+      <link>http://www.cmdln.org/2017/12/21/cfengine-files-preserve-with-explicit-perms/</link>
+      <pubDate>Thu, 21 Dec 2017 11:41:49 -0600</pubDate>
+      
+      <guid>http://www.cmdln.org/2017/12/21/cfengine-files-preserve-with-explicit-perms/</guid>
+      <description>If I have a promise with a copy_from promise where the body specifies that  permissions should be preserved and I also have a perms body on the same  promise what is expected to happen?  The files type promises documentation describes the normal order of files promise attributes during promise actuation.
+The documentation notes:
+ file presence ( create | copy | link ) permissions file content  So the explicitly specified permissions should win in the end.</description>
+    </item>
+    
+    <item>
+      <title>Self organizing groups with select_class in cfengine 3</title>
+      <link>http://www.cmdln.org/2017/12/04/self-organizing-groups-with-select_class-in-cfengine-3/</link>
+      <pubDate>Mon, 04 Dec 2017 10:12:44 -0600</pubDate>
+      
+      <guid>http://www.cmdln.org/2017/12/04/self-organizing-groups-with-select_class-in-cfengine-3/</guid>
+      <description>How can my hosts self organize into different groups?
+In cfengine 3 select_class can be used for partitioning hosts into separate groups without central coordination. Given the same list of options in the same order each host will always choose the same option.
+1234567891011121314151617181920212223242526272829303132333435363738394041 bundle agent demo_select_class { vars: &amp;#34;options&amp;#34; slist =&amp;gt; { &amp;#34;one&amp;#34;, &amp;#34;two&amp;#34; }, meta =&amp;gt; { &amp;#34;inventory&amp;#34;, &amp;#34;attribute_name=Select Class Options&amp;#34; }; # Prefix the options with &amp;#34;select_class_&amp;#34; as select_class will define  # untagged classes that we will use to define a class tagged for  # inventory.</description>
+    </item>
+    
+    <item>
+      <title>Using set_line_based with extra spaces</title>
+      <link>http://www.cmdln.org/2017/11/29/using-set_line_based-with-extra-spaces/</link>
+      <pubDate>Wed, 29 Nov 2017 12:10:44 -0600</pubDate>
+      
+      <guid>http://www.cmdln.org/2017/11/29/using-set_line_based-with-extra-spaces/</guid>
+      <description>How can I use set_line_based to manage a space separated file like /etc/services but include more than one space to make the config a bit easier to read.
+1234567891011121314151617181920212223 bundle agent main { vars: &amp;#34;map[hpss_d_mvr1]&amp;#34; string =&amp;gt; &amp;#34;65501/tcp&amp;#34;; # Include padding in the value itself  &amp;#34;map[hpss_d_mvr2]&amp;#34; string =&amp;gt; &amp;#34; 65503/tcp&amp;#34;; files: &amp;#34;/tmp/services&amp;#34; create =&amp;gt; &amp;#34;true&amp;#34;; # Use more than one space in the second field for the minimum number of  # spaces between columns  &amp;#34;/tmp/services&amp;#34; edit_line =&amp;gt; set_line_based( &amp;#34;$(this.</description>
+    </item>
+    
+    <item>
+      <title>How to keep a package up to date in CFEngine 3</title>
+      <link>http://www.cmdln.org/2017/11/24/how-to-keep-a-package-up-to-date-in-cfengine-3/</link>
+      <pubDate>Fri, 24 Nov 2017 12:48:53 -0600</pubDate>
+      
+      <guid>http://www.cmdln.org/2017/11/24/how-to-keep-a-package-up-to-date-in-cfengine-3/</guid>
+      <description>How can I make sure a package is always up to date?
+123456789101112 bundle agent main { vars: &amp;#34;latest_pkgs&amp;#34; slist =&amp;gt; { &amp;#34;singularity&amp;#34;, &amp;#34;singularity-devel&amp;#34; }; packages: &amp;#34;$(latest_pkgs)&amp;#34; policy =&amp;gt; &amp;#34;present&amp;#34;, comment =&amp;gt; &amp;#34;Important to automatically track the latest and greatest because ....&amp;#34;, version =&amp;gt; &amp;#34;latest&amp;#34;; }   The packages promise implementation shown above has been available since 3.7.0.</description>
+    </item>
+    
+    <item>
+      <title>Why does my policy generate so many readjson() errors and how can I prevent them?</title>
+      <link>http://www.cmdln.org/2017/11/23/why-does-my-policy-generate-so-many-readjson-errors-and-how-can-i-prevent-them/</link>
+      <pubDate>Thu, 23 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.cmdln.org/2017/11/23/why-does-my-policy-generate-so-many-readjson-errors-and-how-can-i-prevent-them/</guid>
+      <description>cf-agent -Kf ./example.cf error: readjson: data error parsing JSON file &#39;/tmp/mydata.json&#39;: No data error: readjson: data error parsing JSON file &#39;/tmp/mydata.json&#39;: No data error: readjson: data error parsing JSON file &#39;/tmp/mydata.json&#39;: No data error: readjson: data error parsing JSON file &#39;/tmp/mydata.json&#39;: No data error: readjson: data error parsing JSON file &#39;/tmp/mydata.json&#39;: No data error: readjson: data error parsing JSON file &#39;/tmp/mydata.json&#39;: No data error: readjson: data error parsing JSON file &#39;/tmp/mydata.</description>
+    </item>
+    
+    <item>
+      <title>In CFEngine how do I enforce POSIX ACLs?</title>
+      <link>http://www.cmdln.org/2017/11/22/in-cfengine-how-do-i-enforce-posix-acls/</link>
+      <pubDate>Wed, 22 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.cmdln.org/2017/11/22/in-cfengine-how-do-i-enforce-posix-acls/</guid>
+      <description>When using the acl_method overwrite you must supply user, group, all ( aka other ), and mask for a complete ACL specification.
+123456789101112131415161718192021222324 bundle agent main { vars: &amp;#34;acl&amp;#34; slist =&amp;gt; { &amp;#34;user:*:rwx&amp;#34;, # System owner should have read write and execute access  &amp;#34;group:*:rw&amp;#34;, # System group should have read and write access but not execute  &amp;#34;all:r&amp;#34;, # All other users should have read access  &amp;#34;mask:rwx&amp;#34;, # The mask should be read write and execute  &amp;#34;user:nickanderson:r&amp;#34;, # The user nickanderson should explicitly have read access  &amp;#34;user:a10042:---&amp;#34;, # The user a10042 should explicitly have no access  }; files: &amp;#34;/tmp/acl/dir&amp;#34; acl =&amp;gt; posix_acl_default_access( &amp;#34;overwrite&amp;#34;, @(acl) ); } body acl posix_acl_default_access( method, rules ) { acl_method =&amp;gt; &amp;#34;$(method)&amp;#34;; acl_type =&amp;gt; &amp;#34;posix&amp;#34;; acl_default =&amp;gt; &amp;#34;access&amp;#34;; aces =&amp;gt; { @(acl) }; }   We can use getfacl to inspect the permissions are as desired.</description>
+    </item>
+    
+    <item>
+      <title>In CFEngine how does edit_backup in edit_defaults work?</title>
+      <link>http://www.cmdln.org/2017/11/21/in-cfengine-how-does-edit_backup-in-edit_defaults-work/</link>
+      <pubDate>Tue, 21 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.cmdln.org/2017/11/21/in-cfengine-how-does-edit_backup-in-edit_defaults-work/</guid>
+      <description>This controls if and how files are backed up by cf-agent during file editing operations. If enabled previous versions of the file will be retained next to the file or in default_repository if it is defined in body agent control. Note as it relates to edited files it is only applicable when combined with =edit_line=. It has no effect when used with edit_template or copy_from.
+A value of true (the default behavior) will result in the agent retaining the previous version of the file suffixed with .</description>
+    </item>
+    
+    <item>
+      <title>Are CFEgine classes automatically canonified?</title>
+      <link>http://www.cmdln.org/2017/11/20/are-cfegine-classes-automatically-canonified/</link>
+      <pubDate>Mon, 20 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.cmdln.org/2017/11/20/are-cfegine-classes-automatically-canonified/</guid>
+      <description>Is there implicit &#34;canonify&#34;-cation happening in in &#34;classes:&#34; promise type?  Yes the agent will automatically canonify classes that you define for your convenience.
+12345678910111213141516171819202122232425262728 bundle agent main # @brief show how classes are automatically canonified during definition  { vars: &amp;#34;invalid_class_string&amp;#34; string =&amp;gt; &amp;#34;my-invalid-class&amp;#34;; classes: @if minimum_version(3.10) # Shorthand for &amp;#34;myclass&amp;#34; expression =&amp;gt; &amp;#34;any&amp;#34;;  # Available since 3.10.0  &amp;#34;$(invalid_class_string)-1&amp;#34;; @endif &amp;#34;$(invalid_class_string)-2&amp;#34; expression =&amp;gt; &amp;#34;any&amp;#34;; commands: &amp;#34;/bin/true&amp;#34; classes =&amp;gt; results(&amp;#34;bundle&amp;#34;, &amp;#34;my-invalid-class-from-promise-result&amp;#34;); vars: &amp;#34;c&amp;#34; slist =&amp;gt; classesmatching(&amp;#34;my.</description>
+    </item>
+    
+    <item>
+      <title>CFEngine fixin my FreeNAS</title>
+      <link>http://www.cmdln.org/2015/08/20/cfengine-fixin-my-freenas/</link>
+      <pubDate>Fri, 21 Aug 2015 04:51:59 +0000</pubDate>
+      
+      <guid>http://www.cmdln.org/2015/08/20/cfengine-fixin-my-freenas/</guid>
+      <description>I recently built a new file server and I based it on the well renowned FreeNAS by iXsystems. It&amp;#8217;s been pretty solid over the past few weeks but today I ran into an issue. The web ui stopped responding. Actually it turned out that the django service had stopped. Well, that was the perfect opportunity to use CFEngine to make sure I never have the issue again.
+I grabbed the cfengine community 3.</description>
+    </item>
+    
+    <item>
+      <title>Digging up bundles and bodies</title>
+      <link>http://www.cmdln.org/2013/10/29/digging-up-bundles-and-bodies/</link>
+      <pubDate>Tue, 29 Oct 2013 14:26:52 +0000</pubDate>
+      
+      <guid>http://www.cmdln.org/2013/10/29/digging-up-bundles-and-bodies/</guid>
+      <description>You never know when the Zombie or Cloud Apocalypse is coming. It&amp;#8217;s good to be able to locate those buried bodies quickly and easily. OK, enough bad jokes, but haven&amp;#8217;t you ever looked at some CFEngine policy and wondered to yourself, exactly what does &amp;#8220;delete =&amp;gt; tidy&amp;#8221; or some other body or bundle do?
+I have. I even wrote a crappy little perl script to locate the files that contained a specific body or bundle and then print out the single body or bundle.</description>
+    </item>
+    
+    <item>
+      <title>I am so excited! And I just cant hide it!</title>
+      <link>http://www.cmdln.org/2013/05/01/i-am-so-excited-and-i-just-cant-hide-it/</link>
+      <pubDate>Wed, 01 May 2013 17:10:20 +0000</pubDate>
+      
+      <guid>http://www.cmdln.org/2013/05/01/i-am-so-excited-and-i-just-cant-hide-it/</guid>
+      <description>Today I start a new journey with some of the smartest people on the planet. I have accepted a position with CFEngine. Primarily I will be assisting customers with the evaluation, design, implementation and policy writing. If you know me from the CFEngine community, don&amp;#8217;t worry I only plan to increase my activity and continue to help in any way I can. Now one of my favourite hobbies is my job!</description>
+    </item>
+    
+    <item>
+      <title>Canonifying a list with CFEngine 3</title>
+      <link>http://www.cmdln.org/2013/03/29/canonifying-a-list-with-cfengine-3/</link>
+      <pubDate>Fri, 29 Mar 2013 14:12:14 +0000</pubDate>
+      
+      <guid>http://www.cmdln.org/2013/03/29/canonifying-a-list-with-cfengine-3/</guid>
+      <description>John Sanders shared a pattern for canonifying lists in #CFEngine on irc.freenode.net yesterday. It&amp;#8217;s a useful reference so I thought I would replicate it here.
+ 1 2 3 4 5 6  % cf-agent -KIf ./example_canonify_list.cf  R: canonified site: www_example_com  R: canonified site: www_example2_com  R: alternate canonified site: www_example_com  R: alternate canonified site: www_example2_com  !! Method invoked repairs        &amp;lt;div class=&amp;quot;gist-meta&amp;quot;&amp;gt; &amp;lt;a href=&amp;quot;https://gist.</description>
+    </item>
+    
+    <item>
+      <title>Working around getindices with dynamically generated arrays in CFEngine 3</title>
+      <link>http://www.cmdln.org/2013/03/13/working-around-getindices-with-dynamically-generated-arrays-in-cfengine-3/</link>
+      <pubDate>Wed, 13 Mar 2013 17:44:58 +0000</pubDate>
+      
+      <guid>http://www.cmdln.org/2013/03/13/working-around-getindices-with-dynamically-generated-arrays-in-cfengine-3/</guid>
+      <description>There is a known bug where getindices is unable to get the index of a dynamically generated array until the next pass. This comes up from time to time so I thought I would post an example using a pattern shared on the CFEngine help mailing list. The policy below shows 3 working examples. They are mostly similar, example0 shows the simplest workaround, example1 and example2 in addition show ways to suppress the &amp;#8220;Duplicate selection of value for variable&amp;#8221; messages.</description>
+    </item>
+    
+    <item>
+      <title>CFEngine 3.4.2 Changelog for Breakfast</title>
+      <link>http://www.cmdln.org/2013/01/11/cfengine-3-4-2-changelog-for-breakfast/</link>
+      <pubDate>Fri, 11 Jan 2013 14:44:58 +0000</pubDate>
+      
+      <guid>http://www.cmdln.org/2013/01/11/cfengine-3-4-2-changelog-for-breakfast/</guid>
+      <description>Changelogs are just as important as the most important meal of the day. OK so I don&amp;#8217;t always eat breakfast, but I do make an effort to read changelogs. CFEngine 3.4.2 was released today.
+What I found interesting was that the default masterfiles policy has been updated. body executor control now calls $(sys.workdir)/inputs/update.cf instead of failsafe.cf. And $(sys.workdir)/failsafe/failsafe.cf (which was new as of 3.4.0) is gone. I think its a good change.</description>
+    </item>
+    
+    <item>
+      <title>CFEngine 3 Policy Update or How cf_promises_validated Works</title>
+      <link>http://www.cmdln.org/2012/10/24/cfengine-3-policy-update-or-how-cf_promises_validated-works/</link>
+      <pubDate>Thu, 25 Oct 2012 02:07:09 +0000</pubDate>
+      
+      <guid>http://www.cmdln.org/2012/10/24/cfengine-3-policy-update-or-how-cf_promises_validated-works/</guid>
+      <description>Over the past several months 2 years (since 3.1.2 release, wow time flys when your having fun. I checked and 3.1.2 was released on Dec 9th 2010.) I have seen a few questions regarding how the default CFEngine policy update works, and more specifically how cf_promises_validated plays into the update process. This is my stab at describing the history and behaviour. I welcome any corrections.
+The default failsafe.cf update policy is simple in nature.</description>
+    </item>
+    
+    <item>
+      <title>CFEngine 3 Tip: Find out what classes are being defined</title>
+      <link>http://www.cmdln.org/2012/10/18/cfengine-3-tip-find-out-what-classes-are-being-defined/</link>
+      <pubDate>Thu, 18 Oct 2012 21:00:49 +0000</pubDate>
+      
+      <guid>http://www.cmdln.org/2012/10/18/cfengine-3-tip-find-out-what-classes-are-being-defined/</guid>
+      <description>CFEngine defines a classes for decision making during runs. Many of these hard classes you can see by running cf-promises -v. That wont show you all the other classes that are raised during a policy run.
+You could run something like this to see what classes are raised during execution.
+cf-agent -KIv | grep &#34;cf3&amp;gt;\s*+&#34; | grep -v : But that isn&amp;#8217;t really a clear picture under normal operation. You can use the allclassesreport in body agent control to write out a list of classes defined during execution in /var/cfengine/state/allclasses.</description>
+    </item>
+    
+    <item>
+      <title>Dynamic method calls in CFEngine</title>
+      <link>http://www.cmdln.org/2012/10/16/dynamic-method-calls-in-cfengine/</link>
+      <pubDate>Tue, 16 Oct 2012 20:07:21 +0000</pubDate>
+      
+      <guid>http://www.cmdln.org/2012/10/16/dynamic-method-calls-in-cfengine/</guid>
+      <description>Methods type promises are powerful abstraction tools in CFEngine 3. Methods allow you to activate bundles (optionally parametrized) from other bundles. This allows encapsulation of knowledge and lends itself to re-usability.
+I just want to share an example of calling bundles dynamically. It&amp;#8217;s a contrived example, but I thought it was neat so here it is.
+R: in bundle agent handler1: I got value1  R: in bundle agent handler1: I got value2  &amp;nbsp;!</description>
+    </item>
+    
+    <item>
+      <title>LinuxCon/CloudOpen 2012</title>
+      <link>http://www.cmdln.org/2012/08/01/linuxconcloudopen-2012/</link>
+      <pubDate>Wed, 01 Aug 2012 13:55:30 +0000</pubDate>
+      
+      <guid>http://www.cmdln.org/2012/08/01/linuxconcloudopen-2012/</guid>
+      <description>Are you going to LinuxCon/CloudOpen 2012? I am, and I think I have settled on my picks (at least until I look at the schedule again, lots of great options).
+Special thanks to CFEngine for sponsering me!
+Here are my picks for the minute.
+ Building the Open Cloud &amp;#8211; Mark Hinkle, Citrix{#9046eff8494ef50f48da95349905592e} The OpenNebula Cloud Platform for Data Center Virtualization &amp;#8211; Carlos Martin, OpenNebula{#5561a1f9b3d063dcca4b7abdc5dbc44b} Cloning SysAdmins with the Cloud and Juju &amp;#8211; Clint Byrum, Canonical{#82e5d5410f32e11be9bd9bddf2b81570} A Collaborative Approach to Managing Linux Configurations &amp;#8211; Diego Zamboni, CFEngine{#da5dea5f6f017f925dac66eec964f13f} Building FOSS Clouds &amp;#8211; Joe Brockmeier, Citrix{#c28982d2a4f52cbfbb4000ce030a1771} Automation and DevOps Best Practices &amp;#8211; Rob Hirschfeld, Dell{#f0cd279b854c642d12e7d531c68c53f0} Scaling Configuration Management Across Data Center and Cloud &amp;#8211; Mark Burgess, CFEngine{#e9936ee3a0369080a61b61f5eb9a88d4} Editing with vi: Advanced Topics, Part I &amp;#8211; Aleksey Tsaloikhin, Vertical Sysadmin, Inc.</description>
+    </item>
+    
+    <item>
+      <title>Git pre-commit hook for checking CFEngine 3 syntax</title>
+      <link>http://www.cmdln.org/2012/07/17/git-pre-commit-hook-for-checking-cfengine-3-syntax/</link>
+      <pubDate>Tue, 17 Jul 2012 22:36:40 +0000</pubDate>
+      
+      <guid>http://www.cmdln.org/2012/07/17/git-pre-commit-hook-for-checking-cfengine-3-syntax/</guid>
+      <description>I was inspired by William Orr&amp;#8217;s svn commit hook and looked up the magic needed to flesh out the git pre-commit hook I submitted to the Design Center a while back.
+Now the index is checked out to its own temporary directory and cf-promises validates promises.cf and failsafe.cf before allowing the commit to proceed. Now you won&amp;#8217;t get syntax errors if you have forgotten to add a new policy file to the index but its already included in your body common control inputs list.</description>
+    </item>
+    
+    <item>
+      <title>CFEngine 3 by Example &amp;#8211; Vagrant Project</title>
+      <link>http://www.cmdln.org/2012/07/14/cfengine-3-by-example-vagrant-project/</link>
+      <pubDate>Sat, 14 Jul 2012 20:02:17 +0000</pubDate>
+      
+      <guid>http://www.cmdln.org/2012/07/14/cfengine-3-by-example-vagrant-project/</guid>
+      <description>I updated the CFEngine 3 by example vagrant project so that /var/cfengine/masterfiles is a git clone (kept in sync with VCS::vcs_mirror) of the generated bare repository from the seed files. I found during a presentation that it would just be easier to have everyone start of with the typical workflow instead of going through the process of getting there. I hope it makes it easier for people to get a working test env up in a few minutes.</description>
+    </item>
+    
+    <item>
+      <title>CFEngine Design Center Launches</title>
+      <link>http://www.cmdln.org/2012/06/04/cfengine-design-center-launches/</link>
+      <pubDate>Mon, 04 Jun 2012 19:28:29 +0000</pubDate>
+      
+      <guid>http://www.cmdln.org/2012/06/04/cfengine-design-center-launches/</guid>
+      <description>If you follow CFEngine you may have notices that the multiple pay versions have been condensed down to CFEngine Enterprise with the latest release. You may not have noticed that the CFEngine Design Center also launched.
+Don&amp;#8217;t get me wrong, I am excited about the new 25 free enterprise nodes and the new features in the Enterprise edition, but I see greater value in the Design Center. This is a great resource for new and old users.</description>
+    </item>
+    
+    <item>
+      <title>Review: Learning CFEngine 3</title>
+      <link>http://www.cmdln.org/2012/03/29/review-learning-cfengine-3/</link>
+      <pubDate>Thu, 29 Mar 2012 15:04:25 +0000</pubDate>
+      
+      <guid>http://www.cmdln.org/2012/03/29/review-learning-cfengine-3/</guid>
+      <description>I just finished reading the final release of Diego Zambonis&amp;#8217; Learning CFEngine 3. I can&amp;#8217;t recommend this book enough. If your just learning CFEngine 3, if you are versed but not an expert and you like CFEngine you will like this book. If you meet all those criteria and you don&amp;#8217;t like the book, I&amp;#8217;ll buy you a beer if we ever meet. It&amp;#8217;s well worth the 20 dollars, or 14 if you want the ebook (DRM FREE!</description>
+    </item>
+    
+    <item>
+      <title>Setup encfs on dropbox for boxcryptor with CFEngine</title>
+      <link>http://www.cmdln.org/2012/02/27/setup-encfs-on-dropbox-for-boxcryptor-with-cfengine/</link>
+      <pubDate>Mon, 27 Feb 2012 20:19:39 +0000</pubDate>
+      
+      <guid>http://www.cmdln.org/2012/02/27/setup-encfs-on-dropbox-for-boxcryptor-with-cfengine/</guid>
+      <description>Here is an easy way to configure encfs with dropbox that is compatible with boxcryptor. Boxcryptor makes Windows, Mac Android, and IOS applications to assist you in accessing data that you have stored in encfs. They do require that you create your encfs with some specific options: Cipher algorithm: AES, Plaintext or Stream encrypted filenames, No filename initialization vector chaining, No per-file initialization vectors, No external IV chaining, No block MAC headers, No per-block random bytes.</description>
+    </item>
+    
+    <item>
+      <title>New bundle to manage routes for RedHat/CentOS with CFEngine 3</title>
+      <link>http://www.cmdln.org/2012/02/18/new-bundle-to-manage-routes-for-redhatcentos-with-cfengine-3/</link>
+      <pubDate>Sun, 19 Feb 2012 04:55:27 +0000</pubDate>
+      
+      <guid>http://www.cmdln.org/2012/02/18/new-bundle-to-manage-routes-for-redhatcentos-with-cfengine-3/</guid>
+      <description>I re-factored rh_add_interface_routes into a new bundle rh_update_routes, you can find them in my CFEngine library.
+The biggest improvement is you no longer have to specify the interface you want the route on. Instead you specify a regular expression of the ip that would be on that interface and the specific interface is found.
+Second major improvement is the direct use of ip route del/add to update currently running system instead of restarting all networking.</description>
+    </item>
+    
+    <item>
+      <title>pre-commit hook for git to check CFEngine syntax</title>
+      <link>http://www.cmdln.org/2012/02/16/pre-commit-hook-for-git-to-check-cfengine-syntax/</link>
+      <pubDate>Thu, 16 Feb 2012 17:01:38 +0000</pubDate>
+      
+      <guid>http://www.cmdln.org/2012/02/16/pre-commit-hook-for-git-to-check-cfengine-syntax/</guid>
+      <description>Sometimes I am not so disciplined to run cf-promises on my policy before I commit it. I make a small change and I think I&amp;#8217;m golden, but inevitably that breaks things. I wrote a simple commit hook to check policy syntax and stop you from shooting yourself in the foot. You can find the pre-commit{#a71b90d9d3bb7e4d1f4be225eb124c42527855a3} script over on my github account. I hope you find it useful.</description>
+    </item>
+    
+    <item>
+      <title>Bundles of Bundles with CFEngine 3</title>
+      <link>http://www.cmdln.org/2012/02/16/bundles-of-bundles-with-cfengine-3/</link>
+      <pubDate>Thu, 16 Feb 2012 07:05:53 +0000</pubDate>
+      
+      <guid>http://www.cmdln.org/2012/02/16/bundles-of-bundles-with-cfengine-3/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://www.cmdln.org/wp-content/uploads/2012/02/Extrusion-Bundles2.jpg&#34;&gt;&lt;img class=&#34;alignleft size-thumbnail wp-image-936&#34; title=&#34;Bundles of Bundles&#34; src=&#34;http://www.cmdln.org/wp-content/uploads/2012/02/Extrusion-Bundles2-150x150.jpg&#34; alt=&#34;&#34; width=&#34;150&#34; height=&#34;150&#34; /&gt;&lt;/a&gt;I&amp;#8217;ve been working more and more with CFEngine lately and I have been slowly building a &lt;a href=&#34;http://www.laurand.net/images/Extrusion%20Bundles2.jpg&#34;&gt;tiny library&lt;/a&gt;. These are all pretty much redhat specific but I welcome patches and comments. Most of the bundles have comments that show usage, if there is interest I may post some example usage later.&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

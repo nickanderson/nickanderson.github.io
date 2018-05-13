@@ -1,0 +1,101 @@
+#+Title: Self organizing groups with select_class in cfengine 3
+#+AUTHOR: Nick Anderson
+#+DATE: 2017-12-04T10:12:44-06:00
+#+TAGS: cfengine
+#+DRAFT: false
+
+> How can my hosts self organize into different groups?
+
+In cfengine 3 [[https://docs.cfengine.com/lts/reference-promise-types-classes.html#select_class][=select_class=]] can be used for partitioning hosts into separate
+groups without central coordination. Given the same list of options in the same
+order each host will always choose the same option.
+
+#+CAPTION: demo-select-class
+#+NAME: demo-select-class
+#+BEGIN_SRC cfengine3
+  bundle agent demo_select_class
+  {
+    vars:
+  
+        "options"
+          slist => { "one", "two" },
+          meta => { "inventory", "attribute_name=Select Class Options" };
+  
+        # Prefix the options with "select_class_" as select_class will define
+        # untagged classes that we will use to define a class tagged for
+        # inventory.
+  
+        "candidate[$(options)]" string => "select_class_$(options)";
+  
+        # Remember it's important to provide a stable list order for select_class
+        "candidates" slist => sort( getvalues( candidate ), lex );
+  
+    classes:
+  
+        # Here we define "selected" and class for the selected option in the form "select_class_<option>"
+        "selected"
+          select_class => { @(candidates) };
+  
+        # Here we define selected_<option> and tag it for inventory
+        "selected_$(options)"
+          expression => "$(candidate[$(options)])",
+          scope => "namespace",
+          meta => { "inventory", "attribute_name=Selected Class" };
+  
+    reports:
+  
+      inform_mode|DEBUG|DEBUG_demo_select_class::
+  
+        "Selection candidates include $(candidates)";
+  
+        "I made a selection"
+          if => "selected";
+  
+        "I selected $(options)"
+          if => canonify( "$(candidate[$(options)])" );
+  }
+#+END_SRC
+
+This can be useful to automatically partition a group of hosts. This can be
+useful for simple load balancing or staggering things like automatic patching.
+
+The distribution is not perfect by any means. The distribution is based on a
+hash of each hosts fqdn and the hosts primary ip. It's a good idea to take a
+look at your selection distribution to make sure it's adequate for your
+environment.
+
+Let's see the distribution as we go from two to seven options with 15 hosts.
+
+With two options 11 of the hosts select the first option and only four hosts
+select the second option.
+
+<img src="http://cmdln.org/images/2017-12-03_Selection_003_2017-12-03_19-48-13.png" alt="" width="100%"/>
+
+With three options six hosts select the first option, two select the second and
+seven select the third.
+
+<img src="http://cmdln.org/images/2017-12-03_Selection_005_2017-12-03_19-49-13.png" alt="" width="100%"/>
+
+With four options six hosts select option one, one host selects option two,
+three hosts select option three, and five hosts select option four.
+
+<img src="http://cmdln.org/images/2017-12-03_Selection_007_2017-12-03_19-49-21.png" alt="" width="100%"/>
+
+With five options six hosts select option one, one host selected option two, one
+host selected option three, two hosts selected option four and five hosts select
+option five.
+
+<img src="http://cmdln.org/images/2017-12-03_Selection_008_2017-12-03_19-49-26.png" alt="" width="100%"/>
+
+With six options five hosts select option one, one host selected option two, one
+host selected option three, one hosts selected option four, five hosts select
+option five, and two hosts select option six.
+
+<img src="http://cmdln.org/images/2017-12-03_Selection_009_2017-12-03_19-49-41.png" alt="" width="100%"/>
+
+With seven options to choose from four hosts select option one, one host
+selected option two, one host selected option three, one hosts selected option
+four, four hosts select option five, zero hosts select option six, and four
+hosts select option seven.
+
+<img src="http://cmdln.org/images/2017-12-03_Selection_010_2017-12-03_19-49-50.png" alt="" width="100%"/>

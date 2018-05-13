@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bonnie on </title>
+    <link>http://www.cmdln.org/tags/bonnie/</link>
+    <description>Recent content in Bonnie on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 26 Apr 2008 19:41:21 +0000</lastBuildDate>
+    
+	<atom:link href="http://www.cmdln.org/tags/bonnie/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Benchmark hard drive performance in Linux</title>
+      <link>http://www.cmdln.org/2008/04/26/benchmark-hard-drive-performance-in-linux/</link>
+      <pubDate>Sat, 26 Apr 2008 19:41:21 +0000</pubDate>
+      
+      <guid>http://www.cmdln.org/2008/04/26/benchmark-hard-drive-performance-in-linux/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

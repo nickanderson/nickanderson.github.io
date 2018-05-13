@@ -1,0 +1,14 @@
+#+Title: Keep Table of Contents Up to Date in Org Mode
+#+AUTHOR: Nick Anderson
+#+DATE: 2017-12-01T21:41:21-06:00
+#+TAGS: org-mode
+#+DRAFT: false
+
+It's easy to export an org document to html and get a table of contents, but
+sometimes it's nice to have a table of contents inside of an org-mode file. The
+=[[https://github.com/snosov1/toc-org][toc-org]]= package makes this automatic.
+
+Simply tag a headline with =:TOC:= and the headline will auto fill an index with
+all following headlines.
+
+<img src="http://cmdln.org/images/demo-toc-org.gif" alt="" width="100%"/>

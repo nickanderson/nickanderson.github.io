@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Printing on </title>
+    <link>http://nickanderson.github.io/tags/printing/</link>
+    <description>Recent content in Printing on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 08 Feb 2008 03:25:06 +0000</lastBuildDate>
+    
+	<atom:link href="http://nickanderson.github.io/tags/printing/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Print to PDF with cups.</title>
+      <link>http://nickanderson.github.io/2008/02/07/print-to-pdf-with-cups/</link>
+      <pubDate>Fri, 08 Feb 2008 03:25:06 +0000</pubDate>
+      
+      <guid>http://nickanderson.github.io/2008/02/07/print-to-pdf-with-cups/</guid>
+      <description>&lt;p&gt;Printing is a pain. I hate printers, I hate paper, but I also hate a bagillion book marks to places and things that may change over time. Its handy to have PDFs around as they are easily searchable, they preserve original layout and they print correctly when you want to print something. So for most of my printing I am printing to PDF and if I need a paper copy later I can always print out that PDF. True many applications can print or export to pdf currently. However using cups-pdf allows you to print to pdf anywhere you can print. Its great when combined with RDP too. For example at one point a &lt;a href=&#34;http://jgarrett.org&#34; mce_href=&#34;http://jgarrett.org&#34;&gt;freind&lt;/a&gt; of mine had to use GreatPlains for parts and order accounting in a production enviornment. GreatPlains allows you to print to screen in only some windows. However with cups-pdf he could print any screen he wished to pdf and view it on his screen.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

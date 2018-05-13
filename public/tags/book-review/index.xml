@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Book Review on </title>
+    <link>http://nickanderson.github.io/tags/book-review/</link>
+    <description>Recent content in Book Review on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 29 Mar 2012 15:04:25 +0000</lastBuildDate>
+    
+	<atom:link href="http://nickanderson.github.io/tags/book-review/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Review: Learning CFEngine 3</title>
+      <link>http://nickanderson.github.io/2012/03/29/review-learning-cfengine-3/</link>
+      <pubDate>Thu, 29 Mar 2012 15:04:25 +0000</pubDate>
+      
+      <guid>http://nickanderson.github.io/2012/03/29/review-learning-cfengine-3/</guid>
+      <description>I just finished reading the final release of Diego Zambonis&amp;#8217; Learning CFEngine 3. I can&amp;#8217;t recommend this book enough. If your just learning CFEngine 3, if you are versed but not an expert and you like CFEngine you will like this book. If you meet all those criteria and you don&amp;#8217;t like the book, I&amp;#8217;ll buy you a beer if we ever meet. It&amp;#8217;s well worth the 20 dollars, or 14 if you want the ebook (DRM FREE!</description>
+    </item>
+    
+  </channel>
+</rss>

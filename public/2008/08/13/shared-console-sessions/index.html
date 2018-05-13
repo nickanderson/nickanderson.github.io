@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title> Shared console sessions &middot;  </title>
+
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.40.3" />
+
+
+<script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="http://nickanderson.github.io/css/nix.css">
+<link rel="stylesheet" href="http://nickanderson.github.io/css/syntax.css">
+
+
+<link href="https://fonts.googleapis.com/css?family=Inconsolata|Open+Sans|Roboto|Montserrat|Concert+One" rel="stylesheet">
+
+
+
+
+    </head>
+
+    <body>
+        <header>
+<nav class="navbar navbar-default navbar-fixed-top navbar-inverse font-header">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" id="green-terminal" href=http://nickanderson.github.io>nick@cmdln.org ~ $</a>
+		</div>
+
+		
+		<div class="collapse navbar-collapse" id="navbar-collapse-1">
+			<ul class="nav navbar-nav navbar-right">
+				<li>
+					<a href="http://nickanderson.github.io">/home/nick</a>
+				</li>
+				
+				
+				<li >
+					<a href="/post/">~/posts</a>
+				</li>
+				
+
+			</ul>
+		</div>
+	</div>
+</nav>
+</header>
+
+        <div class="container wrapper">
+            <h1><a href="http://nickanderson.github.io/2008/08/13/shared-console-sessions/">Shared console sessions</a></h1>
+            <span class="post-date">Aug 14, 2008 </span>
+            <div class="post-content">
+                <p>I have had several posts regarding screen. Hopefully you have already realized the greatness of screen. Screen has a great feature that allows screen sessions to be shared. To my knowledge there are two ways to use this feature. First you can connect to a screen multiple times as the same user. Second you can use the multiuser mode of screen.</p>
+
+<p>Obviously the first option is less helpful in a multi user environment as one has to wheel up to a different user to share a screen. At first glance screens multiuser mode seems to be a great option. However multiuser mode requires that screen be setuid. Hopefully you are well aware of the dangers of running setuid processes. I will not drive the point home any more. If you still wish to use multiuser mode on screen by all means proceed.</p>
+
+<p>I assume you have already installed screen. To enable multiuser mode log in to your machine</p>
+
+<p><code>sudo setuid /usr/bin/screen&lt;br /&gt;
+sudo chmod 755 /usr/bin/screen</code></p>
+
+<p>now run screen as your normal user. Then enable multi user mode with C-a :multiuser on. And allow the user joe to connect to your session with C-a :addacl joe (optional password)</p>
+
+<p>Now user joe can see what screens you have available with</p>
+
+<p><code>screen -ls youruser/</code></p>
+
+<p>and joe could connect to a screen with</p>
+
+<p><code>screen -x youruser/(optional name of session)</code></p>
+
+<p>For those of you who yearn for a better way to share a session without the setuid stay tuned for the next post where we actually address this issue.</p>
+            </div>
+            
+            <div class="post-comments">
+                
+            </div>
+            
+            <div class="push"></div>
+        </div>
+        <footer class="footer text-center">
+<p>Copyright &copy; 2018 Nick Anderson -
+<span class="credit">
+	Powered by
+	<a target="_blank" href="https://gohugo.io">Hugo</a>,
+	<a target="_blank" href="https://github.com/LordMathis/hugo-theme-nix/">Nix</a> theme,
+  and
+	<a target="_blank" href="http://orgmode.org/">org-mode</a>.
+</span>
+</p>
+</footer>
+
+    </body>

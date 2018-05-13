@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Phog on </title>
+    <link>http://nickanderson.github.io/tags/phog/</link>
+    <description>Recent content in Phog on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 20 Aug 2009 02:47:22 +0000</lastBuildDate>
+    
+	<atom:link href="http://nickanderson.github.io/tags/phog/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>It&amp;#8217;s not &amp;#8220;the cloud&amp;#8221; it&amp;#8217;s &amp;#8220;the phog&amp;#8221;</title>
+      <link>http://nickanderson.github.io/2009/08/19/its-not-the-cloud-its-the-phog/</link>
+      <pubDate>Thu, 20 Aug 2009 02:47:22 +0000</pubDate>
+      
+      <guid>http://nickanderson.github.io/2009/08/19/its-not-the-cloud-its-the-phog/</guid>
+      <description>I am so very tired of hearing about &amp;#8220;the cloud&amp;#8221;. Over lunch the other day a co-worker decided we should just call it the phog instead since the phog does a better job of describing exactly what is meant by the cloud.
+Why is phog a better description? The phog has no defined shape, you can&amp;#8217;t see clearly in it, its different everywhere you go, and once your in the middle of it you can&amp;#8217;t find your way out (due to marketing fluf).</description>
+    </item>
+    
+  </channel>
+</rss>

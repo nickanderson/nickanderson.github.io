@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gnome 3 on </title>
+    <link>http://www.cmdln.org/tags/gnome-3/</link>
+    <description>Recent content in Gnome 3 on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 08 Jul 2011 12:53:16 +0000</lastBuildDate>
+    
+	<atom:link href="http://www.cmdln.org/tags/gnome-3/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Replace unity with gnome3 and gnome-shell in ubuntu 11.04</title>
+      <link>http://www.cmdln.org/2011/07/08/replace-unity-with-gnome3-and-gnome-shell-in-ubuntu-11-04/</link>
+      <pubDate>Fri, 08 Jul 2011 12:53:16 +0000</pubDate>
+      
+      <guid>http://www.cmdln.org/2011/07/08/replace-unity-with-gnome3-and-gnome-shell-in-ubuntu-11-04/</guid>
+      <description>Well I gave unity the old college try in ubuntu 11.04. But last night I just couldn&amp;#8217;t take it any more. There were some small rendering issues occasionally plus some tray programs like workrave had no place to go, at least that I could find anyway and I really need workrave to remind me to change from sitting to standing positions every so often.
+At any rate I decided to try gnome3 and gnome-shell.</description>
+    </item>
+    
+  </channel>
+</rss>

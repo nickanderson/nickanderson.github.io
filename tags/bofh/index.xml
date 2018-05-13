@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bofh on </title>
+    <link>http://www.cmdln.org/tags/bofh/</link>
+    <description>Recent content in Bofh on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 06 May 2010 02:25:32 +0000</lastBuildDate>
+    
+	<atom:link href="http://www.cmdln.org/tags/bofh/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Very funny, good troubleshooting</title>
+      <link>http://www.cmdln.org/2010/05/05/very-funny-good-troubleshooting/</link>
+      <pubDate>Thu, 06 May 2010 02:25:32 +0000</pubDate>
+      
+      <guid>http://www.cmdln.org/2010/05/05/very-funny-good-troubleshooting/</guid>
+      <description>This deserved a repost. Originally sourced from http://www.csua.berkeley.edu/~ranga/humor/500_mile_email.txt
+ To: 0xdeadbeef@petting-zoo.net Subject: The case of the 500-mile email. Date: Tue, 26 Nov 2002 14:57:40 -0800
+ Here&amp;rsquo;s a problem that sounded impossible&amp;hellip; I almost regret posting the story to a wide audience, because it makes a great tale over drinks at a conference. :-) The story is slightly altered in order to protect the guilty, elide over irrelevant and boring details, and generally make the whole thing more entertaining.</description>
+    </item>
+    
+  </channel>
+</rss>

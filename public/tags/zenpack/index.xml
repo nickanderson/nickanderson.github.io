@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Zenpack on </title>
+    <link>http://nickanderson.github.io/tags/zenpack/</link>
+    <description>Recent content in Zenpack on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 12 Jul 2010 15:52:44 +0000</lastBuildDate>
+    
+	<atom:link href="http://nickanderson.github.io/tags/zenpack/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>CheckDomain Zenpack</title>
+      <link>http://nickanderson.github.io/2010/07/12/checkdomain-zenpack/</link>
+      <pubDate>Mon, 12 Jul 2010 15:52:44 +0000</pubDate>
+      
+      <guid>http://nickanderson.github.io/2010/07/12/checkdomain-zenpack/</guid>
+      <description>No one likes to forget to renew a domain. Its not wholly uncommon though. Microsoft forgot to renew passport.com in 1999, and hotmail.co.uk in 2003. Vivendi Universal forgot to renew its MP3.com in 2003, the Washington Post forgot to renew in 2004, and Foursquare forgot to renew their domain in 2010.
+I stumbled on the check_domain nagios plugin this weekend so I figured I would make some quick modifications and roll it into a Zenpack.</description>
+    </item>
+    
+    <item>
+      <title>Nginx stub_status Zenpack</title>
+      <link>http://nickanderson.github.io/2010/07/09/nginx-stub_status-zenpack/</link>
+      <pubDate>Fri, 09 Jul 2010 23:41:53 +0000</pubDate>
+      
+      <guid>http://nickanderson.github.io/2010/07/09/nginx-stub_status-zenpack/</guid>
+      <description>Nginx is a great little web server. I have posted previously about using it as a reverse proxy. Weather your using it as a reverse proxy or as a normal webserver you will probably eventually want to know what its doing over time so you can adjust resources as necessary.
+The other day I threw together a Zenpack to make it easier to setup monitoring on new Zenoss instances. It contains a command data source &amp;#8220;check_nginx_ng&amp;#8221; which is a slightly modified version of Chris Kellys check_nginx_ng which in turn was based on check_nginx by Mike Adolphs.</description>
+    </item>
+    
+    <item>
+      <title>Notes on Zenoss ZenPacks</title>
+      <link>http://nickanderson.github.io/2010/05/24/notes-on-zenoss-zenpacks/</link>
+      <pubDate>Mon, 24 May 2010 20:00:20 +0000</pubDate>
+      
+      <guid>http://nickanderson.github.io/2010/05/24/notes-on-zenoss-zenpacks/</guid>
+      <description>Recently I was building a ZenPack for Zenoss. The ZenPack included an Event Command which executed a custom script. I wanted to store the custom script in the ZenPack and I didn&amp;#8217;t want to do anything other than have proper script dependencies in place for it to work.
+${here/ZenPackManager/packs/ZenPacks.community.YOURZENPACK/path}/libexec/yourscript.sh ${dev/manageIp}  Custom scripts can be placed in $ZENHOME/ZenPacks/ZenPacks.CompanyName.Package/Zenpacks/CompanyName/Package/lib but if you want them to be executable place them in libexec.</description>
+    </item>
+    
+  </channel>
+</rss>

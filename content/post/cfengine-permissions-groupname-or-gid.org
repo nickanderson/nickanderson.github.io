@@ -1,0 +1,55 @@
+#+Title: Setting permissions using uid, username, gid, or groupname with cfengine 3
+#+AUTHOR: Nick Anderson
+#+DATE: 2018-01-16
+#+TAGS: cfengine
+#+DRAFT: false
+
+> Can we use uid/gid to set permissions instead of username and groupname?
+
+Yes, you sure can.
+
+#+Caption: Example (=/tmp/perms-example.cf=)
+#+BEGIN_SRC cfengine3 :tangle /tmp/perms-example.cf
+  bundle agent main
+  {
+    files:
+      
+       # Here we use username and groupname
+        "/tmp/example"
+          create => "true",
+          perms => mog( "600", "root", "root" );
+
+       # Here we use uid and gid
+        "/tmp/example"
+          perms => mog( "600", 1000, 136 );
+  }
+  body perms mog(mode,user,group)
+  # @brief Set the file's mode, owner and group
+  # @param mode The new mode
+  # @param user The username of the new owner
+  # @param group The group name
+  {
+        owners => { "$(user)" };
+        groups => { "$(group)" };
+        mode   => "$(mode)";
+  }
+#+END_SRC
+
+Run the above example:
+
+#+Caption: Example execution
+#+BEGIN_SRC shell
+  chmod 600 /tmp/perms-example.cf
+  sudo cf-agent -KIf /tmp/perms-example.cf
+#+END_SRC
+
+Check the results:
+
+#+Caption: Execution output
+#+RESULTS:
+#+BEGIN_EXAMPLE
+    info: Created file '/tmp/example', mode 0600
+    info: Owner of '/tmp/example' was 0, setting to 1000
+    info: Group of '/tmp/example' was 0, setting to 136
+#+END_EXAMPLE
+

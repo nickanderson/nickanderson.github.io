@@ -1,0 +1,9 @@
+#+Title: Northern Tech
+#+AUTHOR: Nick Anderson
+#+DATE: 2017-07-02
+#+DRAFT: false
+
+Well, I no longer work at CFEngine Inc. But only because we re-named the company to
+Northern Tech in order to unify our multiple products under a single company.
+Both CFEngine and Mender will continue to have their own unique product
+branding.

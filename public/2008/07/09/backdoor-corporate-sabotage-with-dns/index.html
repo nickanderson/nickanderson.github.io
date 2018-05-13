@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title> Backdoor corporate sabotage with DNS &middot;  </title>
+
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.40.3" />
+
+
+<script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="http://nickanderson.github.io/css/nix.css">
+<link rel="stylesheet" href="http://nickanderson.github.io/css/syntax.css">
+
+
+<link href="https://fonts.googleapis.com/css?family=Inconsolata|Open+Sans|Roboto|Montserrat|Concert+One" rel="stylesheet">
+
+
+
+
+    </head>
+
+    <body>
+        <header>
+<nav class="navbar navbar-default navbar-fixed-top navbar-inverse font-header">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" id="green-terminal" href=http://nickanderson.github.io>nick@cmdln.org ~ $</a>
+		</div>
+
+		
+		<div class="collapse navbar-collapse" id="navbar-collapse-1">
+			<ul class="nav navbar-nav navbar-right">
+				<li>
+					<a href="http://nickanderson.github.io">/home/nick</a>
+				</li>
+				
+				
+				<li >
+					<a href="/post/">~/posts</a>
+				</li>
+				
+
+			</ul>
+		</div>
+	</div>
+</nav>
+</header>
+
+        <div class="container wrapper">
+            <h1><a href="http://nickanderson.github.io/2008/07/09/backdoor-corporate-sabotage-with-dns/">Backdoor corporate sabotage with DNS</a></h1>
+            <span class="post-date">Jul 10, 2008 </span>
+            <div class="post-content">
+                <p>I&#8217;m not really certain how common corporate sabotage is. Sure there are DOS attacks daily on this or that network or this or that server but what percentage of those are script kiddies and what percentage are well thought out planned attacks designed to cripple a competitor even if only for a short time. Typically DOS attacks are dealt with by Server and Network Admins adding black holes to offending networks. Recently while doing some research I stumbled on what seems to be a neglected DNS attack. One that the target may not become aware of until the next billing cycle or if carried out methodically months.</p>
+
+<!--adsense-->
+
+<p>Ultradns and Dnsmadeeasy are two leading hosted DNS providers. The model is simple. You pay to have your dns hosted on their network and servers. They ensure DNS propagation between their servers is fast and they have the capacity to protect against DOS attacks. Typically you get some base package of queries per month. For example the Business Membership is 59.95/yr and you get 10 million queries/month. That is a lot of queries when you consider that many queries for your domain will be served by caching servers. And overage charges are minimal at $6.00/ 1 million queries (if you don&#8217;t purchase blocks ahead of time). I was thinking boy I hope there is some kind of throttling in place to prevent some unsavory competitor from looping a dig against their name servers for my domain. So on a whim i looked around and actually found a domain (on the first try I might add) which uses Dnsmadeeasy. Oh in case you were wondering how I found out, I just did a whois and looked at the authoritative name servers and wow ns0.dnsmadeeasy.com was listed. So I ran a quick loop for 100 lookups on the domain.</p>
+
+<p><code>time for i in $(seq 100);do dig redacted.tld @ns0.dnsmadeeasy.com;done</code></p>
+
+<p>While I expected to get off a few lookups and then just wait for some throttle timeout to shut me down I was supprised to get all 100 lookups done in 11 seconds, subsequent tests showed similar times mostly faster. So conservativly say you can do 10 lookups a second. If my math serves me correct you can do 10 million lookups in just about 5 hours. After that you have broken the 10 million limit for the month. Holding steady at the same rate thats 864000 queries in 24 hours and 25920000 in 30 days. Yeah so not a bank breaker at $6/ million but this was from a single PC and I doubt network was the bottle neck. A distributed attack could end up costing a company thousands upon thousands. Refusal to pay could result in DNS being shut off, and effectively creating a DOS. For fun I tried 100 lookups against Ultradns for some of their banner customers and also received no throttling. Still a bit surprised at this seemingly overlooked hole I called Dnsmadeeasy and asked the sales department what protections were in place to prevent or mitigate malicious lookups. His response was do you mean DOS? When I explained the issue he said we can not block that, as we do not know if there are 1000 people behind your company firewall that are really interested in that website.</p>
+
+<p>It does not seem unreasonable to provide a throttling mechanism. Oh you queried 10 times in the last 2 seconds? I think I will block you for 5 mintues. Happens again within x time increase block time to 10 minutes and so on. So who wants to loop while true dig amazon @udns1.ultradns.net for a month or so and see what happens. Will they report being hacked? Will the cops bust down your door? Will amazon just eat the cost (probably). But why not just provide simple throttling for obviously either misconfigured or malicious lookups?</p>
+            </div>
+            
+            <div class="post-comments">
+                
+            </div>
+            
+            <div class="push"></div>
+        </div>
+        <footer class="footer text-center">
+<p>Copyright &copy; 2018 Nick Anderson -
+<span class="credit">
+	Powered by
+	<a target="_blank" href="https://gohugo.io">Hugo</a>,
+	<a target="_blank" href="https://github.com/LordMathis/hugo-theme-nix/">Nix</a> theme,
+  and
+	<a target="_blank" href="http://orgmode.org/">org-mode</a>.
+</span>
+</p>
+</footer>
+
+    </body>

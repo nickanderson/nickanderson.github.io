@@ -1,0 +1,49 @@
+#+Title: Easiest way to make standalone examples in CFEngine 3
+#+AUTHOR: Nick Anderson
+#+DATE: 2017-11-30
+#+TAGS: cfengine3
+#+DRAFT: false
+
+#+BEGIN_QUOTE
+  What's the simplest, easiest, no-fuss way to wrap up standalone example?
+#+END_QUOTE
+
+I use [[https://github.com/nickanderson/ob-cfengine3][ob-cfengine3]] with org-mode inside of spacemacs for most of my self
+contained examples and when I start prototyping new policy.
+
+When I have a cfengine3 SRC block and I execute it body file control is
+magically inserted to load the stdlib.
+
+#+Name: demo-ob-cfengine3
+#+BEGIN_SRC cfengine3 :exports both
+  bundle agent main
+  {
+    reports:
+        "$(this.promise_filename):" printfile => cat( $(this.promise_filename) );
+        "Running CFEngine $(sys.cf_version)";
+
+  }
+#+END_SRC
+
+You can see in the output here the body file control that was automatically
+inserted.
+
+#+RESULTS: demo-ob-cfengine3
+#+BEGIN_EXAMPLE
+R: /home/nickanderson/src/blog/hugo-export/content/post/cfengine3-182209dH:
+R: body file control{ inputs => { '$(sys.libdir)/stdlib.cf' };}
+R: bundle agent main
+R: {
+R:   reports:
+R:       "$(this.promise_filename):" printfile => cat( $(this.promise_filename) );
+R:       "Running CFEngine $(sys.cf_version)";
+R: 
+R: }
+R: Running CFEngine 3.11.0
+#+END_EXAMPLE
+
+In my opinion using [[https://docs.cfengine.com/docs/3.10/reference-components-file_control_promises.html][body file control]] is the easiest way to include another
+policy file.
+
+<img src="http://cmdln.org/images/demo-ob-cfengine3.gif" alt="" width="100%"/>
+

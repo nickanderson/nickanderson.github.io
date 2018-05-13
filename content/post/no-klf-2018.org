@@ -1,0 +1,24 @@
+#+Title: No Klf 2018 :`(
+#+AUTHOR: Nick Anderson
+#+DATE: 2018-01-05T13:35:04-06:00
+#+TAGS: linux
+#+DRAFT: false
+
+Anyone interested in organizing [[http://kansaslinuxfest.org/][Kansas Linux Fest]] in 2018?
+
+In 2016 and 2017 KLF was hosted in Wichita KS at Wichita State University. The
+prior two years organizers are a bit burned out and are taking a break.
+
+#+Caption: Ben Roose [Wed Nov 15 2017] irc.freenode.net
+#+BEGIN_QUOTE
+<ben_roose> Hi nickanderson, Sadly at the moment there is not a KLF 2018
+            planned. The few of us who created KLF 2017 are rather burned out
+            and need a break this year :-(
+<ben_roose> However, if we can find some new people who are willing to take it
+            on either in Wichita or somewhere else in Kansas, then we would be
+            more than happy to assist in the infrastructure side and to
+            consult as part of the conference ...but as of now, we have not
+            found any one new who wishes to take on this task for KLF 2018
+#+END_QUOTE
+
+If you are please [[http://kansaslinuxfest.org/contact/][contact the LKF folks]] and/or email me nick at cmdln dot org

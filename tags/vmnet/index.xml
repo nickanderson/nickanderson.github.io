@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vmnet on </title>
+    <link>http://www.cmdln.org/tags/vmnet/</link>
+    <description>Recent content in Vmnet on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 09 Apr 2008 18:45:52 +0000</lastBuildDate>
+    
+	<atom:link href="http://www.cmdln.org/tags/vmnet/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Patching vmware for 2.6.24</title>
+      <link>http://www.cmdln.org/2008/04/09/patching-vmware-for-2624/</link>
+      <pubDate>Wed, 09 Apr 2008 18:45:52 +0000</pubDate>
+      
+      <guid>http://www.cmdln.org/2008/04/09/patching-vmware-for-2624/</guid>
+      <description>&lt;p&gt;So as I previously said I have updated to Hardy Haron and along with it comes a new kernel that does not work out of the box with vmware. You need to patch your vmnet and vmmon sources to get it working again. So I went ahead and wrote a script to make the process a bit faster.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="">
+
+	<head>
+		<title> Posts &middot;  </title>
+
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.34" />
+
+
+<script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="http://www.cmdln.org/css/nix.css">
+<link rel="stylesheet" href="http://www.cmdln.org/css/syntax.css">
+
+
+<link href="https://fonts.googleapis.com/css?family=Inconsolata|Open+Sans|Roboto|Montserrat|Concert+One" rel="stylesheet">
+
+
+
+
+	</head>
+
+	<body>
+		<header>
+<nav class="navbar navbar-default navbar-fixed-top navbar-inverse font-header">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" id="green-terminal" href=http://www.cmdln.org>nick@cmdln.org ~ $</a>
+		</div>
+
+		
+		<div class="collapse navbar-collapse" id="navbar-collapse-1">
+			<ul class="nav navbar-nav navbar-right">
+				<li>
+					<a href="http://www.cmdln.org">/home/nick</a>
+				</li>
+				
+				
+				<li >
+					<a href="/post/">~/posts</a>
+				</li>
+				
+
+			</ul>
+		</div>
+	</div>
+</nav>
+</header>
+
+		<div class="container wrapper">
+			<div class="row">
+				<div class="col-xs-12 text-center">
+					<h1 id=>Posts</h1>
+				</div>
+			</div>
+			<ul id="post-list">
+                	
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
+							<h4 class="post-link"><a href="http://www.cmdln.org/2018/01/29/purging-packages-with-the-cfengine-3-apt_get-package-module/">Purging packages with the cfengine 3 apt_get package module</a></h4>
+							<h4 class="post-date">Jan 29, 2018</h4>
+						</div>
+						<div class="post-summary"><p>How can I purge a package using the apt_get package_module? policy =&gt; purge doesn't work.  present and absent are the package states, purge is an option for package manager. You should be able to use the options attribute since the =apt_get= package module supports it.
+12345678910 bundle agent main { packages: # Purging a package using the --purge option  &#34;screen&#34; policy =&gt; &#34;absent&#34;, package_module =&gt; apt_get, options =&gt; { &#34;--remove&#34; }; }    Note that you can use any Configuration Item as well:</p></div>
+						<div class="post-list-footer text-center">
+							<a href="http://www.cmdln.org/2018/01/29/purging-packages-with-the-cfengine-3-apt_get-package-module/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
+							<h4 class="post-link"><a href="http://www.cmdln.org/2018/01/28/timeboxing-policy-in-cfengine3/">Timeboxing Policy in Cfengine3</a></h4>
+							<h4 class="post-date">Jan 28, 2018</h4>
+						</div>
+						<div class="post-summary"><p>How can I make cfengine do things during a specific time window?  You can find "time based classes" in the cf-promises --show-classes output, they are easily identified because they are tagged with time_based. For example:
+1 cf-promises --show-classes | grep time   | Day2 time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | GMT_Afternoon time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | GMT_Day2 time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | GMT_Hr14 time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | GMT_Hr14_Q1 time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | GMT_Lcycle_1 time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | GMT_March time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | GMT_Min10 time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | GMT_Min10_15 time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | GMT_Q1 time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | GMT_Thursday time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | GMT_Yr2017 time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | Hr08 time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | Hr08_Q1 time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | Hr8 time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | Lcycle_1 time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | March time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | Min10 time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | Min10_15 time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | Morning time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | Q1 time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | Thursday time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | Yr2017 time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass |  You can guard your promise with a time based class expression so that it can only execute during the 7:00 hour.</p></div>
+						<div class="post-list-footer text-center">
+							<a href="http://www.cmdln.org/2018/01/28/timeboxing-policy-in-cfengine3/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
+							<h4 class="post-link"><a href="http://www.cmdln.org/2018/01/27/formatting-time-in-cfengine3/">Formatting Time in CFEngine3</a></h4>
+							<h4 class="post-date">Jan 27, 2018</h4>
+						</div>
+						<div class="post-summary"><p>How do I format and convert time strings?  The strftime() function takes unix epoch format as input and can format the time using the standard strftime templates.
+1234567 bundle agent main { reports: &#34;$(with)&#34; with =&gt; strftime( localtime, &#34;%FT%R:%S%Z&#34;, now() ); }  R: 2018-01-27T15:47:14CST  Unfortunately there is currently no native way to convert from other inputs formats. You can however, use an external command.
+12345678910111213 bundle agent main { vars: &#34;mock_sys_last_policy_update&#34; string =&gt; &#34;Sat Jan 27 20:18:37 2018&#34;, comment =&gt; &#34;This is the same format that sys.</p></div>
+						<div class="post-list-footer text-center">
+							<a href="http://www.cmdln.org/2018/01/27/formatting-time-in-cfengine3/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
+							<h4 class="post-link"><a href="http://www.cmdln.org/2018/01/16/setting-permissions-using-uid-username-gid-or-groupname-with-cfengine-3/">Setting permissions using uid, username, gid, or groupname with cfengine 3</a></h4>
+							<h4 class="post-date">Jan 16, 2018</h4>
+						</div>
+						<div class="post-summary"><p>Can we use uid/gid to set permissions instead of username and groupname?
+Yes, you sure can.
+1234567891011121314151617181920212223 bundle agent main { files: # Here we use username and groupname  &#34;/tmp/example&#34; create =&gt; &#34;true&#34;, perms =&gt; mog( &#34;600&#34;, &#34;root&#34;, &#34;root&#34; ); # Here we use uid and gid  &#34;/tmp/example&#34; perms =&gt; mog( &#34;600&#34;, 1000, 136 ); } body perms mog(mode,user,group) # @brief Set the file&#39;s mode, owner and group  # @param mode The new mode  # @param user The username of the new owner  # @param group The group name  { owners =&gt; { &#34;$(user)&#34; }; groups =&gt; { &#34;$(group)&#34; }; mode =&gt; &#34;$(mode)&#34;; }   Run the above example:</p></div>
+						<div class="post-list-footer text-center">
+							<a href="http://www.cmdln.org/2018/01/16/setting-permissions-using-uid-username-gid-or-groupname-with-cfengine-3/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
+							<h4 class="post-link"><a href="http://www.cmdln.org/2018/01/15/standalone-mustache-policy/">Standalone Mustache Policy</a></h4>
+							<h4 class="post-date">Jan 15, 2018</h4>
+						</div>
+						<div class="post-summary"><p>Does CFEngine provide tool to render a mustache template?
+No, CFEngine doesn't have a standalone tool to render mustache. This online demo is a good place to quickly prototype a simple template and data set.
+Another option is to use a stand-alone policy file.
+Name the file whatever you like. It looks for json in a file named the same suffixed with .json, it looks for a mustache template named the same suffixed with .</p></div>
+						<div class="post-list-footer text-center">
+							<a href="http://www.cmdln.org/2018/01/15/standalone-mustache-policy/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
+							<h4 class="post-link"><a href="http://www.cmdln.org/2018/01/05/no-klf-2018-/">No Klf 2018 :`(</a></h4>
+							<h4 class="post-date">Jan 5, 2018</h4>
+						</div>
+						<div class="post-summary"><p>Anyone interested in organizing Kansas Linux Fest in 2018?
+In 2016 and 2017 KLF was hosted in Wichita KS at Wichita State University. The prior two years organizers are a bit burned out and are taking a break.
+   Hi nickanderson, Sadly at the moment there is not a KLF 2018  planned. The few of us who created KLF 2017 are rather burned out  and need a break this year :-(   However, if we can find some new people who are willing to take it  on either in Wichita or somewhere else in Kansas, then we would be  more than happy to assist in the infrastructure side and to  consult as part of the conference .</p></div>
+						<div class="post-list-footer text-center">
+							<a href="http://www.cmdln.org/2018/01/05/no-klf-2018-/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
+							<h4 class="post-link"><a href="http://www.cmdln.org/2017/12/26/vars-cant-use-ifelapsed/">vars can&#39;t use ifelapsed</a></h4>
+							<h4 class="post-date">Dec 26, 2017</h4>
+						</div>
+						<div class="post-summary"><p>Why doesn't body action if_elapsed work with vars type promises?  Let's start with the details of body action if_elapsed.
+1234567 body action if_elapsed(x) # @brief Evaluate the promise every `x` minutes  # @param x The time in minutes between promise evaluations  { ifelapsed =&gt; &#34;$(x)&#34;; expireafter =&gt; &#34;$(x)&#34;; }   The ifelapsed action body attribute is the number of minutes before next allowed assessment of a promise.</p></div>
+						<div class="post-list-footer text-center">
+							<a href="http://www.cmdln.org/2017/12/26/vars-cant-use-ifelapsed/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
+							<h4 class="post-link"><a href="http://www.cmdln.org/2017/12/22/check-if-a-file-contains-a-multi-line-regex/">Check if a file contains a multi-line regex</a></h4>
+							<h4 class="post-date">Dec 22, 2017</h4>
+						</div>
+						<div class="post-summary"><p>Is there any way to do a multiline regex check for a file in CFEngine?  There is no function for searching a file for content. The grep() function operates on lists, not files. However using readfile() and regcmp() I was sill able to search for a multi-line string using only native functionaity
+In the example below we first create a file with content that spans multiple lines. Then we read that file content into a variable and use a regular expression on the variable content.</p></div>
+						<div class="post-list-footer text-center">
+							<a href="http://www.cmdln.org/2017/12/22/check-if-a-file-contains-a-multi-line-regex/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
+							<h4 class="post-link"><a href="http://www.cmdln.org/2017/12/21/cfengine-files-preserve-with-explicit-perms/">Cfengine Files Preserve With Explicit Perms</a></h4>
+							<h4 class="post-date">Dec 21, 2017</h4>
+						</div>
+						<div class="post-summary"><p>If I have a promise with a copy_from promise where the body specifies that  permissions should be preserved and I also have a perms body on the same  promise what is expected to happen?  The files type promises documentation describes the normal order of files promise attributes during promise actuation.
+The documentation notes:
+ file presence ( create | copy | link ) permissions file content  So the explicitly specified permissions should win in the end.</p></div>
+						<div class="post-list-footer text-center">
+							<a href="http://www.cmdln.org/2017/12/21/cfengine-files-preserve-with-explicit-perms/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
+							<h4 class="post-link"><a href="http://www.cmdln.org/2017/12/04/self-organizing-groups-with-select_class-in-cfengine-3/">Self organizing groups with select_class in cfengine 3</a></h4>
+							<h4 class="post-date">Dec 4, 2017</h4>
+						</div>
+						<div class="post-summary"><p>How can my hosts self organize into different groups?
+In cfengine 3 select_class can be used for partitioning hosts into separate groups without central coordination. Given the same list of options in the same order each host will always choose the same option.
+1234567891011121314151617181920212223242526272829303132333435363738394041 bundle agent demo_select_class { vars: &#34;options&#34; slist =&gt; { &#34;one&#34;, &#34;two&#34; }, meta =&gt; { &#34;inventory&#34;, &#34;attribute_name=Select Class Options&#34; }; # Prefix the options with &#34;select_class_&#34; as select_class will define  # untagged classes that we will use to define a class tagged for  # inventory.</p></div>
+						<div class="post-list-footer text-center">
+							<a href="http://www.cmdln.org/2017/12/04/self-organizing-groups-with-select_class-in-cfengine-3/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
+			</ul>
+            
+
+<div class="pagination-wrapper text-center">
+  <ul class="pagination">
+      
+      <li>
+          <a href="/post/" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
+      </li>
+      
+      <li
+      class="disabled">
+          <a href="" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+      </li>
+      
+      <li
+      class="active"><a href="/post/">1</a></li>
+      
+      <li
+      ><a href="/post/page/2/">2</a></li>
+      
+      <li
+      ><a href="/post/page/3/">3</a></li>
+      
+      <li
+      ><a href="/post/page/4/">4</a></li>
+      
+      <li
+      ><a href="/post/page/5/">5</a></li>
+      
+      <li
+      ><a href="/post/page/6/">6</a></li>
+      
+      <li
+      ><a href="/post/page/7/">7</a></li>
+      
+      <li
+      ><a href="/post/page/8/">8</a></li>
+      
+      <li
+      ><a href="/post/page/9/">9</a></li>
+      
+      <li
+      ><a href="/post/page/10/">10</a></li>
+      
+      <li
+      ><a href="/post/page/11/">11</a></li>
+      
+      <li
+      ><a href="/post/page/12/">12</a></li>
+      
+      <li
+      ><a href="/post/page/13/">13</a></li>
+      
+      <li
+      ><a href="/post/page/14/">14</a></li>
+      
+      <li
+      ><a href="/post/page/15/">15</a></li>
+      
+      <li
+      ><a href="/post/page/16/">16</a></li>
+      
+      <li
+      ><a href="/post/page/17/">17</a></li>
+      
+      <li
+      ><a href="/post/page/18/">18</a></li>
+      
+      <li
+      ><a href="/post/page/19/">19</a></li>
+      
+      <li
+      ><a href="/post/page/20/">20</a></li>
+      
+      <li
+      ><a href="/post/page/21/">21</a></li>
+      
+      <li
+      ><a href="/post/page/22/">22</a></li>
+      
+      <li
+      ><a href="/post/page/23/">23</a></li>
+      
+      <li
+      >
+          <a href="/post/page/2/" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+      </li>
+      
+      <li>
+          <a href="/post/page/23/" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+      </li>
+      
+    </ul>
+</div>
+
+
+
+			<div class="push"></div>
+		</div>
+		<footer class="footer text-center">
+<p>Copyright &copy; 2018 Nick Anderson -
+<span class="credit">
+	Powered by
+	<a target="_blank" href="https://gohugo.io">Hugo</a>,
+	<a target="_blank" href="https://github.com/LordMathis/hugo-theme-nix/">Nix</a> theme,
+  and
+	<a target="_blank" href="http://orgmode.org/">org-mode</a>.
+</span>
+</p>
+</footer>
+
+	</body>
+</html>

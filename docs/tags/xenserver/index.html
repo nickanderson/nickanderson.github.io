@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="">
+
+	<head>
+		<title> Xenserver &middot;  </title>
+
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.40.3" />
+
+
+<script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="http://nickanderson.github.io/css/nix.css">
+<link rel="stylesheet" href="http://nickanderson.github.io/css/syntax.css">
+
+
+<link href="https://fonts.googleapis.com/css?family=Inconsolata|Open+Sans|Roboto|Montserrat|Concert+One" rel="stylesheet">
+
+
+
+
+	</head>
+
+	<body>
+		<header>
+<nav class="navbar navbar-default navbar-fixed-top navbar-inverse font-header">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" id="green-terminal" href=http://nickanderson.github.io>nick@cmdln.org ~ $</a>
+		</div>
+
+		
+		<div class="collapse navbar-collapse" id="navbar-collapse-1">
+			<ul class="nav navbar-nav navbar-right">
+				<li>
+					<a href="http://nickanderson.github.io">/home/nick</a>
+				</li>
+				
+				
+				<li >
+					<a href="/post/">~/posts</a>
+				</li>
+				
+
+			</ul>
+		</div>
+	</div>
+</nav>
+</header>
+
+		<div class="container wrapper">
+			<div class="row">
+				<div class="col-xs-12 text-center">
+					<h1 id=>Xenserver</h1>
+				</div>
+			</div>
+			<ul id="post-list">
+                	
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
+							<h4 class="post-link"><a href="http://nickanderson.github.io/2010/04/06/how-to-get-console-on-linux-domu-with-xenserver-xm-console-equivlent/">How to get console on linux domU with XenServer (xm console equivlent)</a></h4>
+							<h4 class="post-date">Apr 6, 2010</h4>
+						</div>
+						<div class="post-summary"><p>Besides the gui/vnc consoles you can still use the equivlent of xm console in Citrix XenServer.
+On the host console:
+ xe vm-list to get the list of domins running (just note the uuid of the domain you want). list_domains will list the domain name and the uuid of the domains. Match up your uuid so you get the proper dom_id xm console equivlent is /usr/lib/xen/bin/xenconsole dom_id  Its not in the root users $PATH though I think it ought to be.</p></div>
+						<div class="post-list-footer text-center">
+							<a href="http://nickanderson.github.io/2010/04/06/how-to-get-console-on-linux-domu-with-xenserver-xm-console-equivlent/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
+							<h4 class="post-link"><a href="http://nickanderson.github.io/2010/03/16/xenserver-midnight-ride-beta/">XenServer Midnight Ride Beta</a></h4>
+							<h4 class="post-date">Mar 16, 2010</h4>
+						</div>
+						<div class="post-summary"><p>Citrix has released the beta for the next version of XenServer code named &#8220;Midnight Ride&#8221;.
+I&#8217;m looking forward to the enhanced snapshots (memory+disk), and memory over commit for lab environments.
+Get access to the beta program here</p></div>
+						<div class="post-list-footer text-center">
+							<a href="http://nickanderson.github.io/2010/03/16/xenserver-midnight-ride-beta/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
+							<h4 class="post-link"><a href="http://nickanderson.github.io/2010/03/08/xenserver-license-check-nagios-nrpe-plugin/">XenServer License Check &amp;#8211; Nagios NRPE Plugin</a></h4>
+							<h4 class="post-date">Mar 8, 2010</h4>
+						</div>
+						<div class="post-summary"><p>If you hadn&#8217;t already guessed I am a big fan of the Xen hypervisor. Lately I have been using the Citrix XenServer release because it makes it quite palatable for my co-workers. One annoyance that I do have about XenServer is the requirement that you license it (with a free license) every year. If you fail to license it the GUI stops working. Now I hate relying on GUIs but the fact of the matter is others in my team expect to have a working GUI when they need to do something.</p></div>
+						<div class="post-list-footer text-center">
+							<a href="http://nickanderson.github.io/2010/03/08/xenserver-license-check-nagios-nrpe-plugin/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
+							<h4 class="post-link"><a href="http://nickanderson.github.io/2010/03/04/installing-nrpe-on-xenserver/">Installing NRPE on XenServer</a></h4>
+							<h4 class="post-date">Mar 4, 2010</h4>
+						</div>
+						<div class="post-summary"><p>I like to have as little run in dom0 as possible. However some things you really need checked from dom0, like the status of your raid perhaps. Just some quick instructions on getting Nagios NRPE running in XenServer.
+ Install EPEL repository and disable it by default (remember we don&#8217;t want to accidentally install unnecessary packages) wget http://download.fedora.redhat.com/pub/epel/5/$(uname -i)/epel-release-5-3.noarch.rpm rpm -hiv epel-release*.rpm sed -i &rsquo;s/enabled=1/enabled=0/g&rsquo; /etc/yum.repos.d/epel.repo 
+ Install nrpe and configure it to start on boot yum install &ndash;enablerepo=epel nrpe chkconfig nrpe on</p></div>
+						<div class="post-list-footer text-center">
+							<a href="http://nickanderson.github.io/2010/03/04/installing-nrpe-on-xenserver/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
+							<h4 class="post-link"><a href="http://nickanderson.github.io/2010/01/19/fix-xencenter-not-displaying-console-or-performance-statistics/">Fix XenCenter not displaying console or performance statistics</a></h4>
+							<h4 class="post-date">Jan 19, 2010</h4>
+						</div>
+						<div class="post-summary"><p><p>I am sure you are aware of my affinity for the Xen hypervisor. In the last year I have switched over to Citrix Xenserver. With other people managing VMs as well having a nice GUI is helpful. One of my complaints is that the GUI (XenCenter) is a windows only app. C&#8217;mon, Citrix, please release a cross platform management console. I&#8217;ve got to run a windows VM just to use the GUI (granted I don&#8217;t have to use the gui, there is a nice API and console utilities). At any rate today I noticed that I could no longer pull up the console for a windows VM nor could I pull up the performance metrics available in XenCenter. A few searches turned up <a href="http://kennethhunt.com">Kenneth Hunts blog</a> and a post that showed me where to fix it. The windows box running XenCenter has a cache folder located in %AppData%\Citrix\XenCenterMain.exe_Url_xxxxxxxxxx. If you remove the cache you should be able to see the console and performance graphs again. If by chance you remove the entire folder you will need to re-add all dom0s back into XenCenter.</p></p></div>
+						<div class="post-list-footer text-center">
+							<a href="http://nickanderson.github.io/2010/01/19/fix-xencenter-not-displaying-console-or-performance-statistics/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
+			</ul>
+            
+
+
+
+			<div class="push"></div>
+		</div>
+		<footer class="footer text-center">
+<p>Copyright &copy; 2018 Nick Anderson -
+<span class="credit">
+	Powered by
+	<a target="_blank" href="https://gohugo.io">Hugo</a>,
+	<a target="_blank" href="https://github.com/LordMathis/hugo-theme-nix/">Nix</a> theme,
+  and
+	<a target="_blank" href="http://orgmode.org/">org-mode</a>.
+</span>
+</p>
+</footer>
+
+	</body>
+</html>

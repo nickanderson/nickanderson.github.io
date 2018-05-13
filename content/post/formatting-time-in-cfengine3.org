@@ -1,0 +1,49 @@
+#+Title: Formatting Time in CFEngine3
+#+AUTHOR: Nick Anderson
+#+DATE: 2018-01-27T10:00:24
+#+TAGS: cfengine
+#+DRAFT: false
+
+#+BEGIN_QUOTE
+How do I format and convert time strings?
+#+END_QUOTE
+
+The =strftime()= function takes unix epoch format as input and can format the
+time using the standard strftime templates.
+
+#+Caption: Output current time in ISO 8601 format
+#+BEGIN_SRC cfengine3 :exports both
+  bundle agent main
+  {
+    reports:
+
+        "$(with)"
+          with => strftime( localtime, "%FT%R:%S%Z", now() );
+  }
+#+END_SRC
+
+#+RESULTS:
+: R: 2018-01-27T15:47:14CST
+
+Unfortunately there is currently no native way to convert from other inputs
+formats. You can however, use an external command.
+
+#+Caption: Convert from non epoch using external command 
+#+BEGIN_SRC cfengine3 :exports both
+  bundle agent main
+  {
+    vars: 
+
+        "mock_sys_last_policy_update"
+          string => "Sat Jan 27 20:18:37 2018",
+          comment => "This is the same format that sys.last_policy_update uses";
+
+    reports:
+
+        "$(with) == $(mock_sys_last_policy_update)"
+          with => execresult( 'date --date="$(mock_sys_last_policy_update)" "+%s"', useshell);
+  }
+#+END_SRC
+
+#+RESULTS:
+: R: 1517105917 == Sat Jan 27 20:18:37 2018

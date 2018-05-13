@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kde4 on </title>
+    <link>http://www.cmdln.org/tags/kde4/</link>
+    <description>Recent content in Kde4 on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 16 Jun 2008 01:43:05 +0000</lastBuildDate>
+    
+	<atom:link href="http://www.cmdln.org/tags/kde4/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Change KDE 4 panel clock to 12hr from 24hr military</title>
+      <link>http://www.cmdln.org/2008/06/15/change-kde-4-panel-clock-to-12hr-from-24hr-military/</link>
+      <pubDate>Mon, 16 Jun 2008 01:43:05 +0000</pubDate>
+      
+      <guid>http://www.cmdln.org/2008/06/15/change-kde-4-panel-clock-to-12hr-from-24hr-military/</guid>
+      <description>&lt;p&gt;It&amp;#8217;s not that I can not read 24 hour time, it&amp;#8217;s just a pain to deal with on a daily basis. I was raised with 12 hr, and its just quicker for me to read. So if you are running KDE4 and you would prefer 12 hour format in your panel read on.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

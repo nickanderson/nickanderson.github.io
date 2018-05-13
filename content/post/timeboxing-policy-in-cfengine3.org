@@ -1,0 +1,172 @@
+#+Title: Timeboxing Policy in Cfengine3
+#+AUTHOR: Nick Anderson
+#+DATE: 2018-01-28T09:50:27
+#+TAGS: cfengine
+#+DRAFT: false
+
+#+BEGIN_QUOTE
+  How can I make cfengine do things during a specific time window?
+#+END_QUOTE
+
+You can find "time based classes" in the ~cf-promises --show-classes~ output,
+they are easily identified because they are tagged with =time_based=. For
+example:
+
+#+BEGIN_SRC sh :exports both :wrap EXAMPLE :output results
+  cf-promises --show-classes | grep time
+#+END_SRC
+
+#+RESULTS:
+#+BEGIN_EXAMPLE
+| Day2                                    time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass |
+| GMT_Afternoon                           time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass |
+| GMT_Day2                                time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass |
+| GMT_Hr14                                time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass |
+| GMT_Hr14_Q1                             time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass |
+| GMT_Lcycle_1                            time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass |
+| GMT_March                               time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass |
+| GMT_Min10                               time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass |
+| GMT_Min10_15                            time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass |
+| GMT_Q1                                  time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass |
+| GMT_Thursday                            time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass |
+| GMT_Yr2017                              time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass |
+| Hr08                                    time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass |
+| Hr08_Q1                                 time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass |
+| Hr8                                     time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass |
+| Lcycle_1                                time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass |
+| March                                   time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass |
+| Min10                                   time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass |
+| Min10_15                                time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass |
+| Morning                                 time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass |
+| Q1                                      time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass |
+| Thursday                                time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass |
+| Yr2017                                  time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass |
+#+END_EXAMPLE
+
+You can guard your promise with a time based class expression so that it can
+only execute during the 7:00 hour. It's important to understand that =body
+action if_elapsed= is based on promise locking. So that restriction will not be
+maintained if you run the agent without locks. Usually that's fine, but in some
+cases you might want a bit more protection to be sure that the promise does not
+execute more than once within a given time period. If you need higher assurance
+you can use persistent classes.
+
+#+BEGIN_SRC cfengine3
+  bundle agent main
+  {
+    reports:
+        "Hello, its during the 8:00am hour here. Specifically its $(sys.date)";
+
+      Hr08::
+        "This report will only be emitted once during the 8:00 hour."
+        action => if_elapsed("90");
+        comment => "Note: this promise only executes the promise if it has not
+                    been kept or repaired in the last 90 minutes. Since the
+                    promise is class guarded to Hr08 it will only be evaluated
+                    during agent runs that happen between 8 and 9 am local time.
+                    Also note action if_elapsed leverages promise locking. So if
+                    you run with -K (no locks) this restriction will be skipped.
+                    If you need for this action to be very strict and only happen
+                    once even if running with -K then you would need to use a
+                    persistent class.";
+
+        Hr08.!report_emitted::
+        "This report will only be emitted once during the 8:00 hour. Even if locks are skipped."
+          classes => results("bundle", "my_report");
+
+    classes:
+        "report_emitted"
+          expression => "my_report_kept|my_report_repaired",
+          scope => "namespace",
+          persistence => "90";
+  }
+#+END_SRC
+
+#+BEGIN_EXAMPLE
+  > $ sudo cf-agent -KIf ./main.cf                                                                         
+  R: Hello, its during the 8:00am hour here. Specifically its Thu Mar  2 08:30:55 2017
+  R: This report will only be emitted once during the 8:00 hour.
+  R: This report will only be emitted once during the 8:00 hour. Even if locks are skipped.
+                                                                                                          
+  > $ sudo cf-agent -KIf ./main.cf                                                                         
+  R: Hello, its during the 8:00am hour here. Specifically its Thu Mar  2 08:30:59 2017
+  R: This report will only be emitted once during the 8:00 hour.
+#+END_EXAMPLE
+
+Generally I do not recommend using time based classes as a direct guard because
+it can complicate testing or ad-hoc execution. I typically recommend setting a
+class based on the time class, and then using that soft class as your guard. I
+think this example will make it more clear:
+
+#+Caption: Example showing differences between locking and persistent classes
+#+BEGIN_SRC cfengine3
+  body file control
+  {
+    inputs => { "$(sys.libdir)/stdlib.cf" };
+  }
+
+  bundle agent main
+  {
+    classes:
+      "maintanance_window" expression => "Hr09";
+
+    reports:
+        "Hello, its $(sys.date)";
+
+      maintanance_window::
+        "This report will only be emitted once during the maintanaince window unless locks are cleared."
+          action => if_elapsed("90"),
+          comment => "Note: this promise only executes the promise if it has not
+                      been kept or repaired in the last 90 minutes. Since the
+                      promise is class guarded to maintanance_windows it will only be evaluated
+                      during agent runs that happen when the class
+                      maintanance_window is defined (normally this is only
+                      between 8 and 9 am locally.  Also note action if_elapsed
+                      leverages promise locking. So if you run with -K (no locks)
+                      this restriction will be skipped.  If you need for this
+                      action to be very strict and only happen once even if
+                      running with -K then you would need to use a persistent class.";
+
+        maintanance_window.!(my_report2_kept|my_report2_repaired)::
+        "This report will only be emitted once during the maintanance window. Even if locks are skipped."
+          handle => "2",
+          classes => results_persist("my_report2", "90"),
+          comment => "This promise will define classes for 90 minutes based on
+                      the promise result that are prefixed with 'my_report'.";
+
+  }
+
+  body classes results_persist(prefix, minutes)
+  {
+
+    inherit_from => results("namespace", $(prefix));
+    persist_time => "$(minutes)";
+
+  }
+#+END_SRC
+
+#+BEGIN_EXAMPLE
+# Note its during 8am hour, so no reports
+> $ sudo cf-agent -KIf ./main.cf                                                                                                                                                                                           
+R: Hello, its Thu Mar  2 08:40:21 2017
+
+# We get both reports becasue I manually defined
+# the maintance_window class which would normally
+# only be defined during the 8am hour.
+# This is useful for testing or ad-hoc execution.
+
+> $ sudo cf-agent -KIf ./main.cf --define maintanance_window                                                                                                                                                                                                                                                                                                         
+R: Hello, its Thu Mar  2 08:42:41 2017
+R: This report will only be emitted once during the maintanaince window unless locks are cleared.
+R: This report will only be emitted once during the maintanance window. Even if locks are skipped.
+
+# Note how the persistent class is effective even when
+# promise locks are cleared.
+
+> $ sudo cf-agent -KIf ./main.cf --define maintanance_window                                                                                                                                                                                                                                                                                                         
+R: Hello, its Thu Mar  2 08:42:56 2017
+R: This report will only be emitted once during the maintanaince window unless locks are cleared.
+#+END_EXAMPLE
+
+Hope this helps.
+

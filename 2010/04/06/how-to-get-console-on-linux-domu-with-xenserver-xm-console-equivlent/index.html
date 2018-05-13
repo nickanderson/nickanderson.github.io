@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title> How to get console on linux domU with XenServer (xm console equivlent) &middot;  </title>
+
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.34" />
+
+
+<script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="http://www.cmdln.org/css/nix.css">
+<link rel="stylesheet" href="http://www.cmdln.org/css/syntax.css">
+
+
+<link href="https://fonts.googleapis.com/css?family=Inconsolata|Open+Sans|Roboto|Montserrat|Concert+One" rel="stylesheet">
+
+
+
+
+    </head>
+
+    <body>
+        <header>
+<nav class="navbar navbar-default navbar-fixed-top navbar-inverse font-header">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" id="green-terminal" href=http://www.cmdln.org>nick@cmdln.org ~ $</a>
+		</div>
+
+		
+		<div class="collapse navbar-collapse" id="navbar-collapse-1">
+			<ul class="nav navbar-nav navbar-right">
+				<li>
+					<a href="http://www.cmdln.org">/home/nick</a>
+				</li>
+				
+				
+				<li >
+					<a href="/post/">~/posts</a>
+				</li>
+				
+
+			</ul>
+		</div>
+	</div>
+</nav>
+</header>
+
+        <div class="container wrapper">
+            <h1><a href="http://www.cmdln.org/2010/04/06/how-to-get-console-on-linux-domu-with-xenserver-xm-console-equivlent/">How to get console on linux domU with XenServer (xm console equivlent)</a></h1>
+            <span class="post-date">Apr 6, 2010 </span>
+            <div class="post-content">
+                <p>Besides the gui/vnc consoles you can still use the equivlent of xm console in Citrix XenServer.</p>
+
+<p>On the host console:</p>
+
+<ul>
+<li>xe vm-list to get the list of domins running (just note the uuid of the domain you want).</li>
+<li>list_domains will list the domain name and the uuid of the domains. Match up your uuid so you get the proper dom_id</li>
+<li>xm console equivlent is /usr/lib/xen/bin/xenconsole dom_id</li>
+</ul>
+
+<p>Its not in the root users $PATH though I think it ought to be. Of course you can symlink it or alter your path yourself but it would be a sensible default.</p>
+
+<p>Example:</p>
+
+<p>xen01 = dom0</p>
+
+<p>knox = linuxpv domU</p>
+
+<p>Say I want to connect to knox (a linux domU)</p>
+
+<pre class="brush: bash; title: ; notranslate" title="">[root@xen01 ~]# xe vm-list
+uuid ( RO)           : 8258a6d4-23f6-003d-30d7-65bd13086863
+name-label ( RW): knox
+power-state ( RO): running
+
+uuid ( RO)           : 1a191475-a99d-7a77-6550-b30a0038fd92
+name-label ( RW): Windows Server 2008 SP2 x86
+power-state ( RO): halted
+
+uuid ( RO)           : ffd95724-d818-4f15-b4b4-159b7ff41df4
+name-label ( RW): Control domain on host: xen01
+power-state ( RO): running
+</pre>
+
+<p>Now get domain ids</p>
+
+<pre class="brush: bash; title: ; notranslate" title="">[root@xen01 ~]# list_domains
+id |                                 uuid |  state
+0 | ffd95724-d818-4f15-b4b4-159b7ff41df4 |     R
+1 | bc150966-8c21-7ad9-c329-839d5823041d |    B H
+7 | baa3699b-95dd-eea0-ccc4-51e8972857f5 |    B
+11 | 8258a6d4-23f6-003d-30d7-65bd13086863 |    B
+</pre>
+
+<p>You can see the domain ID that matches the UUID of knox is 11. So we use xenconsole.</p>
+
+<pre class="brush: bash; title: ; notranslate" title="">[root@xen01 ~]# /usr/lib/xen/bin/xenconsole 11
+(press enter)
+You have new mail in /var/spool/mail/root
+[root@knox ~]#
+</pre>
+
+<p>`Besides the gui/vnc consoles you can still use the equivlent of xm console in Citrix XenServer.</p>
+
+<p>On the host console:</p>
+
+<ul>
+<li>xe vm-list to get the list of domins running (just note the uuid of the domain you want).</li>
+<li>list_domains will list the domain name and the uuid of the domains. Match up your uuid so you get the proper dom_id</li>
+<li>xm console equivlent is /usr/lib/xen/bin/xenconsole dom_id</li>
+</ul>
+
+<p>Its not in the root users $PATH though I think it ought to be. Of course you can symlink it or alter your path yourself but it would be a sensible default.</p>
+
+<p>Example:</p>
+
+<p>xen01 = dom0</p>
+
+<p>knox = linuxpv domU</p>
+
+<p>Say I want to connect to knox (a linux domU)</p>
+
+<pre class="brush: bash; title: ; notranslate" title="">[root@xen01 ~]# xe vm-list
+uuid ( RO)           : 8258a6d4-23f6-003d-30d7-65bd13086863
+name-label ( RW): knox
+power-state ( RO): running
+
+uuid ( RO)           : 1a191475-a99d-7a77-6550-b30a0038fd92
+name-label ( RW): Windows Server 2008 SP2 x86
+power-state ( RO): halted
+
+uuid ( RO)           : ffd95724-d818-4f15-b4b4-159b7ff41df4
+name-label ( RW): Control domain on host: xen01
+power-state ( RO): running
+</pre>
+
+<p>Now get domain ids</p>
+
+<pre class="brush: bash; title: ; notranslate" title="">[root@xen01 ~]# list_domains
+id |                                 uuid |  state
+0 | ffd95724-d818-4f15-b4b4-159b7ff41df4 |     R
+1 | bc150966-8c21-7ad9-c329-839d5823041d |    B H
+7 | baa3699b-95dd-eea0-ccc4-51e8972857f5 |    B
+11 | 8258a6d4-23f6-003d-30d7-65bd13086863 |    B
+</pre>
+
+<p>You can see the domain ID that matches the UUID of knox is 11. So we use xenconsole.</p>
+
+<pre class="brush: bash; title: ; notranslate" title="">[root@xen01 ~]# /usr/lib/xen/bin/xenconsole 11
+(press enter)
+You have new mail in /var/spool/mail/root
+[root@knox ~]#
+</pre>
+
+<p>`</p>
+
+            </div>
+            
+            <div class="post-comments">
+                
+            </div>
+            
+            <div class="push"></div>
+        </div>
+        <footer class="footer text-center">
+<p>Copyright &copy; 2018 Nick Anderson -
+<span class="credit">
+	Powered by
+	<a target="_blank" href="https://gohugo.io">Hugo</a>,
+	<a target="_blank" href="https://github.com/LordMathis/hugo-theme-nix/">Nix</a> theme,
+  and
+	<a target="_blank" href="http://orgmode.org/">org-mode</a>.
+</span>
+</p>
+</footer>
+
+    </body>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sun on </title>
+    <link>http://www.cmdln.org/tags/sun/</link>
+    <description>Recent content in Sun on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 31 Mar 2010 17:11:06 +0000</lastBuildDate>
+    
+	<atom:link href="http://www.cmdln.org/tags/sun/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Automate Sun iLOM settings</title>
+      <link>http://www.cmdln.org/2010/03/31/automate-sun-ilom-settings/</link>
+      <pubDate>Wed, 31 Mar 2010 17:11:06 +0000</pubDate>
+      
+      <guid>http://www.cmdln.org/2010/03/31/automate-sun-ilom-settings/</guid>
+      <description>I recently had a need to push out a few settings to a group of iLOMs on new Sun servers. I really despise using a web interface for everything so I took the ssh route. The first thing I tried to do after determining the commands I needed was to shove the commands in with ssh directly. I quickly became apparent that route just wasn&amp;#8217;t going to work.
+When you log into the iLOM &amp;#8220;daemons&amp;#8221; need to initialize.</description>
+    </item>
+    
+  </channel>
+</rss>

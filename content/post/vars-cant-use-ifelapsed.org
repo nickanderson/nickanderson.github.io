@@ -1,0 +1,126 @@
+#+Title: vars can't use ifelapsed
+#+AUTHOR: Nick Anderson
+#+DATE: 2017-12-26
+#+TAGS: cfengine3
+#+DRAFT: false
+
+#+BEGIN_QUOTE
+  Why doesn't =body action if_elapsed= work with =vars= type promises?
+#+END_QUOTE
+
+Let's start with the details of =body action if_elapsed=.
+
+#+Caption: body action if_elapsed from the standard library
+#+BEGIN_SRC cfengine3
+  body action if_elapsed(x)
+  # @brief Evaluate the promise every `x` minutes
+  # @param x The time in minutes between promise evaluations
+  {
+        ifelapsed => "$(x)";
+        expireafter => "$(x)";
+  }
+#+END_SRC
+
+The [[https://docs.cfengine.com/docs/master/reference-promise-types.html#ifelapsed][=ifelapsed= action body attribute]] is the number of minutes before next
+allowed assessment of a promise. It overrides [[https://docs.cfengine.com/docs/master/reference-components-cf-agent.html#ifelapsed][=body agent control ifelapsed=]]
+which defaults to 1 minute. It's intended to prevent overload due to
+unintentional resource consumption, but it can be used to control frequency. The
+[[https://docs.cfengine.com/docs/master/reference-promise-types.html#expireafter][=expireafter= action body attribute]] is the number of minutes a promise is
+allowed to run before the agent is subject to termination.
+
+So the =if_elapsed= action body is saying that once the promise has been
+verified as having an outcome of kept or repaired it should remain locked for x
+minutes. The agent should not try to re-verify it until that lock is no longer
+valid. Additionally if another agent sees that an agent is still executing the
+promise after x minutes then the apparently stuck agent should be terminated.
+
+In cfengine a [[https://docs.cfengine.com/docs/master/reference-language-concepts-promises.html#promise-locking][promise is locked once it is seen to be kept or repaired]]. By
+default promises are locked for 1 minute. Until a lock expires the promise will
+be skipped. In this example, there are two promises. One promise to report the
+date, and one promise to report =Hello=. The date will be different each time
+the agent is run so the promise lock will not be the same between two agent runs
+and thus it will not be affected by promise locking.
+
+#+Name: Example illustrating promise locking
+#+Caption: Example illustrating promise locking
+#+BEGIN_SRC cfengine3 :use-locks yes
+  bundle agent main
+  {
+     reports:
+       "$(sys.date)";
+       "Hello";
+       "Infrequent hello"
+        action => if_elapsed( "5" );
+  }
+#+END_SRC
+
+Here are the results of several executions of ~cf-agent -f /tmp/example.cf~.
+
+#+Caption: Example illustrating promise locking first run
+#+RESULTS: Example illustrating promise locking first run
+: R: Sat Dec 23 09:53:57 2017
+: R: Hello
+: R: Infrequent hello
+
+#+Caption: Example illustrating promise locking second run
+#+RESULTS: Example illustrating promise locking second run
+: R: Sat Dec 23 09:54:19 2017
+
+#+Caption: Example illustrating promise locking third run
+#+RESULTS: Example illustrating promise locking third run
+: R: Sat Dec 23 09:54:59 2017
+: R: Hello
+
+#+Caption: Example illustrating promise locking fourth run
+#+RESULTS: Example illustrating promise locking fourth run
+: R: Sat Dec 23 09:55:14 2017
+
+#+Caption: Example illustrating promise locking fifth run
+#+RESULTS: Example illustrating promise locking fifth run
+: R: Sat Dec 23 09:55:59 2017
+: R: Hello
+
+#+Caption: Example illustrating promise locking sixth run
+#+RESULTS: Example illustrating promise locking sixth run
+: R: Sat Dec 23 10:38:03 2017
+: R: Hello
+: R: Infrequent hello
+
+=vars= type promises do not participate in promise locking and as such can not
+be affected by the =ifelapsed= action body attribute or the =ifelapsed= agent
+control attribute.
+
+#+Name: Example illustrating vars don't participate in locking
+#+Caption: Example illustrating vars don't participate in locking
+#+BEGIN_SRC cfengine3 :use-locks yes
+  bundle agent main
+  {
+    vars:
+        "msg" string => "Hello World";
+      
+    reports:
+
+        "$(sys.date)";
+
+        "$(msg)"
+          action => immediate;
+  }
+#+END_SRC
+
+Here are the results of a couple runs ( ~cf-agent -f /tmp/vars-are-not-locked.cf~ ).
+
+#+RESULTS: Example illustrating vars don't participate in locking
+: R: Tue Dec 26 13:03:15 2017
+: R: Hello World
+
+Another run a few seconds later:
+
+#+RESULTS: Example illustrating vars don't participate in locking
+: R: Tue Dec 26 13:03:28 2017
+: R: Hello World
+
+We can see that =Hello World= was reported in both runs. It was only reported
+because we attached =body action immediate= to the reports promise. Note the
+ =vars= promise did not require =body action immediate= in order for the variable
+ =msg= to hold the value =Hello World=.
+

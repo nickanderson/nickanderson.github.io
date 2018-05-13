@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title> Error Msg Fail: How to enable telnet on centos/rhel &middot;  </title>
+
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.34" />
+
+
+<script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="http://www.cmdln.org/css/nix.css">
+<link rel="stylesheet" href="http://www.cmdln.org/css/syntax.css">
+
+
+<link href="https://fonts.googleapis.com/css?family=Inconsolata|Open+Sans|Roboto|Montserrat|Concert+One" rel="stylesheet">
+
+
+
+
+    </head>
+
+    <body>
+        <header>
+<nav class="navbar navbar-default navbar-fixed-top navbar-inverse font-header">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" id="green-terminal" href=http://www.cmdln.org>nick@cmdln.org ~ $</a>
+		</div>
+
+		
+		<div class="collapse navbar-collapse" id="navbar-collapse-1">
+			<ul class="nav navbar-nav navbar-right">
+				<li>
+					<a href="http://www.cmdln.org">/home/nick</a>
+				</li>
+				
+				
+				<li >
+					<a href="/post/">~/posts</a>
+				</li>
+				
+
+			</ul>
+		</div>
+	</div>
+</nav>
+</header>
+
+        <div class="container wrapper">
+            <h1><a href="http://www.cmdln.org/2010/04/06/error-msg-fail-how-to-enable-telnet-on-centosrhel/">Error Msg Fail: How to enable telnet on centos/rhel</a></h1>
+            <span class="post-date">Apr 6, 2010 </span>
+            <div class="post-content">
+                <p>Don&#8217;t even start with me about how telnet is horrid. Out side of my control but I recently had issues trying to enable telnet on a server. Typically its pretty straightforward.</p>
+
+<ol>
+<li>yum install telnet-server</li>
+<li>chkconfig telnet on</li>
+<li>chkconfig xinetd on</li>
+<li>service xinetd start</li>
+</ol>
+
+<p>Unfortunately for me this was not working. Every time I tried to telnet to the host after enabling it I would get an error message.</p>
+
+<pre class="brush: bash; title: ; notranslate" title="">telnet host
+Trying 203.0.113.10...
+Connected to host (203.0.113.10).
+Escape character is '^]'.
+getaddrinfo: localhost Name or service not known
+Connection closed by foreign host.
+</pre>
+
+<p>I tried everything I could think of, selinux disabled, ensure localhost in /etc/hosts, connect to ip instead of hostname. Nothing was working. All of my searching was just turning up the obligatory &#8220;Don&#8217;t use telnet, use ssh&#8221;.</p>
+
+<p>While that is generally good advice, in the event you are restricted to using telnet it&#8217;s not very helpful. Obviously is something related to name resolution. From both sides the fqdn was resolvable. Then it dawned on me. This environment also has the standard of not using the fqdn as the hostname as set in /etc/sysconfig/network. I had not ensured that the shorthand hostname was resolvable. I resolved the error by adding the hostname in /etc/hosts, but adding a default search domain in /etc/resolv.conf would work just as well.</p>
+
+<p>This leads me back to the error message. Really it had nothing to do with &#8220;localhost&#8221; or &#8220;127.0.0.1&#8221;. Had it said &#8220;host&#8221; Name or service not known I would have chased down the issue much sooner.</p>
+
+<p><a href="http://serverfault.com/questions/129556/how-do-i-fix-getaddrinfo-localhost-name-or-service-not-found-for-telnet-server/129764#129764">My ServerFault plea for help</a></p>
+
+            </div>
+            
+            <div class="post-comments">
+                
+            </div>
+            
+            <div class="push"></div>
+        </div>
+        <footer class="footer text-center">
+<p>Copyright &copy; 2018 Nick Anderson -
+<span class="credit">
+	Powered by
+	<a target="_blank" href="https://gohugo.io">Hugo</a>,
+	<a target="_blank" href="https://github.com/LordMathis/hugo-theme-nix/">Nix</a> theme,
+  and
+	<a target="_blank" href="http://orgmode.org/">org-mode</a>.
+</span>
+</p>
+</footer>
+
+    </body>

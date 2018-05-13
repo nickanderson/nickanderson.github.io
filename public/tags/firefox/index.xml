@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Firefox on </title>
+    <link>http://nickanderson.github.io/tags/firefox/</link>
+    <description>Recent content in Firefox on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 24 Sep 2010 03:42:57 +0000</lastBuildDate>
+    
+	<atom:link href="http://nickanderson.github.io/tags/firefox/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Migrating to Google Apps: changing mailto link</title>
+      <link>http://nickanderson.github.io/2010/09/23/migrating-to-google-apps-changing-mailto-link/</link>
+      <pubDate>Fri, 24 Sep 2010 03:42:57 +0000</pubDate>
+      
+      <guid>http://nickanderson.github.io/2010/09/23/migrating-to-google-apps-changing-mailto-link/</guid>
+      <description>At $work we are in the process of migrating to Google Apps. Of course I am an early adopter to work out bugs and be a resource for others as they make the migration. One of the issues identified is mailto links pointing to google apps. Its not hard to make the change in firefox.
+First you need to set ﻿﻿gecko.handlerService.allowRegisterFromDifferentHost to true in about:config (type about:config into your address bar).</description>
+    </item>
+    
+    <item>
+      <title>Speed up your firefox (ever so slightly)</title>
+      <link>http://nickanderson.github.io/2009/04/29/speed-up-your-firefox-ever-so-slightly/</link>
+      <pubDate>Wed, 29 Apr 2009 21:40:40 +0000</pubDate>
+      
+      <guid>http://nickanderson.github.io/2009/04/29/speed-up-your-firefox-ever-so-slightly/</guid>
+      <description>So I noticed my places.sqlite has grown to over 80M. Since Firefox 3 thats where things like bookmarks are stored. I guess favicons are stored in that same database. At any rate I am very tab happy. I have to control myself and about once every 2 weeks or so I have to sit down and close out a bunch of tabs. Its not uncommon for me to have 90ish tabs open.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ssh on </title>
+    <link>http://www.cmdln.org/tags/ssh/</link>
+    <description>Recent content in Ssh on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 17 Dec 2008 17:07:58 +0000</lastBuildDate>
+    
+	<atom:link href="http://www.cmdln.org/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ssh config wildcards</title>
+      <link>http://www.cmdln.org/2008/12/17/ssh-config-wildcards/</link>
+      <pubDate>Wed, 17 Dec 2008 17:07:58 +0000</pubDate>
+      
+      <guid>http://www.cmdln.org/2008/12/17/ssh-config-wildcards/</guid>
+      <description>I just wanted to make sure no one forgets that wildcards can be used in your .ssh/config. This can be extremely helpful. For example say you have 100 nodes that have a simple nameing scheme of nodexxxx. You can add the following into your ssh config and pre-poplulate settings.
+Host node* User staffuser IdentityFile ~/.ssh/staff_key  That would cause any ssh connection matching node* to use the user staffuser and .</description>
+    </item>
+    
+    <item>
+      <title>Get around that pesky firewall filtering with tsocks</title>
+      <link>http://www.cmdln.org/2008/02/12/get-around-that-pesky-firewall-filtering-with-tsocks/</link>
+      <pubDate>Tue, 12 Feb 2008 18:12:18 +0000</pubDate>
+      
+      <guid>http://www.cmdln.org/2008/02/12/get-around-that-pesky-firewall-filtering-with-tsocks/</guid>
+      <description>&lt;p&gt;I generally don&amp;#8217;t have any issues knowing someone might be snooping on a bit of my traffic. However there are times you may want your traffic to be a bit more private. For example if your boss is a raging tyrant and your looking for a new job, and you know the sky would fall if he found out you emailed or happened to be on Career Builder or for that matter had even the slightest idea of abandoning him. Yes I am recounting something from my past, hey at least its distant past :). So if you find yourself in that situation read on for how to use tsocks and ssh as a simple proxy.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Restricting SSH commands</title>
+      <link>http://www.cmdln.org/2008/02/11/restricting-ssh-commands/</link>
+      <pubDate>Mon, 11 Feb 2008 06:01:54 +0000</pubDate>
+      
+      <guid>http://www.cmdln.org/2008/02/11/restricting-ssh-commands/</guid>
+      <description>&lt;p&gt;SSH is a powerful tool. When combined with ssh keys, it becomes easy to automate remote procedures like backups. However leaving key access wide open can be a bad idea. It is possible to use restrict ssh keys to specific commands, even coming from specific hosts. There is this nice little perl script called &lt;a HREF=&#34;http://www.hackinglinuxexposed.com/tools/authprogs&#34;&gt;Authprogs&lt;/a&gt; that makes this somewhat easier. Ill show you how to use authprogs for an automated rsync over ssh.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,41 @@
+#+Title: Purging packages with the cfengine 3 apt_get package module
+#+AUTHOR: Nick Anderson
+#+DATE: 2018-01-29T17:25:25-06:00
+#+TAGS: cfengine
+#+DRAFT: false
+
+#+BEGIN_QUOTE
+  How can I purge a package using the apt_get package_module? =policy => purge= doesn't work.
+#+END_QUOTE
+
+=present= and =absent= are the package states, =purge= is an option for package
+manager. You should be able to use the =options= attribute since the [[https://docs.cfengine.com/docs/3.10/reference-promise-types-packages.html#apt_get][=apt_get=
+package module]] supports it.
+
+#+BEGIN_SRC cfengine3 :tangle /tmp/test.cf
+  bundle agent main
+  {
+    packages:
+
+        # Purging a package using the --purge option
+        "screen"
+          policy => "absent",
+          package_module => apt_get,
+          options => { "--remove" };
+  }   
+#+END_SRC
+
+Note that you can use any Configuration Item as well:
+
+#+BEGIN_SRC cfengine3
+  bundle agent main
+  {
+        # Purging a package using the Configuration Item option
+        "screen"
+          policy => "absent",
+          package_module => apt_get,
+          options => { "-o", "APT::Get::Purge=true" };
+  }
+#+END_SRC
+
+

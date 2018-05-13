@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Shared Console on </title>
+    <link>http://www.cmdln.org/tags/shared-console/</link>
+    <description>Recent content in Shared Console on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 25 Aug 2008 21:34:33 +0000</lastBuildDate>
+    
+	<atom:link href="http://www.cmdln.org/tags/shared-console/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Console sharing without setuid gnu screen</title>
+      <link>http://www.cmdln.org/2008/08/25/console-sharing-without-setuid-gnu-screen/</link>
+      <pubDate>Mon, 25 Aug 2008 21:34:33 +0000</pubDate>
+      
+      <guid>http://www.cmdln.org/2008/08/25/console-sharing-without-setuid-gnu-screen/</guid>
+      <description>&lt;p&gt;I mentioned in my last post &lt;a href=&#34;http://www.cmdln.org/2008/08/13/shared-console-sessions/&#34;&gt;Shared console sessions&lt;/a&gt; that I would have an update to get near same functionality without setuid of the screen binary. Well here it is. Hopefully you are aware of expect and how it can be used to automate interactive programs like telnet. Expect is has many more uses that people are exploiting. Enter kibitz. &lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Shared console sessions</title>
+      <link>http://www.cmdln.org/2008/08/13/shared-console-sessions/</link>
+      <pubDate>Thu, 14 Aug 2008 01:14:34 +0000</pubDate>
+      
+      <guid>http://www.cmdln.org/2008/08/13/shared-console-sessions/</guid>
+      <description>&lt;p&gt;I have had several posts regarding screen. Hopefully you have already realized the greatness of screen. Screen has a great feature that allows screen sessions to be shared. To my knowledge there are two ways to use this feature. First you can connect to a screen multiple times as the same user. Second you can use the multiuser mode of screen.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

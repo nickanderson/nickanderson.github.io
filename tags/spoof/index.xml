@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Spoof on </title>
+    <link>http://www.cmdln.org/tags/spoof/</link>
+    <description>Recent content in Spoof on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 06 Apr 2008 17:15:35 +0000</lastBuildDate>
+    
+	<atom:link href="http://www.cmdln.org/tags/spoof/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Testing Email Manually with Telnet (spoofing email)</title>
+      <link>http://www.cmdln.org/2008/04/06/testing-email-manually-with-telnet-spoofing-email/</link>
+      <pubDate>Sun, 06 Apr 2008 17:15:35 +0000</pubDate>
+      
+      <guid>http://www.cmdln.org/2008/04/06/testing-email-manually-with-telnet-spoofing-email/</guid>
+      <description>&lt;p&gt;Being able to send email manually seems to be a bit of a lost art. It is extremely handy to know how to use telnet to send email for testing procmail filters, and any other part of your mail system. It can also be fun to spoof email to a friend or co-worker. Read on for a quick run down.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

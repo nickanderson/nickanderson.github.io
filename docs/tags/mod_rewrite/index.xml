@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mod_rewrite on </title>
+    <link>http://nickanderson.github.io/tags/mod_rewrite/</link>
+    <description>Recent content in Mod_rewrite on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 12 Dec 2008 19:41:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://nickanderson.github.io/tags/mod_rewrite/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Maintenance mode with apache mod_rewrite</title>
+      <link>http://nickanderson.github.io/2008/12/12/maintenance-mode-with-apache-mod_rewrite/</link>
+      <pubDate>Fri, 12 Dec 2008 19:41:00 +0000</pubDate>
+      
+      <guid>http://nickanderson.github.io/2008/12/12/maintenance-mode-with-apache-mod_rewrite/</guid>
+      <description>&lt;p&gt;With small websites sometimes you need to put up a maintenance page while you are making some modifications. Typically you should have some staging enviornment but sometimes infrastructure does not allow for this. If you find your self in this situation you might like this tip. &lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

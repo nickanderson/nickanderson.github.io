@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="">
+
+	<head>
+		<title> Redhat &middot;  </title>
+
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.34" />
+
+
+<script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="http://www.cmdln.org/css/nix.css">
+<link rel="stylesheet" href="http://www.cmdln.org/css/syntax.css">
+
+
+<link href="https://fonts.googleapis.com/css?family=Inconsolata|Open+Sans|Roboto|Montserrat|Concert+One" rel="stylesheet">
+
+
+
+
+	</head>
+
+	<body>
+		<header>
+<nav class="navbar navbar-default navbar-fixed-top navbar-inverse font-header">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" id="green-terminal" href=http://www.cmdln.org>nick@cmdln.org ~ $</a>
+		</div>
+
+		
+		<div class="collapse navbar-collapse" id="navbar-collapse-1">
+			<ul class="nav navbar-nav navbar-right">
+				<li>
+					<a href="http://www.cmdln.org">/home/nick</a>
+				</li>
+				
+				
+				<li >
+					<a href="/post/">~/posts</a>
+				</li>
+				
+
+			</ul>
+		</div>
+	</div>
+</nav>
+</header>
+
+		<div class="container wrapper">
+			<div class="row">
+				<div class="col-xs-12 text-center">
+					<h1 id=>Redhat</h1>
+				</div>
+			</div>
+			<ul id="post-list">
+                	
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
+							<h4 class="post-link"><a href="http://www.cmdln.org/2012/02/18/new-bundle-to-manage-routes-for-redhatcentos-with-cfengine-3/">New bundle to manage routes for RedHat/CentOS with CFEngine 3</a></h4>
+							<h4 class="post-date">Feb 19, 2012</h4>
+						</div>
+						<div class="post-summary"><p>I re-factored rh_add_interface_routes into a new bundle rh_update_routes, you can find them in my CFEngine library.
+The biggest improvement is you no longer have to specify the interface you want the route on. Instead you specify a regular expression of the ip that would be on that interface and the specific interface is found.
+Second major improvement is the direct use of ip route del/add to update currently running system instead of restarting all networking.</p></div>
+						<div class="post-list-footer text-center">
+							<a href="http://www.cmdln.org/2012/02/18/new-bundle-to-manage-routes-for-redhatcentos-with-cfengine-3/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
+							<h4 class="post-link"><a href="http://www.cmdln.org/2012/02/16/bundles-of-bundles-with-cfengine-3/">Bundles of Bundles with CFEngine 3</a></h4>
+							<h4 class="post-date">Feb 16, 2012</h4>
+						</div>
+						<div class="post-summary"><p><p><a href="http://www.cmdln.org/wp-content/uploads/2012/02/Extrusion-Bundles2.jpg"><img class="alignleft size-thumbnail wp-image-936" title="Bundles of Bundles" src="http://www.cmdln.org/wp-content/uploads/2012/02/Extrusion-Bundles2-150x150.jpg" alt="" width="150" height="150" /></a>I&#8217;ve been working more and more with CFEngine lately and I have been slowly building a <a href="http://www.laurand.net/images/Extrusion%20Bundles2.jpg">tiny library</a>. These are all pretty much redhat specific but I welcome patches and comments. Most of the bundles have comments that show usage, if there is interest I may post some example usage later.</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p></p></p></div>
+						<div class="post-list-footer text-center">
+							<a href="http://www.cmdln.org/2012/02/16/bundles-of-bundles-with-cfengine-3/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
+							<h4 class="post-link"><a href="http://www.cmdln.org/2009/07/06/redhats-init-is-teh-suck/">Redhats&amp;#8217; init is teh suck</a></h4>
+							<h4 class="post-date">Jul 7, 2009</h4>
+						</div>
+						<div class="post-summary"><p>I recently had to write an init script for our continuous integration systems remote build agent. Of course this agent is a java jar and does not write its own pidfile. On debian or gentoo (yes I used to rice it) this would not have been an issue. Both have and use start-stop-daemon in their init scripts. start-stop-daemon actually understands that not every process you might want to daemonize writes its own pidfile and thus gives you the ability to daemonize a process, capture its pid, and write a pidfile.</p></div>
+						<div class="post-list-footer text-center">
+							<a href="http://www.cmdln.org/2009/07/06/redhats-init-is-teh-suck/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
+							<h4 class="post-link"><a href="http://www.cmdln.org/2008/04/14/sphinx-init-script-for-rhel3/">Sphinx init script for RHEL3</a></h4>
+							<h4 class="post-date">Apr 14, 2008</h4>
+						</div>
+						<div class="post-summary"><p><p>Had some planned maintenance on one of our servers this weekend. After bringing the server back up I forgot to start searchd for sphinx. Don&#8217;t want that to happen again so I wrote a quick init script for searchd. </p></p></div>
+						<div class="post-list-footer text-center">
+							<a href="http://www.cmdln.org/2008/04/14/sphinx-init-script-for-rhel3/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
+			</ul>
+            
+
+
+
+			<div class="push"></div>
+		</div>
+		<footer class="footer text-center">
+<p>Copyright &copy; 2018 Nick Anderson -
+<span class="credit">
+	Powered by
+	<a target="_blank" href="https://gohugo.io">Hugo</a>,
+	<a target="_blank" href="https://github.com/LordMathis/hugo-theme-nix/">Nix</a> theme,
+  and
+	<a target="_blank" href="http://orgmode.org/">org-mode</a>.
+</span>
+</p>
+</footer>
+
+	</body>
+</html>

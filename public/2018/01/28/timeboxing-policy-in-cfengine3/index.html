@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title> Timeboxing Policy in Cfengine3 &middot;  </title>
+
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.40.3" />
+
+
+<script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="http://nickanderson.github.io/css/nix.css">
+<link rel="stylesheet" href="http://nickanderson.github.io/css/syntax.css">
+
+
+<link href="https://fonts.googleapis.com/css?family=Inconsolata|Open+Sans|Roboto|Montserrat|Concert+One" rel="stylesheet">
+
+
+
+
+    </head>
+
+    <body>
+        <header>
+<nav class="navbar navbar-default navbar-fixed-top navbar-inverse font-header">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" id="green-terminal" href=http://nickanderson.github.io>nick@cmdln.org ~ $</a>
+		</div>
+
+		
+		<div class="collapse navbar-collapse" id="navbar-collapse-1">
+			<ul class="nav navbar-nav navbar-right">
+				<li>
+					<a href="http://nickanderson.github.io">/home/nick</a>
+				</li>
+				
+				
+				<li >
+					<a href="/post/">~/posts</a>
+				</li>
+				
+
+			</ul>
+		</div>
+	</div>
+</nav>
+</header>
+
+        <div class="container wrapper">
+            <h1><a href="http://nickanderson.github.io/2018/01/28/timeboxing-policy-in-cfengine3/">Timeboxing Policy in Cfengine3</a></h1>
+            <span class="post-date">Jan 28, 2018 </span>
+            <div class="post-content">
+                <blockquote>
+<p>
+  How can I make cfengine do things during a specific time window?
+</p>
+</blockquote>
+
+<p>You can find "time based classes" in the <code>cf-promises --show-classes</code> output,
+they are easily identified because they are tagged with <code>time_based</code>. For
+example:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">  cf-promises --show-classes <span class="p">|</span> grep time</code></pre></td></tr></table>
+</div>
+</div>
+<pre><code>| Day2                                    time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass |
+| GMT_Afternoon                           time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass |
+| GMT_Day2                                time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass |
+| GMT_Hr14                                time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass |
+| GMT_Hr14_Q1                             time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass |
+| GMT_Lcycle_1                            time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass |
+| GMT_March                               time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass |
+| GMT_Min10                               time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass |
+| GMT_Min10_15                            time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass |
+| GMT_Q1                                  time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass |
+| GMT_Thursday                            time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass |
+| GMT_Yr2017                              time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass |
+| Hr08                                    time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass |
+| Hr08_Q1                                 time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass |
+| Hr8                                     time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass |
+| Lcycle_1                                time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass |
+| March                                   time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass |
+| Min10                                   time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass |
+| Min10_15                                time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass |
+| Morning                                 time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass |
+| Q1                                      time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass |
+| Thursday                                time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass |
+| Yr2017                                  time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass |
+</code></pre>
+
+<p>You can guard your promise with a time based class expression so that it can
+only execute during the 7:00 hour. It's important to understand that <code>body
+action if_elapsed</code> is based on promise locking. So that restriction will not be
+maintained if you run the agent without locks. Usually that's fine, but in some
+cases you might want a bit more protection to be sure that the promise does not
+execute more than once within a given time period. If you need higher assurance
+you can use persistent classes.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">main</span>
+  <span class="p">{</span>
+    <span class="kd">reports</span><span class="p">:</span>
+        <span class="s">&#34;Hello, its during the 8:00am hour here. Specifically its </span><span class="si">$(sys.date)</span><span class="s">&#34;</span><span class="p">;</span>
+
+      <span class="nc">Hr08</span><span class="p">::</span>
+        <span class="s">&#34;This report will only be emitted once during the 8:00 hour.&#34;</span>
+        <span class="kr">action</span> <span class="o">=&gt;</span> <span class="nf">if_elapsed</span><span class="p">(</span><span class="s">&#34;90&#34;</span><span class="p">);</span>
+        <span class="kr">comment</span> <span class="o">=&gt;</span> <span class="s">&#34;Note: this promise only executes the promise if it has not
+</span><span class="s">                    been kept or repaired in the last 90 minutes. Since the
+</span><span class="s">                    promise is class guarded to Hr08 it will only be evaluated
+</span><span class="s">                    during agent runs that happen between 8 and 9 am local time.
+</span><span class="s">                    Also note action if_elapsed leverages promise locking. So if
+</span><span class="s">                    you run with -K (no locks) this restriction will be skipped.
+</span><span class="s">                    If you need for this action to be very strict and only happen
+</span><span class="s">                    once even if running with -K then you would need to use a
+</span><span class="s">                    persistent class.&#34;</span><span class="p">;</span>
+
+        <span class="nc">Hr08.!report_emitted</span><span class="p">::</span>
+        <span class="s">&#34;This report will only be emitted once during the 8:00 hour. Even if locks are skipped.&#34;</span>
+          <span class="kr">classes</span> <span class="o">=&gt;</span> <span class="nf">results</span><span class="p">(</span><span class="s">&#34;bundle&#34;</span><span class="p">,</span> <span class="s">&#34;my_report&#34;</span><span class="p">);</span>
+
+    <span class="kd">classes</span><span class="p">:</span>
+        <span class="s">&#34;report_emitted&#34;</span>
+          <span class="kr">expression</span> <span class="o">=&gt;</span> <span class="s">&#34;my_report_kept|my_report_repaired&#34;</span><span class="p">,</span>
+          <span class="kr">scope</span> <span class="o">=&gt;</span> <span class="s">&#34;namespace&#34;</span><span class="p">,</span>
+          <span class="kr">persistence</span> <span class="o">=&gt;</span> <span class="s">&#34;90&#34;</span><span class="p">;</span>
+  <span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<pre><code>  &gt; $ sudo cf-agent -KIf ./main.cf                                                                         
+  R: Hello, its during the 8:00am hour here. Specifically its Thu Mar  2 08:30:55 2017
+  R: This report will only be emitted once during the 8:00 hour.
+  R: This report will only be emitted once during the 8:00 hour. Even if locks are skipped.
+
+  &gt; $ sudo cf-agent -KIf ./main.cf                                                                         
+  R: Hello, its during the 8:00am hour here. Specifically its Thu Mar  2 08:30:59 2017
+  R: This report will only be emitted once during the 8:00 hour.
+</code></pre>
+
+<p>Generally I do not recommend using time based classes as a direct guard because
+it can complicate testing or ad-hoc execution. I typically recommend setting a
+class based on the time class, and then using that soft class as your guard. I
+think this example will make it more clear:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="k">body</span> <span class="k">file</span> <span class="k">control</span>
+  <span class="p">{</span>
+    <span class="kr">inputs</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="s">&#34;</span><span class="si">$(sys.libdir)</span><span class="s">/stdlib.cf&#34;</span> <span class="p">};</span>
+  <span class="p">}</span>
+
+  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">main</span>
+  <span class="p">{</span>
+    <span class="kd">classes</span><span class="p">:</span>
+      <span class="s">&#34;maintanance_window&#34;</span> <span class="kr">expression</span> <span class="o">=&gt;</span> <span class="s">&#34;Hr09&#34;</span><span class="p">;</span>
+
+    <span class="kd">reports</span><span class="p">:</span>
+        <span class="s">&#34;Hello, its </span><span class="si">$(sys.date)</span><span class="s">&#34;</span><span class="p">;</span>
+
+      <span class="nc">maintanance_window</span><span class="p">::</span>
+        <span class="s">&#34;This report will only be emitted once during the maintanaince window unless locks are cleared.&#34;</span>
+          <span class="kr">action</span> <span class="o">=&gt;</span> <span class="nf">if_elapsed</span><span class="p">(</span><span class="s">&#34;90&#34;</span><span class="p">),</span>
+          <span class="kr">comment</span> <span class="o">=&gt;</span> <span class="s">&#34;Note: this promise only executes the promise if it has not
+</span><span class="s">                      been kept or repaired in the last 90 minutes. Since the
+</span><span class="s">                      promise is class guarded to maintanance_windows it will only be evaluated
+</span><span class="s">                      during agent runs that happen when the class
+</span><span class="s">                      maintanance_window is defined (normally this is only
+</span><span class="s">                      between 8 and 9 am locally.  Also note action if_elapsed
+</span><span class="s">                      leverages promise locking. So if you run with -K (no locks)
+</span><span class="s">                      this restriction will be skipped.  If you need for this
+</span><span class="s">                      action to be very strict and only happen once even if
+</span><span class="s">                      running with -K then you would need to use a persistent class.&#34;</span><span class="p">;</span>
+
+        <span class="nc">maintanance_window.!(my_report2_kept|my_report2_repaired)</span><span class="p">::</span>
+        <span class="s">&#34;This report will only be emitted once during the maintanance window. Even if locks are skipped.&#34;</span>
+          <span class="kr">handle</span> <span class="o">=&gt;</span> <span class="s">&#34;2&#34;</span><span class="p">,</span>
+          <span class="kr">classes</span> <span class="o">=&gt;</span> <span class="nf">results_persist</span><span class="p">(</span><span class="s">&#34;my_report2&#34;</span><span class="p">,</span> <span class="s">&#34;90&#34;</span><span class="p">),</span>
+          <span class="kr">comment</span> <span class="o">=&gt;</span> <span class="s">&#34;This promise will define classes for 90 minutes based on
+</span><span class="s">                      the promise result that are prefixed with &#39;my_report&#39;.&#34;</span><span class="p">;</span>
+
+  <span class="p">}</span>
+
+  <span class="k">body</span> <span class="k">classes</span> <span class="nf">results_persist</span><span class="p">(</span><span class="nv">prefix</span><span class="p">,</span> <span class="nv">minutes</span><span class="p">)</span>
+  <span class="p">{</span>
+
+    <span class="kr">inherit_from</span> <span class="o">=&gt;</span> <span class="nf">results</span><span class="p">(</span><span class="s">&#34;namespace&#34;</span><span class="p">,</span> <span class="err">$</span><span class="p">(</span><span class="nf">prefix</span><span class="p">));</span>
+    <span class="kr">persist_time</span> <span class="o">=&gt;</span> <span class="s">&#34;</span><span class="si">$(minutes)</span><span class="s">&#34;</span><span class="p">;</span>
+
+  <span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<pre><code># Note its during 8am hour, so no reports
+&gt; $ sudo cf-agent -KIf ./main.cf                                                                                                                                                                                           
+R: Hello, its Thu Mar  2 08:40:21 2017
+
+# We get both reports becasue I manually defined
+# the maintance_window class which would normally
+# only be defined during the 8am hour.
+# This is useful for testing or ad-hoc execution.
+
+&gt; $ sudo cf-agent -KIf ./main.cf --define maintanance_window                                                                                                                                                                                                                                                                                                         
+R: Hello, its Thu Mar  2 08:42:41 2017
+R: This report will only be emitted once during the maintanaince window unless locks are cleared.
+R: This report will only be emitted once during the maintanance window. Even if locks are skipped.
+
+# Note how the persistent class is effective even when
+# promise locks are cleared.
+
+&gt; $ sudo cf-agent -KIf ./main.cf --define maintanance_window                                                                                                                                                                                                                                                                                                         
+R: Hello, its Thu Mar  2 08:42:56 2017
+R: This report will only be emitted once during the maintanaince window unless locks are cleared.
+</code></pre>
+
+<p>Hope this helps.</p>
+
+            </div>
+            
+            <div class="post-comments">
+                
+            </div>
+            
+            <div class="push"></div>
+        </div>
+        <footer class="footer text-center">
+<p>Copyright &copy; 2018 Nick Anderson -
+<span class="credit">
+	Powered by
+	<a target="_blank" href="https://gohugo.io">Hugo</a>,
+	<a target="_blank" href="https://github.com/LordMathis/hugo-theme-nix/">Nix</a> theme,
+  and
+	<a target="_blank" href="http://orgmode.org/">org-mode</a>.
+</span>
+</p>
+</footer>
+
+    </body>
