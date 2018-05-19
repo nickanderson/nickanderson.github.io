@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Customer Service on </title>
+    <link>http://nickanderson.github.io/tags/customer-service/</link>
+    <description>Recent content in Customer Service on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 15 Dec 2011 17:02:25 +0000</lastBuildDate>
+    
+	<atom:link href="http://nickanderson.github.io/tags/customer-service/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>NetApp &amp;#8211; Customer Service WIN!</title>
+      <link>http://nickanderson.github.io/2011/12/15/netapp-customer-service-win/</link>
+      <pubDate>Thu, 15 Dec 2011 17:02:25 +0000</pubDate>
+      
+      <guid>http://nickanderson.github.io/2011/12/15/netapp-customer-service-win/</guid>
+      <description>I just wanted to share my NetApp customer service experience since usually people only share negative experiences. I needed to download a mib for a NetApp today. I really don&amp;#8217;t like that I have to register an account just to download a mib but whatever. I was really upset after registering the account and entering a system-id to find that I didn&amp;#8217;t have access to download any mibs.
+I saw that feedback button glaring at me so decided to give it a shot, left a &amp;#8220;very dissatisfied&amp;#8221; about download experience review.</description>
+    </item>
+    
+  </channel>
+</rss>

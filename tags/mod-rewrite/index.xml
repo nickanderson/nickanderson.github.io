@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mod Rewrite on </title>
+    <link>http://nickanderson.github.io/tags/mod-rewrite/</link>
+    <description>Recent content in Mod Rewrite on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 10 Jun 2008 13:50:27 +0000</lastBuildDate>
+    
+	<atom:link href="http://nickanderson.github.io/tags/mod-rewrite/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Dynamic Reverse Proxy with Apache, mod_rewrite, and mod_proxy</title>
+      <link>http://nickanderson.github.io/2008/06/10/dynamic-reverse-proxy-with-apache-mod_rewrite-and-mod_proxy/</link>
+      <pubDate>Tue, 10 Jun 2008 13:50:27 +0000</pubDate>
+      
+      <guid>http://nickanderson.github.io/2008/06/10/dynamic-reverse-proxy-with-apache-mod_rewrite-and-mod_proxy/</guid>
+      <description>&lt;p&gt;Recently I found myself wanting to expose more and more internal web services to the outside. We have an internal mail caching server, ticket system, a handful of development sites, as well as several other internal web services that would be handy to access from remote locations. If you have internal dns, and your dns heirichy is sane you can probably use the same trick I did to allow any internal webservice that has a proper fqdn to work from outside your local LAN. I used Apache2, mod_proxy, and mod_rewrite. Only a few lines need to be altered in the default apache site install.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
