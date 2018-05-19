@@ -1,3 +1,4 @@
+#!/bin/env bash
 [[ $@ == *--quiet* ]]
 QUIET=$?
 
