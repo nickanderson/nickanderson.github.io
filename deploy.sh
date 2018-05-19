@@ -68,7 +68,9 @@ rmdir $TEMP
 
 git add . &> /dev/null
 
-[[ -d "$THEMES_DIR ]] git rm --cached "$THEMES_DIR" -r --quiet
+if [[ -d "$THEMES_DIR" ]]; then
+  git rm --cached "$THEMES_DIR" -r --quiet
+fi
 
 if `git diff --exit-code --cached > /dev/null`; then
     output "No change since last build"
