@@ -9,7 +9,7 @@ pygmentsCodeFences = true
 pygmentsUseClasses = true
 # For github pages
 publishBranch = "master"
-publishdir = "docs/"
+publishdir = "public/"
 
 [permalinks]
 post = "/:year/:month/:day/:slug/"
