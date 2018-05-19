@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title> Why does my policy generate so many readjson() errors and how can I prevent them? &middot;  </title>
+
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.40.3" />
+
+
+<script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="http://nickanderson.github.io/css/nix.css">
+
+
+<link href="https://fonts.googleapis.com/css?family=Inconsolata|Open+Sans|Roboto|Montserrat|Concert+One" rel="stylesheet">
+
+
+
+
+    </head>
+
+    <body>
+        <header>
+<nav class="navbar navbar-default navbar-fixed-top navbar-inverse font-header">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" id="green-terminal" href=http://nickanderson.github.io>nick@cmdln.org ~ $</a>
+		</div>
+
+		
+		<div class="collapse navbar-collapse" id="navbar-collapse-1">
+			<ul class="nav navbar-nav navbar-right">
+				<li>
+					<a href="http://nickanderson.github.io">/home/nick</a>
+				</li>
+				
+				
+				<li >
+					<a href="/post/">~/posts</a>
+				</li>
+				
+
+			</ul>
+		</div>
+	</div>
+</nav>
+</header>
+
+        <div class="container wrapper">
+            <h1><a href="http://nickanderson.github.io/2017/11/23/why-does-my-policy-generate-so-many-readjson-errors-and-how-can-i-prevent-them/">Why does my policy generate so many readjson() errors and how can I prevent them?</a></h1>
+            <span class="post-date">Nov 23, 2017 </span>
+            <div class="post-content">
+                <p>cf-agent -Kf ./example.cf
+     error: readjson: data error parsing JSON file '/tmp/mydata.json': No data
+     error: readjson: data error parsing JSON file '/tmp/mydata.json': No data
+     error: readjson: data error parsing JSON file '/tmp/mydata.json': No data
+     error: readjson: data error parsing JSON file '/tmp/mydata.json': No data
+     error: readjson: data error parsing JSON file '/tmp/mydata.json': No data
+     error: readjson: data error parsing JSON file '/tmp/mydata.json': No data
+     error: readjson: data error parsing JSON file '/tmp/mydata.json': No data
+     error: readjson: data error parsing JSON file '/tmp/mydata.json': No data
+     error: readjson: data error parsing JSON file '/tmp/mydata.json': No data
+     error: readjson: data error parsing JSON file '/tmp/mydata.json': No data
+     error: readjson: data error parsing JSON file '/tmp/mydata.json': No data
+     error: readjson: data error parsing JSON file '/tmp/mydata.json': No data
+     error: readjson: data error parsing JSON file '/tmp/mydata.json': No data</p>
+
+<p>I have policy that puts a data file into place and reads data from it. Why do I
+get so many <code>readjson()</code> errors and how can I suppress them?</p>
+
+<p>The minimum required to reproduce the error from readjson is:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">main</span>
+  <span class="p">{</span>
+      <span class="kd">vars</span><span class="p">:</span>
+        <span class="s">&#34;myvar&#34;</span> <span class="kr">data</span> <span class="o">=&gt;</span> <span class="nf">readjson</span><span class="p">(</span> <span class="s">&#34;/tmp/mydata.json&#34;</span><span class="p">,</span> <span class="mi">1</span><span class="nf">M</span><span class="p">);</span>
+  <span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Now, what happens if we add a promise that manages the file?</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="k">body</span> <span class="k">file</span> <span class="k">control</span> <span class="p">{</span> <span class="kr">inputs</span> <span class="o">=&gt;</span> <span class="p">{</span><span class="s">&#34;</span><span class="si">$(sys.libdir)</span><span class="s">/files.cf&#34;</span><span class="p">};</span> <span class="p">}</span>
+  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">main</span>
+  <span class="p">{</span>
+      <span class="kd">vars</span><span class="p">:</span>
+        <span class="s">&#34;myvar&#34;</span> <span class="kr">data</span> <span class="o">=&gt;</span> <span class="nf">readjson</span><span class="p">(</span> <span class="s">&#34;/tmp/mydata.json&#34;</span><span class="p">,</span> <span class="mi">1</span><span class="nf">M</span><span class="p">);</span>
+
+      <span class="kd">files</span><span class="p">:</span>
+        <span class="s">&#34;/tmp/mydata.json&#34;</span>
+          <span class="kr">create</span> <span class="o">=&gt;</span> <span class="s">&#34;true&#34;</span><span class="p">,</span>
+          <span class="kr">edit_line</span> <span class="o">=&gt;</span> <span class="nf">insert_lines</span><span class="p">(</span> <span class="err">&#39;</span><span class="p">{</span> <span class="s">&#34;Hello&#34;</span><span class="err">:</span> <span class="s">&#34;world&#34;</span> <span class="p">}</span><span class="err">&#39;</span> <span class="p">),</span>
+          <span class="kr">edit_defaults</span> <span class="o">=&gt;</span> <span class="nf">empty</span><span class="p">;</span>
+  <span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>We can run with verbose logging to see more details.</p>
+
+<p>Snips for brevity ...</p>
+
+<pre><code>  cf-agent -Kvf /tmp/example.cf
+   verbose:  CFEngine Core 3.11.0
+   ...
+   verbose: ----------------------------------------------------------------
+   verbose:  Initialization preamble 
+   verbose: ----------------------------------------------------------------
+   ... 
+   verbose: ----------------------------------------------------------------
+   verbose:  Environment discovery 
+   verbose: ----------------------------------------------------------------
+   ...
+   verbose: Verifying the syntax of the inputs...
+   verbose: Checking policy with command '&quot;/home/nickanderson/.cfagent/bin/cf-promises&quot; -c &quot;./example.cf&quot;'
+     error: readjson: data error parsing JSON file '/tmp/mydata.json': No data
+     error: readjson: data error parsing JSON file '/tmp/mydata.json': No data
+     error: readjson: data error parsing JSON file '/tmp/mydata.json': No data
+     error: readjson: data error parsing JSON file '/tmp/mydata.json': No data
+   verbose: Saved policy validated marker file '/home/nickanderson/.cfagent/state/cf_promises_validated'
+</code></pre>
+
+<p>The four above errors are emitted during syntax validation.</p>
+
+<pre><code>  verbose: ----------------------------------------------------------------
+  verbose:  Loading policy 
+  verbose: ----------------------------------------------------------------
+  verbose: BEGIN parsing file: ./example.cf
+  verbose: END   parsing file: ./example.cf
+    error: readjson: data error parsing JSON file '/tmp/mydata.json': No data
+    error: readjson: data error parsing JSON file '/tmp/mydata.json': No data
+  verbose: BEGIN parsing file: /home/nickanderson/.cfagent/inputs/lib/files.cf
+  verbose: END   parsing file: /home/nickanderson/.cfagent/inputs/lib/files.cf
+  verbose: BEGIN parsing file: /home/nickanderson/.cfagent/inputs/lib/common.cf
+  verbose: END   parsing file: /home/nickanderson/.cfagent/inputs/lib/common.cf
+  verbose: Running full policy integrity checks
+</code></pre>
+
+<p>The above errors are emitted during the resolution that occurs during parsing
+inputs.</p>
+
+<pre><code>  verbose: ----------------------------------------------------------------
+  verbose:  Preliminary variable/class-context convergence 
+  verbose: ----------------------------------------------------------------
+    error: readjson: data error parsing JSON file '/tmp/mydata.json': No data
+    error: readjson: data error parsing JSON file '/tmp/mydata.json': No data
+  verbose: string_mustache: argument 'default:main.myvar' does not resolve to a container or a list or a CFEngine array
+  ...
+  verbose: Skipping promise 'DEBUG $(this.bundle): $(link) will be a symlink to $(target)' because 'if'/'ifvarclass' is not defined
+    error: readjson: data error parsing JSON file '/tmp/mydata.json': No data
+    error: readjson: data error parsing JSON file '/tmp/mydata.json': No data
+</code></pre>
+
+<p>The above errors are emitted during pre-evaluation.</p>
+
+<pre><code> verbose: Setting minimum acceptable TLS version: 1.0
+ verbose: ----------------------------------------------------------------
+ verbose:  Begin policy/promise evaluation 
+ verbose: ----------------------------------------------------------------
+ verbose: Using bundlesequence =&gt;  {&quot;main&quot;}
+ verbose: B: *****************************************************************
+ verbose: B: BEGIN bundle main
+ verbose: B: *****************************************************************
+ verbose: V: .........................................................
+ verbose: V: BEGIN variables (pass 1)
+   error: readjson: data error parsing JSON file '/tmp/mydata.json': No data
+ verbose: V:     Computing value of 'myvar'
+   error: readjson: data error parsing JSON file '/tmp/mydata.json': No data
+   error: readjson: data error parsing JSON file '/tmp/mydata.json': No data
+</code></pre>
+
+<p>The above errors are emitted during the first pass of variables during normal
+order (main evaluation).</p>
+
+<p>After that the json data file is created.</p>
+
+<pre><code> verbose: P: .........................................................
+ verbose: P: BEGIN promise 'promise_example_cf_8' of type &quot;files&quot; (pass 1)
+ verbose: P:    Promiser/affected object: '/tmp/mydata.json'
+ verbose: P:    Part of bundle: main
+ verbose: P:    Base context class: any
+ verbose: P:    Stack path: /default/main/files/'/tmp/mydata.json'[1]
+ verbose: Using literal pathtype for '/tmp/mydata.json'
+ verbose: No mode was set, choose plain file default 0600
+    info: Created file '/tmp/mydata.json', mode 0600
+</code></pre>
+
+<p>No further errors happen because now that the file exists it can be successfully
+parsed.</p>
+
+<p>How can we suppress the errors?</p>
+
+<p>You can guard the vars promise based on when there is a json file present, or
+based on the <code>json_copy</code> promise itself. But there are several things to
+consider. What is right depends on the specifics of the behavior you are looking
+for.</p>
+
+<p>Considerations:</p>
+
+<ul>
+<li>Basing data load on file presence does not ensure the data will be fresh when</li>
+    the data is loaded.
+</ul>
+
+<ul>
+<li>Basing data load on a copy promise being kept or repaired is a transient</li>
+    condition and a brittle state.
+</ul>
+
+<ul>
+<li>A copy promise being kept or repaired nor the presence of a file on disk</li>
+    will tell you if the data is valid.
+</ul>
+
+<ul>
+<li>It's not always worth checking all of the things. If the policy runs</li>
+    periodically convergence can help us avoid perseverating. Be careful of
+    building in too much protective logic.
+</ul>
+
+<p>I tend to just base on the file presence, its the minimum necessary to suppress
+the errors:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">main</span>
+  <span class="p">{</span>
+      <span class="kd">vars</span><span class="p">:</span>
+        <span class="s">&#34;myvar&#34;</span> <span class="kr">data</span> <span class="o">=&gt;</span> <span class="nf">readjson</span><span class="p">(</span> <span class="s">&#34;/tmp/mydata.json&#34;</span><span class="p">,</span> <span class="mi">1</span><span class="nf">M</span><span class="p">)</span>
+          <span class="kr">if</span> <span class="o">=&gt;</span> <span class="nf">fileexists</span><span class="p">(</span> <span class="s">&#34;/tmp/mydata.json&#34;</span> <span class="p">);</span>
+  <span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>If you guard based on the <code>copy_from</code> promise being kept or repaired the
+variable will <strong>only populate if the agent can successfully verify</strong> that the file
+looks the same locally and remotely. Do you want to use stale data if you cant
+reach the server?</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">main</span>
+  <span class="p">{</span>
+    <span class="kd">vars</span><span class="p">:</span>
+
+        <span class="c"># This will only trigger if the copy_from promise is KEPT or REPAIRED
+</span><span class="c"></span>        <span class="c"># If the server is unavailable for whatever reason and the remote client
+</span><span class="c"></span>        <span class="c"># is unable to verify then the variable will not be populated.
+</span><span class="c"></span>
+        <span class="s">&#34;myvar&#34;</span>
+          <span class="kr">data</span> <span class="o">=&gt;</span> <span class="nf">readjson</span><span class="p">(</span> <span class="s">&#34;/tmp/mydata.json&#34;</span><span class="p">,</span> <span class="mi">1</span><span class="nf">M</span><span class="p">),</span>
+          <span class="kr">depends_on</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="s">&#34;ensure_data_up_to_date&#34;</span> <span class="p">};</span>
+
+    <span class="kd">files</span><span class="p">:</span>
+        <span class="s">&#34;/tmp/mydata.json&#34;</span>
+          <span class="kr">copy_from</span> <span class="o">=&gt;</span> <span class="nf">remote_dcp</span><span class="p">(</span> <span class="s">&#34;/srv/mydata.json&#34;</span><span class="p">,</span> <span class="err">$</span><span class="p">(</span><span class="nf">sys</span><span class="err">.</span><span class="nf">policy_hub</span><span class="p">)</span> <span class="p">),</span>
+          <span class="kr">handle</span> <span class="o">=&gt;</span> <span class="s">&#34;ensure_data_up_to_date&#34;</span><span class="p">;</span>
+  <span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Perhaps you only want the variable populated if the <code>copy_from</code> promise has been
+attempted (regardless of success or failure), and that there is data on the
+disk, and that data is valid.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">main</span>
+  <span class="p">{</span>
+    <span class="kd">vars</span><span class="p">:</span>
+
+      <span class="c"># Only load the json data if the json is valid
+</span><span class="c"></span>
+      <span class="nc">valid_json</span><span class="p">::</span>
+
+        <span class="s">&#34;myvar&#34;</span>
+          <span class="kr">data</span> <span class="o">=&gt;</span> <span class="nf">readjson</span><span class="p">(</span> <span class="s">&#34;/tmp/mydata.json&#34;</span><span class="p">,</span> <span class="mi">1</span><span class="nf">M</span><span class="p">);</span>
+
+    <span class="kd">classes</span><span class="p">:</span>
+
+      <span class="c"># Only validate the data if we have TRIED to update the data. We don&#39;t care
+</span><span class="c"></span>      <span class="c"># if it was successful or not, only that we tried.
+</span><span class="c"></span>
+      <span class="nc">ensure_data_up_to_date_reached</span><span class="p">::</span>
+
+      <span class="c"># Validate with some external tool (no native function avaialable to simply test json).
+</span><span class="c"></span>      <span class="c"># python -m json.tool 
+</span><span class="c"></span>      <span class="c"># jq .
+</span><span class="c"></span>
+        <span class="s">&#34;valid_json&#34;</span>  <span class="kr">expression</span> <span class="o">=&gt;</span> <span class="nf">returnszero</span><span class="p">(</span> <span class="s">&#34;/usr/bin/python -m json.tool /tmp/mydata.json&#34;</span><span class="p">,</span> <span class="nf">noshell</span><span class="p">);</span>
+
+    <span class="kd">files</span><span class="p">:</span>
+
+        <span class="s">&#34;/tmp/mydata.json&#34;</span>
+          <span class="kr">copy_from</span> <span class="o">=&gt;</span> <span class="nf">remote_dcp</span><span class="p">(</span> <span class="s">&#34;/srv/mydata.json&#34;</span><span class="p">,</span> <span class="err">$</span><span class="p">(</span><span class="nf">sys</span><span class="err">.</span><span class="nf">policy_hub</span><span class="p">)</span> <span class="p">),</span>
+          <span class="kr">handle</span> <span class="o">=&gt;</span> <span class="s">&#34;ensure_data_up_to_date&#34;</span><span class="p">,</span>
+          <span class="kr">classes</span> <span class="o">=&gt;</span> <span class="nf">results</span><span class="p">(</span> <span class="s">&#34;bundle&#34;</span><span class="p">,</span> <span class="s">&#34;ensure_data_up_to_date&#34;</span> <span class="p">);</span>
+  <span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
+            </div>
+            
+            <div class="post-comments">
+                
+            </div>
+            
+            <div class="push"></div>
+        </div>
+        <footer class="footer text-center">
+<p>Copyright &copy; 2018 Nick Anderson -
+<span class="credit">
+	Powered by
+	<a target="_blank" href="https://gohugo.io">Hugo</a>
+	and
+	<a target="_blank" href="https://github.com/LordMathis/hugo-theme-nix/">Nix</a> theme.
+</span>
+</p>
+</footer>
+
+    </body>

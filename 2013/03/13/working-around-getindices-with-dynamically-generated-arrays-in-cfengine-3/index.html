@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title> Working around getindices with dynamically generated arrays in CFEngine 3 &middot;  </title>
+
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.40.3" />
+
+
+<script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="http://nickanderson.github.io/css/nix.css">
+
+
+<link href="https://fonts.googleapis.com/css?family=Inconsolata|Open+Sans|Roboto|Montserrat|Concert+One" rel="stylesheet">
+
+
+
+
+    </head>
+
+    <body>
+        <header>
+<nav class="navbar navbar-default navbar-fixed-top navbar-inverse font-header">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" id="green-terminal" href=http://nickanderson.github.io>nick@cmdln.org ~ $</a>
+		</div>
+
+		
+		<div class="collapse navbar-collapse" id="navbar-collapse-1">
+			<ul class="nav navbar-nav navbar-right">
+				<li>
+					<a href="http://nickanderson.github.io">/home/nick</a>
+				</li>
+				
+				
+				<li >
+					<a href="/post/">~/posts</a>
+				</li>
+				
+
+			</ul>
+		</div>
+	</div>
+</nav>
+</header>
+
+        <div class="container wrapper">
+            <h1><a href="http://nickanderson.github.io/2013/03/13/working-around-getindices-with-dynamically-generated-arrays-in-cfengine-3/">Working around getindices with dynamically generated arrays in CFEngine 3</a></h1>
+            <span class="post-date">Mar 13, 2013 </span>
+            <div class="post-content">
+                <p>There is a <a href="https://cfengine.com/dev/issues/2088" target="_blank">known bug</a> where <a href="https://cfengine.com/manuals/cf3-Reference#Function-getindices" target="_blank">getindices</a> is unable to get the index <img class="alignright size-medium wp-image-1150" alt="Workaround" src="http://www.cmdln.org/wp-content/uploads/2013/03/work-around-300x223.jpg" width="300" height="223" srcset="http://www.cmdln.org/wp-content/uploads/2013/03/work-around-300x223.jpg 300w, http://www.cmdln.org/wp-content/uploads/2013/03/work-around.jpg 550w" sizes="(max-width: 300px) 100vw, 300px" />of a dynamically generated array until the next pass. This comes up from time to time so I thought I would post an example using a pattern shared on the <a href="http://groups.google.com/group/help-cfengine?hl=en" target="_blank">CFEngine help mailing list</a>. The policy below shows 3 working examples. They are mostly similar, example0 shows the simplest workaround, example1 and example2 in addition show ways to suppress the &#8220;Duplicate selection of value for variable&#8221; messages.</p>
+
+<div class="gistem">
+  <div id="gist5154392" class="gist">
+    <div class="gist-file">
+      <div class="gist-data gist-syntax">
+        <div class="file-data">
+          <table cellpadding="0" cellspacing="0" class="lines highlight">
+            <tr>
+              <td class="line-numbers">
+                <span class="line-number" id="file-output-txt-L1" rel="file-output-txt-L1">1</span> <span class="line-number" id="file-output-txt-L2" rel="file-output-txt-L2">2</span> <span class="line-number" id="file-output-txt-L3" rel="file-output-txt-L3">3</span> <span class="line-number" id="file-output-txt-L4" rel="file-output-txt-L4">4</span> <span class="line-number" id="file-output-txt-L5" rel="file-output-txt-L5">5</span> <span class="line-number" id="file-output-txt-L6" rel="file-output-txt-L6">6</span> <span class="line-number" id="file-output-txt-L7" rel="file-output-txt-L7">7</span> <span class="line-number" id="file-output-txt-L8" rel="file-output-txt-L8">8</span> <span class="line-number" id="file-output-txt-L9" rel="file-output-txt-L9">9</span> <span class="line-number" id="file-output-txt-L10" rel="file-output-txt-L10">10</span> <span class="line-number" id="file-output-txt-L11" rel="file-output-txt-L11">11</span> <span class="line-number" id="file-output-txt-L12" rel="file-output-txt-L12">12</span> <span class="line-number" id="file-output-txt-L13" rel="file-output-txt-L13">13</span> <span class="line-number" id="file-output-txt-L14" rel="file-output-txt-L14">14</span>
+              </td>
+              
+              <td class="line-data">
+                <pre class="line-pre"><div class="line" id="file-output-txt-LC1">
+  cf-agent -KIf ./test_getindices_dynamic_array.cf
+</div>
+
+<div class="line" id="file-output-txt-LC2">
+  !! Duplicate selection of value for variable "idx" in scope example0
+</div>
+
+<div class="line" id="file-output-txt-LC3">
+  !! Rule from ./test_getindices_dynamic_array.cf at/before line 28
+</div>
+
+<div class="line" id="file-output-txt-LC4">
+  !! Duplicate selection of value for variable "idx" in scope example0
+</div>
+
+<div class="line" id="file-output-txt-LC5">
+  !! Rule from ./test_getindices_dynamic_array.cf at/before line 28
+</div>
+
+<div class="line" id="file-output-txt-LC6">
+  R: example0 item1
+</div>
+
+<div class="line" id="file-output-txt-LC7">
+  R: example0 item2
+</div>
+
+<div class="line" id="file-output-txt-LC8">
+  R: example0 item3
+</div>
+
+<div class="line" id="file-output-txt-LC9">
+  R: example1 item1
+</div>
+
+<div class="line" id="file-output-txt-LC10">
+  R: example1 item2
+</div>
+
+<div class="line" id="file-output-txt-LC11">
+  R: example1 item3
+</div>
+
+<div class="line" id="file-output-txt-LC12">
+  R: example2 item1
+</div>
+
+<div class="line" id="file-output-txt-LC13">
+  R: example2 item2
+</div>
+
+<div class="line" id="file-output-txt-LC14">
+  R: example2 item3
+</div></pre>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      
+
+<pre><code>  &lt;div class=&quot;gist-meta&quot;&gt;
+    &lt;a href=&quot;https://gist.github.com/nickanderson/5154392/raw/0173ced1600e7bb221dafb5661ff516f14e6929b/output.txt&quot; style=&quot;float:right&quot;&gt;view raw&lt;/a&gt; &lt;a href=&quot;https://gist.github.com/nickanderson/5154392#file-output-txt&quot; style=&quot;float:right; margin-right:10px; color:#666;&quot;&gt;output.txt&lt;/a&gt; &lt;a href=&quot;https://gist.github.com/nickanderson/5154392&quot;&gt;This Gist&lt;/a&gt; is brought to you using &lt;a href=&quot;http://en.bainternet.info/2011/simple-gist-embed&quot;&gt;&lt;small&gt;Simple Gist Embed&lt;/small&gt;&lt;/a&gt;.
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;gist-file&quot;&gt;
+  &lt;div class=&quot;gist-data gist-syntax&quot;&gt;
+    &lt;div class=&quot;file-data&quot;&gt;
+      &lt;table cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; class=&quot;lines highlight&quot;&gt;
+        &lt;tr&gt;
+          &lt;td class=&quot;line-numbers&quot;&gt;
+            &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L1&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L1&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L2&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L2&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L3&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L3&quot;&gt;3&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L4&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L4&quot;&gt;4&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L5&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L5&quot;&gt;5&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L6&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L6&quot;&gt;6&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L7&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L7&quot;&gt;7&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L8&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L8&quot;&gt;8&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L9&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L9&quot;&gt;9&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L10&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L10&quot;&gt;10&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L11&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L11&quot;&gt;11&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L12&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L12&quot;&gt;12&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L13&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L13&quot;&gt;13&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L14&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L14&quot;&gt;14&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L15&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L15&quot;&gt;15&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L16&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L16&quot;&gt;16&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L17&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L17&quot;&gt;17&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L18&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L18&quot;&gt;18&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L19&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L19&quot;&gt;19&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L20&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L20&quot;&gt;20&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L21&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L21&quot;&gt;21&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L22&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L22&quot;&gt;22&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L23&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L23&quot;&gt;23&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L24&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L24&quot;&gt;24&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L25&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L25&quot;&gt;25&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L26&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L26&quot;&gt;26&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L27&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L27&quot;&gt;27&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L28&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L28&quot;&gt;28&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L29&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L29&quot;&gt;29&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L30&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L30&quot;&gt;30&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L31&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L31&quot;&gt;31&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L32&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L32&quot;&gt;32&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L33&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L33&quot;&gt;33&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L34&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L34&quot;&gt;34&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L35&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L35&quot;&gt;35&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L36&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L36&quot;&gt;36&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L37&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L37&quot;&gt;37&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L38&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L38&quot;&gt;38&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L39&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L39&quot;&gt;39&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L40&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L40&quot;&gt;40&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L41&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L41&quot;&gt;41&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L42&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L42&quot;&gt;42&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L43&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L43&quot;&gt;43&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L44&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L44&quot;&gt;44&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L45&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L45&quot;&gt;45&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L46&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L46&quot;&gt;46&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L47&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L47&quot;&gt;47&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L48&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L48&quot;&gt;48&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L49&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L49&quot;&gt;49&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L50&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L50&quot;&gt;50&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L51&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L51&quot;&gt;51&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L52&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L52&quot;&gt;52&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L53&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L53&quot;&gt;53&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L54&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L54&quot;&gt;54&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L55&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L55&quot;&gt;55&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L56&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L56&quot;&gt;56&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L57&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L57&quot;&gt;57&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L58&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L58&quot;&gt;58&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L59&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L59&quot;&gt;59&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L60&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L60&quot;&gt;60&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L61&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L61&quot;&gt;61&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L62&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L62&quot;&gt;62&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L63&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L63&quot;&gt;63&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L64&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L64&quot;&gt;64&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L65&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L65&quot;&gt;65&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L66&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L66&quot;&gt;66&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L67&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L67&quot;&gt;67&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L68&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L68&quot;&gt;68&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L69&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L69&quot;&gt;69&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L70&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L70&quot;&gt;70&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L71&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L71&quot;&gt;71&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L72&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L72&quot;&gt;72&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L73&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L73&quot;&gt;73&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L74&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L74&quot;&gt;74&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L75&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L75&quot;&gt;75&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L76&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L76&quot;&gt;76&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L77&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L77&quot;&gt;77&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L78&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L78&quot;&gt;78&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L79&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L79&quot;&gt;79&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L80&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L80&quot;&gt;80&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L81&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L81&quot;&gt;81&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L82&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L82&quot;&gt;82&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L83&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L83&quot;&gt;83&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L84&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L84&quot;&gt;84&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L85&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L85&quot;&gt;85&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L86&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L86&quot;&gt;86&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L87&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L87&quot;&gt;87&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L88&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L88&quot;&gt;88&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L89&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L89&quot;&gt;89&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L90&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L90&quot;&gt;90&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L91&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L91&quot;&gt;91&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L92&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L92&quot;&gt;92&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L93&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L93&quot;&gt;93&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L94&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L94&quot;&gt;94&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L95&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L95&quot;&gt;95&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L96&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L96&quot;&gt;96&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L97&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L97&quot;&gt;97&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L98&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L98&quot;&gt;98&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L99&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L99&quot;&gt;99&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L100&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L100&quot;&gt;100&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L101&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L101&quot;&gt;101&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L102&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L102&quot;&gt;102&lt;/span&gt; &lt;span class=&quot;line-number&quot; id=&quot;file-test_getindices_dynamic_array-cf-L103&quot; rel=&quot;file-test_getindices_dynamic_array-cf-L103&quot;&gt;103&lt;/span&gt;
+          &lt;/td&gt;
+
+          &lt;td class=&quot;line-data&quot;&gt;
+            &lt;pre class=&quot;line-pre&quot;&gt;&lt;div class=&quot;line&quot; id=&quot;file-test_getindices_dynamic_array-cf-LC1&quot;&gt;
+</code></pre>
+
+<p>body common control
+</div></p>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC2">
+  {
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC3">
+  &nbsp;
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC4">
+  bundlesequence =&gt; {
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC5">
+  "example0",
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC6">
+  "example1",
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC7">
+  "example2",
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC8">
+  };
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC9">
+  }
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC10">
+  &nbsp;
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC11">
+  bundle agent example0
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC12">
+  # This pattern was shared on the CFEngine help mailing list by cyril
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC13">
+  # Thanks!
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC14">
+  {
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC15">
+  vars:
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC16">
+  "list" slist =&gt; { "1", "2", "3" };
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC17">
+  &nbsp;
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC18">
+  # Autogenerate an array instead of typing it out
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC19">
+  # "array[item1]" string =&gt; "value1";
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC20">
+  # "array[item2]" string =&gt; "value2";
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC21">
+  # "array[item3]" string =&gt; "value3";
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC22">
+  "array[item$(list)]" string =&gt; "value$(list)";
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC23">
+  &nbsp;
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC24">
+  !idx_defined::
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC25">
+  "idx"
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC26">
+  slist =&gt; { getindices("array") },
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC27">
+  handle =&gt; "$(this.bundle)_get_array_index";
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC28">
+  &nbsp;
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC29">
+  classes:
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC30">
+  "idx_defined" expression =&gt; isvariable("idx");
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC31">
+  &nbsp;
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC32">
+  reports:
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC33">
+  cfengine::
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC34">
+  # should report 3 times itemx where x is a list value
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC35">
+  "$(this.bundle) $(idx)";
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC36">
+  &nbsp;
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC37">
+  }
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC38">
+  &nbsp;
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC39">
+  &nbsp;
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC40">
+  bundle agent example1
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC41">
+  # This pattern was shared on the CFEngine help mailing list by cyril
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC42">
+  # Thanks!
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC43">
+  {
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC44">
+  vars:
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC45">
+  "list" slist =&gt; { "1", "2", "3" };
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC46">
+  &nbsp;
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC47">
+  # Autogenerate an array instead of typing it out
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC48">
+  # "array[item1]" string =&gt; "value1";
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC49">
+  # "array[item2]" string =&gt; "value2";
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC50">
+  # "array[item3]" string =&gt; "value3";
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC51">
+  "array[item$(list)]" string =&gt; "value$(list)";
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC52">
+  &nbsp;
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC53">
+  list_defined.!idx_defined::
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC54">
+  "idx"
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC55">
+  slist =&gt; { getindices("array") },
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC56">
+  handle =&gt; "$(this.bundle)_get_array_index";
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC57">
+  &nbsp;
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC58">
+  classes:
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC59">
+  "list_defined"
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC60">
+  expression =&gt; isvariable("list"),
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC61">
+  comment    =&gt; "This is one way to work around &#39;Duplicate selection of
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC62">
+  value for variable&#39; messages. Your forcing get_array_index
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC63">
+  to not be evaluated until the next pass";
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC64">
+  &nbsp;
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC65">
+  "idx_defined" expression =&gt; isvariable("idx");
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC66">
+  &nbsp;
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC67">
+  reports:
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC68">
+  cfengine::
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC69">
+  # should report 3 times itemx where x is a list value
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC70">
+  "$(this.bundle) $(idx)";
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC71">
+  &nbsp;
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC72">
+  }
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC73">
+  &nbsp;
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC74">
+  bundle agent example2
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC75">
+  # This pattern was shared on the CFEngine help mailing list by cyril
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC76">
+  # Thanks!
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC77">
+  {
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC78">
+  vars:
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC79">
+  "list" slist =&gt; { "1", "2", "3" };
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC80">
+  &nbsp;
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC81">
+  # Autogenerate an array instead of typing it out
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC82">
+  # "array[item1]" string =&gt; "value1";
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC83">
+  # "array[item2]" string =&gt; "value2";
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC84">
+  # "array[item3]" string =&gt; "value3";
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC85">
+  "array[item$(list)]" string =&gt; "value$(list)";
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC86">
+  &nbsp;
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC87">
+  !idx_defined::
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC88">
+  "idx"
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC89">
+  slist   =&gt; { getindices("array") },
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC90">
+  policy  =&gt; "free",
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC91">
+  handle  =&gt; "$(this.bundle)_get_array_index",
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC92">
+  comment =&gt; "Setting policy free is another way to suppress &#39;Duplicate
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC93">
+  selection of value for variable&#39; messages.";
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC94">
+  &nbsp;
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC95">
+  classes:
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC96">
+  "idx_defined" expression =&gt; isvariable("idx");
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC97">
+  &nbsp;
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC98">
+  reports:
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC99">
+  cfengine::
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC100">
+  # should report 3 times itemx where x is a list value
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC101">
+  "$(this.bundle) $(idx)";
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC102">
+  &nbsp;
+</div>
+
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC103">
+  }
+</div></pre>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      
+
+<pre><code>  &lt;div class=&quot;gist-meta&quot;&gt;
+    &lt;a href=&quot;https://gist.github.com/nickanderson/5154392/raw/d1b746f381b08a8e466820e0152676ab1fbf585a/test_getindices_dynamic_array.cf&quot; style=&quot;float:right&quot;&gt;view raw&lt;/a&gt; &lt;a href=&quot;https://gist.github.com/nickanderson/5154392#file-test_getindices_dynamic_array-cf&quot; style=&quot;float:right; margin-right:10px; color:#666;&quot;&gt;test_getindices_dynamic_array.cf&lt;/a&gt; &lt;a href=&quot;https://gist.github.com/nickanderson/5154392&quot;&gt;This Gist&lt;/a&gt; is brought to you using &lt;a href=&quot;http://en.bainternet.info/2011/simple-gist-embed&quot;&gt;&lt;small&gt;Simple Gist Embed&lt;/small&gt;&lt;/a&gt;.
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p></div>
+</div></p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+            </div>
+            
+            <div class="post-comments">
+                
+            </div>
+            
+            <div class="push"></div>
+        </div>
+        <footer class="footer text-center">
+<p>Copyright &copy; 2018 Nick Anderson -
+<span class="credit">
+	Powered by
+	<a target="_blank" href="https://gohugo.io">Hugo</a>
+	and
+	<a target="_blank" href="https://github.com/LordMathis/hugo-theme-nix/">Nix</a> theme.
+</span>
+</p>
+</footer>
+
+    </body>

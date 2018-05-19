@@ -1,6 +1,0 @@
-#+Title: {{ replace .TranslationBaseName "-" " " | title }}
-#+AUTHOR: Nick Anderson
-#+DATE: {{ .Date }}
-#+TAGS: nil, nil
-#+DRAFT: false
-
