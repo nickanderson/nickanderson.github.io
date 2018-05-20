@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Gentoo on </title>
-    <link>https://nickanderson.github.io/tags/gentoo/</link>
+    <link>https://cmdln.org/tags/gentoo/</link>
     <description>Recent content in Gentoo on </description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Wed, 07 Apr 2010 15:04:03 +0000</lastBuildDate>
     
-	<atom:link href="https://nickanderson.github.io/tags/gentoo/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://cmdln.org/tags/gentoo/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Keychain: a love once forgotten now found</title>
-      <link>https://nickanderson.github.io/2010/04/07/keychain-a-love-once-forgotten-now-found/</link>
+      <link>https://cmdln.org/2010/04/07/keychain-a-love-once-forgotten-now-found/</link>
       <pubDate>Wed, 07 Apr 2010 15:04:03 +0000</pubDate>
       
-      <guid>https://nickanderson.github.io/2010/04/07/keychain-a-love-once-forgotten-now-found/</guid>
+      <guid>https://cmdln.org/2010/04/07/keychain-a-love-once-forgotten-now-found/</guid>
       <description>I don&amp;#8217;t know how many of you know that I am a recovering gentoo user. One of the staples of my desktop used to be keychain. Keychain is a simple wrapper for ssh-agent and gpg-agent. It eases the use of a single long running agent per system instead of per login session. For some reason this tool had fallen out of my basket when I switched to debian several years ago.</description>
     </item>
     
     <item>
       <title>Xen and Gentoo</title>
-      <link>https://nickanderson.github.io/2006/09/11/xen-and-gentoo/</link>
+      <link>https://cmdln.org/2006/09/11/xen-and-gentoo/</link>
       <pubDate>Mon, 11 Sep 2006 14:12:41 +0000</pubDate>
       
-      <guid>https://nickanderson.github.io/2006/09/11/xen-and-gentoo/</guid>
+      <guid>https://cmdln.org/2006/09/11/xen-and-gentoo/</guid>
       <description>I am in the process of setting up Xen on one of my new servers. Just sticking some notes here. Will clean them up later
 `I am in the process of setting up Xen on one of my new servers. Just sticking some notes here. Will clean them up later
 ` No need for kernel level ip address in xen config file set ip =&amp;#8221;off&amp;#8221;;
@@ -33,10 +33,10 @@ DO NOT SET eth0 to start on boot!</description>
     
     <item>
       <title>Gentoo on Software RAID1</title>
-      <link>https://nickanderson.github.io/2006/09/04/gentoo-on-software-raid1/</link>
+      <link>https://cmdln.org/2006/09/04/gentoo-on-software-raid1/</link>
       <pubDate>Mon, 04 Sep 2006 14:10:32 +0000</pubDate>
       
-      <guid>https://nickanderson.github.io/2006/09/04/gentoo-on-software-raid1/</guid>
+      <guid>https://cmdln.org/2006/09/04/gentoo-on-software-raid1/</guid>
       <description>I am in the process of setting up one of my new servers. Yes my old dual pIII machines are going to retire. They are going to live in a &amp;#8220;retirement community&amp;#8221; :P. Any way This time around I am going to use a mirror to protect my data. I never experienced a hardware failure before but I figure better safe than sorry right? So I am going to outline the steps needed to boot from a RAID0.</description>
     </item>
     

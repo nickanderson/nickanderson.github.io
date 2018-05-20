@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Confrence on </title>
-    <link>https://nickanderson.github.io/tags/confrence/</link>
+    <link>https://cmdln.org/tags/confrence/</link>
     <description>Recent content in Confrence on </description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Wed, 01 Aug 2012 13:55:30 +0000</lastBuildDate>
     
-	<atom:link href="https://nickanderson.github.io/tags/confrence/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://cmdln.org/tags/confrence/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>LinuxCon/CloudOpen 2012</title>
-      <link>https://nickanderson.github.io/2012/08/01/linuxconcloudopen-2012/</link>
+      <link>https://cmdln.org/2012/08/01/linuxconcloudopen-2012/</link>
       <pubDate>Wed, 01 Aug 2012 13:55:30 +0000</pubDate>
       
-      <guid>https://nickanderson.github.io/2012/08/01/linuxconcloudopen-2012/</guid>
+      <guid>https://cmdln.org/2012/08/01/linuxconcloudopen-2012/</guid>
       <description>Are you going to LinuxCon/CloudOpen 2012? I am, and I think I have settled on my picks (at least until I look at the schedule again, lots of great options).
 Special thanks to CFEngine for sponsering me!
 Here are my picks for the minute.
