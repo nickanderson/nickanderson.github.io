@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Regex on </title>
+    <link>http://nickanderson.github.io/tags/regex/</link>
+    <description>Recent content in Regex on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 28 Apr 2009 18:19:39 +0000</lastBuildDate>
+    
+	<atom:link href="http://nickanderson.github.io/tags/regex/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Nice console regex helper</title>
+      <link>http://nickanderson.github.io/2009/04/28/nice-console-regex-helper/</link>
+      <pubDate>Tue, 28 Apr 2009 18:19:39 +0000</pubDate>
+      
+      <guid>http://nickanderson.github.io/2009/04/28/nice-console-regex-helper/</guid>
+      <description>Last week I stumbled on a nice console regex helper. It&amp;#8217;s not that I&amp;#8217;m bad at regex but switching between sed, vim, python, perl regex trips me up a bit sometimes.
+Go ahead and check it out for yourself
+sudo aptitude install txt2regex  &amp;lt;br /&amp;gt; [.]quit [0]reset [*]color [/]programs ^txt2regex$
+!! not supported
+RegEx perl :
+RegEx php :
+RegEx postgres:
+RegEx python :
+RegEx sed :
+RegEx vim :</description>
+    </item>
+    
+  </channel>
+</rss>

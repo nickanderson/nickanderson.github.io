@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>List on </title>
+    <link>http://nickanderson.github.io/tags/list/</link>
+    <description>Recent content in List on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 29 Mar 2013 14:12:14 +0000</lastBuildDate>
+    
+	<atom:link href="http://nickanderson.github.io/tags/list/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Canonifying a list with CFEngine 3</title>
+      <link>http://nickanderson.github.io/2013/03/29/canonifying-a-list-with-cfengine-3/</link>
+      <pubDate>Fri, 29 Mar 2013 14:12:14 +0000</pubDate>
+      
+      <guid>http://nickanderson.github.io/2013/03/29/canonifying-a-list-with-cfengine-3/</guid>
+      <description>John Sanders shared a pattern for canonifying lists in #CFEngine on irc.freenode.net yesterday. It&amp;#8217;s a useful reference so I thought I would replicate it here.
+ 1 2 3 4 5 6  % cf-agent -KIf ./example_canonify_list.cf  R: canonified site: www_example_com  R: canonified site: www_example2_com  R: alternate canonified site: www_example_com  R: alternate canonified site: www_example2_com  !! Method invoked repairs        &amp;lt;div class=&amp;quot;gist-meta&amp;quot;&amp;gt; &amp;lt;a href=&amp;quot;https://gist.</description>
+    </item>
+    
+  </channel>
+</rss>
