@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title> Why doesn&#39;t ifvarclass automatically canonify? &middot;  </title>
+
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.40.3" />
+
+
+<script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://cmdln.org/css/nix.css">
+
+
+<link href="https://fonts.googleapis.com/css?family=Inconsolata|Open+Sans|Roboto|Montserrat|Concert+One" rel="stylesheet">
+
+
+
+
+    </head>
+
+    <body>
+        <header>
+<nav class="navbar navbar-default navbar-fixed-top navbar-inverse font-header">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" id="green-terminal" href=https://cmdln.org>nick@cmdln.org ~ $</a>
+		</div>
+
+		
+		<div class="collapse navbar-collapse" id="navbar-collapse-1">
+			<ul class="nav navbar-nav navbar-right">
+				<li>
+					<a href="https://cmdln.org">/home/nick</a>
+				</li>
+				
+				
+				<li >
+					<a href="/post/">~/posts</a>
+				</li>
+				
+
+			</ul>
+		</div>
+	</div>
+</nav>
+</header>
+
+        <div class="container wrapper">
+            <h1><a href="https://cmdln.org/2018/05/20/why-doesnt-ifvarclass-automatically-canonify/">Why doesn&#39;t ifvarclass automatically canonify?</a></h1>
+            <span class="post-date">May 20, 2018 </span>
+            <div class="post-content">
+                <blockquote>
+<p>
+  It looks like ifvarclass is one of few places in CFEngine that does not
+</p>
+<p>
+  automatically canonify:
+</p>
+
+<p>
+  Is there a reason why ifvarclass – which takes a variable by design – does not
+</p>
+<p>
+  automatically canonify that variable before checking if there’s a matching
+</p>
+<p>
+  class?
+</p>
+</blockquote>
+
+<p>Yes, it's true that <code>ifvarclass</code>, and it's aliases <code>if</code> and <code>unless</code> do not
+automatically canonify when checking a class.</p>
+
+<p>Historically there was no automatic canonfication in cfengine. If you defined a
+class or var that contains an invalid character you would get an error. Based on
+user feedback this restriction loosened over time. Now if you define a class
+using an invalid character, the agent does not log an error, (it will let you
+know that it was automatically canonified in verbose mode)</p>
+
+<p>Cfengine doesn't automatically canonify when <strong>checking</strong> with <code>ifvarclass</code> class
+expressions because that would prevent the use of complex expressions</p>
+
+<p>Here is an example that shows automatic canonification as well as a contrived
+use case for conditioning <code>ifvarclass</code> using a class expression.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">main</span>
+  <span class="p">{</span>
+    <span class="kd">classes</span><span class="p">:</span>
+
+      <span class="s">&#34;my-illegal-class&#34;</span><span class="p">;</span>
+
+    <span class="kd">reports</span><span class="p">:</span>
+      <span class="s">&#34;</span><span class="si">$(with)</span><span class="s">&#34;</span> <span class="kr">with</span> <span class="o">=&gt;</span> <span class="nf">join</span><span class="p">(</span> <span class="s">&#34; &#34;</span><span class="p">,</span> <span class="nf">classesmatching</span><span class="p">(</span> <span class="s">&#34;my.illegal.class&#34;</span> <span class="p">)</span> <span class="p">);</span>
+
+      <span class="s">&#34;my-illegal-class is NOT defined (as expected, its invalid)&#34;</span>
+        <span class="kr">unless</span> <span class="o">=&gt;</span> <span class="s">&#34;my-illegal-class&#34;</span><span class="p">;</span>
+
+      <span class="s">&#34;my_illegal_class is defined&#34;</span>
+          <span class="kr">if</span> <span class="o">=&gt;</span> <span class="nf">canonify</span><span class="p">(</span><span class="s">&#34;my-illegal-class&#34;</span><span class="p">);</span>
+
+      <span class="c"># Note, ifvarclass takes expressisons, you couldn&#39;t do that if it were
+</span><span class="c"></span>      <span class="c"># automatically canonified. Here I canonify the string using with, and use
+</span><span class="c"></span>      <span class="c"># it as part of the expression which contains an invalid classcharacter, but
+</span><span class="c"></span>      <span class="c"># its desireable for constructing expressions.
+</span><span class="c"></span>
+      <span class="s">&#34;Slice and dice using `with`&#34;</span>
+        <span class="kr">with</span> <span class="o">=&gt;</span> <span class="nf">canonify</span><span class="p">(</span> <span class="s">&#34;my-illegal-class&#34;</span> <span class="p">),</span>
+        <span class="kr">if</span> <span class="o">=&gt;</span> <span class="s">&#34;linux|</span><span class="si">$(with)</span><span class="s">&#34;</span><span class="p">;</span>
+  <span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div><pre class="example">
+R: my_illegal_class
+R: my-illegal-class is NOT defined (as expected, its invalid)
+R: my_illegal_class is defined
+R: Slice and dice using `with`
+</pre>
+
+<p>See <a href="https://docs.cfengine.com/docs/3.10/reference-language-concepts-classes.html#making-decisions-based-on-classes" title="making decisions based on classes">making decisions based on classes</a> in the language concepts section of the
+reference manual.</p>
+
+            </div>
+            
+            <div class="post-comments">
+                
+            </div>
+            
+            <div class="push"></div>
+        </div>
+        <footer class="footer text-center">
+<p>Copyright &copy; 2018 Nick Anderson -
+<span class="credit">
+	Powered by
+	<a target="_blank" href="https://gohugo.io">Hugo</a>
+	and
+	<a target="_blank" href="https://github.com/LordMathis/hugo-theme-nix/">Nix</a> theme.
+</span>
+</p>
+</footer>
+
+    </body>

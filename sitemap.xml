@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://cmdln.org/2018/05/20/why-doesnt-ifvarclass-automatically-canonify/</loc>
+    <lastmod>2018-05-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://cmdln.org/2018/01/29/purging-packages-with-the-cfengine-3-apt_get-package-module/</loc>
     <lastmod>2018-01-29T17:25:25-06:00</lastmod>
   </url>
@@ -1154,7 +1159,7 @@
   
   <url>
     <loc>https://cmdln.org/</loc>
-    <lastmod>2018-01-29T17:25:25-06:00</lastmod>
+    <lastmod>2018-05-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -2389,7 +2394,7 @@
   
   <url>
     <loc>https://cmdln.org/post/</loc>
-    <lastmod>2018-01-29T17:25:25-06:00</lastmod>
+    <lastmod>2018-05-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
