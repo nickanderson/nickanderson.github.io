@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Reverse Proxy on </title>
-    <link>https://nickanderson.github.io/tags/reverse-proxy/</link>
+    <link>https://cmdln.org/tags/reverse-proxy/</link>
     <description>Recent content in Reverse Proxy on </description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Tue, 02 Mar 2010 05:01:58 +0000</lastBuildDate>
     
-	<atom:link href="https://nickanderson.github.io/tags/reverse-proxy/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://cmdln.org/tags/reverse-proxy/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Flashback: Trust not DNS or How to properly move a website</title>
-      <link>https://nickanderson.github.io/2010/03/01/flashback-trust-not-dns-or-how-to-properly-move-a-website/</link>
+      <link>https://cmdln.org/2010/03/01/flashback-trust-not-dns-or-how-to-properly-move-a-website/</link>
       <pubDate>Tue, 02 Mar 2010 05:01:58 +0000</pubDate>
       
-      <guid>https://nickanderson.github.io/2010/03/01/flashback-trust-not-dns-or-how-to-properly-move-a-website/</guid>
+      <guid>https://cmdln.org/2010/03/01/flashback-trust-not-dns-or-how-to-properly-move-a-website/</guid>
       <description>Matt Simmons is trying to dust off some old articles he think some people may have missed. So I figure why not. A while back I talked about how to move a website (read DNS sucks , you need a reverse proxy). In fact I have talked about reverse proxies a few times since I tend to find them so useful. At any rate, this article stemmed from the first hand experience that opened my eyes to how bad DNS infrastructure really was.</description>
     </item>
     

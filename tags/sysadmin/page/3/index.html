@@ -20,7 +20,7 @@
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
 
-<link rel="stylesheet" href="https://nickanderson.github.io/css/nix.css">
+<link rel="stylesheet" href="https://cmdln.org/css/nix.css">
 
 
 <link href="https://fonts.googleapis.com/css?family=Inconsolata|Open+Sans|Roboto|Montserrat|Concert+One" rel="stylesheet">
@@ -41,14 +41,14 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" id="green-terminal" href=https://nickanderson.github.io>nick@cmdln.org ~ $</a>
+			<a class="navbar-brand" id="green-terminal" href=https://cmdln.org>nick@cmdln.org ~ $</a>
 		</div>
 
 		
 		<div class="collapse navbar-collapse" id="navbar-collapse-1">
 			<ul class="nav navbar-nav navbar-right">
 				<li>
-					<a href="https://nickanderson.github.io">/home/nick</a>
+					<a href="https://cmdln.org">/home/nick</a>
 				</li>
 				
 				
@@ -74,7 +74,7 @@
 				<li>
 					<div class="post-list-item">
 						<div class="post-header">
-							<h4 class="post-link"><a href="https://nickanderson.github.io/2010/08/02/bind-stats-in-centosrhel5/">Bind Stats in Centos/RHEL5</a></h4>
+							<h4 class="post-link"><a href="https://cmdln.org/2010/08/02/bind-stats-in-centosrhel5/">Bind Stats in Centos/RHEL5</a></h4>
 							<h4 class="post-date">Aug 2, 2010</h4>
 						</div>
 						<div class="post-summary"><p>Just a little tip, if your looking for bind stats and your chrooted
@@ -82,7 +82,7 @@ rndc stats will give you
 rndc: 'stats' failed: permission denied All you have to do is
 touch /var/named/chroot/var/named/named.stats chown named:named /var/named/chroot/var/named/named.stats Now after you run rndc stats your named.stats fill will be populated with information.</p></div>
 						<div class="post-list-footer text-center">
-							<a href="https://nickanderson.github.io/2010/08/02/bind-stats-in-centosrhel5/">Read More</a>
+							<a href="https://cmdln.org/2010/08/02/bind-stats-in-centosrhel5/">Read More</a>
 						</div>
 					</div>
 				</li>
@@ -90,13 +90,13 @@ touch /var/named/chroot/var/named/named.stats chown named:named /var/named/chroo
 				<li>
 					<div class="post-list-item">
 						<div class="post-header">
-							<h4 class="post-link"><a href="https://nickanderson.github.io/2010/08/01/clear-dns-cache-in-linux/">Clear DNS Cache in Linux</a></h4>
+							<h4 class="post-link"><a href="https://cmdln.org/2010/08/01/clear-dns-cache-in-linux/">Clear DNS Cache in Linux</a></h4>
 							<h4 class="post-date">Aug 1, 2010</h4>
 						</div>
 						<div class="post-summary"><p>Had a slightly vexing issue the other day. During a migration the destination host ended up caching some stale DNS entries. I tried a quick restart of nscd to no avail, rebooted the VM, again no joy. Even overriding the host in /etc/hosts wasn&#8217;t working. Took a few minutes of digging but what did work was
 nscd -i hosts . Just something to remember if you ever seem to have a stubborn caching issue, rebooting/restarting wont always solve the issue.</p></div>
 						<div class="post-list-footer text-center">
-							<a href="https://nickanderson.github.io/2010/08/01/clear-dns-cache-in-linux/">Read More</a>
+							<a href="https://cmdln.org/2010/08/01/clear-dns-cache-in-linux/">Read More</a>
 						</div>
 					</div>
 				</li>
@@ -104,13 +104,13 @@ nscd -i hosts . Just something to remember if you ever seem to have a stubborn c
 				<li>
 					<div class="post-list-item">
 						<div class="post-header">
-							<h4 class="post-link"><a href="https://nickanderson.github.io/2010/07/13/growing-a-root-file-system/">Growing a root file system</a></h4>
+							<h4 class="post-link"><a href="https://cmdln.org/2010/07/13/growing-a-root-file-system/">Growing a root file system</a></h4>
 							<h4 class="post-date">Jul 13, 2010</h4>
 						</div>
 						<div class="post-summary"><p>IMHO one of the great benefits of virtualization is the ability to properly size your guests. Many times 512M memory and an 8G / is plenty. Increasing memory for a virtual machine is typically pretty straight forward, but there are several options when adding disk space. Mounting the space in the file system and doing something with LVM are likely the most common paths.
 Depending on the situation I typically lean toward keeping my small 8G root and mounting extra storage where needed in the file system.</p></div>
 						<div class="post-list-footer text-center">
-							<a href="https://nickanderson.github.io/2010/07/13/growing-a-root-file-system/">Read More</a>
+							<a href="https://cmdln.org/2010/07/13/growing-a-root-file-system/">Read More</a>
 						</div>
 					</div>
 				</li>
@@ -118,13 +118,13 @@ Depending on the situation I typically lean toward keeping my small 8G root and 
 				<li>
 					<div class="post-list-item">
 						<div class="post-header">
-							<h4 class="post-link"><a href="https://nickanderson.github.io/2010/07/12/checkdomain-zenpack/">CheckDomain Zenpack</a></h4>
+							<h4 class="post-link"><a href="https://cmdln.org/2010/07/12/checkdomain-zenpack/">CheckDomain Zenpack</a></h4>
 							<h4 class="post-date">Jul 12, 2010</h4>
 						</div>
 						<div class="post-summary"><p>No one likes to forget to renew a domain. Its not wholly uncommon though. Microsoft forgot to renew passport.com in 1999, and hotmail.co.uk in 2003. Vivendi Universal forgot to renew its MP3.com in 2003, the Washington Post forgot to renew in 2004, and Foursquare forgot to renew their domain in 2010.
 I stumbled on the check_domain nagios plugin this weekend so I figured I would make some quick modifications and roll it into a Zenpack.</p></div>
 						<div class="post-list-footer text-center">
-							<a href="https://nickanderson.github.io/2010/07/12/checkdomain-zenpack/">Read More</a>
+							<a href="https://cmdln.org/2010/07/12/checkdomain-zenpack/">Read More</a>
 						</div>
 					</div>
 				</li>
@@ -132,13 +132,13 @@ I stumbled on the check_domain nagios plugin this weekend so I figured I would m
 				<li>
 					<div class="post-list-item">
 						<div class="post-header">
-							<h4 class="post-link"><a href="https://nickanderson.github.io/2010/07/09/nginx-stub_status-zenpack/">Nginx stub_status Zenpack</a></h4>
+							<h4 class="post-link"><a href="https://cmdln.org/2010/07/09/nginx-stub_status-zenpack/">Nginx stub_status Zenpack</a></h4>
 							<h4 class="post-date">Jul 9, 2010</h4>
 						</div>
 						<div class="post-summary"><p>Nginx is a great little web server. I have posted previously about using it as a reverse proxy. Weather your using it as a reverse proxy or as a normal webserver you will probably eventually want to know what its doing over time so you can adjust resources as necessary.
 The other day I threw together a Zenpack to make it easier to setup monitoring on new Zenoss instances. It contains a command data source &#8220;check_nginx_ng&#8221; which is a slightly modified version of Chris Kellys check_nginx_ng which in turn was based on check_nginx by Mike Adolphs.</p></div>
 						<div class="post-list-footer text-center">
-							<a href="https://nickanderson.github.io/2010/07/09/nginx-stub_status-zenpack/">Read More</a>
+							<a href="https://cmdln.org/2010/07/09/nginx-stub_status-zenpack/">Read More</a>
 						</div>
 					</div>
 				</li>
@@ -146,14 +146,14 @@ The other day I threw together a Zenpack to make it easier to setup monitoring o
 				<li>
 					<div class="post-list-item">
 						<div class="post-header">
-							<h4 class="post-link"><a href="https://nickanderson.github.io/2010/06/29/autofs-error-logging-fail/">autofs: Error logging fail</a></h4>
+							<h4 class="post-link"><a href="https://cmdln.org/2010/06/29/autofs-error-logging-fail/">autofs: Error logging fail</a></h4>
 							<h4 class="post-date">Jun 30, 2010</h4>
 						</div>
 						<div class="post-summary"><p>Why do applications have such horrible error messages. Non-specific errors are really not any more helpful than not logging at all.
 I was recently setting up autofs for mounting home directories from an nfs server. The little buggers refused to work right. All I was seeing in the logfile was a notice that an attempt was made, and failed.
 attempting to mount entry /home/nanderso failed to mount /home/nanderso   How helpful is that?</p></div>
 						<div class="post-list-footer text-center">
-							<a href="https://nickanderson.github.io/2010/06/29/autofs-error-logging-fail/">Read More</a>
+							<a href="https://cmdln.org/2010/06/29/autofs-error-logging-fail/">Read More</a>
 						</div>
 					</div>
 				</li>
@@ -161,13 +161,13 @@ attempting to mount entry /home/nanderso failed to mount /home/nanderso   How he
 				<li>
 					<div class="post-list-item">
 						<div class="post-header">
-							<h4 class="post-link"><a href="https://nickanderson.github.io/2010/05/24/notes-on-zenoss-zenpacks/">Notes on Zenoss ZenPacks</a></h4>
+							<h4 class="post-link"><a href="https://cmdln.org/2010/05/24/notes-on-zenoss-zenpacks/">Notes on Zenoss ZenPacks</a></h4>
 							<h4 class="post-date">May 24, 2010</h4>
 						</div>
 						<div class="post-summary"><p>Recently I was building a ZenPack for Zenoss. The ZenPack included an Event Command which executed a custom script. I wanted to store the custom script in the ZenPack and I didn&#8217;t want to do anything other than have proper script dependencies in place for it to work.
 ${here/ZenPackManager/packs/ZenPacks.community.YOURZENPACK/path}/libexec/yourscript.sh ${dev/manageIp}  Custom scripts can be placed in $ZENHOME/ZenPacks/ZenPacks.CompanyName.Package/Zenpacks/CompanyName/Package/lib but if you want them to be executable place them in libexec.</p></div>
 						<div class="post-list-footer text-center">
-							<a href="https://nickanderson.github.io/2010/05/24/notes-on-zenoss-zenpacks/">Read More</a>
+							<a href="https://cmdln.org/2010/05/24/notes-on-zenoss-zenpacks/">Read More</a>
 						</div>
 					</div>
 				</li>
@@ -175,13 +175,13 @@ ${here/ZenPackManager/packs/ZenPacks.community.YOURZENPACK/path}/libexec/yourscr
 				<li>
 					<div class="post-list-item">
 						<div class="post-header">
-							<h4 class="post-link"><a href="https://nickanderson.github.io/2010/05/20/bash-historyfu/">bash history-fu</a></h4>
+							<h4 class="post-link"><a href="https://cmdln.org/2010/05/20/bash-historyfu/">bash history-fu</a></h4>
 							<h4 class="post-date">May 20, 2010</h4>
 						</div>
 						<div class="post-summary"><p>I came across a new blog (seems to have come on-line in March) http://www.epoxyjournal.com. One of the entries was about how to clear command history. Everyone has inadvertently pasted or typed something into the wrong shell. Sometimes its worthwhile to clean up after yourself and sometimes its not. I figured I would offer a suggestion for the times you want to avoid having your embarrassing moments in your ~/.bash_history.
 Instead of blowing away your entire current buffer with history -c you can redirect it to another file, flush the buffer to the file, clean it up then append it to your ~/.</p></div>
 						<div class="post-list-footer text-center">
-							<a href="https://nickanderson.github.io/2010/05/20/bash-historyfu/">Read More</a>
+							<a href="https://cmdln.org/2010/05/20/bash-historyfu/">Read More</a>
 						</div>
 					</div>
 				</li>
@@ -189,14 +189,14 @@ Instead of blowing away your entire current buffer with history -c you can redir
 				<li>
 					<div class="post-list-item">
 						<div class="post-header">
-							<h4 class="post-link"><a href="https://nickanderson.github.io/2010/05/19/archive-creation-fail/">Archive creation fail</a></h4>
+							<h4 class="post-link"><a href="https://cmdln.org/2010/05/19/archive-creation-fail/">Archive creation fail</a></h4>
 							<h4 class="post-date">May 19, 2010</h4>
 						</div>
 						<div class="post-summary"><p>I just downloaded EMC Networker client for a 32bit linux box. The file I downloaded was nw74sp5_linux_x86.tar.gz. Of course when I go to extract it &#8230;.
 # tar zxvf ../nw74sp5_linux_x86.tar.gz gzip: stdin: not in gzip format tar: Child returned status 1 tar: Error exit delayed from previous errors  Umm not in gzip format &#8230;.
 # tar xvf ../nw74sp5_linux_x86.tar.gz linux_x86/ linux_x86/lgtoclnt-7.4.5-1.i686.rpm linux_x86/lgtolicm-7.4.5-1.i686.rpm linux_x86/lgtoman-7.4.5-1.i686.rpm ... 🙂</p></div>
 						<div class="post-list-footer text-center">
-							<a href="https://nickanderson.github.io/2010/05/19/archive-creation-fail/">Read More</a>
+							<a href="https://cmdln.org/2010/05/19/archive-creation-fail/">Read More</a>
 						</div>
 					</div>
 				</li>
@@ -204,12 +204,12 @@ Instead of blowing away your entire current buffer with history -c you can redir
 				<li>
 					<div class="post-list-item">
 						<div class="post-header">
-							<h4 class="post-link"><a href="https://nickanderson.github.io/2010/05/17/new-networking-podcast/">New Networking Podcast</a></h4>
+							<h4 class="post-link"><a href="https://cmdln.org/2010/05/17/new-networking-podcast/">New Networking Podcast</a></h4>
 							<h4 class="post-date">May 17, 2010</h4>
 						</div>
 						<div class="post-summary"><p>They are only on their 3rd episode, but its been good listening so far. If your into networking check it out. http://packetpushers.net/</p></div>
 						<div class="post-list-footer text-center">
-							<a href="https://nickanderson.github.io/2010/05/17/new-networking-podcast/">Read More</a>
+							<a href="https://cmdln.org/2010/05/17/new-networking-podcast/">Read More</a>
 						</div>
 					</div>
 				</li>

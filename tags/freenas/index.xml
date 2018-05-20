@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Freenas on </title>
-    <link>https://nickanderson.github.io/tags/freenas/</link>
+    <link>https://cmdln.org/tags/freenas/</link>
     <description>Recent content in Freenas on </description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Fri, 21 Aug 2015 04:51:59 +0000</lastBuildDate>
     
-	<atom:link href="https://nickanderson.github.io/tags/freenas/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://cmdln.org/tags/freenas/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>CFEngine fixin my FreeNAS</title>
-      <link>https://nickanderson.github.io/2015/08/20/cfengine-fixin-my-freenas/</link>
+      <link>https://cmdln.org/2015/08/20/cfengine-fixin-my-freenas/</link>
       <pubDate>Fri, 21 Aug 2015 04:51:59 +0000</pubDate>
       
-      <guid>https://nickanderson.github.io/2015/08/20/cfengine-fixin-my-freenas/</guid>
+      <guid>https://cmdln.org/2015/08/20/cfengine-fixin-my-freenas/</guid>
       <description>I recently built a new file server and I based it on the well renowned FreeNAS by iXsystems. It&amp;#8217;s been pretty solid over the past few weeks but today I ran into an issue. The web ui stopped responding. Actually it turned out that the django service had stopped. Well, that was the perfect opportunity to use CFEngine to make sure I never have the issue again.
 I grabbed the cfengine community 3.</description>
     </item>

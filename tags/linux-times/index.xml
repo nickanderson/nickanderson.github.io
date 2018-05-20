@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Linux Times on </title>
-    <link>https://nickanderson.github.io/tags/linux-times/</link>
+    <link>https://cmdln.org/tags/linux-times/</link>
     <description>Recent content in Linux Times on </description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Mon, 07 Apr 2008 23:16:44 +0000</lastBuildDate>
     
-	<atom:link href="https://nickanderson.github.io/tags/linux-times/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://cmdln.org/tags/linux-times/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>ctime, atime, and mtime</title>
-      <link>https://nickanderson.github.io/2008/04/07/ctime-atime-and-mtime/</link>
+      <link>https://cmdln.org/2008/04/07/ctime-atime-and-mtime/</link>
       <pubDate>Mon, 07 Apr 2008 23:16:44 +0000</pubDate>
       
-      <guid>https://nickanderson.github.io/2008/04/07/ctime-atime-and-mtime/</guid>
+      <guid>https://cmdln.org/2008/04/07/ctime-atime-and-mtime/</guid>
       <description>&lt;p&gt;It is important to distinguish between a file or directory&amp;#8217;s change time (ctime), access time (atime), and modify time (mtime).&lt;/p&gt;</description>
     </item>
     

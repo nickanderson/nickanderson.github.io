@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Gnome Shell on </title>
-    <link>https://nickanderson.github.io/tags/gnome-shell/</link>
+    <link>https://cmdln.org/tags/gnome-shell/</link>
     <description>Recent content in Gnome Shell on </description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Thu, 14 Jul 2011 20:11:33 +0000</lastBuildDate>
     
-	<atom:link href="https://nickanderson.github.io/tags/gnome-shell/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://cmdln.org/tags/gnome-shell/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>gnome-shell first impressions</title>
-      <link>https://nickanderson.github.io/2011/07/14/gnome-shell-first-impressions/</link>
+      <link>https://cmdln.org/2011/07/14/gnome-shell-first-impressions/</link>
       <pubDate>Thu, 14 Jul 2011 20:11:33 +0000</pubDate>
       
-      <guid>https://nickanderson.github.io/2011/07/14/gnome-shell-first-impressions/</guid>
+      <guid>https://cmdln.org/2011/07/14/gnome-shell-first-impressions/</guid>
       <description>Well I&amp;#8217;ve been running gnome-shell for a couple days now. Overall I like it, the desktop environment stays out of my way which is a good thing. But it has been staying out of my way a little too much.
 I have been missing a lot of instant messages since installing gnome-shell. The reason is because of the way the notifications work. If you actually sitting at your desk and you get a msg this tiny little bar pops up with the msg content, and its really nice you can just reply right there without ever having to open your chat client.</description>
     </item>
     
     <item>
       <title>Replace unity with gnome3 and gnome-shell in ubuntu 11.04</title>
-      <link>https://nickanderson.github.io/2011/07/08/replace-unity-with-gnome3-and-gnome-shell-in-ubuntu-11-04/</link>
+      <link>https://cmdln.org/2011/07/08/replace-unity-with-gnome3-and-gnome-shell-in-ubuntu-11-04/</link>
       <pubDate>Fri, 08 Jul 2011 12:53:16 +0000</pubDate>
       
-      <guid>https://nickanderson.github.io/2011/07/08/replace-unity-with-gnome3-and-gnome-shell-in-ubuntu-11-04/</guid>
+      <guid>https://cmdln.org/2011/07/08/replace-unity-with-gnome3-and-gnome-shell-in-ubuntu-11-04/</guid>
       <description>Well I gave unity the old college try in ubuntu 11.04. But last night I just couldn&amp;#8217;t take it any more. There were some small rendering issues occasionally plus some tray programs like workrave had no place to go, at least that I could find anyway and I really need workrave to remind me to change from sitting to standing positions every so often.
 At any rate I decided to try gnome3 and gnome-shell.</description>
     </item>

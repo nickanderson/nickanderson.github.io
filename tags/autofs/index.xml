@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Autofs on </title>
-    <link>https://nickanderson.github.io/tags/autofs/</link>
+    <link>https://cmdln.org/tags/autofs/</link>
     <description>Recent content in Autofs on </description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Wed, 30 Jun 2010 02:53:29 +0000</lastBuildDate>
     
-	<atom:link href="https://nickanderson.github.io/tags/autofs/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://cmdln.org/tags/autofs/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>autofs: Error logging fail</title>
-      <link>https://nickanderson.github.io/2010/06/29/autofs-error-logging-fail/</link>
+      <link>https://cmdln.org/2010/06/29/autofs-error-logging-fail/</link>
       <pubDate>Wed, 30 Jun 2010 02:53:29 +0000</pubDate>
       
-      <guid>https://nickanderson.github.io/2010/06/29/autofs-error-logging-fail/</guid>
+      <guid>https://cmdln.org/2010/06/29/autofs-error-logging-fail/</guid>
       <description>Why do applications have such horrible error messages. Non-specific errors are really not any more helpful than not logging at all.
 I was recently setting up autofs for mounting home directories from an nfs server. The little buggers refused to work right. All I was seeing in the logfile was a notice that an attempt was made, and failed.
 attempting to mount entry /home/nanderso failed to mount /home/nanderso   How helpful is that?</description>

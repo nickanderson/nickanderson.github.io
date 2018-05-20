@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Python Ide on </title>
-    <link>https://nickanderson.github.io/tags/python-ide/</link>
+    <link>https://cmdln.org/tags/python-ide/</link>
     <description>Recent content in Python Ide on </description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Sat, 18 Oct 2008 19:19:06 +0000</lastBuildDate>
     
-	<atom:link href="https://nickanderson.github.io/tags/python-ide/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://cmdln.org/tags/python-ide/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Vim customization for python</title>
-      <link>https://nickanderson.github.io/2008/10/18/vim-customization-for-python/</link>
+      <link>https://cmdln.org/2008/10/18/vim-customization-for-python/</link>
       <pubDate>Sat, 18 Oct 2008 19:19:06 +0000</pubDate>
       
-      <guid>https://nickanderson.github.io/2008/10/18/vim-customization-for-python/</guid>
+      <guid>https://cmdln.org/2008/10/18/vim-customization-for-python/</guid>
       <description>&lt;p&gt;Python seems to keep growing on me. By no means am I a Python master, nor am I a vim guru but I do prefer to use vim over a gui editor. Sure there are some niceties with using a gui but getting comfortable using a tool that is almost always at your disposal has something to be said for it. Adding a few things to your vim environment will make writing python much more pleasurable.&lt;/p&gt;</description>
     </item>
     

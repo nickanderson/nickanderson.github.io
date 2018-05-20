@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Vagrant on </title>
-    <link>https://nickanderson.github.io/tags/vagrant/</link>
+    <link>https://cmdln.org/tags/vagrant/</link>
     <description>Recent content in Vagrant on </description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Sat, 14 Jul 2012 20:02:17 +0000</lastBuildDate>
     
-	<atom:link href="https://nickanderson.github.io/tags/vagrant/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://cmdln.org/tags/vagrant/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>CFEngine 3 by Example &amp;#8211; Vagrant Project</title>
-      <link>https://nickanderson.github.io/2012/07/14/cfengine-3-by-example-vagrant-project/</link>
+      <link>https://cmdln.org/2012/07/14/cfengine-3-by-example-vagrant-project/</link>
       <pubDate>Sat, 14 Jul 2012 20:02:17 +0000</pubDate>
       
-      <guid>https://nickanderson.github.io/2012/07/14/cfengine-3-by-example-vagrant-project/</guid>
+      <guid>https://cmdln.org/2012/07/14/cfengine-3-by-example-vagrant-project/</guid>
       <description>I updated the CFEngine 3 by example vagrant project so that /var/cfengine/masterfiles is a git clone (kept in sync with VCS::vcs_mirror) of the generated bare repository from the seed files. I found during a presentation that it would just be easier to have everyone start of with the typical workflow instead of going through the process of getting there. I hope it makes it easier for people to get a working test env up in a few minutes.</description>
     </item>
     

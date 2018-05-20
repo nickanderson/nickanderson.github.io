@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ultradns on </title>
-    <link>https://nickanderson.github.io/tags/ultradns/</link>
+    <link>https://cmdln.org/tags/ultradns/</link>
     <description>Recent content in Ultradns on </description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Thu, 10 Jul 2008 01:07:45 +0000</lastBuildDate>
     
-	<atom:link href="https://nickanderson.github.io/tags/ultradns/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://cmdln.org/tags/ultradns/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Backdoor corporate sabotage with DNS</title>
-      <link>https://nickanderson.github.io/2008/07/09/backdoor-corporate-sabotage-with-dns/</link>
+      <link>https://cmdln.org/2008/07/09/backdoor-corporate-sabotage-with-dns/</link>
       <pubDate>Thu, 10 Jul 2008 01:07:45 +0000</pubDate>
       
-      <guid>https://nickanderson.github.io/2008/07/09/backdoor-corporate-sabotage-with-dns/</guid>
+      <guid>https://cmdln.org/2008/07/09/backdoor-corporate-sabotage-with-dns/</guid>
       <description>&lt;p&gt;I&amp;#8217;m not really certain how common corporate sabotage is. Sure there are DOS attacks daily on this or that network or this or that server but what percentage of those are script kiddies and what percentage are well thought out planned attacks designed to cripple a competitor even if only for a short time. Typically DOS attacks are dealt with by Server and Network Admins adding black holes to offending networks. Recently while doing some research I stumbled on what seems to be a neglected DNS attack. One that the target may not become aware of until the next billing cycle or if carried out methodically months.&lt;/p&gt;</description>
     </item>
     

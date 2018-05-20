@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Xen on </title>
-    <link>https://nickanderson.github.io/tags/xen/</link>
+    <link>https://cmdln.org/tags/xen/</link>
     <description>Recent content in Xen on </description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Wed, 01 Aug 2012 13:55:30 +0000</lastBuildDate>
     
-	<atom:link href="https://nickanderson.github.io/tags/xen/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://cmdln.org/tags/xen/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>LinuxCon/CloudOpen 2012</title>
-      <link>https://nickanderson.github.io/2012/08/01/linuxconcloudopen-2012/</link>
+      <link>https://cmdln.org/2012/08/01/linuxconcloudopen-2012/</link>
       <pubDate>Wed, 01 Aug 2012 13:55:30 +0000</pubDate>
       
-      <guid>https://nickanderson.github.io/2012/08/01/linuxconcloudopen-2012/</guid>
+      <guid>https://cmdln.org/2012/08/01/linuxconcloudopen-2012/</guid>
       <description>Are you going to LinuxCon/CloudOpen 2012? I am, and I think I have settled on my picks (at least until I look at the schedule again, lots of great options).
 Special thanks to CFEngine for sponsering me!
 Here are my picks for the minute.
@@ -24,10 +24,10 @@ Here are my picks for the minute.
     
     <item>
       <title>Remember to Register for Xen Day Boston 2011</title>
-      <link>https://nickanderson.github.io/2011/12/05/remember-to-register-for-xen-day-boston-2011/</link>
+      <link>https://cmdln.org/2011/12/05/remember-to-register-for-xen-day-boston-2011/</link>
       <pubDate>Mon, 05 Dec 2011 15:36:02 +0000</pubDate>
       
-      <guid>https://nickanderson.github.io/2011/12/05/remember-to-register-for-xen-day-boston-2011/</guid>
+      <guid>https://cmdln.org/2011/12/05/remember-to-register-for-xen-day-boston-2011/</guid>
       <description>Just a reminder that Xen Day Boston 2011 is coming up (December 9th).
 There&amp;#8217;s still room to register, but spots are going fast!
 For more information see:
@@ -36,10 +36,10 @@ http://blog.xen.org/index.php/2011/12/02/xen-day-presenters/</description>
     
     <item>
       <title>Xen Day @ LISA11</title>
-      <link>https://nickanderson.github.io/2011/11/18/xen-day-lisa11/</link>
+      <link>https://cmdln.org/2011/11/18/xen-day-lisa11/</link>
       <pubDate>Fri, 18 Nov 2011 18:41:12 +0000</pubDate>
       
-      <guid>https://nickanderson.github.io/2011/11/18/xen-day-lisa11/</guid>
+      <guid>https://cmdln.org/2011/11/18/xen-day-lisa11/</guid>
       <description>[
 ]1
 If you&amp;#8217;re going to LISA in Boston this year consider registering for Xen Day on Friday Dec, 9. Registration is free and the schedule looks great.</description>
@@ -47,76 +47,76 @@ If you&amp;#8217;re going to LISA in Boston this year consider registering for 
     
     <item>
       <title>Growing a root file system</title>
-      <link>https://nickanderson.github.io/2010/07/13/growing-a-root-file-system/</link>
+      <link>https://cmdln.org/2010/07/13/growing-a-root-file-system/</link>
       <pubDate>Tue, 13 Jul 2010 14:45:21 +0000</pubDate>
       
-      <guid>https://nickanderson.github.io/2010/07/13/growing-a-root-file-system/</guid>
+      <guid>https://cmdln.org/2010/07/13/growing-a-root-file-system/</guid>
       <description>IMHO one of the great benefits of virtualization is the ability to properly size your guests. Many times 512M memory and an 8G / is plenty. Increasing memory for a virtual machine is typically pretty straight forward, but there are several options when adding disk space. Mounting the space in the file system and doing something with LVM are likely the most common paths.
 Depending on the situation I typically lean toward keeping my small 8G root and mounting extra storage where needed in the file system.</description>
     </item>
     
     <item>
       <title>Fix XenCenter not displaying console or performance statistics</title>
-      <link>https://nickanderson.github.io/2010/01/19/fix-xencenter-not-displaying-console-or-performance-statistics/</link>
+      <link>https://cmdln.org/2010/01/19/fix-xencenter-not-displaying-console-or-performance-statistics/</link>
       <pubDate>Tue, 19 Jan 2010 18:07:28 +0000</pubDate>
       
-      <guid>https://nickanderson.github.io/2010/01/19/fix-xencenter-not-displaying-console-or-performance-statistics/</guid>
+      <guid>https://cmdln.org/2010/01/19/fix-xencenter-not-displaying-console-or-performance-statistics/</guid>
       <description>&lt;p&gt;I am sure you are aware of my affinity for the Xen hypervisor. In the last year I have switched over to Citrix Xenserver. With other people managing VMs as well having a nice GUI is helpful. One of my complaints is that the GUI (XenCenter) is a windows only app. C&amp;#8217;mon, Citrix, please release a cross platform management console. I&amp;#8217;ve got to run a windows VM just to use the GUI (granted I don&amp;#8217;t have to use the gui, there is a nice API and console utilities). At any rate today I noticed that I could no longer pull up the console for a windows VM nor could I pull up the performance metrics available in XenCenter. A few searches turned up &lt;a href=&#34;http://kennethhunt.com&#34;&gt;Kenneth Hunts blog&lt;/a&gt; and a post that showed me where to fix it. The windows box running XenCenter has a cache folder located in %AppData%\Citrix\XenCenterMain.exe_Url_xxxxxxxxxx. If you remove the cache you should be able to see the console and performance graphs again. If by chance you remove the entire folder you will need to re-add all dom0s back into XenCenter.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>It&amp;#8217;s not &amp;#8220;the cloud&amp;#8221; it&amp;#8217;s &amp;#8220;the phog&amp;#8221;</title>
-      <link>https://nickanderson.github.io/2009/08/19/its-not-the-cloud-its-the-phog/</link>
+      <link>https://cmdln.org/2009/08/19/its-not-the-cloud-its-the-phog/</link>
       <pubDate>Thu, 20 Aug 2009 02:47:22 +0000</pubDate>
       
-      <guid>https://nickanderson.github.io/2009/08/19/its-not-the-cloud-its-the-phog/</guid>
+      <guid>https://cmdln.org/2009/08/19/its-not-the-cloud-its-the-phog/</guid>
       <description>I am so very tired of hearing about &amp;#8220;the cloud&amp;#8221;. Over lunch the other day a co-worker decided we should just call it the phog instead since the phog does a better job of describing exactly what is meant by the cloud.
 Why is phog a better description? The phog has no defined shape, you can&amp;#8217;t see clearly in it, its different everywhere you go, and once your in the middle of it you can&amp;#8217;t find your way out (due to marketing fluf).</description>
     </item>
     
     <item>
       <title>Citrix makes Xen Enterprise Free</title>
-      <link>https://nickanderson.github.io/2009/02/23/citrix-makes-xen-enterprise-free/</link>
+      <link>https://cmdln.org/2009/02/23/citrix-makes-xen-enterprise-free/</link>
       <pubDate>Mon, 23 Feb 2009 20:54:52 +0000</pubDate>
       
-      <guid>https://nickanderson.github.io/2009/02/23/citrix-makes-xen-enterprise-free/</guid>
+      <guid>https://cmdln.org/2009/02/23/citrix-makes-xen-enterprise-free/</guid>
       <description>Today Citrix announced that it will distribute its enterprise packaging of Xen for free. This brings fancy gui management and features available in VMwares ESX server to everyone. (Actually I&amp;#8217;m not clear if just the ability is there or if they actually are letting the gui go as well.)
 This is not a scaled down, limited version of the hypervisor. From the end of March on, there will be only one edition of XenServer which and it will be free.</description>
     </item>
     
     <item>
       <title>Review: Running Xen a Hands-On guide to the Art of Virtualization</title>
-      <link>https://nickanderson.github.io/2008/04/28/review-running-xen-a-hands-on-guide-to-the-art-of-virtualization/</link>
+      <link>https://cmdln.org/2008/04/28/review-running-xen-a-hands-on-guide-to-the-art-of-virtualization/</link>
       <pubDate>Mon, 28 Apr 2008 23:32:23 +0000</pubDate>
       
-      <guid>https://nickanderson.github.io/2008/04/28/review-running-xen-a-hands-on-guide-to-the-art-of-virtualization/</guid>
+      <guid>https://cmdln.org/2008/04/28/review-running-xen-a-hands-on-guide-to-the-art-of-virtualization/</guid>
       <description>A few days ago I finally got my copy of Running Xen. I was anxious to see how the information would be presented. I can tell you I was not disappointed. I am by no means a Xen master. I have tinkered with it a few times over the past several years but as I am getting ready to use it full time in production I need as much information as I can get.</description>
     </item>
     
     <item>
       <title>Xen installing Centos 5 domU inside debian etch dom0 with xen-tools and rinse: the patch to fix it</title>
-      <link>https://nickanderson.github.io/2008/04/25/xen-installing-centos-5-domu-inside-debian-etch-dom0-with-xen-tools-and-rinse-the-patch-to-fix-it/</link>
+      <link>https://cmdln.org/2008/04/25/xen-installing-centos-5-domu-inside-debian-etch-dom0-with-xen-tools-and-rinse-the-patch-to-fix-it/</link>
       <pubDate>Fri, 25 Apr 2008 18:12:51 +0000</pubDate>
       
-      <guid>https://nickanderson.github.io/2008/04/25/xen-installing-centos-5-domu-inside-debian-etch-dom0-with-xen-tools-and-rinse-the-patch-to-fix-it/</guid>
+      <guid>https://cmdln.org/2008/04/25/xen-installing-centos-5-domu-inside-debian-etch-dom0-with-xen-tools-and-rinse-the-patch-to-fix-it/</guid>
       <description>&lt;p&gt;After more testing I have narrowed the issue that I left off with to a problem with the yum conf inside of the chroot.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Xen installing Centos 5 domU inside debian etch dom0 with xen-tools and rinse</title>
-      <link>https://nickanderson.github.io/2008/04/25/xen-installing-centos-5-domu-inside-debian-etch-dom0-with-xen-tools-and-rinse/</link>
+      <link>https://cmdln.org/2008/04/25/xen-installing-centos-5-domu-inside-debian-etch-dom0-with-xen-tools-and-rinse/</link>
       <pubDate>Fri, 25 Apr 2008 13:27:59 +0000</pubDate>
       
-      <guid>https://nickanderson.github.io/2008/04/25/xen-installing-centos-5-domu-inside-debian-etch-dom0-with-xen-tools-and-rinse/</guid>
+      <guid>https://cmdln.org/2008/04/25/xen-installing-centos-5-domu-inside-debian-etch-dom0-with-xen-tools-and-rinse/</guid>
       <description>&lt;p&gt;At work I am just beginning the process of migrating from a hosted dedicated server to a Xen instance on a new server we have. Our dedicated server runs centos, and has WHM cpanel installed. So I figured it would be a good thing to have cpanel again as several people are familiar with it, and we do host a few random websites for people still. Cpanel does not support debian to my knowledge so Centos 5 sounds like the best way to go.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Xen and Gentoo</title>
-      <link>https://nickanderson.github.io/2006/09/11/xen-and-gentoo/</link>
+      <link>https://cmdln.org/2006/09/11/xen-and-gentoo/</link>
       <pubDate>Mon, 11 Sep 2006 14:12:41 +0000</pubDate>
       
-      <guid>https://nickanderson.github.io/2006/09/11/xen-and-gentoo/</guid>
+      <guid>https://cmdln.org/2006/09/11/xen-and-gentoo/</guid>
       <description>I am in the process of setting up Xen on one of my new servers. Just sticking some notes here. Will clean them up later
 `I am in the process of setting up Xen on one of my new servers. Just sticking some notes here. Will clean them up later
 ` No need for kernel level ip address in xen config file set ip =&amp;#8221;off&amp;#8221;;

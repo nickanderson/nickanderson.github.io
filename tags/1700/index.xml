@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>1700 on </title>
-    <link>https://nickanderson.github.io/tags/1700/</link>
+    <link>https://cmdln.org/tags/1700/</link>
     <description>Recent content in 1700 on </description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Wed, 16 Apr 2008 03:50:16 +0000</lastBuildDate>
     
-	<atom:link href="https://nickanderson.github.io/tags/1700/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://cmdln.org/tags/1700/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Reset dell 1700 series photoconducter</title>
-      <link>https://nickanderson.github.io/2008/04/15/reset-dell-1700-series-photoconducter/</link>
+      <link>https://cmdln.org/2008/04/15/reset-dell-1700-series-photoconducter/</link>
       <pubDate>Wed, 16 Apr 2008 03:50:16 +0000</pubDate>
       
-      <guid>https://nickanderson.github.io/2008/04/15/reset-dell-1700-series-photoconducter/</guid>
+      <guid>https://cmdln.org/2008/04/15/reset-dell-1700-series-photoconducter/</guid>
       <description>&lt;p&gt;Ok I hate printers. If anyone has an aged dell 1700 series printer that prints out pages that say to replace the imaging drum over and over (even after replacing it) then you will like this tip.&lt;/p&gt;</description>
     </item>
     
