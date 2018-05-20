@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Osx on </title>
-    <link>http://www.cmdln.org/tags/osx/</link>
+    <link>http://nickanderson.github.io/tags/osx/</link>
     <description>Recent content in Osx on </description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Thu, 08 Apr 2010 17:36:17 +0000</lastBuildDate>
     
-	<atom:link href="http://www.cmdln.org/tags/osx/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://nickanderson.github.io/tags/osx/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Mount Linux NFS exports in OSX</title>
-      <link>http://www.cmdln.org/2010/04/08/mount-linux-nfs-exports-in-osx/</link>
+      <link>http://nickanderson.github.io/2010/04/08/mount-linux-nfs-exports-in-osx/</link>
       <pubDate>Thu, 08 Apr 2010 17:36:17 +0000</pubDate>
       
-      <guid>http://www.cmdln.org/2010/04/08/mount-linux-nfs-exports-in-osx/</guid>
+      <guid>http://nickanderson.github.io/2010/04/08/mount-linux-nfs-exports-in-osx/</guid>
       <description>I&amp;#8217;m not a fan of OSX and I try to avoid it with the same veracity that I avoid Windows. But I recently needed to have a Linux NFS export mounted on an OSX server. A simple mount server:/export /mymountpoint didn&amp;#8217;t work and returned &amp;#8220;Operation not permitted&amp;#8221;. After a bit of digging I found the solution.
 I needed to instruct the client to use a privledged port by adding the &amp;#8220;-P&amp;#8221; option.</description>
     </item>

@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>One Liner on </title>
-    <link>http://www.cmdln.org/tags/one-liner/</link>
+    <link>http://nickanderson.github.io/tags/one-liner/</link>
     <description>Recent content in One Liner on </description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Wed, 18 Feb 2009 16:08:58 +0000</lastBuildDate>
     
-	<atom:link href="http://www.cmdln.org/tags/one-liner/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://nickanderson.github.io/tags/one-liner/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Another commandline junkie</title>
-      <link>http://www.cmdln.org/2009/02/18/another-commandline-junkie/</link>
+      <link>http://nickanderson.github.io/2009/02/18/another-commandline-junkie/</link>
       <pubDate>Wed, 18 Feb 2009 16:08:58 +0000</pubDate>
       
-      <guid>http://www.cmdln.org/2009/02/18/another-commandline-junkie/</guid>
+      <guid>http://nickanderson.github.io/2009/02/18/another-commandline-junkie/</guid>
       <description>Waddya know I&amp;#8217;m not the only geek with an affinity for the console. This could be interesting. Repository of useful one liners.</description>
     </item>
     

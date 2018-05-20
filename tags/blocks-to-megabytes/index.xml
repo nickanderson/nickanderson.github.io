@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Blocks to Megabytes on </title>
-    <link>http://www.cmdln.org/tags/blocks-to-megabytes/</link>
+    <link>http://nickanderson.github.io/tags/blocks-to-megabytes/</link>
     <description>Recent content in Blocks to Megabytes on </description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Mon, 14 Apr 2008 02:29:17 +0000</lastBuildDate>
     
-	<atom:link href="http://www.cmdln.org/tags/blocks-to-megabytes/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://nickanderson.github.io/tags/blocks-to-megabytes/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Analyzing linux system performance and finding bottle necks</title>
-      <link>http://www.cmdln.org/2008/04/13/analyzing-linux-system-performance-and-finding-bottle-necks/</link>
+      <link>http://nickanderson.github.io/2008/04/13/analyzing-linux-system-performance-and-finding-bottle-necks/</link>
       <pubDate>Mon, 14 Apr 2008 02:29:17 +0000</pubDate>
       
-      <guid>http://www.cmdln.org/2008/04/13/analyzing-linux-system-performance-and-finding-bottle-necks/</guid>
+      <guid>http://nickanderson.github.io/2008/04/13/analyzing-linux-system-performance-and-finding-bottle-necks/</guid>
       <description>&lt;p&gt;System performance analytics seems to be a frequent question on forums and mailing lists. Finding out why something is slow is generally nontrivial as there are many factors to consider. I have found the sysstat package to be an invaluable tool when looking at system performance. Specifically the command sar gives a wealth of information.&lt;/p&gt;</description>
     </item>
     

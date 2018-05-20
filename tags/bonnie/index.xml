@@ -2,21 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Bonnie on </title>
-    <link>http://www.cmdln.org/tags/bonnie/</link>
+    <link>http://nickanderson.github.io/tags/bonnie/</link>
     <description>Recent content in Bonnie on </description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Sat, 26 Apr 2008 19:41:21 +0000</lastBuildDate>
     
-	<atom:link href="http://www.cmdln.org/tags/bonnie/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://nickanderson.github.io/tags/bonnie/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Benchmark hard drive performance in Linux</title>
-      <link>http://www.cmdln.org/2008/04/26/benchmark-hard-drive-performance-in-linux/</link>
+      <link>http://nickanderson.github.io/2008/04/26/benchmark-hard-drive-performance-in-linux/</link>
       <pubDate>Sat, 26 Apr 2008 19:41:21 +0000</pubDate>
       
-      <guid>http://www.cmdln.org/2008/04/26/benchmark-hard-drive-performance-in-linux/</guid>
-      <description></description>
+      <guid>http://nickanderson.github.io/2008/04/26/benchmark-hard-drive-performance-in-linux/</guid>
+      <description>Bonnie is a great tool to use to benchmark your file system. Just a quick tip on using bonnie. You need to give bonnie how much ram you have have in your system, and when you run bonnie you should run with a size 2x as big as your ram. So using this command will help you speed up that calculation.
+bonnie++ -r $(free -m | awk &#39;/^Mem/{print $2}&#39;) -s $(echo $(free -m | awk &#39;/^Mem/{print $2}&#39;)*2| bc)  We use subcommands to expand and automattically use the right parameters for bonnie.</description>
     </item>
     
   </channel>

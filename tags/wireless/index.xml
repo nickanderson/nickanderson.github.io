@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Wireless on </title>
-    <link>http://www.cmdln.org/tags/wireless/</link>
+    <link>http://nickanderson.github.io/tags/wireless/</link>
     <description>Recent content in Wireless on </description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Sun, 06 Apr 2008 04:38:29 +0000</lastBuildDate>
     
-	<atom:link href="http://www.cmdln.org/tags/wireless/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://nickanderson.github.io/tags/wireless/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>NetworkManager funkyness (knetworkmanager)</title>
-      <link>http://www.cmdln.org/2008/04/05/networkmanager-funkyness-knetworkmanager/</link>
+      <link>http://nickanderson.github.io/2008/04/05/networkmanager-funkyness-knetworkmanager/</link>
       <pubDate>Sun, 06 Apr 2008 04:38:29 +0000</pubDate>
       
-      <guid>http://www.cmdln.org/2008/04/05/networkmanager-funkyness-knetworkmanager/</guid>
-      <description></description>
+      <guid>http://nickanderson.github.io/2008/04/05/networkmanager-funkyness-knetworkmanager/</guid>
+      <description>Ok so this is the opposite of what I generally use but its been annoying me and I just figured out what was causing it so I figured I would share it. I am currently running Kubuntu Hardy Haron but this problem was present when I installed my first Ubuntu varient Gutsy Gibbon. Knetworkmanager worked when I first installed. Then at some point it just stopped detecting my wireless card. Its not that it could not see my network card because I could go through manual configuration and connect to wireless without issue, I could also just use iwconfig and dhclient at the commandline (which is what I did).</description>
     </item>
     
   </channel>

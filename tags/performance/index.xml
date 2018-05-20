@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Performance on </title>
-    <link>http://www.cmdln.org/tags/performance/</link>
+    <link>http://nickanderson.github.io/tags/performance/</link>
     <description>Recent content in Performance on </description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Thu, 22 Apr 2010 16:26:16 +0000</lastBuildDate>
     
-	<atom:link href="http://www.cmdln.org/tags/performance/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://nickanderson.github.io/tags/performance/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Analyzing I/O performance in Linux</title>
-      <link>http://www.cmdln.org/2010/04/22/analyzing-io-performance-in-linux/</link>
+      <link>http://nickanderson.github.io/2010/04/22/analyzing-io-performance-in-linux/</link>
       <pubDate>Thu, 22 Apr 2010 16:26:16 +0000</pubDate>
       
-      <guid>http://www.cmdln.org/2010/04/22/analyzing-io-performance-in-linux/</guid>
+      <guid>http://nickanderson.github.io/2010/04/22/analyzing-io-performance-in-linux/</guid>
       <description>Monitoring and analyzing performance is an important task for any sysadmin. Disk I/O bottlenecks can bring applications to a crawl. What are IOPS? Should I use SATA, SAS, or FC? How many spindles do I need? What RAID level should I use? Is my system read or write heavy? These are common questions for anyone embarking on an disk I/O analysis quest. Obligatory disclaimer: I do not consider myself an expert in storage or anything for that mater.</description>
     </item>
     
     <item>
       <title>Disk Performance</title>
-      <link>http://www.cmdln.org/2006/09/02/disk-performance/</link>
+      <link>http://nickanderson.github.io/2006/09/02/disk-performance/</link>
       <pubDate>Sat, 02 Sep 2006 14:05:38 +0000</pubDate>
       
-      <guid>http://www.cmdln.org/2006/09/02/disk-performance/</guid>
+      <guid>http://nickanderson.github.io/2006/09/02/disk-performance/</guid>
       <description>So what kind of performance should people expect from a disk or raid?
 How long should it take to create 100G file?
 time dd if=/dev/zero of=mako1 bs=65536 count=163840

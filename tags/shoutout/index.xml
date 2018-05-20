@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Shoutout on </title>
-    <link>http://www.cmdln.org/tags/shoutout/</link>
+    <link>http://nickanderson.github.io/tags/shoutout/</link>
     <description>Recent content in Shoutout on </description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Wed, 27 Jan 2010 14:46:29 +0000</lastBuildDate>
     
-	<atom:link href="http://www.cmdln.org/tags/shoutout/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://nickanderson.github.io/tags/shoutout/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Now Mobile Ready</title>
-      <link>http://www.cmdln.org/2010/01/27/now-mobile-ready/</link>
+      <link>http://nickanderson.github.io/2010/01/27/now-mobile-ready/</link>
       <pubDate>Wed, 27 Jan 2010 14:46:29 +0000</pubDate>
       
-      <guid>http://www.cmdln.org/2010/01/27/now-mobile-ready/</guid>
+      <guid>http://nickanderson.github.io/2010/01/27/now-mobile-ready/</guid>
       <description>I&amp;#8217;d like to thank ﻿﻿﻿Dale Mugford and Duane Storey from BraveNewCode for the nice WordPress plugin and bundled mobile theme. If you visit my site on your mobile device you should get a slimmed down page, let me know what ya think.</description>
     </item>
     

@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Cloud on </title>
-    <link>http://www.cmdln.org/tags/cloud/</link>
+    <link>http://nickanderson.github.io/tags/cloud/</link>
     <description>Recent content in Cloud on </description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Wed, 01 Aug 2012 13:55:30 +0000</lastBuildDate>
     
-	<atom:link href="http://www.cmdln.org/tags/cloud/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://nickanderson.github.io/tags/cloud/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>LinuxCon/CloudOpen 2012</title>
-      <link>http://www.cmdln.org/2012/08/01/linuxconcloudopen-2012/</link>
+      <link>http://nickanderson.github.io/2012/08/01/linuxconcloudopen-2012/</link>
       <pubDate>Wed, 01 Aug 2012 13:55:30 +0000</pubDate>
       
-      <guid>http://www.cmdln.org/2012/08/01/linuxconcloudopen-2012/</guid>
+      <guid>http://nickanderson.github.io/2012/08/01/linuxconcloudopen-2012/</guid>
       <description>Are you going to LinuxCon/CloudOpen 2012? I am, and I think I have settled on my picks (at least until I look at the schedule again, lots of great options).
 Special thanks to CFEngine for sponsering me!
 Here are my picks for the minute.
@@ -24,10 +24,10 @@ Here are my picks for the minute.
     
     <item>
       <title>It&amp;#8217;s not &amp;#8220;the cloud&amp;#8221; it&amp;#8217;s &amp;#8220;the phog&amp;#8221;</title>
-      <link>http://www.cmdln.org/2009/08/19/its-not-the-cloud-its-the-phog/</link>
+      <link>http://nickanderson.github.io/2009/08/19/its-not-the-cloud-its-the-phog/</link>
       <pubDate>Thu, 20 Aug 2009 02:47:22 +0000</pubDate>
       
-      <guid>http://www.cmdln.org/2009/08/19/its-not-the-cloud-its-the-phog/</guid>
+      <guid>http://nickanderson.github.io/2009/08/19/its-not-the-cloud-its-the-phog/</guid>
       <description>I am so very tired of hearing about &amp;#8220;the cloud&amp;#8221;. Over lunch the other day a co-worker decided we should just call it the phog instead since the phog does a better job of describing exactly what is meant by the cloud.
 Why is phog a better description? The phog has no defined shape, you can&amp;#8217;t see clearly in it, its different everywhere you go, and once your in the middle of it you can&amp;#8217;t find your way out (due to marketing fluf).</description>
     </item>

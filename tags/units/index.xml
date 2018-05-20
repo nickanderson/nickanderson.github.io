@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Units on </title>
-    <link>http://www.cmdln.org/tags/units/</link>
+    <link>http://nickanderson.github.io/tags/units/</link>
     <description>Recent content in Units on </description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Fri, 05 Dec 2008 05:14:20 +0000</lastBuildDate>
     
-	<atom:link href="http://www.cmdln.org/tags/units/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://nickanderson.github.io/tags/units/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Google like unit conversion on the console</title>
-      <link>http://www.cmdln.org/2008/12/04/google-like-unit-conversion-on-the-console/</link>
+      <link>http://nickanderson.github.io/2008/12/04/google-like-unit-conversion-on-the-console/</link>
       <pubDate>Fri, 05 Dec 2008 05:14:20 +0000</pubDate>
       
-      <guid>http://www.cmdln.org/2008/12/04/google-like-unit-conversion-on-the-console/</guid>
+      <guid>http://nickanderson.github.io/2008/12/04/google-like-unit-conversion-on-the-console/</guid>
       <description>For those of you who are horrid at math like I am googles unit conversion is a great help. Want to know how many GB 1Mbps is in a month? Simple just ask google. Well I like to have the ability even when I am not online and I found units. Its in the debian repository and oh so easy to use.
 units -t &#39;1Mbps&#39; &#39;GB/month&#39; 328.71798 units -t &#39;1hour&#39; &#39;seconds&#39; 3600  </description>
     </item>

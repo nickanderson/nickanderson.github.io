@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Backup on </title>
-    <link>http://www.cmdln.org/tags/backup/</link>
+    <link>http://nickanderson.github.io/tags/backup/</link>
     <description>Recent content in Backup on </description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Fri, 28 Aug 2009 14:19:14 +0000</lastBuildDate>
     
-	<atom:link href="http://www.cmdln.org/tags/backup/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://nickanderson.github.io/tags/backup/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Rsync for Windows clients</title>
-      <link>http://www.cmdln.org/2009/08/28/rsync-for-windows-clients/</link>
+      <link>http://nickanderson.github.io/2009/08/28/rsync-for-windows-clients/</link>
       <pubDate>Fri, 28 Aug 2009 14:19:14 +0000</pubDate>
       
-      <guid>http://www.cmdln.org/2009/08/28/rsync-for-windows-clients/</guid>
+      <guid>http://nickanderson.github.io/2009/08/28/rsync-for-windows-clients/</guid>
       <description>It looks like I will need a windows backup solution for a small project soon. As you probably know I don&amp;#8217;t typically do Windows so I am reaching out. I typically use rsync for most of my backup needs. To be more specific I like to use rsnapshot which is a wrapper around rsync. Have you ever wanted rsync on windows? What did you use.
 I am aware of several options.</description>
     </item>

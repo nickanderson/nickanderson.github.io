@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Self Healing on </title>
-    <link>http://www.cmdln.org/tags/self-healing/</link>
+    <link>http://nickanderson.github.io/tags/self-healing/</link>
     <description>Recent content in Self Healing on </description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Fri, 08 Feb 2008 23:01:17 +0000</lastBuildDate>
     
-	<atom:link href="http://www.cmdln.org/tags/self-healing/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://nickanderson.github.io/tags/self-healing/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Infrastructure monitoring with Zabbix</title>
-      <link>http://www.cmdln.org/2008/02/08/infrastructure-monitoring-with-zabbix/</link>
+      <link>http://nickanderson.github.io/2008/02/08/infrastructure-monitoring-with-zabbix/</link>
       <pubDate>Fri, 08 Feb 2008 23:01:17 +0000</pubDate>
       
-      <guid>http://www.cmdln.org/2008/02/08/infrastructure-monitoring-with-zabbix/</guid>
+      <guid>http://nickanderson.github.io/2008/02/08/infrastructure-monitoring-with-zabbix/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;www.zabbix.com&#34;&gt;Zabbix&lt;/a&gt; is an opensource network monitoring application somewhat akin to &lt;a href=&#34;http://www.nagios.org/&#34;&gt;Nagios&lt;/a&gt; and &lt;a href=&#34;http://www.cacti.net&#34;&gt;Cacti&lt;/a&gt;. I have been using Zabbix for about 8 months, and I am pleased with its results.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>

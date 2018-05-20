@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Design Center on </title>
-    <link>http://www.cmdln.org/tags/design-center/</link>
+    <link>http://nickanderson.github.io/tags/design-center/</link>
     <description>Recent content in Design Center on </description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Mon, 04 Jun 2012 19:28:29 +0000</lastBuildDate>
     
-	<atom:link href="http://www.cmdln.org/tags/design-center/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://nickanderson.github.io/tags/design-center/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>CFEngine Design Center Launches</title>
-      <link>http://www.cmdln.org/2012/06/04/cfengine-design-center-launches/</link>
+      <link>http://nickanderson.github.io/2012/06/04/cfengine-design-center-launches/</link>
       <pubDate>Mon, 04 Jun 2012 19:28:29 +0000</pubDate>
       
-      <guid>http://www.cmdln.org/2012/06/04/cfengine-design-center-launches/</guid>
+      <guid>http://nickanderson.github.io/2012/06/04/cfengine-design-center-launches/</guid>
       <description>If you follow CFEngine you may have notices that the multiple pay versions have been condensed down to CFEngine Enterprise with the latest release. You may not have noticed that the CFEngine Design Center also launched.
 Don&amp;#8217;t get me wrong, I am excited about the new 25 free enterprise nodes and the new features in the Enterprise edition, but I see greater value in the Design Center. This is a great resource for new and old users.</description>
     </item>

@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Command Line on </title>
-    <link>http://www.cmdln.org/tags/command-line/</link>
+    <link>http://nickanderson.github.io/tags/command-line/</link>
     <description>Recent content in Command Line on </description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Sat, 22 Aug 2009 19:07:46 +0000</lastBuildDate>
     
-	<atom:link href="http://www.cmdln.org/tags/command-line/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://nickanderson.github.io/tags/command-line/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>One liners: a tip</title>
-      <link>http://www.cmdln.org/2009/08/22/one-liners-a-tip/</link>
+      <link>http://nickanderson.github.io/2009/08/22/one-liners-a-tip/</link>
       <pubDate>Sat, 22 Aug 2009 19:07:46 +0000</pubDate>
       
-      <guid>http://www.cmdln.org/2009/08/22/one-liners-a-tip/</guid>
+      <guid>http://nickanderson.github.io/2009/08/22/one-liners-a-tip/</guid>
       <description>Have you ever started writing a one-liner and half way in realized it was a bit more complex than you first thought?
 If your shell is bash, next time that happens try ctrl-x ctrl-e.
 It will take your current line and stuff it into the your default editor (export EDITOR=vim).</description>
@@ -23,10 +23,10 @@ It will take your current line and stuff it into the your default editor (export
     
     <item>
       <title>Testing mail servers with swaks</title>
-      <link>http://www.cmdln.org/2009/04/16/testing-mail-servers-with-swaks/</link>
+      <link>http://nickanderson.github.io/2009/04/16/testing-mail-servers-with-swaks/</link>
       <pubDate>Thu, 16 Apr 2009 17:45:43 +0000</pubDate>
       
-      <guid>http://www.cmdln.org/2009/04/16/testing-mail-servers-with-swaks/</guid>
+      <guid>http://nickanderson.github.io/2009/04/16/testing-mail-servers-with-swaks/</guid>
       <description>I hadn&amp;#8217;t seen this tool before so I figured I would share. Swaks is the swiss army knife SMTP according to the homepage.
 I&amp;#8217;ve covered testing email from the command line before but this tool sure makes it easier.
 swaks --to nick@tld --from nick@tld *** MX Routing not available: requires Net::DNS. Using localhost as mail server === Trying localhost:25... === Connected to localhost. &amp;lt;- 220 cmdln-laptop ESMTP Exim 4.69 Thu, 16 Apr 2009 12:23:24 -0500 -&amp;gt; EHLO cmdln-laptop &amp;lt;- 250-cmdln-laptop Hello localhost [127.</description>
@@ -34,28 +34,28 @@ swaks --to nick@tld --from nick@tld *** MX Routing not available: requires Net::
     
     <item>
       <title>Command Line Ticketing System</title>
-      <link>http://www.cmdln.org/2008/04/11/command-line-ticketing-system/</link>
+      <link>http://nickanderson.github.io/2008/04/11/command-line-ticketing-system/</link>
       <pubDate>Fri, 11 Apr 2008 18:53:16 +0000</pubDate>
       
-      <guid>http://www.cmdln.org/2008/04/11/command-line-ticketing-system/</guid>
+      <guid>http://nickanderson.github.io/2008/04/11/command-line-ticketing-system/</guid>
       <description>&lt;p&gt;As I have said before life at the terminal is a joy. I constantly struggle with keeping myself organized. I actually work pretty well keeping most things in my head. But one of these days I&amp;#8217;m going to fall down and hit my head and forget everything. So try and try again to keep myself organized and documented do I. I was recently pointed to &lt;a href=&#34;http://github.com/schacon/ticgit/tree/master&#34;&gt;TicGit&lt;/a&gt; its a ticketing system that is meant to integrate right into your repository. Well I&amp;#8217;m not a developer but I can see the benefit for a terminal todo list and general ticketing for myself as well as my little script repository that is actually maintained in git. Well ok maybe maintained is a bit strong of a word. Anyway on to the good stuff.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Testing Email Manually with Telnet (spoofing email)</title>
-      <link>http://www.cmdln.org/2008/04/06/testing-email-manually-with-telnet-spoofing-email/</link>
+      <link>http://nickanderson.github.io/2008/04/06/testing-email-manually-with-telnet-spoofing-email/</link>
       <pubDate>Sun, 06 Apr 2008 17:15:35 +0000</pubDate>
       
-      <guid>http://www.cmdln.org/2008/04/06/testing-email-manually-with-telnet-spoofing-email/</guid>
+      <guid>http://nickanderson.github.io/2008/04/06/testing-email-manually-with-telnet-spoofing-email/</guid>
       <description>&lt;p&gt;Being able to send email manually seems to be a bit of a lost art. It is extremely handy to know how to use telnet to send email for testing procmail filters, and any other part of your mail system. It can also be fun to spoof email to a friend or co-worker. Read on for a quick run down.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Spice up your bash prompt redux | A nice .screenrc redux with screencast</title>
-      <link>http://www.cmdln.org/2008/02/24/spice-up-your-bash-prompt-redux-a-nice-screenrc-redux-with-screencast/</link>
+      <link>http://nickanderson.github.io/2008/02/24/spice-up-your-bash-prompt-redux-a-nice-screenrc-redux-with-screencast/</link>
       <pubDate>Mon, 25 Feb 2008 05:16:50 +0000</pubDate>
       
-      <guid>http://www.cmdln.org/2008/02/24/spice-up-your-bash-prompt-redux-a-nice-screenrc-redux-with-screencast/</guid>
+      <guid>http://nickanderson.github.io/2008/02/24/spice-up-your-bash-prompt-redux-a-nice-screenrc-redux-with-screencast/</guid>
       <description>&lt;p&gt;This is more or less going to be an addendum to my last post as well as an update to my previous screenrc post. About 5 minutes after posting I realized that my additions to my prompt broke some new additions to new screenrc settings.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -63,10 +63,10 @@ swaks --to nick@tld --from nick@tld *** MX Routing not available: requires Net::
     
     <item>
       <title>Spice up your bash prompt</title>
-      <link>http://www.cmdln.org/2008/02/24/spice-up-your-bash-prompt/</link>
+      <link>http://nickanderson.github.io/2008/02/24/spice-up-your-bash-prompt/</link>
       <pubDate>Mon, 25 Feb 2008 03:59:17 +0000</pubDate>
       
-      <guid>http://www.cmdln.org/2008/02/24/spice-up-your-bash-prompt/</guid>
+      <guid>http://nickanderson.github.io/2008/02/24/spice-up-your-bash-prompt/</guid>
       <description>&lt;p&gt;I spend a lot of my time sitting in front of terminals if you have not yet guessed. When dealing with different user accounts across different systems and a plethora of terminals open its nice to have a bit of information about who you are, and where you are. I also like to be able to easily differentiate output from different commands. If your interested read on.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -74,10 +74,10 @@ swaks --to nick@tld --from nick@tld *** MX Routing not available: requires Net::
     
     <item>
       <title>Use bc for command line math</title>
-      <link>http://www.cmdln.org/2008/02/07/use-bc-for-command-line-math/</link>
+      <link>http://nickanderson.github.io/2008/02/07/use-bc-for-command-line-math/</link>
       <pubDate>Fri, 08 Feb 2008 03:21:15 +0000</pubDate>
       
-      <guid>http://www.cmdln.org/2008/02/07/use-bc-for-command-line-math/</guid>
+      <guid>http://nickanderson.github.io/2008/02/07/use-bc-for-command-line-math/</guid>
       <description>&lt;p&gt;BC is a great math library. Its extremely flexible and can be easily used in scripts.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>

@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hack on </title>
-    <link>http://www.cmdln.org/tags/hack/</link>
+    <link>http://nickanderson.github.io/tags/hack/</link>
     <description>Recent content in Hack on </description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Thu, 06 May 2010 13:41:36 +0000</lastBuildDate>
     
-	<atom:link href="http://www.cmdln.org/tags/hack/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://nickanderson.github.io/tags/hack/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Remove Google Everything Sidebar &amp;#8212; Again</title>
-      <link>http://www.cmdln.org/2010/05/06/remove-google-everything-sidebar-again/</link>
+      <link>http://nickanderson.github.io/2010/05/06/remove-google-everything-sidebar-again/</link>
       <pubDate>Thu, 06 May 2010 13:41:36 +0000</pubDate>
       
-      <guid>http://www.cmdln.org/2010/05/06/remove-google-everything-sidebar-again/</guid>
+      <guid>http://nickanderson.github.io/2010/05/06/remove-google-everything-sidebar-again/</guid>
       <description>Yesterday I had a tip on removing yourself from any testing for that google sidebar that your likely seeing in your search results now. I woke up to a nasty surprise. After removing the cookie yesterday, today I had the bar again. So I removed the cookie again, and it came right back. Thats when a friend pointed out that google was rolling it out to everyone. OH NO!
 Well, luckily you can get a browser extension for Firefox or Chrome that makes it disappear from the guys over at seotools.</description>
     </item>
