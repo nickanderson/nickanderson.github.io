@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="">
+
+	<head>
+		<title> Posts &middot;  </title>
+
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.40.3" />
+
+
+<script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="http://nickanderson.github.io/css/nix.css">
+
+
+<link href="https://fonts.googleapis.com/css?family=Inconsolata|Open+Sans|Roboto|Montserrat|Concert+One" rel="stylesheet">
+
+
+
+
+	</head>
+
+	<body>
+		<header>
+<nav class="navbar navbar-default navbar-fixed-top navbar-inverse font-header">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" id="green-terminal" href=http://nickanderson.github.io>nick@cmdln.org ~ $</a>
+		</div>
+
+		
+		<div class="collapse navbar-collapse" id="navbar-collapse-1">
+			<ul class="nav navbar-nav navbar-right">
+				<li>
+					<a href="http://nickanderson.github.io">/home/nick</a>
+				</li>
+				
+				
+				<li >
+					<a href="/post/">~/posts</a>
+				</li>
+				
+
+			</ul>
+		</div>
+	</div>
+</nav>
+</header>
+
+		<div class="container wrapper">
+			<div class="row">
+				<div class="col-xs-12 text-center">
+					<h1 id=>Posts</h1>
+				</div>
+			</div>
+			<ul id="post-list">
+                	
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
+							<h4 class="post-link"><a href="http://nickanderson.github.io/2012/03/28/bibble-the-best-photo-editing-software-for-linux-bought-by-corel/">Bibble The Best Photo Editing Software For Linux Bought By Corel</a></h4>
+							<h4 class="post-date">Mar 29, 2012</h4>
+						</div>
+						<div class="post-summary"><p>I have been using bibble for about a year now. Its the best photo editing software that ran on linux that I could find. It probably isn&#8217;t as polished as Photoshop but it has its own great features like threading so it can use all of your cores for rendering.
+Just over a week ago I noticed it had been bought by Corel and its been re-branded to AfterShotPro. I really hope they continue to develop it and provide Linux support.</p></div>
+						<div class="post-list-footer text-center">
+							<a href="http://nickanderson.github.io/2012/03/28/bibble-the-best-photo-editing-software-for-linux-bought-by-corel/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
+							<h4 class="post-link"><a href="http://nickanderson.github.io/2012/02/27/setup-encfs-on-dropbox-for-boxcryptor-with-cfengine/">Setup encfs on dropbox for boxcryptor with CFEngine</a></h4>
+							<h4 class="post-date">Feb 27, 2012</h4>
+						</div>
+						<div class="post-summary"><p>Here is an easy way to configure encfs with dropbox that is compatible with boxcryptor. Boxcryptor makes Windows, Mac Android, and IOS applications to assist you in accessing data that you have stored in encfs. They do require that you create your encfs with some specific options: Cipher algorithm: AES, Plaintext or Stream encrypted filenames, No filename initialization vector chaining, No per-file initialization vectors, No external IV chaining, No block MAC headers, No per-block random bytes.</p></div>
+						<div class="post-list-footer text-center">
+							<a href="http://nickanderson.github.io/2012/02/27/setup-encfs-on-dropbox-for-boxcryptor-with-cfengine/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
+							<h4 class="post-link"><a href="http://nickanderson.github.io/2012/02/18/new-bundle-to-manage-routes-for-redhatcentos-with-cfengine-3/">New bundle to manage routes for RedHat/CentOS with CFEngine 3</a></h4>
+							<h4 class="post-date">Feb 19, 2012</h4>
+						</div>
+						<div class="post-summary"><p>I re-factored rh_add_interface_routes into a new bundle rh_update_routes, you can find them in my CFEngine library.
+The biggest improvement is you no longer have to specify the interface you want the route on. Instead you specify a regular expression of the ip that would be on that interface and the specific interface is found.
+Second major improvement is the direct use of ip route del/add to update currently running system instead of restarting all networking.</p></div>
+						<div class="post-list-footer text-center">
+							<a href="http://nickanderson.github.io/2012/02/18/new-bundle-to-manage-routes-for-redhatcentos-with-cfengine-3/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
+							<h4 class="post-link"><a href="http://nickanderson.github.io/2012/02/16/pre-commit-hook-for-git-to-check-cfengine-syntax/">pre-commit hook for git to check CFEngine syntax</a></h4>
+							<h4 class="post-date">Feb 16, 2012</h4>
+						</div>
+						<div class="post-summary"><p>Sometimes I am not so disciplined to run cf-promises on my policy before I commit it. I make a small change and I think I&#8217;m golden, but inevitably that breaks things. I wrote a simple commit hook to check policy syntax and stop you from shooting yourself in the foot. You can find the pre-commit{#a71b90d9d3bb7e4d1f4be225eb124c42527855a3} script over on my github account. I hope you find it useful.</p></div>
+						<div class="post-list-footer text-center">
+							<a href="http://nickanderson.github.io/2012/02/16/pre-commit-hook-for-git-to-check-cfengine-syntax/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
+							<h4 class="post-link"><a href="http://nickanderson.github.io/2012/02/16/bundles-of-bundles-with-cfengine-3/">Bundles of Bundles with CFEngine 3</a></h4>
+							<h4 class="post-date">Feb 16, 2012</h4>
+						</div>
+						<div class="post-summary"><p><p><a href="http://www.cmdln.org/wp-content/uploads/2012/02/Extrusion-Bundles2.jpg"><img class="alignleft size-thumbnail wp-image-936" title="Bundles of Bundles" src="http://www.cmdln.org/wp-content/uploads/2012/02/Extrusion-Bundles2-150x150.jpg" alt="" width="150" height="150" /></a>I&#8217;ve been working more and more with CFEngine lately and I have been slowly building a <a href="http://www.laurand.net/images/Extrusion%20Bundles2.jpg">tiny library</a>. These are all pretty much redhat specific but I welcome patches and comments. Most of the bundles have comments that show usage, if there is interest I may post some example usage later.</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p></p></p></div>
+						<div class="post-list-footer text-center">
+							<a href="http://nickanderson.github.io/2012/02/16/bundles-of-bundles-with-cfengine-3/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
+							<h4 class="post-link"><a href="http://nickanderson.github.io/2012/01/18/the-great-internet-blackout-of-2012/">The Great Internet Blackout of 2012</a></h4>
+							<h4 class="post-date">Jan 18, 2012</h4>
+						</div>
+						<div class="post-summary"><p>I am happy to see how many sites are participating in the SOPA/PIPA protest today. I am a bit disapointed that facebook did not join (at least yet), and google only doing a doodle seems a little bit on the weak side. Still its nice when so many people can show support for something so threatening. There is quite a list of sites that are blacked out in one way or another today.</p></div>
+						<div class="post-list-footer text-center">
+							<a href="http://nickanderson.github.io/2012/01/18/the-great-internet-blackout-of-2012/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
+							<h4 class="post-link"><a href="http://nickanderson.github.io/2011/12/15/netapp-customer-service-win/">NetApp &amp;#8211; Customer Service WIN!</a></h4>
+							<h4 class="post-date">Dec 15, 2011</h4>
+						</div>
+						<div class="post-summary"><p>I just wanted to share my NetApp customer service experience since usually people only share negative experiences. I needed to download a mib for a NetApp today. I really don&#8217;t like that I have to register an account just to download a mib but whatever. I was really upset after registering the account and entering a system-id to find that I didn&#8217;t have access to download any mibs.
+I saw that feedback button glaring at me so decided to give it a shot, left a &#8220;very dissatisfied&#8221; about download experience review.</p></div>
+						<div class="post-list-footer text-center">
+							<a href="http://nickanderson.github.io/2011/12/15/netapp-customer-service-win/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
+							<h4 class="post-link"><a href="http://nickanderson.github.io/2011/12/05/remember-to-register-for-xen-day-boston-2011/">Remember to Register for Xen Day Boston 2011</a></h4>
+							<h4 class="post-date">Dec 5, 2011</h4>
+						</div>
+						<div class="post-summary"><p>Just a reminder that Xen Day Boston 2011 is coming up (December 9th).
+There&#8217;s still room to register, but spots are going fast!
+For more information see:
+http://blog.xen.org/index.php/2011/12/02/xen-day-presenters/</p></div>
+						<div class="post-list-footer text-center">
+							<a href="http://nickanderson.github.io/2011/12/05/remember-to-register-for-xen-day-boston-2011/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
+							<h4 class="post-link"><a href="http://nickanderson.github.io/2011/11/18/xen-day-lisa11/">Xen Day @ LISA11</a></h4>
+							<h4 class="post-date">Nov 18, 2011</h4>
+						</div>
+						<div class="post-summary"><p>[
+]1
+If you&#8217;re going to LISA in Boston this year consider registering for Xen Day on Friday Dec, 9. Registration is free and the schedule looks great.</p></div>
+						<div class="post-list-footer text-center">
+							<a href="http://nickanderson.github.io/2011/11/18/xen-day-lisa11/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
+							<h4 class="post-link"><a href="http://nickanderson.github.io/2011/09/10/im-grumpy/">I&amp;#8217;m Grumpy</a></h4>
+							<h4 class="post-date">Sep 11, 2011</h4>
+						</div>
+						<div class="post-summary"><p><p><a href="http://www.cmdln.org/wp-content/uploads/2011/09/grumpy1.jpg"><img class="alignleft size-medium wp-image-893" title="grumpy" src="http://www.cmdln.org/wp-content/uploads/2011/09/grumpy1-300x300.jpg" alt="" width="150" height="150" srcset="http://www.cmdln.org/wp-content/uploads/2011/09/grumpy1-300x300.jpg 300w, http://www.cmdln.org/wp-content/uploads/2011/09/grumpy1-150x150.jpg 150w, http://www.cmdln.org/wp-content/uploads/2011/09/grumpy1.jpg 400w" sizes="(max-width: 150px) 100vw, 150px" /></a>&#8220;I&#8217;m Grumpy.&#8221;</p>
+
+<p>Beyond the piles of peanuts and change, dishes and glassware,</p>
+
+<p>beneath the splashed on Polo Crest, Sean Jean clothing, and Bill Blass underwear,</p>
+
+<p>He was quiet and mysterious, a man of few words that loved his work.</p></p></div>
+						<div class="post-list-footer text-center">
+							<a href="http://nickanderson.github.io/2011/09/10/im-grumpy/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
+			</ul>
+            
+
+<div class="pagination-wrapper text-center">
+  <ul class="pagination">
+      
+      <li>
+          <a href="/post/" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
+      </li>
+      
+      <li
+      >
+          <a href="/post/page/4/" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+      </li>
+      
+      <li
+      ><a href="/post/">1</a></li>
+      
+      <li
+      ><a href="/post/page/2/">2</a></li>
+      
+      <li
+      ><a href="/post/page/3/">3</a></li>
+      
+      <li
+      ><a href="/post/page/4/">4</a></li>
+      
+      <li
+      class="active"><a href="/post/page/5/">5</a></li>
+      
+      <li
+      ><a href="/post/page/6/">6</a></li>
+      
+      <li
+      ><a href="/post/page/7/">7</a></li>
+      
+      <li
+      ><a href="/post/page/8/">8</a></li>
+      
+      <li
+      ><a href="/post/page/9/">9</a></li>
+      
+      <li
+      ><a href="/post/page/10/">10</a></li>
+      
+      <li
+      ><a href="/post/page/11/">11</a></li>
+      
+      <li
+      ><a href="/post/page/12/">12</a></li>
+      
+      <li
+      ><a href="/post/page/13/">13</a></li>
+      
+      <li
+      ><a href="/post/page/14/">14</a></li>
+      
+      <li
+      ><a href="/post/page/15/">15</a></li>
+      
+      <li
+      ><a href="/post/page/16/">16</a></li>
+      
+      <li
+      ><a href="/post/page/17/">17</a></li>
+      
+      <li
+      ><a href="/post/page/18/">18</a></li>
+      
+      <li
+      ><a href="/post/page/19/">19</a></li>
+      
+      <li
+      ><a href="/post/page/20/">20</a></li>
+      
+      <li
+      ><a href="/post/page/21/">21</a></li>
+      
+      <li
+      ><a href="/post/page/22/">22</a></li>
+      
+      <li
+      ><a href="/post/page/23/">23</a></li>
+      
+      <li
+      >
+          <a href="/post/page/6/" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+      </li>
+      
+      <li>
+          <a href="/post/page/23/" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+      </li>
+      
+    </ul>
+</div>
+
+
+
+			<div class="push"></div>
+		</div>
+		<footer class="footer text-center">
+<p>Copyright &copy; 2018 Nick Anderson -
+<span class="credit">
+	Powered by
+	<a target="_blank" href="https://gohugo.io">Hugo</a>
+	and
+	<a target="_blank" href="https://github.com/LordMathis/hugo-theme-nix/">Nix</a> theme.
+</span>
+</p>
+</footer>
+
+	</body>
+</html>

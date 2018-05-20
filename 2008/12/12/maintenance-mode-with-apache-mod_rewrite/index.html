@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title> Maintenance mode with apache mod_rewrite &middot;  </title>
+
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.40.3" />
+
+
+<script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="http://nickanderson.github.io/css/nix.css">
+
+
+<link href="https://fonts.googleapis.com/css?family=Inconsolata|Open+Sans|Roboto|Montserrat|Concert+One" rel="stylesheet">
+
+
+
+
+    </head>
+
+    <body>
+        <header>
+<nav class="navbar navbar-default navbar-fixed-top navbar-inverse font-header">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" id="green-terminal" href=http://nickanderson.github.io>nick@cmdln.org ~ $</a>
+		</div>
+
+		
+		<div class="collapse navbar-collapse" id="navbar-collapse-1">
+			<ul class="nav navbar-nav navbar-right">
+				<li>
+					<a href="http://nickanderson.github.io">/home/nick</a>
+				</li>
+				
+				
+				<li >
+					<a href="/post/">~/posts</a>
+				</li>
+				
+
+			</ul>
+		</div>
+	</div>
+</nav>
+</header>
+
+        <div class="container wrapper">
+            <h1><a href="http://nickanderson.github.io/2008/12/12/maintenance-mode-with-apache-mod_rewrite/">Maintenance mode with apache mod_rewrite</a></h1>
+            <span class="post-date">Dec 12, 2008 </span>
+            <div class="post-content">
+                <p>With small websites sometimes you need to put up a maintenance page while you are making some modifications. Typically you should have some staging enviornment but sometimes infrastructure does not allow for this. If you find your self in this situation you might like this tip. </p>
+
+<p>It is not sufficient to just replace your index with a maintenance page for multiple reasons. First what about sub pages? Without a redirect on those people will be able to access other areas of your site which may of may not be desireble.</p>
+
+<p>Using mod_rewrite you can be friendly to search engines, and your users.</p>
+
+<p>Try this in your .htaccess</p>
+
+<pre class="brush: bash; title: ; notranslate" title="">ErrorDocument 404 /maint.html
+RewriteEngine on
+RewriteCond %{REQUEST_URI} !/maint.html$
+RewriteCond %{REQUEST_URI} !/maint.jpg$
+RewriteRule $/maint.html$ [R=302,L]
+</pre>
+
+<p>This will give a 302 (Moved Temporarily) msg to clients and serve</p>
+
+<p>maint.html. maint.html can have content similar to this.</p>
+
+<pre class="brush: bash; title: ; notranslate" title="">&lt;img src="/maint.jpg" alt="We are currently undergoing maintenance. We will be back shortly"&gt;'
+</pre>
+
+<p>The leading slash on the image is important as it will serve the image even if someone accesses <a href="http://yourdomain/somethig/somethingelse">http://yourdomain/somethig/somethingelse</a>.</p>
+
+<p>Its also important to set your 404 as your maint.html so anyone accessing pages that do not exist get the same maintenance content.</p>
+
+<p>You might want to add a condition like the following if you want to be able to browse your website normally while in maintenance mode.</p>
+
+<pre class="brush: bash; title: ; notranslate" title="">RewriteCond %{REMOTE_HOST} !^123\.123\.123\.123
+</pre>
+
+<p>Be sure to replace 123.123.123.123 with your ip address. This will cause apache to not apply the rule to the specifed ip.</p>
+
+<p>Hope someone finds this useful. I know I have used it several times in the past.</p>
+            </div>
+            
+            <div class="post-comments">
+                
+            </div>
+            
+            <div class="push"></div>
+        </div>
+        <footer class="footer text-center">
+<p>Copyright &copy; 2018 Nick Anderson -
+<span class="credit">
+	Powered by
+	<a target="_blank" href="https://gohugo.io">Hugo</a>
+	and
+	<a target="_blank" href="https://github.com/LordMathis/hugo-theme-nix/">Nix</a> theme.
+</span>
+</p>
+</footer>
+
+    </body>
