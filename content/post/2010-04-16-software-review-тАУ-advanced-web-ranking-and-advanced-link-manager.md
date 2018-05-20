@@ -26,7 +26,7 @@ For this reason, automation tools can be invaluable for these tasks.  Caphyon (
 
 ### Starting Out – Advanced Web Ranking
 
-[<img class="size-full wp-image-633 alignleft" src="http://www.cmdln.org/wp-content/uploads/2010/04/ai-128x128.png" alt="Advanced Web Ranking Logo" width="128" height="128" srcset="http://www.cmdln.org/wp-content/uploads/2010/04/ai-128x128.png 128w, http://www.cmdln.org/wp-content/uploads/2010/04/ai-128x128-50x50.png 50w" sizes="(max-width: 128px) 100vw, 128px" />][2]Let&#8217;s pretend we are a small sysadmin consulting firm – we have started an initiative to improve our [website ranking][3] (and hopefully traffic!), but we face stiff website competition from larger, established sites, both locally and nationwide.  Where do we stand?  Do we currently rank for any of the keywords relating to our core products or services?  Are there other keywords that we should be watching?  What about our competition?
+[<img class="size-full wp-image-633 alignleft" src="http://www.cmdln.org/images/wp-content/uploads/2010/04/ai-128x128.png" alt="Advanced Web Ranking Logo" width="128" height="128" srcset="http://www.cmdln.org/images/wp-content/uploads/2010/04/ai-128x128.png 128w, http://www.cmdln.org/images/wp-content/uploads/2010/04/ai-128x128-50x50.png 50w" sizes="(max-width: 128px) 100vw, 128px" />][2]Let&#8217;s pretend we are a small sysadmin consulting firm – we have started an initiative to improve our [website ranking][3] (and hopefully traffic!), but we face stiff website competition from larger, established sites, both locally and nationwide.  Where do we stand?  Do we currently rank for any of the keywords relating to our core products or services?  Are there other keywords that we should be watching?  What about our competition?
 
 We can work out all of these answers by hand, or we can setup <a href="http://www.advancedwebranking.com/" target="_blank">Advanced Web Ranking</a> and have it do much of the work for us &#8211; saving a lot of time and resources.  To get started we just need to step through a quick Project Wizard.  Select which search engines you want, which keywords you want to keep an eye on, which websites you want to track, and your communication settings.  AWR will then take off and start collecting stats!
 
@@ -34,7 +34,7 @@ The result is a collection of data which shows us how we rank for each of our ke
 
 <p style="text-align: center">
   <p>
-    <a href="http://www.cmdln.org/wp-content/uploads/2010/04/awr-keyword-suggestion-cropped2.png"><img class="aligncenter size-full wp-image-631" src="http://www.cmdln.org/wp-content/uploads/2010/04/awr-keyword-suggestion-cropped2.png" alt="AWR Keyword Suggestion Tool" width="500" height="157" srcset="http://www.cmdln.org/wp-content/uploads/2010/04/awr-keyword-suggestion-cropped2.png 500w, http://www.cmdln.org/wp-content/uploads/2010/04/awr-keyword-suggestion-cropped2-300x94.png 300w" sizes="(max-width: 500px) 100vw, 500px" /></a>
+    <a href="http://www.cmdln.org/images/wp-content/uploads/2010/04/awr-keyword-suggestion-cropped2.png"><img class="aligncenter size-full wp-image-631" src="http://www.cmdln.org/images/wp-content/uploads/2010/04/awr-keyword-suggestion-cropped2.png" alt="AWR Keyword Suggestion Tool" width="500" height="157" srcset="http://www.cmdln.org/images/wp-content/uploads/2010/04/awr-keyword-suggestion-cropped2.png 500w, http://www.cmdln.org/images/wp-content/uploads/2010/04/awr-keyword-suggestion-cropped2-300x94.png 300w" sizes="(max-width: 500px) 100vw, 500px" /></a>
   </p>
   
   <p>
@@ -79,7 +79,7 @@ The result is a collection of data which shows us how we rank for each of our ke
   </h3>
   
   <p>
-    <a href="http://www.cmdln.org/wp-content/uploads/2010/04/alm-128x128.png"><img class="alignleft size-full wp-image-636" src="http://www.cmdln.org/wp-content/uploads/2010/04/alm-128x128.png" alt="Advanced Link Manager Logo" width="128" height="128" srcset="http://www.cmdln.org/wp-content/uploads/2010/04/alm-128x128.png 128w, http://www.cmdln.org/wp-content/uploads/2010/04/alm-128x128-50x50.png 50w" sizes="(max-width: 128px) 100vw, 128px" /></a>For years, the major search engines have used links as a primary ranking factor for website search results.  Ignoring web spam and other complexities for the moment, we can consider the quantity of links as indicative of popularity our site, the authority of the linking domains as indicative of the importance of our site, and the text of the links as indicative of what our site is about.  This leads to new questions – How many links does our website have?  Who links to us?  What link text do other sites use for us?  And again&#8230; What about our competition?
+    <a href="http://www.cmdln.org/images/wp-content/uploads/2010/04/alm-128x128.png"><img class="alignleft size-full wp-image-636" src="http://www.cmdln.org/images/wp-content/uploads/2010/04/alm-128x128.png" alt="Advanced Link Manager Logo" width="128" height="128" srcset="http://www.cmdln.org/images/wp-content/uploads/2010/04/alm-128x128.png 128w, http://www.cmdln.org/images/wp-content/uploads/2010/04/alm-128x128-50x50.png 50w" sizes="(max-width: 128px) 100vw, 128px" /></a>For years, the major search engines have used links as a primary ranking factor for website search results.  Ignoring web spam and other complexities for the moment, we can consider the quantity of links as indicative of popularity our site, the authority of the linking domains as indicative of the importance of our site, and the text of the links as indicative of what our site is about.  This leads to new questions – How many links does our website have?  Who links to us?  What link text do other sites use for us?  And again&#8230; What about our competition?
   </p>
   
   <p>
@@ -98,7 +98,7 @@ The result is a collection of data which shows us how we rank for each of our ke
   </p>
   
   <p>
-    <a href="http://www.cmdln.org/wp-content/uploads/2010/04/ALM-domains-cropped.png"><img class="aligncenter size-full wp-image-639" src="http://www.cmdln.org/wp-content/uploads/2010/04/ALM-domains-cropped.png" alt="Advanced Link Manager Unverified Domains" width="500" height="201" srcset="http://www.cmdln.org/wp-content/uploads/2010/04/ALM-domains-cropped.png 500w, http://www.cmdln.org/wp-content/uploads/2010/04/ALM-domains-cropped-300x120.png 300w" sizes="(max-width: 500px) 100vw, 500px" /></a>
+    <a href="http://www.cmdln.org/images/wp-content/uploads/2010/04/ALM-domains-cropped.png"><img class="aligncenter size-full wp-image-639" src="http://www.cmdln.org/images/wp-content/uploads/2010/04/ALM-domains-cropped.png" alt="Advanced Link Manager Unverified Domains" width="500" height="201" srcset="http://www.cmdln.org/images/wp-content/uploads/2010/04/ALM-domains-cropped.png 500w, http://www.cmdln.org/images/wp-content/uploads/2010/04/ALM-domains-cropped-300x120.png 300w" sizes="(max-width: 500px) 100vw, 500px" /></a>
   </p>
   
   <p>
@@ -170,5 +170,5 @@ The result is a collection of data which shows us how we rank for each of our ke
   </div>
 
  [1]: http://www.caphyon.com/
- [2]: http://www.cmdln.org/wp-content/uploads/2010/04/ai-128x128.png
+ [2]: http://www.cmdln.org/images/wp-content/uploads/2010/04/ai-128x128.png
  [3]: http://www.advancedwebranking.com/features.html

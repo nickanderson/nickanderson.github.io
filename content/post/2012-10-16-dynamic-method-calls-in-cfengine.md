@@ -10,7 +10,7 @@ tags:
   - CFEngine
 
 ---
-[<img class="alignright size-medium wp-image-1076" title="dynamic" src="http://www.cmdln.org/wp-content/uploads/2012/10/dynamic-300x225.jpg" alt="" width="300" height="225" srcset="http://www.cmdln.org/wp-content/uploads/2012/10/dynamic-300x225.jpg 300w, http://www.cmdln.org/wp-content/uploads/2012/10/dynamic.jpg 400w" sizes="(max-width: 300px) 100vw, 300px" />][1]Methods type promises are powerful abstraction tools in CFEngine 3. Methods allow you to activate bundles (optionally parametrized) from other bundles. This allows encapsulation of knowledge and lends itself to re-usability.
+[<img class="alignright size-medium wp-image-1076" title="dynamic" src="http://www.cmdln.org/images/wp-content/uploads/2012/10/dynamic-300x225.jpg" alt="" width="300" height="225" srcset="http://www.cmdln.org/images/wp-content/uploads/2012/10/dynamic-300x225.jpg 300w, http://www.cmdln.org/images/wp-content/uploads/2012/10/dynamic.jpg 400w" sizes="(max-width: 300px) 100vw, 300px" />][1]Methods type promises are powerful abstraction tools in CFEngine 3. Methods allow you to activate bundles (optionally parametrized) from other bundles. This allows encapsulation of knowledge and lends itself to re-usability.
 
 I just want to share an example of calling bundles dynamically. It&#8217;s a contrived example, but I thought it was neat so here it is.
 
@@ -354,4 +354,4 @@ The handlers themselves just report once for each item in the list passed to the
 
 Well, I don&#8217;t have one. I can however imagine that based on some variable event you might want to call a bundle with some variable parameter. Something like the <a href="https://github.com/cfengine/design-center/tree/master/sketches/utilities/nagios_plugin_agent" target="_blank">nagios_plugin_agent</a> sketch comes to mind. (It can call a variable bundle right now).
 
- [1]: http://www.cmdln.org/wp-content/uploads/2012/10/dynamic.jpg
+ [1]: http://www.cmdln.org/images/wp-content/uploads/2012/10/dynamic.jpg

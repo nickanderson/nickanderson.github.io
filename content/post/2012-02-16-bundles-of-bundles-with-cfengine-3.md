@@ -17,7 +17,7 @@ tags:
   - yum
 
 ---
-[<img class="alignleft size-thumbnail wp-image-936" title="Bundles of Bundles" src="http://www.cmdln.org/wp-content/uploads/2012/02/Extrusion-Bundles2-150x150.jpg" alt="" width="150" height="150" />][1]I&#8217;ve been working more and more with CFEngine lately and I have been slowly building a [tiny library][2]. These are all pretty much redhat specific but I welcome patches and comments. Most of the bundles have comments that show usage, if there is interest I may post some example usage later.
+[<img class="alignleft size-thumbnail wp-image-936" title="Bundles of Bundles" src="http://www.cmdln.org/images/wp-content/uploads/2012/02/Extrusion-Bundles2-150x150.jpg" alt="" width="150" height="150" />][1]I&#8217;ve been working more and more with CFEngine lately and I have been slowly building a [tiny library][2]. These are all pretty much redhat specific but I welcome patches and comments. Most of the bundles have comments that show usage, if there is interest I may post some example usage later.
 
 &nbsp;
 
@@ -49,7 +49,7 @@ I have recently added these bundles to my library
 
 &nbsp;
 
- [1]: http://www.cmdln.org/wp-content/uploads/2012/02/Extrusion-Bundles2.jpg
+ [1]: http://www.cmdln.org/images/wp-content/uploads/2012/02/Extrusion-Bundles2.jpg
  [2]: http://www.laurand.net/images/Extrusion%20Bundles2.jpg
  [3]: https://github.com/nickanderson/nickanderson-cfengine-library/blob/master/lib_rh.cf
  [4]: https://github.com/nickanderson/nickanderson-cfengine-library/blob/master/lib_local_user_management.cf

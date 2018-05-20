@@ -36,5 +36,5 @@ Do you really think the phog will take off long term? What do you think about mo
   
 ~
 
- [1]: http://www.cmdln.org/wp-content/uploads/2009/08/RequestProcessorAwareAction-1.pdf
+ [1]: http://www.cmdln.org/images/wp-content/uploads/2009/08/RequestProcessorAwareAction-1.pdf
  [2]: http://www.standalone-sysadmin.com/blog/2009/08/the-future-of-system-administration/#comment-3222

@@ -42,7 +42,7 @@ UltraMail (default ip is 192.168.1.250):
 
 <p style="padding-left: 30px;">
   <p>
-    I also found a <a href="http://www.cmdln.org/wp-content/uploads/2009/08/aspire_ultramail.pdf">manual for UltraMail</a>, and a <a href="http://www.cmdln.org/wp-content/uploads/2009/08/Userpromanual.pdf">UserPro manual</a> for programming the handsets with the web interface.
+    I also found a <a href="http://www.cmdln.org/images/wp-content/uploads/2009/08/aspire_ultramail.pdf">manual for UltraMail</a>, and a <a href="http://www.cmdln.org/images/wp-content/uploads/2009/08/Userpromanual.pdf">UserPro manual</a> for programming the handsets with the web interface.
   </p>
   
   <p>

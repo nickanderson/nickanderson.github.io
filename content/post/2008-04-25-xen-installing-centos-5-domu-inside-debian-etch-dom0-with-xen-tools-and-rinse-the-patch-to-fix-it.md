@@ -38,8 +38,8 @@ As root:
 
 cd /usr/lib/rinse/centos-5
   
-wget http://www.cmdln.org/wp-content/uploads/2008/04/rinse-centos5.patch
+wget http://www.cmdln.org/images/wp-content/uploads/2008/04/rinse-centos5.patch
   
 patch -p0 < rinse-centos5.patch [/bash] <!--adsense-->
 
- [1]: http://www.cmdln.org/wp-content/uploads/2008/04/rinse-centos5.patch
+ [1]: http://www.cmdln.org/images/wp-content/uploads/2008/04/rinse-centos5.patch

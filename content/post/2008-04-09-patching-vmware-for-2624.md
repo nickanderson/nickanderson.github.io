@@ -26,5 +26,5 @@ All you need to do is download and run this script. I hope you find this helpful
   
 Note: patch files found linked from this [blog][2].
 
- [1]: http://www.cmdln.org/wp-content/uploads/2008/04/patch-vmware_2624.sh
+ [1]: http://www.cmdln.org/images/wp-content/uploads/2008/04/patch-vmware_2624.sh
  [2]: http://igordevlog.blogspot.com/2008/03/vmware-603-in-ubuntu-hardy-804-kernel.html

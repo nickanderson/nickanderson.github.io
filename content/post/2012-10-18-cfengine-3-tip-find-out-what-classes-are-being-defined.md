@@ -13,7 +13,7 @@ tags:
   - tip
 
 ---
-CFEngine defines a classes for dec[<img class="alignright size-medium wp-image-1085" title="A+ report" src="http://www.cmdln.org/wp-content/uploads/2012/10/produc4-300x199.jpg" alt="" width="300" height="199" srcset="http://www.cmdln.org/wp-content/uploads/2012/10/produc4-300x199.jpg 300w, http://www.cmdln.org/wp-content/uploads/2012/10/produc4.jpg 529w" sizes="(max-width: 300px) 100vw, 300px" />][1]ision making during runs. Many of these hard classes you can see by running cf-promises -v. That wont show you all the other classes that are raised during a policy run.
+CFEngine defines a classes for dec[<img class="alignright size-medium wp-image-1085" title="A+ report" src="http://www.cmdln.org/images/wp-content/uploads/2012/10/produc4-300x199.jpg" alt="" width="300" height="199" srcset="http://www.cmdln.org/images/wp-content/uploads/2012/10/produc4-300x199.jpg 300w, http://www.cmdln.org/images/wp-content/uploads/2012/10/produc4.jpg 529w" sizes="(max-width: 300px) 100vw, 300px" />][1]ision making during runs. Many of these hard classes you can see by running cf-promises -v. That wont show you all the other classes that are raised during a policy run.
 
 You could run something like this to see what classes are raised during execution.
 
@@ -23,4 +23,4 @@ But that isn&#8217;t really a clear picture under normal operation. You can use 
 
 Of course all of this information is readily available for remote agents in the dashboard of the enterprise version. And with the <a href="http://cfengine.com/25free" target="_blank">25free program</a> to get started, you should definitely take a look.
 
- [1]: http://www.cmdln.org/wp-content/uploads/2012/10/produc4.jpg
+ [1]: http://www.cmdln.org/images/wp-content/uploads/2012/10/produc4.jpg

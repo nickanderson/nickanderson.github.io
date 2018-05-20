@@ -30,7 +30,7 @@ tags:
   - xen
 
 ---
-A[<img class="alignright size-full wp-image-1058" title="linuxon_cloudopen2012" src="http://www.cmdln.org/wp-content/uploads/2012/07/linuxon_cloudopen2012.png" alt="" width="200" height="122" />][1]re you going to LinuxCon/CloudOpen 2012? I am, and I think I have settled on my picks (at least until I look at the schedule again, lots of great options).
+A[<img class="alignright size-full wp-image-1058" title="linuxon_cloudopen2012" src="http://www.cmdln.org/images/wp-content/uploads/2012/07/linuxon_cloudopen2012.png" alt="" width="200" height="122" />][1]re you going to LinuxCon/CloudOpen 2012? I am, and I think I have settled on my picks (at least until I look at the schedule again, lots of great options).
 
 Special thanks to [CFEngine][2] for sponsering me!
 
@@ -45,7 +45,7 @@ Here are my picks for the minute.
   * [Scaling Configuration Management Across Data Center and Cloud &#8211; Mark Burgess, CFEngine][9]{#e9936ee3a0369080a61b61f5eb9a88d4}
   * [Editing with vi: Advanced Topics, Part I &#8211; Aleksey Tsaloikhin, Vertical Sysadmin, Inc.][10]{#79ec0d894e2c56d92fd0a779bc873e3f}
 
- [1]: http://www.cmdln.org/wp-content/uploads/2012/07/linuxon_cloudopen2012.png
+ [1]: http://www.cmdln.org/images/wp-content/uploads/2012/07/linuxon_cloudopen2012.png
  [2]: http://www.cfengine.com
  [3]: http://cloudopen2012.sched.org/event/9046eff8494ef50f48da95349905592e?iframe=yes&w=900&sidebar=yes&bg=no#?iframe=yes&w=900&sidebar=yes&bg=no#sched-body-outer
  [4]: http://cloudopen2012.sched.org/event/5561a1f9b3d063dcca4b7abdc5dbc44b?iframe=yes&w=900&sidebar=yes&bg=no#?iframe=yes&w=900&sidebar=yes&bg=no#sched-body-outer

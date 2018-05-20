@@ -23,5 +23,5 @@ One highly annoying omission was support for the more tag. By default when openi
 Here is the [vimpress][2] [][2][more tag patch thanks to Manuel][2]. And a [full patched version of vimpress.vim aka blog.vim.][3]
 
  [1]: http://friggeri.net/blog/2007/07/13/vimpress
- [2]: http://www.cmdln.org/wp-content/uploads/2008/10/vimpress.patch
- [3]: http://www.cmdln.org/wp-content/uploads/2008/10/vimpress.vim
+ [2]: http://www.cmdln.org/images/wp-content/uploads/2008/10/vimpress.patch
+ [3]: http://www.cmdln.org/images/wp-content/uploads/2008/10/vimpress.vim

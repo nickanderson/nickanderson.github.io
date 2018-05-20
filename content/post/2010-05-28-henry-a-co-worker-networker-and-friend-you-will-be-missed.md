@@ -10,6 +10,6 @@ categories:
   - Posts
 
 ---
-[<img class="alignleft size-full wp-image-748" title="Henry Sieff" src="http://www.cmdln.org/wp-content/uploads/2010/05/hsieff.jpeg" alt="" width="104" height="78" />][1] I don&#8217;t have much to say about the loss. Henry Sieff was a brilliant network, security engineer and friend.
+[<img class="alignleft size-full wp-image-748" title="Henry Sieff" src="http://www.cmdln.org/images/wp-content/uploads/2010/05/hsieff.jpeg" alt="" width="104" height="78" />][1] I don&#8217;t have much to say about the loss. Henry Sieff was a brilliant network, security engineer and friend.
 
- [1]: http://www.cmdln.org/wp-content/uploads/2010/05/hsieff.jpeg
+ [1]: http://www.cmdln.org/images/wp-content/uploads/2010/05/hsieff.jpeg

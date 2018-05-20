@@ -16,8 +16,8 @@ Google is constantly doing experiments to see what its users like best. Today I 
 
 Here is a screen shot of the results page
 
-[<img class="aligncenter size-medium wp-image-707" title="googleleftsidebar112009" src="http://www.cmdln.org/wp-content/uploads/2010/05/googleleftsidebar112009-300x214.jpg" alt="" width="300" height="214" srcset="http://www.cmdln.org/wp-content/uploads/2010/05/googleleftsidebar112009-300x214.jpg 300w, http://www.cmdln.org/wp-content/uploads/2010/05/googleleftsidebar112009-1024x732.jpg 1024w, http://www.cmdln.org/wp-content/uploads/2010/05/googleleftsidebar112009.jpg 1200w" sizes="(max-width: 300px) 100vw, 300px" />][1]
+[<img class="aligncenter size-medium wp-image-707" title="googleleftsidebar112009" src="http://www.cmdln.org/images/wp-content/uploads/2010/05/googleleftsidebar112009-300x214.jpg" alt="" width="300" height="214" srcset="http://www.cmdln.org/images/wp-content/uploads/2010/05/googleleftsidebar112009-300x214.jpg 300w, http://www.cmdln.org/images/wp-content/uploads/2010/05/googleleftsidebar112009-1024x732.jpg 1024w, http://www.cmdln.org/images/wp-content/uploads/2010/05/googleleftsidebar112009.jpg 1200w" sizes="(max-width: 300px) 100vw, 300px" />][1]
 
 At any rate, if you want it gone just delete the PREF cookie from google.com.
 
- [1]: http://www.cmdln.org/wp-content/uploads/2010/05/googleleftsidebar112009.jpg
+ [1]: http://www.cmdln.org/images/wp-content/uploads/2010/05/googleleftsidebar112009.jpg

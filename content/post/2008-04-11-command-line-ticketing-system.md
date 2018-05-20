@@ -92,4 +92,4 @@ complete -F _ti ti
 I also made up a quick screencast of ticgit so you can see it in all of its glory. Watch the [TicGit Screencast][2].
 
  [1]: http://github.com/schacon/ticgit/tree/master
- [2]: http://www.cmdln.org/wp-content/uploads/2008/04/ticgit_howto1.ogg "Ticgit Screencast"
+ [2]: http://www.cmdln.org/images/wp-content/uploads/2008/04/ticgit_howto1.ogg "Ticgit Screencast"

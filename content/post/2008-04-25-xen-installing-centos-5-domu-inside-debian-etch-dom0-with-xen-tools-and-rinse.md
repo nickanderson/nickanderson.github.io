@@ -98,4 +98,4 @@ we can see that indeed our problem is bootstrapping with rinse.
   
 &#8230;. and the debugging continues
 
- [1]: http://www.cmdln.org/wp-content/uploads/2008/04/rinse.log
+ [1]: http://www.cmdln.org/images/wp-content/uploads/2008/04/rinse.log

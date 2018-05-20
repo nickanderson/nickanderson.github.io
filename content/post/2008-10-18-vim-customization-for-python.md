@@ -129,10 +129,10 @@ Make sure indent and plugins are turned on in your .vimrc
 </pre>
 
  [1]: http://www.vim.org/scripts/script.php?script_id=974
- [2]: http://www.cmdln.org/wp-content/uploads/2008/10/python.vim
+ [2]: http://www.cmdln.org/images/wp-content/uploads/2008/10/python.vim
  [3]: http://blog.sontek.net
- [4]: http://www.cmdln.org/wp-content/uploads/2008/10/python_exec_block.vim
- [5]: http://www.cmdln.org/wp-content/uploads/2008/10/python_ipdb.vim
+ [4]: http://www.cmdln.org/images/wp-content/uploads/2008/10/python_exec_block.vim
+ [5]: http://www.cmdln.org/images/wp-content/uploads/2008/10/python_ipdb.vim
  [6]: http://www.reddit.com/user/fboender/
  [7]: http://www.reddit.com/r/Python/comments/785vt/vim_customization_for_python/
  [8]: http://www.vim.org/scripts/script.php?script_id=1788

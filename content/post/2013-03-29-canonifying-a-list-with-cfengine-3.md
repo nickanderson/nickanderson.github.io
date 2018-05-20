@@ -13,7 +13,7 @@ tags:
   - pattern
 
 ---
-John Sanders [<img class="alignright  wp-image-1159" alt="Glass_pour_section_on_restaurant_wine_list" src="http://www.cmdln.org/wp-content/uploads/2013/03/Glass_pour_section_on_restaurant_wine_list-300x225.jpg" width="162" height="122" srcset="http://www.cmdln.org/wp-content/uploads/2013/03/Glass_pour_section_on_restaurant_wine_list-300x225.jpg 300w, http://www.cmdln.org/wp-content/uploads/2013/03/Glass_pour_section_on_restaurant_wine_list-1024x768.jpg 1024w, http://www.cmdln.org/wp-content/uploads/2013/03/Glass_pour_section_on_restaurant_wine_list.jpg 1280w" sizes="(max-width: 162px) 100vw, 162px" />][1]shared a pattern for canonifying lists in #CFEngine on irc.freenode.net yesterday. It&#8217;s a useful reference so I thought I would replicate it here.
+John Sanders [<img class="alignright  wp-image-1159" alt="Glass_pour_section_on_restaurant_wine_list" src="http://www.cmdln.org/images/wp-content/uploads/2013/03/Glass_pour_section_on_restaurant_wine_list-300x225.jpg" width="162" height="122" srcset="http://www.cmdln.org/images/wp-content/uploads/2013/03/Glass_pour_section_on_restaurant_wine_list-300x225.jpg 300w, http://www.cmdln.org/images/wp-content/uploads/2013/03/Glass_pour_section_on_restaurant_wine_list-1024x768.jpg 1024w, http://www.cmdln.org/images/wp-content/uploads/2013/03/Glass_pour_section_on_restaurant_wine_list.jpg 1280w" sizes="(max-width: 162px) 100vw, 162px" />][1]shared a pattern for canonifying lists in #CFEngine on irc.freenode.net yesterday. It&#8217;s a useful reference so I thought I would replicate it here.
 
 <div class="gistem">
   <div id="gist5271023" class="gist">
@@ -245,4 +245,4 @@ In lines 9-12 of the example policy we build an array with values that need to b
 
 &nbsp;
 
- [1]: http://www.cmdln.org/wp-content/uploads/2013/03/Glass_pour_section_on_restaurant_wine_list.jpg
+ [1]: http://www.cmdln.org/images/wp-content/uploads/2013/03/Glass_pour_section_on_restaurant_wine_list.jpg

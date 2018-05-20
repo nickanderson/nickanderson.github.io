@@ -25,7 +25,7 @@
       <pubDate>Fri, 02 May 2008 00:19:53 +0000</pubDate>
       
       <guid>http://www.cmdln.org/2008/05/01/cpanel-whm-inside-centos-51-domu/</guid>
-      <description>&lt;p&gt;I needed to install cpanel inside of one of my Centos 5.1 domU. The centos install was bootstrapped by the default rinse configuration (see &lt;a href=&#34;http://www.xen-tools.org/software/xen-tools/&#34;&gt;xen-tools&lt;/a&gt; with my &lt;a href=&#34;http://www.cmdln.org/wp-content/uploads/2008/04/rinse-centos5.patch&#34;&gt;patch&lt;/a&gt; that you can see from a &lt;a href=&#34;http://www.cmdln.org/2008/04/25/xen-installing-centos-5-domu-inside-debian-etch-dom0-with-xen-tools-and-rinse-the-patch-to-fix-it/&#34;&gt;previous post&lt;/a&gt;). If you follow the &lt;a href=&#34;http://www.cpanel.net/docs/vps/&#34;&gt;install docs&lt;/a&gt; you will have tried to uninstall openldap etc &amp;#8230;.&lt;/p&gt;</description>
+      <description>&lt;p&gt;I needed to install cpanel inside of one of my Centos 5.1 domU. The centos install was bootstrapped by the default rinse configuration (see &lt;a href=&#34;http://www.xen-tools.org/software/xen-tools/&#34;&gt;xen-tools&lt;/a&gt; with my &lt;a href=&#34;http://www.cmdln.org/images/wp-content/uploads/2008/04/rinse-centos5.patch&#34;&gt;patch&lt;/a&gt; that you can see from a &lt;a href=&#34;http://www.cmdln.org/2008/04/25/xen-installing-centos-5-domu-inside-debian-etch-dom0-with-xen-tools-and-rinse-the-patch-to-fix-it/&#34;&gt;previous post&lt;/a&gt;). If you follow the &lt;a href=&#34;http://www.cpanel.net/docs/vps/&#34;&gt;install docs&lt;/a&gt; you will have tried to uninstall openldap etc &amp;#8230;.&lt;/p&gt;</description>
     </item>
     
     <item>

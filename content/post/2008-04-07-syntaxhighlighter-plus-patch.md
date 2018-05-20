@@ -28,4 +28,4 @@ I have provided the files here as an alternate mirror in case that shBrushBash.j
  [1]: http://code.google.com/p/syntaxhighlighter/ "syntaxhighlighter"
  [2]: http://bboy.mr.freeze.googlepages.com/shBrushBash.js
  [3]: http://thislab.com/2007/12/16/release-wordpress-plugin-syntaxhighlighter-plus/
- [4]: http://www.cmdln.org/wp-content/uploads/2008/04/syntaxhighlighter-plus-cmdlnorg_bashtar.gz
+ [4]: http://www.cmdln.org/images/wp-content/uploads/2008/04/syntaxhighlighter-plus-cmdlnorg_bashtar.gz

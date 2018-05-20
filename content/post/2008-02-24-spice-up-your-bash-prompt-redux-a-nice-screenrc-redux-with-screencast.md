@@ -82,4 +82,4 @@ shelltitle '$ |bash'
 
 The screenrc displays a status line with the hostname followed by a list of running windows with () around the active window, that is followed by the current load of the system and finally the date and time. There is one little trick to the shelltitle command. It detects the last character of your prompt and it uses what you type after that to set the window title. So if you wheel up to root when your prompt character changes from $ to # the screen will be stuck with the last command you ran (sudo or su). I will demonstrate this in the screencast below.
 
-[flash http://www.cmdln.org/wp-content/uploads/2008/02/screencast\_bashprompt\_screenrc.flv mode=0]
+[flash http://www.cmdln.org/images/wp-content/uploads/2008/02/screencast\_bashprompt\_screenrc.flv mode=0]

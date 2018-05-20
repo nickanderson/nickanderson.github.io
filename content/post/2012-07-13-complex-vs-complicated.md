@@ -12,7 +12,7 @@ tags:
   - simple
 
 ---
-[<img class="alignleft size-medium wp-image-1036" title="Complex vs Complicated" src="http://www.cmdln.org/wp-content/uploads/2012/07/jladder_complex_complicated-300x223.jpg" alt="" width="300" height="223" srcset="http://www.cmdln.org/wp-content/uploads/2012/07/jladder_complex_complicated-300x223.jpg 300w, http://www.cmdln.org/wp-content/uploads/2012/07/jladder_complex_complicated-1024x762.jpg 1024w" sizes="(max-width: 300px) 100vw, 300px" />][1]I liked this, so I thought I would share. Found on the inter-webs.
+[<img class="alignleft size-medium wp-image-1036" title="Complex vs Complicated" src="http://www.cmdln.org/images/wp-content/uploads/2012/07/jladder_complex_complicated-300x223.jpg" alt="" width="300" height="223" srcset="http://www.cmdln.org/images/wp-content/uploads/2012/07/jladder_complex_complicated-300x223.jpg 300w, http://www.cmdln.org/images/wp-content/uploads/2012/07/jladder_complex_complicated-1024x762.jpg 1024w" sizes="(max-width: 300px) 100vw, 300px" />][1]I liked this, so I thought I would share. Found on the inter-webs.
 
 Something that is complex can be broken down into simple parts, without being simple itself. This allows mostly smooth functioning with solvable problems.
 
@@ -22,6 +22,6 @@ The difference can be made by imagining a piece of string tied to be a circle. N
 
 Whenever I think of Complex, Simple, Complicated I am reminded of [Rich Hickys][2] [Simple Made Easy][3] talk at InfoQ in 2011.
 
- [1]: http://www.cmdln.org/wp-content/uploads/2012/07/jladder_complex_complicated.jpg
+ [1]: http://www.cmdln.org/images/wp-content/uploads/2012/07/jladder_complex_complicated.jpg
  [2]: https://twitter.com/richhickey
  [3]: http://www.infoq.com/presentations/Simple-Made-Easy

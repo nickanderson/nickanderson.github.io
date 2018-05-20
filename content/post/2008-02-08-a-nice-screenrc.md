@@ -16,4 +16,4 @@ tags:
 ---
 Hopefully you already know about screen, its one of the best command line utilites I use. Here is a purty screenrc for you.
 
-<a TITLE=".screenrc" HREF="http://www.cmdln.org/wp-content/uploads/2008/02/my.screenrc">.screenrc</a>
+<a TITLE=".screenrc" HREF="http://www.cmdln.org/images/wp-content/uploads/2008/02/my.screenrc">.screenrc</a>

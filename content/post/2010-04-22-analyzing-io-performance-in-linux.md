@@ -297,11 +297,11 @@ dIOPS = IOPS per disk
 F = raid factor (write operations column)
 
 <p style="text-align: center;">
-  <a href="http://www.cmdln.org/wp-content/uploads/2010/04/CodeCogsEqn4.gif"></a>
+  <a href="http://www.cmdln.org/images/wp-content/uploads/2010/04/CodeCogsEqn4.gif"></a>
 </p>
 
 <p style="text-align: center;">
-  <a href="http://www.cmdln.org/wp-content/uploads/2010/04/CodeCogsEqn4.gif"><img class="aligncenter size-full wp-image-677" title="Theoretical IOPS" src="http://www.cmdln.org/wp-content/uploads/2010/04/CodeCogsEqn4.gif" alt="" width="197" height="44" /></a>
+  <a href="http://www.cmdln.org/images/wp-content/uploads/2010/04/CodeCogsEqn4.gif"><img class="aligncenter size-full wp-image-677" title="Theoretical IOPS" src="http://www.cmdln.org/images/wp-content/uploads/2010/04/CodeCogsEqn4.gif" alt="" width="197" height="44" /></a>
 </p>
 
 > Wait a second, where am I supposed to get %read and %write from?
@@ -311,10 +311,10 @@ You need to examine your workload. I usually turn to my favorite statistics coll
 The equations:
 
 <p style="text-align: center;">
-  <a href="http://www.cmdln.org/wp-content/uploads/2010/04/CodeCogsEqn5.gif"><img class="aligncenter size-full wp-image-678" title="Percentage read workload" src="http://www.cmdln.org/wp-content/uploads/2010/04/CodeCogsEqn5.gif" alt="" width="176" height="41" /></a>
+  <a href="http://www.cmdln.org/images/wp-content/uploads/2010/04/CodeCogsEqn5.gif"><img class="aligncenter size-full wp-image-678" title="Percentage read workload" src="http://www.cmdln.org/images/wp-content/uploads/2010/04/CodeCogsEqn5.gif" alt="" width="176" height="41" /></a>
 </p>
 
-[<img class="aligncenter size-full wp-image-679" title="Percentage write workload" src="http://www.cmdln.org/wp-content/uploads/2010/04/CodeCogsEqn6.gif" alt="" width="180" height="36" />][6]
+[<img class="aligncenter size-full wp-image-679" title="Percentage write workload" src="http://www.cmdln.org/images/wp-content/uploads/2010/04/CodeCogsEqn6.gif" alt="" width="180" height="36" />][6]
 
 An example from my workstation:
 
@@ -323,10 +323,10 @@ Average for sdb rd_sec/s = 1150.80
 Average for sdb wr_sec/s = 1166.53
 
 <p style="text-align: center;">
-  <a href="http://www.cmdln.org/wp-content/uploads/2010/04/CodeCogsEqn7.gif"><img class="aligncenter size-full wp-image-680" title="Workstation percentage read workload" src="http://www.cmdln.org/wp-content/uploads/2010/04/CodeCogsEqn7.gif" alt="" width="199" height="41" /></a>
+  <a href="http://www.cmdln.org/images/wp-content/uploads/2010/04/CodeCogsEqn7.gif"><img class="aligncenter size-full wp-image-680" title="Workstation percentage read workload" src="http://www.cmdln.org/images/wp-content/uploads/2010/04/CodeCogsEqn7.gif" alt="" width="199" height="41" /></a>
 </p>
 
-[<img class="aligncenter size-full wp-image-700" title="percentage write workload" src="http://www.cmdln.org/wp-content/uploads/2010/04/CodeCogsEqn14.gif" alt="" width="199" height="41" />][7]
+[<img class="aligncenter size-full wp-image-700" title="percentage write workload" src="http://www.cmdln.org/images/wp-content/uploads/2010/04/CodeCogsEqn14.gif" alt="" width="199" height="41" />][7]
 
 As you can see my workstation read/write workload is pretty balanced at 49.6% read, and 50.3% write. Compare that to a cvs server (don&#8217;t get me started on how bad cvs is, its just something I have to deal with).
 
@@ -335,11 +335,11 @@ Average for sdb rd_sec/s = 27.78k
 Average for sdb wr_sec/s = 2.07k
 
 <p style="text-align: center;">
-  <a href="http://www.cmdln.org/wp-content/uploads/2010/04/CodeCogsEqn10.gif"><img class="aligncenter size-full wp-image-682" title="CVS percentage read workload" src="http://www.cmdln.org/wp-content/uploads/2010/04/CodeCogsEqn10.gif" alt="" width="154" height="41" srcset="http://www.cmdln.org/wp-content/uploads/2010/04/CodeCogsEqn10.gif 154w, http://www.cmdln.org/wp-content/uploads/2010/04/CodeCogsEqn10-150x41.gif 150w" sizes="(max-width: 154px) 100vw, 154px" /></a>
+  <a href="http://www.cmdln.org/images/wp-content/uploads/2010/04/CodeCogsEqn10.gif"><img class="aligncenter size-full wp-image-682" title="CVS percentage read workload" src="http://www.cmdln.org/images/wp-content/uploads/2010/04/CodeCogsEqn10.gif" alt="" width="154" height="41" srcset="http://www.cmdln.org/images/wp-content/uploads/2010/04/CodeCogsEqn10.gif 154w, http://www.cmdln.org/images/wp-content/uploads/2010/04/CodeCogsEqn10-150x41.gif 150w" sizes="(max-width: 154px) 100vw, 154px" /></a>
 </p>
 
 <p style="text-align: left;">
-  <a href="http://www.cmdln.org/wp-content/uploads/2010/04/CodeCogsEqn11.gif"><img class="aligncenter size-full wp-image-683" title="CVS percentage write workload" src="http://www.cmdln.org/wp-content/uploads/2010/04/CodeCogsEqn11.gif" alt="" width="154" height="41" srcset="http://www.cmdln.org/wp-content/uploads/2010/04/CodeCogsEqn11.gif 154w, http://www.cmdln.org/wp-content/uploads/2010/04/CodeCogsEqn11-150x41.gif 150w" sizes="(max-width: 154px) 100vw, 154px" /></a>
+  <a href="http://www.cmdln.org/images/wp-content/uploads/2010/04/CodeCogsEqn11.gif"><img class="aligncenter size-full wp-image-683" title="CVS percentage write workload" src="http://www.cmdln.org/images/wp-content/uploads/2010/04/CodeCogsEqn11.gif" alt="" width="154" height="41" srcset="http://www.cmdln.org/images/wp-content/uploads/2010/04/CodeCogsEqn11.gif 154w, http://www.cmdln.org/images/wp-content/uploads/2010/04/CodeCogsEqn11-150x41.gif 150w" sizes="(max-width: 154px) 100vw, 154px" /></a>
 </p>
 
 This server workload is extremely high on reads. Ok time to analyze the performance.
@@ -347,7 +347,7 @@ This server workload is extremely high on reads. Ok time to analyze the performa
 In and of itself being a heavy read workload is not a problem. My problem is user complaints of slowness. I note (again from sysstat collected metrics) that the tps or average IOPS on this device is about 574. Again thats not an issue in and of itself, we need to know what we can expect from its subsystem. This device happens to be SAN based storage. The raid set its on is comprised of 4 10kRPM FC drives in a raid 10. Remember from the table above that IOPS for a 10kRPM drive are in the 125-150ish range. We need to calculate the expected IOPS from that raid set using the IOPS equation above, our measured workloads for read/write, the number of disks, and the raid level (10 and 1 are treated the same).
 
 <p style="text-align: left;">
-  <a href="http://www.cmdln.org/wp-content/uploads/2010/04/CodeCogsEqn12.gif"><img class="aligncenter size-full wp-image-684" title="CVS theoretical maximum IOPS" src="http://www.cmdln.org/wp-content/uploads/2010/04/CodeCogsEqn12.gif" alt="" width="188" height="44" /></a>
+  <a href="http://www.cmdln.org/images/wp-content/uploads/2010/04/CodeCogsEqn12.gif"><img class="aligncenter size-full wp-image-684" title="CVS theoretical maximum IOPS" src="http://www.cmdln.org/images/wp-content/uploads/2010/04/CodeCogsEqn12.gif" alt="" width="188" height="44" /></a>
 </p>
 
 <p style="text-align: left;">
@@ -380,7 +380,7 @@ Go forth, collect, analyze and plan so your users aren&#8217;t calling you with 
  [3]: http://en.wikipedia.org/wiki/Bit_error_rate
  [4]: http://storageadvisors.adaptec.com/2005/11/02/actual-reliability-calculations-for-raid/
  [5]: http://www.hardwaresecrets.com/article/315
- [6]: http://www.cmdln.org/wp-content/uploads/2010/04/CodeCogsEqn6.gif
- [7]: http://www.cmdln.org/wp-content/uploads/2010/04/CodeCogsEqn14.gif
+ [6]: http://www.cmdln.org/images/wp-content/uploads/2010/04/CodeCogsEqn6.gif
+ [7]: http://www.cmdln.org/images/wp-content/uploads/2010/04/CodeCogsEqn14.gif
  [8]: http://github.com/nickanderson/check-sar-perf
  [9]: http://vmtoday.com/2010/01/storage-basics-part-iv-interface/

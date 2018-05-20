@@ -15,7 +15,7 @@ tags:
   - ubuntu
 
 ---
-[<img class="alignleft size-thumbnail wp-image-982" title="Selection_001" src="http://www.cmdln.org/wp-content/uploads/2012/02/Selection_001-150x150.png" alt="" width="150" height="150" />][1]Here is an easy way to configure <a href="http://www.arg0.net/encfs" target="_blank">encfs</a> with <a href="http://db.tt/REX1m3Zv" target="_blank">dropbox</a> that is compatible with boxcryptor. <a href="http://www.boxcryptor.com/" target="_blank">Boxcryptor</a> makes [Windows][2], [Mac][3] [Android][4], and [IOS][5] applications to assist you in accessing data that you have stored in encfs. They do require that you create your encfs with some <a href="https://boxcryptorsupport.uservoice.com/knowledgebase/articles/35105-can-boxcryptor-mount-encrypted-volumes-created-wit" target="_blank">specific options</a>: Cipher algorithm: AES, Plaintext or Stream encrypted filenames, No filename initialization vector chaining, No per-file initialization vectors, No external IV chaining, No block MAC headers, No per-block random bytes.
+[<img class="alignleft size-thumbnail wp-image-982" title="Selection_001" src="http://www.cmdln.org/images/wp-content/uploads/2012/02/Selection_001-150x150.png" alt="" width="150" height="150" />][1]Here is an easy way to configure <a href="http://www.arg0.net/encfs" target="_blank">encfs</a> with <a href="http://db.tt/REX1m3Zv" target="_blank">dropbox</a> that is compatible with boxcryptor. <a href="http://www.boxcryptor.com/" target="_blank">Boxcryptor</a> makes [Windows][2], [Mac][3] [Android][4], and [IOS][5] applications to assist you in accessing data that you have stored in encfs. They do require that you create your encfs with some <a href="https://boxcryptorsupport.uservoice.com/knowledgebase/articles/35105-can-boxcryptor-mount-encrypted-volumes-created-wit" target="_blank">specific options</a>: Cipher algorithm: AES, Plaintext or Stream encrypted filenames, No filename initialization vector chaining, No per-file initialization vectors, No external IV chaining, No block MAC headers, No per-block random bytes.
 
 I thought it would be fun to write a <a href="http://cfengine.com/" target="_blank">CFEngine</a> policy to set it up so here it is. Just install CFEngine 3, configure your settings in the policy file and kick it off with cf-agent -KIf ~/.cfagent/inputs/boxcryptor\_dropbox\_encfs. (You will need the standard library, and the policy is classed for ubuntu, but it should be easy enough to add support for another distro).
 
@@ -1311,7 +1311,7 @@ edit: February 27, 2012 at 2:52 pm
 
 Thanks @highdraw for pointing out the mac installer.
 
- [1]: http://www.cmdln.org/wp-content/uploads/2012/02/Selection_001.png
+ [1]: http://www.cmdln.org/images/wp-content/uploads/2012/02/Selection_001.png
  [2]: http://www.boxcryptor.com/download/#platform_win_dl
  [3]: http://blog.boxcryptor.com/encfs-174-installer-for-mac-os-x-available
  [4]: https://market.android.com/details?id=com.boxcryptor.android
