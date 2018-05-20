@@ -2,76 +2,76 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Git on </title>
-    <link>http://nickanderson.github.io/tags/git/</link>
+    <link>https://nickanderson.github.io/tags/git/</link>
     <description>Recent content in Git on </description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Tue, 17 Jul 2012 22:36:40 +0000</lastBuildDate>
     
-	<atom:link href="http://nickanderson.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://nickanderson.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Git pre-commit hook for checking CFEngine 3 syntax</title>
-      <link>http://nickanderson.github.io/2012/07/17/git-pre-commit-hook-for-checking-cfengine-3-syntax/</link>
+      <link>https://nickanderson.github.io/2012/07/17/git-pre-commit-hook-for-checking-cfengine-3-syntax/</link>
       <pubDate>Tue, 17 Jul 2012 22:36:40 +0000</pubDate>
       
-      <guid>http://nickanderson.github.io/2012/07/17/git-pre-commit-hook-for-checking-cfengine-3-syntax/</guid>
+      <guid>https://nickanderson.github.io/2012/07/17/git-pre-commit-hook-for-checking-cfengine-3-syntax/</guid>
       <description>I was inspired by William Orr&amp;#8217;s svn commit hook and looked up the magic needed to flesh out the git pre-commit hook I submitted to the Design Center a while back.
 Now the index is checked out to its own temporary directory and cf-promises validates promises.cf and failsafe.cf before allowing the commit to proceed. Now you won&amp;#8217;t get syntax errors if you have forgotten to add a new policy file to the index but its already included in your body common control inputs list.</description>
     </item>
     
     <item>
       <title>pre-commit hook for git to check CFEngine syntax</title>
-      <link>http://nickanderson.github.io/2012/02/16/pre-commit-hook-for-git-to-check-cfengine-syntax/</link>
+      <link>https://nickanderson.github.io/2012/02/16/pre-commit-hook-for-git-to-check-cfengine-syntax/</link>
       <pubDate>Thu, 16 Feb 2012 17:01:38 +0000</pubDate>
       
-      <guid>http://nickanderson.github.io/2012/02/16/pre-commit-hook-for-git-to-check-cfengine-syntax/</guid>
+      <guid>https://nickanderson.github.io/2012/02/16/pre-commit-hook-for-git-to-check-cfengine-syntax/</guid>
       <description>Sometimes I am not so disciplined to run cf-promises on my policy before I commit it. I make a small change and I think I&amp;#8217;m golden, but inevitably that breaks things. I wrote a simple commit hook to check policy syntax and stop you from shooting yourself in the foot. You can find the pre-commit{#a71b90d9d3bb7e4d1f4be225eb124c42527855a3} script over on my github account. I hope you find it useful.</description>
     </item>
     
     <item>
       <title>Install git on CentOS cpanel server</title>
-      <link>http://nickanderson.github.io/2010/05/07/install-git-on-centos-cpanel-server/</link>
+      <link>https://nickanderson.github.io/2010/05/07/install-git-on-centos-cpanel-server/</link>
       <pubDate>Sat, 08 May 2010 03:05:12 +0000</pubDate>
       
-      <guid>http://nickanderson.github.io/2010/05/07/install-git-on-centos-cpanel-server/</guid>
+      <guid>https://nickanderson.github.io/2010/05/07/install-git-on-centos-cpanel-server/</guid>
       <description>I have a love/hate relationship with cpanel. On one hand it makes low end hosting a breeze, on the other its a huge pita if you want to do anything &amp;#8220;outside the box&amp;#8221;. Perhaps it&amp;#8217;s not such a pain if you work with cpanel frequently. But I find cpanel beneficial because it aids in tasks that I don&amp;#8217;t do frequently, and can offload many of those tasks to less technical people.</description>
     </item>
     
     <item>
       <title>Revision your home directory with git using gibak</title>
-      <link>http://nickanderson.github.io/2009/02/20/revision-home-directory-git-gibak/</link>
+      <link>https://nickanderson.github.io/2009/02/20/revision-home-directory-git-gibak/</link>
       <pubDate>Fri, 20 Feb 2009 14:56:53 +0000</pubDate>
       
-      <guid>http://nickanderson.github.io/2009/02/20/revision-home-directory-git-gibak/</guid>
+      <guid>https://nickanderson.github.io/2009/02/20/revision-home-directory-git-gibak/</guid>
       <description>&lt;p&gt;Over the last couple days I&amp;#8217;ve briefly talked about &lt;a href=&#34;http://www.cmdln.org/2009/02/19/version-your-etc/&#34;&gt;revisioning configs&lt;/a&gt; and &lt;a href=&#34;http://www.cmdln.org/2009/02/18/movin-in-movin-out/&#34;&gt;making your home directory portable&lt;/a&gt;. It seems to have stirred up a bit of discussion over at &lt;a href=&#34;http://standalone-sysadmin.blogspot.com/2009/02/ideas-on-maintaining-customized-shelll.html&#34;&gt;Matt Simmons Standalone Sysadmin&lt;/a&gt;, and &lt;a href=&#34;http://saintaardvarkthecarpeted.com/blog/2009-02/mercurial_for_dotfiles.html&#34;&gt;Hugh Browns mentioned he uses mercurial&lt;/a&gt; for this task.. As I noted in the post about &lt;a href=&#34;http://www.cmdln.org/2009/02/19/version-your-etc/&#34;&gt;managing /etc with version control&lt;/a&gt; I do revision my home directory, or at least pieces of it.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Version your /etc</title>
-      <link>http://nickanderson.github.io/2009/02/19/version-your-etc/</link>
+      <link>https://nickanderson.github.io/2009/02/19/version-your-etc/</link>
       <pubDate>Thu, 19 Feb 2009 15:19:36 +0000</pubDate>
       
-      <guid>http://nickanderson.github.io/2009/02/19/version-your-etc/</guid>
+      <guid>https://nickanderson.github.io/2009/02/19/version-your-etc/</guid>
       <description>Seems like we are on a bit of a roll with regard to the topic of versioning lately. Yesterday Legooolas commented about using version control for your home directory. I do and I&amp;#8217;ll cover that in a different post but I use it for a different task. Now on to todays topic.
 Do you keep track of configuration changes? You should. Maybe your using an advanced configuration management system like puppet.</description>
     </item>
     
     <item>
       <title>Notify someone with hook when you update a git working copy</title>
-      <link>http://nickanderson.github.io/2008/12/06/notify-someone-with-hook-when-you-update-a-git-working-copy/</link>
+      <link>https://nickanderson.github.io/2008/12/06/notify-someone-with-hook-when-you-update-a-git-working-copy/</link>
       <pubDate>Sun, 07 Dec 2008 05:19:26 +0000</pubDate>
       
-      <guid>http://nickanderson.github.io/2008/12/06/notify-someone-with-hook-when-you-update-a-git-working-copy/</guid>
+      <guid>https://nickanderson.github.io/2008/12/06/notify-someone-with-hook-when-you-update-a-git-working-copy/</guid>
       <description>Some projects have production code that runs off of a git cloned repository. There may be a case in which you want to notify others when that clone pulls. It is a pretty easy feat with gits post-merge hook. The post-merge hook will run after a merge (think git pull). All you have to do it create a project/.git/hooks/post-merge shell script and chmod +x it. Next time you pull successfully that script will run.</description>
     </item>
     
     <item>
       <title>Secure git hosting with gitosis</title>
-      <link>http://nickanderson.github.io/2008/10/25/secure-git-hosting-with-gitosis/</link>
+      <link>https://nickanderson.github.io/2008/10/25/secure-git-hosting-with-gitosis/</link>
       <pubDate>Sun, 26 Oct 2008 05:50:59 +0000</pubDate>
       
-      <guid>http://nickanderson.github.io/2008/10/25/secure-git-hosting-with-gitosis/</guid>
+      <guid>https://nickanderson.github.io/2008/10/25/secure-git-hosting-with-gitosis/</guid>
       <description>I hope you are already using ssh keys, but just in case your not go ahead and generate one with ssh-keygen -t rsa (you should do this on your local box)
 You may as well go ahead and copy your publick key to your git server now as well.
 scp ~/.ssh/id_rsa.pub gitserver:/tmp/  Log into your gitosis server

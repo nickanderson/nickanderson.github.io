@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Citrix on </title>
-    <link>http://nickanderson.github.io/tags/citrix/</link>
+    <link>https://nickanderson.github.io/tags/citrix/</link>
     <description>Recent content in Citrix on </description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Wed, 01 Aug 2012 13:55:30 +0000</lastBuildDate>
     
-	<atom:link href="http://nickanderson.github.io/tags/citrix/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://nickanderson.github.io/tags/citrix/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>LinuxCon/CloudOpen 2012</title>
-      <link>http://nickanderson.github.io/2012/08/01/linuxconcloudopen-2012/</link>
+      <link>https://nickanderson.github.io/2012/08/01/linuxconcloudopen-2012/</link>
       <pubDate>Wed, 01 Aug 2012 13:55:30 +0000</pubDate>
       
-      <guid>http://nickanderson.github.io/2012/08/01/linuxconcloudopen-2012/</guid>
+      <guid>https://nickanderson.github.io/2012/08/01/linuxconcloudopen-2012/</guid>
       <description>Are you going to LinuxCon/CloudOpen 2012? I am, and I think I have settled on my picks (at least until I look at the schedule again, lots of great options).
 Special thanks to CFEngine for sponsering me!
 Here are my picks for the minute.
@@ -24,19 +24,19 @@ Here are my picks for the minute.
     
     <item>
       <title>Fix XenCenter not displaying console or performance statistics</title>
-      <link>http://nickanderson.github.io/2010/01/19/fix-xencenter-not-displaying-console-or-performance-statistics/</link>
+      <link>https://nickanderson.github.io/2010/01/19/fix-xencenter-not-displaying-console-or-performance-statistics/</link>
       <pubDate>Tue, 19 Jan 2010 18:07:28 +0000</pubDate>
       
-      <guid>http://nickanderson.github.io/2010/01/19/fix-xencenter-not-displaying-console-or-performance-statistics/</guid>
+      <guid>https://nickanderson.github.io/2010/01/19/fix-xencenter-not-displaying-console-or-performance-statistics/</guid>
       <description>&lt;p&gt;I am sure you are aware of my affinity for the Xen hypervisor. In the last year I have switched over to Citrix Xenserver. With other people managing VMs as well having a nice GUI is helpful. One of my complaints is that the GUI (XenCenter) is a windows only app. C&amp;#8217;mon, Citrix, please release a cross platform management console. I&amp;#8217;ve got to run a windows VM just to use the GUI (granted I don&amp;#8217;t have to use the gui, there is a nice API and console utilities). At any rate today I noticed that I could no longer pull up the console for a windows VM nor could I pull up the performance metrics available in XenCenter. A few searches turned up &lt;a href=&#34;http://kennethhunt.com&#34;&gt;Kenneth Hunts blog&lt;/a&gt; and a post that showed me where to fix it. The windows box running XenCenter has a cache folder located in %AppData%\Citrix\XenCenterMain.exe_Url_xxxxxxxxxx. If you remove the cache you should be able to see the console and performance graphs again. If by chance you remove the entire folder you will need to re-add all dom0s back into XenCenter.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Citrix makes Xen Enterprise Free</title>
-      <link>http://nickanderson.github.io/2009/02/23/citrix-makes-xen-enterprise-free/</link>
+      <link>https://nickanderson.github.io/2009/02/23/citrix-makes-xen-enterprise-free/</link>
       <pubDate>Mon, 23 Feb 2009 20:54:52 +0000</pubDate>
       
-      <guid>http://nickanderson.github.io/2009/02/23/citrix-makes-xen-enterprise-free/</guid>
+      <guid>https://nickanderson.github.io/2009/02/23/citrix-makes-xen-enterprise-free/</guid>
       <description>Today Citrix announced that it will distribute its enterprise packaging of Xen for free. This brings fancy gui management and features available in VMwares ESX server to everyone. (Actually I&amp;#8217;m not clear if just the ability is there or if they actually are letting the gui go as well.)
 This is not a scaled down, limited version of the hypervisor. From the end of March on, there will be only one edition of XenServer which and it will be free.</description>
     </item>

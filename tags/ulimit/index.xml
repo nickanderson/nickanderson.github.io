@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ulimit on </title>
-    <link>http://nickanderson.github.io/tags/ulimit/</link>
+    <link>https://nickanderson.github.io/tags/ulimit/</link>
     <description>Recent content in Ulimit on </description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Mon, 12 Apr 2010 15:47:43 +0000</lastBuildDate>
     
-	<atom:link href="http://nickanderson.github.io/tags/ulimit/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://nickanderson.github.io/tags/ulimit/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Persistent ulimit settings in Centos/RH</title>
-      <link>http://nickanderson.github.io/2010/04/12/persistent-ulimit-settings-in-centosrh/</link>
+      <link>https://nickanderson.github.io/2010/04/12/persistent-ulimit-settings-in-centosrh/</link>
       <pubDate>Mon, 12 Apr 2010 15:47:43 +0000</pubDate>
       
-      <guid>http://nickanderson.github.io/2010/04/12/persistent-ulimit-settings-in-centosrh/</guid>
+      <guid>https://nickanderson.github.io/2010/04/12/persistent-ulimit-settings-in-centosrh/</guid>
       <description>Recently a developer came to me and said they are starting to see failed builds apparently due to open file handle limitations on the build server. In case your not aware, by default there are limitations on users to ensure they don&amp;#8217;t hog the entire resources of a system. Sometimes these limitations need to be adjusted.
 In my case the &amp;#8220;bamboo&amp;#8221; user needed more than 1024 open files on occasion. I determined my system had a maximum number of open files of 1572928.</description>
     </item>

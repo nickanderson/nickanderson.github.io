@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Cron on </title>
-    <link>http://nickanderson.github.io/tags/cron/</link>
+    <link>https://nickanderson.github.io/tags/cron/</link>
     <description>Recent content in Cron on </description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Wed, 19 Nov 2008 14:57:53 +0000</lastBuildDate>
     
-	<atom:link href="http://nickanderson.github.io/tags/cron/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://nickanderson.github.io/tags/cron/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Debian /etc/cron.d/ gotcha</title>
-      <link>http://nickanderson.github.io/2008/11/19/debian-etccrond-gotcha/</link>
+      <link>https://nickanderson.github.io/2008/11/19/debian-etccrond-gotcha/</link>
       <pubDate>Wed, 19 Nov 2008 14:57:53 +0000</pubDate>
       
-      <guid>http://nickanderson.github.io/2008/11/19/debian-etccrond-gotcha/</guid>
+      <guid>https://nickanderson.github.io/2008/11/19/debian-etccrond-gotcha/</guid>
       <description>I typically use /etc/cron.d to store all of my system crontabs. I recently ran into an issue that I had either not run into before, or fixed and paid no attention to. Files stored in /etc/cron.d/ or any /etc/cron.* directory need to adhear to the run-parts Debian cron script namespace which consists is
 (^[a-z0-9][a-z0-9-]*$)  for the regex impared this does not include the dot character. If you have a file in /etc/cron.</description>
     </item>

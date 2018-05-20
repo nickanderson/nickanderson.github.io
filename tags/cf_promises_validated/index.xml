@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Cf_promises_validated on </title>
-    <link>http://nickanderson.github.io/tags/cf_promises_validated/</link>
+    <link>https://nickanderson.github.io/tags/cf_promises_validated/</link>
     <description>Recent content in Cf_promises_validated on </description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Thu, 25 Oct 2012 02:07:09 +0000</lastBuildDate>
     
-	<atom:link href="http://nickanderson.github.io/tags/cf_promises_validated/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://nickanderson.github.io/tags/cf_promises_validated/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>CFEngine 3 Policy Update or How cf_promises_validated Works</title>
-      <link>http://nickanderson.github.io/2012/10/24/cfengine-3-policy-update-or-how-cf_promises_validated-works/</link>
+      <link>https://nickanderson.github.io/2012/10/24/cfengine-3-policy-update-or-how-cf_promises_validated-works/</link>
       <pubDate>Thu, 25 Oct 2012 02:07:09 +0000</pubDate>
       
-      <guid>http://nickanderson.github.io/2012/10/24/cfengine-3-policy-update-or-how-cf_promises_validated-works/</guid>
+      <guid>https://nickanderson.github.io/2012/10/24/cfengine-3-policy-update-or-how-cf_promises_validated-works/</guid>
       <description>Over the past several months 2 years (since 3.1.2 release, wow time flys when your having fun. I checked and 3.1.2 was released on Dec 9th 2010.) I have seen a few questions regarding how the default CFEngine policy update works, and more specifically how cf_promises_validated plays into the update process. This is my stab at describing the history and behaviour. I welcome any corrections.
 The default failsafe.cf update policy is simple in nature.</description>
     </item>
