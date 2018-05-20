@@ -5,10 +5,20 @@
     <link>https://cmdln.org/post/</link>
     <description>Recent content in Posts on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 29 Jan 2018 17:25:25 -0600</lastBuildDate>
+    <lastBuildDate>Sun, 20 May 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://cmdln.org/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Why doesn&#39;t ifvarclass automatically canonify?</title>
+      <link>https://cmdln.org/2018/05/20/why-doesnt-ifvarclass-automatically-canonify/</link>
+      <pubDate>Sun, 20 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://cmdln.org/2018/05/20/why-doesnt-ifvarclass-automatically-canonify/</guid>
+      <description>It looks like ifvarclass is one of few places in CFEngine that does not  automatically canonify:  Is there a reason why ifvarclass – which takes a variable by design – does not  automatically canonify that variable before checking if there’s a matching  class?  Yes, it&#39;s true that ifvarclass, and it&#39;s aliases if and unless do not automatically canonify when checking a class.
+Historically there was no automatic canonfication in cfengine.</description>
+    </item>
     
     <item>
       <title>Purging packages with the cfengine 3 apt_get package module</title>
