@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hacking on </title>
+    <link>http://nickanderson.github.io/tags/hacking/</link>
+    <description>Recent content in Hacking on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 03 Mar 2010 14:31:37 +0000</lastBuildDate>
+    
+	<atom:link href="http://nickanderson.github.io/tags/hacking/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Flashback: Backdoor Corporate Sabotage With DNS</title>
+      <link>http://nickanderson.github.io/2010/03/03/flashback-backdoor-corporate-sabotage-with-dns/</link>
+      <pubDate>Wed, 03 Mar 2010 14:31:37 +0000</pubDate>
+      
+      <guid>http://nickanderson.github.io/2010/03/03/flashback-backdoor-corporate-sabotage-with-dns/</guid>
+      <description>This is just an old entry that I thought was interesting, and it appears its still relevant. Like a broken record, &amp;#8220;economic times are rough&amp;#8221;, what better way to boost your revenue than to exploit your customers. What better way to suppress a competitor than to increase a competitors infrastructure costs (with little visibility to boot). I did some repeated lookups this morning and got similar results.
+Backdoor Corporate Sabotage With DNS</description>
+    </item>
+    
+  </channel>
+</rss>

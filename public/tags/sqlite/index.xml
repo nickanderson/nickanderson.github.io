@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sqlite on </title>
+    <link>http://nickanderson.github.io/tags/sqlite/</link>
+    <description>Recent content in Sqlite on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 29 Apr 2009 21:40:40 +0000</lastBuildDate>
+    
+	<atom:link href="http://nickanderson.github.io/tags/sqlite/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Speed up your firefox (ever so slightly)</title>
+      <link>http://nickanderson.github.io/2009/04/29/speed-up-your-firefox-ever-so-slightly/</link>
+      <pubDate>Wed, 29 Apr 2009 21:40:40 +0000</pubDate>
+      
+      <guid>http://nickanderson.github.io/2009/04/29/speed-up-your-firefox-ever-so-slightly/</guid>
+      <description>So I noticed my places.sqlite has grown to over 80M. Since Firefox 3 thats where things like bookmarks are stored. I guess favicons are stored in that same database. At any rate I am very tab happy. I have to control myself and about once every 2 weeks or so I have to sit down and close out a bunch of tabs. Its not uncommon for me to have 90ish tabs open.</description>
+    </item>
+    
+  </channel>
+</rss>

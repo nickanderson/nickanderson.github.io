@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bash Prompt on </title>
+    <link>http://nickanderson.github.io/tags/bash-prompt/</link>
+    <description>Recent content in Bash Prompt on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 25 Feb 2008 03:59:17 +0000</lastBuildDate>
+    
+	<atom:link href="http://nickanderson.github.io/tags/bash-prompt/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Spice up your bash prompt</title>
+      <link>http://nickanderson.github.io/2008/02/24/spice-up-your-bash-prompt/</link>
+      <pubDate>Mon, 25 Feb 2008 03:59:17 +0000</pubDate>
+      
+      <guid>http://nickanderson.github.io/2008/02/24/spice-up-your-bash-prompt/</guid>
+      <description>&lt;p&gt;I spend a lot of my time sitting in front of terminals if you have not yet guessed. When dealing with different user accounts across different systems and a plethora of terminals open its nice to have a bit of information about who you are, and where you are. I also like to be able to easily differentiate output from different commands. If your interested read on.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Routing on </title>
+    <link>http://nickanderson.github.io/tags/routing/</link>
+    <description>Recent content in Routing on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 19 Feb 2012 04:55:27 +0000</lastBuildDate>
+    
+	<atom:link href="http://nickanderson.github.io/tags/routing/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>New bundle to manage routes for RedHat/CentOS with CFEngine 3</title>
+      <link>http://nickanderson.github.io/2012/02/18/new-bundle-to-manage-routes-for-redhatcentos-with-cfengine-3/</link>
+      <pubDate>Sun, 19 Feb 2012 04:55:27 +0000</pubDate>
+      
+      <guid>http://nickanderson.github.io/2012/02/18/new-bundle-to-manage-routes-for-redhatcentos-with-cfengine-3/</guid>
+      <description>I re-factored rh_add_interface_routes into a new bundle rh_update_routes, you can find them in my CFEngine library.
+The biggest improvement is you no longer have to specify the interface you want the route on. Instead you specify a regular expression of the ip that would be on that interface and the specific interface is found.
+Second major improvement is the direct use of ip route del/add to update currently running system instead of restarting all networking.</description>
+    </item>
+    
+  </channel>
+</rss>
