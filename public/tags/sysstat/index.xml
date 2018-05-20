@@ -2,48 +2,48 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Sysstat on </title>
-    <link>https://nickanderson.github.io/tags/sysstat/</link>
+    <link>https://cmdln.org/tags/sysstat/</link>
     <description>Recent content in Sysstat on </description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Tue, 09 Mar 2010 15:42:06 +0000</lastBuildDate>
     
-	<atom:link href="https://nickanderson.github.io/tags/sysstat/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://cmdln.org/tags/sysstat/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Sysstat Sar Performance Metrics Via Nagios Plugin</title>
-      <link>https://nickanderson.github.io/2010/03/09/sysstat-sar-performance-metrics-via-nagios-plugin/</link>
+      <link>https://cmdln.org/2010/03/09/sysstat-sar-performance-metrics-via-nagios-plugin/</link>
       <pubDate>Tue, 09 Mar 2010 15:42:06 +0000</pubDate>
       
-      <guid>https://nickanderson.github.io/2010/03/09/sysstat-sar-performance-metrics-via-nagios-plugin/</guid>
+      <guid>https://cmdln.org/2010/03/09/sysstat-sar-performance-metrics-via-nagios-plugin/</guid>
       <description>I know I&amp;#8217;ve mentioned how much I love the sysstat package before. I use sar regularly to help with performance diagnostics (Analyzing Linux System Performance And Finding Bottle Necks, CPU Performance Analysis In Linux, Baseline Analysis Is Important, CPU Performance Analysis In Linux Revisited). I wrote this little Nagios plugin to collect the performance metrics that sar collects.
 I use this plugin with Zenoss and I set any performance thresholds there, more important to me was collecting the information for historical graphing.</description>
     </item>
     
     <item>
       <title>Baseline Analysis is Important, CPU Performance Analysis in Linux Revisited</title>
-      <link>https://nickanderson.github.io/2009/01/29/baseline-analysis-is-important-cpu-performance-analysis-in-linux-revisited/</link>
+      <link>https://cmdln.org/2009/01/29/baseline-analysis-is-important-cpu-performance-analysis-in-linux-revisited/</link>
       <pubDate>Fri, 30 Jan 2009 03:34:39 +0000</pubDate>
       
-      <guid>https://nickanderson.github.io/2009/01/29/baseline-analysis-is-important-cpu-performance-analysis-in-linux-revisited/</guid>
+      <guid>https://cmdln.org/2009/01/29/baseline-analysis-is-important-cpu-performance-analysis-in-linux-revisited/</guid>
       <description>&lt;p&gt;Yesterday I wrote about &lt;a href=http://www.cmdln.org/2009/01/28/cpu-performance-analysis-in-linux/&gt;CPU Performance Analysis in Linux&lt;/a&gt;. I explained how to tell if you are experiencing a CPU bottleneck. This is just a quick followup to show the effect of adding more cpu power. &lt;/p&gt;</description>
     </item>
     
     <item>
       <title>CPU Performance Analysis in Linux</title>
-      <link>https://nickanderson.github.io/2009/01/28/cpu-performance-analysis-in-linux/</link>
+      <link>https://cmdln.org/2009/01/28/cpu-performance-analysis-in-linux/</link>
       <pubDate>Wed, 28 Jan 2009 06:03:17 +0000</pubDate>
       
-      <guid>https://nickanderson.github.io/2009/01/28/cpu-performance-analysis-in-linux/</guid>
+      <guid>https://cmdln.org/2009/01/28/cpu-performance-analysis-in-linux/</guid>
       <description>&lt;p&gt;A while back I wrote a post &lt;a href=http://www.cmdln.org/2008/04/13/analyzing-linux-system-performance-and-finding-bottle-necks/&gt;Analyzing Linux System Performance and Finding Bottlenecks&lt;/a&gt;. I did&amp;#8217;t really give a good explanation of determining if you are CPU bound or not so I am writing this post to clear that up. &lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Analyzing linux system performance and finding bottle necks</title>
-      <link>https://nickanderson.github.io/2008/04/13/analyzing-linux-system-performance-and-finding-bottle-necks/</link>
+      <link>https://cmdln.org/2008/04/13/analyzing-linux-system-performance-and-finding-bottle-necks/</link>
       <pubDate>Mon, 14 Apr 2008 02:29:17 +0000</pubDate>
       
-      <guid>https://nickanderson.github.io/2008/04/13/analyzing-linux-system-performance-and-finding-bottle-necks/</guid>
+      <guid>https://cmdln.org/2008/04/13/analyzing-linux-system-performance-and-finding-bottle-necks/</guid>
       <description>&lt;p&gt;System performance analytics seems to be a frequent question on forums and mailing lists. Finding out why something is slow is generally nontrivial as there are many factors to consider. I have found the sysstat package to be an invaluable tool when looking at system performance. Specifically the command sar gives a wealth of information.&lt;/p&gt;</description>
     </item>
     

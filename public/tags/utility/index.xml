@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Utility on </title>
-    <link>https://nickanderson.github.io/tags/utility/</link>
+    <link>https://cmdln.org/tags/utility/</link>
     <description>Recent content in Utility on </description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Mon, 08 Dec 2008 18:20:09 +0000</lastBuildDate>
     
-	<atom:link href="https://nickanderson.github.io/tags/utility/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://cmdln.org/tags/utility/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Simple worklog script</title>
-      <link>https://nickanderson.github.io/2008/12/08/simple-worklog-script/</link>
+      <link>https://cmdln.org/2008/12/08/simple-worklog-script/</link>
       <pubDate>Mon, 08 Dec 2008 18:20:09 +0000</pubDate>
       
-      <guid>https://nickanderson.github.io/2008/12/08/simple-worklog-script/</guid>
+      <guid>https://cmdln.org/2008/12/08/simple-worklog-script/</guid>
       <description>&lt;p&gt;I have a pretty good memory when it comes to juggling multiple tasks but I am (and have been for some time) trying to break my self of using my brain to store everything. One area a worklog benefits is when you want to look back over time and see what your were working on several months ago (this can be helpful for reviews). At any rate there are many tools to do similar things. At any rate I wrote a simple tool to try and help with this. Feel free to take it modify it or comment on the horrible code.&lt;/p&gt;</description>
     </item>
     

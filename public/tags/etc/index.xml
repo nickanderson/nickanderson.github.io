@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Etc on </title>
-    <link>https://nickanderson.github.io/tags/etc/</link>
+    <link>https://cmdln.org/tags/etc/</link>
     <description>Recent content in Etc on </description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Thu, 19 Feb 2009 15:19:36 +0000</lastBuildDate>
     
-	<atom:link href="https://nickanderson.github.io/tags/etc/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://cmdln.org/tags/etc/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Version your /etc</title>
-      <link>https://nickanderson.github.io/2009/02/19/version-your-etc/</link>
+      <link>https://cmdln.org/2009/02/19/version-your-etc/</link>
       <pubDate>Thu, 19 Feb 2009 15:19:36 +0000</pubDate>
       
-      <guid>https://nickanderson.github.io/2009/02/19/version-your-etc/</guid>
+      <guid>https://cmdln.org/2009/02/19/version-your-etc/</guid>
       <description>Seems like we are on a bit of a roll with regard to the topic of versioning lately. Yesterday Legooolas commented about using version control for your home directory. I do and I&amp;#8217;ll cover that in a different post but I use it for a different task. Now on to todays topic.
 Do you keep track of configuration changes? You should. Maybe your using an advanced configuration management system like puppet.</description>
     </item>

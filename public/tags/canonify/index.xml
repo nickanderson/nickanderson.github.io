@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Canonify on </title>
-    <link>https://nickanderson.github.io/tags/canonify/</link>
+    <link>https://cmdln.org/tags/canonify/</link>
     <description>Recent content in Canonify on </description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Fri, 29 Mar 2013 14:12:14 +0000</lastBuildDate>
     
-	<atom:link href="https://nickanderson.github.io/tags/canonify/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://cmdln.org/tags/canonify/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Canonifying a list with CFEngine 3</title>
-      <link>https://nickanderson.github.io/2013/03/29/canonifying-a-list-with-cfengine-3/</link>
+      <link>https://cmdln.org/2013/03/29/canonifying-a-list-with-cfengine-3/</link>
       <pubDate>Fri, 29 Mar 2013 14:12:14 +0000</pubDate>
       
-      <guid>https://nickanderson.github.io/2013/03/29/canonifying-a-list-with-cfengine-3/</guid>
+      <guid>https://cmdln.org/2013/03/29/canonifying-a-list-with-cfengine-3/</guid>
       <description>John Sanders shared a pattern for canonifying lists in #CFEngine on irc.freenode.net yesterday. It&amp;#8217;s a useful reference so I thought I would replicate it here.
  1 2 3 4 5 6  % cf-agent -KIf ./example_canonify_list.cf  R: canonified site: www_example_com  R: canonified site: www_example2_com  R: alternate canonified site: www_example_com  R: alternate canonified site: www_example2_com  !! Method invoked repairs        &amp;lt;div class=&amp;quot;gist-meta&amp;quot;&amp;gt; &amp;lt;a href=&amp;quot;https://gist.</description>
     </item>

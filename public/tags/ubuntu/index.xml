@@ -2,48 +2,48 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ubuntu on </title>
-    <link>https://nickanderson.github.io/tags/ubuntu/</link>
+    <link>https://cmdln.org/tags/ubuntu/</link>
     <description>Recent content in Ubuntu on </description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Mon, 27 Feb 2012 20:19:39 +0000</lastBuildDate>
     
-	<atom:link href="https://nickanderson.github.io/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://cmdln.org/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Setup encfs on dropbox for boxcryptor with CFEngine</title>
-      <link>https://nickanderson.github.io/2012/02/27/setup-encfs-on-dropbox-for-boxcryptor-with-cfengine/</link>
+      <link>https://cmdln.org/2012/02/27/setup-encfs-on-dropbox-for-boxcryptor-with-cfengine/</link>
       <pubDate>Mon, 27 Feb 2012 20:19:39 +0000</pubDate>
       
-      <guid>https://nickanderson.github.io/2012/02/27/setup-encfs-on-dropbox-for-boxcryptor-with-cfengine/</guid>
+      <guid>https://cmdln.org/2012/02/27/setup-encfs-on-dropbox-for-boxcryptor-with-cfengine/</guid>
       <description>Here is an easy way to configure encfs with dropbox that is compatible with boxcryptor. Boxcryptor makes Windows, Mac Android, and IOS applications to assist you in accessing data that you have stored in encfs. They do require that you create your encfs with some specific options: Cipher algorithm: AES, Plaintext or Stream encrypted filenames, No filename initialization vector chaining, No per-file initialization vectors, No external IV chaining, No block MAC headers, No per-block random bytes.</description>
     </item>
     
     <item>
       <title>Replace unity with gnome3 and gnome-shell in ubuntu 11.04</title>
-      <link>https://nickanderson.github.io/2011/07/08/replace-unity-with-gnome3-and-gnome-shell-in-ubuntu-11-04/</link>
+      <link>https://cmdln.org/2011/07/08/replace-unity-with-gnome3-and-gnome-shell-in-ubuntu-11-04/</link>
       <pubDate>Fri, 08 Jul 2011 12:53:16 +0000</pubDate>
       
-      <guid>https://nickanderson.github.io/2011/07/08/replace-unity-with-gnome3-and-gnome-shell-in-ubuntu-11-04/</guid>
+      <guid>https://cmdln.org/2011/07/08/replace-unity-with-gnome3-and-gnome-shell-in-ubuntu-11-04/</guid>
       <description>Well I gave unity the old college try in ubuntu 11.04. But last night I just couldn&amp;#8217;t take it any more. There were some small rendering issues occasionally plus some tray programs like workrave had no place to go, at least that I could find anyway and I really need workrave to remind me to change from sitting to standing positions every so often.
 At any rate I decided to try gnome3 and gnome-shell.</description>
     </item>
     
     <item>
       <title>Ubuntu Server &amp;#8211; Fit for Production or a Change in the SA Guard?</title>
-      <link>https://nickanderson.github.io/2010/04/29/ubuntu-server-fit-for-production-or-a-change-in-the-sa-guard/</link>
+      <link>https://cmdln.org/2010/04/29/ubuntu-server-fit-for-production-or-a-change-in-the-sa-guard/</link>
       <pubDate>Thu, 29 Apr 2010 14:03:23 +0000</pubDate>
       
-      <guid>https://nickanderson.github.io/2010/04/29/ubuntu-server-fit-for-production-or-a-change-in-the-sa-guard/</guid>
+      <guid>https://cmdln.org/2010/04/29/ubuntu-server-fit-for-production-or-a-change-in-the-sa-guard/</guid>
       <description>I&amp;#8217;m curious what anyone who reads this blog thinks. My first reaction when someone mentions Ubuntu server is to grab the nearest trout and start slapping. Don&amp;#8217;t get me wrong I like Ubuntu. It&amp;#8217;s very nice on a workstation, and suitable for my wife, mother, aunt, etc &amp;#8230;. But do you really think its good enough for prime time in the data center? According to a server-survey conducted by the Ubuntu marketing team almost 80% of users see Ubuntu as ready for mission critical use.</description>
     </item>
     
     <item>
       <title>NetworkManager funkyness (knetworkmanager)</title>
-      <link>https://nickanderson.github.io/2008/04/05/networkmanager-funkyness-knetworkmanager/</link>
+      <link>https://cmdln.org/2008/04/05/networkmanager-funkyness-knetworkmanager/</link>
       <pubDate>Sun, 06 Apr 2008 04:38:29 +0000</pubDate>
       
-      <guid>https://nickanderson.github.io/2008/04/05/networkmanager-funkyness-knetworkmanager/</guid>
+      <guid>https://cmdln.org/2008/04/05/networkmanager-funkyness-knetworkmanager/</guid>
       <description>Ok so this is the opposite of what I generally use but its been annoying me and I just figured out what was causing it so I figured I would share it. I am currently running Kubuntu Hardy Haron but this problem was present when I installed my first Ubuntu varient Gutsy Gibbon. Knetworkmanager worked when I first installed. Then at some point it just stopped detecting my wireless card. Its not that it could not see my network card because I could go through manual configuration and connect to wireless without issue, I could also just use iwconfig and dhclient at the commandline (which is what I did).</description>
     </item>
     
