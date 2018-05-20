@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Github on </title>
-    <link>http://nickanderson.github.io/tags/github/</link>
+    <link>https://nickanderson.github.io/tags/github/</link>
     <description>Recent content in Github on </description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Tue, 05 Jul 2011 03:39:54 +0000</lastBuildDate>
     
-	<atom:link href="http://nickanderson.github.io/tags/github/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://nickanderson.github.io/tags/github/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>SNMP v3 support added to check_snmp_extend.py</title>
-      <link>http://nickanderson.github.io/2011/07/04/snmp-v3-support-added-to-check_snmp_extend-py/</link>
+      <link>https://nickanderson.github.io/2011/07/04/snmp-v3-support-added-to-check_snmp_extend-py/</link>
       <pubDate>Tue, 05 Jul 2011 03:39:54 +0000</pubDate>
       
-      <guid>http://nickanderson.github.io/2011/07/04/snmp-v3-support-added-to-check_snmp_extend-py/</guid>
+      <guid>https://nickanderson.github.io/2011/07/04/snmp-v3-support-added-to-check_snmp_extend-py/</guid>
       <description>check_snmp_extend is a python script that I found orphaned on some Nagios forum. It facilitates using snmpd as an agent for executing Nagios plugin scripts. I adopted it made a few changes and tossed it on github a while back. I&amp;#8217;m happy to merge initial snmp v3 support from Lee Whalen</description>
     </item>
     

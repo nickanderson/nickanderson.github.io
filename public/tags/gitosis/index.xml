@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Gitosis on </title>
-    <link>http://nickanderson.github.io/tags/gitosis/</link>
+    <link>https://nickanderson.github.io/tags/gitosis/</link>
     <description>Recent content in Gitosis on </description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Sun, 26 Oct 2008 05:50:59 +0000</lastBuildDate>
     
-	<atom:link href="http://nickanderson.github.io/tags/gitosis/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://nickanderson.github.io/tags/gitosis/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Secure git hosting with gitosis</title>
-      <link>http://nickanderson.github.io/2008/10/25/secure-git-hosting-with-gitosis/</link>
+      <link>https://nickanderson.github.io/2008/10/25/secure-git-hosting-with-gitosis/</link>
       <pubDate>Sun, 26 Oct 2008 05:50:59 +0000</pubDate>
       
-      <guid>http://nickanderson.github.io/2008/10/25/secure-git-hosting-with-gitosis/</guid>
+      <guid>https://nickanderson.github.io/2008/10/25/secure-git-hosting-with-gitosis/</guid>
       <description>I hope you are already using ssh keys, but just in case your not go ahead and generate one with ssh-keygen -t rsa (you should do this on your local box)
 You may as well go ahead and copy your publick key to your git server now as well.
 scp ~/.ssh/id_rsa.pub gitserver:/tmp/  Log into your gitosis server

@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Monitoring on </title>
-    <link>http://nickanderson.github.io/tags/monitoring/</link>
+    <link>https://nickanderson.github.io/tags/monitoring/</link>
     <description>Recent content in Monitoring on </description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Sat, 06 Dec 2008 07:57:12 +0000</lastBuildDate>
     
-	<atom:link href="http://nickanderson.github.io/tags/monitoring/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://nickanderson.github.io/tags/monitoring/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Top for MySQL with mytop</title>
-      <link>http://nickanderson.github.io/2008/12/06/top-for-mysql-with-mytop/</link>
+      <link>https://nickanderson.github.io/2008/12/06/top-for-mysql-with-mytop/</link>
       <pubDate>Sat, 06 Dec 2008 07:57:12 +0000</pubDate>
       
-      <guid>http://nickanderson.github.io/2008/12/06/top-for-mysql-with-mytop/</guid>
+      <guid>https://nickanderson.github.io/2008/12/06/top-for-mysql-with-mytop/</guid>
       <description>I see Samuel Huckins just had a post about apachetop http://dancingpenguinsoflight.com/2008/12/top-for-apache-activity/ which I have been meaning to mention for a while, but being that there is a fresh post about it I will mention Mytop instead.
 Mytop is top for mysql. It can be used for monitoring the threads and overall performance of a MySQL.
 Its an easy install in debain with a quick aptitude install mytop.
@@ -24,10 +24,10 @@ Here is some example output (sorry my mysql server isnt very busy atm).</descrip
     
     <item>
       <title>Infrastructure monitoring with Zabbix</title>
-      <link>http://nickanderson.github.io/2008/02/08/infrastructure-monitoring-with-zabbix/</link>
+      <link>https://nickanderson.github.io/2008/02/08/infrastructure-monitoring-with-zabbix/</link>
       <pubDate>Fri, 08 Feb 2008 23:01:17 +0000</pubDate>
       
-      <guid>http://nickanderson.github.io/2008/02/08/infrastructure-monitoring-with-zabbix/</guid>
+      <guid>https://nickanderson.github.io/2008/02/08/infrastructure-monitoring-with-zabbix/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;www.zabbix.com&#34;&gt;Zabbix&lt;/a&gt; is an opensource network monitoring application somewhat akin to &lt;a href=&#34;http://www.nagios.org/&#34;&gt;Nagios&lt;/a&gt; and &lt;a href=&#34;http://www.cacti.net&#34;&gt;Cacti&lt;/a&gt;. I have been using Zabbix for about 8 months, and I am pleased with its results.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>

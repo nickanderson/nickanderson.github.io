@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Devops on </title>
-    <link>http://nickanderson.github.io/tags/devops/</link>
+    <link>https://nickanderson.github.io/tags/devops/</link>
     <description>Recent content in Devops on </description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Thu, 06 Dec 2012 15:01:13 +0000</lastBuildDate>
     
-	<atom:link href="http://nickanderson.github.io/tags/devops/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://nickanderson.github.io/tags/devops/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Quick Tip: Drilling into zenoss data with zendmd</title>
-      <link>http://nickanderson.github.io/2012/12/06/quick-tip-drilling-into-zenoss-data-with-zendmd/</link>
+      <link>https://nickanderson.github.io/2012/12/06/quick-tip-drilling-into-zenoss-data-with-zendmd/</link>
       <pubDate>Thu, 06 Dec 2012 15:01:13 +0000</pubDate>
       
-      <guid>http://nickanderson.github.io/2012/12/06/quick-tip-drilling-into-zenoss-data-with-zendmd/</guid>
+      <guid>https://nickanderson.github.io/2012/12/06/quick-tip-drilling-into-zenoss-data-with-zendmd/</guid>
       <description>Sometimes you want to know what value zenoss has for something. The numbers sent in alerts seem to be the value that zenoss has, but the graphs are usually formatted to make more sense. 1394606080 might come in an alert, but on the graph it would show as 1.3 or 1.4G. It can cause some slight confusion when other people expect 90% of 1.4G instead of 90% of 1394606080 to be an alert threshold.</description>
     </item>
     
     <item>
       <title>LinuxCon/CloudOpen 2012</title>
-      <link>http://nickanderson.github.io/2012/08/01/linuxconcloudopen-2012/</link>
+      <link>https://nickanderson.github.io/2012/08/01/linuxconcloudopen-2012/</link>
       <pubDate>Wed, 01 Aug 2012 13:55:30 +0000</pubDate>
       
-      <guid>http://nickanderson.github.io/2012/08/01/linuxconcloudopen-2012/</guid>
+      <guid>https://nickanderson.github.io/2012/08/01/linuxconcloudopen-2012/</guid>
       <description>Are you going to LinuxCon/CloudOpen 2012? I am, and I think I have settled on my picks (at least until I look at the schedule again, lots of great options).
 Special thanks to CFEngine for sponsering me!
 Here are my picks for the minute.

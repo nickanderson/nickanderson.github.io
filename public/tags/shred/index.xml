@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Shred on </title>
-    <link>http://nickanderson.github.io/tags/shred/</link>
+    <link>https://nickanderson.github.io/tags/shred/</link>
     <description>Recent content in Shred on </description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Wed, 26 Aug 2009 06:00:44 +0000</lastBuildDate>
     
-	<atom:link href="http://nickanderson.github.io/tags/shred/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://nickanderson.github.io/tags/shred/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Secure Hard Drive Wipe</title>
-      <link>http://nickanderson.github.io/2009/08/26/secure-hard-drive-wipe/</link>
+      <link>https://nickanderson.github.io/2009/08/26/secure-hard-drive-wipe/</link>
       <pubDate>Wed, 26 Aug 2009 06:00:44 +0000</pubDate>
       
-      <guid>http://nickanderson.github.io/2009/08/26/secure-hard-drive-wipe/</guid>
+      <guid>https://nickanderson.github.io/2009/08/26/secure-hard-drive-wipe/</guid>
       <description>I&amp;#8217;ve been wiping a lot of hard drives recently. I use shred to do the job.
 shred -n6 -z -v /dev/sdx  What do you do to your drives before disposing of them?</description>
     </item>

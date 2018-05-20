@@ -2,38 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Cleanup on </title>
-    <link>http://nickanderson.github.io/tags/cleanup/</link>
+    <link>https://nickanderson.github.io/tags/cleanup/</link>
     <description>Recent content in Cleanup on </description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Sat, 19 Apr 2008 05:33:14 +0000</lastBuildDate>
     
-	<atom:link href="http://nickanderson.github.io/tags/cleanup/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://nickanderson.github.io/tags/cleanup/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Purge previously uninstalled packages in debian</title>
-      <link>http://nickanderson.github.io/2008/04/18/purge-previously-uninstalled-packages-in-debian/</link>
+      <link>https://nickanderson.github.io/2008/04/18/purge-previously-uninstalled-packages-in-debian/</link>
       <pubDate>Sat, 19 Apr 2008 05:33:14 +0000</pubDate>
       
-      <guid>http://nickanderson.github.io/2008/04/18/purge-previously-uninstalled-packages-in-debian/</guid>
+      <guid>https://nickanderson.github.io/2008/04/18/purge-previously-uninstalled-packages-in-debian/</guid>
       <description>&lt;p&gt;Recently I ordered a server with Debian etch. Unfortunately during testing I noticed that startx was on the system, along with a whole slew of other junk that I don&amp;#8217;t generally want on a fresh server. I wanted to remove all of the cruft but I didn&amp;#8217;t have the exact package list.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Find and delete old files in linux redux</title>
-      <link>http://nickanderson.github.io/2008/04/09/find-and-delete-old-files-in-linux-redux/</link>
+      <link>https://nickanderson.github.io/2008/04/09/find-and-delete-old-files-in-linux-redux/</link>
       <pubDate>Wed, 09 Apr 2008 15:21:09 +0000</pubDate>
       
-      <guid>http://nickanderson.github.io/2008/04/09/find-and-delete-old-files-in-linux-redux/</guid>
+      <guid>https://nickanderson.github.io/2008/04/09/find-and-delete-old-files-in-linux-redux/</guid>
       <description>&lt;p&gt;After some lovely &lt;a href=&#34;http://www.cmdln.org/2008/04/08/find-and-delete-old-files-in-linux/#comment-360&#34;&gt;feedback&lt;/a&gt; from &lt;a href=&#34;http://stsimb.irc.gr/&#34;&gt;Sotiris Tsimbonis&lt;/a&gt; on my last post &lt;a href=&#34;http://www.cmdln.org/2008/04/08/find-and-delete-old-files-in-linux&#34;&gt;Find and delete old files in linux&lt;/a&gt; I have a better (faster) way to delete files.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Find and delete old files in linux</title>
-      <link>http://nickanderson.github.io/2008/04/08/find-and-delete-old-files-in-linux/</link>
+      <link>https://nickanderson.github.io/2008/04/08/find-and-delete-old-files-in-linux/</link>
       <pubDate>Tue, 08 Apr 2008 23:47:58 +0000</pubDate>
       
-      <guid>http://nickanderson.github.io/2008/04/08/find-and-delete-old-files-in-linux/</guid>
+      <guid>https://nickanderson.github.io/2008/04/08/find-and-delete-old-files-in-linux/</guid>
       <description>&lt;p&gt;I have a few of those directories that files tend to pile up in. I don&amp;#8217;t need the files but I also don&amp;#8217;t take the time to delete them. Pruning these old files is a good thing to keep your used disk space under control as well as your sanity. Find is a great tool to do this, its extremely flexible I recommend you read the man page next time your bored.&lt;/p&gt;</description>
     </item>
     

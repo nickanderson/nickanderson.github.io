@@ -20,7 +20,7 @@
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
 
-<link rel="stylesheet" href="http://nickanderson.github.io/css/nix.css">
+<link rel="stylesheet" href="https://nickanderson.github.io/css/nix.css">
 
 
 <link href="https://fonts.googleapis.com/css?family=Inconsolata|Open+Sans|Roboto|Montserrat|Concert+One" rel="stylesheet">
@@ -41,14 +41,14 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" id="green-terminal" href=http://nickanderson.github.io>nick@cmdln.org ~ $</a>
+			<a class="navbar-brand" id="green-terminal" href=https://nickanderson.github.io>nick@cmdln.org ~ $</a>
 		</div>
 
 		
 		<div class="collapse navbar-collapse" id="navbar-collapse-1">
 			<ul class="nav navbar-nav navbar-right">
 				<li>
-					<a href="http://nickanderson.github.io">/home/nick</a>
+					<a href="https://nickanderson.github.io">/home/nick</a>
 				</li>
 				
 				
@@ -64,7 +64,7 @@
 </header>
 
         <div class="container wrapper">
-            <h1><a href="http://nickanderson.github.io/2013/03/13/working-around-getindices-with-dynamically-generated-arrays-in-cfengine-3/">Working around getindices with dynamically generated arrays in CFEngine 3</a></h1>
+            <h1><a href="https://nickanderson.github.io/2013/03/13/working-around-getindices-with-dynamically-generated-arrays-in-cfengine-3/">Working around getindices with dynamically generated arrays in CFEngine 3</a></h1>
             <span class="post-date">Mar 13, 2013 </span>
             <div class="post-content">
                 <p>There is a <a href="https://cfengine.com/dev/issues/2088" target="_blank">known bug</a> where <a href="https://cfengine.com/manuals/cf3-Reference#Function-getindices" target="_blank">getindices</a> is unable to get the index <img class="alignright size-medium wp-image-1150" alt="Workaround" src="http://www.cmdln.org/wp-content/uploads/2013/03/work-around-300x223.jpg" width="300" height="223" srcset="http://www.cmdln.org/wp-content/uploads/2013/03/work-around-300x223.jpg 300w, http://www.cmdln.org/wp-content/uploads/2013/03/work-around.jpg 550w" sizes="(max-width: 300px) 100vw, 300px" />of a dynamically generated array until the next pass. This comes up from time to time so I thought I would post an example using a pattern shared on the <a href="http://groups.google.com/group/help-cfengine?hl=en" target="_blank">CFEngine help mailing list</a>. The policy below shows 3 working examples. They are mostly similar, example0 shows the simplest workaround, example1 and example2 in addition show ways to suppress the &#8220;Duplicate selection of value for variable&#8221; messages.</p>

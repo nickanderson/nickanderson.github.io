@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Mysql on </title>
-    <link>http://nickanderson.github.io/tags/mysql/</link>
+    <link>https://nickanderson.github.io/tags/mysql/</link>
     <description>Recent content in Mysql on </description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Sat, 06 Dec 2008 07:57:12 +0000</lastBuildDate>
     
-	<atom:link href="http://nickanderson.github.io/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://nickanderson.github.io/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Top for MySQL with mytop</title>
-      <link>http://nickanderson.github.io/2008/12/06/top-for-mysql-with-mytop/</link>
+      <link>https://nickanderson.github.io/2008/12/06/top-for-mysql-with-mytop/</link>
       <pubDate>Sat, 06 Dec 2008 07:57:12 +0000</pubDate>
       
-      <guid>http://nickanderson.github.io/2008/12/06/top-for-mysql-with-mytop/</guid>
+      <guid>https://nickanderson.github.io/2008/12/06/top-for-mysql-with-mytop/</guid>
       <description>I see Samuel Huckins just had a post about apachetop http://dancingpenguinsoflight.com/2008/12/top-for-apache-activity/ which I have been meaning to mention for a while, but being that there is a fresh post about it I will mention Mytop instead.
 Mytop is top for mysql. It can be used for monitoring the threads and overall performance of a MySQL.
 Its an easy install in debain with a quick aptitude install mytop.
@@ -24,10 +24,10 @@ Here is some example output (sorry my mysql server isnt very busy atm).</descrip
     
     <item>
       <title>Reset mysql root password</title>
-      <link>http://nickanderson.github.io/2008/02/09/reset-mysql-root-password/</link>
+      <link>https://nickanderson.github.io/2008/02/09/reset-mysql-root-password/</link>
       <pubDate>Sat, 09 Feb 2008 15:13:03 +0000</pubDate>
       
-      <guid>http://nickanderson.github.io/2008/02/09/reset-mysql-root-password/</guid>
+      <guid>https://nickanderson.github.io/2008/02/09/reset-mysql-root-password/</guid>
       <description>&lt;p&gt;Have you ever forgotten the root password on one of your MySQL servers? No? Well maybe I&amp;#8217;m not as perfect as you. This is a quick h00tow (how to) reset your MySQL root password. It does require root access on your server. If you have forgotten that password wait for another article.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
