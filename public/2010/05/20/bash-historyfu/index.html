@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title> bash history-fu &middot;  </title>
+
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.40.3" />
+
+
+<script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="http://nickanderson.github.io/css/nix.css">
+
+
+<link href="https://fonts.googleapis.com/css?family=Inconsolata|Open+Sans|Roboto|Montserrat|Concert+One" rel="stylesheet">
+
+
+
+
+    </head>
+
+    <body>
+        <header>
+<nav class="navbar navbar-default navbar-fixed-top navbar-inverse font-header">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" id="green-terminal" href=http://nickanderson.github.io>nick@cmdln.org ~ $</a>
+		</div>
+
+		
+		<div class="collapse navbar-collapse" id="navbar-collapse-1">
+			<ul class="nav navbar-nav navbar-right">
+				<li>
+					<a href="http://nickanderson.github.io">/home/nick</a>
+				</li>
+				
+				
+				<li >
+					<a href="/post/">~/posts</a>
+				</li>
+				
+
+			</ul>
+		</div>
+	</div>
+</nav>
+</header>
+
+        <div class="container wrapper">
+            <h1><a href="http://nickanderson.github.io/2010/05/20/bash-historyfu/">bash history-fu</a></h1>
+            <span class="post-date">May 20, 2010 </span>
+            <div class="post-content">
+                <p>I came across a new blog (seems to have come on-line in March) <a href="http://www.epoxyjournal.com">http://www.epoxyjournal.com</a>. One of the entries was about <a href="http://www.epoxyjournal.com/2010/05/how-to-clear-command-history-in-linux.html">how to clear command history</a>. Everyone has inadvertently pasted or typed something into the wrong shell. Sometimes its worthwhile to clean up after yourself and sometimes its not. I figured I would offer a suggestion for the times you want to avoid having your embarrassing moments in your ~/.bash_history.</p>
+
+<p>Instead of blowing away your entire current buffer with history -c you can redirect it to another file, flush the buffer to the file, clean it up then append it to your ~/.bash_history. Sure its more work then abandoning your history but insert <a href="http://en.wikipedia.org/wiki/Godwin%27s_law">Godwin&#8217;s Law</a>.</p>
+
+<p>So it might look something like this.</p>
+
+<pre class="brush: bash; title: ; notranslate" title="">$ echo some long one liner you want to preserver
+$ echo something embarrassing
+$ export HISTFILE=~/tmphistfile
+$ history -a
+$ grep -v embarrassing ~/tmphistfile &gt;&gt; ~/.bash_history
+# re-point your history file to the right one, or just exit the shell
+</pre>
+
+<p><a href="http://www.standalone-sysadmin.com/blog">Matt Simmons</a> thought a little oops utility would be nice. So here is my shoot from the hip attempt, haven&#8217;t extensively tested it but I think it works.</p>
+
+<pre class="brush: bash; title: ; notranslate" title="">#!/bin/bash
+# wipe your history of lines that match the input
+# Usage: oops &lt;embarrassing string&gt;
+
+TEMPHIST=$(mktemp)
+export HISTFILE=$TEMPHIST
+history -a
+grep -v $1 $TEMPHIST &gt;&gt; ~/.bash_history
+history -c
+rm $TEMPHIST
+HISTFILE=~/.bash_history
+history -r
+</pre>
+
+            </div>
+            
+            <div class="post-comments">
+                
+            </div>
+            
+            <div class="push"></div>
+        </div>
+        <footer class="footer text-center">
+<p>Copyright &copy; 2018 Nick Anderson -
+<span class="credit">
+	Powered by
+	<a target="_blank" href="https://gohugo.io">Hugo</a>
+	and
+	<a target="_blank" href="https://github.com/LordMathis/hugo-theme-nix/">Nix</a> theme.
+</span>
+</p>
+</footer>
+
+    </body>

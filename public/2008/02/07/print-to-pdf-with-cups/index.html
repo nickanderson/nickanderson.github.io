@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title> Print to PDF with cups. &middot;  </title>
+
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.40.3" />
+
+
+<script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="http://nickanderson.github.io/css/nix.css">
+
+
+<link href="https://fonts.googleapis.com/css?family=Inconsolata|Open+Sans|Roboto|Montserrat|Concert+One" rel="stylesheet">
+
+
+
+
+    </head>
+
+    <body>
+        <header>
+<nav class="navbar navbar-default navbar-fixed-top navbar-inverse font-header">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" id="green-terminal" href=http://nickanderson.github.io>nick@cmdln.org ~ $</a>
+		</div>
+
+		
+		<div class="collapse navbar-collapse" id="navbar-collapse-1">
+			<ul class="nav navbar-nav navbar-right">
+				<li>
+					<a href="http://nickanderson.github.io">/home/nick</a>
+				</li>
+				
+				
+				<li >
+					<a href="/post/">~/posts</a>
+				</li>
+				
+
+			</ul>
+		</div>
+	</div>
+</nav>
+</header>
+
+        <div class="container wrapper">
+            <h1><a href="http://nickanderson.github.io/2008/02/07/print-to-pdf-with-cups/">Print to PDF with cups.</a></h1>
+            <span class="post-date">Feb 8, 2008 </span>
+            <div class="post-content">
+                <p>Printing is a pain. I hate printers, I hate paper, but I also hate a bagillion book marks to places and things that may change over time. Its handy to have PDFs around as they are easily searchable, they preserve original layout and they print correctly when you want to print something. So for most of my printing I am printing to PDF and if I need a paper copy later I can always print out that PDF. True many applications can print or export to pdf currently. However using cups-pdf allows you to print to pdf anywhere you can print. Its great when combined with RDP too. For example at one point a <a href="http://jgarrett.org" mce_href="http://jgarrett.org">freind</a> of mine had to use GreatPlains for parts and order accounting in a production enviornment. GreatPlains allows you to print to screen in only some windows. However with cups-pdf he could print any screen he wished to pdf and view it on his screen.</p>
+
+<p></p>
+
+<p>Setting up pdf printing with cups is very easy. Im going to show you how to set this up manually. That is not using kde or gnome or the cups admin interface to do so because this is a more portable solution.</p>
+
+<p>First you need to instal cups-pdf. Im using debian now so for me its apt-get install cups-pdf, but yum install or emerge or cast or whatever your distros package manager is should be able to do it. If all else fails find the source <a href="http://www.cups-pdf.de/">http://www.cups-pdf.de/</a>.</p>
+
+<p>`Printing is a pain. I hate printers, I hate paper, but I also hate a bagillion book marks to places and things that may change over time. Its handy to have PDFs around as they are easily searchable, they preserve original layout and they print correctly when you want to print something. So for most of my printing I am printing to PDF and if I need a paper copy later I can always print out that PDF. True many applications can print or export to pdf currently. However using cups-pdf allows you to print to pdf anywhere you can print. Its great when combined with RDP too. For example at one point a <a href="http://jgarrett.org" mce_href="http://jgarrett.org">freind</a> of mine had to use GreatPlains for parts and order accounting in a production enviornment. GreatPlains allows you to print to screen in only some windows. However with cups-pdf he could print any screen he wished to pdf and view it on his screen.</p>
+
+<!--more-->
+
+<p>Setting up pdf printing with cups is very easy. Im going to show you how to set this up manually. That is not using kde or gnome or the cups admin interface to do so because this is a more portable solution.</p>
+
+<p>First you need to instal cups-pdf. Im using debian now so for me its apt-get install cups-pdf, but yum install or emerge or cast or whatever your distros package manager is should be able to do it. If all else fails find the source <a href="http://www.cups-pdf.de/">http://www.cups-pdf.de/</a>.</p>
+
+<p>`</p>
+
+<p>Is the config file for it. There you set the output directory for your PDFs by default it is $HOME/PDF so if thats fine with you do <code>mkdir $HOME/PDF</code>.</p>
+
+<p>In ``Printing is a pain. I hate printers, I hate paper, but I also hate a bagillion book marks to places and things that may change over time. Its handy to have PDFs around as they are easily searchable, they preserve original layout and they print correctly when you want to print something. So for most of my printing I am printing to PDF and if I need a paper copy later I can always print out that PDF. True many applications can print or export to pdf currently. However using cups-pdf allows you to print to pdf anywhere you can print. Its great when combined with RDP too. For example at one point a <a href="http://jgarrett.org" mce_href="http://jgarrett.org">freind</a> of mine had to use GreatPlains for parts and order accounting in a production enviornment. GreatPlains allows you to print to screen in only some windows. However with cups-pdf he could print any screen he wished to pdf and view it on his screen.</p>
+
+<!--more-->
+
+<p>Setting up pdf printing with cups is very easy. Im going to show you how to set this up manually. That is not using kde or gnome or the cups admin interface to do so because this is a more portable solution.</p>
+
+<p>First you need to instal cups-pdf. Im using debian now so for me its apt-get install cups-pdf, but yum install or emerge or cast or whatever your distros package manager is should be able to do it. If all else fails find the source <a href="http://www.cups-pdf.de/">http://www.cups-pdf.de/</a>.</p>
+
+<p>`Printing is a pain. I hate printers, I hate paper, but I also hate a bagillion book marks to places and things that may change over time. Its handy to have PDFs around as they are easily searchable, they preserve original layout and they print correctly when you want to print something. So for most of my printing I am printing to PDF and if I need a paper copy later I can always print out that PDF. True many applications can print or export to pdf currently. However using cups-pdf allows you to print to pdf anywhere you can print. Its great when combined with RDP too. For example at one point a <a href="http://jgarrett.org" mce_href="http://jgarrett.org">freind</a> of mine had to use GreatPlains for parts and order accounting in a production enviornment. GreatPlains allows you to print to screen in only some windows. However with cups-pdf he could print any screen he wished to pdf and view it on his screen.</p>
+
+<!--more-->
+
+<p>Setting up pdf printing with cups is very easy. Im going to show you how to set this up manually. That is not using kde or gnome or the cups admin interface to do so because this is a more portable solution.</p>
+
+<p>First you need to instal cups-pdf. Im using debian now so for me its apt-get install cups-pdf, but yum install or emerge or cast or whatever your distros package manager is should be able to do it. If all else fails find the source <a href="http://www.cups-pdf.de/">http://www.cups-pdf.de/</a>.</p>
+
+<p>`</p>
+
+<p>Is the config file for it. There you set the output directory for your PDFs by default it is $HOME/PDF so if thats fine with you do <code>mkdir $HOME/PDF</code>.</p>
+
+<p>In`` you should add the following.</p>
+
+<p><code>&lt;Printer PDF&gt;&lt;br /&gt;
+ Info GENERIC PostScript Printer&lt;br /&gt;
+ Location local&lt;br /&gt;
+ DeviceURI cups-pdf:/&lt;br /&gt;
+ State Idle&lt;br /&gt;
+ StateTime 1185029102&lt;br /&gt;
+ Accepting Yes&lt;br /&gt;
+ Shared Yes&lt;br /&gt;
+ JobSheets none none&lt;br /&gt;
+ QuotaPeriod 0&lt;br /&gt;
+ PageLimit 0&lt;br /&gt;
+ KLimit 0&lt;br /&gt;
+ OpPolicy default&lt;br /&gt;
+ ErrorPolicy stop-printer&lt;br /&gt;
+ &lt;/Printer&gt;</code></p>
+            </div>
+            
+            <div class="post-comments">
+                
+            </div>
+            
+            <div class="push"></div>
+        </div>
+        <footer class="footer text-center">
+<p>Copyright &copy; 2018 Nick Anderson -
+<span class="credit">
+	Powered by
+	<a target="_blank" href="https://gohugo.io">Hugo</a>
+	and
+	<a target="_blank" href="https://github.com/LordMathis/hugo-theme-nix/">Nix</a> theme.
+</span>
+</p>
+</footer>
+
+    </body>
