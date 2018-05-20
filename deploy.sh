@@ -21,7 +21,7 @@ msg() {
 }
 
 msg "Pulling down the \`master\` branch into \`public\` to help avoid merge conflicts"
-git subtree pull --prefix=public --rebase \
+git subtree pull --prefix=public \
 	git@github.com:$USERNAME/$USERNAME.github.io.git master -m "Merge master"
 
 msg "Building the website"
