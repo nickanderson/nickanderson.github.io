@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Xenserver on </title>
-    <link>http://nickanderson.github.io/tags/xenserver/</link>
+    <link>https://nickanderson.github.io/tags/xenserver/</link>
     <description>Recent content in Xenserver on </description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Tue, 06 Apr 2010 17:53:36 +0000</lastBuildDate>
     
-	<atom:link href="http://nickanderson.github.io/tags/xenserver/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://nickanderson.github.io/tags/xenserver/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>How to get console on linux domU with XenServer (xm console equivlent)</title>
-      <link>http://nickanderson.github.io/2010/04/06/how-to-get-console-on-linux-domu-with-xenserver-xm-console-equivlent/</link>
+      <link>https://nickanderson.github.io/2010/04/06/how-to-get-console-on-linux-domu-with-xenserver-xm-console-equivlent/</link>
       <pubDate>Tue, 06 Apr 2010 17:53:36 +0000</pubDate>
       
-      <guid>http://nickanderson.github.io/2010/04/06/how-to-get-console-on-linux-domu-with-xenserver-xm-console-equivlent/</guid>
+      <guid>https://nickanderson.github.io/2010/04/06/how-to-get-console-on-linux-domu-with-xenserver-xm-console-equivlent/</guid>
       <description>Besides the gui/vnc consoles you can still use the equivlent of xm console in Citrix XenServer.
 On the host console:
  xe vm-list to get the list of domins running (just note the uuid of the domain you want). list_domains will list the domain name and the uuid of the domains. Match up your uuid so you get the proper dom_id xm console equivlent is /usr/lib/xen/bin/xenconsole dom_id  Its not in the root users $PATH though I think it ought to be.</description>
@@ -23,10 +23,10 @@ On the host console:
     
     <item>
       <title>XenServer Midnight Ride Beta</title>
-      <link>http://nickanderson.github.io/2010/03/16/xenserver-midnight-ride-beta/</link>
+      <link>https://nickanderson.github.io/2010/03/16/xenserver-midnight-ride-beta/</link>
       <pubDate>Tue, 16 Mar 2010 15:55:53 +0000</pubDate>
       
-      <guid>http://nickanderson.github.io/2010/03/16/xenserver-midnight-ride-beta/</guid>
+      <guid>https://nickanderson.github.io/2010/03/16/xenserver-midnight-ride-beta/</guid>
       <description>Citrix has released the beta for the next version of XenServer code named &amp;#8220;Midnight Ride&amp;#8221;.
 I&amp;#8217;m looking forward to the enhanced snapshots (memory+disk), and memory over commit for lab environments.
 Get access to the beta program here</description>
@@ -34,19 +34,19 @@ Get access to the beta program here</description>
     
     <item>
       <title>XenServer License Check &amp;#8211; Nagios NRPE Plugin</title>
-      <link>http://nickanderson.github.io/2010/03/08/xenserver-license-check-nagios-nrpe-plugin/</link>
+      <link>https://nickanderson.github.io/2010/03/08/xenserver-license-check-nagios-nrpe-plugin/</link>
       <pubDate>Mon, 08 Mar 2010 14:51:23 +0000</pubDate>
       
-      <guid>http://nickanderson.github.io/2010/03/08/xenserver-license-check-nagios-nrpe-plugin/</guid>
+      <guid>https://nickanderson.github.io/2010/03/08/xenserver-license-check-nagios-nrpe-plugin/</guid>
       <description>If you hadn&amp;#8217;t already guessed I am a big fan of the Xen hypervisor. Lately I have been using the Citrix XenServer release because it makes it quite palatable for my co-workers. One annoyance that I do have about XenServer is the requirement that you license it (with a free license) every year. If you fail to license it the GUI stops working. Now I hate relying on GUIs but the fact of the matter is others in my team expect to have a working GUI when they need to do something.</description>
     </item>
     
     <item>
       <title>Installing NRPE on XenServer</title>
-      <link>http://nickanderson.github.io/2010/03/04/installing-nrpe-on-xenserver/</link>
+      <link>https://nickanderson.github.io/2010/03/04/installing-nrpe-on-xenserver/</link>
       <pubDate>Thu, 04 Mar 2010 18:05:58 +0000</pubDate>
       
-      <guid>http://nickanderson.github.io/2010/03/04/installing-nrpe-on-xenserver/</guid>
+      <guid>https://nickanderson.github.io/2010/03/04/installing-nrpe-on-xenserver/</guid>
       <description>I like to have as little run in dom0 as possible. However some things you really need checked from dom0, like the status of your raid perhaps. Just some quick instructions on getting Nagios NRPE running in XenServer.
  Install EPEL repository and disable it by default (remember we don&amp;#8217;t want to accidentally install unnecessary packages) wget http://download.fedora.redhat.com/pub/epel/5/$(uname -i)/epel-release-5-3.noarch.rpm rpm -hiv epel-release*.rpm sed -i &amp;rsquo;s/enabled=1/enabled=0/g&amp;rsquo; /etc/yum.repos.d/epel.repo 
  Install nrpe and configure it to start on boot yum install &amp;ndash;enablerepo=epel nrpe chkconfig nrpe on</description>
@@ -54,10 +54,10 @@ Get access to the beta program here</description>
     
     <item>
       <title>Fix XenCenter not displaying console or performance statistics</title>
-      <link>http://nickanderson.github.io/2010/01/19/fix-xencenter-not-displaying-console-or-performance-statistics/</link>
+      <link>https://nickanderson.github.io/2010/01/19/fix-xencenter-not-displaying-console-or-performance-statistics/</link>
       <pubDate>Tue, 19 Jan 2010 18:07:28 +0000</pubDate>
       
-      <guid>http://nickanderson.github.io/2010/01/19/fix-xencenter-not-displaying-console-or-performance-statistics/</guid>
+      <guid>https://nickanderson.github.io/2010/01/19/fix-xencenter-not-displaying-console-or-performance-statistics/</guid>
       <description>&lt;p&gt;I am sure you are aware of my affinity for the Xen hypervisor. In the last year I have switched over to Citrix Xenserver. With other people managing VMs as well having a nice GUI is helpful. One of my complaints is that the GUI (XenCenter) is a windows only app. C&amp;#8217;mon, Citrix, please release a cross platform management console. I&amp;#8217;ve got to run a windows VM just to use the GUI (granted I don&amp;#8217;t have to use the gui, there is a nice API and console utilities). At any rate today I noticed that I could no longer pull up the console for a windows VM nor could I pull up the performance metrics available in XenCenter. A few searches turned up &lt;a href=&#34;http://kennethhunt.com&#34;&gt;Kenneth Hunts blog&lt;/a&gt; and a post that showed me where to fix it. The windows box running XenCenter has a cache folder located in %AppData%\Citrix\XenCenterMain.exe_Url_xxxxxxxxxx. If you remove the cache you should be able to see the console and performance graphs again. If by chance you remove the entire folder you will need to re-add all dom0s back into XenCenter.&lt;/p&gt;</description>
     </item>
     

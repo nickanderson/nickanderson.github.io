@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Google on </title>
-    <link>http://nickanderson.github.io/tags/google/</link>
+    <link>https://nickanderson.github.io/tags/google/</link>
     <description>Recent content in Google on </description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Thu, 06 May 2010 13:41:36 +0000</lastBuildDate>
     
-	<atom:link href="http://nickanderson.github.io/tags/google/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://nickanderson.github.io/tags/google/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Remove Google Everything Sidebar &amp;#8212; Again</title>
-      <link>http://nickanderson.github.io/2010/05/06/remove-google-everything-sidebar-again/</link>
+      <link>https://nickanderson.github.io/2010/05/06/remove-google-everything-sidebar-again/</link>
       <pubDate>Thu, 06 May 2010 13:41:36 +0000</pubDate>
       
-      <guid>http://nickanderson.github.io/2010/05/06/remove-google-everything-sidebar-again/</guid>
+      <guid>https://nickanderson.github.io/2010/05/06/remove-google-everything-sidebar-again/</guid>
       <description>Yesterday I had a tip on removing yourself from any testing for that google sidebar that your likely seeing in your search results now. I woke up to a nasty surprise. After removing the cookie yesterday, today I had the bar again. So I removed the cookie again, and it came right back. Thats when a friend pointed out that google was rolling it out to everyone. OH NO!
 Well, luckily you can get a browser extension for Firefox or Chrome that makes it disappear from the guys over at seotools.</description>
     </item>
     
     <item>
       <title>Remove Google Everything Sidebar</title>
-      <link>http://nickanderson.github.io/2010/05/05/remove-google-everything-sidebar/</link>
+      <link>https://nickanderson.github.io/2010/05/05/remove-google-everything-sidebar/</link>
       <pubDate>Thu, 06 May 2010 00:00:23 +0000</pubDate>
       
-      <guid>http://nickanderson.github.io/2010/05/05/remove-google-everything-sidebar/</guid>
+      <guid>https://nickanderson.github.io/2010/05/05/remove-google-everything-sidebar/</guid>
       <description>Google is constantly doing experiments to see what its users like best. Today I was slapped with one of their tests, the &amp;#8220;Everything Sidebar&amp;#8221;. It really screwed with me and was entirely distracting while I was searching. So naturally I looked for a way to reverse it. It&amp;#8217;s easy enough, you just need to delete a cookie.
 Here is a screen shot of the results page
 

@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on </title>
-    <link>http://nickanderson.github.io/categories/</link>
+    <link>https://nickanderson.github.io/categories/</link>
     <description>Recent content in Categories on </description>
     <generator>Hugo -- gohugo.io</generator>
     
-	<atom:link href="http://nickanderson.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://nickanderson.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Posts</title>
-      <link>http://nickanderson.github.io/categories/posts/</link>
+      <link>https://nickanderson.github.io/categories/posts/</link>
       <pubDate>Fri, 21 Aug 2015 04:51:59 +0000</pubDate>
       
-      <guid>http://nickanderson.github.io/categories/posts/</guid>
+      <guid>https://nickanderson.github.io/categories/posts/</guid>
       <description></description>
     </item>
     

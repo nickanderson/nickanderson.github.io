@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hardware on </title>
-    <link>http://nickanderson.github.io/tags/hardware/</link>
+    <link>https://nickanderson.github.io/tags/hardware/</link>
     <description>Recent content in Hardware on </description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Sat, 02 Sep 2006 14:05:38 +0000</lastBuildDate>
     
-	<atom:link href="http://nickanderson.github.io/tags/hardware/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://nickanderson.github.io/tags/hardware/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Disk Performance</title>
-      <link>http://nickanderson.github.io/2006/09/02/disk-performance/</link>
+      <link>https://nickanderson.github.io/2006/09/02/disk-performance/</link>
       <pubDate>Sat, 02 Sep 2006 14:05:38 +0000</pubDate>
       
-      <guid>http://nickanderson.github.io/2006/09/02/disk-performance/</guid>
+      <guid>https://nickanderson.github.io/2006/09/02/disk-performance/</guid>
       <description>So what kind of performance should people expect from a disk or raid?
 How long should it take to create 100G file?
 time dd if=/dev/zero of=mako1 bs=65536 count=163840
