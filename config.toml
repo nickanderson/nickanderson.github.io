@@ -39,7 +39,7 @@ post = "/:year/:month/:day/:slug/"
   HeaderHostname = "cmdln.org"
   Email = "nick@cmdln.org"
   About = "Hi, I'm Nick. I love open source and I have a special penchant for *nix, CFEngine, org-mode. I like puzzles and analyzing systems."
-  ProfilePicture = "images/head.jpg"
+  ProfilePicture = "https://nickanderson.github.io/images/head.jpg"
   #GoogleAnalytics = "your_google_analytics_id"
   #SlackURL = "https://join.slack.com/..."
 
