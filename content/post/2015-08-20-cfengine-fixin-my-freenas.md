@@ -14,7 +14,7 @@ tags:
 ---
 I recently built a new file server and I based it on the well renowned <a href="http://www.freenas.org/" target="_blank">FreeNAS</a> by <a href="https://www.ixsystems.com/" target="_blank">iXsystems</a>. It&#8217;s been pretty solid over the past few weeks but today I ran into an issue. The web ui stopped responding. Actually it turned out that the django service had stopped. Well, that was the perfect opportunity to use CFEngine to make sure I never have the issue again.
 
-<img class="alignright size-full wp-image-1210" src="http://www.cmdln.org/images/wp-content/uploads/2015/08/cfenginefreebsd.png" alt="cfenginefreebsd" width="900" height="600" srcset="http://www.cmdln.org/images/wp-content/uploads/2015/08/cfenginefreebsd.png 900w, http://www.cmdln.org/images/wp-content/uploads/2015/08/cfenginefreebsd-300x200.png 300w" sizes="(max-width: 900px) 100vw, 900px" />
+<img class="alignright size-full wp-image-1210" src="/images/wp-content/uploads/2015/08/cfenginefreebsd.png" alt="cfenginefreebsd" width="900" height="600" srcset="/images/wp-content/uploads/2015/08/cfenginefreebsd.png 900w, /images/wp-content/uploads/2015/08/cfenginefreebsd-300x200.png 300w" sizes="(max-width: 900px) 100vw, 900px" />
 
 I grabbed the [cfengine community 3.7.0 package][1] for Freebsd 9.3 package from <a href="http://www.cfengineers.net" target="_blank">CFEngineers.net</a> (thanks guys!) and it installed without issue.
 
