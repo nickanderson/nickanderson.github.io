@@ -1,0 +1,29 @@
+Running post-install script post-install.sh:
+  Creating resolv.conf
+BUGFIX
+  Mounting /proc
+  Bootstrapping yum
+Loading "installonlyn" plugin
+Setting up Install Process
+Setting up repositories
+not using ftp, http[s], or file for repos, skipping - Null is not a valid release or hasnt been released yet
+Loading "installonlyn" plugin
+Setting up Install Process
+Setting up repositories
+not using ftp, http[s], or file for repos, skipping - Null is not a valid release or hasnt been released yet
+Loading "installonlyn" plugin
+Setting up Install Process
+Setting up repositories
+not using ftp, http[s], or file for repos, skipping - Null is not a valid release or hasnt been released yet
+  Authfix
+Loading "installonlyn" plugin
+Setting up Install Process
+Setting up repositories
+Error: Cannot find a valid baseurl for repo: extras
+not using ftp, http[s], or file for repos, skipping - Null is not a valid release or hasnt been released yet
+chroot: cannot run command `/usr/bin/authconfig': No such file or directory
+  Cleaning up
+Loading "installonlyn" plugin
+Cleaning up Everything
+  Final tidy...
+Installation complete
