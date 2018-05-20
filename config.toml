@@ -1,5 +1,5 @@
 url = "https://nickanderson.github.io"
-baseurl = "http://nickanderson.github.io"
+baseurl = "https://nickanderson.github.io"
 name = "cmdln.org (a sysadmin blog)"
 description = "a system administrators mutterings"
 theme = "hugo-theme-nix"
