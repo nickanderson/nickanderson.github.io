@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="">
+
+	<head>
+		<title> Cfengine &middot;  </title>
+
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.40.3" />
+
+
+<script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="http://nickanderson.github.io/css/nix.css">
+
+
+<link href="https://fonts.googleapis.com/css?family=Inconsolata|Open+Sans|Roboto|Montserrat|Concert+One" rel="stylesheet">
+
+
+
+
+	</head>
+
+	<body>
+		<header>
+<nav class="navbar navbar-default navbar-fixed-top navbar-inverse font-header">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" id="green-terminal" href=http://nickanderson.github.io>nick@cmdln.org ~ $</a>
+		</div>
+
+		
+		<div class="collapse navbar-collapse" id="navbar-collapse-1">
+			<ul class="nav navbar-nav navbar-right">
+				<li>
+					<a href="http://nickanderson.github.io">/home/nick</a>
+				</li>
+				
+				
+				<li >
+					<a href="/post/">~/posts</a>
+				</li>
+				
+
+			</ul>
+		</div>
+	</div>
+</nav>
+</header>
+
+		<div class="container wrapper">
+			<div class="row">
+				<div class="col-xs-12 text-center">
+					<h1 id=>Cfengine</h1>
+				</div>
+			</div>
+			<ul id="post-list">
+                	
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
+							<h4 class="post-link"><a href="http://nickanderson.github.io/2018/01/29/purging-packages-with-the-cfengine-3-apt_get-package-module/">Purging packages with the cfengine 3 apt_get package module</a></h4>
+							<h4 class="post-date">Jan 29, 2018</h4>
+						</div>
+						<div class="post-summary"><p>How can I purge a package using the apt_get package_module? policy =&gt; purge doesn't work.  present and absent are the package states, purge is an option for package manager. You should be able to use the options attribute since the =apt_get= package module supports it.
+1 2 3 4 5 6 7 8 9 10  bundle agent main { packages: # Purging a package using the --purge option  &#34;screen&#34; policy =&gt; &#34;absent&#34;, package_module =&gt; apt_get, options =&gt; { &#34;--remove&#34; }; }    Note that you can use any Configuration Item as well:</p></div>
+						<div class="post-list-footer text-center">
+							<a href="http://nickanderson.github.io/2018/01/29/purging-packages-with-the-cfengine-3-apt_get-package-module/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
+							<h4 class="post-link"><a href="http://nickanderson.github.io/2018/01/28/timeboxing-policy-in-cfengine3/">Timeboxing Policy in Cfengine3</a></h4>
+							<h4 class="post-date">Jan 28, 2018</h4>
+						</div>
+						<div class="post-summary"><p>How can I make cfengine do things during a specific time window?  You can find "time based classes" in the cf-promises --show-classes output, they are easily identified because they are tagged with time_based. For example:
+1  cf-promises --show-classes | grep time   | Day2 time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | GMT_Afternoon time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | GMT_Day2 time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | GMT_Hr14 time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | GMT_Hr14_Q1 time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | GMT_Lcycle_1 time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | GMT_March time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | GMT_Min10 time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | GMT_Min10_15 time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | GMT_Q1 time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | GMT_Thursday time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | GMT_Yr2017 time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | Hr08 time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | Hr08_Q1 time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | Hr8 time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | Lcycle_1 time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | March time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | Min10 time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | Min10_15 time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | Morning time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | Q1 time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | Thursday time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | Yr2017 time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass |  You can guard your promise with a time based class expression so that it can only execute during the 7:00 hour.</p></div>
+						<div class="post-list-footer text-center">
+							<a href="http://nickanderson.github.io/2018/01/28/timeboxing-policy-in-cfengine3/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
+							<h4 class="post-link"><a href="http://nickanderson.github.io/2018/01/27/formatting-time-in-cfengine3/">Formatting Time in CFEngine3</a></h4>
+							<h4 class="post-date">Jan 27, 2018</h4>
+						</div>
+						<div class="post-summary"><p>How do I format and convert time strings?  The strftime() function takes unix epoch format as input and can format the time using the standard strftime templates.
+1 2 3 4 5 6 7  bundle agent main { reports: &#34;$(with)&#34; with =&gt; strftime( localtime, &#34;%FT%R:%S%Z&#34;, now() ); }  R: 2018-01-27T15:47:14CST  Unfortunately there is currently no native way to convert from other inputs formats. You can however, use an external command.</p></div>
+						<div class="post-list-footer text-center">
+							<a href="http://nickanderson.github.io/2018/01/27/formatting-time-in-cfengine3/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
+							<h4 class="post-link"><a href="http://nickanderson.github.io/2018/01/16/setting-permissions-using-uid-username-gid-or-groupname-with-cfengine-3/">Setting permissions using uid, username, gid, or groupname with cfengine 3</a></h4>
+							<h4 class="post-date">Jan 16, 2018</h4>
+						</div>
+						<div class="post-summary"><p>Can we use uid/gid to set permissions instead of username and groupname?
+Yes, you sure can.
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23  bundle agent main { files: # Here we use username and groupname  &#34;/tmp/example&#34; create =&gt; &#34;true&#34;, perms =&gt; mog( &#34;600&#34;, &#34;root&#34;, &#34;root&#34; ); # Here we use uid and gid  &#34;/tmp/example&#34; perms =&gt; mog( &#34;600&#34;, 1000, 136 ); } body perms mog(mode,user,group) # @brief Set the file&#39;s mode, owner and group  # @param mode The new mode  # @param user The username of the new owner  # @param group The group name  { owners =&gt; { &#34;$(user)&#34; }; groups =&gt; { &#34;$(group)&#34; }; mode =&gt; &#34;$(mode)&#34;; }   Run the above example:</p></div>
+						<div class="post-list-footer text-center">
+							<a href="http://nickanderson.github.io/2018/01/16/setting-permissions-using-uid-username-gid-or-groupname-with-cfengine-3/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
+							<h4 class="post-link"><a href="http://nickanderson.github.io/2018/01/15/standalone-mustache-policy/">Standalone Mustache Policy</a></h4>
+							<h4 class="post-date">Jan 15, 2018</h4>
+						</div>
+						<div class="post-summary"><p>Does CFEngine provide tool to render a mustache template?
+No, CFEngine doesn't have a standalone tool to render mustache. This online demo is a good place to quickly prototype a simple template and data set.
+Another option is to use a stand-alone policy file.
+Name the file whatever you like. It looks for json in a file named the same suffixed with .json, it looks for a mustache template named the same suffixed with .</p></div>
+						<div class="post-list-footer text-center">
+							<a href="http://nickanderson.github.io/2018/01/15/standalone-mustache-policy/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
+							<h4 class="post-link"><a href="http://nickanderson.github.io/2017/12/22/check-if-a-file-contains-a-multi-line-regex/">Check if a file contains a multi-line regex</a></h4>
+							<h4 class="post-date">Dec 22, 2017</h4>
+						</div>
+						<div class="post-summary"><p>Is there any way to do a multiline regex check for a file in CFEngine?  There is no function for searching a file for content. The grep() function operates on lists, not files. However using readfile() and regcmp() I was sill able to search for a multi-line string using only native functionaity
+In the example below we first create a file with content that spans multiple lines. Then we read that file content into a variable and use a regular expression on the variable content.</p></div>
+						<div class="post-list-footer text-center">
+							<a href="http://nickanderson.github.io/2017/12/22/check-if-a-file-contains-a-multi-line-regex/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
+							<h4 class="post-link"><a href="http://nickanderson.github.io/2017/12/21/cfengine-files-preserve-with-explicit-perms/">Cfengine Files Preserve With Explicit Perms</a></h4>
+							<h4 class="post-date">Dec 21, 2017</h4>
+						</div>
+						<div class="post-summary"><p>If I have a promise with a copy_from promise where the body specifies that  permissions should be preserved and I also have a perms body on the same  promise what is expected to happen?  The files type promises documentation describes the normal order of files promise attributes during promise actuation.
+The documentation notes:
+ file presence ( create | copy | link ) permissions file content  So the explicitly specified permissions should win in the end.</p></div>
+						<div class="post-list-footer text-center">
+							<a href="http://nickanderson.github.io/2017/12/21/cfengine-files-preserve-with-explicit-perms/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
+							<h4 class="post-link"><a href="http://nickanderson.github.io/2017/12/04/self-organizing-groups-with-select_class-in-cfengine-3/">Self organizing groups with select_class in cfengine 3</a></h4>
+							<h4 class="post-date">Dec 4, 2017</h4>
+						</div>
+						<div class="post-summary"><p>How can my hosts self organize into different groups?
+In cfengine 3 select_class can be used for partitioning hosts into separate groups without central coordination. Given the same list of options in the same order each host will always choose the same option.
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41  bundle agent demo_select_class { vars: &#34;options&#34; slist =&gt; { &#34;one&#34;, &#34;two&#34; }, meta =&gt; { &#34;inventory&#34;, &#34;attribute_name=Select Class Options&#34; }; # Prefix the options with &#34;select_class_&#34; as select_class will define  # untagged classes that we will use to define a class tagged for  # inventory.</p></div>
+						<div class="post-list-footer text-center">
+							<a href="http://nickanderson.github.io/2017/12/04/self-organizing-groups-with-select_class-in-cfengine-3/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
+							<h4 class="post-link"><a href="http://nickanderson.github.io/2017/11/29/using-set_line_based-with-extra-spaces/">Using set_line_based with extra spaces</a></h4>
+							<h4 class="post-date">Nov 29, 2017</h4>
+						</div>
+						<div class="post-summary"><p>How can I use set_line_based to manage a space separated file like /etc/services but include more than one space to make the config a bit easier to read.
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23  bundle agent main { vars: &#34;map[hpss_d_mvr1]&#34; string =&gt; &#34;65501/tcp&#34;; # Include padding in the value itself  &#34;map[hpss_d_mvr2]&#34; string =&gt; &#34; 65503/tcp&#34;; files: &#34;/tmp/services&#34; create =&gt; &#34;true&#34;; # Use more than one space in the second field for the minimum number of  # spaces between columns  &#34;/tmp/services&#34; edit_line =&gt; set_line_based( &#34;$(this.</p></div>
+						<div class="post-list-footer text-center">
+							<a href="http://nickanderson.github.io/2017/11/29/using-set_line_based-with-extra-spaces/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
+							<h4 class="post-link"><a href="http://nickanderson.github.io/2017/11/24/how-to-keep-a-package-up-to-date-in-cfengine-3/">How to keep a package up to date in CFEngine 3</a></h4>
+							<h4 class="post-date">Nov 24, 2017</h4>
+						</div>
+						<div class="post-summary"><p>How can I make sure a package is always up to date?
+1 2 3 4 5 6 7 8 9 10 11 12  bundle agent main { vars: &#34;latest_pkgs&#34; slist =&gt; { &#34;singularity&#34;, &#34;singularity-devel&#34; }; packages: &#34;$(latest_pkgs)&#34; policy =&gt; &#34;present&#34;, comment =&gt; &#34;Important to automatically track the latest and greatest because ....&#34;, version =&gt; &#34;latest&#34;; }   The packages promise implementation shown above has been available since 3.</p></div>
+						<div class="post-list-footer text-center">
+							<a href="http://nickanderson.github.io/2017/11/24/how-to-keep-a-package-up-to-date-in-cfengine-3/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
+			</ul>
+            
+
+<div class="pagination-wrapper text-center">
+  <ul class="pagination">
+      
+      <li>
+          <a href="/tags/cfengine/" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
+      </li>
+      
+      <li
+      class="disabled">
+          <a href="" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+      </li>
+      
+      <li
+      class="active"><a href="/tags/cfengine/">1</a></li>
+      
+      <li
+      ><a href="/tags/cfengine/page/2/">2</a></li>
+      
+      <li
+      ><a href="/tags/cfengine/page/3/">3</a></li>
+      
+      <li
+      ><a href="/tags/cfengine/page/4/">4</a></li>
+      
+      <li
+      >
+          <a href="/tags/cfengine/page/2/" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+      </li>
+      
+      <li>
+          <a href="/tags/cfengine/page/4/" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+      </li>
+      
+    </ul>
+</div>
+
+
+
+			<div class="push"></div>
+		</div>
+		<footer class="footer text-center">
+<p>Copyright &copy; 2018 Nick Anderson -
+<span class="credit">
+	Powered by
+	<a target="_blank" href="https://gohugo.io">Hugo</a>
+	and
+	<a target="_blank" href="https://github.com/LordMathis/hugo-theme-nix/">Nix</a> theme.
+</span>
+</p>
+</footer>
+
+	</body>
+</html>

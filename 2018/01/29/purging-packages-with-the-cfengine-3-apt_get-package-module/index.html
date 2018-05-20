@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title> Purging packages with the cfengine 3 apt_get package module &middot;  </title>
+
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.40.3" />
+
+
+<script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="http://nickanderson.github.io/css/nix.css">
+
+
+<link href="https://fonts.googleapis.com/css?family=Inconsolata|Open+Sans|Roboto|Montserrat|Concert+One" rel="stylesheet">
+
+
+
+
+    </head>
+
+    <body>
+        <header>
+<nav class="navbar navbar-default navbar-fixed-top navbar-inverse font-header">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" id="green-terminal" href=http://nickanderson.github.io>nick@cmdln.org ~ $</a>
+		</div>
+
+		
+		<div class="collapse navbar-collapse" id="navbar-collapse-1">
+			<ul class="nav navbar-nav navbar-right">
+				<li>
+					<a href="http://nickanderson.github.io">/home/nick</a>
+				</li>
+				
+				
+				<li >
+					<a href="/post/">~/posts</a>
+				</li>
+				
+
+			</ul>
+		</div>
+	</div>
+</nav>
+</header>
+
+        <div class="container wrapper">
+            <h1><a href="http://nickanderson.github.io/2018/01/29/purging-packages-with-the-cfengine-3-apt_get-package-module/">Purging packages with the cfengine 3 apt_get package module</a></h1>
+            <span class="post-date">Jan 29, 2018 </span>
+            <div class="post-content">
+                <blockquote>
+<p>
+  How can I purge a package using the apt_get package_module? <code>policy =&gt; purge</code> doesn't work.
+</p>
+</blockquote>
+
+<p><code>present</code> and <code>absent</code> are the package states, <code>purge</code> is an option for package
+manager. You should be able to use the <code>options</code> attribute since the <a href="https://docs.cfengine.com/docs/3.10/reference-promise-types-packages.html#apt_get" title="=apt_get=
+package module">=apt_get=
+package module</a> supports it.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">main</span>
+  <span class="p">{</span>
+    <span class="kd">packages</span><span class="p">:</span>
+
+        <span class="c"># Purging a package using the --purge option
+</span><span class="c"></span>        <span class="s">&#34;screen&#34;</span>
+          <span class="kr">policy</span> <span class="o">=&gt;</span> <span class="s">&#34;absent&#34;</span><span class="p">,</span>
+          <span class="kr">package_module</span> <span class="o">=&gt;</span> <span class="nf">apt_get</span><span class="p">,</span>
+          <span class="kr">options</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="s">&#34;--remove&#34;</span> <span class="p">};</span>
+  <span class="p">}</span>   </code></pre></td></tr></table>
+</div>
+</div>
+<p>Note that you can use any Configuration Item as well:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">main</span>
+  <span class="p">{</span>
+        <span class="c"># Purging a package using the Configuration Item option
+</span><span class="c"></span>        <span class="s">&#34;screen&#34;</span>
+          <span class="kr">policy</span> <span class="o">=&gt;</span> <span class="s">&#34;absent&#34;</span><span class="p">,</span>
+          <span class="kr">package_module</span> <span class="o">=&gt;</span> <span class="nf">apt_get</span><span class="p">,</span>
+          <span class="kr">options</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="s">&#34;-o&#34;</span><span class="p">,</span> <span class="s">&#34;APT::Get::Purge=true&#34;</span> <span class="p">};</span>
+  <span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
+            </div>
+            
+            <div class="post-comments">
+                
+            </div>
+            
+            <div class="push"></div>
+        </div>
+        <footer class="footer text-center">
+<p>Copyright &copy; 2018 Nick Anderson -
+<span class="credit">
+	Powered by
+	<a target="_blank" href="https://gohugo.io">Hugo</a>
+	and
+	<a target="_blank" href="https://github.com/LordMathis/hugo-theme-nix/">Nix</a> theme.
+</span>
+</p>
+</footer>
+
+    </body>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title> Vim customization for python &middot;  </title>
+
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.40.3" />
+
+
+<script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="http://nickanderson.github.io/css/nix.css">
+
+
+<link href="https://fonts.googleapis.com/css?family=Inconsolata|Open+Sans|Roboto|Montserrat|Concert+One" rel="stylesheet">
+
+
+
+
+    </head>
+
+    <body>
+        <header>
+<nav class="navbar navbar-default navbar-fixed-top navbar-inverse font-header">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" id="green-terminal" href=http://nickanderson.github.io>nick@cmdln.org ~ $</a>
+		</div>
+
+		
+		<div class="collapse navbar-collapse" id="navbar-collapse-1">
+			<ul class="nav navbar-nav navbar-right">
+				<li>
+					<a href="http://nickanderson.github.io">/home/nick</a>
+				</li>
+				
+				
+				<li >
+					<a href="/post/">~/posts</a>
+				</li>
+				
+
+			</ul>
+		</div>
+	</div>
+</nav>
+</header>
+
+        <div class="container wrapper">
+            <h1><a href="http://nickanderson.github.io/2008/10/18/vim-customization-for-python/">Vim customization for python</a></h1>
+            <span class="post-date">Oct 18, 2008 </span>
+            <div class="post-content">
+                <p>Python seems to keep growing on me. By no means am I a Python master, nor am I a vim guru but I do prefer to use vim over a gui editor. Sure there are some niceties with using a gui but getting comfortable using a tool that is almost always at your disposal has something to be said for it. Adding a few things to your vim environment will make writing python much more pleasurable.</p>
+
+<p>First there is the <a href="http://www.vim.org/scripts/script.php?script_id=974">python indent plugin</a>. At the time of this writing the current version is 0.3. There is one annoying thing about it. When commenting with hashes it un-indents. Luckily <span class="author"><a href="http://henry.precheur.org/2008/4/18/Indenting%20Python%20with%20VIM.html">Henry Prêcheu pointed out</a> that its an easy one line fix.</span></p>
+
+<pre class="brush: bash; title: ; notranslate" title="">setlocal indentkeys=!^F,o,O,&lt;:&gt;,0),0],0},=elif,=except
+</pre>
+
+<p>should be changed to.</p>
+
+<pre class="brush: bash; title: ; notranslate" title="">setlocal indentkeys=!^F,o,O,&lt;:&gt;,0),0],0},=elif,=except,0#
+</pre>
+
+<p>Here is the full updated version of the script. <a href="http://www.cmdln.org/wp-content/uploads/2008/10/python.vim">Vim Python Indent 0.4_alpha1</a></p>
+
+<p><strong>Syntax Highlighting</strong></p>
+
+<p>Download <a href="http://www.vim.org/scripts/script.php?script_id=790">http://www.vim.org/scripts/script.php?script_id=790</a> at the time of this writing the current version is 2.6.3. and place it in your .vim /syntax/ directory (if its not there you should create it). This will add awesome highlighting to your python files. But we can make it better! We can add some simple error checking for things like missing colons. These are the additions that I have added which I found provided by <a href="http://blog.sontek.net">sontek aka John M. Anderson</a>. Don&#8217;t forget to add <code>syntax on</code> to your .vimrc.</p>
+
+<pre class="brush: bash; title: ; notranslate" title="">syn match pythonError "^\s*def\s\+\w\+(.*)\s*$" display
+syn match pythonError "^\s*class\s\+\w\+(.*)\s*$" display
+syn match pythonError "^\s*for\s.*[^:]$" display
+syn match pythonError "^\s*except\s*$" display
+syn match pythonError "^\s*finally\s*$" display
+syn match pythonError "^\s*try\s*$" display
+syn match pythonError "^\s*else\s*$" display
+syn match pythonError "^\s*else\s*[^:].*" display
+syn match pythonError "^\s*if\s.*[^\:]$" display
+syn match pythonError "^\s*except\s.*[^\:]$" display
+syn match pythonError "[;]$" display
+syn keyword pythonError         do
+</pre>
+
+<p>We can take that a step further with the following additions to your .vimrc.</p>
+
+<pre class="brush: bash; title: ; notranslate" title="">" Syntax checking entire file
+" Usage: :make (check file)
+" :clist (view list of errors)
+" :cn, :cp (move around list of errors)
+autocmd BufRead *.py set makeprg=python\ -c\ \"import\ py_compile,sys;\ sys.stderr=sys.stdout;\ py_compile.compile(r'%')\"
+autocmd BufRead *.py set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
+</pre>
+
+<p>This will allow you to check the syntax ofyour entire file by typing :make. you can the get a list of errors with :clist and move between the errors with :cn and :cp.</p>
+
+<p><strong>Execute block of code</strong></p>
+
+<p>Sometimes you want to check or execute a block of code. Drop the <a href="http://www.cmdln.org/wp-content/uploads/2008/10/python_exec_block.vim">python execute block vim script</a> into your .vim/ftplugin/ directory. With it you can visually select a block of code and execute it with Ctrl+h.</p>
+
+<p><strong>Debugging</strong></p>
+
+<p>So you are finding errors in your code and want to trace them? Drop this <a href="http://www.cmdln.org/wp-content/uploads/2008/10/python_ipdb.vim">python ipdb vim script</a> into your .vim/ftplugin/directory. You can set break points with F7 and clear them with shift-F7. If your not familiar with ipdb you should look it up.</p>
+
+<p>While we&#8217;re at it lets add an easy way to run your current script.</p>
+
+<p><span style="text-decoration: line-through;">map <f8> :!python %<cr></span></p>
+
+<p>It was pointed out by <a href="http://www.reddit.com/user/fboender/">fboender</a> on <a href="http://www.reddit.com/r/Python/comments/785vt/vim_customization_for_python/">reddit</a> that there is a better way to do this.</p>
+
+<p>Download the <a href="http://www.vim.org/scripts/script.php?script_id=1788">bexec plugin</a> open it with vim using the full path to your vimball and then type :so % to source and install the vimball. Now setup some maps for it.</p>
+
+<pre class="brush: bash; title: ; notranslate" title="">nmap &lt;silent&gt; &lt;unique&gt; &lt;F8&gt; :call Bexec()&lt;cr&gt;
+vmap &lt;silent&gt; &lt;unique&gt; &lt;F8&gt; :call BexecVisual()&lt;cr&gt;
+map &lt;silent&gt; &lt;unique &lt;F9&gt; :call BexecCloseOut()&lt;cr&gt;</pre>
+
+<p>in your .vimrc will cause F8 to run the file you currently have open.</p>
+
+<p><strong>Tabs</strong></p>
+
+<p>Who doesn&#8217;t love tabs? You can have them in vim too ya know! Add these lines to your .vimrc</p>
+
+<pre class="brush: bash; title: ; notranslate" title="">map \t :tabnew&lt;cr&gt;
+map \n :tabnext&lt;cr&gt;
+map \p :tabprevious&lt;cr&gt;
+map \c :tabclose&lt;cr&gt;
+</pre>
+
+<p>With these additions you can open a new tab with \t move right with \n and move left with \p. To close the tab simply enter \c.</p>
+
+<p><strong>Edit File Menu</strong></p>
+
+<p>You can add a handy menu when opening files with :e. Its called the wildmenu. Add the following lines to your .vimrc. As a side note it will also give completion options for vim commands.</p>
+
+<pre class="brush: bash; title: ; notranslate" title="">set wildmenu
+set wildignore+=*.pyc,*.zip,*.gz,*.bz,*.tar,*.jpg,*.png,*.gif,*.avi,*.wmv,*.ogg,*.mp3,*.mov
+</pre>
+
+<p><strong>Code Snippets</strong></p>
+
+<p>The vim snippy plugin provides textmate like code snippets. Its pretty darn cool. Installing is hard. Download the latest version from <a href="http://www.vim.org/scripts/script.php?script_id=1318">here</a>. Be sure to download both snippy_plugin.vba and snippy_bundles.vba as the plugin and snippets are now seperated. Create a directory .vim/after/ftplugin and put both .vba files in there. I installed them by opening them with vim using the full path to the .vba files and then typing :source % to source the file. The vim ball script will install and you will be ready to go. Open a .py file and type def<tab>. You can tab through each &lt;{}&gt; and fill in the content to construct your function.</p>
+
+<p><strong>Extra functional goodness like block comment</strong></p>
+
+<p>Operating on blocks of code is handy. Being able to comment out an entire section with a few keystrokes saves much time. <a href="http://www.vim.org/scripts/script.php?script_id=30">This vim script</a> provides that functionality. I download it and save it to .vim/ftplugin/python_fn.vim.  Then you can visually select a block of code with ]v and comment it out with ]c and move its indentation level with ]&lt; and ]&gt; as well as a few other things.</p>
+
+<p><strong>PEP8 Goodness</strong></p>
+
+<p>Adding the following to .vim/ftplugin/python_pep8.vim will help you with tab space and other such worries with pep8.</p>
+
+<pre class="brush: bash; title: ; notranslate" title="">setlocal tabstop=4
+setlocal softtabstop=4
+setlocal shiftwidth=4
+setlocal textwidth=79
+setlocal smarttab
+setlocal expandtab
+setlocal smartindent
+</pre>
+
+<p><strong>One last note</strong></p>
+
+<p>Make sure indent and plugins are turned on in your .vimrc</p>
+
+<pre class="brush: bash; title: ; notranslate" title="">filetype plugin indent on
+</pre>
+            </div>
+            
+            <div class="post-comments">
+                
+            </div>
+            
+            <div class="push"></div>
+        </div>
+        <footer class="footer text-center">
+<p>Copyright &copy; 2018 Nick Anderson -
+<span class="credit">
+	Powered by
+	<a target="_blank" href="https://gohugo.io">Hugo</a>
+	and
+	<a target="_blank" href="https://github.com/LordMathis/hugo-theme-nix/">Nix</a> theme.
+</span>
+</p>
+</footer>
+
+    </body>

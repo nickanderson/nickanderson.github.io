@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title> CFEngine fixin my FreeNAS &middot;  </title>
+
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.40.3" />
+
+
+<script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="http://nickanderson.github.io/css/nix.css">
+
+
+<link href="https://fonts.googleapis.com/css?family=Inconsolata|Open+Sans|Roboto|Montserrat|Concert+One" rel="stylesheet">
+
+
+
+
+    </head>
+
+    <body>
+        <header>
+<nav class="navbar navbar-default navbar-fixed-top navbar-inverse font-header">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" id="green-terminal" href=http://nickanderson.github.io>nick@cmdln.org ~ $</a>
+		</div>
+
+		
+		<div class="collapse navbar-collapse" id="navbar-collapse-1">
+			<ul class="nav navbar-nav navbar-right">
+				<li>
+					<a href="http://nickanderson.github.io">/home/nick</a>
+				</li>
+				
+				
+				<li >
+					<a href="/post/">~/posts</a>
+				</li>
+				
+
+			</ul>
+		</div>
+	</div>
+</nav>
+</header>
+
+        <div class="container wrapper">
+            <h1><a href="http://nickanderson.github.io/2015/08/20/cfengine-fixin-my-freenas/">CFEngine fixin my FreeNAS</a></h1>
+            <span class="post-date">Aug 21, 2015 </span>
+            <div class="post-content">
+                <p>I recently built a new file server and I based it on the well renowned <a href="http://www.freenas.org/" target="_blank">FreeNAS</a> by <a href="https://www.ixsystems.com/" target="_blank">iXsystems</a>. It&#8217;s been pretty solid over the past few weeks but today I ran into an issue. The web ui stopped responding. Actually it turned out that the django service had stopped. Well, that was the perfect opportunity to use CFEngine to make sure I never have the issue again.</p>
+
+<p><img class="alignright size-full wp-image-1210" src="http://www.cmdln.org/wp-content/uploads/2015/08/cfenginefreebsd.png" alt="cfenginefreebsd" width="900" height="600" srcset="http://www.cmdln.org/wp-content/uploads/2015/08/cfenginefreebsd.png 900w, http://www.cmdln.org/wp-content/uploads/2015/08/cfenginefreebsd-300x200.png 300w" sizes="(max-width: 900px) 100vw, 900px" /></p>
+
+<p>I grabbed the <a href="http://www.cfengineers.net/files/packages/cfengine-community/3.7.0/cfengine-community-3.7.0_1-freebsd_9.x_amd64.tbz">cfengine community 3.7.0 package</a> for Freebsd 9.3 package from <a href="http://www.cfengineers.net" target="_blank">CFEngineers.net</a> (thanks guys!) and it installed without issue.</p>
+
+<pre>wget http://www.cfengineers.net/files/packages/cfengine-community/3.7.0/cfengine-community-3.7.0_1-freebsd_9.x_amd64.tbz
+pkg_add cfengine-community-3.7.0_1-freebsd_9.x_amd64.tbz</pre>
+
+<p>I just wanted to experiment locally instead of bootstrapping to a policy server so I grabbed the <a href="https://cfengine-package-repos.s3.amazonaws.com/tarballs/cfengine-masterfiles-3.7.0-2.tar.gz">masterfiles source tarball for 3.7.0</a> and installed the masterfiles policy framework.</p>
+
+<pre>tar zxvf cfengine-masterfiles-3.7.0-2.tar.gz
+cd cfengine-masterfiles-3.7.0/
+./configure
+make install</pre>
+
+<p>Since I am only going to have local policy for now I went ahead and linked inputs to masterfiles.</p>
+
+<pre>rm -rf /var/cfengine/inputs
+ln -s /var/cfengine/masterfiles /var/cfengine/inputs</pre>
+
+<p>And then I enabled cfengine.</p>
+
+<pre>cfengine3_enable="YES" &gt;&gt; /etc/rc.conf
+service cfengine3.sh start</pre>
+
+<p>I enabled autorun for convenience.</p>
+
+<pre>sed -i 's/.*services_autorun.*expression.*/      "services_autorun" expression =&gt; "any";/' /var/cfengine/masterfiles/controls/3.7/def.cf</pre>
+
+<p>And then I installed <a href="https://gist.github.com/nickanderson/a46fdf764da3370e2bce">this policy</a> into services/autorun.</p>
+
+<pre data-wpview-marker="https%3A%2F%2Fgist.github.com%2Fnickanderson%2Fa46fdf764da3370e2bce">wget https://gist.githubusercontent.com/nickanderson/a46fdf764da3370e2bce/raw/a9116f64f8cf6158738a82e136de676325ab0a0e/freenas.cf -O /var/cfengine/masterfiles/services/autorun/freenas.cf</pre>
+
+<p>Now any time django decides to die, CFEngine will come along and fix it up.</p>
+
+<pre>[root@freenas] ~# service django stop
+Stopping django.
+Waiting for PIDS: 17087.
+[root@freenas] ~# cf-agent -K
+[root@freenas] ~# service django status
+django is running as pid 17203.
+[root@freenas] ~# tail /var/log</pre>
+
+<p>Maybe I&#8217;ll do some Software Defined Storage :-p</p>
+
+            </div>
+            
+            <div class="post-comments">
+                
+            </div>
+            
+            <div class="push"></div>
+        </div>
+        <footer class="footer text-center">
+<p>Copyright &copy; 2018 Nick Anderson -
+<span class="credit">
+	Powered by
+	<a target="_blank" href="https://gohugo.io">Hugo</a>
+	and
+	<a target="_blank" href="https://github.com/LordMathis/hugo-theme-nix/">Nix</a> theme.
+</span>
+</p>
+</footer>
+
+    </body>
