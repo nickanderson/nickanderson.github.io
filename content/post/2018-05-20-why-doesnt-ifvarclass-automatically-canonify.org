@@ -1,0 +1,67 @@
+#+Title: Why doesn't ifvarclass automatically canonify?
+#+AUTHOR: Nick Anderson
+#+DATE: 2018-05-20
+#+DRAFT: false
+
+#+BEGIN_QUOTE
+  It looks like ifvarclass is one of few places in CFEngine that does not
+  automatically canonify:
+  
+  Is there a reason why ifvarclass – which takes a variable by design – does not
+  automatically canonify that variable before checking if there’s a matching
+  class?
+#+END_QUOTE
+
+Yes, it's true that =ifvarclass=, and it's aliases =if= and =unless= do not
+automatically canonify when checking a class.
+
+Historically there was no automatic canonfication in cfengine. If you defined a
+class or var that contains an invalid character you would get an error. Based on
+user feedback this restriction loosened over time. Now if you define a class
+using an invalid character, the agent does not log an error, (it will let you
+know that it was automatically canonified in verbose mode)
+
+Cfengine doesn't automatically canonify when *checking* with =ifvarclass= class
+expressions because that would prevent the use of complex expressions
+
+Here is an example that shows automatic canonification as well as a contrived
+use case for conditioning =ifvarclass= using a class expression.
+
+#+Caption: Example showing automatic canonification and ifvarclass expression
+#+BEGIN_SRC cfengine3 :exports both
+  bundle agent main
+  {
+    classes:
+
+      "my-illegal-class";
+
+    reports:
+      "$(with)" with => join( " ", classesmatching( "my.illegal.class" ) );
+
+      "my-illegal-class is NOT defined (as expected, its invalid)"
+        unless => "my-illegal-class";
+
+      "my_illegal_class is defined"
+          if => canonify("my-illegal-class");
+
+      # Note, ifvarclass takes expressisons, you couldn't do that if it were
+      # automatically canonified. Here I canonify the string using with, and use
+      # it as part of the expression which contains an invalid classcharacter, but
+      # its desireable for constructing expressions.
+
+      "Slice and dice using `with`"
+        with => canonify( "my-illegal-class" ),
+        if => "linux|$(with)";
+  }
+#+END_SRC
+
+#+RESULTS:
+: R: my_illegal_class
+: R: my-illegal-class is NOT defined (as expected, its invalid)
+: R: my_illegal_class is defined
+: R: Slice and dice using `with`
+
+See [[https://docs.cfengine.com/docs/3.10/reference-language-concepts-classes.html#making-decisions-based-on-classes][making decisions based on classes]] in the language concepts section of the
+reference manual.
+
+

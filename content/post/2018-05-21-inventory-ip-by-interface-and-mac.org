@@ -1,0 +1,32 @@
+#+Title: Inventorying IP by Interface 
+#+AUTHOR: Nick Anderson
+#+DATE: 2019-05-21
+#+DRAFT: false
+
+This tip comes from my good friend [[https://twitter.com/atsaloli][Aleksey Tsalolikin]].
+
+#+BEGIN_SRC cfengine3
+  bundle agent main
+  {
+    vars:
+
+        # Creae a map of interface to MAC
+        # Generate a classic array
+        # Iterate over known interfaces, define interface as key and MAC as value
+
+        "iface2mac[$(sys.interfaces)]"
+          string => "$(sys.hardware_mac[$(sys.interfaces)])",
+          meta => { "inventory", "attribute_name=$(sys.interfaces) MAC" };
+      
+    reports:
+
+        "$(sys.interfaces) $(iface2mac[$(sys.interfaces)])";
+
+  }
+#+END_SRC
+
+#+RESULTS:
+: R: wlan0 5c:e0:c5:9f:f3:8f
+: R: virbr0 52:54:00:6b:62:06
+: R: docker0 02:42:e6:ee:26:c4
+

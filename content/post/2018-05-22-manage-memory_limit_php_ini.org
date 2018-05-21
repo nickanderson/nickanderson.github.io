@@ -1,0 +1,31 @@
+#+Title: Manage memory_limit in php.ini with CFEngine 3
+#+AUTHOR: Nick Anderson
+#+DATE: 2019-05-22
+#+DRAFT: false
+
+This policy ensures that =memory_limit= in =php.ini= is configured properly but
+the pattern is generically useful for any INI style config.
+
+#+BEGIN_SRC cfengine3
+  bundle agent php_customiztions
+  {
+    meta:
+
+      (policy_server|am_policy_hub).enterprise_edition::
+        "tags" slist => { "autorun" };
+
+         "description" string => "Tune php fo 60k hosts in Mission Portal";
+      
+    vars:
+
+        "php_ini[PHP][memory_limit]" string => "256M";
+
+    files:
+
+      policy_server.enterprise_edition::
+
+        "/var/cfengine/httpd/php/lib/php.ini"
+          edit_line => set_variable_values_ini( "$(this.bundle).php_ini", "PHP" );
+  }
+#+END_SRC
+
