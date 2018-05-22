@@ -88,13 +88,13 @@
 				<li>
 					<div class="post-list-item">
 						<div class="post-header">
-							<h4 class="post-link"><a href="https://cmdln.org/2018/05/21/inventorying-ip-by-interface/">Inventorying IP by Interface </a></h4>
+							<h4 class="post-link"><a href="https://cmdln.org/2018/05/21/inventorying-mac-by-interface/">Inventorying MAC by Interface </a></h4>
 							<h4 class="post-date">May 21, 2018</h4>
 						</div>
 						<div class="post-summary"><p>This tip comes from my good friend Aleksey Tsalolikin.
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17  bundle agent main { vars: # Creae a map of interface to MAC  # Generate a classic array  # Iterate over known interfaces, define interface as key and MAC as value  &#34;iface2mac[$(sys.interfaces)]&#34; string =&gt; &#34;$(sys.hardware_mac[$(sys.interfaces)])&#34;, meta =&gt; { &#34;inventory&#34;, &#34;attribute_name=$(sys.interfaces)MAC&#34; }; reports: &#34;$(sys.</p></div>
 						<div class="post-list-footer text-center">
-							<a href="https://cmdln.org/2018/05/21/inventorying-ip-by-interface/">Read More</a>
+							<a href="https://cmdln.org/2018/05/21/inventorying-mac-by-interface/">Read More</a>
 						</div>
 					</div>
 				</li>
