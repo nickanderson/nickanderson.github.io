@@ -5,10 +5,30 @@
     <link>https://cmdln.org/</link>
     <description>Recent content on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 20 May 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 22 May 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://cmdln.org/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Manage memory_limit in php.ini with CFEngine 3</title>
+      <link>https://cmdln.org/2018/05/22/manage-memory_limit-in-php.ini-with-cfengine-3/</link>
+      <pubDate>Tue, 22 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://cmdln.org/2018/05/22/manage-memory_limit-in-php.ini-with-cfengine-3/</guid>
+      <description>This policy ensures that memory_limit in php.ini is configured properly but the pattern is generically useful for any INI style config.
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20  bundle agent php_customiztions { meta: (policy_server|am_policy_hub).enterprise_edition:: &amp;#34;tags&amp;#34; slist =&amp;gt; { &amp;#34;autorun&amp;#34; }; &amp;#34;description&amp;#34; string =&amp;gt; &amp;#34;Tune php fo 60k hosts in Mission Portal&amp;#34;; vars: &amp;#34;php_ini[PHP][memory_limit]&amp;#34; string =&amp;gt; &amp;#34;256M&amp;#34;; files: policy_server.</description>
+    </item>
+    
+    <item>
+      <title>Inventorying IP by Interface </title>
+      <link>https://cmdln.org/2018/05/21/inventorying-ip-by-interface/</link>
+      <pubDate>Mon, 21 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://cmdln.org/2018/05/21/inventorying-ip-by-interface/</guid>
+      <description>This tip comes from my good friend Aleksey Tsalolikin.
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17  bundle agent main { vars: # Creae a map of interface to MAC  # Generate a classic array  # Iterate over known interfaces, define interface as key and MAC as value  &amp;#34;iface2mac[$(sys.interfaces)]&amp;#34; string =&amp;gt; &amp;#34;$(sys.hardware_mac[$(sys.interfaces)])&amp;#34;, meta =&amp;gt; { &amp;#34;inventory&amp;#34;, &amp;#34;attribute_name=$(sys.interfaces)MAC&amp;#34; }; reports: &amp;#34;$(sys.</description>
+    </item>
     
     <item>
       <title>Why doesn&#39;t ifvarclass automatically canonify?</title>
