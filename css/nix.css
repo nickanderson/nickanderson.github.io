@@ -2,6 +2,10 @@
 	margin: 0;
 }
 
+a:hover {
+	text-decoration: none;
+}
+
 html {
 	height: 100%;
 }
@@ -13,11 +17,6 @@ body {
 	font-size: 1.5em;
 	padding-top: 70px;
 }
-
-img {
- 	max-width: 100%;
-}
-
 
 #green-terminal {
 	color: #00ff00;
