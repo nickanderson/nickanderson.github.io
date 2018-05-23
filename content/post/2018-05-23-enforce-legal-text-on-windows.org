@@ -12,7 +12,7 @@ accomplish this by managing the registry using the =databases= promise type.
 
 #+BEGIN_SRC cfengine3 :tangle ./services/autorun/windows-owner.cf
   bundle agent registered_owner
-  #@ brief Set the registered owner on windows
+  #@ brief Make the laywers happy by showing their notice to windows users on login
   {
     meta:
 
