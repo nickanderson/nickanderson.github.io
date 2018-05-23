@@ -75,6 +75,21 @@
 				<li>
 					<div class="post-list-item">
 						<div class="post-header">
+							<h4 class="post-link"><a href="https://cmdln.org/2018/05/23/how-to-enforce-legalese-on-windows-login-with-cfengine-3/">How to enforce legalese on windows login with cfengine 3</a></h4>
+							<h4 class="post-date">May 23, 2018</h4>
+						</div>
+						<div class="post-summary"><p>How can I ensure that a notice containing legal text is presented to windows users during login?
+With the windows agent (Northern.tech builds Enterprise windows agents) you can accomplish this by managing the registry using the databases promise type.
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31  bundle agent registered_owner #@ brief Set the registered owner on windows  { meta: windows:: &#34;tags&#34; slist =&gt; { &#34;autorun&#34; }; &#34;description&#34; string =&gt; &#34;Ensure the proper leagal notice is displayed to users when they log on.</p></div>
+						<div class="post-list-footer text-center">
+							<a href="https://cmdln.org/2018/05/23/how-to-enforce-legalese-on-windows-login-with-cfengine-3/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
 							<h4 class="post-link"><a href="https://cmdln.org/2018/01/29/purging-packages-with-the-cfengine-3-apt_get-package-module/">Purging packages with the cfengine 3 apt_get package module</a></h4>
 							<h4 class="post-date">Jan 29, 2018</h4>
 						</div>
@@ -199,20 +214,6 @@ In cfengine 3 select_class can be used for partitioning hosts into separate grou
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23  bundle agent main { vars: &#34;map[hpss_d_mvr1]&#34; string =&gt; &#34;65501/tcp&#34;; # Include padding in the value itself  &#34;map[hpss_d_mvr2]&#34; string =&gt; &#34; 65503/tcp&#34;; files: &#34;/tmp/services&#34; create =&gt; &#34;true&#34;; # Use more than one space in the second field for the minimum number of  # spaces between columns  &#34;/tmp/services&#34; edit_line =&gt; set_line_based( &#34;$(this.</p></div>
 						<div class="post-list-footer text-center">
 							<a href="https://cmdln.org/2017/11/29/using-set_line_based-with-extra-spaces/">Read More</a>
-						</div>
-					</div>
-				</li>
-			
-				<li>
-					<div class="post-list-item">
-						<div class="post-header">
-							<h4 class="post-link"><a href="https://cmdln.org/2017/11/24/how-to-keep-a-package-up-to-date-in-cfengine-3/">How to keep a package up to date in CFEngine 3</a></h4>
-							<h4 class="post-date">Nov 24, 2017</h4>
-						</div>
-						<div class="post-summary"><p>How can I make sure a package is always up to date?
-1 2 3 4 5 6 7 8 9 10 11 12  bundle agent main { vars: &#34;latest_pkgs&#34; slist =&gt; { &#34;singularity&#34;, &#34;singularity-devel&#34; }; packages: &#34;$(latest_pkgs)&#34; policy =&gt; &#34;present&#34;, comment =&gt; &#34;Important to automatically track the latest and greatest because ....&#34;, version =&gt; &#34;latest&#34;; }   The packages promise implementation shown above has been available since 3.</p></div>
-						<div class="post-list-footer text-center">
-							<a href="https://cmdln.org/2017/11/24/how-to-keep-a-package-up-to-date-in-cfengine-3/">Read More</a>
 						</div>
 					</div>
 				</li>

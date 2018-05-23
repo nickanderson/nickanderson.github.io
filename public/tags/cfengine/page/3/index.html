@@ -75,6 +75,20 @@
 				<li>
 					<div class="post-list-item">
 						<div class="post-header">
+							<h4 class="post-link"><a href="https://cmdln.org/2013/01/11/cfengine-3-4-2-changelog-for-breakfast/">CFEngine 3.4.2 Changelog for Breakfast</a></h4>
+							<h4 class="post-date">Jan 11, 2013</h4>
+						</div>
+						<div class="post-summary"><p>Changelogs are just as important as the most important meal of the day. OK so I don&#8217;t always eat breakfast, but I do make an effort to read changelogs. CFEngine 3.4.2 was released today.
+What I found interesting was that the default masterfiles policy has been updated. body executor control now calls $(sys.workdir)/inputs/update.cf instead of failsafe.cf. And $(sys.workdir)/failsafe/failsafe.cf (which was new as of 3.4.0) is gone. I think its a good change.</p></div>
+						<div class="post-list-footer text-center">
+							<a href="https://cmdln.org/2013/01/11/cfengine-3-4-2-changelog-for-breakfast/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
 							<h4 class="post-link"><a href="https://cmdln.org/2012/10/24/cfengine-3-policy-update-or-how-cf_promises_validated-works/">CFEngine 3 Policy Update or How cf_promises_validated Works</a></h4>
 							<h4 class="post-date">Oct 25, 2012</h4>
 						</div>
@@ -195,21 +209,6 @@ Don&#8217;t get me wrong, I am excited about the new 25 free enterprise nodes an
 						<div class="post-summary"><p>Here is an easy way to configure encfs with dropbox that is compatible with boxcryptor. Boxcryptor makes Windows, Mac Android, and IOS applications to assist you in accessing data that you have stored in encfs. They do require that you create your encfs with some specific options: Cipher algorithm: AES, Plaintext or Stream encrypted filenames, No filename initialization vector chaining, No per-file initialization vectors, No external IV chaining, No block MAC headers, No per-block random bytes.</p></div>
 						<div class="post-list-footer text-center">
 							<a href="https://cmdln.org/2012/02/27/setup-encfs-on-dropbox-for-boxcryptor-with-cfengine/">Read More</a>
-						</div>
-					</div>
-				</li>
-			
-				<li>
-					<div class="post-list-item">
-						<div class="post-header">
-							<h4 class="post-link"><a href="https://cmdln.org/2012/02/18/new-bundle-to-manage-routes-for-redhatcentos-with-cfengine-3/">New bundle to manage routes for RedHat/CentOS with CFEngine 3</a></h4>
-							<h4 class="post-date">Feb 19, 2012</h4>
-						</div>
-						<div class="post-summary"><p>I re-factored rh_add_interface_routes into a new bundle rh_update_routes, you can find them in my CFEngine library.
-The biggest improvement is you no longer have to specify the interface you want the route on. Instead you specify a regular expression of the ip that would be on that interface and the specific interface is found.
-Second major improvement is the direct use of ip route del/add to update currently running system instead of restarting all networking.</p></div>
-						<div class="post-list-footer text-center">
-							<a href="https://cmdln.org/2012/02/18/new-bundle-to-manage-routes-for-redhatcentos-with-cfengine-3/">Read More</a>
 						</div>
 					</div>
 				</li>
