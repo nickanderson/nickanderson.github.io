@@ -75,6 +75,20 @@
 				<li>
 					<div class="post-list-item">
 						<div class="post-header">
+							<h4 class="post-link"><a href="https://cmdln.org/2017/11/24/how-to-keep-a-package-up-to-date-in-cfengine-3/">How to keep a package up to date in CFEngine 3</a></h4>
+							<h4 class="post-date">Nov 24, 2017</h4>
+						</div>
+						<div class="post-summary"><p>How can I make sure a package is always up to date?
+1 2 3 4 5 6 7 8 9 10 11 12  bundle agent main { vars: &#34;latest_pkgs&#34; slist =&gt; { &#34;singularity&#34;, &#34;singularity-devel&#34; }; packages: &#34;$(latest_pkgs)&#34; policy =&gt; &#34;present&#34;, comment =&gt; &#34;Important to automatically track the latest and greatest because ....&#34;, version =&gt; &#34;latest&#34;; }   The packages promise implementation shown above has been available since 3.</p></div>
+						<div class="post-list-footer text-center">
+							<a href="https://cmdln.org/2017/11/24/how-to-keep-a-package-up-to-date-in-cfengine-3/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
 							<h4 class="post-link"><a href="https://cmdln.org/2017/11/23/why-does-my-policy-generate-so-many-readjson-errors-and-how-can-i-prevent-them/">Why does my policy generate so many readjson() errors and how can I prevent them?</a></h4>
 							<h4 class="post-date">Nov 23, 2017</h4>
 						</div>
@@ -191,20 +205,6 @@ I have. I even wrote a crappy little perl script to locate the files that contai
 						<div class="post-summary"><p>There is a known bug where getindices is unable to get the index of a dynamically generated array until the next pass. This comes up from time to time so I thought I would post an example using a pattern shared on the CFEngine help mailing list. The policy below shows 3 working examples. They are mostly similar, example0 shows the simplest workaround, example1 and example2 in addition show ways to suppress the &#8220;Duplicate selection of value for variable&#8221; messages.</p></div>
 						<div class="post-list-footer text-center">
 							<a href="https://cmdln.org/2013/03/13/working-around-getindices-with-dynamically-generated-arrays-in-cfengine-3/">Read More</a>
-						</div>
-					</div>
-				</li>
-			
-				<li>
-					<div class="post-list-item">
-						<div class="post-header">
-							<h4 class="post-link"><a href="https://cmdln.org/2013/01/11/cfengine-3-4-2-changelog-for-breakfast/">CFEngine 3.4.2 Changelog for Breakfast</a></h4>
-							<h4 class="post-date">Jan 11, 2013</h4>
-						</div>
-						<div class="post-summary"><p>Changelogs are just as important as the most important meal of the day. OK so I don&#8217;t always eat breakfast, but I do make an effort to read changelogs. CFEngine 3.4.2 was released today.
-What I found interesting was that the default masterfiles policy has been updated. body executor control now calls $(sys.workdir)/inputs/update.cf instead of failsafe.cf. And $(sys.workdir)/failsafe/failsafe.cf (which was new as of 3.4.0) is gone. I think its a good change.</p></div>
-						<div class="post-list-footer text-center">
-							<a href="https://cmdln.org/2013/01/11/cfengine-3-4-2-changelog-for-breakfast/">Read More</a>
 						</div>
 					</div>
 				</li>
