@@ -1,6 +1,6 @@
-#+Title: Inventorying IP by Interface 
+#+Title: Inventorying MAC by Interface
 #+AUTHOR: Nick Anderson
-#+DATE: 2019-05-21
+#+DATE: 2018-05-21
 #+DRAFT: false
 
 This tip comes from my good friend [[https://twitter.com/atsaloli][Aleksey Tsalolikin]].

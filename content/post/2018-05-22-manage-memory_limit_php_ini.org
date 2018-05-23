@@ -1,6 +1,6 @@
 #+Title: Manage memory_limit in php.ini with CFEngine 3
 #+AUTHOR: Nick Anderson
-#+DATE: 2019-05-22
+#+DATE: 2018-05-22
 #+DRAFT: false
 
 This policy ensures that =memory_limit= in =php.ini= is configured properly but
