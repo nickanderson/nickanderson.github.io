@@ -1,0 +1,45 @@
+#+Title: How to enforce legalese on windows login with cfengine 3
+#+AUTHOR: Nick Anderson
+#+DATE: 2018-05-23T10:15:30-06:00
+#+TAGS: cfengine
+#+DRAFT: false
+
+> How can I ensure that a notice containing legal text is presented to windows users during login?
+
+With the windows agent (Northern.tech builds Enterprise windows agents) you can
+accomplish this by managing the registry using the =databases= promise type.
+
+
+#+BEGIN_SRC cfengine3 :tangle ./services/autorun/windows-owner.cf
+  bundle agent registered_owner
+  #@ brief Set the registered owner on windows
+  {
+    meta:
+
+      windows::
+
+        "tags"
+          slist => { "autorun" };
+
+        "description"
+          string => "Ensure the proper leagal notice is displayed to users when they log on.";
+
+    vars:
+
+    databases:
+
+      windows::
+      
+          "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System"
+          comment => "Ensure legal notice is set",
+          database_operation => "create",
+          database_rows => { "legalnoticecaption,REG_SZ,Legal Notice" },
+          database_type => "ms_registry";
+
+          "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System"
+          comment => "Ensure legal notice is set",
+          database_operation => "create",
+          database_rows => { "legalnoticetext,REG_SZ,Only authorized personell allowed." },
+          database_type => "ms_registry";
+  }
+#+END_SRC
