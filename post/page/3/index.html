@@ -75,6 +75,20 @@
 				<li>
 					<div class="post-list-item">
 						<div class="post-header">
+							<h4 class="post-link"><a href="https://cmdln.org/2017/11/22/in-cfengine-how-do-i-enforce-posix-acls/">In CFEngine how do I enforce POSIX ACLs?</a></h4>
+							<h4 class="post-date">Nov 22, 2017</h4>
+						</div>
+						<div class="post-summary"><p>When using the acl_method overwrite you must supply user, group, all ( aka other ), and mask for a complete ACL specification.
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24  bundle agent main { vars: &#34;acl&#34; slist =&gt; { &#34;user:*:rwx&#34;, # System owner should have read write and execute access  &#34;group:*:rw&#34;, # System group should have read and write access but not execute  &#34;all:r&#34;, # All other users should have read access  &#34;mask:rwx&#34;, # The mask should be read write and execute  &#34;user:nickanderson:r&#34;, # The user nickanderson should explicitly have read access  &#34;user:a10042:---&#34;, # The user a10042 should explicitly have no access  }; files: &#34;/tmp/acl/dir&#34; acl =&gt; posix_acl_default_access( &#34;overwrite&#34;, @(acl) ); } body acl posix_acl_default_access( method, rules ) { acl_method =&gt; &#34;$(method)&#34;; acl_type =&gt; &#34;posix&#34;; acl_default =&gt; &#34;access&#34;; aces =&gt; { @(acl) }; }   We can use getfacl to inspect the permissions are as desired.</p></div>
+						<div class="post-list-footer text-center">
+							<a href="https://cmdln.org/2017/11/22/in-cfengine-how-do-i-enforce-posix-acls/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
 							<h4 class="post-link"><a href="https://cmdln.org/2017/11/21/in-cfengine-how-does-edit_backup-in-edit_defaults-work/">In CFEngine how does edit_backup in edit_defaults work?</a></h4>
 							<h4 class="post-date">Nov 21, 2017</h4>
 						</div>
@@ -190,20 +204,6 @@ I think the mentorship program is one of the best things that LOPSA offers. You 
 						<div class="post-summary"><p>Today I start a new journey with some of the smartest people on the planet. I have accepted a position with CFEngine. Primarily I will be assisting customers with the evaluation, design, implementation and policy writing. If you know me from the CFEngine community, don&rsquo;t worry I only plan to increase my activity and continue to help in any way I can. Now one of my favourite hobbies is my job!</p></div>
 						<div class="post-list-footer text-center">
 							<a href="https://cmdln.org/2013/05/01/i-am-so-excited-and-i-just-cant-hide-it/">Read More</a>
-						</div>
-					</div>
-				</li>
-			
-				<li>
-					<div class="post-list-item">
-						<div class="post-header">
-							<h4 class="post-link"><a href="https://cmdln.org/2013/03/29/canonifying-a-list-with-cfengine-3/">Canonifying a list with CFEngine 3</a></h4>
-							<h4 class="post-date">Mar 29, 2013</h4>
-						</div>
-						<div class="post-summary"><p>John Sanders shared a pattern for canonifying lists in #CFEngine on irc.freenode.net yesterday. It&#8217;s a useful reference so I thought I would replicate it here.
- 1 2 3 4 5 6  % cf-agent -KIf ./example_canonify_list.cf  R: canonified site: www_example_com  R: canonified site: www_example2_com  R: alternate canonified site: www_example_com  R: alternate canonified site: www_example2_com  !! Method invoked repairs        &lt;div class=&quot;gist-meta&quot;&gt; &lt;a href=&quot;https://gist.</p></div>
-						<div class="post-list-footer text-center">
-							<a href="https://cmdln.org/2013/03/29/canonifying-a-list-with-cfengine-3/">Read More</a>
 						</div>
 					</div>
 				</li>
