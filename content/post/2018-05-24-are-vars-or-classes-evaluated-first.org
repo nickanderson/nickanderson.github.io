@@ -1,0 +1,112 @@
+#+Title: What is evaluated first in cfengine 3? vars or classes
+#+AUTHOR: Nick Anderson
+#+DATE: 2018-05-24T10:14:30-06:00
+#+TAGS: cfengine
+#+DRAFT: false
+
+> How do I know if vars or classes come first during cfengine evaluation?
+
+1) Read the documentation on Normal Order.
+2) Run the agent with --verbose or -v and grep for =pass 1=.
+
+  Write a test policy that has both vars and classes promises.
+  
+  #+Caption: =/tmp/test.cf=
+  #+BEGIN_SRC cfengine3
+    bundle agent main
+    {
+     vars:
+        "question" string => "What comes first, vars or classes?";
+    
+     classes:
+        "grep_verbose_output_for_pass_1" expression => "any";
+    }
+  #+END_SRC
+ 
+  Grep the verbose output.
+ 
+  #+Caption: Grepping for promises that run on the frist pass
+  #+BEGIN_SRC shell :exports both :results output :wrap EXAMPLE
+    chmod 600 /tmp/test.cf 
+    cf-agent -Kvf /tmp/test.cf | grep "pass 1"
+  #+END_SRC
+
+  #+RESULTS:
+  #+BEGIN_EXAMPLE
+   verbose: V: BEGIN variables (pass 1)
+   verbose: C: BEGIN classes / conditions (pass 1)
+  #+END_EXAMPLE
+
+3) Write policy that tells you.
+
+  This policy uses conditionals to determine if classes are evaluated before
+   variables, or if variables are evaluated first. It shows the determination
+   using reports guarded on the class that describes which is evaluated first
+   and it also shows the use of ifelse to be used variable conditionally.
+  
+  #+Caption: Policy to demonstrate evaluation order in cfengine 3
+  #+BEGIN_SRC cfengine3 :exports both :results output :wrap EXAMPLE
+    bundle agent main
+    #@ brief Demonstrate if vars or classes come first
+    {
+      classes:
+          "classes_are_first" expression => not( isvariable( "main.classes_are_first" ) );
+          "vars_are_first" expression => isvariable( "main.vars_are_first" );
+
+      vars:
+          "classes_are_first" string => "Classes come first";
+          "vars_are_first" string => "Vars come first", if => not( "vars_are_first" );
+
+      reports:
+        "CFEngine $(sys.cf_version)";
+
+        "$(classes_are_first)"
+          if => "classes_are_first";
+
+        "$(vars_are_first)"
+          if => "vars_are_first";
+ 
+    }
+  #+END_SRC
+  
+  #+Caption: Output of policy to demonstrate evaluation order in cfengine 3
+  #+RESULTS:
+  #+BEGIN_EXAMPLE
+  R: CFEngine 3.11.0
+  R: Vars come first
+  R: Without intermediary vars: ifelse: Vars come first
+  #+END_EXAMPLE
+
+You can use the =with= attribute and =ifelse()= to reduce the policy a bit.
+
+  #+Caption: Policy to demonstrate evaluation order in cfengine 3
+  #+BEGIN_SRC cfengine3 :exports both :results output :wrap EXAMPLE
+    bundle agent main
+    #@ brief Demonstrate if vars or classes come first
+    {
+      classes:
+          "classes_are_first" expression => not( isvariable( "main.variable" ) );
+          "vars_are_first" expression => isvariable( "main.vars_are_first" );
+
+      vars:
+          "classes_are_first" string => "Classes come first";
+          "vars_are_first" string => "Vars come first", if => not( "vars_are_first" );
+
+      reports:
+        "CFEngine $(sys.cf_version)";
+      
+        "Without intermediary vars: $(with)"
+          with => ifelse( classes_are_first, "ifelse: Classes come first",
+                          vars_are_first, "ifelse: Vars come first",
+                          "Logic Error" );
+
+    }
+  #+END_SRC
+
+  #+Caption: Output of policy using =with= and =ifelse()= to demonstrate evaluation order in cfengine 3
+  #+RESULTS:
+  #+BEGIN_EXAMPLE
+  R: CFEngine 3.11.0
+  R: Without intermediary vars: ifelse: Classes come first
+  #+END_EXAMPLE
+
