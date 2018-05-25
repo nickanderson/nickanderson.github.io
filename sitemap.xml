@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://cmdln.org/2018/05/25/automatically-remediate-corruption-in-lmdb-with-cfengine-3/</loc>
+    <lastmod>2018-05-25T10:14:30-06:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://cmdln.org/2018/05/23/how-to-enforce-legalese-on-windows-login-with-cfengine-3/</loc>
     <lastmod>2018-05-23T10:15:30-06:00</lastmod>
   </url>
@@ -1174,7 +1179,7 @@
   
   <url>
     <loc>https://cmdln.org/</loc>
-    <lastmod>2018-05-23T10:15:30-06:00</lastmod>
+    <lastmod>2018-05-25T10:14:30-06:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1455,7 +1460,7 @@
   
   <url>
     <loc>https://cmdln.org/tags/cfengine/</loc>
-    <lastmod>2018-05-23T10:15:30-06:00</lastmod>
+    <lastmod>2018-05-25T10:14:30-06:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -2409,7 +2414,7 @@
   
   <url>
     <loc>https://cmdln.org/post/</loc>
-    <lastmod>2018-05-23T10:15:30-06:00</lastmod>
+    <lastmod>2018-05-25T10:14:30-06:00</lastmod>
     <priority>0</priority>
   </url>
   
