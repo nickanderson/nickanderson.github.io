@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title> Automatically remediate corruption in lmdb with cfengine 3 &middot;  </title>
+
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.40.3" />
+
+
+<script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://cmdln.org/css/nix.css">
+<link rel="stylesheet" href="https://cmdln.org/css/syntax.css">
+
+
+<link href="https://fonts.googleapis.com/css?family=Inconsolata|Open+Sans|Roboto|Montserrat|Concert+One" rel="stylesheet">
+
+
+
+
+    </head>
+
+    <body>
+        <header>
+<nav class="navbar navbar-default navbar-fixed-top navbar-inverse font-header">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" id="green-terminal" href=https://cmdln.org>nick@cmdln.org ~ $</a>
+		</div>
+
+		
+		<div class="collapse navbar-collapse" id="navbar-collapse-1">
+			<ul class="nav navbar-nav navbar-right">
+				<li>
+					<a href="https://cmdln.org">/home/nick</a>
+				</li>
+				
+				
+				<li >
+					<a href="/post/">~/posts</a>
+				</li>
+				
+
+			</ul>
+		</div>
+	</div>
+</nav>
+</header>
+
+        <div class="container wrapper">
+            <h1><a href="https://cmdln.org/2018/05/25/automatically-remediate-corruption-in-lmdb-with-cfengine-3/">Automatically remediate corruption in lmdb with cfengine 3</a></h1>
+            <span class="post-date">May 25, 2018 </span>
+            <div class="post-content">
+                <p>> How can I automatically remediate the issue where corruption in LMDB causes the agent to crash?</p>
+
+<p>In some cases lmdb corruption causes cf-agent to crash. The typical fix is to
+remove the corrupt lmdbs causing the problem. In some cases this can be
+remediated from policy. This policy (run early in the bundlesequence) uses
+lmdump to probe all lmdbs. If the probe fails the offending lmdb and it's
+associated lock files are deleted.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">remdediate_lmdb_corruption</span>
+  <span class="c">#@ breif Avoid crashing agents due to corruption in embedded databases by purging files detected to have corruption
+</span><span class="c"></span>  <span class="c">#@ description Sometimes corruption in embedded databases can cause the agent to
+</span><span class="c"></span>  <span class="c">#@ crash. This policy tries to detect corruption in embedded databases by probing
+</span><span class="c"></span>  <span class="c">#@ them. If the probe failes the embedded database is deleted so that the agent
+</span><span class="c"></span>  <span class="c">#@ will continue to function as expected.
+</span><span class="c"></span>  <span class="p">{</span>
+    <span class="kd">vars</span><span class="p">:</span>
+
+        <span class="p">&#34;</span><span class="nv">lmdbs</span><span class="p">&#34;</span> <span class="kt">slist</span> <span class="o">=&gt;</span> <span class="nf">findfiles</span><span class="p">(</span> <span class="s">&#34;</span><span class="si">$(sys.statedir)</span><span class="s">/**.lmdb&#34;</span> <span class="p">);</span>
+
+        <span class="p">&#34;</span><span class="nv">lmdb[$(lmdbs)]</span><span class="p">&#34;</span>
+          <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;lmdump_failed&#34;</span><span class="p">,</span>
+          <span class="kr">if</span> <span class="o">=&gt;</span> <span class="nf">not</span><span class="p">(</span> <span class="nf">returnszero</span> <span class="p">(</span><span class="s">&#34;</span><span class="si">$(sys.workdir)</span><span class="s">/bin/lmdump -a </span><span class="si">$(lmdbs)</span><span class="s">&#34;</span><span class="p">,</span> <span class="nf">noshell</span><span class="p">)</span> <span class="p">);</span>
+
+        <span class="p">&#34;</span><span class="nv">corrupt</span><span class="p">&#34;</span> <span class="kt">slist</span> <span class="o">=&gt;</span> <span class="nf">getindices</span><span class="p">(</span> <span class="nf">lmdb</span> <span class="p">);</span>
+        <span class="p">&#34;</span><span class="nv">permutations</span><span class="p">&#34;</span> <span class="kt">slist</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="s">&#34;&#34;</span><span class="p">,</span> <span class="s">&#34;-lock&#34;</span><span class="p">,</span> <span class="s">&#34;.lock&#34;</span> <span class="p">};</span>
+
+    <span class="kd">files</span><span class="p">:</span>
+
+      <span class="s">&#34;</span><span class="si">$(corrupt)$(permutations)</span><span class="s">&#34;</span>
+        <span class="kr">delete</span> <span class="o">=&gt;</span> <span class="nf">tidy</span><span class="p">,</span>
+        <span class="kr">comment</span> <span class="o">=&gt;</span> <span class="s">&#34;We detected a corrupt lmdb and deleted it to preserve agent functionality.&#34;</span><span class="p">,</span>
+        <span class="kr">classes</span> <span class="o">=&gt;</span> <span class="nf">results</span><span class="p">(</span> <span class="s">&#34;bundle&#34;</span><span class="p">,</span> <span class="s">&#34;lmdb_corruption_remediation_</span><span class="si">$(corrupt)</span><span class="s">&#34;</span><span class="p">);</span>
+
+    <span class="kd">reports</span><span class="p">:</span>
+      <span class="s">&#34;DEBUG|DEBUG_</span><span class="si">$(this.bundle)</span><span class="s">&#34;</span><span class="err">::</span>
+        <span class="s">&#34;</span><span class="si">$(corrupt)</span><span class="s"> failed lmdump probe&#34;</span><span class="p">;</span>
+        <span class="s">&#34;</span><span class="si">$(corrupt)</span><span class="s"> purged&#34;</span> <span class="kr">if</span> <span class="o">=&gt;</span> <span class="nf">canonify</span><span class="p">(</span> <span class="s">&#34;lmdb_corruption_remediation_</span><span class="si">$(corrupt)</span><span class="s">_repaired&#34;</span> <span class="p">);</span>
+  <span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Here is example output from a run where <code>performance.lmdb</code> was corrupt and the
+=DEBUG= class was set.</p>
+
+<pre><code>  R: /var/cfengine/state/performance.lmdb failed lmdump probe
+  R: /var/cfengine/state/performance.lmdb purged
+</code></pre>
+
+            </div>
+            
+            <div class="post-comments">
+                
+            </div>
+            
+            <div class="push"></div>
+        </div>
+        <footer class="footer text-center">
+<p>Copyright &copy; 2018 Nick Anderson -
+<span class="credit">
+	Powered by
+	<a target="_blank" href="https://gohugo.io">Hugo</a>
+	and
+	<a target="_blank" href="https://github.com/LordMathis/hugo-theme-nix/">Nix</a> theme.
+</span>
+</p>
+</footer>
+
+    </body>

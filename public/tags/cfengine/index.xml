@@ -5,10 +5,20 @@
     <link>https://cmdln.org/tags/cfengine/</link>
     <description>Recent content in Cfengine on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 23 May 2018 10:15:30 -0600</lastBuildDate>
+    <lastBuildDate>Fri, 25 May 2018 10:14:30 -0600</lastBuildDate>
     
 	<atom:link href="https://cmdln.org/tags/cfengine/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Automatically remediate corruption in lmdb with cfengine 3</title>
+      <link>https://cmdln.org/2018/05/25/automatically-remediate-corruption-in-lmdb-with-cfengine-3/</link>
+      <pubDate>Fri, 25 May 2018 10:14:30 -0600</pubDate>
+      
+      <guid>https://cmdln.org/2018/05/25/automatically-remediate-corruption-in-lmdb-with-cfengine-3/</guid>
+      <description>How can I automatically remediate the issue where corruption in LMDB causes the agent to crash?
+In some cases lmdb corruption causes cf-agent to crash. The typical fix is to remove the corrupt lmdbs causing the problem. In some cases this can be remediated from policy. This policy (run early in the bundlesequence) uses lmdump to probe all lmdbs. If the probe fails the offending lmdb and it&#39;s associated lock files are deleted.</description>
+    </item>
     
     <item>
       <title>How to enforce legalese on windows login with cfengine 3</title>
