@@ -75,6 +75,21 @@
 				<li>
 					<div class="post-list-item">
 						<div class="post-header">
+							<h4 class="post-link"><a href="https://cmdln.org/2009/04/27/improving-debians-nginx-init-script/">Improving debians nginx init script</a></h4>
+							<h4 class="post-date">Apr 27, 2009</h4>
+						</div>
+						<div class="post-summary"><p>nginx is a high performance HTTP and mail proxy server written by Igor Sysoev.
+I&#8217;m not sure what the init scripts do for other distros but it seems a bit of an oversight to leave out checking the config file when running the init script.
+Add this line to your nginx init script right after the text -x $DAEMON line to make it check the config before proceeding to start stop or restart the service.</p></div>
+						<div class="post-list-footer text-center">
+							<a href="https://cmdln.org/2009/04/27/improving-debians-nginx-init-script/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
 							<h4 class="post-link"><a href="https://cmdln.org/2009/04/16/testing-mail-servers-with-swaks/">Testing mail servers with swaks</a></h4>
 							<h4 class="post-date">Apr 16, 2009</h4>
 						</div>
@@ -204,19 +219,6 @@ Do you keep track of configuration changes? You should. Maybe your using an adva
 						<div class="post-summary"><p><p>Every time I have a new shell account I end up customizing it. Making alterations to my vimrc, screenrc or whatever. It can be a huge pain when you have lots of slightly varying configs on different machines. I wrote this little script to grab my files and create a self extracting shell script so I can easily setup my environment on multiple machines.The usage is pretty straightforward. Define your remote path, and the filename along with your user that has scp access. Then define the files you want to include. To create the archive just run the moveout script. Once the self extracting script is uploaded you can just download it and execute it.</p></p></div>
 						<div class="post-list-footer text-center">
 							<a href="https://cmdln.org/2009/02/18/movin-in-movin-out/">Read More</a>
-						</div>
-					</div>
-				</li>
-			
-				<li>
-					<div class="post-list-item">
-						<div class="post-header">
-							<h4 class="post-link"><a href="https://cmdln.org/2009/02/18/another-commandline-junkie/">Another commandline junkie</a></h4>
-							<h4 class="post-date">Feb 18, 2009</h4>
-						</div>
-						<div class="post-summary"><p>Waddya know I&#8217;m not the only geek with an affinity for the console. This could be interesting. Repository of useful one liners.</p></div>
-						<div class="post-list-footer text-center">
-							<a href="https://cmdln.org/2009/02/18/another-commandline-junkie/">Read More</a>
 						</div>
 					</div>
 				</li>

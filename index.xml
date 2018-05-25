@@ -21,6 +21,19 @@ In some cases lmdb corruption causes cf-agent to crash. The typical fix is to re
     </item>
     
     <item>
+      <title>What is evaluated first in cfengine 3? vars or classes</title>
+      <link>https://cmdln.org/2018/05/24/what-is-evaluated-first-in-cfengine-3-vars-or-classes/</link>
+      <pubDate>Thu, 24 May 2018 10:14:30 -0600</pubDate>
+      
+      <guid>https://cmdln.org/2018/05/24/what-is-evaluated-first-in-cfengine-3-vars-or-classes/</guid>
+      <description>How do I know if vars or classes come first during cfengine evaluation?
+1) Read the documentation on Normal Order. 2) Run the agent with --verbose or -v and grep for pass 1.
+Write a test policy that has both vars and classes promises.
+#+Caption: =/tmp/test.cf= bundle agent main { vars: &#34;question&#34; string = &#34;What comes first, vars or classes?&#34;
+1 2 3  classes: &amp;#34;grep_verbose_output_for_pass_1&amp;#34; expression =&amp;gt; &amp;#34;any&amp;#34;; }   Grep the verbose output.</description>
+    </item>
+    
+    <item>
       <title>How to enforce legalese on windows login with cfengine 3</title>
       <link>https://cmdln.org/2018/05/23/how-to-enforce-legalese-on-windows-login-with-cfengine-3/</link>
       <pubDate>Wed, 23 May 2018 10:15:30 -0600</pubDate>
