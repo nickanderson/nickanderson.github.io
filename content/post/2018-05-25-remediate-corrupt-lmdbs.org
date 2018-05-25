@@ -1,0 +1,57 @@
+#+Title: Automatically remediate corruption in lmdb with cfengine 3
+#+AUTHOR: Nick Anderson
+#+DATE: 2018-05-25T10:14:30-06:00
+#+TAGS: cfengine
+#+DRAFT: false
+
+> How can I automatically remediate the issue where corruption in LMDB causes the agent to crash?
+
+In some cases lmdb corruption causes cf-agent to crash. The typical fix is to
+remove the corrupt lmdbs causing the problem. In some cases this can be
+remediated from policy. This policy (run early in the bundlesequence) uses
+lmdump to probe all lmdbs. If the probe fails the offending lmdb and it's
+associated lock files are deleted.
+
+#+Caption: Policy to remediate corruption in lmdbs that can cause agent crashes
+#+BEGIN_SRC cfengine3
+  bundle agent remdediate_lmdb_corruption
+  #@ breif Avoid crashing agents due to corruption in embedded databases by purging files detected to have corruption
+  #@ description Sometimes corruption in embedded databases can cause the agent to
+  #@ crash. This policy tries to detect corruption in embedded databases by probing
+  #@ them. If the probe failes the embedded database is deleted so that the agent
+  #@ will continue to function as expected.
+  {
+    vars:
+
+        "lmdbs" slist => findfiles( "$(sys.statedir)/**.lmdb" );
+
+        "lmdb[$(lmdbs)]"
+          string => "lmdump_failed",
+          if => not( returnszero ("$(sys.workdir)/bin/lmdump -a $(lmdbs)", noshell) );
+
+        "corrupt" slist => getindices( lmdb );
+        "permutations" slist => { "", "-lock", ".lock" };
+
+    files:
+
+      "$(corrupt)$(permutations)"
+        delete => tidy,
+        comment => "We detected a corrupt lmdb and deleted it to preserve agent functionality.",
+        classes => results( "bundle", "lmdb_corruption_remediation_$(corrupt)");
+
+    reports:
+      "DEBUG|DEBUG_$(this.bundle)"::
+        "$(corrupt) failed lmdump probe";
+        "$(corrupt) purged" if => canonify( "lmdb_corruption_remediation_$(corrupt)_repaired" );
+  }
+#+END_SRC
+
+Here is example output from a run where =performance.lmdb= was corrupt and the
+=DEBUG= class was set.
+
+#+Caption: Output from policy run
+#+BEGIN_EXAMPLE
+  R: /var/cfengine/state/performance.lmdb failed lmdump probe
+  R: /var/cfengine/state/performance.lmdb purged
+#+END_EXAMPLE
+
