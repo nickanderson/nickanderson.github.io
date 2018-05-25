@@ -12,37 +12,70 @@ remediated from policy. This policy (run early in the bundlesequence) uses
 lmdump to probe all lmdbs. If the probe fails the offending lmdb and it's
 associated lock files are deleted.
 
+**EDIT:** Now supports retaining n versions of corrupt databases
 #+Caption: Policy to remediate corruption in lmdbs that can cause agent crashes
-#+BEGIN_SRC cfengine3
-  bundle agent remdediate_lmdb_corruption
+#+BEGIN_SRC cfengine3 :define DEBUG
+  bundle agent remediate_lmdb_corruption
   #@ breif Avoid crashing agents due to corruption in embedded databases by purging files detected to have corruption
   #@ description Sometimes corruption in embedded databases can cause the agent to
   #@ crash. This policy tries to detect corruption in embedded databases by probing
   #@ them. If the probe failes the embedded database is deleted so that the agent
-  #@ will continue to function as expected.
+  #@ will continue to function as expected. If you would like to retain backups of
+  #@ the corrupt databases define def.remediat_lmdb_corruption[keep] with the number
+  #@ you would like to retain.
+  #@
+  #@ **Example augment:**
+  #@ ```json
+  #@ {
+  #@   "vars": {
+  #@     "remediate_lmdb_corruption" {
+  #@       "keep": "3"
+  #@     }
+  #@   }
+  #@ }
+  #@ ```
   {
     vars:
+
+        "keep_remediations"
+          string => ifelse( isvariable( "def.remediate_lmdb_corruption[keep]"), $(def.remediate_lmdb_corruption[keep]),
+                            "0");
 
         "lmdbs" slist => findfiles( "$(sys.statedir)/**.lmdb" );
 
         "lmdb[$(lmdbs)]"
           string => "lmdump_failed",
-          if => not( returnszero ("$(sys.workdir)/bin/lmdump -a $(lmdbs)", noshell) );
+          if => and(fileexists( $(lmdbs) ), 
+                    not( returnszero ("$(sys.workdir)/bin/lmdump -a $(lmdbs)", noshell) ));
 
         "corrupt" slist => getindices( lmdb );
         "permutations" slist => { "", "-lock", ".lock" };
 
+    classes:
+
+      "remediation_behaviour_keep" expression => isgreaterthan( $(keep_remediations), 0 );
+      "remediation_behaviour_purge" expression => not( isgreaterthan( $(keep_remediations), 0 ));
+
     files:
 
-      "$(corrupt)$(permutations)"
-        delete => tidy,
-        comment => "We detected a corrupt lmdb and deleted it to preserve agent functionality.",
-        classes => results( "bundle", "lmdb_corruption_remediation_$(corrupt)");
+      remediation_behaviour_purge::
+
+        "$(corrupt)$(permutations)"
+          delete => tidy,
+          comment => "We detected a corrupt lmdb and deleted it to preserve agent functionality.",
+          classes => results( "bundle", "lmdb_corruption_purge_remediation_$(corrupt)");
+
+      remediation_behaviour_keep::
+
+        "$(corrupt)$(permutations)"
+          rename => rotate( $(keep_remediations) ),
+          comment => "We detected a corrupt lmdb and deleted it to preserve agent functionality.",
+          classes => results( "bundle", "lmdb_corruption_keep_remediation_$(corrupt)");
 
     reports:
       "DEBUG|DEBUG_$(this.bundle)"::
-        "$(corrupt) failed lmdump probe";
-        "$(corrupt) purged" if => canonify( "lmdb_corruption_remediation_$(corrupt)_repaired" );
+
+        "$(corrupt) failed lmdump probe. Remediation retaining $(keep_remediations) backups";
   }
 #+END_SRC
 
@@ -51,7 +84,6 @@ Here is example output from a run where =performance.lmdb= was corrupt and the
 
 #+Caption: Output from policy run
 #+BEGIN_EXAMPLE
-  R: /var/cfengine/state/performance.lmdb failed lmdump probe
-  R: /var/cfengine/state/performance.lmdb purged
+  R: /var/cfengine/state/performance.lmdb failed lmdump probe. Remediation retaining 3 backups
 #+END_EXAMPLE
 
