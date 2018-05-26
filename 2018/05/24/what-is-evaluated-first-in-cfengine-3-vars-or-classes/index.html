@@ -70,27 +70,35 @@
             <div class="post-content">
                 <p>> How do I know if vars or classes come first during cfengine evaluation?</p>
 
-<p>1) Read the documentation on Normal Order.
-2) Run the agent with --verbose or -v and grep for <code>pass 1</code>.</p>
+<h1 id="read-the-documentation-on-normal-order">Read the documentation on Normal Order</h1>
+
+<p>There is a wealth of information on <a href="https://docs.cfengine.com" title="docs.cfengine.com">docs.cfengine.com</a>. Find documentation about
+the <a href="https://docs.cfengine.com/docs/3.10/reference-language-concepts-normal-ordering.html#agent-evaluation-step" title="order of agent promise evaluation">order of agent promise evaluation</a> (Normal Order) in the <a href="https://docs.cfengine.com/docs/3.10/reference-language-concepts-normal-ordering.html#agent-evaluation-step" title="Language Concepts">Language Concepts</a> section
+of the <a href="https://docs.cfengine.com/docs/3.10/reference-language-concepts-normal-ordering.html#agent-evaluation-step" title="Reference manual">Reference manual</a>.</p>
+
+<h1 id="run-the-agent-with-verbose-or-v-and-grep-for-pass-1">Run the agent with --verbose or -v and grep for pass 1.</h1>
 
 <p>Write a test policy that has both vars and classes promises.</p>
-
-<p>#+Caption: =/tmp/test.cf=
-
-    bundle agent main
-    {
-     vars:
-        "question" string => "What comes first, vars or classes?"</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3">     <span class="kd">classes</span><span class="p">:</span>
-        <span class="s">&#34;grep_verbose_output_for_pass_1&#34;</span> <span class="kr">expression</span> <span class="o">=&gt;</span> <span class="s">&#34;any&#34;</span><span class="p">;</span>
-    <span class="p">}</span></code></pre></td></tr></table>
+<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">main</span>
+  <span class="p">{</span>
+   <span class="kd">vars</span><span class="p">:</span>
+      <span class="p">&#34;</span><span class="nv">question</span><span class="p">&#34;</span> <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;What comes first, vars or classes?&#34;</span><span class="p">;</span>
+
+   <span class="kd">classes</span><span class="p">:</span>
+      <span class="s">&#34;grep_verbose_output_for_pass_1&#34;</span> <span class="kr">expression</span> <span class="o">=&gt;</span> <span class="s">&#34;any&#34;</span><span class="p">;</span>
+  <span class="p">}</span></code></pre></td></tr></table>
 </div>
 </div>
 <p>Grep the verbose output.</p>
@@ -98,37 +106,21 @@
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
 </span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">  <span class="c1">#+Caption: Grepping for promises that run on the frist pass
-</span><span class="c1"></span>
-    chmod <span class="m">600</span> /tmp/test.cf 
-    cf-agent -Kvf /tmp/test.cf <span class="p">|</span> grep <span class="s2">&#34;pass 1&#34;</span></code></pre></td></tr></table>
+<pre class="chroma"><code class="language-shell" data-lang="shell">  chmod <span class="m">600</span> /tmp/test.cf 
+  cf-agent -Kvf /tmp/test.cf <span class="p">|</span> grep <span class="s2">&#34;pass 1&#34;</span></code></pre></td></tr></table>
 </div>
 </div>
-<pre><code>  #+RESULTS:
-
-   verbose: V: BEGIN variables (pass 1)
-   verbose: C: BEGIN classes / conditions (pass 1)
+<pre><code> verbose: V: BEGIN variables (pass 1)
+ verbose: C: BEGIN classes / conditions (pass 1)
 </code></pre>
 
-<p>3) Write policy that tells you.</p>
+<h1 id="write-policy-that-tells-you">Write policy that tells you</h1>
 
 <p>This policy uses conditionals to determine if classes are evaluated before
-   variables, or if variables are evaluated first. It shows the determination
-   using reports guarded on the class that describes which is evaluated first
-   and it also shows the use of ifelse to be used variable conditionally.</p>
-
-<p>#+Caption: Policy to demonstrate evaluation order in cfengine 3
-
-    bundle agent main
-    #@ brief Demonstrate if vars or classes come first
-    {
-      classes:
-          "classes_are_first" expression => not( isvariable( "main.classes_are_first" ) );
-          "vars_are_first" expression => isvariable( "main.vars_are_first" )</p>
+variables, or if variables are evaluated first. It shows the determination
+using reports guarded on the class that describes which is evaluated first.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
@@ -145,42 +137,44 @@
 </span><span class="lnt">12
 </span><span class="lnt">13
 </span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3">      <span class="kd">vars</span><span class="p">:</span>
-          <span class="p">&#34;</span><span class="nv">classes_are_first</span><span class="p">&#34;</span> <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;Classes come first&#34;</span><span class="p">;</span>
-          <span class="p">&#34;</span><span class="nv">vars_are_first</span><span class="p">&#34;</span> <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;Vars come first&#34;</span><span class="p">,</span> <span class="kr">if</span> <span class="o">=&gt;</span> <span class="nf">not</span><span class="p">(</span> <span class="s">&#34;vars_are_first&#34;</span> <span class="p">);</span>
+<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">main</span>
+  <span class="c">#@ brief Demonstrate if vars or classes come first
+</span><span class="c"></span>  <span class="p">{</span>
+    <span class="kd">classes</span><span class="p">:</span>
+        <span class="s">&#34;classes_are_first&#34;</span> <span class="kr">expression</span> <span class="o">=&gt;</span> <span class="nf">not</span><span class="p">(</span> <span class="nf">isvariable</span><span class="p">(</span> <span class="s">&#34;main.classes_are_first&#34;</span> <span class="p">)</span> <span class="p">);</span>
+        <span class="s">&#34;vars_are_first&#34;</span> <span class="kr">expression</span> <span class="o">=&gt;</span> <span class="nf">isvariable</span><span class="p">(</span> <span class="s">&#34;main.vars_are_first&#34;</span> <span class="p">);</span>
 
-      <span class="kd">reports</span><span class="p">:</span>
-        <span class="s">&#34;CFEngine </span><span class="si">$(sys.cf_version)</span><span class="s">&#34;</span><span class="p">;</span>
+    <span class="kd">vars</span><span class="p">:</span>
+        <span class="p">&#34;</span><span class="nv">classes_are_first</span><span class="p">&#34;</span> <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;Classes come first&#34;</span><span class="p">;</span>
+        <span class="p">&#34;</span><span class="nv">vars_are_first</span><span class="p">&#34;</span> <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;Vars come first&#34;</span><span class="p">,</span> <span class="kr">if</span> <span class="o">=&gt;</span> <span class="nf">not</span><span class="p">(</span> <span class="s">&#34;vars_are_first&#34;</span> <span class="p">);</span>
 
-        <span class="s">&#34;</span><span class="si">$(classes_are_first)</span><span class="s">&#34;</span>
-          <span class="kr">if</span> <span class="o">=&gt;</span> <span class="s">&#34;classes_are_first&#34;</span><span class="p">;</span>
+    <span class="kd">reports</span><span class="p">:</span>
+      <span class="s">&#34;CFEngine </span><span class="si">$(sys.cf_version)</span><span class="s">&#34;</span><span class="p">;</span>
 
-        <span class="s">&#34;</span><span class="si">$(vars_are_first)</span><span class="s">&#34;</span>
-          <span class="kr">if</span> <span class="o">=&gt;</span> <span class="s">&#34;vars_are_first&#34;</span><span class="p">;</span>
+      <span class="s">&#34;</span><span class="si">$(classes_are_first)</span><span class="s">&#34;</span>
+        <span class="kr">if</span> <span class="o">=&gt;</span> <span class="s">&#34;classes_are_first&#34;</span><span class="p">;</span>
 
-    <span class="p">}</span></code></pre></td></tr></table>
+      <span class="s">&#34;</span><span class="si">$(vars_are_first)</span><span class="s">&#34;</span>
+        <span class="kr">if</span> <span class="o">=&gt;</span> <span class="s">&#34;vars_are_first&#34;</span><span class="p">;</span>
+
+  <span class="p">}</span></code></pre></td></tr></table>
 </div>
 </div>
-<pre><code>  #+Caption: Output of policy to demonstrate evaluation order in cfengine 3
-  #+RESULTS:
-
-  R: CFEngine 3.11.0
-  R: Vars come first
-  R: Without intermediary vars: ifelse: Vars come first
+<pre><code>R: CFEngine 3.11.0
+R: Vars come first
+R: Without intermediary vars: ifelse: Vars come first
 </code></pre>
 
 <p>You can use the <code>with</code> attribute and <code>ifelse()</code> to reduce the policy a bit.</p>
-
-<p>#+Caption: Policy to demonstrate evaluation order in cfengine 3
-
-    bundle agent main
-    #@ brief Demonstrate if vars or classes come first
-    {
-      classes:
-          "classes_are_first" expression => not( isvariable( "main.variable" ) );
-          "vars_are_first" expression => isvariable( "main.vars_are_first" )</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
@@ -196,9 +190,23 @@
 </span><span class="lnt">11
 </span><span class="lnt">12
 </span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3">      <span class="kd">vars</span><span class="p">:</span>
+<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3">    <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">main</span>
+    <span class="c">#@ brief Demonstrate if vars or classes come first
+</span><span class="c"></span>    <span class="p">{</span>
+      <span class="kd">classes</span><span class="p">:</span>
+          <span class="s">&#34;classes_are_first&#34;</span> <span class="kr">expression</span> <span class="o">=&gt;</span> <span class="nf">not</span><span class="p">(</span> <span class="nf">isvariable</span><span class="p">(</span> <span class="s">&#34;main.variable&#34;</span> <span class="p">)</span> <span class="p">);</span>
+          <span class="s">&#34;vars_are_first&#34;</span> <span class="kr">expression</span> <span class="o">=&gt;</span> <span class="nf">isvariable</span><span class="p">(</span> <span class="s">&#34;main.vars_are_first&#34;</span> <span class="p">);</span>
+
+      <span class="kd">vars</span><span class="p">:</span>
           <span class="p">&#34;</span><span class="nv">classes_are_first</span><span class="p">&#34;</span> <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;Classes come first&#34;</span><span class="p">;</span>
           <span class="p">&#34;</span><span class="nv">vars_are_first</span><span class="p">&#34;</span> <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;Vars come first&#34;</span><span class="p">,</span> <span class="kr">if</span> <span class="o">=&gt;</span> <span class="nf">not</span><span class="p">(</span> <span class="s">&#34;vars_are_first&#34;</span> <span class="p">);</span>
 
@@ -213,11 +221,8 @@
     <span class="p">}</span></code></pre></td></tr></table>
 </div>
 </div>
-<pre><code>  #+Caption: Output of policy using =with= and =ifelse()= to demonstrate evaluation order in cfengine 3
-  #+RESULTS:
-
-  R: CFEngine 3.11.0
-  R: Without intermediary vars: ifelse: Classes come first
+<pre><code>R: CFEngine 3.11.0
+R: Without intermediary vars: ifelse: Classes come first
 </code></pre>
 
             </div>
