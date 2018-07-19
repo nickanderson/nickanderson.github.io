@@ -5,10 +5,19 @@
     <link>https://cmdln.org/post/</link>
     <description>Recent content in Posts on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 25 May 2018 10:14:30 -0600</lastBuildDate>
+    <lastBuildDate>Thu, 19 Jul 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://cmdln.org/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Augments driven access promises with cfengine 3</title>
+      <link>https://cmdln.org/2018/07/19/augments-driven-access-promises-with-cfengine-3/</link>
+      <pubDate>Thu, 19 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://cmdln.org/2018/07/19/augments-driven-access-promises-with-cfengine-3/</guid>
+      <description>How can I define custom access promises for cf-serverd without modifying  vendored policy?  Commonly, when custom access promises are introduced, they are introduced by editing bundle server access_rules in controls/cf_serverd.cf where the default access rules are promised. Modifying policy maintained upstream can complicate future framework upgrades because care must be taken to ensure that modifications are preserved. There is no need to edit the vendored policy file to define custom access promises.</description>
+    </item>
     
     <item>
       <title>Automatically remediate corruption in lmdb with cfengine 3</title>
