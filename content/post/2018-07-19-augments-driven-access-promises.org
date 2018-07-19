@@ -1,0 +1,157 @@
+#+Title: Augments driven access promises with cfengine 3
+#+AUTHOR: Nick Anderson
+#+DATE: 2018-07-19
+#+TAGS: cfengine3
+#+DRAFT: false
+
+#+BEGIN_QUOTE
+  How can I define custom access promises for =cf-serverd= without modifying
+  vendored policy?
+#+END_QUOTE
+
+Commonly, when custom access promises are introduced, they are introduced by
+editing =bundle server access_rules= in =controls/cf_serverd.cf= where the
+default access rules are promised. Modifying policy maintained upstream can
+complicate future framework upgrades because care must be taken to ensure that
+modifications are preserved. There is no need to edit the vendored policy file
+to define custom access promises. All that is required, is for you to introduce
+a server bundle and make sure it is part of inputs.
+
+Here we define access promises to a custom bundle. This alone should make future
+framework upgrades easier as you will not have to maintain your custom
+modifications to =controls/cf_serverd.cf=.
+
+#+BEGIN_SRC cfengine3
+  bundle server my_access_rules
+  {
+    access:
+
+      any::
+        # -----------------------------------------------------------
+        # Custom Rules
+        # -----------------------------------------------------------
+
+      any::
+        "/tmp"
+          handle => "share_tmp",
+          comment => "Grant access to tmp",
+          admit => { @(def.acl) };
+  }
+#+END_SRC
+
+#+BEGIN_QUOTE
+  How can I make this policy data driven?
+#+END_QUOTE
+
+[[https://docs.cfengine.com/docs/3.12/reference-language-concepts-augments.html][Augments]] provide a way to set some variables and classes very early during agent
+execution, before policy begins to get it's full 3 pass evaluation. Variables
+defined under the =vars= key are defined inside the =def= bundle scope. You can
+leverage this to define =def.anything= without modifying policy. Note that the
+actual policy for bundle =def= can override these early settings.
+
+Here we start to leverage augments to populate custom data structures which
+policy can access.
+
+You might think of trying to do something like this:
+
+#+BEGIN_SRC json
+  {
+      "vars": {
+          "my_access_rules": {
+              "/tmp": {
+              "admit": "@(def.acl)",
+              "comment": "Grant access to tmp"
+              }
+          }
+      }
+  }
+#+END_SRC
+
+With a server bundle like this:
+
+#+BEGIN_SRC cfengine3
+  bundle server my_access_rules
+  {
+    vars:
+        "paths" slist => getindices( "def.my_access_rules" );
+
+    access:
+
+      any::
+        # -----------------------------------------------------------
+        # Custom rules from augments
+        # -----------------------------------------------------------
+
+        "$(paths)"
+          comment => "$(def.my_access_rules[$(paths)][comment])",
+          # We can't expand variable reference
+          admit => { "$(def.my_access_rules[$(paths)][admit])" };
+  }
+#+END_SRC
+
+However, you will run into an issue with =cf-serverd= not being able to expand
+the variable. If you run =cf-serverd= in verbose mode, you will find the access
+summary say something like this:
+
+#+BEGIN_EXAMPLE
+ verbose: 	Path: /var/cfengine/templates
+ verbose: 		admit: 192.168.33.2/16
+ verbose: 	Path: /bin/dash
+ verbose: 		admit: 192.168.33.2
+ verbose: 	Path: /tmp
+ verbose: 		admit: @(def.acl) 
+#+END_EXAMPLE
+
+You can see that =@(def.acl)= did not expand. You can work around this by
+shifting where the expansion happens.
+
+In augments, your value can be the name of the variable.
+
+#+BEGIN_SRC json
+  {
+      "vars": {
+          "my_access_rules": {
+              "/tmp": {
+              "admit": "def.acl",
+              "comment": "Grant access to tmp"
+              }
+          }
+      }
+  }
+#+END_SRC
+
+And then move the expansion to policy.
+
+#+BEGIN_SRC cfengine3
+  bundle server my_access_rules
+  {
+    vars:
+        "paths" slist => getindices( "def.my_access_rules" );
+
+    access:
+
+      any::
+        # -----------------------------------------------------------
+        # Custom rules from augments
+        # -----------------------------------------------------------
+
+        "$(paths)"
+          comment => "$(def.my_access_rules[$(paths)][comment])",
+          admit => { "@($(def.my_access_rules[$(paths)][admit]))" };
+  }
+#+END_SRC
+
+In this policy you can see that I wrapped the admit variable with list notation.
+So it gets expanded to =def.acl=, and then it's expanded by =cf-serverd=
+(instead of being a raw value).
+
+Verbose output from =cf-serverd= should now show the elements of the =def.acl=
+list.
+
+#+BEGIN_EXAMPLE
+ verbose: 	Path: /bin/dash
+ verbose: 		admit: 192.168.33.2
+ verbose: 	Path: /tmp
+ verbose: 		admit: 192.168.33.2/16
+#+END_EXAMPLE
+
