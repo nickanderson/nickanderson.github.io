@@ -6,7 +6,7 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.40.3" />
+<meta name="generator" content="Hugo 0.44" />
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -113,59 +113,232 @@
 <p>And lets see the creation loop with xargs since we are talking about squeezing a tad more performance out of things.</p>
 
 <p>The standard for loop &#8230;</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-After some lovely [feedback][1] from [Sotiris Tsimbonis][2] on my last post [Find and delete old files in linux][3] I have a better (faster) way to delete files.<!--more-->" data-lang="After some lovely [feedback][1] from [Sotiris Tsimbonis][2] on my last post [Find and delete old files in linux][3] I have a better (faster) way to delete files.<!--more-->"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-After some lovely [feedback][1] from [Sotiris Tsimbonis][2] on my last post [Find and delete old files in linux][3] I have a better (faster) way to delete files.<!--more-->" data-lang="After some lovely [feedback][1] from [Sotiris Tsimbonis][2] on my last post [Find and delete old files in linux][3] I have a better (faster) way to delete files.<!--more-->">&lt;!--adsense--&gt;
 
-<p>```After some lovely <a href="http://www.cmdln.org/2008/04/08/find-and-delete-old-files-in-linux/#comment-360">feedback</a> from <a href="http://stsimb.irc.gr/">Sotiris Tsimbonis</a> on my last post <a href="http://www.cmdln.org/2008/04/08/find-and-delete-old-files-in-linux">Find and delete old files in linux</a> I have a better (faster) way to delete files.<!--more--></p>
 
-<!--adsense-->
-
-<p>Spawning processes is expensive, its much better to not spawn a new process if its not needed. Just for proof I created 100 empty files in a temp directory and deleted them both ways.</p>
-
-<p>The old way &#8230;</p>
-
-<p>`After some lovely <a href="http://www.cmdln.org/2008/04/08/find-and-delete-old-files-in-linux/#comment-360">feedback</a> from <a href="http://stsimb.irc.gr/">Sotiris Tsimbonis</a> on my last post <a href="http://www.cmdln.org/2008/04/08/find-and-delete-old-files-in-linux">Find and delete old files in linux</a> I have a better (faster) way to delete files.<!--more--></p>
-
-<!--adsense-->
-
-<p>Spawning processes is expensive, its much better to not spawn a new process if its not needed. Just for proof I created 100 empty files in a temp directory and deleted them both ways.</p>
-
-<p>The old way &#8230;</p>
-
-<p>`</p>
-
-<p>The better faster way</p>
-
-<p>``After some lovely <a href="http://www.cmdln.org/2008/04/08/find-and-delete-old-files-in-linux/#comment-360">feedback</a> from <a href="http://stsimb.irc.gr/">Sotiris Tsimbonis</a> on my last post <a href="http://www.cmdln.org/2008/04/08/find-and-delete-old-files-in-linux">Find and delete old files in linux</a> I have a better (faster) way to delete files.<!--more--></p>
-
-<!--adsense-->
-
-<p>Spawning processes is expensive, its much better to not spawn a new process if its not needed. Just for proof I created 100 empty files in a temp directory and deleted them both ways.</p>
-
-<p>The old way &#8230;</p>
-
-<p>`After some lovely <a href="http://www.cmdln.org/2008/04/08/find-and-delete-old-files-in-linux/#comment-360">feedback</a> from <a href="http://stsimb.irc.gr/">Sotiris Tsimbonis</a> on my last post <a href="http://www.cmdln.org/2008/04/08/find-and-delete-old-files-in-linux">Find and delete old files in linux</a> I have a better (faster) way to delete files.<!--more--></p>
-
-<!--adsense-->
-
-<p>Spawning processes is expensive, its much better to not spawn a new process if its not needed. Just for proof I created 100 empty files in a temp directory and deleted them both ways.</p>
-
-<p>The old way &#8230;</p>
-
-<p>`</p>
-
-<p>The better faster way</p>
-
-<p>``</p>
-
-<p>And lets see the creation loop with xargs since we are talking about squeezing a tad more performance out of things.</p>
-
-<p>The standard for loop &#8230;</p>
-
-<pre><code>  
-And the better faster xargs way
   
-````After some lovely [feedback][1] from [Sotiris Tsimbonis][2] on my last post [Find and delete old files in linux][3] I have a better (faster) way to delete files.&lt;!--more--&gt;
+Spawning processes is expensive, its much better to not spawn a new process if its not needed. Just for proof I created 100 empty files in a temp directory and deleted them both ways.
+  
+The old way &amp;#8230;
+  
+`After some lovely [feedback][1] from [Sotiris Tsimbonis][2] on my last post [Find and delete old files in linux][3] I have a better (faster) way to delete files.&lt;!--more--&gt;
 
 &lt;!--adsense--&gt;
+
+
+  
+Spawning processes is expensive, its much better to not spawn a new process if its not needed. Just for proof I created 100 empty files in a temp directory and deleted them both ways.
+  
+The old way &amp;#8230;
+  
+` 
+  
+The better faster way
+  
+``After some lovely [feedback][1] from [Sotiris Tsimbonis][2] on my last post [Find and delete old files in linux][3] I have a better (faster) way to delete files.&lt;!--more--&gt;
+
+&lt;!--adsense--&gt;
+
+
+  
+Spawning processes is expensive, its much better to not spawn a new process if its not needed. Just for proof I created 100 empty files in a temp directory and deleted them both ways.
+  
+The old way &amp;#8230;
+  
+`After some lovely [feedback][1] from [Sotiris Tsimbonis][2] on my last post [Find and delete old files in linux][3] I have a better (faster) way to delete files.&lt;!--more--&gt;
+
+&lt;!--adsense--&gt;
+
+
+  
+Spawning processes is expensive, its much better to not spawn a new process if its not needed. Just for proof I created 100 empty files in a temp directory and deleted them both ways.
+  
+The old way &amp;#8230;
+  
+` 
+  
+The better faster way
+  
+`` 
+  
+And lets see the creation loop with xargs since we are talking about squeezing a tad more performance out of things.
+  
+The standard for loop &amp;#8230;
+  </code></pre></td></tr></table>
+</div>
+</div>
+<p>And the better faster xargs way</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-After some lovely [feedback][1] from [Sotiris Tsimbonis][2] on my last post [Find and delete old files in linux][3] I have a better (faster) way to delete files.<!--more-->" data-lang="After some lovely [feedback][1] from [Sotiris Tsimbonis][2] on my last post [Find and delete old files in linux][3] I have a better (faster) way to delete files.<!--more-->"><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-After some lovely [feedback][1] from [Sotiris Tsimbonis][2] on my last post [Find and delete old files in linux][3] I have a better (faster) way to delete files.<!--more-->" data-lang="After some lovely [feedback][1] from [Sotiris Tsimbonis][2] on my last post [Find and delete old files in linux][3] I have a better (faster) way to delete files.<!--more-->">&lt;!--adsense--&gt;
 
 
   
@@ -271,11 +444,12 @@ And lets see the creation loop with xargs since we are talking about squeezing a
   
 The standard for loop &amp;#8230;
   
-</code></pre>
-
-<p>And the better faster xargs way</p>
-
-<p>````</p>
+``` 
+  
+And the better faster xargs way
+  </code></pre></td></tr></table>
+</div>
+</div>
             </div>
             
             <div class="post-comments">
