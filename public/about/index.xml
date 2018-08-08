@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Abouts on </title>
+    <link>https://cmdln.org/about/</link>
+    <description>Recent content in Abouts on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 26 Jun 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://cmdln.org/about/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>My Bionic Back</title>
+      <link>https://cmdln.org/about/back-and-spare-parts/</link>
+      <pubDate>Mon, 26 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://cmdln.org/about/back-and-spare-parts/</guid>
+      <description>OK, ok, it&#39;s not really bionic, ... yet.
+On [2018-05-29] I had surgery for spinal decompression and dural sac repair at L4-L5, anterior fusion at L4-L5, and artificial disc replacement at L5-S1. This documents some history and how I got to that point as well as my recovery.
+I am frequently asked &#34;what happened?&#34;, and I don&#39;t recall any specific event, but I wrestled in grade school and high school, and I was know for all kinds of contortions.</description>
+    </item>
+    
+  </channel>
+</rss>

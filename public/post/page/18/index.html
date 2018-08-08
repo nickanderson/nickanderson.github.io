@@ -6,7 +6,7 @@
 
 		<meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.44" />
+<meta name="generator" content="Hugo 0.46" />
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -72,6 +72,19 @@
 			</div>
 			<ul id="post-list">
                 	
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
+							<h4 class="post-link"><a href="https://cmdln.org/2008/12/18/simple-network-popup-with-python-and-libnotify/">Simple network popup with python and libnotify</a></h4>
+							<h4 class="post-date">Dec 18, 2008</h4>
+						</div>
+						<div class="post-summary"><p><p>Im sure everyone is familiar with smb messages especially as everyone was assulted with them about 10 years ago (stupid soho routers and spammers unite!). Anyway, there are clients for linux like Linpopup. Well recently I didn&#8217;t want to use one of those to be able to send messages to my linux workstations so I cobbled together a simple network popup app with python. </p></p></div>
+						<div class="post-list-footer text-center">
+							<a href="https://cmdln.org/2008/12/18/simple-network-popup-with-python-and-libnotify/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
 				<li>
 					<div class="post-list-item">
 						<div class="post-header">
@@ -192,20 +205,6 @@ what-http-server() { curl -s -I $(for h in "$@"; do printf "http://%s " "$h"; do
 units -t '1Mbps' 'GB/month' 328.71798 units -t '1hour' 'seconds' 3600  </p></div>
 						<div class="post-list-footer text-center">
 							<a href="https://cmdln.org/2008/12/04/google-like-unit-conversion-on-the-console/">Read More</a>
-						</div>
-					</div>
-				</li>
-			
-				<li>
-					<div class="post-list-item">
-						<div class="post-header">
-							<h4 class="post-link"><a href="https://cmdln.org/2008/11/19/debian-etccrond-gotcha/">Debian /etc/cron.d/ gotcha</a></h4>
-							<h4 class="post-date">Nov 19, 2008</h4>
-						</div>
-						<div class="post-summary"><p>I typically use /etc/cron.d to store all of my system crontabs. I recently ran into an issue that I had either not run into before, or fixed and paid no attention to. Files stored in /etc/cron.d/ or any /etc/cron.* directory need to adhear to the run-parts Debian cron script namespace which consists is
-(^[a-z0-9][a-z0-9-]*$)  for the regex impared this does not include the dot character. If you have a file in /etc/cron.</p></div>
-						<div class="post-list-footer text-center">
-							<a href="https://cmdln.org/2008/11/19/debian-etccrond-gotcha/">Read More</a>
 						</div>
 					</div>
 				</li>

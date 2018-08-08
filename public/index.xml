@@ -5,10 +5,22 @@
     <link>https://cmdln.org/</link>
     <description>Recent content on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 19 Jul 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 08 Aug 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://cmdln.org/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Disabling desktop search (trackerd) with cfengine 3</title>
+      <link>https://cmdln.org/2018/08/08/disabling-desktop-search-trackerd-with-cfengine-3/</link>
+      <pubDate>Wed, 08 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://cmdln.org/2018/08/08/disabling-desktop-search-trackerd-with-cfengine-3/</guid>
+      <description>Recently I noticed that my CPU was pretty busy with the desktop search indexing, it brought me to the question:
+  How can I disable the desktop search service trackerd?  After a brief investigation I found some XDG desktop needed to be edited to include the key Hidden=true.
+This policy disables known trackerd related XDG files when they are found.
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48  body file control { inputs =&amp;gt; { &amp;#34;$(sys.</description>
+    </item>
     
     <item>
       <title>Augments driven access promises with cfengine 3</title>
@@ -293,6 +305,17 @@ A value of true (the default behavior) will result in the agent retaining the pr
       
       <guid>https://cmdln.org/2017/07/02/northern-tech/</guid>
       <description>Well, I no longer work at CFEngine Inc. But only because we re-named the company to Northern Tech in order to unify our multiple products under a single company. Both CFEngine and Mender will continue to have their own unique product branding.</description>
+    </item>
+    
+    <item>
+      <title>My Bionic Back</title>
+      <link>https://cmdln.org/about/back-and-spare-parts/</link>
+      <pubDate>Mon, 26 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://cmdln.org/about/back-and-spare-parts/</guid>
+      <description>OK, ok, it&#39;s not really bionic, ... yet.
+On [2018-05-29] I had surgery for spinal decompression and dural sac repair at L4-L5, anterior fusion at L4-L5, and artificial disc replacement at L5-S1. This documents some history and how I got to that point as well as my recovery.
+I am frequently asked &#34;what happened?&#34;, and I don&#39;t recall any specific event, but I wrestled in grade school and high school, and I was know for all kinds of contortions.</description>
     </item>
     
     <item>

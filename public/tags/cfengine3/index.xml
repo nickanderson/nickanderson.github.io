@@ -5,10 +5,22 @@
     <link>https://cmdln.org/tags/cfengine3/</link>
     <description>Recent content in Cfengine3 on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 19 Jul 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 08 Aug 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://cmdln.org/tags/cfengine3/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Disabling desktop search (trackerd) with cfengine 3</title>
+      <link>https://cmdln.org/2018/08/08/disabling-desktop-search-trackerd-with-cfengine-3/</link>
+      <pubDate>Wed, 08 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://cmdln.org/2018/08/08/disabling-desktop-search-trackerd-with-cfengine-3/</guid>
+      <description>Recently I noticed that my CPU was pretty busy with the desktop search indexing, it brought me to the question:
+  How can I disable the desktop search service trackerd?  After a brief investigation I found some XDG desktop needed to be edited to include the key Hidden=true.
+This policy disables known trackerd related XDG files when they are found.
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48  body file control { inputs =&amp;gt; { &amp;#34;$(sys.</description>
+    </item>
     
     <item>
       <title>Augments driven access promises with cfengine 3</title>
