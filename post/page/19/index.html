@@ -6,7 +6,7 @@
 
 		<meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.44" />
+<meta name="generator" content="Hugo 0.46" />
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -72,6 +72,20 @@
 			</div>
 			<ul id="post-list">
                 	
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
+							<h4 class="post-link"><a href="https://cmdln.org/2008/11/19/debian-etccrond-gotcha/">Debian /etc/cron.d/ gotcha</a></h4>
+							<h4 class="post-date">Nov 19, 2008</h4>
+						</div>
+						<div class="post-summary"><p>I typically use /etc/cron.d to store all of my system crontabs. I recently ran into an issue that I had either not run into before, or fixed and paid no attention to. Files stored in /etc/cron.d/ or any /etc/cron.* directory need to adhear to the run-parts Debian cron script namespace which consists is
+(^[a-z0-9][a-z0-9-]*$)  for the regex impared this does not include the dot character. If you have a file in /etc/cron.</p></div>
+						<div class="post-list-footer text-center">
+							<a href="https://cmdln.org/2008/11/19/debian-etccrond-gotcha/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
 				<li>
 					<div class="post-list-item">
 						<div class="post-header">
@@ -203,19 +217,6 @@ ssh gitserver   Make sure setuptools is installed  sudo aptitude install python-
 						<div class="post-summary"><p>Hopefully you know how to undo and redo in vim using u and Ctrl-R. But with newer versions of vim you get point in time recovery. with :earlier. Give it a shot, make some changes to a script and then try :earlier 1m. Very cool and an easy way to undo a bunch of changes.</p></div>
 						<div class="post-list-footer text-center">
 							<a href="https://cmdln.org/2008/10/20/tip-vim-point-in-time-recovery/">Read More</a>
-						</div>
-					</div>
-				</li>
-			
-				<li>
-					<div class="post-list-item">
-						<div class="post-header">
-							<h4 class="post-link"><a href="https://cmdln.org/2008/10/18/vim-customization-for-python/">Vim customization for python</a></h4>
-							<h4 class="post-date">Oct 18, 2008</h4>
-						</div>
-						<div class="post-summary"><p><p>Python seems to keep growing on me. By no means am I a Python master, nor am I a vim guru but I do prefer to use vim over a gui editor. Sure there are some niceties with using a gui but getting comfortable using a tool that is almost always at your disposal has something to be said for it. Adding a few things to your vim environment will make writing python much more pleasurable.</p></p></div>
-						<div class="post-list-footer text-center">
-							<a href="https://cmdln.org/2008/10/18/vim-customization-for-python/">Read More</a>
 						</div>
 					</div>
 				</li>

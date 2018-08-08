@@ -6,7 +6,7 @@
 
 		<meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.44" />
+<meta name="generator" content="Hugo 0.46" />
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -72,6 +72,19 @@
 			</div>
 			<ul id="post-list">
                 	
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
+							<h4 class="post-link"><a href="https://cmdln.org/2008/10/18/vim-customization-for-python/">Vim customization for python</a></h4>
+							<h4 class="post-date">Oct 18, 2008</h4>
+						</div>
+						<div class="post-summary"><p><p>Python seems to keep growing on me. By no means am I a Python master, nor am I a vim guru but I do prefer to use vim over a gui editor. Sure there are some niceties with using a gui but getting comfortable using a tool that is almost always at your disposal has something to be said for it. Adding a few things to your vim environment will make writing python much more pleasurable.</p></p></div>
+						<div class="post-list-footer text-center">
+							<a href="https://cmdln.org/2008/10/18/vim-customization-for-python/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
 				<li>
 					<div class="post-list-item">
 						<div class="post-header">
@@ -187,20 +200,6 @@
 						<div class="post-summary"><p>A few days ago I finally got my copy of Running Xen. I was anxious to see how the information would be presented. I can tell you I was not disappointed. I am by no means a Xen master. I have tinkered with it a few times over the past several years but as I am getting ready to use it full time in production I need as much information as I can get.</p></div>
 						<div class="post-list-footer text-center">
 							<a href="https://cmdln.org/2008/04/28/review-running-xen-a-hands-on-guide-to-the-art-of-virtualization/">Read More</a>
-						</div>
-					</div>
-				</li>
-			
-				<li>
-					<div class="post-list-item">
-						<div class="post-header">
-							<h4 class="post-link"><a href="https://cmdln.org/2008/04/26/benchmark-hard-drive-performance-in-linux/">Benchmark hard drive performance in Linux</a></h4>
-							<h4 class="post-date">Apr 26, 2008</h4>
-						</div>
-						<div class="post-summary"><p>Bonnie is a great tool to use to benchmark your file system. Just a quick tip on using bonnie. You need to give bonnie how much ram you have have in your system, and when you run bonnie you should run with a size 2x as big as your ram. So using this command will help you speed up that calculation.
-bonnie++ -r $(free -m | awk '/^Mem/{print $2}') -s $(echo $(free -m | awk '/^Mem/{print $2}')*2| bc)  We use subcommands to expand and automattically use the right parameters for bonnie.</p></div>
-						<div class="post-list-footer text-center">
-							<a href="https://cmdln.org/2008/04/26/benchmark-hard-drive-performance-in-linux/">Read More</a>
 						</div>
 					</div>
 				</li>

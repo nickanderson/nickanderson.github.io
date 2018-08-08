@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://cmdln.org/2018/08/08/disabling-desktop-search-trackerd-with-cfengine-3/</loc>
+    <lastmod>2018-08-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://cmdln.org/2018/07/19/augments-driven-access-promises-with-cfengine-3/</loc>
     <lastmod>2018-07-19T00:00:00+00:00</lastmod>
   </url>
@@ -140,6 +145,11 @@
   <url>
     <loc>https://cmdln.org/2017/07/02/northern-tech/</loc>
     <lastmod>2017-07-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cmdln.org/about/back-and-spare-parts/</loc>
+    <lastmod>2017-06-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -1189,7 +1199,7 @@
   
   <url>
     <loc>https://cmdln.org/</loc>
-    <lastmod>2018-07-19T00:00:00+00:00</lastmod>
+    <lastmod>2018-08-08T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1226,6 +1236,12 @@
   <url>
     <loc>https://cmdln.org/tags/9/</loc>
     <lastmod>2009-09-10T03:46:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://cmdln.org/about/</loc>
+    <lastmod>2017-06-26T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1476,7 +1492,7 @@
   
   <url>
     <loc>https://cmdln.org/tags/cfengine3/</loc>
-    <lastmod>2018-07-19T00:00:00+00:00</lastmod>
+    <lastmod>2018-08-08T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -2424,7 +2440,7 @@
   
   <url>
     <loc>https://cmdln.org/post/</loc>
-    <lastmod>2018-07-19T00:00:00+00:00</lastmod>
+    <lastmod>2018-08-08T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
