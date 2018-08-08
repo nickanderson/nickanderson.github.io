@@ -1,0 +1,149 @@
+#+Title: Disabling desktop search (trackerd) with cfengine 3
+#+AUTHOR: Nick Anderson
+#+DATE: 2018-08-08
+#+TAGS: cfengine3
+#+DRAFT: false
+
+Recently I noticed that my CPU was pretty busy with the desktop search indexing,
+it brought me to the question:
+
+#+BEGIN_QUOTE
+  How can I disable the desktop search service trackerd?
+#+END_QUOTE
+
+After a brief investigation I found some XDG desktop needed to be edited to
+include the key =Hidden=true=.
+
+This policy disables known trackerd related XDG files when they are found.
+
+#+BEGIN_SRC cfengine3
+  body file control
+  {
+          inputs => { "$(sys.libdir)/stdlib.cf" };
+  }
+
+  bundle agent disable_desktop_search
+  # Disables trackerd used by ubuntu desktop search
+  # https://askubuntu.com/questions/346211/tracker-store-and-tracker-miner-fs-eating-up-my-cpu-on-every-startup
+  # https://gist.github.com/Prezto/75d612cebc9300f83bc74830df3a6410
+  {
+    meta:
+        "tags" slist => { "autorun" };
+
+    vars:
+        "desktop_files"
+          slist => {
+                     "trackerd.desktop",
+                     "tracker-extract.desktop",
+                     "tracker-miner-apps.desktop",
+                     "tracker-miner-fs.desktop",
+                     "tracker-miner-user-guide.desktop",
+                     "tracker-store.desktop",
+          };
+
+        "conf[Hidden]" string => "true";
+
+    files:
+
+        # If any known trackerd desktop file exists, make sure that that it
+        # contains the option to disable the service.
+
+        "/etc/xdg/autostart/$(desktop_files)"
+          if => fileexists( "/etc/xdg/autostart/$(desktop_files)" ),
+          edit_line => set_line_based( "$(this.bundle).conf",
+                                       "=",
+                                       "\s*=\s*",
+                                       ".*",
+                                       "\s*#\s*");
+  }
+
+  @if minimum_version(3.12)
+  # If this policy file is used as the entry, run the policy
+  bundle agent __main__
+  {
+    methods:
+        "disable_desktop_search";
+  }
+  @endif
+#+END_SRC
+
+How does the policy work?
+
+We include the standard library using body file control. This allows the policy
+file to be used directly instead of integrated with a larger policy yet still
+leverage bundles and bodies from the standard library (e.g. =set_line_based= ).
+
+#+BEGIN_SRC cfengine3
+  body file control
+  {
+          inputs => { "$(sys.libdir)/stdlib.cf" };
+  }
+#+END_SRC
+
+The =disable_desktop_search= bundle is tagged with autorun so that the policy
+can be easily used with the MPF autorun functionality.
+
+#+BEGIN_SRC cfengine3
+  bundle agent disable_desktop_search
+  # Disables trackerd used by ubuntu desktop search
+  # https://askubuntu.com/questions/346211/tracker-store-and-tracker-miner-fs-eating-up-my-cpu-on-every-startup
+  # https://gist.github.com/Prezto/75d612cebc9300f83bc74830df3a6410
+  {
+    meta:
+        "tags" slist => { "autorun" };
+#+END_SRC
+
+The list of known trackerd related XDG files is enumerated.
+
+#+BEGIN_SRC cfengine3
+    vars:
+        "desktop_files"
+          slist => {
+                     "trackerd.desktop",
+                     "tracker-extract.desktop",
+                     "tracker-miner-apps.desktop",
+                     "tracker-miner-fs.desktop",
+                     "tracker-miner-user-guide.desktop",
+                     "tracker-store.desktop",
+          };
+#+END_SRC
+
+The desired configuration is specified in the classic array =conf=.
+
+#+BEGIN_SRC cfengine3
+        "conf[Hidden]" string => "true";
+#+END_SRC
+
+Each known trackerd related XDG file is inspected for the proper configuration
+line entries and the files are repaired if necessary.
+
+#+BEGIN_SRC cfengine3
+    files:
+
+        # If any known trackerd desktop file exists, make sure that that it
+        # contains the option to disable the service.
+
+        "/etc/xdg/autostart/$(desktop_files)"
+          if => fileexists( "/etc/xdg/autostart/$(desktop_files)" ),
+          edit_line => set_line_based( "$(this.bundle).conf",
+                                       "=",
+                                       "\s*=\s*",
+                                       ".*",
+                                       "\s*#\s*");
+  }
+#+END_SRC
+
+Finally, if we are running version 3.12.0 or greater we add support for direct
+execution of the policy without conflicting bundle names using the new
+executable library support from the special bundle =__main__=.
+
+#+BEGIN_SRC cfengine3
+  @if minimum_version(3.12)
+  # If this policy file is used as the entry, run the policy
+  bundle agent __main__
+  {
+    methods:
+        "disable_desktop_search";
+  }
+  @endif
+#+END_SRC
