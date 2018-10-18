@@ -8,7 +8,7 @@
   How do I set the timeout with url_get()?
 #+END_QUOTE
 
-You set =url.timeout= in the data container passed for =url_get()= options.
+As shown in the [[https://docs.cfengine.com/latest/reference-functions-url_get.html][documentation for url_get()]], you set =url.timeout= in the data container passed for =url_get()= options.
 
 This example policy shows how to configure the timeout and demonstrates it by
 making a request through [[http://www.delay.me][www.delay.me]].
@@ -19,7 +19,7 @@ making a request through [[http://www.delay.me][www.delay.me]].
   {
     vars:
         "options" data => '{
-    "url.timeout": "30",
+    "url.timeout": "2",
     "url.verbose": "1"
   }';
 
@@ -27,70 +27,56 @@ making a request through [[http://www.delay.me][www.delay.me]].
 
     reports:
         "$(with)"
-          with => string_mustache( "{{%-top-}}", response );
+          with => string_mustache( "{{$-top-}}", response );
   }
 #+END_SRC
-
-This output shows the effect of setting the timeout to *2*.
-
-#+RESULTS: Example timeout with url_get timeout 2
-#+BEGIN_EXAMPLE
-     Trying 52.204.188.97...
-   TCP_NODELAY set
-   Connected to www.deelay.me (52.204.188.97) port 80 (#0)
-  > GET /29999/google HTTP/1.1
-  Host: www.deelay.me
-  Accept: */*
-
-   Operation timed out after 2001 milliseconds with 0 bytes received
-   Closing connection 0
-     Trying 52.204.188.97...
-   TCP_NODELAY set
-   Connected to www.deelay.me (52.204.188.97) port 80 (#0)
-  > GET /29999/google HTTP/1.1
-  Host: www.deelay.me
-  Accept: */*
-
-   Operation timed out after 2001 milliseconds with 0 bytes received
-   Closing connection 0
-  R: {
-    "content": "",
-    "error_message": "Timeout was reached",
-    "headers": "",
-    "rc": 28,
-    "returncode": 0,
-    "success": false
-  }
-#+END_EXAMPLE
 
 This output shows the effect of setting the timeout to *1*.
 
 #+RESULTS: Example timeout with url_get timeout 1
 #+BEGIN_EXAMPLE
-     Trying 52.204.188.97...
-   TCP_NODELAY set
-   Connected to www.deelay.me (52.204.188.97) port 80 (#0)
+  *   Trying 54.174.228.92...
+  * TCP_NODELAY set
+  * Connected to www.deelay.me (54.174.228.92) port 80 (#0)
   > GET /29999/google HTTP/1.1
   Host: www.deelay.me
   Accept: */*
 
-   Operation timed out after 1000 milliseconds with 0 bytes received
-   Closing connection 0
-     Trying 52.204.188.97...
-   TCP_NODELAY set
-   Connected to www.deelay.me (52.204.188.97) port 80 (#0)
+  * Operation timed out after 1000 milliseconds with 0 bytes received
+  * Closing connection 0
+  *   Trying 54.174.228.92...
+  * TCP_NODELAY set
+  * Connected to www.deelay.me (54.174.228.92) port 80 (#0)
   > GET /29999/google HTTP/1.1
   Host: www.deelay.me
   Accept: */*
 
-   Operation timed out after 1000 milliseconds with 0 bytes received
-   Closing connection 0
-  R: {
-    "content": "",
-    "error_message": "Timeout was reached",
-    "headers": "",
-    "rc": 28,
-    "returncode": 0,
-    "success": false
-  }
+  * Operation timed out after 1000 milliseconds with 0 bytes received
+  * Closing connection 0
+  R: {"content":"","error_message":"Timeout was reached","headers":"","rc":28,"returncode":0,"success":false}
+#+END_EXAMPLE
+
+This output shows the effect of setting the timeout to *2*.
+
+#+RESULTS: Example timeout with url_get timeout 2
+#+BEGIN_EXAMPLE
+  *   Trying 52.1.117.85...
+  * TCP_NODELAY set
+  * Connected to www.deelay.me (52.1.117.85) port 80 (#0)
+  > GET /29999/google HTTP/1.1
+  Host: www.deelay.me
+  Accept: */*
+
+  * Operation timed out after 2001 milliseconds with 0 bytes received
+  * Closing connection 0
+  *   Trying 52.1.117.85...
+  * TCP_NODELAY set
+  * Connected to www.deelay.me (52.1.117.85) port 80 (#0)
+  > GET /29999/google HTTP/1.1
+  Host: www.deelay.me
+  Accept: */*
+
+  * Operation timed out after 2001 milliseconds with 0 bytes received
+  * Closing connection 0
+  R: {"content":"","error_message":"Timeout was reached","headers":"","rc":28,"returncode":0,"success":false}
 #+END_EXAMPLE
