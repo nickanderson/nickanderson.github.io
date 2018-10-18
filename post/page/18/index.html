@@ -6,7 +6,7 @@
 
 		<meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.46" />
+<meta name="generator" content="Hugo 0.49.2" />
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -72,6 +72,19 @@
 			</div>
 			<ul id="post-list">
                 	
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
+							<h4 class="post-link"><a href="https://cmdln.org/2008/12/20/old-new-sa-pro-podcast/">Old new SA Pro podcast</a></h4>
+							<h4 class="post-date">Dec 20, 2008</h4>
+						</div>
+						<div class="post-summary"><p>It&#8217;s not new news but I havent seen anyone else mention it. Ben Rockwood over at cuddletech had his second SA Pro podcast with Tom Limoncelli, it covers time management. It&#8217;s a good listen, I&#8217;m still waiting for him to setup a feed for the podcasts. Tom has some good advice, I have picked up a few things and read his Time Management for System Administrators since listening to the podcast.</p></div>
+						<div class="post-list-footer text-center">
+							<a href="https://cmdln.org/2008/12/20/old-new-sa-pro-podcast/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
 				<li>
 					<div class="post-list-item">
 						<div class="post-header">
@@ -191,20 +204,6 @@ Handy shell function you can put in your .bashrc. Quickly find out what server a
 what-http-server() { curl -s -I $(for h in "$@"; do printf "http://%s " "$h"; done) | awk -F': ' '/^Server:/ {print $2}'; }  Now try what-http-server kernel.org google.com hotmail.com.</p></div>
 						<div class="post-list-footer text-center">
 							<a href="https://cmdln.org/2008/12/05/what-webserver-shell-function/">Read More</a>
-						</div>
-					</div>
-				</li>
-			
-				<li>
-					<div class="post-list-item">
-						<div class="post-header">
-							<h4 class="post-link"><a href="https://cmdln.org/2008/12/04/google-like-unit-conversion-on-the-console/">Google like unit conversion on the console</a></h4>
-							<h4 class="post-date">Dec 5, 2008</h4>
-						</div>
-						<div class="post-summary"><p>For those of you who are horrid at math like I am googles unit conversion is a great help. Want to know how many GB 1Mbps is in a month? Simple just ask google. Well I like to have the ability even when I am not online and I found units. Its in the debian repository and oh so easy to use.
-units -t '1Mbps' 'GB/month' 328.71798 units -t '1hour' 'seconds' 3600  </p></div>
-						<div class="post-list-footer text-center">
-							<a href="https://cmdln.org/2008/12/04/google-like-unit-conversion-on-the-console/">Read More</a>
 						</div>
 					</div>
 				</li>

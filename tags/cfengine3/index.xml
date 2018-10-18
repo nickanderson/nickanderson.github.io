@@ -5,10 +5,21 @@
     <link>https://cmdln.org/tags/cfengine3/</link>
     <description>Recent content in Cfengine3 on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 08 Aug 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 18 Oct 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://cmdln.org/tags/cfengine3/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Setting the timeout with url_get() in cfengine 3 </title>
+      <link>https://cmdln.org/2018/10/18/setting-the-timeout-with-url_get-in-cfengine-3/</link>
+      <pubDate>Thu, 18 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://cmdln.org/2018/10/18/setting-the-timeout-with-url_get-in-cfengine-3/</guid>
+      <description>How do I set the timeout with url_get()?  You set url.timeout in the data container passed for url_get() options.
+This example policy shows how to configure the timeout and demonstrates it by making a request through www.delay.me.
+1 2 3 4 5 6 7 8 9 10 11 12 13 14  bundle agent main { vars: &amp;#34;options&amp;#34; data =&amp;gt; &amp;#39;{ &amp;#34;url.timeout&amp;#34;: &amp;#34;30&amp;#34;, &amp;#34;url.verbose&amp;#34;: &amp;#34;1&amp;#34; }&amp;#39;; &amp;#34;response&amp;#34; data =&amp;gt; url_get( &amp;#34;http://www.</description>
+    </item>
     
     <item>
       <title>Disabling desktop search (trackerd) with cfengine 3</title>
