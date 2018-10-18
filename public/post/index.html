@@ -78,9 +78,9 @@
 							<h4 class="post-link"><a href="https://cmdln.org/2018/10/18/setting-the-timeout-with-url_get-in-cfengine-3/">Setting the timeout with url_get() in cfengine 3</a></h4>
 							<h4 class="post-date">Oct 18, 2018</h4>
 						</div>
-						<div class="post-summary"><p>How do I set the timeout with url_get()?  You set url.timeout in the data container passed for url_get() options.
+						<div class="post-summary"><p>How do I set the timeout with url_get()?  As shown in the documentation for url_get(), you set url.timeout in the data container passed for url_get() options.
 This example policy shows how to configure the timeout and demonstrates it by making a request through www.delay.me.
-1 2 3 4 5 6 7 8 9 10 11 12 13 14  bundle agent main { vars: &#34;options&#34; data =&gt; &#39;{ &#34;url.timeout&#34;: &#34;30&#34;, &#34;url.verbose&#34;: &#34;1&#34; }&#39;; &#34;response&#34; data =&gt; url_get( &#34;http://www.</p></div>
+1 2 3 4 5 6 7 8 9 10 11 12 13 14  bundle agent main { vars: &#34;options&#34; data =&gt; &#39;{ &#34;url.</p></div>
 						<div class="post-list-footer text-center">
 							<a href="https://cmdln.org/2018/10/18/setting-the-timeout-with-url_get-in-cfengine-3/">Read More</a>
 						</div>
