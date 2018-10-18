@@ -1,0 +1,97 @@
+#+Title: Setting the timeout with url_get() in cfengine 3 
+#+AUTHOR: Nick Anderson
+#+DATE: 2018-10-18
+#+TAGS: cfengine3
+#+DRAFT: false
+
+#+BEGIN_QUOTE
+  How do I set the timeout with url_get()?
+#+END_QUOTE
+
+You set =url.timeout= in the data container passed for =url_get()= options.
+
+This example policy shows how to configure the timeout and demonstrates it by
+making a request through [[http://www.delay.me][www.delay.me]].
+
+#+Name: Example timeout with url_get timeout
+#+BEGIN_SRC cfengine3 :tangle /tmp/test.cf :exports both
+  bundle agent main
+  {
+    vars:
+        "options" data => '{
+    "url.timeout": "30",
+    "url.verbose": "1"
+  }';
+
+      "response" data => url_get(  "http://www.deelay.me/29999/google", options );
+
+    reports:
+        "$(with)"
+          with => string_mustache( "{{%-top-}}", response );
+  }
+#+END_SRC
+
+This output shows the effect of setting the timeout to *2*.
+
+#+RESULTS: Example timeout with url_get timeout 2
+#+begin_example
+,*   Trying 52.204.188.97...
+,* TCP_NODELAY set
+,* Connected to www.deelay.me (52.204.188.97) port 80 (#0)
+> GET /29999/google HTTP/1.1
+Host: www.deelay.me
+Accept: */*
+
+,* Operation timed out after 2001 milliseconds with 0 bytes received
+,* Closing connection 0
+,*   Trying 52.204.188.97...
+,* TCP_NODELAY set
+,* Connected to www.deelay.me (52.204.188.97) port 80 (#0)
+> GET /29999/google HTTP/1.1
+Host: www.deelay.me
+Accept: */*
+
+,* Operation timed out after 2001 milliseconds with 0 bytes received
+,* Closing connection 0
+R: {
+  "content": "",
+  "error_message": "Timeout was reached",
+  "headers": "",
+  "rc": 28,
+  "returncode": 0,
+  "success": false
+}
+#+end_example
+
+This output shows the effect of setting the timeout to *1*.
+
+#+RESULTS: Example timeout with url_get timeout 1
+#+begin_example
+,*   Trying 52.204.188.97...
+,* TCP_NODELAY set
+,* Connected to www.deelay.me (52.204.188.97) port 80 (#0)
+> GET /29999/google HTTP/1.1
+Host: www.deelay.me
+Accept: */*
+
+,* Operation timed out after 1000 milliseconds with 0 bytes received
+,* Closing connection 0
+,*   Trying 52.204.188.97...
+,* TCP_NODELAY set
+,* Connected to www.deelay.me (52.204.188.97) port 80 (#0)
+> GET /29999/google HTTP/1.1
+Host: www.deelay.me
+Accept: */*
+
+,* Operation timed out after 1000 milliseconds with 0 bytes received
+,* Closing connection 0
+R: {
+  "content": "",
+  "error_message": "Timeout was reached",
+  "headers": "",
+  "rc": 28,
+  "returncode": 0,
+  "success": false
+}
+#+end_example
+
