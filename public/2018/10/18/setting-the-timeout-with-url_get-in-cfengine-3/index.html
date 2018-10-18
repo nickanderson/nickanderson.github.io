@@ -114,61 +114,63 @@ making a request through <a href="http://www.delay.me" title="www.delay.me">www.
 </div>
 <p>This output shows the effect of setting the timeout to <strong>2</strong>.</p>
 
-<p>,*   Trying 52.204.188.97...
-,* TCP_NODELAY set
-,* Connected to www.deelay.me (52.204.188.97) port 80 (#0)
-> GET /29999/google HTTP/1.1
-Host: www.deelay.me
-Accept: <strong>/</strong></p>
+<pre><code>  ,*   Trying 52.204.188.97...
+  ,* TCP_NODELAY set
+  ,* Connected to www.deelay.me (52.204.188.97) port 80 (#0)
+  &gt; GET /29999/google HTTP/1.1
+  Host: www.deelay.me
+  Accept: */*
 
-<p>,* Operation timed out after 2001 milliseconds with 0 bytes received
-,* Closing connection 0
-,*   Trying 52.204.188.97...
-,* TCP_NODELAY set
-,* Connected to www.deelay.me (52.204.188.97) port 80 (#0)
-> GET /29999/google HTTP/1.1
-Host: www.deelay.me
-Accept: <strong>/</strong></p>
+  ,* Operation timed out after 2001 milliseconds with 0 bytes received
+  ,* Closing connection 0
+  ,*   Trying 52.204.188.97...
+  ,* TCP_NODELAY set
+  ,* Connected to www.deelay.me (52.204.188.97) port 80 (#0)
+  &gt; GET /29999/google HTTP/1.1
+  Host: www.deelay.me
+  Accept: */*
 
-<p>,* Operation timed out after 2001 milliseconds with 0 bytes received
-,* Closing connection 0
-R: {
-  "content": "",
-  "error_message": "Timeout was reached",
-  "headers": "",
-  "rc": 28,
-  "returncode": 0,
-  "success": false
-}</p>
+  ,* Operation timed out after 2001 milliseconds with 0 bytes received
+  ,* Closing connection 0
+  R: {
+    &quot;content&quot;: &quot;&quot;,
+    &quot;error_message&quot;: &quot;Timeout was reached&quot;,
+    &quot;headers&quot;: &quot;&quot;,
+    &quot;rc&quot;: 28,
+    &quot;returncode&quot;: 0,
+    &quot;success&quot;: false
+  }
+</code></pre>
 
-<p>This output shows the effect of setting the timeout to <strong>2</strong>.</p>
+<p>This output shows the effect of setting the timeout to <strong>1</strong>.</p>
 
-<p>,*   Trying 52.204.188.97...
-,* TCP_NODELAY set
-,* Connected to www.deelay.me (52.204.188.97) port 80 (#0)
-> GET /29999/google HTTP/1.1
-Host: www.deelay.me
-Accept: <strong>/</strong></p>
+<pre><code>  ,*   Trying 52.204.188.97...
+  ,* TCP_NODELAY set
+  ,* Connected to www.deelay.me (52.204.188.97) port 80 (#0)
+  &gt; GET /29999/google HTTP/1.1
+  Host: www.deelay.me
+  Accept: */*
 
-<p>,* Operation timed out after 1000 milliseconds with 0 bytes received
-,* Closing connection 0
-,*   Trying 52.204.188.97...
-,* TCP_NODELAY set
-,* Connected to www.deelay.me (52.204.188.97) port 80 (#0)
-> GET /29999/google HTTP/1.1
-Host: www.deelay.me
-Accept: <strong>/</strong></p>
+  ,* Operation timed out after 1000 milliseconds with 0 bytes received
+  ,* Closing connection 0
+  ,*   Trying 52.204.188.97...
+  ,* TCP_NODELAY set
+  ,* Connected to www.deelay.me (52.204.188.97) port 80 (#0)
+  &gt; GET /29999/google HTTP/1.1
+  Host: www.deelay.me
+  Accept: */*
 
-<p>,* Operation timed out after 1000 milliseconds with 0 bytes received
-,* Closing connection 0
-R: {
-  "content": "",
-  "error_message": "Timeout was reached",
-  "headers": "",
-  "rc": 28,
-  "returncode": 0,
-  "success": false
-}</p>
+  ,* Operation timed out after 1000 milliseconds with 0 bytes received
+  ,* Closing connection 0
+  R: {
+    &quot;content&quot;: &quot;&quot;,
+    &quot;error_message&quot;: &quot;Timeout was reached&quot;,
+    &quot;headers&quot;: &quot;&quot;,
+    &quot;rc&quot;: 28,
+    &quot;returncode&quot;: 0,
+    &quot;success&quot;: false
+  }
+</code></pre>
 
             </div>
             
