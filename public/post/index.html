@@ -6,7 +6,7 @@
 
 		<meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.46" />
+<meta name="generator" content="Hugo 0.49.2" />
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -72,6 +72,21 @@
 			</div>
 			<ul id="post-list">
                 	
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
+							<h4 class="post-link"><a href="https://cmdln.org/2018/10/18/setting-the-timeout-with-url_get-in-cfengine-3/">Setting the timeout with url_get() in cfengine 3 </a></h4>
+							<h4 class="post-date">Oct 18, 2018</h4>
+						</div>
+						<div class="post-summary"><p>How do I set the timeout with url_get()?  You set url.timeout in the data container passed for url_get() options.
+This example policy shows how to configure the timeout and demonstrates it by making a request through www.delay.me.
+1 2 3 4 5 6 7 8 9 10 11 12 13 14  bundle agent main { vars: &#34;options&#34; data =&gt; &#39;{ &#34;url.timeout&#34;: &#34;30&#34;, &#34;url.verbose&#34;: &#34;1&#34; }&#39;; &#34;response&#34; data =&gt; url_get( &#34;http://www.</p></div>
+						<div class="post-list-footer text-center">
+							<a href="https://cmdln.org/2018/10/18/setting-the-timeout-with-url_get-in-cfengine-3/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
 				<li>
 					<div class="post-list-item">
 						<div class="post-header">
@@ -197,20 +212,6 @@ Historically there was no automatic canonfication in cfengine.</p></div>
 1 2 3 4 5 6 7 8 9 10  bundle agent main { packages: # Purging a package using the --purge option  &#34;screen&#34; policy =&gt; &#34;absent&#34;, package_module =&gt; apt_get, options =&gt; { &#34;--remove&#34; }; }    Note that you can use any Configuration Item as well:</p></div>
 						<div class="post-list-footer text-center">
 							<a href="https://cmdln.org/2018/01/29/purging-packages-with-the-cfengine-3-apt_get-package-module/">Read More</a>
-						</div>
-					</div>
-				</li>
-			
-				<li>
-					<div class="post-list-item">
-						<div class="post-header">
-							<h4 class="post-link"><a href="https://cmdln.org/2018/01/28/timeboxing-policy-in-cfengine3/">Timeboxing Policy in Cfengine3</a></h4>
-							<h4 class="post-date">Jan 28, 2018</h4>
-						</div>
-						<div class="post-summary"><p>How can I make cfengine do things during a specific time window?  You can find "time based classes" in the cf-promises --show-classes output, they are easily identified because they are tagged with time_based. For example:
-1  cf-promises --show-classes | grep time   | Day2 time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | GMT_Afternoon time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | GMT_Day2 time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | GMT_Hr14 time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | GMT_Hr14_Q1 time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | GMT_Lcycle_1 time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | GMT_March time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | GMT_Min10 time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | GMT_Min10_15 time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | GMT_Q1 time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | GMT_Thursday time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | GMT_Yr2017 time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | Hr08 time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | Hr08_Q1 time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | Hr8 time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | Lcycle_1 time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | March time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | Min10 time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | Min10_15 time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | Morning time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | Q1 time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | Thursday time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | Yr2017 time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass |  You can guard your promise with a time based class expression so that it can only execute during the 7:00 hour.</p></div>
-						<div class="post-list-footer text-center">
-							<a href="https://cmdln.org/2018/01/28/timeboxing-policy-in-cfengine3/">Read More</a>
 						</div>
 					</div>
 				</li>
