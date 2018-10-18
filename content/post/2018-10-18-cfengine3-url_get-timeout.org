@@ -1,4 +1,4 @@
-#+Title: Setting the timeout with url_get() in cfengine 3 
+#+Title: Setting the timeout with url_get() in cfengine 3
 #+AUTHOR: Nick Anderson
 #+DATE: 2018-10-18
 #+TAGS: cfengine3
@@ -63,7 +63,7 @@ R: {
 }
 #+end_example
 
-This output shows the effect of setting the timeout to *1*.
+This output shows the effect of setting the timeout to *2*.
 
 #+RESULTS: Example timeout with url_get timeout 1
 #+begin_example
@@ -94,4 +94,3 @@ R: {
   "success": false
 }
 #+end_example
-
