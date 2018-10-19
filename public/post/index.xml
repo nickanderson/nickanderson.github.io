@@ -5,10 +5,21 @@
     <link>https://cmdln.org/post/</link>
     <description>Recent content in Posts on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 18 Oct 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 19 Oct 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://cmdln.org/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Using classes from datastate() with explicit template_data for rendering mustache in cfengine 3</title>
+      <link>https://cmdln.org/2018/10/19/using-classes-from-datastate-with-explicit-template_data-for-rendering-mustache-in-cfengine-3/</link>
+      <pubDate>Fri, 19 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://cmdln.org/2018/10/19/using-classes-from-datastate-with-explicit-template_data-for-rendering-mustache-in-cfengine-3/</guid>
+      <description>This was asked on the CFEngine Help Mailing list on October 1st 2018.
+  How can I use classes in a mustache template while passing explicit data to template_data?  When a mustache template is rendered without providing explicit data to the template_data attribute in a files promise datastate() is used. datastate() contains the JSON representation of the current cfengine state.
+When providing explicit data the variables and classes from the current state are not included.</description>
+    </item>
     
     <item>
       <title>Setting the timeout with url_get() in cfengine 3</title>
