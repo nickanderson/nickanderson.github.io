@@ -98,6 +98,11 @@ promise which does not use an explicit classes body.
   }
 #+END_SRC
 
+Here is the policy output. We can see that the commands promise to echo Hello
+resulted in the definition of =command_echo_hello_repaired= and
+=command_echo_hello_reached= because it used =body classes commands_classes=
+(the default classes body for commands promises).
+
 #+RESULTS:
 :   notice: Q: "...echo Hello": Hello
 :   notice: Q: "...echo GoodBye": GoodBye
@@ -105,8 +110,3 @@ promise which does not use an explicit classes body.
 : R: GoodBye_repaired
 : R: command_echo_hello_reached
 : R: GoodBye_reached
-
-Here is the policy output. We can see that the commands promise to echo Hello
-resulted in the definition of =command_echo_hello_repaired= and
-=command_echo_hello_reached= because it used =body classes commands_classes=
-(the default classes body for commands promises).
