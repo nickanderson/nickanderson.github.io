@@ -75,6 +75,21 @@
 				<li>
 					<div class="post-list-item">
 						<div class="post-header">
+							<h4 class="post-link"><a href="https://cmdln.org/2018/10/22/automatically-define-classes-for-every-promise-with-cfengine-3/">Automatically define classes for every promise with CFEngine 3</a></h4>
+							<h4 class="post-date">Oct 22, 2018</h4>
+						</div>
+						<div class="post-summary"><p>In CFEngine classes are used for decision making. Classes can be defined as the result of a promise by attaching a classes body to the promise via the /classes/ attribute.
+For example, here we run the command echo Hello World and define bundle/ scoped classes using the /results classes body prefixed with Hello_World.
+1 2 3 4 5 6 7 8 9 10  bundle agent main { commands: &#34;echo Hello World&#34; contain =&gt; in_shell, classes =&gt; results( &#34;bundle&#34;, &#34;Hello_World&#34; ); reports: &#34;Defined Classes: $(with)&#34; with =&gt; join( &#34;, &#34;, classesmatching( &#34;Hello_.</p></div>
+						<div class="post-list-footer text-center">
+							<a href="https://cmdln.org/2018/10/22/automatically-define-classes-for-every-promise-with-cfengine-3/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
 							<h4 class="post-link"><a href="https://cmdln.org/2018/10/19/using-classes-from-datastate-with-explicit-template_data-for-rendering-mustache-in-cfengine-3/">Using classes from datastate() with explicit template_data for rendering mustache in cfengine 3</a></h4>
 							<h4 class="post-date">Oct 19, 2018</h4>
 						</div>
