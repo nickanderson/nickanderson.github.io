@@ -72,8 +72,8 @@
 the result of a promise by attaching a <em>classes</em> body to the promise via the
 /classes/ attribute.</p>
 
-<p>For example, here we run the command <code>echo Hello World</code> and define <em>bundle/
-scoped classes using the /results</em> classes body prefixed with <code>Hello_World</code>.</p>
+<p>For example, here we run the command <code>echo Hello World</code> and define <em>bundle</em> 
+scoped classes using the <em>results</em> classes body prefixed with <code>Hello_World</code>.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
@@ -101,7 +101,7 @@ scoped classes using the /results</em> classes body prefixed with <code>Hello_Wo
 </div>
 </div>
 <p>Note in the policy output, we see <strong>Hello_World_repaired</strong> and
-*Hello_World_reached* are defined.</p>
+ <strong>Hello_World_reached</strong> are defined.</p>
 <pre class="example">
   notice: Q: "...echo Hello Worl": Hello World
 R: Defined Classes: Hello_World_repaired, Hello_World_reached
@@ -230,7 +230,7 @@ promise which does not use an explicit classes body.</p>
 </div>
 <p>Here is the policy output. We can see that the commands promise to echo Hello
 resulted in the definition of <code>command_echo_hello_repaired</code> and
-=command_echo_hello_reached= because it used =body classes commands_classes=
+ <code>command_echo_hello_reached</code> because it used <code>body classes commands_classes</code> 
 (the default classes body for commands promises).</p>
 <pre class="example">
   notice: Q: "...echo Hello": Hello
