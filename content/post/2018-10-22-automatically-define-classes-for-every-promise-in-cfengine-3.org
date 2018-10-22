@@ -1,0 +1,112 @@
+#+Title: Automatically define classes for every promise with CFEngine 3
+#+AUTHOR: Nick Anderson
+#+DATE: 2018-10-22
+#+TAGS: cfengine3
+#+DRAFT: false
+
+In CFEngine /classes/ are used for decision making. Classes can be defined as
+the result of a promise by attaching a /classes/ body to the promise via the
+/classes/ attribute.
+
+For example, here we run the command ~echo Hello World~ and define /bundle/
+scoped classes using the /results/ classes body prefixed with =Hello_World=.
+
+#+BEGIN_SRC cfengine3
+  bundle agent main
+  {
+     commands:
+       "echo Hello World" 
+         contain => in_shell,
+         classes => results( "bundle", "Hello_World" );
+      
+     reports:  
+      "Defined Classes: $(with)" with => join( ", ", classesmatching( "Hello_.*" )  );
+  }
+#+END_SRC
+
+Note in the policy output, we see *Hello_World_repaired* and
+*Hello_World_reached* are defined.
+
+#+RESULTS:
+:   notice: Q: "...echo Hello Worl": Hello World
+: R: Defined Classes: Hello_World_repaired, Hello_World_reached
+
+Sometimes people ask:
+
+#+BEGIN_QUOTE
+  Can I automatically define classes for every promise?
+#+END_QUOTE
+
+This is possible since CFEngine 3.9.0 introduced the concept of [[https://docs.cfengine.com/docs/3.12/reference-language-concepts-bodies.html#default-bodies][default bodies]].
+Default bodies allow the definition of bodies in the /bodydefault/ namespace
+that will be used with a promise any time a promise does not specify a body of
+that type. For example, we can define =body classes commands_classes= that will
+be used for any commands promise that does not specify a specific classes body.
+This results in the =commands_classes= body being attached to any commands
+promise which does not use an explicit classes body.
+
+#+BEGIN_SRC cfengine3 :exports both
+  bundle agent main
+  {
+
+    commands:
+        "echo Hello"
+          handle => "command_echo_hello",
+          contain => in_shell;
+
+        "echo GoodBye"
+          handle => "command_echo_GoodBye",
+          contain => in_shell,
+          classes => results( "namespace", "GoodBye" );
+ 
+    vars:
+        "c" slist => classesmatching( ".*_(reached|repaired|kept|not_kept|error)" );
+
+    reports:
+       "$(c)";
+  }
+
+  body file control
+  {
+          namespace => "bodydefault";
+  }
+
+  body classes commands_classes
+  {
+    scope => "namespace";
+
+    promise_kept => { "$(this.handle)_reached",
+                      "$(this.handle)_kept" };
+
+    promise_repaired => { "$(this.handle)_reached",
+                          "$(this.handle)_repaired" };
+
+    repair_failed => { "$(this.handle)_reached",
+                       "$(this.handle)_error",
+                       "$(this.handle)_not_kept",
+                       "$(this.handle)_failed" };
+
+    repair_denied => { "$(this.handle)_reached",
+                       "$(this.handle)_error",
+                       "$(this.handle)_not_kept",
+                       "$(this.handle)_denied" };
+
+    repair_timeout => { "$(this.handle)_reached",
+                        "$(this.handle)_error",
+                        "$(this.handle)_not_kept",
+                        "$(this.handle)_timeout" };
+  }
+#+END_SRC
+
+#+RESULTS:
+:   notice: Q: "...echo Hello": Hello
+:   notice: Q: "...echo GoodBye": GoodBye
+: R: command_echo_hello_repaired
+: R: GoodBye_repaired
+: R: command_echo_hello_reached
+: R: GoodBye_reached
+
+Here is the policy output. We can see that the commands promise to echo Hello
+resulted in the definition of =command_echo_hello_repaired= and
+=command_echo_hello_reached= because it used =body classes commands_classes=
+(the default classes body for commands promises).
