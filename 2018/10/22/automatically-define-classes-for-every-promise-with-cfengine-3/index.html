@@ -227,7 +227,12 @@ promise which does not use an explicit classes body.</p>
                         <span class="s">&#34;</span><span class="si">$(this.handle)</span><span class="s">_timeout&#34;</span> <span class="p">};</span>
   <span class="p">}</span></code></pre></td></tr></table>
 </div>
-</div><pre class="example">
+</div>
+<p>Here is the policy output. We can see that the commands promise to echo Hello
+resulted in the definition of <code>command_echo_hello_repaired</code> and
+=command_echo_hello_reached= because it used =body classes commands_classes=
+(the default classes body for commands promises).</p>
+<pre class="example">
   notice: Q: "...echo Hello": Hello
   notice: Q: "...echo GoodBye": GoodBye
 R: command_echo_hello_repaired
@@ -235,11 +240,6 @@ R: GoodBye_repaired
 R: command_echo_hello_reached
 R: GoodBye_reached
 </pre>
-
-<p>Here is the policy output. We can see that the commands promise to echo Hello
-resulted in the definition of <code>command_echo_hello_repaired</code> and
-=command_echo_hello_reached= because it used =body classes commands_classes=
-(the default classes body for commands promises).</p>
 
             </div>
             
