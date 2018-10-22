@@ -5,10 +5,21 @@
     <link>https://cmdln.org/</link>
     <description>Recent content on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 19 Oct 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 22 Oct 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://cmdln.org/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Automatically define classes for every promise with CFEngine 3</title>
+      <link>https://cmdln.org/2018/10/22/automatically-define-classes-for-every-promise-with-cfengine-3/</link>
+      <pubDate>Mon, 22 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://cmdln.org/2018/10/22/automatically-define-classes-for-every-promise-with-cfengine-3/</guid>
+      <description>In CFEngine classes are used for decision making. Classes can be defined as the result of a promise by attaching a classes body to the promise via the /classes/ attribute.
+For example, here we run the command echo Hello World and define bundle/ scoped classes using the /results classes body prefixed with Hello_World.
+1 2 3 4 5 6 7 8 9 10  bundle agent main { commands: &amp;#34;echo Hello World&amp;#34; contain =&amp;gt; in_shell, classes =&amp;gt; results( &amp;#34;bundle&amp;#34;, &amp;#34;Hello_World&amp;#34; ); reports: &amp;#34;Defined Classes: $(with)&amp;#34; with =&amp;gt; join( &amp;#34;, &amp;#34;, classesmatching( &amp;#34;Hello_.</description>
+    </item>
     
     <item>
       <title>Using classes from datastate() with explicit template_data for rendering mustache in cfengine 3</title>
