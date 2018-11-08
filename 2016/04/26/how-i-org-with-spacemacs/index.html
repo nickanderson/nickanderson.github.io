@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title> How I org with spacemacs &middot;  </title>
+
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.51" />
+
+
+<script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://cmdln.org/css/nix.css">
+<link rel="stylesheet" href="https://cmdln.org/css/syntax.css">
+
+
+<link href="https://fonts.googleapis.com/css?family=Inconsolata|Open+Sans|Roboto|Montserrat|Concert+One" rel="stylesheet">
+
+
+
+
+    </head>
+
+    <body>
+        <header>
+<nav class="navbar navbar-default navbar-fixed-top navbar-inverse font-header">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" id="green-terminal" href=https://cmdln.org>nick@cmdln.org ~ $</a>
+		</div>
+
+		
+		<div class="collapse navbar-collapse" id="navbar-collapse-1">
+			<ul class="nav navbar-nav navbar-right">
+				<li>
+					<a href="https://cmdln.org">/home/nick</a>
+				</li>
+				
+				
+				<li >
+					<a href="/post/">~/posts</a>
+				</li>
+				
+
+			</ul>
+		</div>
+	</div>
+</nav>
+</header>
+
+        <div class="container wrapper">
+            <h1><a href="https://cmdln.org/2016/04/26/how-i-org-with-spacemacs/">How I org with spacemacs</a></h1>
+            <span class="post-date">Apr 26, 2016 </span>
+            <div class="post-content">
+                <p>This weekend Neil Watson <a href="https://twitter.com/neil_h_watson/status/723927518420570112" title="asked if I could share how I use org-mode with
+Spacemacs">asked if I could share how I use org-mode with
+Spacemacs</a>.</p>
+
+<blockquote>
+<p>
+@cmdln_ Care to share with an Emacs illiterate how you got Spacemacs and
+</p>
+<p>
+Org-mode to work together? -- @neil_h_watson
+</p>
+</blockquote>
+
+<p>First of all, I spend most of my time in a terminal, and <code>vim</code> is ingrained in
+my muscle memory any time I need to edit a file. While Vim is my goto editor I
+consider myself just a novice <a href="http:www.vim" title="&lt;code&gt;Vim&lt;/code&gt;"><code>Vim</code></a> user. I like Vim because its everywhere and
+I have grown to like modal editing. I am by no means an expert but I do use
+visual block selection, and I like how Neil's great <a href="https://github.com/neilhwatson/vim_cf3" title="&lt;code&gt;vim_cf3&lt;/code&gt;"><code>vim_cf3</code></a> plugin improves
+the CFEngine policy editing experience tremendously.</p>
+
+<p>So why are we talking about <strong>Emacs</strong> if Vim is go great? Note, we are talking
+about <a href="http://spacemacs.org/" title="Spacemacs">Spacemacs</a>, which is self described as "community-driven Emacs
+distribution" and says "The best editor is neither Emacs nor Vim, it's Emacs
+*and* Vim!".</p>
+
+<p>For me <a href="http://orgmode.org/" title="Org-mode">Org-mode</a> is a (if not <strong>the</strong>) <strong>killer-feature</strong> in Emacs.</p>
+
+<blockquote>
+<p>
+Org mode is for keeping notes, maintaining TODO lists, planning projects and
+</p>
+<p>
+authoring documents with a fast and effective plain text system. --
+</p>
+<p>
+http://orgmode.org/
+</p>
+</blockquote>
+
+<p>I have used Org mode off on and on for the past 5 years or so, and mostly on for
+that past 2 years. When I first tried using org-mode I think one of the main
+reasons it didn't stick was because I didn't have familiar key bindings. I
+really struggled to navigate and operate within Emacs.</p>
+
+<p>A couple years ago In order to be able to edit text inside Emacs I began
+configuring Emacs to use <a href="https://www.emacswiki.org/emacs/Evil" title="Evil">Evil</a> which made it possible for me to do things like
+save and quite with <code>:wq</code> and made most of the vim operations I was used to
+using like visual region selection work pretty much as expected. I had
+re-factored my Emacs config to try and make it more manageable about a year ago
+to use <a href="https://github.com/jwiegley/use-package" title="use-package">use-package</a> but for some reason Spacemacs escaped me until a couple
+months ago. It wasn't too difficult to switch to Spacemacs I took most of my
+custom config and dropped it into <code>dotspacemacs/user-config</code> in <code>~/.spacemacs</code>.</p>
+
+<p>Since I tend to have an org-mode buffer open all the time, getting org-mode
+configured to my liking was one of the first things I did.</p>
+
+<p>I enabled the org layer.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-elisp" data-lang="elisp"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-elisp" data-lang="elisp"><span class="p">(</span><span class="nb">defun</span> <span class="nv">dotspacemacs/layers</span> <span class="p">()</span>
+  <span class="s">&#34;Configuration Layers declaration.
+</span><span class="s">You should not put any user code in this function besides modifying the variable
+</span><span class="s">values.&#34;</span>
+  <span class="p">(</span><span class="nb">setq-default</span>
+   <span class="nv">dotspacemacs-configuration-layers</span> <span class="o">&#39;</span><span class="p">(</span> <span class="nv">org</span> <span class="p">)))</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>I really like the dark <a href="http://ethanschoonover.com/solarized" title="solarized">solarized</a> theme so I set <code>soliarized-dark</code> to be the
+first theme listed in <code>dotspacemacs-themes</code> in <code>dotspacemacs/init</code>.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-elisp" data-lang="elisp"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-elisp" data-lang="elisp"><span class="p">(</span><span class="nb">defun</span> <span class="nv">dotspacemacs/init</span> <span class="p">()</span>
+  <span class="s">&#34;Initialization function.
+</span><span class="s">This function is called at the very startup of Spacemacs initialization
+</span><span class="s">before layers configuration.
+</span><span class="s">You should not put any user code in there besides modifying the variable
+</span><span class="s">values.&#34;</span>
+  <span class="c1">;; This setq-default sexp is an exhaustive list of all the supported</span>
+  <span class="c1">;; spacemacs settings.</span>
+  <span class="p">(</span><span class="nb">setq-default</span>
+   <span class="c1">;; List of themes, the first of the list is loaded when spacemacs starts.</span>
+   <span class="c1">;; Press &lt;SPC&gt; T n to cycle to the next theme in the list (works great</span>
+   <span class="c1">;; with 2 themes variants, one dark and one light)</span>
+   <span class="nv">dotspacemacs-themes</span> <span class="o">&#39;</span><span class="p">(</span>
+                         <span class="nv">solarized-dark</span>
+                         <span class="nv">spacemacs-dark</span>
+                         <span class="nv">spacemacs-light</span>
+                         <span class="nv">solarized-light</span>
+                         <span class="nv">leuven</span>
+                         <span class="nv">monokai</span>
+                         <span class="nv">zenburn</span><span class="p">)))</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Moving on to the rest of my org-mode configuration, the following blocks all
+reside within <code>dotspacemacs/user-config</code>.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-elisp" data-lang="elisp"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-elisp" data-lang="elisp">  <span class="p">(</span><span class="nb">defun</span> <span class="nv">dotspacemacs/user-config</span> <span class="p">()</span>
+    <span class="s">&#34;Configuration function for user code.
+</span><span class="s">  This function is called at the very end of Spacemacs initialization after
+</span><span class="s">  layers configuration. You are free to put any user code.&#34;</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>In my notes I frequently link to tickets in zendesk, redmine, and jira so I made
+abbreviations for them. When viewing my org notes the links are functional
+hyperlinks that I can click on and importantly they work as expected when you
+export from org mode.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-elisp" data-lang="elisp"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-elisp" data-lang="elisp">    <span class="c1">;; Link abbreviations http://orgmode.org/manual/Link-abbreviations.html#Link-abbreviations</span>
+    <span class="c1">;; This makes it easy to create links in org files to common urls</span>
+    <span class="c1">;; Note: The actual link is not stored in the text, only when rendered</span>
+    <span class="c1">;; Usage: [[zendesk:2753]] or [[redmine:7481][My text]]</span>
+    <span class="p">(</span><span class="nb">setq</span> <span class="nv">org-link-abbrev-alist</span>
+          <span class="o">&#39;</span><span class="p">((</span><span class="s">&#34;zendesk&#34;</span> <span class="o">.</span> <span class="s">&#34;https://cfengine.zendesk.com/agent/tickets/&#34;</span><span class="p">)</span>
+            <span class="p">(</span><span class="s">&#34;redmine&#34;</span> <span class="o">.</span> <span class="s">&#34;https://dev.cfengine.com/issues/&#34;</span><span class="p">)</span>
+            <span class="p">(</span><span class="s">&#34;jira&#34;</span> <span class="o">.</span> <span class="s">&#34;https://tracker.mender.io/browse/&#34;</span><span class="p">)))</span>
+<span class="err">#</span><span class="nv">+BEGIN_SRC</span> <span class="nv">elisp</span>
+
+
+<span class="nv">I</span> <span class="nv">often</span> <span class="nv">link</span> <span class="nv">to</span> <span class="nv">various</span> <span class="nv">screen</span> <span class="nv">shots</span> <span class="nb">or</span> <span class="nv">embed</span> <span class="nv">images</span> <span class="nv">in</span> <span class="nv">my</span> <span class="nv">notes.</span> <span class="nv">This</span> <span class="nv">setting</span>
+<span class="nv">makes</span> <span class="nv">images</span> <span class="nv">render</span> <span class="nv">by</span> <span class="nv">default</span> <span class="nv">directly</span> <span class="nv">within</span> <span class="nv">Emacs</span> <span class="p">(</span><span class="nv">I</span> <span class="nv">think</span> <span class="nv">that</span><span class="ss">&#39;s</span> <span class="nv">pretty</span>
+<span class="nv">neat</span><span class="p">)</span><span class="o">.</span>
+
+<span class="err">#</span><span class="nv">+BEGIN_SRC</span> <span class="nv">elisp</span>
+    <span class="c1">;; Enable automatic inline image rendering</span>
+    <span class="c1">;; =:org-toggle-inline-images=  to disable</span>
+    <span class="c1">; http://orgmode.org/manual/In_002dbuffer-settings.html</span>
+    <span class="p">(</span><span class="nb">setq</span> <span class="nv">org-startup-with-inline-images</span> <span class="no">t</span><span class="p">)</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Here I specify the org files (or directories full of files as in my case) that
+should be used when working with the <a href="http://orgmode.org/manual/Agenda-Views.html" title="agenda">agenda</a>. The agenda is neat, though I admit
+I have not trained myself to live in it yet. It allows you to search and display
+items throughout your org files. You can even interact with things directly from
+agenda views.</p>
+
+<p>For example from anywhere in Spacemacs you can type <code>SPC a o t</code> that's space <code>a=
+for applications, =o</code> for org, and <code>t</code> for todos. This will list various entries
+that begin with TODO (an entry is simply a line starting with one or more <code>*</code>).</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-elisp" data-lang="elisp"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-elisp" data-lang="elisp">    <span class="c1">;; Set the org-agenda files</span>
+    <span class="c1">;; Subdirectories must be explicitly specified.</span>
+    <span class="p">(</span><span class="nb">setq</span> <span class="nv">org-agenda-files</span>
+      <span class="o">&#39;</span><span class="p">(</span><span class="s">&#34;~/org&#34;</span> <span class="s">&#34;~/org/cfengine&#34;</span><span class="p">))</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>I have lots of org files. This just allows me to easily move entries from one
+file to another (re-filing).</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-elisp" data-lang="elisp"><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-elisp" data-lang="elisp">    <span class="c1">;; Set refile locations to whats in org-agenda</span>
+    <span class="p">(</span><span class="nb">setq</span> <span class="nv">org-refile-targets</span> <span class="p">(</span><span class="nb">quote</span> <span class="p">((</span><span class="nv">org-agenda-files</span> <span class="nb">:maxlevel</span> <span class="o">.</span> <span class="mi">5</span><span class="p">))))</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Capturing new TODO items is really quick and unobtrusive with
+capture templates. I have a capture template setup to for my TODOs. From any
+buffer within Spacemacs I can type <code>SPC C c t</code> to capture a new TODO entry. If I
+happen to be editing an org-mode file I can type <code>, c t</code> to start the capture.
+This makes it incredibly easy to capture a TODO from anything I am working on.</p>
+
+<p>I also try to keep track of the time I spend on various things, so you will
+notice that my TODO capture clocks my time while capturing, and when done it
+resumes the clock wherever I was clocking time before I started the TODO
+capture. Org makes it really easy to make clock tables so you can visualize and
+account for your own time. It even has support for effort estimates.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-elisp" data-lang="elisp"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-elisp" data-lang="elisp">    <span class="c1">;; Configure custom capture templates</span>
+    <span class="p">(</span><span class="nb">setq</span> <span class="nv">org-capture-templates</span>
+        <span class="o">&#39;</span><span class="p">(</span>
+          <span class="p">(</span><span class="s">&#34;t&#34;</span> <span class="s">&#34;To-do&#34;</span> <span class="nv">entry</span> <span class="p">(</span><span class="nv">file+headline</span> <span class="s">&#34;~/org/cfengine/cfengine.org&#34;</span> <span class="s">&#34;Tasks&#34;</span><span class="p">)</span>
+           <span class="s">&#34;** TODO %\1\n%i\nCreated From: %a\n&#34;</span> <span class="nb">:clock-in</span> <span class="no">t</span> <span class="nb">:clock-resume</span> <span class="no">t</span> <span class="nb">:prepend</span> <span class="no">t</span><span class="p">)))</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>I picked this up from a co-worker. It automatically indents things in org-mode.
+I think it makes the experience with org-mode feel less like working in a free
+form text editor. Before I enabled this I was always trying to manually keep
+things aligned and it was sub-optimal.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-elisp" data-lang="elisp"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-elisp" data-lang="elisp">    <span class="c1">;; Keep the indentation well structured by. OMG this is a must have. Makes</span>
+    <span class="c1">;; it feel less like editing a big text file and more like a purpose built</span>
+    <span class="c1">;; editor for org mode that forces the indentation.</span>
+    <span class="p">(</span><span class="nb">setq</span> <span class="nv">org-startup-indented</span> <span class="no">t</span><span class="p">)</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Sometimes it's nice to be able to zoom in on some text. This simply maps the
+familiar keys for zooming.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-elisp" data-lang="elisp"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-elisp" data-lang="elisp">    <span class="c1">;; Ctrl+ and Ctrl - for zooming</span>
+      <span class="p">(</span><span class="nf">define-key</span> <span class="nv">global-map</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">&#34;C-+&#34;</span><span class="p">)</span> <span class="ss">&#39;text-scale-increase</span><span class="p">)</span>
+      <span class="p">(</span><span class="nf">define-key</span> <span class="nv">global-map</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">&#34;C--&#34;</span><span class="p">)</span> <span class="ss">&#39;text-scale-decrease</span><span class="p">)</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>I haven't yet mapped all the things I do frequently into shorter key sequences.
+This binding allows me to type <code>SPC o a</code> from anywhere in Spacemacs and get to
+the main agenda dispatch where I search for entries based on tags or content.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-elisp" data-lang="elisp"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-elisp" data-lang="elisp">    <span class="c1">;; Custom mappings go under =o=</span>
+      <span class="p">(</span><span class="nv">spacemacs/set-leader-keys</span>
+       <span class="s">&#34;oa&#34;</span> <span class="ss">&#39;org-agenda</span><span class="p">)</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Moving entries between files can wreck links between entries. So I have a hook
+to create unique ids for each captured entry. This way notes that link to TODOs
+shouldn't break.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-elisp" data-lang="elisp"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-elisp" data-lang="elisp">    <span class="c1">;; Unique ids for each captured entry. This makes it so that interdocument</span>
+    <span class="c1">;; links will not break after re-filing entries into other files.</span>
+    <span class="p">(</span><span class="nv">add-hook</span> <span class="ss">&#39;org-cnapture-prepare-finalize-hook</span> <span class="ss">&#39;org-id-get-create</span><span class="p">)</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>My notes tend to include a lot of source code blocks. Here I allow sh blocks to
+be directly executed by org-bable. That means I can type shell code between
+=#+BEGIN_SRC sh= and <code>#+END_SRC</code> blocks and then press <code>,,</code> to execute it and
+have the result inserted into its own section below the source. This is a really
+nifty feature. It enables "<a href="http://howardism.org/Technical/Emacs/literate-devops.html" title="Literate DevOps">Literate DevOps</a>" as Howard Abrams calls it.
+Seriously, go read and bookmark that page.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-elisp" data-lang="elisp"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-elisp" data-lang="elisp">    <span class="c1">;; Org Bable makes it possible to execute src blocks and drop the output</span>
+    <span class="c1">;; dirctly below the src block. This is very useful for &#34;Literate Devops&#34;</span>
+    <span class="c1">;; http://howardism.org/Technical/Emacs/literate-devops.html</span>
+    <span class="p">(</span><span class="nv">org-babel-do-load-language</span> <span class="ss">&#39;org-babel-load-languages</span> <span class="o">&#39;</span><span class="p">((</span><span class="nv">sh</span> <span class="o">.</span> <span class="no">t</span><span class="p">)))</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>As you can guess I type a lot of cfengine code blocks. This defines an "easy
+template" to inserting new cfengine blocks. I can simply type <code>&lt;cfe</code> followed by
+=TAB=.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-elisp" data-lang="elisp"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-elisp" data-lang="elisp">   <span class="c1">;; CFEngine src block template</span>
+   <span class="c1">;; Simply &lt;cfe and press TAB</span>
+    <span class="p">(</span><span class="nv">eval-after-load</span> <span class="ss">&#39;org</span>
+      <span class="o">&#39;</span><span class="p">(</span><span class="nb">progn</span>
+         <span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">&#39;org-structure-template-alist</span>
+           <span class="o">&#39;</span><span class="p">(</span><span class="s">&#34;cfe&#34;</span> <span class="s">&#34;#+begin_src cfengine3\n?\n#+end_src&#34;</span><span class="p">))</span>
+       <span class="p">))</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Some of my notes have secret stuff, so here I set some things that allow me to
+encrypt entries.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-elisp" data-lang="elisp"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-elisp" data-lang="elisp">  <span class="c1">;; Support Encrypting subtrees This allows me to encrypt subtrees that are</span>
+  <span class="c1">;; tagged with crypt automatically. by default I want to encrypt it to myself.</span>
+  <span class="c1">;; but with properties entries I can encrypt to other people. which is useful in</span>
+  <span class="c1">;; a shared file situation</span>
+  <span class="c1">;; http://yenliangl.blogspot.com/2009/12/encrypt-your-important-data-in-emacs.html</span>
+  <span class="c1">;; http://emacs-fu.blogspot.com/2011/02/keeping-your-secrets-secret.html</span>
+  <span class="c1">;; (require &#39;org-crypt)</span>
+  <span class="p">(</span><span class="nv">org-crypt-use-before-save-magic</span><span class="p">)</span>
+  <span class="p">(</span><span class="nb">setq</span> <span class="nv">org-tags-exclude-from-inheritance</span> <span class="p">(</span><span class="nb">quote</span> <span class="p">(</span><span class="s">&#34;crypt&#34;</span><span class="p">)))</span>
+  <span class="o">&#39;</span><span class="p">(</span><span class="nv">org-crypt-disable-auto-save</span> <span class="p">(</span><span class="nb">quote</span> <span class="nv">encrypt</span><span class="p">))</span>
+
+  <span class="c1">;; GPG key to use for encryption</span>
+  <span class="c1">;; Either the Key ID or set to nil to use symmetric encryption.</span>
+  <span class="p">(</span><span class="nb">setq</span> <span class="nv">org-crypt-key</span> <span class="s">&#34;5D1CCC11&#34;</span><span class="p">)</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>In addition to those customization's I also use <a href="https://github.com/fniessen/org-html-themes#readtheorg" title="readtheorg">readtheorg</a> html theme when
+exporting my notes. To make my note exports beautiful most of my org files have
+the following line at the top.</p>
+
+<pre><code>#+SETUPFILE: ~/src/org-html-themes/setup/theme-readtheorg.setup
+</code></pre>
+
+            </div>
+            
+            <div class="post-comments">
+                
+            </div>
+            
+            <div class="push"></div>
+        </div>
+        <footer class="footer text-center">
+<p>Copyright &copy; 2018 Nick Anderson -
+<span class="credit">
+	Powered by
+	<a target="_blank" href="https://gohugo.io">Hugo</a>
+	and
+	<a target="_blank" href="https://github.com/LordMathis/hugo-theme-nix/">Nix</a> theme.
+</span>
+</p>
+</footer>
+
+    </body>

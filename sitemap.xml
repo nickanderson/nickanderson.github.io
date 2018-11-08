@@ -83,7 +83,7 @@
   </url>
   
   <url>
-    <loc>https://cmdln.org/2018/01/05/no-klf-2018-/</loc>
+    <loc>https://cmdln.org/2018/01/05/no-klf-2018/</loc>
     <lastmod>2018-01-05T13:35:04-06:00</lastmod>
   </url>
   
@@ -170,6 +170,11 @@
   <url>
     <loc>https://cmdln.org/2017/03/01/goodbye-wordpress-go-hugo/</loc>
     <lastmod>2017-03-01T00:00:00-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cmdln.org/2016/04/26/how-i-org-with-spacemacs/</loc>
+    <lastmod>2016-04-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -503,7 +508,7 @@
   </url>
   
   <url>
-    <loc>https://cmdln.org/2010/04/16/software-review--advanced-web-ranking-and-advanced-link-manager/</loc>
+    <loc>https://cmdln.org/2010/04/16/software-review-advanced-web-ranking-and-advanced-link-manager/</loc>
     <lastmod>2010-04-16T19:13:35+00:00</lastmod>
   </url>
   
@@ -1736,6 +1741,12 @@
   <url>
     <loc>https://cmdln.org/tags/dynamic-proxy/</loc>
     <lastmod>2008-06-10T13:50:27+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://cmdln.org/tags/emacs/</loc>
+    <lastmod>2016-04-26T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

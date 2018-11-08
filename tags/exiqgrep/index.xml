@@ -16,8 +16,7 @@
       <pubDate>Fri, 08 Feb 2008 03:22:20 +0000</pubDate>
       
       <guid>https://cmdln.org/2008/02/07/what-to-do-when-your-exim-queue-starts-getting-unruly/</guid>
-      <description>&lt;p&gt;Our exim mail server has been getting a bit flakey in the past several weeks. As far as I could tell it was being caused by junk mail getting caught in the queue. After a bit of research I believe I have found a combination of solutions that seems to do the trick (at least for me)&lt;br /&gt;
-&lt;/p&gt;</description>
+      <description>&lt;p&gt;Our exim mail server has been getting a bit flakey in the past several weeks. As far as I could tell it was being caused by junk mail getting caught in the queue. After a bit of research I believe I have found a combination of solutions that seems to do the trick (at least for me)&lt;/p&gt;</description>
     </item>
     
   </channel>

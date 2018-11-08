@@ -16,9 +16,7 @@
       <pubDate>Sat, 09 Feb 2008 15:13:03 +0000</pubDate>
       
       <guid>https://cmdln.org/2008/02/09/reset-mysql-root-password/</guid>
-      <description>&lt;p&gt;Have you ever forgotten the root password on one of your MySQL servers? No? Well maybe I&amp;#8217;m not as perfect as you. This is a quick h00tow (how to) reset your MySQL root password. It does require root access on your server. If you have forgotten that password wait for another article.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Have you ever forgotten the root password on one of your MySQL servers? No? Well maybe I&amp;#8217;m not as perfect as you. This is a quick h00tow (how to) reset your MySQL root password. It does require root access on your server. If you have forgotten that password wait for another article.&lt;/p&gt;</description>
     </item>
     
   </channel>

@@ -6,7 +6,7 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.49.2" />
+<meta name="generator" content="Hugo 0.51" />
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -68,8 +68,7 @@
             <h1><a href="https://cmdln.org/2008/02/07/what-to-do-when-your-exim-queue-starts-getting-unruly/">What to do when your exim queue starts getting unruly.</a></h1>
             <span class="post-date">Feb 8, 2008 </span>
             <div class="post-content">
-                <p>Our exim mail server has been getting a bit flakey in the past several weeks. As far as I could tell it was being caused by junk mail getting caught in the queue. After a bit of research I believe I have found a combination of solutions that seems to do the trick (at least for me)<br />
-</p>
+                <p>Our exim mail server has been getting a bit flakey in the past several weeks. As far as I could tell it was being caused by junk mail getting caught in the queue. After a bit of research I believe I have found a combination of solutions that seems to do the trick (at least for me)</p>
 
 <p>First of all you can get rid of all the null senders in your queue that are older than 12 hours.<br />
 exiqgrep -io43200 -f &#8216;^&lt;&gt;$&#8217; | xargs exim -Mrm<br />

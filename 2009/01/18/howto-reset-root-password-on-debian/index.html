@@ -6,7 +6,7 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.49.2" />
+<meta name="generator" content="Hugo 0.51" />
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -68,7 +68,9 @@
             <h1><a href="https://cmdln.org/2009/01/18/howto-reset-root-password-on-debian/">Howto reset root password on Debian</a></h1>
             <span class="post-date">Jan 18, 2009 </span>
             <div class="post-content">
-                <p>Ever run into a situation where passing the option single to the kernel wasn&#8217;t enough to get your root password reset? This is not Debian specific but some distros (including Debian) require that you still enter the root password when booting to single user mode. This is just a quick run through of how to reset your root password without a live cd. Reboot your system and at the grub prompt hit e to enter edit mode, then select the kernel line and hit e again. Now append single init=/bin/bash to the line. Hit enter to temporarily save it and hit b to boot. Shortly you will be dropped at a root prompt, now you just need to remount your root file system rw so you can update the passwd.</p>
+                <p>Ever run into a situation where passing the option single to the kernel wasn&#8217;t enough to get your root password reset? This is not Debian specific but some distros (including Debian) require that you still enter the root password when booting to single user mode. This is just a quick run through of how to reset your root password without a live cd.</p>
+
+<p>Reboot your system and at the grub prompt hit e to enter edit mode, then select the kernel line and hit e again. Now append single init=/bin/bash to the line. Hit enter to temporarily save it and hit b to boot. Shortly you will be dropped at a root prompt, now you just need to remount your root file system rw so you can update the passwd.</p>
 
 <pre class="brush: bash; title: ; notranslate" title="">mount -o remount,rw /
 

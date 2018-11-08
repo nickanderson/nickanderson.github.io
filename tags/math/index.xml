@@ -26,9 +26,7 @@ units -t &#39;1Mbps&#39; &#39;GB/month&#39; 328.71798 units -t &#39;1hour&#39; &
       <pubDate>Fri, 08 Feb 2008 03:21:15 +0000</pubDate>
       
       <guid>https://cmdln.org/2008/02/07/use-bc-for-command-line-math/</guid>
-      <description>&lt;p&gt;BC is a great math library. Its extremely flexible and can be easily used in scripts.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;BC is a great math library. Its extremely flexible and can be easily used in scripts.&lt;/p&gt;</description>
     </item>
     
   </channel>

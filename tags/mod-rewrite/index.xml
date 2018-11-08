@@ -16,9 +16,7 @@
       <pubDate>Tue, 10 Jun 2008 13:50:27 +0000</pubDate>
       
       <guid>https://cmdln.org/2008/06/10/dynamic-reverse-proxy-with-apache-mod_rewrite-and-mod_proxy/</guid>
-      <description>&lt;p&gt;Recently I found myself wanting to expose more and more internal web services to the outside. We have an internal mail caching server, ticket system, a handful of development sites, as well as several other internal web services that would be handy to access from remote locations. If you have internal dns, and your dns heirichy is sane you can probably use the same trick I did to allow any internal webservice that has a proper fqdn to work from outside your local LAN. I used Apache2, mod_proxy, and mod_rewrite. Only a few lines need to be altered in the default apache site install.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Recently I found myself wanting to expose more and more internal web services to the outside. We have an internal mail caching server, ticket system, a handful of development sites, as well as several other internal web services that would be handy to access from remote locations. If you have internal dns, and your dns heirichy is sane you can probably use the same trick I did to allow any internal webservice that has a proper fqdn to work from outside your local LAN. I used Apache2, mod_proxy, and mod_rewrite. Only a few lines need to be altered in the default apache site install.&lt;/p&gt;</description>
     </item>
     
   </channel>

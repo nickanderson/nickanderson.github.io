@@ -28,7 +28,7 @@ Instead of blowing away your entire current buffer with history -c you can redir
       <guid>https://cmdln.org/2009/03/13/convert-maildir-to-mbox/</guid>
       <description>&lt;p&gt;Note, there is a short story before the main course.&lt;/p&gt;
 
-&lt;p&gt;I recently had a customer leave. It&amp;#8217;s never good to lose a customer. They left not because of any service issues but because its hard for them to understand that I am not a web designer. I provided hosting service for them, and I tried to make it clear that they should find a web desinger and someone to maintain their site because that is not something I specialize in or have any interest in doing. At any rate this of course leads to them finding a designer who wants to move their site to some other host. I have no problems with that whatever makes the maintainer happy since he is the one who will have to support it.&lt;/p&gt;</description>
+&lt;p&gt;I recently had a customer leave. It&amp;#8217;s never good to lose a customer. They left not because of any service issues but because its hard for them to understand that I am not a web designer. I provided hosting service for them, and I tried to make it clear that they should find a web desinger and someone to maintain their site because that is not something I specialize in or have any interest in doing. At any rate this of course leads to them finding a designer who wants to move their site to some other host. I have no problems with that whatever makes the maintainer happy since he is the one&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -46,8 +46,7 @@ Instead of blowing away your entire current buffer with history -c you can redir
       <pubDate>Sat, 26 Apr 2008 19:41:21 +0000</pubDate>
       
       <guid>https://cmdln.org/2008/04/26/benchmark-hard-drive-performance-in-linux/</guid>
-      <description>Bonnie is a great tool to use to benchmark your file system. Just a quick tip on using bonnie. You need to give bonnie how much ram you have have in your system, and when you run bonnie you should run with a size 2x as big as your ram. So using this command will help you speed up that calculation.
-bonnie++ -r $(free -m | awk &#39;/^Mem/{print $2}&#39;) -s $(echo $(free -m | awk &#39;/^Mem/{print $2}&#39;)*2| bc)  We use subcommands to expand and automattically use the right parameters for bonnie.</description>
+      <description>&lt;p&gt;Bonnie is a great tool to use to benchmark your file system. Just a quick tip on using bonnie.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -74,9 +73,7 @@ bonnie++ -r $(free -m | awk &#39;/^Mem/{print $2}&#39;) -s $(echo $(free -m | aw
       <pubDate>Mon, 25 Feb 2008 03:59:17 +0000</pubDate>
       
       <guid>https://cmdln.org/2008/02/24/spice-up-your-bash-prompt/</guid>
-      <description>&lt;p&gt;I spend a lot of my time sitting in front of terminals if you have not yet guessed. When dealing with different user accounts across different systems and a plethora of terminals open its nice to have a bit of information about who you are, and where you are. I also like to be able to easily differentiate output from different commands. If your interested read on.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;I spend a lot of my time sitting in front of terminals if you have not yet guessed. When dealing with different user accounts across different systems and a plethora of terminals open its nice to have a bit of information about who you are, and where you are. I also like to be able to easily differentiate output from different commands. If your interested read on.&lt;/p&gt;</description>
     </item>
     
   </channel>

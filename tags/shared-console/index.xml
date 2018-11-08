@@ -16,7 +16,7 @@
       <pubDate>Mon, 25 Aug 2008 21:34:33 +0000</pubDate>
       
       <guid>https://cmdln.org/2008/08/25/console-sharing-without-setuid-gnu-screen/</guid>
-      <description>&lt;p&gt;I mentioned in my last post &lt;a href=&#34;http://www.cmdln.org/2008/08/13/shared-console-sessions/&#34;&gt;Shared console sessions&lt;/a&gt; that I would have an update to get near same functionality without setuid of the screen binary. Well here it is. Hopefully you are aware of expect and how it can be used to automate interactive programs like telnet. Expect is has many more uses that people are exploiting. Enter kibitz. &lt;/p&gt;</description>
+      <description>&lt;p&gt;I mentioned in my last post &lt;a href=&#34;http://www.cmdln.org/2008/08/13/shared-console-sessions/&#34;&gt;Shared console sessions&lt;/a&gt; that I would have an update to get near same functionality without setuid of the screen binary. Well here it is. Hopefully you are aware of expect and how it can be used to automate interactive programs like telnet. Expect is has many more uses that people are exploiting. Enter kibitz.&lt;/p&gt;</description>
     </item>
     
     <item>
