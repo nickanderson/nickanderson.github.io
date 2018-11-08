@@ -1,0 +1,271 @@
+#+Title: How I org with spacemacs
+#+AUTHOR: Nick Anderson
+#+DATE: 2016-04-26
+#+TAGS: spacemacs emacs org-mode
+#+DRAFT: false
+
+This weekend Neil Watson [[https://twitter.com/neil_h_watson/status/723927518420570112][asked if I could share how I use org-mode with
+Spacemacs]].
+
+#+BEGIN_QUOTE
+@cmdln_ Care to share with an Emacs illiterate how you got Spacemacs and
+Org-mode to work together? -- @neil_h_watson
+#+END_QUOTE
+
+First of all, I spend most of my time in a terminal, and ~vim~ is ingrained in
+my muscle memory any time I need to edit a file. While Vim is my goto editor I
+consider myself just a novice [[http:www.vim.org][=Vim=]] user. I like Vim because its everywhere and
+I have grown to like modal editing. I am by no means an expert but I do use
+visual block selection, and I like how Neil's great [[https://github.com/neilhwatson/vim_cf3][=vim_cf3=]] plugin improves
+the CFEngine policy editing experience tremendously.
+
+So why are we talking about *Emacs* if Vim is go great? Note, we are talking
+about [[http://spacemacs.org/][Spacemacs]], which is self described as "community-driven Emacs
+distribution" and says "The best editor is neither Emacs nor Vim, it's Emacs
+*and* Vim!".
+
+For me [[http://orgmode.org/][Org-mode]] is a (if not *the*) *killer-feature* in Emacs.
+
+#+BEGIN_QUOTE
+Org mode is for keeping notes, maintaining TODO lists, planning projects and
+authoring documents with a fast and effective plain text system. --
+http://orgmode.org/
+#+END_QUOTE
+
+I have used Org mode off on and on for the past 5 years or so, and mostly on for
+that past 2 years. When I first tried using org-mode I think one of the main
+reasons it didn't stick was because I didn't have familiar key bindings. I
+really struggled to navigate and operate within Emacs.
+
+A couple years ago In order to be able to edit text inside Emacs I began
+configuring Emacs to use [[https://www.emacswiki.org/emacs/Evil][Evil]] which made it possible for me to do things like
+save and quite with =:wq= and made most of the vim operations I was used to
+using like visual region selection work pretty much as expected. I had
+re-factored my Emacs config to try and make it more manageable about a year ago
+to use [[https://github.com/jwiegley/use-package][use-package]] but for some reason Spacemacs escaped me until a couple
+months ago. It wasn't too difficult to switch to Spacemacs I took most of my
+custom config and dropped it into =dotspacemacs/user-config= in =~/.spacemacs=.
+
+Since I tend to have an org-mode buffer open all the time, getting org-mode
+configured to my liking was one of the first things I did.
+
+I enabled the org layer.
+
+#+BEGIN_SRC elisp
+(defun dotspacemacs/layers ()
+  "Configuration Layers declaration.
+You should not put any user code in this function besides modifying the variable
+values."
+  (setq-default
+   dotspacemacs-configuration-layers '( org )))
+#+END_SRC
+
+I really like the dark [[http://ethanschoonover.com/solarized][solarized]] theme so I set =soliarized-dark= to be the
+first theme listed in =dotspacemacs-themes= in =dotspacemacs/init=.
+
+#+BEGIN_SRC elisp
+(defun dotspacemacs/init ()
+  "Initialization function.
+This function is called at the very startup of Spacemacs initialization
+before layers configuration.
+You should not put any user code in there besides modifying the variable
+values."
+  ;; This setq-default sexp is an exhaustive list of all the supported
+  ;; spacemacs settings.
+  (setq-default
+   ;; List of themes, the first of the list is loaded when spacemacs starts.
+   ;; Press <SPC> T n to cycle to the next theme in the list (works great
+   ;; with 2 themes variants, one dark and one light)
+   dotspacemacs-themes '(
+                         solarized-dark
+                         spacemacs-dark
+                         spacemacs-light
+                         solarized-light
+                         leuven
+                         monokai
+                         zenburn)))
+#+END_SRC
+
+Moving on to the rest of my org-mode configuration, the following blocks all
+reside within =dotspacemacs/user-config=.
+
+#+BEGIN_SRC elisp
+  (defun dotspacemacs/user-config ()
+    "Configuration function for user code.
+  This function is called at the very end of Spacemacs initialization after
+  layers configuration. You are free to put any user code."
+#+END_SRC
+
+In my notes I frequently link to tickets in zendesk, redmine, and jira so I made
+abbreviations for them. When viewing my org notes the links are functional
+hyperlinks that I can click on and importantly they work as expected when you
+export from org mode.
+
+#+BEGIN_SRC elisp
+    ;; Link abbreviations http://orgmode.org/manual/Link-abbreviations.html#Link-abbreviations
+    ;; This makes it easy to create links in org files to common urls
+    ;; Note: The actual link is not stored in the text, only when rendered
+    ;; Usage: [[zendesk:2753]] or [[redmine:7481][My text]]
+    (setq org-link-abbrev-alist
+          '(("zendesk" . "https://cfengine.zendesk.com/agent/tickets/")
+            ("redmine" . "https://dev.cfengine.com/issues/")
+            ("jira" . "https://tracker.mender.io/browse/")))
+#+BEGIN_SRC elisp
+
+
+I often link to various screen shots or embed images in my notes. This setting
+makes images render by default directly within Emacs (I think that's pretty
+neat).
+
+#+BEGIN_SRC elisp
+    ;; Enable automatic inline image rendering
+    ;; =:org-toggle-inline-images=  to disable
+    ; http://orgmode.org/manual/In_002dbuffer-settings.html
+    (setq org-startup-with-inline-images t)
+#+END_SRC
+
+Here I specify the org files (or directories full of files as in my case) that
+should be used when working with the [[http://orgmode.org/manual/Agenda-Views.html][agenda]]. The agenda is neat, though I admit
+I have not trained myself to live in it yet. It allows you to search and display
+items throughout your org files. You can even interact with things directly from
+agenda views.
+
+For example from anywhere in Spacemacs you can type =SPC a o t= that's space =a=
+for applications, =o= for org, and =t= for todos. This will list various entries
+that begin with TODO (an entry is simply a line starting with one or more =*=).
+
+#+BEGIN_SRC elisp
+    ;; Set the org-agenda files
+    ;; Subdirectories must be explicitly specified.
+    (setq org-agenda-files
+      '("~/org" "~/org/cfengine"))
+#+END_SRC
+
+I have lots of org files. This just allows me to easily move entries from one
+file to another (re-filing).
+
+#+BEGIN_SRC elisp
+    ;; Set refile locations to whats in org-agenda
+    (setq org-refile-targets (quote ((org-agenda-files :maxlevel . 5))))
+#+END_SRC
+
+Capturing new TODO items is really quick and unobtrusive with
+capture templates. I have a capture template setup to for my TODOs. From any
+buffer within Spacemacs I can type =SPC C c t= to capture a new TODO entry. If I
+happen to be editing an org-mode file I can type =, c t= to start the capture.
+This makes it incredibly easy to capture a TODO from anything I am working on.
+
+I also try to keep track of the time I spend on various things, so you will
+notice that my TODO capture clocks my time while capturing, and when done it
+resumes the clock wherever I was clocking time before I started the TODO
+capture. Org makes it really easy to make clock tables so you can visualize and
+account for your own time. It even has support for effort estimates.
+
+#+BEGIN_SRC elisp
+    ;; Configure custom capture templates
+    (setq org-capture-templates
+        '(
+          ("t" "To-do" entry (file+headline "~/org/cfengine/cfengine.org" "Tasks")
+           "** TODO %\1\n%i\nCreated From: %a\n" :clock-in t :clock-resume t :prepend t)))
+#+END_SRC
+
+I picked this up from a co-worker. It automatically indents things in org-mode.
+I think it makes the experience with org-mode feel less like working in a free
+form text editor. Before I enabled this I was always trying to manually keep
+things aligned and it was sub-optimal.
+
+#+BEGIN_SRC elisp
+    ;; Keep the indentation well structured by. OMG this is a must have. Makes
+    ;; it feel less like editing a big text file and more like a purpose built
+    ;; editor for org mode that forces the indentation.
+    (setq org-startup-indented t)
+#+END_SRC
+
+Sometimes it's nice to be able to zoom in on some text. This simply maps the
+familiar keys for zooming.
+
+#+BEGIN_SRC elisp
+    ;; Ctrl+ and Ctrl - for zooming
+      (define-key global-map (kbd "C-+") 'text-scale-increase)
+      (define-key global-map (kbd "C--") 'text-scale-decrease)
+#+END_SRC
+
+I haven't yet mapped all the things I do frequently into shorter key sequences.
+This binding allows me to type =SPC o a= from anywhere in Spacemacs and get to
+the main agenda dispatch where I search for entries based on tags or content.
+
+#+BEGIN_SRC elisp
+    ;; Custom mappings go under =o=
+      (spacemacs/set-leader-keys
+       "oa" 'org-agenda)
+#+END_SRC
+
+Moving entries between files can wreck links between entries. So I have a hook
+to create unique ids for each captured entry. This way notes that link to TODOs
+shouldn't break.
+
+#+BEGIN_SRC elisp
+    ;; Unique ids for each captured entry. This makes it so that interdocument
+    ;; links will not break after re-filing entries into other files.
+    (add-hook 'org-cnapture-prepare-finalize-hook 'org-id-get-create)
+#+END_SRC
+
+My notes tend to include a lot of source code blocks. Here I allow sh blocks to
+be directly executed by org-bable. That means I can type shell code between
+=#+BEGIN_SRC sh= and =#+END_SRC= blocks and then press =,,= to execute it and
+have the result inserted into its own section below the source. This is a really
+nifty feature. It enables "[[http://howardism.org/Technical/Emacs/literate-devops.html][Literate DevOps]]" as Howard Abrams calls it.
+Seriously, go read and bookmark that page.
+
+#+BEGIN_SRC elisp
+    ;; Org Bable makes it possible to execute src blocks and drop the output
+    ;; dirctly below the src block. This is very useful for "Literate Devops"
+    ;; http://howardism.org/Technical/Emacs/literate-devops.html
+    (org-babel-do-load-language 'org-babel-load-languages '((sh . t)))
+#+END_SRC
+
+As you can guess I type a lot of cfengine code blocks. This defines an "easy
+template" to inserting new cfengine blocks. I can simply type =<cfe= followed by
+=TAB=.
+
+#+BEGIN_SRC elisp
+   ;; CFEngine src block template
+   ;; Simply <cfe and press TAB
+    (eval-after-load 'org
+      '(progn
+         (add-to-list 'org-structure-template-alist
+           '("cfe" "#+begin_src cfengine3\n?\n#+end_src"))
+       ))
+#+END_SRC
+
+Some of my notes have secret stuff, so here I set some things that allow me to
+encrypt entries.
+
+#+BEGIN_SRC elisp
+  ;; Support Encrypting subtrees This allows me to encrypt subtrees that are
+  ;; tagged with crypt automatically. by default I want to encrypt it to myself.
+  ;; but with properties entries I can encrypt to other people. which is useful in
+  ;; a shared file situation
+  ;; http://yenliangl.blogspot.com/2009/12/encrypt-your-important-data-in-emacs.html
+  ;; http://emacs-fu.blogspot.com/2011/02/keeping-your-secrets-secret.html
+  ;; (require 'org-crypt)
+  (org-crypt-use-before-save-magic)
+  (setq org-tags-exclude-from-inheritance (quote ("crypt")))
+  '(org-crypt-disable-auto-save (quote encrypt))
+
+  ;; GPG key to use for encryption
+  ;; Either the Key ID or set to nil to use symmetric encryption.
+  (setq org-crypt-key "5D1CCC11")
+#+END_SRC
+
+
+In addition to those customization's I also use [[https://github.com/fniessen/org-html-themes#readtheorg][readtheorg]] html theme when
+exporting my notes. To make my note exports beautiful most of my org files have
+the following line at the top.
+
+#+BEGIN_EXAMPLE
+#+SETUPFILE: ~/src/org-html-themes/setup/theme-readtheorg.setup
+#+END_EXAMPLE
+
+
+
