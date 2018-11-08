@@ -181,10 +181,10 @@ Name the file whatever you like. It looks for json in a file named the same suff
     
     <item>
       <title>No Klf 2018 :`(</title>
-      <link>https://cmdln.org/2018/01/05/no-klf-2018-/</link>
+      <link>https://cmdln.org/2018/01/05/no-klf-2018/</link>
       <pubDate>Fri, 05 Jan 2018 13:35:04 -0600</pubDate>
       
-      <guid>https://cmdln.org/2018/01/05/no-klf-2018-/</guid>
+      <guid>https://cmdln.org/2018/01/05/no-klf-2018/</guid>
       <description>Anyone interested in organizing Kansas Linux Fest in 2018?
 In 2016 and 2017 KLF was hosted in Wichita KS at Wichita State University. The prior two years organizers are a bit burned out and are taking a break.
    Hi nickanderson, Sadly at the moment there is not a KLF 2018  planned. The few of us who created KLF 2017 are rather burned out  and need a break this year :-(   However, if we can find some new people who are willing to take it  on either in Wichita or somewhere else in Kansas, then we would be  more than happy to assist in the infrastructure side and to  consult as part of the conference .</description>
@@ -358,6 +358,16 @@ I am frequently asked &#34;what happened?&#34;, and I don&#39;t recall any speci
       
       <guid>https://cmdln.org/2017/03/01/goodbye-wordpress-go-hugo/</guid>
       <description>Finally leaving behind the bloated wordpress in favor of hugo which can use org source files!</description>
+    </item>
+    
+    <item>
+      <title>How I org with spacemacs</title>
+      <link>https://cmdln.org/2016/04/26/how-i-org-with-spacemacs/</link>
+      <pubDate>Tue, 26 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://cmdln.org/2016/04/26/how-i-org-with-spacemacs/</guid>
+      <description>This weekend Neil Watson asked if I could share how I use org-mode with Spacemacs.
+  @cmdln_ Care to share with an Emacs illiterate how you got Spacemacs and  Org-mode to work together? -- @neil_h_watson  First of all, I spend most of my time in a terminal, and vim is ingrained in my muscle memory any time I need to edit a file. While Vim is my goto editor I consider myself just a novice Vim user.</description>
     </item>
     
     <item>
@@ -591,9 +601,7 @@ Second major improvement is the direct use of ip route del/add to update current
 
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
 
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1031,10 +1039,10 @@ At any rate, if you want it gone just delete the PREF cookie from google.</descr
     
     <item>
       <title>Software Review – Advanced Web Ranking and Advanced Link Manager</title>
-      <link>https://cmdln.org/2010/04/16/software-review--advanced-web-ranking-and-advanced-link-manager/</link>
+      <link>https://cmdln.org/2010/04/16/software-review-advanced-web-ranking-and-advanced-link-manager/</link>
       <pubDate>Fri, 16 Apr 2010 19:13:35 +0000</pubDate>
       
-      <guid>https://cmdln.org/2010/04/16/software-review--advanced-web-ranking-and-advanced-link-manager/</guid>
+      <guid>https://cmdln.org/2010/04/16/software-review-advanced-web-ranking-and-advanced-link-manager/</guid>
       <description>As anyone in the search industry can tell you, getting website traffic for your primary keywords and phrases in organic search can mean the difference between the success or failure of your website. If you are a site owner, website failure can have a detrimental impact on the profitability of your company. If instead you are an SEO or web consultant, this can make or break your reputation in the industry.</description>
     </item>
     
@@ -1213,7 +1221,7 @@ Backdoor Corporate Sabotage With DNS</description>
       <pubDate>Fri, 29 Jan 2010 17:52:12 +0000</pubDate>
       
       <guid>https://cmdln.org/2010/01/29/home-grown-open-source-vs-appliances/</guid>
-      <description>&lt;p&gt;The last few days I have been having a pretty good debate with a friend about the virtues of open source vs Appliances. At times its gotten pretty heated but its all in good fun. The current debate centers around email infrastructure. There are options on the table to use an appliance, or a 3rd party service to control the spam. Of course I was appalled that SpamAssassin and brethren were not on the table.Don&amp;#8217;t get me wrong, I am a lazy bastard and appliances can be great. But there are budget crunches all over the place and saving money is important. Sure, implementing an open source solution can be costly in man hours. But a licensed product is guaranteed costly over the long term. The debate went into the gutter so far as to say no one uses SpamAssassin. I of course rebutted with the list of&lt;/p&gt;</description>
+      <description>&lt;p&gt;The last few days I have been having a pretty good debate with a friend about the virtues of open source vs Appliances. At times its gotten pretty heated but its all in good fun. The current debate centers around email infrastructure. There are options on the table to use an appliance, or a 3rd party service to control the spam. Of course I was appalled that SpamAssassin and brethren were not on the table.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1258,7 +1266,7 @@ Backdoor Corporate Sabotage With DNS</description>
       <pubDate>Tue, 19 Jan 2010 18:07:28 +0000</pubDate>
       
       <guid>https://cmdln.org/2010/01/19/fix-xencenter-not-displaying-console-or-performance-statistics/</guid>
-      <description>&lt;p&gt;I am sure you are aware of my affinity for the Xen hypervisor. In the last year I have switched over to Citrix Xenserver. With other people managing VMs as well having a nice GUI is helpful. One of my complaints is that the GUI (XenCenter) is a windows only app. C&amp;#8217;mon, Citrix, please release a cross platform management console. I&amp;#8217;ve got to run a windows VM just to use the GUI (granted I don&amp;#8217;t have to use the gui, there is a nice API and console utilities). At any rate today I noticed that I could no longer pull up the console for a windows VM nor could I pull up the performance metrics available in XenCenter. A few searches turned up &lt;a href=&#34;http://kennethhunt.com&#34;&gt;Kenneth Hunts blog&lt;/a&gt; and a post that showed me where to fix it. The windows box running XenCenter has a cache folder located in %AppData%\Citrix\XenCenterMain.exe_Url_xxxxxxxxxx. If you remove the cache you should be able to see the console and performance graphs again. If by chance you remove the entire folder you will need to re-add all dom0s back into XenCenter.&lt;/p&gt;</description>
+      <description>&lt;p&gt;I am sure you are aware of my affinity for the Xen hypervisor. In the last year I have switched over to Citrix Xenserver. With other people managing VMs as well having a nice GUI is helpful. One of my complaints is that the GUI (XenCenter) is a windows only app. C&amp;#8217;mon, Citrix, please release a cross platform management console. I&amp;#8217;ve got to run a windows VM just to use the GUI (granted I don&amp;#8217;t have to use the gui, there is a nice API and console utilities). At any rate today I noticed that I could no longer pull up the console for a windows VM nor could I pull up the performance metrics available in XenCenter. A few searches turned up &lt;a href=&#34;http://kennethhunt.com&#34;&gt;Kenneth Hunts blog&lt;/a&gt; and a post that showed me where to fix it.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1276,9 +1284,7 @@ Backdoor Corporate Sabotage With DNS</description>
       <pubDate>Fri, 08 Jan 2010 14:54:46 +0000</pubDate>
       
       <guid>https://cmdln.org/2010/01/08/get-a-list-of-used-addresses-on-your-network/</guid>
-      <description>&lt;p&gt;This comes up from time to time for me. Either myself or someone else needs to see what address are either in use or not in use (at least as far as ping is concerned). So here are a few oneliners to hopefully make your day brighter.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;This comes up from time to time for me. Either myself or someone else needs to see what address are either in use or not in use (at least as far as ping is concerned). So here are a few oneliners to hopefully make your day brighter.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1634,9 +1640,7 @@ swaks --to nick@tld --from nick@tld *** MX Routing not available: requires Net::
       <guid>https://cmdln.org/2009/03/18/linux-commercials/</guid>
       <description>&lt;p&gt;The linux foundation has begun the judging period of the &amp;#8220;We&amp;#8217;re Linux&amp;#8221; commercial (answers the I&amp;#8217;m a PC commercials).&lt;/p&gt;
 
-&lt;p&gt;Some of my favorites &amp;#8230;&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;Some of my favorites &amp;#8230;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1662,7 +1666,7 @@ swaks --to nick@tld --from nick@tld *** MX Routing not available: requires Net::
       <guid>https://cmdln.org/2009/03/13/convert-maildir-to-mbox/</guid>
       <description>&lt;p&gt;Note, there is a short story before the main course.&lt;/p&gt;
 
-&lt;p&gt;I recently had a customer leave. It&amp;#8217;s never good to lose a customer. They left not because of any service issues but because its hard for them to understand that I am not a web designer. I provided hosting service for them, and I tried to make it clear that they should find a web desinger and someone to maintain their site because that is not something I specialize in or have any interest in doing. At any rate this of course leads to them finding a designer who wants to move their site to some other host. I have no problems with that whatever makes the maintainer happy since he is the one who will have to support it.&lt;/p&gt;</description>
+&lt;p&gt;I recently had a customer leave. It&amp;#8217;s never good to lose a customer. They left not because of any service issues but because its hard for them to understand that I am not a web designer. I provided hosting service for them, and I tried to make it clear that they should find a web desinger and someone to maintain their site because that is not something I specialize in or have any interest in doing. At any rate this of course leads to them finding a designer who wants to move their site to some other host. I have no problems with that whatever makes the maintainer happy since he is the one&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1712,7 +1716,7 @@ Do you keep track of configuration changes? You should. Maybe your using an adva
       <pubDate>Wed, 18 Feb 2009 20:35:10 +0000</pubDate>
       
       <guid>https://cmdln.org/2009/02/18/movin-in-movin-out/</guid>
-      <description>&lt;p&gt;Every time I have a new shell account I end up customizing it. Making alterations to my vimrc, screenrc or whatever. It can be a huge pain when you have lots of slightly varying configs on different machines. I wrote this little script to grab my files and create a self extracting shell script so I can easily setup my environment on multiple machines.The usage is pretty straightforward. Define your remote path, and the filename along with your user that has scp access. Then define the files you want to include. To create the archive just run the moveout script. Once the self extracting script is uploaded you can just download it and execute it.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Every time I have a new shell account I end up customizing it. Making alterations to my vimrc, screenrc or whatever. It can be a huge pain when you have lots of slightly varying configs on different machines. I wrote this little script to grab my files and create a self extracting shell script so I can easily setup my environment on multiple machines.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1730,7 +1734,7 @@ Do you keep track of configuration changes? You should. Maybe your using an adva
       <pubDate>Fri, 30 Jan 2009 03:34:39 +0000</pubDate>
       
       <guid>https://cmdln.org/2009/01/29/baseline-analysis-is-important-cpu-performance-analysis-in-linux-revisited/</guid>
-      <description>&lt;p&gt;Yesterday I wrote about &lt;a href=http://www.cmdln.org/2009/01/28/cpu-performance-analysis-in-linux/&gt;CPU Performance Analysis in Linux&lt;/a&gt;. I explained how to tell if you are experiencing a CPU bottleneck. This is just a quick followup to show the effect of adding more cpu power. &lt;/p&gt;</description>
+      <description>&lt;p&gt;Yesterday I wrote about &lt;a href=http://www.cmdln.org/2009/01/28/cpu-performance-analysis-in-linux/&gt;CPU Performance Analysis in Linux&lt;/a&gt;. I explained how to tell if you are experiencing a CPU bottleneck. This is just a quick followup to show the effect of adding more cpu power.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1739,7 +1743,7 @@ Do you keep track of configuration changes? You should. Maybe your using an adva
       <pubDate>Wed, 28 Jan 2009 06:03:17 +0000</pubDate>
       
       <guid>https://cmdln.org/2009/01/28/cpu-performance-analysis-in-linux/</guid>
-      <description>&lt;p&gt;A while back I wrote a post &lt;a href=http://www.cmdln.org/2008/04/13/analyzing-linux-system-performance-and-finding-bottle-necks/&gt;Analyzing Linux System Performance and Finding Bottlenecks&lt;/a&gt;. I did&amp;#8217;t really give a good explanation of determining if you are CPU bound or not so I am writing this post to clear that up. &lt;/p&gt;</description>
+      <description>&lt;p&gt;A while back I wrote a post &lt;a href=http://www.cmdln.org/2008/04/13/analyzing-linux-system-performance-and-finding-bottle-necks/&gt;Analyzing Linux System Performance and Finding Bottlenecks&lt;/a&gt;. I did&amp;#8217;t really give a good explanation of determining if you are CPU bound or not so I am writing this post to clear that up.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1748,7 +1752,7 @@ Do you keep track of configuration changes? You should. Maybe your using an adva
       <pubDate>Wed, 21 Jan 2009 16:36:19 +0000</pubDate>
       
       <guid>https://cmdln.org/2009/01/21/remote-kernel-logging-with-netconsole-for-fun-and-profit/</guid>
-      <description>&lt;p&gt;Have you ever experienced hard lockups and seen no trace of the cause in your log files? Those situations can be even more of a pain if you do not have physical access to the machine since you will not be able to look for kernel oops on the console. You could buy a serial console or an ip kvm but if you don&amp;#8217;t have the need for remote control, but would really like to be able to debug without being physically present you need to check out netconsole. Netconsole sends printk messages over UDP. &lt;/p&gt;</description>
+      <description>&lt;p&gt;Have you ever experienced hard lockups and seen no trace of the cause in your log files? Those situations can be even more of a pain if you do not have physical access to the machine since you will not be able to look for kernel oops on the console. You could buy a serial console or an ip kvm but if you don&amp;#8217;t have the need for remote control, but would really like to be able to debug without being physically present you need to check out netconsole. Netconsole sends printk messages over UDP.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1757,7 +1761,7 @@ Do you keep track of configuration changes? You should. Maybe your using an adva
       <pubDate>Sun, 18 Jan 2009 21:16:05 +0000</pubDate>
       
       <guid>https://cmdln.org/2009/01/18/howto-reset-root-password-on-debian/</guid>
-      <description>&lt;p&gt;Ever run into a situation where passing the option single to the kernel wasn&amp;#8217;t enough to get your root password reset? This is not Debian specific but some distros (including Debian) require that you still enter the root password when booting to single user mode. This is just a quick run through of how to reset your root password without a live cd. Reboot your system and at the grub prompt hit e to enter edit mode, then select the kernel line and hit e again. Now append single init=/bin/bash to the line. Hit enter to temporarily save it and hit b to boot. Shortly you will be dropped at a root prompt, now you just need to remount your root file system rw so you can update the passwd.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Ever run into a situation where passing the option single to the kernel wasn&amp;#8217;t enough to get your root password reset? This is not Debian specific but some distros (including Debian) require that you still enter the root password when booting to single user mode. This is just a quick run through of how to reset your root password without a live cd.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1794,7 +1798,7 @@ If you find yourself at a shell and need to work with files that have a leading 
       <pubDate>Thu, 18 Dec 2008 15:13:55 +0000</pubDate>
       
       <guid>https://cmdln.org/2008/12/18/simple-network-popup-with-python-and-libnotify/</guid>
-      <description>&lt;p&gt;Im sure everyone is familiar with smb messages especially as everyone was assulted with them about 10 years ago (stupid soho routers and spammers unite!). Anyway, there are clients for linux like Linpopup. Well recently I didn&amp;#8217;t want to use one of those to be able to send messages to my linux workstations so I cobbled together a simple network popup app with python. &lt;/p&gt;</description>
+      <description>&lt;p&gt;Im sure everyone is familiar with smb messages especially as everyone was assulted with them about 10 years ago (stupid soho routers and spammers unite!). Anyway, there are clients for linux like Linpopup. Well recently I didn&amp;#8217;t want to use one of those to be able to send messages to my linux workstations so I cobbled together a simple network popup app with python.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1813,7 +1817,7 @@ Host node* User staffuser IdentityFile ~/.ssh/staff_key  That would cause any ss
       <pubDate>Fri, 12 Dec 2008 19:41:00 +0000</pubDate>
       
       <guid>https://cmdln.org/2008/12/12/maintenance-mode-with-apache-mod_rewrite/</guid>
-      <description>&lt;p&gt;With small websites sometimes you need to put up a maintenance page while you are making some modifications. Typically you should have some staging enviornment but sometimes infrastructure does not allow for this. If you find your self in this situation you might like this tip. &lt;/p&gt;</description>
+      <description>&lt;p&gt;With small websites sometimes you need to put up a maintenance page while you are making some modifications. Typically you should have some staging enviornment but sometimes infrastructure does not allow for this. If you find your self in this situation you might like this tip.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1901,9 +1905,7 @@ units -t &#39;1Mbps&#39; &#39;GB/month&#39; 328.71798 units -t &#39;1hour&#39; &
       <pubDate>Sat, 08 Nov 2008 04:09:19 +0000</pubDate>
       
       <guid>https://cmdln.org/2008/11/07/how-i-tamed-my-mutt/</guid>
-      <description>&lt;p&gt;As you by now well know I try to mostly live at the console (well multiple x consoles). Mutt is my mail client of choice. I&amp;#8217;ve tried Thunderbird, Kmail, Evolution, Sylpheed, and pine. For whatever reason I feel most comfortable with mutt. I also use IMAP for both my personal and work accounts. Mutt was originally designed to deal with local mail and while it does a very good job with IMAP I don&amp;#8217;t like how it handles multiple accounts.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;As you by now well know I try to mostly live at the console (well multiple x consoles). Mutt is my mail client of choice. I&amp;#8217;ve tried Thunderbird, Kmail, Evolution, Sylpheed, and pine. For whatever reason I feel most comfortable with mutt. I also use IMAP for both my personal and work accounts. Mutt was originally designed to deal with local mail and while it does a very good job with IMAP I don&amp;#8217;t like how it handles multiple accounts.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1912,9 +1914,7 @@ units -t &#39;1Mbps&#39; &#39;GB/month&#39; 328.71798 units -t &#39;1hour&#39; &
       <pubDate>Mon, 03 Nov 2008 21:05:18 +0000</pubDate>
       
       <guid>https://cmdln.org/2008/11/03/parable-a-short-allegorical-story-designed-to-illustrate-or-teach-some-truth-religious-principle-or-moral-lesson/</guid>
-      <description>&lt;p&gt;Rarely do I get emails that are worthy of even reading let alone sharing with others. This one however, is pretty funny, and seems to be fairly accurate.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Rarely do I get emails that are worthy of even reading let alone sharing with others. This one however, is pretty funny, and seems to be fairly accurate.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1923,9 +1923,7 @@ units -t &#39;1Mbps&#39; &#39;GB/month&#39; 328.71798 units -t &#39;1hour&#39; &
       <pubDate>Sun, 02 Nov 2008 00:08:08 +0000</pubDate>
       
       <guid>https://cmdln.org/2008/11/01/trust-not-dns-or-how-to-properly-move-a-website/</guid>
-      <description>&lt;p&gt;Recently I had to move a website that gets a fair amount of traffic. I prepared for this by lowering the TTL on the domains associated several weeks in advance to 600 seconds. Originally my plan was to toss up a maintenance page on the old server, change the DNS, and figured that within a few hours max the vast majority of DNS servers would have the update being that TTL had been set at 600 seconds for several weeks and prior to that it was set at 48 hours. This was all planned for the middle of the night on a weekend (very slow traffic time). I was in for a rude awakening the next morning.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Recently I had to move a website that gets a fair amount of traffic. I prepared for this by lowering the TTL on the domains associated several weeks in advance to 600 seconds. Originally my plan was to toss up a maintenance page on the old server, change the DNS, and figured that within a few hours max the vast majority of DNS servers would have the update being that TTL had been set at 600 seconds for several weeks and prior to that it was set at 48 hours. This was all planned for the middle of the night on a weekend (very slow traffic time). I was in for a rude awakening the next morning.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1938,9 +1936,7 @@ units -t &#39;1Mbps&#39; &#39;GB/month&#39; 328.71798 units -t &#39;1hour&#39; &
 
 &lt;p&gt;I would say my largest pet peeve when trying to teach good email habits is the &amp;#8220;It takes to long&amp;#8221; comment. In a business setting this sends shooting pains through my bones. Essentially you are saying the customer is not deserving or worth the time to take a few extra seconds when crafting a response.&lt;/p&gt;
 
-&lt;p&gt;If your interested in what my thoughts on top vs bottom posting read on.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;If your interested in what my thoughts on top vs bottom posting read on.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1959,9 +1955,7 @@ Share and Enjoy:</description>
       <pubDate>Sun, 26 Oct 2008 15:37:48 +0000</pubDate>
       
       <guid>https://cmdln.org/2008/10/26/vim-wordpress-vimpress-happiness/</guid>
-      <description>&lt;p&gt;I recently found a vim plug-in for WordPress. &lt;a href=&#34;http://friggeri.net/blog/2007/07/13/vimpress&#34;&gt;Vimpress&lt;/a&gt; allows your to write and edit your blog posts directly from vim. Sure it has its limitations. There does not appear to be support for future data publishing or drafts. But overall its a much better experience to write in vim than the built in editor.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;I recently found a vim plug-in for WordPress. &lt;a href=&#34;http://friggeri.net/blog/2007/07/13/vimpress&#34;&gt;Vimpress&lt;/a&gt; allows your to write and edit your blog posts directly from vim. Sure it has its limitations. There does not appear to be support for future data publishing or drafts. But overall its a much better experience to write in vim than the built in editor.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -2018,7 +2012,7 @@ ssh gitserver   Make sure setuptools is installed  sudo aptitude install python-
       <pubDate>Mon, 25 Aug 2008 21:34:33 +0000</pubDate>
       
       <guid>https://cmdln.org/2008/08/25/console-sharing-without-setuid-gnu-screen/</guid>
-      <description>&lt;p&gt;I mentioned in my last post &lt;a href=&#34;http://www.cmdln.org/2008/08/13/shared-console-sessions/&#34;&gt;Shared console sessions&lt;/a&gt; that I would have an update to get near same functionality without setuid of the screen binary. Well here it is. Hopefully you are aware of expect and how it can be used to automate interactive programs like telnet. Expect is has many more uses that people are exploiting. Enter kibitz. &lt;/p&gt;</description>
+      <description>&lt;p&gt;I mentioned in my last post &lt;a href=&#34;http://www.cmdln.org/2008/08/13/shared-console-sessions/&#34;&gt;Shared console sessions&lt;/a&gt; that I would have an update to get near same functionality without setuid of the screen binary. Well here it is. Hopefully you are aware of expect and how it can be used to automate interactive programs like telnet. Expect is has many more uses that people are exploiting. Enter kibitz.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -2054,9 +2048,7 @@ ssh gitserver   Make sure setuptools is installed  sudo aptitude install python-
       <pubDate>Tue, 10 Jun 2008 13:50:27 +0000</pubDate>
       
       <guid>https://cmdln.org/2008/06/10/dynamic-reverse-proxy-with-apache-mod_rewrite-and-mod_proxy/</guid>
-      <description>&lt;p&gt;Recently I found myself wanting to expose more and more internal web services to the outside. We have an internal mail caching server, ticket system, a handful of development sites, as well as several other internal web services that would be handy to access from remote locations. If you have internal dns, and your dns heirichy is sane you can probably use the same trick I did to allow any internal webservice that has a proper fqdn to work from outside your local LAN. I used Apache2, mod_proxy, and mod_rewrite. Only a few lines need to be altered in the default apache site install.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Recently I found myself wanting to expose more and more internal web services to the outside. We have an internal mail caching server, ticket system, a handful of development sites, as well as several other internal web services that would be handy to access from remote locations. If you have internal dns, and your dns heirichy is sane you can probably use the same trick I did to allow any internal webservice that has a proper fqdn to work from outside your local LAN. I used Apache2, mod_proxy, and mod_rewrite. Only a few lines need to be altered in the default apache site install.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -2083,7 +2075,7 @@ ssh gitserver   Make sure setuptools is installed  sudo aptitude install python-
       <pubDate>Mon, 28 Apr 2008 23:32:23 +0000</pubDate>
       
       <guid>https://cmdln.org/2008/04/28/review-running-xen-a-hands-on-guide-to-the-art-of-virtualization/</guid>
-      <description>A few days ago I finally got my copy of Running Xen. I was anxious to see how the information would be presented. I can tell you I was not disappointed. I am by no means a Xen master. I have tinkered with it a few times over the past several years but as I am getting ready to use it full time in production I need as much information as I can get.</description>
+      <description>&lt;p&gt;A few days ago I finally got my copy of Running Xen. I was anxious to see how the information would be presented. I can tell you I was not disappointed.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -2092,8 +2084,7 @@ ssh gitserver   Make sure setuptools is installed  sudo aptitude install python-
       <pubDate>Sat, 26 Apr 2008 19:41:21 +0000</pubDate>
       
       <guid>https://cmdln.org/2008/04/26/benchmark-hard-drive-performance-in-linux/</guid>
-      <description>Bonnie is a great tool to use to benchmark your file system. Just a quick tip on using bonnie. You need to give bonnie how much ram you have have in your system, and when you run bonnie you should run with a size 2x as big as your ram. So using this command will help you speed up that calculation.
-bonnie++ -r $(free -m | awk &#39;/^Mem/{print $2}&#39;) -s $(echo $(free -m | awk &#39;/^Mem/{print $2}&#39;)*2| bc)  We use subcommands to expand and automattically use the right parameters for bonnie.</description>
+      <description>&lt;p&gt;Bonnie is a great tool to use to benchmark your file system. Just a quick tip on using bonnie.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -2129,7 +2120,7 @@ bonnie++ -r $(free -m | awk &#39;/^Mem/{print $2}&#39;) -s $(echo $(free -m | aw
       <pubDate>Thu, 17 Apr 2008 23:34:20 +0000</pubDate>
       
       <guid>https://cmdln.org/2008/04/17/fix-virtual-email-address-maildir-permissions-in-cpanel/</guid>
-      <description>&lt;p&gt;Im not a big fan of cpanel but I do manage a server that runs it. Recently some update was pushed down that caused about 50% of my users to not be able to access mail. It all boiled down to a permission issue that the cpanel scripts /scripts/mailperm did not take care of. Their scripts do not correct the permissions of the virtual user maildirs. &lt;/p&gt;</description>
+      <description>&lt;p&gt;Im not a big fan of cpanel but I do manage a server that runs it. Recently some update was pushed down that caused about 50% of my users to not be able to access mail. It all boiled down to a permission issue that the cpanel scripts /scripts/mailperm did not take care of. Their scripts do not correct the permissions of the virtual user maildirs.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -2156,7 +2147,7 @@ bonnie++ -r $(free -m | awk &#39;/^Mem/{print $2}&#39;) -s $(echo $(free -m | aw
       <pubDate>Mon, 14 Apr 2008 23:36:07 +0000</pubDate>
       
       <guid>https://cmdln.org/2008/04/14/sphinx-init-script-for-rhel3/</guid>
-      <description>&lt;p&gt;Had some planned maintenance on one of our servers this weekend. After bringing the server back up I forgot to start searchd for sphinx. Don&amp;#8217;t want that to happen again so I wrote a quick init script for searchd. &lt;/p&gt;</description>
+      <description>&lt;p&gt;Had some planned maintenance on one of our servers this weekend. After bringing the server back up I forgot to start searchd for sphinx. Don&amp;#8217;t want that to happen again so I wrote a quick init script for searchd.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -2246,7 +2237,7 @@ bonnie++ -r $(free -m | awk &#39;/^Mem/{print $2}&#39;) -s $(echo $(free -m | aw
       <pubDate>Sun, 06 Apr 2008 04:38:29 +0000</pubDate>
       
       <guid>https://cmdln.org/2008/04/05/networkmanager-funkyness-knetworkmanager/</guid>
-      <description>Ok so this is the opposite of what I generally use but its been annoying me and I just figured out what was causing it so I figured I would share it. I am currently running Kubuntu Hardy Haron but this problem was present when I installed my first Ubuntu varient Gutsy Gibbon. Knetworkmanager worked when I first installed. Then at some point it just stopped detecting my wireless card. Its not that it could not see my network card because I could go through manual configuration and connect to wireless without issue, I could also just use iwconfig and dhclient at the commandline (which is what I did).</description>
+      <description>&lt;p&gt;Ok so this is the opposite of what I generally use but its been annoying me and I just figured out what was causing it so I figured I would share it. I am currently running Kubuntu Hardy Haron but this problem was present when I installed my first Ubuntu varient Gutsy Gibbon.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -2255,9 +2246,7 @@ bonnie++ -r $(free -m | awk &#39;/^Mem/{print $2}&#39;) -s $(echo $(free -m | aw
       <pubDate>Mon, 25 Feb 2008 05:16:50 +0000</pubDate>
       
       <guid>https://cmdln.org/2008/02/24/spice-up-your-bash-prompt-redux-a-nice-screenrc-redux-with-screencast/</guid>
-      <description>&lt;p&gt;This is more or less going to be an addendum to my last post as well as an update to my previous screenrc post. About 5 minutes after posting I realized that my additions to my prompt broke some new additions to new screenrc settings.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;This is more or less going to be an addendum to my last post as well as an update to my previous screenrc post. About 5 minutes after posting I realized that my additions to my prompt broke some new additions to new screenrc settings.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -2266,9 +2255,7 @@ bonnie++ -r $(free -m | awk &#39;/^Mem/{print $2}&#39;) -s $(echo $(free -m | aw
       <pubDate>Mon, 25 Feb 2008 03:59:17 +0000</pubDate>
       
       <guid>https://cmdln.org/2008/02/24/spice-up-your-bash-prompt/</guid>
-      <description>&lt;p&gt;I spend a lot of my time sitting in front of terminals if you have not yet guessed. When dealing with different user accounts across different systems and a plethora of terminals open its nice to have a bit of information about who you are, and where you are. I also like to be able to easily differentiate output from different commands. If your interested read on.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;I spend a lot of my time sitting in front of terminals if you have not yet guessed. When dealing with different user accounts across different systems and a plethora of terminals open its nice to have a bit of information about who you are, and where you are. I also like to be able to easily differentiate output from different commands. If your interested read on.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -2277,9 +2264,7 @@ bonnie++ -r $(free -m | awk &#39;/^Mem/{print $2}&#39;) -s $(echo $(free -m | aw
       <pubDate>Tue, 12 Feb 2008 18:12:18 +0000</pubDate>
       
       <guid>https://cmdln.org/2008/02/12/get-around-that-pesky-firewall-filtering-with-tsocks/</guid>
-      <description>&lt;p&gt;I generally don&amp;#8217;t have any issues knowing someone might be snooping on a bit of my traffic. However there are times you may want your traffic to be a bit more private. For example if your boss is a raging tyrant and your looking for a new job, and you know the sky would fall if he found out you emailed or happened to be on Career Builder or for that matter had even the slightest idea of abandoning him. Yes I am recounting something from my past, hey at least its distant past :). So if you find yourself in that situation read on for how to use tsocks and ssh as a simple proxy.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;I generally don&amp;#8217;t have any issues knowing someone might be snooping on a bit of my traffic. However there are times you may want your traffic to be a bit more private. For example if your boss is a raging tyrant and your looking for a new job, and you know the sky would fall if he found out you emailed or happened to be on Career Builder or for that matter had even the slightest idea of abandoning him. Yes I am recounting something from my past, hey at least its distant past :). So if you find yourself in that situation read on for how to use tsocks and ssh as a simple proxy.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -2306,9 +2291,7 @@ bonnie++ -r $(free -m | awk &#39;/^Mem/{print $2}&#39;) -s $(echo $(free -m | aw
       <pubDate>Sat, 09 Feb 2008 15:13:03 +0000</pubDate>
       
       <guid>https://cmdln.org/2008/02/09/reset-mysql-root-password/</guid>
-      <description>&lt;p&gt;Have you ever forgotten the root password on one of your MySQL servers? No? Well maybe I&amp;#8217;m not as perfect as you. This is a quick h00tow (how to) reset your MySQL root password. It does require root access on your server. If you have forgotten that password wait for another article.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Have you ever forgotten the root password on one of your MySQL servers? No? Well maybe I&amp;#8217;m not as perfect as you. This is a quick h00tow (how to) reset your MySQL root password. It does require root access on your server. If you have forgotten that password wait for another article.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -2317,9 +2300,7 @@ bonnie++ -r $(free -m | awk &#39;/^Mem/{print $2}&#39;) -s $(echo $(free -m | aw
       <pubDate>Fri, 08 Feb 2008 23:01:17 +0000</pubDate>
       
       <guid>https://cmdln.org/2008/02/08/infrastructure-monitoring-with-zabbix/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;www.zabbix.com&#34;&gt;Zabbix&lt;/a&gt; is an opensource network monitoring application somewhat akin to &lt;a href=&#34;http://www.nagios.org/&#34;&gt;Nagios&lt;/a&gt; and &lt;a href=&#34;http://www.cacti.net&#34;&gt;Cacti&lt;/a&gt;. I have been using Zabbix for about 8 months, and I am pleased with its results.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;a href=&#34;www.zabbix.com&#34;&gt;Zabbix&lt;/a&gt; is an opensource network monitoring application somewhat akin to &lt;a href=&#34;http://www.nagios.org/&#34;&gt;Nagios&lt;/a&gt; and &lt;a href=&#34;http://www.cacti.net&#34;&gt;Cacti&lt;/a&gt;. I have been using Zabbix for about 8 months, and I am pleased with its results.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -2338,9 +2319,7 @@ bonnie++ -r $(free -m | awk &#39;/^Mem/{print $2}&#39;) -s $(echo $(free -m | aw
       <pubDate>Fri, 08 Feb 2008 03:26:56 +0000</pubDate>
       
       <guid>https://cmdln.org/2008/02/07/who-have-you-delivered-mail-to/</guid>
-      <description>&lt;p&gt;The company I work for (&lt;a href=&#34;http://www.absorbentprinting.com&#34; mce_href=&#34;http://www.absorbentprinting.com&#34;&gt;Absorbent Ink&lt;/a&gt;) that makes &lt;a href=&#34;http://www.absorbentprinting.com/corporate-gifts&#34; mce_href=&#34;http://www.absorbentprinting.com/corporate-gifts&#34;&gt;corporate gifts&lt;/a&gt; and other &lt;a href=&#34;http://www.absorbentprinting.com/unique\_products.php&#34; mce\_href=&#34;http://www.absorbentprinting.com/unique_products.php&#34;&gt;personalized products&lt;/a&gt;. has started sending out a &lt;a href=&#34;http://www.absorbentprinting.com/scoop.php&#34; mce_href=&#34;http://www.absorbentprinting.com/scoop.php&#34;&gt;newsletter&lt;/a&gt;. Part of this newsletter process for me has been tuning one of our &lt;a href=&#34;http://www.exim.org&#34; mce_href=&#34;http://www.exim.org&#34;&gt;exim&lt;/a&gt; based mail servers.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;The company I work for (&lt;a href=&#34;http://www.absorbentprinting.com&#34; mce_href=&#34;http://www.absorbentprinting.com&#34;&gt;Absorbent Ink&lt;/a&gt;) that makes &lt;a href=&#34;http://www.absorbentprinting.com/corporate-gifts&#34; mce_href=&#34;http://www.absorbentprinting.com/corporate-gifts&#34;&gt;corporate gifts&lt;/a&gt; and other &lt;a href=&#34;http://www.absorbentprinting.com/unique\_products.php&#34; mce\_href=&#34;http://www.absorbentprinting.com/unique_products.php&#34;&gt;personalized products&lt;/a&gt;. has started sending out a &lt;a href=&#34;http://www.absorbentprinting.com/scoop.php&#34; mce_href=&#34;http://www.absorbentprinting.com/scoop.php&#34;&gt;newsletter&lt;/a&gt;. Part of this newsletter process for me has been tuning one of our &lt;a href=&#34;http://www.exim.org&#34; mce_href=&#34;http://www.exim.org&#34;&gt;exim&lt;/a&gt; based mail servers.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -2349,9 +2328,7 @@ bonnie++ -r $(free -m | awk &#39;/^Mem/{print $2}&#39;) -s $(echo $(free -m | aw
       <pubDate>Fri, 08 Feb 2008 03:25:06 +0000</pubDate>
       
       <guid>https://cmdln.org/2008/02/07/print-to-pdf-with-cups/</guid>
-      <description>&lt;p&gt;Printing is a pain. I hate printers, I hate paper, but I also hate a bagillion book marks to places and things that may change over time. Its handy to have PDFs around as they are easily searchable, they preserve original layout and they print correctly when you want to print something. So for most of my printing I am printing to PDF and if I need a paper copy later I can always print out that PDF. True many applications can print or export to pdf currently. However using cups-pdf allows you to print to pdf anywhere you can print. Its great when combined with RDP too. For example at one point a &lt;a href=&#34;http://jgarrett.org&#34; mce_href=&#34;http://jgarrett.org&#34;&gt;freind&lt;/a&gt; of mine had to use GreatPlains for parts and order accounting in a production enviornment. GreatPlains allows you to print to screen in only some windows. However with cups-pdf he could print any screen he wished to pdf and view it on his screen.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Printing is a pain. I hate printers, I hate paper, but I also hate a bagillion book marks to places and things that may change over time. Its handy to have PDFs around as they are easily searchable, they preserve original layout and they print correctly when you want to print something. So for most of my printing I am printing to PDF and if I need a paper copy later I can always print out that PDF. True many applications can print or export to pdf currently. However using cups-pdf allows you to print to pdf anywhere you can print. Its great when combined with RDP too. For example at one point a &lt;a href=&#34;http://jgarrett.org&#34; mce_href=&#34;http://jgarrett.org&#34;&gt;freind&lt;/a&gt; of mine had to use GreatPlains for parts and order accounting in a production enviornment. GreatPlains allows you to print to screen in only some windows. However with cups-pdf he could print any screen he wished to pdf and view it on his screen.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -2360,9 +2337,7 @@ bonnie++ -r $(free -m | awk &#39;/^Mem/{print $2}&#39;) -s $(echo $(free -m | aw
       <pubDate>Fri, 08 Feb 2008 03:23:26 +0000</pubDate>
       
       <guid>https://cmdln.org/2008/02/07/vmware-disk-recovery-in-linux/</guid>
-      <description>&lt;p&gt;If you have ever had an issue with vmware or if you have been afraid of using vmware for fear that if something goes horribly wrong you may not be able to extract the information from your vmware image then this information should help you.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;If you have ever had an issue with vmware or if you have been afraid of using vmware for fear that if something goes horribly wrong you may not be able to extract the information from your vmware image then this information should help you.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -2371,8 +2346,7 @@ bonnie++ -r $(free -m | awk &#39;/^Mem/{print $2}&#39;) -s $(echo $(free -m | aw
       <pubDate>Fri, 08 Feb 2008 03:22:20 +0000</pubDate>
       
       <guid>https://cmdln.org/2008/02/07/what-to-do-when-your-exim-queue-starts-getting-unruly/</guid>
-      <description>&lt;p&gt;Our exim mail server has been getting a bit flakey in the past several weeks. As far as I could tell it was being caused by junk mail getting caught in the queue. After a bit of research I believe I have found a combination of solutions that seems to do the trick (at least for me)&lt;br /&gt;
-&lt;/p&gt;</description>
+      <description>&lt;p&gt;Our exim mail server has been getting a bit flakey in the past several weeks. As far as I could tell it was being caused by junk mail getting caught in the queue. After a bit of research I believe I have found a combination of solutions that seems to do the trick (at least for me)&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -2381,9 +2355,7 @@ bonnie++ -r $(free -m | awk &#39;/^Mem/{print $2}&#39;) -s $(echo $(free -m | aw
       <pubDate>Fri, 08 Feb 2008 03:21:15 +0000</pubDate>
       
       <guid>https://cmdln.org/2008/02/07/use-bc-for-command-line-math/</guid>
-      <description>&lt;p&gt;BC is a great math library. Its extremely flexible and can be easily used in scripts.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;BC is a great math library. Its extremely flexible and can be easily used in scripts.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -2410,7 +2382,7 @@ bonnie++ -r $(free -m | awk &#39;/^Mem/{print $2}&#39;) -s $(echo $(free -m | aw
       <pubDate>Tue, 31 Jul 2007 17:52:56 +0000</pubDate>
       
       <guid>https://cmdln.org/2007/07/31/fix-terminal-scrolling-when-inside-gnu-screen/</guid>
-      <description>&lt;p&gt;My post on &lt;a href=&#34;http://www.cmdln.org/2007/07/20/automatic-session-logging-and-monitoring-with-gnu-screen-for-the-paranoid/&#34; mce_href=&#34;http://www.cmdln.org/2007/07/20/automatic-session-logging-and-monitoring-with-gnu-screen-for-the-paranoid/&#34;&gt; Automatic session logging and monitoring with GNU screen&lt;/a&gt; seems to have been well received. I have had more hits by far on that post today than ever before. I noticed a nagging issue with screen and a friend of mine Travis Cline pointed me to the fix. &lt;/p&gt;</description>
+      <description>&lt;p&gt;My post on &lt;a href=&#34;http://www.cmdln.org/2007/07/20/automatic-session-logging-and-monitoring-with-gnu-screen-for-the-paranoid/&#34; mce_href=&#34;http://www.cmdln.org/2007/07/20/automatic-session-logging-and-monitoring-with-gnu-screen-for-the-paranoid/&#34;&gt; Automatic session logging and monitoring with GNU screen&lt;/a&gt; seems to have been well received. I have had more hits by far on that post today than ever before. I noticed a nagging issue with screen and a friend of mine Travis Cline pointed me to the fix.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -2419,9 +2391,7 @@ bonnie++ -r $(free -m | awk &#39;/^Mem/{print $2}&#39;) -s $(echo $(free -m | aw
       <pubDate>Fri, 20 Jul 2007 14:07:53 +0000</pubDate>
       
       <guid>https://cmdln.org/2007/07/20/automatic-session-logging-and-monitoring-with-gnu-screen-for-the-paranoid/</guid>
-      <description>&lt;p&gt;Yes its been a while since I have checked in. Sorry I&amp;#8217;ve just been too busy. But I have a great tip this time. Recently I had the need to do automatic session logging. A 3rd party was going to be logging into one of my servers to check out some software glitches that were happening. I love using GNU Screen for many shell tasks so using it for monitoring was logical. Screen is great for several reasons. First you can detach from it so you can leave the office, go home and re-attach and not have lost your place. Second, you can share another screen. It can be shared input or you can just watch what someone else is doing. Finally screen can do native logging. I wanted to automattically launch a screen session when somone logged in so if I happened to be on the server I could monitor them in real time. I also wanted a log of the session in case I wanted to look over it later or if I was not able to monitor the session live.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Yes its been a while since I have checked in. Sorry I&amp;#8217;ve just been too busy. But I have a great tip this time. Recently I had the need to do automatic session logging. A 3rd party was going to be logging into one of my servers to check out some software glitches that were happening. I love using GNU Screen for many shell tasks so using it for monitoring was logical. Screen is great for several reasons. First you can detach from it so you can leave the office, go home and re-attach and not have lost your place. Second, you can share another screen. It can be shared input or you can just watch what someone else is doing. Finally screen can do native logging. I wanted to automattically launch a screen session when somone logged in so if I happened to be on the server I could monitor them in real time. I also wanted a log of the session in case I wanted to look over it later or if I was not able to monitor the session live.&lt;/p&gt;</description>
     </item>
     
     <item>

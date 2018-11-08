@@ -33,9 +33,7 @@ Second major improvement is the direct use of ip route del/add to update current
 
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
 
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -53,7 +51,7 @@ Second major improvement is the direct use of ip route del/add to update current
       <pubDate>Mon, 14 Apr 2008 23:36:07 +0000</pubDate>
       
       <guid>https://cmdln.org/2008/04/14/sphinx-init-script-for-rhel3/</guid>
-      <description>&lt;p&gt;Had some planned maintenance on one of our servers this weekend. After bringing the server back up I forgot to start searchd for sphinx. Don&amp;#8217;t want that to happen again so I wrote a quick init script for searchd. &lt;/p&gt;</description>
+      <description>&lt;p&gt;Had some planned maintenance on one of our servers this weekend. After bringing the server back up I forgot to start searchd for sphinx. Don&amp;#8217;t want that to happen again so I wrote a quick init script for searchd.&lt;/p&gt;</description>
     </item>
     
   </channel>

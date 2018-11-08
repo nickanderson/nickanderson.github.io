@@ -56,9 +56,7 @@ swaks --to nick@tld --from nick@tld *** MX Routing not available: requires Net::
       <pubDate>Mon, 25 Feb 2008 05:16:50 +0000</pubDate>
       
       <guid>https://cmdln.org/2008/02/24/spice-up-your-bash-prompt-redux-a-nice-screenrc-redux-with-screencast/</guid>
-      <description>&lt;p&gt;This is more or less going to be an addendum to my last post as well as an update to my previous screenrc post. About 5 minutes after posting I realized that my additions to my prompt broke some new additions to new screenrc settings.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;This is more or less going to be an addendum to my last post as well as an update to my previous screenrc post. About 5 minutes after posting I realized that my additions to my prompt broke some new additions to new screenrc settings.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -67,9 +65,7 @@ swaks --to nick@tld --from nick@tld *** MX Routing not available: requires Net::
       <pubDate>Mon, 25 Feb 2008 03:59:17 +0000</pubDate>
       
       <guid>https://cmdln.org/2008/02/24/spice-up-your-bash-prompt/</guid>
-      <description>&lt;p&gt;I spend a lot of my time sitting in front of terminals if you have not yet guessed. When dealing with different user accounts across different systems and a plethora of terminals open its nice to have a bit of information about who you are, and where you are. I also like to be able to easily differentiate output from different commands. If your interested read on.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;I spend a lot of my time sitting in front of terminals if you have not yet guessed. When dealing with different user accounts across different systems and a plethora of terminals open its nice to have a bit of information about who you are, and where you are. I also like to be able to easily differentiate output from different commands. If your interested read on.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -78,9 +74,7 @@ swaks --to nick@tld --from nick@tld *** MX Routing not available: requires Net::
       <pubDate>Fri, 08 Feb 2008 03:21:15 +0000</pubDate>
       
       <guid>https://cmdln.org/2008/02/07/use-bc-for-command-line-math/</guid>
-      <description>&lt;p&gt;BC is a great math library. Its extremely flexible and can be easily used in scripts.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;BC is a great math library. Its extremely flexible and can be easily used in scripts.&lt;/p&gt;</description>
     </item>
     
   </channel>

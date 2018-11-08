@@ -16,7 +16,7 @@
       <pubDate>Fri, 12 Dec 2008 19:41:00 +0000</pubDate>
       
       <guid>https://cmdln.org/2008/12/12/maintenance-mode-with-apache-mod_rewrite/</guid>
-      <description>&lt;p&gt;With small websites sometimes you need to put up a maintenance page while you are making some modifications. Typically you should have some staging enviornment but sometimes infrastructure does not allow for this. If you find your self in this situation you might like this tip. &lt;/p&gt;</description>
+      <description>&lt;p&gt;With small websites sometimes you need to put up a maintenance page while you are making some modifications. Typically you should have some staging enviornment but sometimes infrastructure does not allow for this. If you find your self in this situation you might like this tip.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -25,9 +25,7 @@
       <pubDate>Sun, 02 Nov 2008 00:08:08 +0000</pubDate>
       
       <guid>https://cmdln.org/2008/11/01/trust-not-dns-or-how-to-properly-move-a-website/</guid>
-      <description>&lt;p&gt;Recently I had to move a website that gets a fair amount of traffic. I prepared for this by lowering the TTL on the domains associated several weeks in advance to 600 seconds. Originally my plan was to toss up a maintenance page on the old server, change the DNS, and figured that within a few hours max the vast majority of DNS servers would have the update being that TTL had been set at 600 seconds for several weeks and prior to that it was set at 48 hours. This was all planned for the middle of the night on a weekend (very slow traffic time). I was in for a rude awakening the next morning.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Recently I had to move a website that gets a fair amount of traffic. I prepared for this by lowering the TTL on the domains associated several weeks in advance to 600 seconds. Originally my plan was to toss up a maintenance page on the old server, change the DNS, and figured that within a few hours max the vast majority of DNS servers would have the update being that TTL had been set at 600 seconds for several weeks and prior to that it was set at 48 hours. This was all planned for the middle of the night on a weekend (very slow traffic time). I was in for a rude awakening the next morning.&lt;/p&gt;</description>
     </item>
     
   </channel>

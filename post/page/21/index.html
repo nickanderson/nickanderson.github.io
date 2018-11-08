@@ -6,7 +6,7 @@
 
 		<meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.49.2" />
+<meta name="generator" content="Hugo 0.51" />
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -75,6 +75,19 @@
 				<li>
 					<div class="post-list-item">
 						<div class="post-header">
+							<h4 class="post-link"><a href="https://cmdln.org/2008/06/10/dynamic-reverse-proxy-with-apache-mod_rewrite-and-mod_proxy/">Dynamic Reverse Proxy with Apache, mod_rewrite, and mod_proxy</a></h4>
+							<h4 class="post-date">Jun 10, 2008</h4>
+						</div>
+						<div class="post-summary"><p><p>Recently I found myself wanting to expose more and more internal web services to the outside. We have an internal mail caching server, ticket system, a handful of development sites, as well as several other internal web services that would be handy to access from remote locations. If you have internal dns, and your dns heirichy is sane you can probably use the same trick I did to allow any internal webservice that has a proper fqdn to work from outside your local LAN. I used Apache2, mod_proxy, and mod_rewrite. Only a few lines need to be altered in the default apache site install.</p></p></div>
+						<div class="post-list-footer text-center">
+							<a href="https://cmdln.org/2008/06/10/dynamic-reverse-proxy-with-apache-mod_rewrite-and-mod_proxy/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
 							<h4 class="post-link"><a href="https://cmdln.org/2008/05/03/slowdown-vmware-bios-screen/">Slowdown VMware Bios Screen</a></h4>
 							<h4 class="post-date">May 3, 2008</h4>
 						</div>
@@ -104,7 +117,7 @@
 							<h4 class="post-link"><a href="https://cmdln.org/2008/04/28/review-running-xen-a-hands-on-guide-to-the-art-of-virtualization/">Review: Running Xen a Hands-On guide to the Art of Virtualization</a></h4>
 							<h4 class="post-date">Apr 28, 2008</h4>
 						</div>
-						<div class="post-summary"><p>A few days ago I finally got my copy of Running Xen. I was anxious to see how the information would be presented. I can tell you I was not disappointed. I am by no means a Xen master. I have tinkered with it a few times over the past several years but as I am getting ready to use it full time in production I need as much information as I can get.</p></div>
+						<div class="post-summary"><p><p>A few days ago I finally got my copy of Running Xen. I was anxious to see how the information would be presented. I can tell you I was not disappointed.</p></p></div>
 						<div class="post-list-footer text-center">
 							<a href="https://cmdln.org/2008/04/28/review-running-xen-a-hands-on-guide-to-the-art-of-virtualization/">Read More</a>
 						</div>
@@ -117,8 +130,7 @@
 							<h4 class="post-link"><a href="https://cmdln.org/2008/04/26/benchmark-hard-drive-performance-in-linux/">Benchmark hard drive performance in Linux</a></h4>
 							<h4 class="post-date">Apr 26, 2008</h4>
 						</div>
-						<div class="post-summary"><p>Bonnie is a great tool to use to benchmark your file system. Just a quick tip on using bonnie. You need to give bonnie how much ram you have have in your system, and when you run bonnie you should run with a size 2x as big as your ram. So using this command will help you speed up that calculation.
-bonnie++ -r $(free -m | awk '/^Mem/{print $2}') -s $(echo $(free -m | awk '/^Mem/{print $2}')*2| bc)  We use subcommands to expand and automattically use the right parameters for bonnie.</p></div>
+						<div class="post-summary"><p><p>Bonnie is a great tool to use to benchmark your file system. Just a quick tip on using bonnie.</p></p></div>
 						<div class="post-list-footer text-center">
 							<a href="https://cmdln.org/2008/04/26/benchmark-hard-drive-performance-in-linux/">Read More</a>
 						</div>
@@ -170,7 +182,7 @@ bonnie++ -r $(free -m | awk '/^Mem/{print $2}') -s $(echo $(free -m | awk '/^Mem
 							<h4 class="post-link"><a href="https://cmdln.org/2008/04/17/fix-virtual-email-address-maildir-permissions-in-cpanel/">Fix virtual email address maildir permissions in Cpanel</a></h4>
 							<h4 class="post-date">Apr 17, 2008</h4>
 						</div>
-						<div class="post-summary"><p><p>Im not a big fan of cpanel but I do manage a server that runs it. Recently some update was pushed down that caused about 50% of my users to not be able to access mail. It all boiled down to a permission issue that the cpanel scripts /scripts/mailperm did not take care of. Their scripts do not correct the permissions of the virtual user maildirs. </p></p></div>
+						<div class="post-summary"><p><p>Im not a big fan of cpanel but I do manage a server that runs it. Recently some update was pushed down that caused about 50% of my users to not be able to access mail. It all boiled down to a permission issue that the cpanel scripts /scripts/mailperm did not take care of. Their scripts do not correct the permissions of the virtual user maildirs.</p></p></div>
 						<div class="post-list-footer text-center">
 							<a href="https://cmdln.org/2008/04/17/fix-virtual-email-address-maildir-permissions-in-cpanel/">Read More</a>
 						</div>
@@ -186,19 +198,6 @@ bonnie++ -r $(free -m | awk '/^Mem/{print $2}') -s $(echo $(free -m | awk '/^Mem
 						<div class="post-summary"><p>If you use multiwan with pfsense and like me you have issues making outbound ftp connections try disabling the userland FTP-Proxy application on the LAN interface. It may stop you from being able to do active ftp connections but at least you can use ftp. With it enabled I was unable to make any outbound ftp connections active or passive.</p></div>
 						<div class="post-list-footer text-center">
 							<a href="https://cmdln.org/2008/04/16/pfsense-outbound-ftp-with-multiwan/">Read More</a>
-						</div>
-					</div>
-				</li>
-			
-				<li>
-					<div class="post-list-item">
-						<div class="post-header">
-							<h4 class="post-link"><a href="https://cmdln.org/2008/04/15/reset-dell-1700-series-photoconducter/">Reset dell 1700 series photoconducter</a></h4>
-							<h4 class="post-date">Apr 16, 2008</h4>
-						</div>
-						<div class="post-summary"><p><p>Ok I hate printers. If anyone has an aged dell 1700 series printer that prints out pages that say to replace the imaging drum over and over (even after replacing it) then you will like this tip.</p></p></div>
-						<div class="post-list-footer text-center">
-							<a href="https://cmdln.org/2008/04/15/reset-dell-1700-series-photoconducter/">Read More</a>
 						</div>
 					</div>
 				</li>

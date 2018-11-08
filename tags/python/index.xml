@@ -36,7 +36,7 @@ Vim customization for python</description>
       <pubDate>Thu, 18 Dec 2008 15:13:55 +0000</pubDate>
       
       <guid>https://cmdln.org/2008/12/18/simple-network-popup-with-python-and-libnotify/</guid>
-      <description>&lt;p&gt;Im sure everyone is familiar with smb messages especially as everyone was assulted with them about 10 years ago (stupid soho routers and spammers unite!). Anyway, there are clients for linux like Linpopup. Well recently I didn&amp;#8217;t want to use one of those to be able to send messages to my linux workstations so I cobbled together a simple network popup app with python. &lt;/p&gt;</description>
+      <description>&lt;p&gt;Im sure everyone is familiar with smb messages especially as everyone was assulted with them about 10 years ago (stupid soho routers and spammers unite!). Anyway, there are clients for linux like Linpopup. Well recently I didn&amp;#8217;t want to use one of those to be able to send messages to my linux workstations so I cobbled together a simple network popup app with python.&lt;/p&gt;</description>
     </item>
     
     <item>
