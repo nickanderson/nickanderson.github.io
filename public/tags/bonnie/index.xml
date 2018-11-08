@@ -16,8 +16,7 @@
       <pubDate>Sat, 26 Apr 2008 19:41:21 +0000</pubDate>
       
       <guid>https://cmdln.org/2008/04/26/benchmark-hard-drive-performance-in-linux/</guid>
-      <description>Bonnie is a great tool to use to benchmark your file system. Just a quick tip on using bonnie. You need to give bonnie how much ram you have have in your system, and when you run bonnie you should run with a size 2x as big as your ram. So using this command will help you speed up that calculation.
-bonnie++ -r $(free -m | awk &#39;/^Mem/{print $2}&#39;) -s $(echo $(free -m | awk &#39;/^Mem/{print $2}&#39;)*2| bc)  We use subcommands to expand and automattically use the right parameters for bonnie.</description>
+      <description>&lt;p&gt;Bonnie is a great tool to use to benchmark your file system. Just a quick tip on using bonnie.&lt;/p&gt;</description>
     </item>
     
   </channel>

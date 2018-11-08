@@ -16,7 +16,7 @@
       <pubDate>Sun, 06 Apr 2008 04:38:29 +0000</pubDate>
       
       <guid>https://cmdln.org/2008/04/05/networkmanager-funkyness-knetworkmanager/</guid>
-      <description>Ok so this is the opposite of what I generally use but its been annoying me and I just figured out what was causing it so I figured I would share it. I am currently running Kubuntu Hardy Haron but this problem was present when I installed my first Ubuntu varient Gutsy Gibbon. Knetworkmanager worked when I first installed. Then at some point it just stopped detecting my wireless card. Its not that it could not see my network card because I could go through manual configuration and connect to wireless without issue, I could also just use iwconfig and dhclient at the commandline (which is what I did).</description>
+      <description>&lt;p&gt;Ok so this is the opposite of what I generally use but its been annoying me and I just figured out what was causing it so I figured I would share it. I am currently running Kubuntu Hardy Haron but this problem was present when I installed my first Ubuntu varient Gutsy Gibbon.&lt;/p&gt;</description>
     </item>
     
   </channel>

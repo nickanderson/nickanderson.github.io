@@ -6,7 +6,7 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.49.2" />
+<meta name="generator" content="Hugo 0.51" />
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -68,7 +68,9 @@
             <h1><a href="https://cmdln.org/2008/04/26/benchmark-hard-drive-performance-in-linux/">Benchmark hard drive performance in Linux</a></h1>
             <span class="post-date">Apr 26, 2008 </span>
             <div class="post-content">
-                <p>Bonnie is a great tool to use to benchmark your file system. Just a quick tip on using bonnie. You need to give bonnie how much ram you have have in your system, and when you run bonnie you should run with a size 2x as big as your ram. So using this command will help you speed up that calculation.</p>
+                <p>Bonnie is a great tool to use to benchmark your file system. Just a quick tip on using bonnie.</p>
+
+<p>You need to give bonnie how much ram you have have in your system, and when you run bonnie you should run with a size 2x as big as your ram. So using this command will help you speed up that calculation.</p>
 
 <pre class="brush: bash; title: ; notranslate" title="">bonnie++ -r  $(free -m | awk '/^Mem/{print $2}') -s $(echo $(free -m | awk '/^Mem/{print $2}')*2| bc)
 </pre>

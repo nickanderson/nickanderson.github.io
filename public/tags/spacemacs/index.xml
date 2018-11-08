@@ -20,5 +20,15 @@
 When I learned about evil mode I gave it another go. I stumbled my way through just enough to get evil-mode working and Orgmode became much more usable. I still primarily interacted with Orgmode via direct files.</description>
     </item>
     
+    <item>
+      <title>How I org with spacemacs</title>
+      <link>https://cmdln.org/2016/04/26/how-i-org-with-spacemacs/</link>
+      <pubDate>Tue, 26 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://cmdln.org/2016/04/26/how-i-org-with-spacemacs/</guid>
+      <description>This weekend Neil Watson asked if I could share how I use org-mode with Spacemacs.
+  @cmdln_ Care to share with an Emacs illiterate how you got Spacemacs and  Org-mode to work together? -- @neil_h_watson  First of all, I spend most of my time in a terminal, and vim is ingrained in my muscle memory any time I need to edit a file. While Vim is my goto editor I consider myself just a novice Vim user.</description>
+    </item>
+    
   </channel>
 </rss>

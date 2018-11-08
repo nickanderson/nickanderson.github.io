@@ -47,9 +47,7 @@ Vim customization for python</description>
       <pubDate>Sun, 26 Oct 2008 15:37:48 +0000</pubDate>
       
       <guid>https://cmdln.org/2008/10/26/vim-wordpress-vimpress-happiness/</guid>
-      <description>&lt;p&gt;I recently found a vim plug-in for WordPress. &lt;a href=&#34;http://friggeri.net/blog/2007/07/13/vimpress&#34;&gt;Vimpress&lt;/a&gt; allows your to write and edit your blog posts directly from vim. Sure it has its limitations. There does not appear to be support for future data publishing or drafts. But overall its a much better experience to write in vim than the built in editor.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;I recently found a vim plug-in for WordPress. &lt;a href=&#34;http://friggeri.net/blog/2007/07/13/vimpress&#34;&gt;Vimpress&lt;/a&gt; allows your to write and edit your blog posts directly from vim. Sure it has its limitations. There does not appear to be support for future data publishing or drafts. But overall its a much better experience to write in vim than the built in editor.&lt;/p&gt;</description>
     </item>
     
     <item>

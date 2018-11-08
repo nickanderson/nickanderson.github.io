@@ -25,9 +25,7 @@
       <pubDate>Tue, 12 Feb 2008 18:12:18 +0000</pubDate>
       
       <guid>https://cmdln.org/2008/02/12/get-around-that-pesky-firewall-filtering-with-tsocks/</guid>
-      <description>&lt;p&gt;I generally don&amp;#8217;t have any issues knowing someone might be snooping on a bit of my traffic. However there are times you may want your traffic to be a bit more private. For example if your boss is a raging tyrant and your looking for a new job, and you know the sky would fall if he found out you emailed or happened to be on Career Builder or for that matter had even the slightest idea of abandoning him. Yes I am recounting something from my past, hey at least its distant past :). So if you find yourself in that situation read on for how to use tsocks and ssh as a simple proxy.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;I generally don&amp;#8217;t have any issues knowing someone might be snooping on a bit of my traffic. However there are times you may want your traffic to be a bit more private. For example if your boss is a raging tyrant and your looking for a new job, and you know the sky would fall if he found out you emailed or happened to be on Career Builder or for that matter had even the slightest idea of abandoning him. Yes I am recounting something from my past, hey at least its distant past :). So if you find yourself in that situation read on for how to use tsocks and ssh as a simple proxy.&lt;/p&gt;</description>
     </item>
     
   </channel>
