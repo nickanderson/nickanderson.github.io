@@ -509,7 +509,7 @@ prefix to be specified.
 *Output:*
 
 #+RESULTS: My centralized management pattern example
-#+begin_example
+#+BEGIN_EXAMPLE
 R: CFEngine 3.12.0
 R: /tmp/etc/environment
 R: SMS_AWS_REGION=eu-east-2
@@ -538,7 +538,7 @@ R: export SMS_AWS_REGION=eu-east-2
 R: export PAPERTRAIL_PORT=54321
 R: export APPOPTICS_APIKEY=xxxxiiiiiiixxixxix
 R: export PAPERTRAIL_HOST=xxx.trailpaperapp.com
-#+end_example
+#+END_EXAMPLE
 
 Common evolution's on this policy include moving variable definition into it's
 own bundle, separating the data into external files, and since all data is known
