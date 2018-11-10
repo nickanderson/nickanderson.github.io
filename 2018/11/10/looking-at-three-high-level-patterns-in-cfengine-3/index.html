@@ -672,7 +672,7 @@ single time, reducing IO.</p>
 </div>
 <p><strong>Output:</strong></p>
 
-<p>R: CFEngine 3.12.0
+<pre><code>R: CFEngine 3.12.0
 R: /tmp/etc/environment
 R: APPOPTICS_USER=ops@whatever.com
 R: PAPERTRAIL_PORT=12345
@@ -699,7 +699,8 @@ R: export CORE_JDBC_USER=vagrant
 R: export SMS_AWS_REGION=eu-west-1
 R: export PAPERTRAIL_PORT=12345
 R: export APPOPTICS_APIKEY=cafebabedeadbeef
-R: export PAPERTRAIL_HOST=xxx.papertrailapp.com</p>
+R: export PAPERTRAIL_HOST=xxx.papertrailapp.com
+</code></pre>
 
 <h1 id="centralized-management">Centralized management</h1>
 
@@ -1641,7 +1642,13 @@ R: export SMS_ENABLEDexport false
 R: export CORE_JDBC_USERexport vagrant
 R: export CORE_JDBC_URLexport jdbc:postgresql://localhost/xxx
 R: export APPOPTICS_APIKEYexport cafebabedeadbeef</p>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"></code></pre></td></tr></table>
+</div>
+</div>
 <h1 id="cooperative-management">Cooperative management</h1>
 
 <p>Here we allow each service to define the key values they need. They <em>advertise/
@@ -1868,6 +1875,38 @@ settings.</p>
 </div>
 </div>
 <p><strong>Output:</strong></p>
+
+<pre><code>R: /etc/environment
+R: PAPERTRAIL_HOST=xxx.papertrailapp.com
+R: PAPERTRAIL_PORT=11111
+R: APPOPTICS_USER=ops@whatever.com
+R: APPOPTICS_APIKEY=cafebabedeadbeef
+R: CORE_JDBC_URL=jdbc:postgresql://localhost/xxx
+R: CORE_JDBC_USER=vagrant
+R: SMS_ENABLED=false
+R: SMS_AWS_REGION=eu-west-1
+R: /etc/systemd/system.conf
+R: DefaultEnvironment=PAPERTRAIL_HOST=xxx.papertrailapp.com
+R: DefaultEnvironment=PAPERTRAIL_PORT=11111
+R: DefaultEnvironment=APPOPTICS_USER=ops@whatever.com
+R: DefaultEnvironment=APPOPTICS_APIKEY=cafebabedeadbeef
+R: DefaultEnvironment=CORE_JDBC_URL=jdbc:postgresql://localhost/xxx
+R: DefaultEnvironment=CORE_JDBC_USER=vagrant
+R: DefaultEnvironment=SMS_ENABLED=false
+R: DefaultEnvironment=SMS_AWS_REGION=eu-west-1
+R: /etc/profile
+R: export PAPERTRAIL_HOST=xxx.papertrailapp.com
+R: export PAPERTRAIL_PORT=11111
+R: export APPOPTICS_USER=ops@whatever.com
+R: export APPOPTICS_APIKEY=cafebabedeadbeef
+R: export CORE_JDBC_URL=jdbc:postgresql://localhost/xxx
+R: export CORE_JDBC_USER=vagrant
+R: export SMS_ENABLED=false
+R: export SMS_AWS_REGION=eu-west-1
+</code></pre>
+
+<p>As with other patterns moving the data into external files would improve
+delegation of control and tighter integration with other systems.</p>
 
             </div>
             
