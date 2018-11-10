@@ -5,10 +5,20 @@
     <link>https://cmdln.org/tags/cfengine3/</link>
     <description>Recent content in Cfengine3 on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 22 Oct 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 10 Nov 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://cmdln.org/tags/cfengine3/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Looking at three high level patterns in CFEngine 3</title>
+      <link>https://cmdln.org/2018/11/10/looking-at-three-high-level-patterns-in-cfengine-3/</link>
+      <pubDate>Sat, 10 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://cmdln.org/2018/11/10/looking-at-three-high-level-patterns-in-cfengine-3/</guid>
+      <description>How do you deal with config files that need different settings based on various services that are running on a host and cooperate with other teams? It&#39;s a common question, and it came up on in #cfengine on irc.freenode.net recently.
+  The issue is that team A might be working on package A, which requires some  environment variables set. But team B might be working on a totally different  thing -- and want to achieve the same thing.</description>
+    </item>
     
     <item>
       <title>Automatically define classes for every promise with CFEngine 3</title>

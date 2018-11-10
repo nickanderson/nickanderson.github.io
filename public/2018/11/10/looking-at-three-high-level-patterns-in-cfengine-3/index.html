@@ -1,0 +1,1923 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title> Looking at three high level patterns in CFEngine 3 &middot;  </title>
+
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.51" />
+
+
+<script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://cmdln.org/css/nix.css">
+<link rel="stylesheet" href="https://cmdln.org/css/syntax.css">
+
+
+<link href="https://fonts.googleapis.com/css?family=Inconsolata|Open+Sans|Roboto|Montserrat|Concert+One" rel="stylesheet">
+
+
+
+
+    </head>
+
+    <body>
+        <header>
+<nav class="navbar navbar-default navbar-fixed-top navbar-inverse font-header">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" id="green-terminal" href=https://cmdln.org>nick@cmdln.org ~ $</a>
+		</div>
+
+		
+		<div class="collapse navbar-collapse" id="navbar-collapse-1">
+			<ul class="nav navbar-nav navbar-right">
+				<li>
+					<a href="https://cmdln.org">/home/nick</a>
+				</li>
+				
+				
+				<li >
+					<a href="/post/">~/posts</a>
+				</li>
+				
+
+			</ul>
+		</div>
+	</div>
+</nav>
+</header>
+
+        <div class="container wrapper">
+            <h1><a href="https://cmdln.org/2018/11/10/looking-at-three-high-level-patterns-in-cfengine-3/">Looking at three high level patterns in CFEngine 3</a></h1>
+            <span class="post-date">Nov 10, 2018 </span>
+            <div class="post-content">
+                <p>How do you deal with config files that need different settings based on various
+services that are running on a host and cooperate with other teams? It's a
+common question, and it came up on in #cfengine on irc.freenode.net recently.</p>
+
+<blockquote>
+<p>
+  The issue is that team A might be working on package A, which requires some
+</p>
+<p>
+  environment variables set. But team B might be working on a totally different
+</p>
+<p>
+  thing -- and want to achieve the same thing. I hoped to give them a bit of
+</p>
+<p>
+  'library' code to take care of it, rather than have them touch a centralized
+</p>
+<p>
+  environment-setting policy file.
+</p>
+</blockquote>
+
+<p>Here, I look at three high level patterns I have seen.</p>
+
+<dl>
+<dt>Competitive management</dt>
+<dd>Each bundle that needs a specific config manages it</dd>
+     by itself, typically by using a parameterized bundle.
+</dl>
+
+<dl>
+<dt>Centralized management</dt>
+<dd>All config definition is in a single place, anyone</dd>
+     needing something edits the global config.
+</dl>
+
+<dl>
+<dt>Cooperative management</dt>
+<dd>Each bundle that needs a specific config, publishes</dd>
+     the config it needs, and another policy handles consolidating the configs
+     and edits the config as necessary.
+</dl>
+
+<p>Let's take a look at an example of each of these patterns. I will start from an
+example recently shared in #cfengine on irc.freenode.net that manages
+=/etc/environment=, <code>/etc/sysstemd.conf</code>, and <code>/etc/profile</code>. I'll first fix it,
+so that it works, then show several different patterns that ac hive the smae
+goal.</p>
+
+<h1 id="the-original-example">The original example</h1>
+
+<p>From #cfengine on irc.freenode.net:</p>
+
+<blockquote>
+<p>
+  Hello everyone. I am trying to use set_line_based to set some "global"
+</p>
+<p>
+  environment variables. I've created a bundle that I thought might make it
+</p>
+<p>
+  easier. However, using this bundle more than once only applies the first
+</p>
+<p>
+  'invocation'. Code here: https://pastebin.com/mbU1Bb6i
+</p>
+</blockquote>
+
+<p><strong>Example usage:</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">vagrant_vm</span>
+  <span class="p">{</span>
+    <span class="kd">meta</span><span class="p">:</span>
+        <span class="p">&#34;</span><span class="nv">tags</span><span class="p">&#34;</span> <span class="kt">slist</span> <span class="o">=&gt;</span> <span class="p">{</span>
+                          <span class="s">&#34;autorun&#34;</span>
+        <span class="p">};</span>
+    <span class="kd">methods</span><span class="p">:</span>
+        <span class="s">&#34;unifi&#34;</span><span class="p">;</span>
+        <span class="s">&#34;any&#34;</span> <span class="kr">usebundle</span> <span class="o">=&gt;</span> <span class="nf">global_env</span><span class="p">(</span><span class="s">&#34;PAPERTRAIL_HOST&#34;</span><span class="p">,</span>  <span class="s">&#34;xxx.papertrailapp.com&#34;</span><span class="p">);</span>
+        <span class="s">&#34;any&#34;</span> <span class="kr">usebundle</span> <span class="o">=&gt;</span> <span class="nf">global_env</span><span class="p">(</span><span class="s">&#34;PAPERTRAIL_PORT&#34;</span><span class="p">,</span>  <span class="s">&#34;12345&#34;</span><span class="p">);</span>
+        <span class="s">&#34;any&#34;</span> <span class="kr">usebundle</span> <span class="o">=&gt;</span> <span class="nf">global_env</span><span class="p">(</span><span class="s">&#34;APPOPTICS_USER&#34;</span><span class="p">,</span>   <span class="s">&#34;ops@whatever.com&#34;</span><span class="p">);</span>
+        <span class="s">&#34;any&#34;</span> <span class="kr">usebundle</span> <span class="o">=&gt;</span> <span class="nf">global_env</span><span class="p">(</span><span class="s">&#34;APPOPTICS_APIKEY&#34;</span><span class="p">,</span> <span class="s">&#34;cafebabedeadbeef&#34;</span><span class="p">);</span>
+        <span class="s">&#34;any&#34;</span> <span class="kr">usebundle</span> <span class="o">=&gt;</span> <span class="nf">global_env</span><span class="p">(</span><span class="s">&#34;CORE_JDBC_URL&#34;</span><span class="p">,</span>    <span class="s">&#34;jdbc:postgresql://localhost/xxx&#34;</span><span class="p">);</span>
+        <span class="s">&#34;any&#34;</span> <span class="kr">usebundle</span> <span class="o">=&gt;</span> <span class="nf">global_env</span><span class="p">(</span><span class="s">&#34;CORE_JDBC_USER&#34;</span><span class="p">,</span>   <span class="s">&#34;vagrant&#34;</span><span class="p">);</span>
+        <span class="s">&#34;any&#34;</span> <span class="kr">usebundle</span> <span class="o">=&gt;</span> <span class="nf">global_env</span><span class="p">(</span><span class="s">&#34;SMS_ENABLED&#34;</span><span class="p">,</span>      <span class="s">&#34;false&#34;</span><span class="p">);</span>
+        <span class="s">&#34;any&#34;</span> <span class="kr">usebundle</span> <span class="o">=&gt;</span> <span class="nf">global_env</span><span class="p">(</span><span class="s">&#34;SMS_AWS_REGION&#34;</span><span class="p">,</span>   <span class="s">&#34;eu-west-1&#34;</span><span class="p">);</span>
+  <span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<p><strong>Implementation:</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">global_env</span><span class="p">(</span><span class="nv">name</span><span class="p">,</span> <span class="nv">value</span><span class="p">)</span>
+  <span class="p">{</span>
+    <span class="kd">vars</span><span class="p">:</span>
+        <span class="p">&#34;</span><span class="nv">etcenv[$(name)]</span><span class="p">&#34;</span> <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;</span><span class="si">$(value)</span><span class="s">&#34;</span><span class="p">;</span>
+        <span class="p">&#34;</span><span class="nv">systemconf[DefaultEnvironment=$(name)]</span><span class="p">&#34;</span> <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;</span><span class="si">$(value)</span><span class="s">&#34;</span><span class="p">;</span>
+        <span class="p">&#34;</span><span class="nv">etcprofile[export $(name)]</span><span class="p">&#34;</span> <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;</span><span class="si">$(value)</span><span class="s">&#34;</span><span class="p">;</span>
+
+    <span class="kd">files</span><span class="p">:</span>
+        <span class="s">&#34;/etc/environment&#34;</span>
+          <span class="kr">edit_line</span> <span class="o">=&gt;</span> <span class="nf">set_line_based</span><span class="p">(</span><span class="s">&#34;global_env.etcenv&#34;</span><span class="p">,</span> <span class="s">&#34;=&#34;</span><span class="p">,</span> <span class="s">&#34;</span><span class="se">\s</span><span class="s">*=</span><span class="se">\s</span><span class="s">*&#34;</span><span class="p">,</span> <span class="s">&#34;.*&#34;</span><span class="p">,</span> <span class="s">&#34;</span><span class="se">\s</span><span class="s">*#</span><span class="se">\s</span><span class="s">*&#34;</span><span class="p">);</span>
+        <span class="s">&#34;/etc/systemd/system.conf&#34;</span>
+          <span class="kr">edit_line</span> <span class="o">=&gt;</span> <span class="nf">set_line_based</span><span class="p">(</span><span class="s">&#34;global_env.systemconf&#34;</span><span class="p">,</span> <span class="s">&#34;=&#34;</span><span class="p">,</span> <span class="s">&#34;</span><span class="se">\s</span><span class="s">*=</span><span class="se">\s</span><span class="s">*&#34;</span><span class="p">,</span> <span class="s">&#34;.*&#34;</span><span class="p">,</span> <span class="s">&#34;</span><span class="se">\s</span><span class="s">*#</span><span class="se">\s</span><span class="s">*&#34;</span><span class="p">),</span>
+          <span class="kr">classes</span>   <span class="o">=&gt;</span> <span class="nf">if_repaired</span><span class="p">(</span><span class="s">&#34;system_conf_changed&#34;</span><span class="p">);</span>
+        <span class="s">&#34;/etc/profile&#34;</span>
+          <span class="kr">edit_line</span> <span class="o">=&gt;</span> <span class="nf">set_line_based</span><span class="p">(</span><span class="s">&#34;global_env.etcprofile&#34;</span><span class="p">,</span> <span class="s">&#34;=&#34;</span><span class="p">,</span> <span class="s">&#34;</span><span class="se">\s</span><span class="s">*=</span><span class="se">\s</span><span class="s">*&#34;</span><span class="p">,</span> <span class="s">&#34;.*&#34;</span><span class="p">,</span> <span class="s">&#34;</span><span class="se">\s</span><span class="s">*#</span><span class="se">\s</span><span class="s">*&#34;</span><span class="p">);</span>
+
+    <span class="kd">commands</span><span class="p">:</span>
+      <span class="nc">system_conf_changed</span><span class="p">::</span>
+        <span class="s">&#34;/sbin/systemctl daemon-reload&#34;</span>
+          <span class="kr">contain</span> <span class="o">=&gt;</span> <span class="nf">exec_owner</span><span class="p">(</span><span class="s">&#34;root&#34;</span><span class="p">);</span>
+  <span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>The reason that only the first actuation of <code>global_env</code> alters the file is
+because the promise does not differ. Once a promise has been kept or repaired,
+it is not actuated again within the same agent run. The promise can be made
+unique by including the parameters which are different between actuation's in
+the promise. Here we add a handle using both parameters, so that the promise is
+unique across actuation's of the bundle for different values of <code>name</code> and
+=value=.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="s">&#34;/etc/environment&#34;</span>
+    <span class="kr">edit_line</span> <span class="o">=&gt;</span> <span class="nf">set_line_based</span><span class="p">(</span><span class="s">&#34;global_env.etcenv&#34;</span><span class="p">,</span> <span class="s">&#34;=&#34;</span><span class="p">,</span> <span class="s">&#34;</span><span class="se">\s</span><span class="s">*=</span><span class="se">\s</span><span class="s">*&#34;</span><span class="p">,</span> <span class="s">&#34;.*&#34;</span><span class="p">,</span> <span class="s">&#34;</span><span class="se">\s</span><span class="s">*#</span><span class="se">\s</span><span class="s">*&#34;</span><span class="p">),</span>
+    <span class="kr">handle</span> <span class="o">=&gt;</span> <span class="s">&#34;etc_environment_</span><span class="si">$(name)</span><span class="s">_</span><span class="si">$(value)</span><span class="s">&#34;</span><span class="p">;</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>I will combine them together into the same policy file and make some minor
+changes.</p>
+
+<ul>
+<li>I added handles using the parameters to make sure that the promises are unique</li>
+  across executions with different parameter values. For more on this, see the
+  <a href="https://docs.cfengine.com/docs/3.12/reference-language-concepts-bundles.html" title="language concepts for bundles">language concepts for bundles</a>, it discusses how bundles are not functions.
+</ul>
+
+<ul>
+<li>I added <code>bundle agent __main__</code> so that the <code>vagrant_vm</code> bundle will be</li>
+  actuated when this policy file is run directly.
+</ul>
+
+<ul>
+<li>I removed the <code>unifi</code> methods promise because it was not provided in the</li>
+  original example.
+</ul>
+
+<ul>
+<li>I added reports that show the complete content of the files for easy</li>
+  demonstration.
+</ul>
+
+<ul>
+<li>I include the stdlib for my executions, you don't see it, but know that it's</li>
+  in use.
+</ul>
+
+<ul>
+<li>I guard the <code>systemd daemon-reload</code> with a check that the executing user is</li>
+  root because I prototype policy as my own user, inside org-mode using
+  <a href="https://github.com/nickanderson/ob-cfengine3" title="ob-cfengine3">ob-cfengine3</a> (shameless plug).
+</ul>
+
+<ul>
+<li>I add an init bundle to reset as if running from a clean state with no</li>
+  pre-existing configuration.
+</ul>
+
+<ul>
+<li>I added body contain <code>exec_owner()</code> because it isn't in the stdlib.</li>
+</ul>
+
+<ul>
+<li>I added <code>create =&gt; &quot;true&quot;</code> to the files promises.</li>
+</ul>
+
+<ul>
+<li>I prefixed the files promises with <code>/tmp</code>.</li>
+</ul>
+
+<h1 id="competitive-management">Competitive management</h1>
+
+<p>This is a common pattern. I think of this pattern as competitive because each
+service manages what it needs, multiple services may compete for control over
+the same resources like configuration files. Each service only worries about
+itself, this pattern allows for extra settings to exist in the configuration
+files which is beneficial in situations where control must be shared between
+multiple agents. This pattern results in files being edited multiple times
+within a single agent run which may be useful in ordering, but results in some
+overhead. Additionally, depending how the service restart on config change is
+managed, may lead to the same service re-starting multiple times in the same
+agent run.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">global_env</span><span class="p">(</span><span class="nv">name</span><span class="p">,</span> <span class="nv">value</span><span class="p">)</span>
+  <span class="p">{</span>
+    <span class="kd">vars</span><span class="p">:</span>
+        <span class="p">&#34;</span><span class="nv">etcenv[$(name)]</span><span class="p">&#34;</span> <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;</span><span class="si">$(value)</span><span class="s">&#34;</span><span class="p">;</span>
+        <span class="p">&#34;</span><span class="nv">systemconf[DefaultEnvironment=$(name)]</span><span class="p">&#34;</span> <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;</span><span class="si">$(value)</span><span class="s">&#34;</span><span class="p">;</span>
+        <span class="p">&#34;</span><span class="nv">etcprofile[export $(name)]</span><span class="p">&#34;</span> <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;</span><span class="si">$(value)</span><span class="s">&#34;</span><span class="p">;</span>
+
+    <span class="kd">files</span><span class="p">:</span>
+
+        <span class="s">&#34;/tmp/etc/environment&#34;</span>
+          <span class="kr">edit_line</span> <span class="o">=&gt;</span> <span class="nf">set_line_based</span><span class="p">(</span><span class="s">&#34;global_env.etcenv&#34;</span><span class="p">,</span> <span class="s">&#34;=&#34;</span><span class="p">,</span> <span class="s">&#34;</span><span class="se">\s</span><span class="s">*=</span><span class="se">\s</span><span class="s">*&#34;</span><span class="p">,</span> <span class="s">&#34;.*&#34;</span><span class="p">,</span> <span class="s">&#34;</span><span class="se">\s</span><span class="s">*#</span><span class="se">\s</span><span class="s">*&#34;</span><span class="p">),</span>
+          <span class="kr">create</span> <span class="o">=&gt;</span> <span class="s">&#34;true&#34;</span><span class="p">,</span>
+          <span class="kr">handle</span> <span class="o">=&gt;</span> <span class="s">&#34;_etc_environment_</span><span class="si">$(name)</span><span class="s">_</span><span class="si">$(value)</span><span class="s">&#34;</span><span class="p">;</span>
+
+        <span class="s">&#34;/tmp/etc/systemd/system.conf&#34;</span>
+          <span class="kr">edit_line</span> <span class="o">=&gt;</span> <span class="nf">set_line_based</span><span class="p">(</span><span class="s">&#34;global_env.systemconf&#34;</span><span class="p">,</span> <span class="s">&#34;=&#34;</span><span class="p">,</span> <span class="s">&#34;</span><span class="se">\s</span><span class="s">*=</span><span class="se">\s</span><span class="s">*&#34;</span><span class="p">,</span> <span class="s">&#34;.*&#34;</span><span class="p">,</span> <span class="s">&#34;</span><span class="se">\s</span><span class="s">*#</span><span class="se">\s</span><span class="s">*&#34;</span><span class="p">),</span>
+          <span class="kr">classes</span>   <span class="o">=&gt;</span> <span class="nf">if_repaired</span><span class="p">(</span><span class="s">&#34;system_conf_changed&#34;</span><span class="p">),</span>
+          <span class="kr">create</span> <span class="o">=&gt;</span> <span class="s">&#34;true&#34;</span><span class="p">,</span>
+          <span class="kr">handle</span> <span class="o">=&gt;</span> <span class="s">&#34;_etc_systemd_system_conf_</span><span class="si">$(name)</span><span class="s">_</span><span class="si">$(value)</span><span class="s">&#34;</span><span class="p">;</span>
+
+        <span class="s">&#34;/tmp/etc/profile&#34;</span>
+          <span class="kr">edit_line</span> <span class="o">=&gt;</span> <span class="nf">set_line_based</span><span class="p">(</span><span class="s">&#34;global_env.etcprofile&#34;</span><span class="p">,</span> <span class="s">&#34;=&#34;</span><span class="p">,</span> <span class="s">&#34;</span><span class="se">\s</span><span class="s">*=</span><span class="se">\s</span><span class="s">*&#34;</span><span class="p">,</span> <span class="s">&#34;.*&#34;</span><span class="p">,</span> <span class="s">&#34;</span><span class="se">\s</span><span class="s">*#</span><span class="se">\s</span><span class="s">*&#34;</span><span class="p">),</span>
+          <span class="kr">create</span> <span class="o">=&gt;</span> <span class="s">&#34;true&#34;</span><span class="p">,</span>
+          <span class="kr">handle</span> <span class="o">=&gt;</span> <span class="s">&#34;_etc_profile_</span><span class="si">$(name)</span><span class="s">_</span><span class="si">$(value)</span><span class="s">&#34;</span><span class="p">;</span>
+
+    <span class="kd">commands</span><span class="p">:</span>
+      <span class="nc">system_conf_changed</span><span class="p">::</span>
+        <span class="s">&#34;/sbin/systemctl daemon-reload&#34;</span>
+          <span class="kr">contain</span> <span class="o">=&gt;</span> <span class="nf">exec_owner</span><span class="p">(</span><span class="s">&#34;root&#34;</span><span class="p">),</span>
+          <span class="kr">if</span> <span class="o">=&gt;</span> <span class="nf">strcmp</span><span class="p">(</span> <span class="s">&#34;</span><span class="si">$(sys.user_data[username])</span><span class="s">&#34;</span><span class="p">,</span> <span class="s">&#34;root&#34;</span> <span class="p">),</span>
+          <span class="kr">handle</span> <span class="o">=&gt;</span> <span class="s">&#34;_sbin_systemctl_daemon_reload_</span><span class="si">$(name)</span><span class="s">_</span><span class="si">$(value)</span><span class="s">&#34;</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">body</span> <span class="k">contain</span> <span class="nf">exec_owner</span><span class="p">(</span><span class="nv">user</span><span class="p">)</span>
+  <span class="p">{</span>
+          <span class="kr">exec_owner</span> <span class="o">=&gt;</span> <span class="s">&#34;</span><span class="si">$(user)</span><span class="s">&#34;</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">vagrant_vm</span>
+  <span class="p">{</span>
+    <span class="kd">meta</span><span class="p">:</span>
+        <span class="p">&#34;</span><span class="nv">tags</span><span class="p">&#34;</span> <span class="kt">slist</span> <span class="o">=&gt;</span> <span class="p">{</span>
+                          <span class="s">&#34;autorun&#34;</span>
+        <span class="p">};</span>
+    <span class="kd">methods</span><span class="p">:</span>
+        <span class="s">&#34;any&#34;</span> <span class="kr">usebundle</span> <span class="o">=&gt;</span> <span class="nf">global_env</span><span class="p">(</span><span class="s">&#34;PAPERTRAIL_HOST&#34;</span><span class="p">,</span>  <span class="s">&#34;xxx.papertrailapp.com&#34;</span><span class="p">);</span>
+        <span class="s">&#34;any&#34;</span> <span class="kr">usebundle</span> <span class="o">=&gt;</span> <span class="nf">global_env</span><span class="p">(</span><span class="s">&#34;PAPERTRAIL_PORT&#34;</span><span class="p">,</span>  <span class="s">&#34;12345&#34;</span><span class="p">);</span>
+        <span class="s">&#34;any&#34;</span> <span class="kr">usebundle</span> <span class="o">=&gt;</span> <span class="nf">global_env</span><span class="p">(</span><span class="s">&#34;APPOPTICS_USER&#34;</span><span class="p">,</span>   <span class="s">&#34;ops@whatever.com&#34;</span><span class="p">);</span>
+        <span class="s">&#34;any&#34;</span> <span class="kr">usebundle</span> <span class="o">=&gt;</span> <span class="nf">global_env</span><span class="p">(</span><span class="s">&#34;APPOPTICS_APIKEY&#34;</span><span class="p">,</span> <span class="s">&#34;cafebabedeadbeef&#34;</span><span class="p">);</span>
+        <span class="s">&#34;any&#34;</span> <span class="kr">usebundle</span> <span class="o">=&gt;</span> <span class="nf">global_env</span><span class="p">(</span><span class="s">&#34;CORE_JDBC_URL&#34;</span><span class="p">,</span>    <span class="s">&#34;jdbc:postgresql://localhost/xxx&#34;</span><span class="p">);</span>
+        <span class="s">&#34;any&#34;</span> <span class="kr">usebundle</span> <span class="o">=&gt;</span> <span class="nf">global_env</span><span class="p">(</span><span class="s">&#34;CORE_JDBC_USER&#34;</span><span class="p">,</span>   <span class="s">&#34;vagrant&#34;</span><span class="p">);</span>
+        <span class="s">&#34;any&#34;</span> <span class="kr">usebundle</span> <span class="o">=&gt;</span> <span class="nf">global_env</span><span class="p">(</span><span class="s">&#34;SMS_ENABLED&#34;</span><span class="p">,</span>      <span class="s">&#34;false&#34;</span><span class="p">);</span>
+        <span class="s">&#34;any&#34;</span> <span class="kr">usebundle</span> <span class="o">=&gt;</span> <span class="nf">global_env</span><span class="p">(</span><span class="s">&#34;SMS_AWS_REGION&#34;</span><span class="p">,</span>   <span class="s">&#34;eu-west-1&#34;</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">init</span> 
+  <span class="p">{</span>
+    <span class="kd">files</span><span class="p">:</span>
+        <span class="s">&#34;/tmp/etc/environment&#34;</span> <span class="kr">delete</span> <span class="o">=&gt;</span> <span class="nf">tidy</span><span class="p">;</span>
+        <span class="s">&#34;/tmp/etc/systemd/system.conf&#34;</span> <span class="kr">delete</span> <span class="o">=&gt;</span> <span class="nf">tidy</span><span class="p">;</span>
+        <span class="s">&#34;/tmp/etc/profile&#34;</span> <span class="kr">delete</span> <span class="o">=&gt;</span> <span class="nf">tidy</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">__main__</span>
+  <span class="p">{</span>
+    <span class="kd">methods</span><span class="p">:</span>
+        <span class="s">&#34;init&#34;</span><span class="p">;</span>
+        <span class="s">&#34;vagrant_vm&#34;</span><span class="p">;</span>
+
+    <span class="kd">reports</span><span class="p">:</span>
+        <span class="s">&#34;CFEngine </span><span class="si">$(sys.cf_version)</span><span class="s">&#34;</span><span class="p">;</span>
+        <span class="s">&#34;/tmp/etc/environment&#34;</span>         <span class="kr">printfile</span> <span class="o">=&gt;</span> <span class="nf">cat</span><span class="p">(</span> <span class="s">&#34;</span><span class="si">$(this.promiser)</span><span class="s">&#34;</span> <span class="p">);</span>
+        <span class="s">&#34;/tmp/etc/systemd/system.conf&#34;</span> <span class="kr">printfile</span> <span class="o">=&gt;</span> <span class="nf">cat</span><span class="p">(</span> <span class="s">&#34;</span><span class="si">$(this.promiser)</span><span class="s">&#34;</span> <span class="p">);</span>
+        <span class="s">&#34;/tmp/etc/profile&#34;</span>             <span class="kr">printfile</span> <span class="o">=&gt;</span> <span class="nf">cat</span><span class="p">(</span> <span class="s">&#34;</span><span class="si">$(this.promiser)</span><span class="s">&#34;</span> <span class="p">);</span>
+  <span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<p><strong>Output:</strong></p>
+
+<p>R: CFEngine 3.12.0
+R: /tmp/etc/environment
+R: PAPERTRAIL_HOST=xxx.papertrailapp.com
+R: PAPERTRAIL_PORT=12345
+R: APPOPTICS_USER=ops@whatever.com
+R: APPOPTICS_APIKEY=cafebabedeadbeef
+R: CORE_JDBC_URL=jdbc:postgresql://localhost/xxx
+R: CORE_JDBC_USER=vagrant
+R: SMS_ENABLED=false
+R: SMS_AWS_REGION=eu-west-1
+R: /tmp/etc/systemd/system.conf
+R: DefaultEnvironment=PAPERTRAIL_HOST=xxx.papertrailapp.com
+R: DefaultEnvironment=PAPERTRAIL_PORT=12345
+R: DefaultEnvironment=APPOPTICS_USER=ops@whatever.com
+R: DefaultEnvironment=APPOPTICS_APIKEY=cafebabedeadbeef
+R: DefaultEnvironment=CORE_JDBC_URL=jdbc:postgresql://localhost/xxx
+R: DefaultEnvironment=CORE_JDBC_USER=vagrant
+R: DefaultEnvironment=SMS_ENABLED=false
+R: DefaultEnvironment=SMS_AWS_REGION=eu-west-1
+R: /tmp/etc/profile
+R: export PAPERTRAIL_HOST=xxx.papertrailapp.com
+R: export PAPERTRAIL_PORT=12345
+R: export APPOPTICS_USER=ops@whatever.com
+R: export APPOPTICS_APIKEY=cafebabedeadbeef
+R: export CORE_JDBC_URL=jdbc:postgresql://localhost/xxx
+R: export CORE_JDBC_USER=vagrant
+R: export SMS_ENABLED=false
+R: export SMS_AWS_REGION=eu-west-1</p>
+
+<p>A common evolution for this policy would be to condense the write operations by
+altering the parameter to pass a map of key value pairs.</p>
+
+<h2 id="condense-the-write-operations-by-changing-the-parameters">Condense the write operations by changing the parameters</h2>
+
+<p>A quick change to the parameters allows multiple key values to be set at a
+single time, reducing IO.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span><span class="lnt">76
+</span><span class="lnt">77
+</span><span class="lnt">78
+</span><span class="lnt">79
+</span><span class="lnt">80
+</span><span class="lnt">81
+</span><span class="lnt">82
+</span><span class="lnt">83
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">global_env</span><span class="p">(</span><span class="nv">map</span><span class="p">)</span>
+  <span class="p">{</span>
+    <span class="kd">vars</span><span class="p">:</span>
+        <span class="c"># map is KEY=VAL
+</span><span class="c"></span>        <span class="p">&#34;</span><span class="nv">name</span><span class="p">&#34;</span> <span class="kt">slist</span> <span class="o">=&gt;</span> <span class="nf">getindices</span><span class="p">(</span> <span class="nf">map</span> <span class="p">);</span>
+        <span class="p">&#34;</span><span class="nv">etcenv[$(name)]</span><span class="p">&#34;</span> <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;</span><span class="si">$(map[$(name)])</span><span class="s">&#34;</span><span class="p">;</span>
+        <span class="p">&#34;</span><span class="nv">systemconf[DefaultEnvironment=$(name)]</span><span class="p">&#34;</span> <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;</span><span class="si">$(map[$(name)])</span><span class="s">&#34;</span><span class="p">;</span>
+        <span class="p">&#34;</span><span class="nv">etcprofile[export $(name)]</span><span class="p">&#34;</span> <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;</span><span class="si">$(map[$(name)])</span><span class="s">&#34;</span><span class="p">;</span>
+
+    <span class="kd">files</span><span class="p">:</span>
+
+        <span class="s">&#34;/tmp/etc/environment&#34;</span>
+          <span class="kr">edit_line</span> <span class="o">=&gt;</span> <span class="nf">set_line_based</span><span class="p">(</span><span class="s">&#34;global_env.etcenv&#34;</span><span class="p">,</span> <span class="s">&#34;=&#34;</span><span class="p">,</span> <span class="s">&#34;</span><span class="se">\s</span><span class="s">*=</span><span class="se">\s</span><span class="s">*&#34;</span><span class="p">,</span> <span class="s">&#34;.*&#34;</span><span class="p">,</span> <span class="s">&#34;</span><span class="se">\s</span><span class="s">*#</span><span class="se">\s</span><span class="s">*&#34;</span><span class="p">),</span>
+          <span class="kr">create</span> <span class="o">=&gt;</span> <span class="s">&#34;true&#34;</span><span class="p">,</span>
+          <span class="kr">handle</span> <span class="o">=&gt;</span> <span class="s">&#34;_etc_environment_</span><span class="si">$(name)</span><span class="s">_</span><span class="si">$(map[$(name)])</span><span class="s">&#34;</span><span class="p">;</span>
+
+        <span class="s">&#34;/tmp/etc/systemd/system.conf&#34;</span>
+          <span class="kr">edit_line</span> <span class="o">=&gt;</span> <span class="nf">set_line_based</span><span class="p">(</span><span class="s">&#34;global_env.systemconf&#34;</span><span class="p">,</span> <span class="s">&#34;=&#34;</span><span class="p">,</span> <span class="s">&#34;</span><span class="se">\s</span><span class="s">*=</span><span class="se">\s</span><span class="s">*&#34;</span><span class="p">,</span> <span class="s">&#34;.*&#34;</span><span class="p">,</span> <span class="s">&#34;</span><span class="se">\s</span><span class="s">*#</span><span class="se">\s</span><span class="s">*&#34;</span><span class="p">),</span>
+          <span class="kr">classes</span>   <span class="o">=&gt;</span> <span class="nf">if_repaired</span><span class="p">(</span><span class="s">&#34;system_conf_changed&#34;</span><span class="p">),</span>
+          <span class="kr">create</span> <span class="o">=&gt;</span> <span class="s">&#34;true&#34;</span><span class="p">,</span>
+          <span class="kr">handle</span> <span class="o">=&gt;</span> <span class="s">&#34;_etc_systemd_system_conf_</span><span class="si">$(name)</span><span class="s">_</span><span class="si">$(map[$(name)])</span><span class="s">&#34;</span><span class="p">;</span>
+
+        <span class="s">&#34;/tmp/etc/profile&#34;</span>
+          <span class="kr">edit_line</span> <span class="o">=&gt;</span> <span class="nf">set_line_based</span><span class="p">(</span><span class="s">&#34;global_env.etcprofile&#34;</span><span class="p">,</span> <span class="s">&#34;=&#34;</span><span class="p">,</span> <span class="s">&#34;</span><span class="se">\s</span><span class="s">*=</span><span class="se">\s</span><span class="s">*&#34;</span><span class="p">,</span> <span class="s">&#34;.*&#34;</span><span class="p">,</span> <span class="s">&#34;</span><span class="se">\s</span><span class="s">*#</span><span class="se">\s</span><span class="s">*&#34;</span><span class="p">),</span>
+          <span class="kr">create</span> <span class="o">=&gt;</span> <span class="s">&#34;true&#34;</span><span class="p">,</span>
+          <span class="kr">handle</span> <span class="o">=&gt;</span> <span class="s">&#34;_etc_profile_</span><span class="si">$(name)</span><span class="s">_</span><span class="si">$(map[$(name)])</span><span class="s">&#34;</span><span class="p">;</span>
+
+    <span class="kd">commands</span><span class="p">:</span>
+      <span class="nc">system_conf_changed</span><span class="p">::</span>
+        <span class="s">&#34;/sbin/systemctl daemon-reload&#34;</span>
+          <span class="kr">contain</span> <span class="o">=&gt;</span> <span class="nf">exec_owner</span><span class="p">(</span><span class="s">&#34;root&#34;</span><span class="p">),</span>
+          <span class="kr">if</span> <span class="o">=&gt;</span> <span class="nf">strcmp</span><span class="p">(</span> <span class="s">&#34;</span><span class="si">$(sys.user_data[username])</span><span class="s">&#34;</span><span class="p">,</span> <span class="s">&#34;root&#34;</span> <span class="p">),</span>
+          <span class="kr">handle</span> <span class="o">=&gt;</span> <span class="s">&#34;_sbin_systemctl_daemon_reload_</span><span class="si">$(name)</span><span class="s">_</span><span class="si">$(map[$(name)])</span><span class="s">&#34;</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">body</span> <span class="k">contain</span> <span class="nf">exec_owner</span><span class="p">(</span><span class="nv">user</span><span class="p">)</span>
+  <span class="p">{</span>
+          <span class="kr">exec_owner</span> <span class="o">=&gt;</span> <span class="s">&#34;</span><span class="si">$(user)</span><span class="s">&#34;</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">vagrant_vm</span>
+  <span class="p">{</span>
+    <span class="kd">meta</span><span class="p">:</span>
+        <span class="p">&#34;</span><span class="nv">tags</span><span class="p">&#34;</span> <span class="kt">slist</span> <span class="o">=&gt;</span> <span class="p">{</span>
+                          <span class="s">&#34;autorun&#34;</span>
+        <span class="p">};</span>
+
+    <span class="kd">vars</span><span class="p">:</span>
+
+              <span class="s">&#34;d&#34;</span> <span class="kr">data</span> <span class="o">=&gt;</span> <span class="err">&#39;</span><span class="p">{</span>
+    <span class="s">&#34;PAPERTRAIL_HOST&#34;</span><span class="err">:</span> <span class="s">&#34;xxx.papertrailapp.com&#34;</span><span class="p">,</span>
+    <span class="s">&#34;PAPERTRAIL_PORT&#34;</span><span class="err">:</span> <span class="s">&#34;12345&#34;</span><span class="p">,</span>
+    <span class="s">&#34;APPOPTICS_USER&#34;</span><span class="err">:</span> <span class="s">&#34;ops@whatever.com&#34;</span><span class="p">,</span>
+    <span class="s">&#34;APPOPTICS_APIKEY&#34;</span><span class="err">:</span> <span class="s">&#34;cafebabedeadbeef&#34;</span><span class="p">,</span>
+    <span class="s">&#34;CORE_JDBC_URL&#34;</span><span class="err">:</span> <span class="s">&#34;jdbc:postgresql://localhost/xxx&#34;</span><span class="p">,</span>
+    <span class="s">&#34;CORE_JDBC_USER&#34;</span><span class="err">:</span> <span class="s">&#34;vagrant&#34;</span><span class="p">,</span>
+    <span class="s">&#34;SMS_ENABLED&#34;</span><span class="err">:</span> <span class="s">&#34;false&#34;</span><span class="p">,</span>
+    <span class="s">&#34;SMS_AWS_REGION&#34;</span><span class="err">:</span> <span class="s">&#34;eu-west-1&#34;</span>
+  <span class="p">}</span><span class="err">&#39;</span><span class="p">;</span>
+
+    <span class="kd">methods</span><span class="p">:</span>
+        <span class="s">&#34;any&#34;</span> <span class="kr">usebundle</span> <span class="o">=&gt;</span> <span class="nf">global_env</span><span class="p">(</span> <span class="nv">@(d)</span> <span class="p">);</span>
+
+  <span class="p">}</span>
+  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">init</span>
+  <span class="p">{</span>
+    <span class="kd">files</span><span class="p">:</span>
+        <span class="s">&#34;/tmp/etc/environment&#34;</span> <span class="kr">delete</span> <span class="o">=&gt;</span> <span class="nf">tidy</span><span class="p">;</span>
+        <span class="s">&#34;/tmp/etc/systemd/system.conf&#34;</span> <span class="kr">delete</span> <span class="o">=&gt;</span> <span class="nf">tidy</span><span class="p">;</span>
+        <span class="s">&#34;/tmp/etc/profile&#34;</span> <span class="kr">delete</span> <span class="o">=&gt;</span> <span class="nf">tidy</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">__main__</span>
+  <span class="p">{</span>
+    <span class="kd">methods</span><span class="p">:</span>
+        <span class="s">&#34;init&#34;</span><span class="p">;</span>
+        <span class="s">&#34;vagrant_vm&#34;</span><span class="p">;</span>
+
+    <span class="kd">reports</span><span class="p">:</span>
+        <span class="s">&#34;CFEngine </span><span class="si">$(sys.cf_version)</span><span class="s">&#34;</span><span class="p">;</span>
+        <span class="s">&#34;/tmp/etc/environment&#34;</span>         <span class="kr">printfile</span> <span class="o">=&gt;</span> <span class="nf">cat</span><span class="p">(</span> <span class="s">&#34;</span><span class="si">$(this.promiser)</span><span class="s">&#34;</span> <span class="p">);</span>
+        <span class="s">&#34;/tmp/etc/systemd/system.conf&#34;</span> <span class="kr">printfile</span> <span class="o">=&gt;</span> <span class="nf">cat</span><span class="p">(</span> <span class="s">&#34;</span><span class="si">$(this.promiser)</span><span class="s">&#34;</span> <span class="p">);</span>
+        <span class="s">&#34;/tmp/etc/profile&#34;</span>             <span class="kr">printfile</span> <span class="o">=&gt;</span> <span class="nf">cat</span><span class="p">(</span> <span class="s">&#34;</span><span class="si">$(this.promiser)</span><span class="s">&#34;</span> <span class="p">);</span>
+  <span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<p><strong>Output:</strong></p>
+
+<p>R: CFEngine 3.12.0
+R: /tmp/etc/environment
+R: APPOPTICS_USER=ops@whatever.com
+R: PAPERTRAIL_PORT=12345
+R: CORE_JDBC_USER=vagrant
+R: APPOPTICS_APIKEY=cafebabedeadbeef
+R: SMS_ENABLED=false
+R: PAPERTRAIL_HOST=xxx.papertrailapp.com
+R: SMS_AWS_REGION=eu-west-1
+R: CORE_JDBC_URL=jdbc:postgresql://localhost/xxx
+R: /tmp/etc/systemd/system.conf
+R: DefaultEnvironment=APPOPTICS_USER=ops@whatever.com
+R: DefaultEnvironment=CORE_JDBC_USER=vagrant
+R: DefaultEnvironment=SMS_AWS_REGION=eu-west-1
+R: DefaultEnvironment=SMS_ENABLED=false
+R: DefaultEnvironment=APPOPTICS_APIKEY=cafebabedeadbeef
+R: DefaultEnvironment=CORE_JDBC_URL=jdbc:postgresql://localhost/xxx
+R: DefaultEnvironment=PAPERTRAIL_HOST=xxx.papertrailapp.com
+R: DefaultEnvironment=PAPERTRAIL_PORT=12345
+R: /tmp/etc/profile
+R: export SMS_ENABLED=false
+R: export CORE_JDBC_URL=jdbc:postgresql://localhost/xxx
+R: export APPOPTICS_USER=ops@whatever.com
+R: export CORE_JDBC_USER=vagrant
+R: export SMS_AWS_REGION=eu-west-1
+R: export PAPERTRAIL_PORT=12345
+R: export APPOPTICS_APIKEY=cafebabedeadbeef
+R: export PAPERTRAIL_HOST=xxx.papertrailapp.com</p>
+
+<h1 id="centralized-management">Centralized management</h1>
+
+<p>Let's take a look at what a centralized management pattern might look like. This
+is the simplest pattern, and many times how policies begin as a prototype,
+before evolving into another pattern.</p>
+
+<p>We removed the <code>vagrant_vm</code> bundle, and the uniqness from the promise handles.
+Now, all the configuration data is right in the <code>global_env</code> bundle. We use a
+classic array as a generator to produce copies of the key values tailored for
+each config file. An alternative to creating different variables using a classic
+array generator we could copy <code>set_line_based</code> and customize it to allow a
+prefix to be specified.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span><span class="lnt">76
+</span><span class="lnt">77
+</span><span class="lnt">78
+</span><span class="lnt">79
+</span><span class="lnt">80
+</span><span class="lnt">81
+</span><span class="lnt">82
+</span><span class="lnt">83
+</span><span class="lnt">84
+</span><span class="lnt">85
+</span><span class="lnt">86
+</span><span class="lnt">87
+</span><span class="lnt">88
+</span><span class="lnt">89
+</span><span class="lnt">90
+</span><span class="lnt">91
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">global_env</span>
+  <span class="p">{</span>
+    <span class="kd">vars</span><span class="p">:</span>
+
+      <span class="nc">vagrant_vm</span><span class="p">::</span>
+
+        <span class="p">&#34;</span><span class="nv">env[PAPERTRAIL_HOST]</span><span class="p">&#34;</span>            <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;xxx.papertrailapp.com&#34;</span><span class="p">;</span>
+        <span class="p">&#34;</span><span class="nv">env[PAPERTRAIL_PORT]</span><span class="p">&#34;</span>            <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;12345&#34;</span><span class="p">;</span>
+        <span class="p">&#34;</span><span class="nv">env[APPOPTICS_USER]</span><span class="p">&#34;</span>            <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;ops@whatever.com&#34;</span><span class="p">;</span>
+        <span class="p">&#34;</span><span class="nv">env[APPOPTICS_APIKEY]</span><span class="p">&#34;</span>            <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;cafebabedeadbeef&#34;</span><span class="p">;</span>
+        <span class="p">&#34;</span><span class="nv">env[CORE_JDBC_URL]</span><span class="p">&#34;</span>            <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;jdbc:postgresql://localhost/xxx&#34;</span><span class="p">;</span>
+        <span class="p">&#34;</span><span class="nv">env[CORE_JDBC_USER]</span><span class="p">&#34;</span>            <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;vagrant&#34;</span><span class="p">;</span>
+        <span class="p">&#34;</span><span class="nv">env[SMS_ENABLED]</span><span class="p">&#34;</span>            <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;false&#34;</span><span class="p">;</span>
+        <span class="p">&#34;</span><span class="nv">env[SMS_AWS_REGION]</span><span class="p">&#34;</span>            <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;eu-west-1&#34;</span><span class="p">;</span>
+
+      <span class="nc">application_2</span><span class="p">::</span>
+
+        <span class="p">&#34;</span><span class="nv">env[PAPERTRAIL_HOST]</span><span class="p">&#34;</span>            <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;xxx.trailpaperapp.com&#34;</span><span class="p">;</span>
+        <span class="p">&#34;</span><span class="nv">env[PAPERTRAIL_PORT]</span><span class="p">&#34;</span>            <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;54321&#34;</span><span class="p">;</span>
+        <span class="p">&#34;</span><span class="nv">env[APPOPTICS_USER]</span><span class="p">&#34;</span>            <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;ops@whatever.com&#34;</span><span class="p">;</span>
+        <span class="p">&#34;</span><span class="nv">env[APPOPTICS_APIKEY]</span><span class="p">&#34;</span>            <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;xxxxiiiiiiixxixxix&#34;</span><span class="p">;</span>
+        <span class="p">&#34;</span><span class="nv">env[CORE_JDBC_URL]</span><span class="p">&#34;</span>            <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;jdbc:postgresql://localhost/xxx&#34;</span><span class="p">;</span>
+        <span class="p">&#34;</span><span class="nv">env[CORE_JDBC_USER]</span><span class="p">&#34;</span>            <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;vagrant&#34;</span><span class="p">;</span>
+        <span class="p">&#34;</span><span class="nv">env[SMS_ENABLED]</span><span class="p">&#34;</span>            <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;false&#34;</span><span class="p">;</span>
+        <span class="p">&#34;</span><span class="nv">env[SMS_AWS_REGION]</span><span class="p">&#34;</span>            <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;eu-east-2&#34;</span><span class="p">;</span>
+
+
+      <span class="nc">any</span><span class="p">::</span>
+
+        <span class="p">&#34;</span><span class="nv">env_i</span><span class="p">&#34;</span> <span class="kt">slist</span> <span class="o">=&gt;</span> <span class="nf">getindices</span><span class="p">(</span> <span class="nf">env</span> <span class="p">);</span>
+        <span class="c"># Here we take the original simple key value pair and add different
+</span><span class="c"></span>        <span class="c"># prefixes for the differnt config file types using a classic array as a
+</span><span class="c"></span>        <span class="c"># generator. Alternatively, we could copy set_line_based and customize it
+</span><span class="c"></span>        <span class="c"># allowing for a prefix parameter.
+</span><span class="c"></span>        <span class="p">&#34;</span><span class="nv">systemconf[DefaultEnvironment=$(env_i)]</span><span class="p">&#34;</span> <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;</span><span class="si">$(env[$(env_i)])</span><span class="s">&#34;</span><span class="p">;</span>
+        <span class="p">&#34;</span><span class="nv">etcprofile[export $(env_i)]</span><span class="p">&#34;</span> <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;</span><span class="si">$(env[$(env_i)])</span><span class="s">&#34;</span><span class="p">;</span>
+
+    <span class="kd">files</span><span class="p">:</span>
+
+        <span class="s">&#34;/tmp/etc/environment&#34;</span>
+          <span class="kr">edit_line</span> <span class="o">=&gt;</span> <span class="nf">set_line_based</span><span class="p">(</span><span class="s">&#34;global_env.env&#34;</span><span class="p">,</span> <span class="s">&#34;=&#34;</span><span class="p">,</span> <span class="s">&#34;</span><span class="se">\s</span><span class="s">*=</span><span class="se">\s</span><span class="s">*&#34;</span><span class="p">,</span> <span class="s">&#34;.*&#34;</span><span class="p">,</span> <span class="s">&#34;</span><span class="se">\s</span><span class="s">*#</span><span class="se">\s</span><span class="s">*&#34;</span><span class="p">),</span>
+          <span class="kr">create</span> <span class="o">=&gt;</span> <span class="s">&#34;true&#34;</span><span class="p">,</span>
+          <span class="kr">handle</span> <span class="o">=&gt;</span> <span class="s">&#34;_etc_environment&#34;</span><span class="p">;</span>
+
+        <span class="s">&#34;/tmp/etc/systemd/system.conf&#34;</span>
+          <span class="kr">edit_line</span> <span class="o">=&gt;</span> <span class="nf">set_line_based</span><span class="p">(</span><span class="s">&#34;global_env.systemconf&#34;</span><span class="p">,</span> <span class="s">&#34;=&#34;</span><span class="p">,</span> <span class="s">&#34;</span><span class="se">\s</span><span class="s">*=</span><span class="se">\s</span><span class="s">*&#34;</span><span class="p">,</span> <span class="s">&#34;.*&#34;</span><span class="p">,</span> <span class="s">&#34;</span><span class="se">\s</span><span class="s">*#</span><span class="se">\s</span><span class="s">*&#34;</span><span class="p">),</span>
+          <span class="kr">classes</span>   <span class="o">=&gt;</span> <span class="nf">if_repaired</span><span class="p">(</span><span class="s">&#34;system_conf_changed&#34;</span><span class="p">),</span>
+          <span class="kr">create</span> <span class="o">=&gt;</span> <span class="s">&#34;true&#34;</span><span class="p">,</span>
+          <span class="kr">handle</span> <span class="o">=&gt;</span> <span class="s">&#34;_etc_systemd_system_conf&#34;</span><span class="p">;</span>
+
+        <span class="s">&#34;/tmp/etc/profile&#34;</span>
+          <span class="kr">edit_line</span> <span class="o">=&gt;</span> <span class="nf">set_line_based</span><span class="p">(</span><span class="s">&#34;global_env.etcprofile&#34;</span><span class="p">,</span> <span class="s">&#34;=&#34;</span><span class="p">,</span> <span class="s">&#34;</span><span class="se">\s</span><span class="s">*=</span><span class="se">\s</span><span class="s">*&#34;</span><span class="p">,</span> <span class="s">&#34;.*&#34;</span><span class="p">,</span> <span class="s">&#34;</span><span class="se">\s</span><span class="s">*#</span><span class="se">\s</span><span class="s">*&#34;</span><span class="p">),</span>
+          <span class="kr">create</span> <span class="o">=&gt;</span> <span class="s">&#34;true&#34;</span><span class="p">,</span>
+          <span class="kr">handle</span> <span class="o">=&gt;</span> <span class="s">&#34;_etc_profile&#34;</span><span class="p">;</span>
+
+    <span class="kd">commands</span><span class="p">:</span>
+      <span class="nc">system_conf_changed</span><span class="p">::</span>
+        <span class="s">&#34;/sbin/systemctl daemon-reload&#34;</span>
+          <span class="kr">contain</span> <span class="o">=&gt;</span> <span class="nf">exec_owner</span><span class="p">(</span><span class="s">&#34;root&#34;</span><span class="p">),</span>
+          <span class="kr">if</span> <span class="o">=&gt;</span> <span class="nf">strcmp</span><span class="p">(</span> <span class="s">&#34;</span><span class="si">$(sys.user_data[username])</span><span class="s">&#34;</span><span class="p">,</span> <span class="s">&#34;root&#34;</span> <span class="p">),</span>
+          <span class="kr">handle</span> <span class="o">=&gt;</span> <span class="s">&#34;_sbin_systemctl_daemon_reload&#34;</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">body</span> <span class="k">contain</span> <span class="nf">exec_owner</span><span class="p">(</span><span class="nv">user</span><span class="p">)</span>
+  <span class="p">{</span>
+          <span class="kr">exec_owner</span> <span class="o">=&gt;</span> <span class="s">&#34;</span><span class="si">$(user)</span><span class="s">&#34;</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">init</span>
+  <span class="p">{</span>
+    <span class="kd">files</span><span class="p">:</span>
+        <span class="s">&#34;/tmp/etc/environment&#34;</span> <span class="kr">delete</span> <span class="o">=&gt;</span> <span class="nf">tidy</span><span class="p">;</span>
+        <span class="s">&#34;/tmp/etc/systemd/system.conf&#34;</span> <span class="kr">delete</span> <span class="o">=&gt;</span> <span class="nf">tidy</span><span class="p">;</span>
+        <span class="s">&#34;/tmp/etc/profile&#34;</span> <span class="kr">delete</span> <span class="o">=&gt;</span> <span class="nf">tidy</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">__main__</span>
+  <span class="p">{</span>
+    <span class="kd">classes</span><span class="p">:</span>
+        <span class="s">&#34;application_2&#34;</span> <span class="kr">scope</span> <span class="o">=&gt;</span> <span class="s">&#34;namespace&#34;</span><span class="p">;</span>
+
+    <span class="kd">methods</span><span class="p">:</span>
+        <span class="s">&#34;init&#34;</span><span class="p">;</span>
+        <span class="s">&#34;global_env&#34;</span><span class="p">;</span>
+
+    <span class="kd">reports</span><span class="p">:</span>
+
+        <span class="s">&#34;CFEngine </span><span class="si">$(sys.cf_version)</span><span class="s">&#34;</span><span class="p">;</span>
+        <span class="s">&#34;/tmp/etc/environment&#34;</span>         <span class="kr">printfile</span> <span class="o">=&gt;</span> <span class="nf">cat</span><span class="p">(</span> <span class="s">&#34;</span><span class="si">$(this.promiser)</span><span class="s">&#34;</span> <span class="p">);</span>
+        <span class="s">&#34;/tmp/etc/systemd/system.conf&#34;</span> <span class="kr">printfile</span> <span class="o">=&gt;</span> <span class="nf">cat</span><span class="p">(</span> <span class="s">&#34;</span><span class="si">$(this.promiser)</span><span class="s">&#34;</span> <span class="p">);</span>
+        <span class="s">&#34;/tmp/etc/profile&#34;</span>             <span class="kr">printfile</span> <span class="o">=&gt;</span> <span class="nf">cat</span><span class="p">(</span> <span class="s">&#34;</span><span class="si">$(this.promiser)</span><span class="s">&#34;</span> <span class="p">);</span>
+  <span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<p><strong>Output:</strong></p>
+
+<p>R: CFEngine 3.12.0
+R: /tmp/etc/environment
+R: SMS_AWS_REGION=eu-east-2
+R: PAPERTRAIL_HOST=xxx.trailpaperapp.com
+R: CORE_JDBC_URL=jdbc:postgresql://localhost/xxx
+R: SMS_ENABLED=false
+R: APPOPTICS_APIKEY=xxxxiiiiiiixxixxix
+R: APPOPTICS_USER=ops@whatever.com
+R: PAPERTRAIL_PORT=54321
+R: CORE_JDBC_USER=vagrant
+R: /tmp/etc/systemd/system.conf
+R: DefaultEnvironment=APPOPTICS_USER=ops@whatever.com
+R: DefaultEnvironment=CORE_JDBC_USER=vagrant
+R: DefaultEnvironment=SMS_AWS_REGION=eu-east-2
+R: DefaultEnvironment=SMS_ENABLED=false
+R: DefaultEnvironment=APPOPTICS_APIKEY=xxxxiiiiiiixxixxix
+R: DefaultEnvironment=CORE_JDBC_URL=jdbc:postgresql://localhost/xxx
+R: DefaultEnvironment=PAPERTRAIL_HOST=xxx.trailpaperapp.com
+R: DefaultEnvironment=PAPERTRAIL_PORT=54321
+R: /tmp/etc/profile
+R: export SMS_ENABLED=false
+R: export CORE_JDBC_URL=jdbc:postgresql://localhost/xxx
+R: export APPOPTICS_USER=ops@whatever.com
+R: export CORE_JDBC_USER=vagrant
+R: export SMS_AWS_REGION=eu-east-2
+R: export PAPERTRAIL_PORT=54321
+R: export APPOPTICS_APIKEY=xxxxiiiiiiixxixxix
+R: export PAPERTRAIL_HOST=xxx.trailpaperapp.com</p>
+
+<p>Common evolution's on this policy include moving variable definition into it's
+own bundle, separating the data into external files, and since all data is known
+at one time, full file management is an option.</p>
+
+<h2 id="centralized-management-separate-data-bundle">Centralized management separate data bundle</h2>
+
+<p>Here I am sure to have the data bundle converge before the bundle that will use
+the data defined there. This separation enables more complex data convergence,
+delegation of control, and especially with more data can improve the readability
+of the policy.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span><span class="lnt">76
+</span><span class="lnt">77
+</span><span class="lnt">78
+</span><span class="lnt">79
+</span><span class="lnt">80
+</span><span class="lnt">81
+</span><span class="lnt">82
+</span><span class="lnt">83
+</span><span class="lnt">84
+</span><span class="lnt">85
+</span><span class="lnt">86
+</span><span class="lnt">87
+</span><span class="lnt">88
+</span><span class="lnt">89
+</span><span class="lnt">90
+</span><span class="lnt">91
+</span><span class="lnt">92
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">global_env</span>
+  <span class="p">{</span>
+    <span class="kd">vars</span><span class="p">:</span>
+
+        <span class="p">&#34;</span><span class="nv">env_i</span><span class="p">&#34;</span> <span class="kt">slist</span> <span class="o">=&gt;</span> <span class="nf">getindices</span><span class="p">(</span> <span class="s">&#34;app_data.env&#34;</span> <span class="p">);</span>
+        <span class="c"># Here we take the original simple key value pair and add different prefixes
+</span><span class="c"></span>        <span class="c"># for the differnt config file types using a classic array as a generator.
+</span><span class="c"></span>        <span class="p">&#34;</span><span class="nv">systemconf[DefaultEnvironment=$(env_i)]</span><span class="p">&#34;</span> <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;</span><span class="si">$(app_data.env[$(env_i)])</span><span class="s">&#34;</span><span class="p">;</span>
+        <span class="p">&#34;</span><span class="nv">etcprofile[export $(env_i)]</span><span class="p">&#34;</span> <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;</span><span class="si">$(app_data.env[$(env_i)])</span><span class="s">&#34;</span><span class="p">;</span>
+
+    <span class="kd">files</span><span class="p">:</span>
+
+        <span class="s">&#34;/tmp/etc/environment&#34;</span>
+          <span class="kr">edit_line</span> <span class="o">=&gt;</span> <span class="nf">set_line_based</span><span class="p">(</span><span class="s">&#34;app_data.env&#34;</span><span class="p">,</span> <span class="s">&#34;=&#34;</span><span class="p">,</span> <span class="s">&#34;</span><span class="se">\s</span><span class="s">*=</span><span class="se">\s</span><span class="s">*&#34;</span><span class="p">,</span> <span class="s">&#34;.*&#34;</span><span class="p">,</span> <span class="s">&#34;</span><span class="se">\s</span><span class="s">*#</span><span class="se">\s</span><span class="s">*&#34;</span><span class="p">),</span>
+          <span class="kr">create</span> <span class="o">=&gt;</span> <span class="s">&#34;true&#34;</span><span class="p">,</span>
+          <span class="kr">handle</span> <span class="o">=&gt;</span> <span class="s">&#34;_etc_environment&#34;</span><span class="p">;</span>
+
+        <span class="s">&#34;/tmp/etc/systemd/system.conf&#34;</span>
+          <span class="kr">edit_line</span> <span class="o">=&gt;</span> <span class="nf">set_line_based</span><span class="p">(</span><span class="s">&#34;systemconf&#34;</span><span class="p">,</span> <span class="s">&#34;=&#34;</span><span class="p">,</span> <span class="s">&#34;</span><span class="se">\s</span><span class="s">*=</span><span class="se">\s</span><span class="s">*&#34;</span><span class="p">,</span> <span class="s">&#34;.*&#34;</span><span class="p">,</span> <span class="s">&#34;</span><span class="se">\s</span><span class="s">*#</span><span class="se">\s</span><span class="s">*&#34;</span><span class="p">),</span>
+          <span class="kr">classes</span>   <span class="o">=&gt;</span> <span class="nf">if_repaired</span><span class="p">(</span><span class="s">&#34;system_conf_changed&#34;</span><span class="p">),</span>
+          <span class="kr">create</span> <span class="o">=&gt;</span> <span class="s">&#34;true&#34;</span><span class="p">,</span>
+          <span class="kr">handle</span> <span class="o">=&gt;</span> <span class="s">&#34;_etc_systemd_system_conf&#34;</span><span class="p">;</span>
+
+        <span class="s">&#34;/tmp/etc/profile&#34;</span>
+          <span class="kr">edit_line</span> <span class="o">=&gt;</span> <span class="nf">set_line_based</span><span class="p">(</span><span class="s">&#34;etcprofile&#34;</span><span class="p">,</span> <span class="s">&#34;=&#34;</span><span class="p">,</span> <span class="s">&#34;</span><span class="se">\s</span><span class="s">*=</span><span class="se">\s</span><span class="s">*&#34;</span><span class="p">,</span> <span class="s">&#34;.*&#34;</span><span class="p">,</span> <span class="s">&#34;</span><span class="se">\s</span><span class="s">*#</span><span class="se">\s</span><span class="s">*&#34;</span><span class="p">),</span>
+          <span class="kr">create</span> <span class="o">=&gt;</span> <span class="s">&#34;true&#34;</span><span class="p">,</span>
+          <span class="kr">handle</span> <span class="o">=&gt;</span> <span class="s">&#34;_etc_profile&#34;</span><span class="p">;</span>
+
+    <span class="kd">commands</span><span class="p">:</span>
+      <span class="nc">system_conf_changed</span><span class="p">::</span>
+        <span class="s">&#34;/sbin/systemctl daemon-reload&#34;</span>
+          <span class="kr">contain</span> <span class="o">=&gt;</span> <span class="nf">exec_owner</span><span class="p">(</span><span class="s">&#34;root&#34;</span><span class="p">),</span>
+          <span class="kr">if</span> <span class="o">=&gt;</span> <span class="nf">strcmp</span><span class="p">(</span> <span class="s">&#34;</span><span class="si">$(sys.user_data[username])</span><span class="s">&#34;</span><span class="p">,</span> <span class="s">&#34;root&#34;</span> <span class="p">),</span>
+          <span class="kr">handle</span> <span class="o">=&gt;</span> <span class="s">&#34;_sbin_systemctl_daemon_reload&#34;</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">app_data</span>
+  <span class="p">{</span>
+    <span class="kd">vars</span><span class="p">:</span>
+          <span class="kd">vars</span><span class="p">:</span>
+
+      <span class="nc">vagrant_vm</span><span class="p">::</span>
+
+        <span class="p">&#34;</span><span class="nv">env[PAPERTRAIL_HOST]</span><span class="p">&#34;</span>            <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;xxx.papertrailapp.com&#34;</span><span class="p">;</span>
+        <span class="p">&#34;</span><span class="nv">env[PAPERTRAIL_PORT]</span><span class="p">&#34;</span>            <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;12345&#34;</span><span class="p">;</span>
+        <span class="p">&#34;</span><span class="nv">env[APPOPTICS_USER]</span><span class="p">&#34;</span>            <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;ops@whatever.com&#34;</span><span class="p">;</span>
+        <span class="p">&#34;</span><span class="nv">env[APPOPTICS_APIKEY]</span><span class="p">&#34;</span>            <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;cafebabedeadbeef&#34;</span><span class="p">;</span>
+        <span class="p">&#34;</span><span class="nv">env[CORE_JDBC_URL]</span><span class="p">&#34;</span>            <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;jdbc:postgresql://localhost/xxx&#34;</span><span class="p">;</span>
+        <span class="p">&#34;</span><span class="nv">env[CORE_JDBC_USER]</span><span class="p">&#34;</span>            <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;vagrant&#34;</span><span class="p">;</span>
+        <span class="p">&#34;</span><span class="nv">env[SMS_ENABLED]</span><span class="p">&#34;</span>            <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;false&#34;</span><span class="p">;</span>
+        <span class="p">&#34;</span><span class="nv">env[SMS_AWS_REGION]</span><span class="p">&#34;</span>            <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;eu-west-1&#34;</span><span class="p">;</span>
+
+      <span class="nc">application_2</span><span class="p">::</span>
+
+        <span class="p">&#34;</span><span class="nv">env[PAPERTRAIL_HOST]</span><span class="p">&#34;</span>            <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;xxx.trailpaperapp.com&#34;</span><span class="p">;</span>
+        <span class="p">&#34;</span><span class="nv">env[PAPERTRAIL_PORT]</span><span class="p">&#34;</span>            <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;54321&#34;</span><span class="p">;</span>
+        <span class="p">&#34;</span><span class="nv">env[APPOPTICS_USER]</span><span class="p">&#34;</span>            <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;ops@whatever.com&#34;</span><span class="p">;</span>
+        <span class="p">&#34;</span><span class="nv">env[APPOPTICS_APIKEY]</span><span class="p">&#34;</span>            <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;xxxxiiiiiiixxixxix&#34;</span><span class="p">;</span>
+        <span class="p">&#34;</span><span class="nv">env[CORE_JDBC_URL]</span><span class="p">&#34;</span>            <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;jdbc:postgresql://localhost/xxx&#34;</span><span class="p">;</span>
+        <span class="p">&#34;</span><span class="nv">env[CORE_JDBC_USER]</span><span class="p">&#34;</span>            <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;vagrant&#34;</span><span class="p">;</span>
+        <span class="p">&#34;</span><span class="nv">env[SMS_ENABLED]</span><span class="p">&#34;</span>            <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;false&#34;</span><span class="p">;</span>
+        <span class="p">&#34;</span><span class="nv">env[SMS_AWS_REGION]</span><span class="p">&#34;</span>            <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;eu-east-2&#34;</span><span class="p">;</span>
+
+  <span class="p">}</span>
+
+  <span class="k">body</span> <span class="k">contain</span> <span class="nf">exec_owner</span><span class="p">(</span><span class="nv">user</span><span class="p">)</span>
+  <span class="p">{</span>
+          <span class="kr">exec_owner</span> <span class="o">=&gt;</span> <span class="s">&#34;</span><span class="si">$(user)</span><span class="s">&#34;</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">init</span>
+  <span class="p">{</span>
+    <span class="kd">files</span><span class="p">:</span>
+        <span class="s">&#34;/tmp/etc/environment&#34;</span> <span class="kr">delete</span> <span class="o">=&gt;</span> <span class="nf">tidy</span><span class="p">;</span>
+        <span class="s">&#34;/tmp/etc/systemd/system.conf&#34;</span> <span class="kr">delete</span> <span class="o">=&gt;</span> <span class="nf">tidy</span><span class="p">;</span>
+        <span class="s">&#34;/tmp/etc/profile&#34;</span> <span class="kr">delete</span> <span class="o">=&gt;</span> <span class="nf">tidy</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">__main__</span>
+  <span class="p">{</span>
+    <span class="kd">classes</span><span class="p">:</span>
+        <span class="s">&#34;vagrant_vm&#34;</span> <span class="kr">expression</span> <span class="o">=&gt;</span> <span class="s">&#34;any&#34;</span><span class="p">,</span> <span class="kr">scope</span> <span class="o">=&gt;</span> <span class="s">&#34;namespace&#34;</span><span class="p">;</span>
+
+    <span class="kd">methods</span><span class="p">:</span>
+        <span class="s">&#34;init&#34;</span><span class="p">;</span>
+        <span class="s">&#34;app_data&#34;</span><span class="p">;</span>
+        <span class="s">&#34;global_env&#34;</span><span class="p">;</span>
+
+    <span class="kd">reports</span><span class="p">:</span>
+        <span class="s">&#34;CFEngine </span><span class="si">$(sys.cf_version)</span><span class="s">&#34;</span><span class="p">;</span>
+        <span class="s">&#34;/tmp/etc/environment&#34;</span>         <span class="kr">printfile</span> <span class="o">=&gt;</span> <span class="nf">cat</span><span class="p">(</span> <span class="s">&#34;</span><span class="si">$(this.promiser)</span><span class="s">&#34;</span> <span class="p">);</span>
+        <span class="s">&#34;/tmp/etc/systemd/system.conf&#34;</span> <span class="kr">printfile</span> <span class="o">=&gt;</span> <span class="nf">cat</span><span class="p">(</span> <span class="s">&#34;</span><span class="si">$(this.promiser)</span><span class="s">&#34;</span> <span class="p">);</span>
+        <span class="s">&#34;/tmp/etc/profile&#34;</span>             <span class="kr">printfile</span> <span class="o">=&gt;</span> <span class="nf">cat</span><span class="p">(</span> <span class="s">&#34;</span><span class="si">$(this.promiser)</span><span class="s">&#34;</span> <span class="p">);</span>
+  <span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<p><strong>Output:</strong></p>
+
+<p><em>home/nickanderson/org/cfengine3-11095nCN:8:32: error: An rvalue is quoted, but we expect an unquoted body identifier
+        edit_defaults => "true",
+                               ^
+/home/nickanderson/org/cfengine3-11095nCN:14:32: error: An rvalue is quoted, but we expect an unquoted body identifier
+        edit_defaults => "true",
+                               ^
+/home/nickanderson/org/cfengine3-11095nCN:21:32: error: An rvalue is quoted, but we expect an unquoted body identifier
+        edit_defaults => "true",
+                               ^
+   error: There are syntax errors in policy files
+   error: Policy failed validation with command '"/home/nickanderson</em>.cfagent/bin/cf-promises" -c "/home/nickanderson/org/cfengine3-11095nCN"'
+   error: CFEngine was not able to get confirmation of promises from cf-promises, so going to failsafe
+   error: CFEngine failsafe.cf: <em>home/nickanderson</em>.cfagent/inputs <em>home/nickanderson</em>.cfagent/inputs/failsafe.cf
+   error: No suitable server found
+   error: No suitable server found
+   error: No suitable server found
+   error: Method 'failsafe_cfe_internal_update' failed in some repairs
+R: Built-in failsafe policy triggered</p>
+
+<h2 id="centralized-management-separate-data-bundle-with-full-file-management">Centralized management separate data bundle with full file management</h2>
+
+<p>Here we remove the init to reset the environment and add full file content
+management by attaching edit_defaults empty to the files promises. This ensures
+no unknown content in the configuration file.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span><span class="lnt">76
+</span><span class="lnt">77
+</span><span class="lnt">78
+</span><span class="lnt">79
+</span><span class="lnt">80
+</span><span class="lnt">81
+</span><span class="lnt">82
+</span><span class="lnt">83
+</span><span class="lnt">84
+</span><span class="lnt">85
+</span><span class="lnt">86
+</span><span class="lnt">87
+</span><span class="lnt">88
+</span><span class="lnt">89
+</span><span class="lnt">90
+</span><span class="lnt">91
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">global_env</span>
+  <span class="p">{</span>
+      <span class="kd">vars</span><span class="p">:</span>
+
+        <span class="p">&#34;</span><span class="nv">env_i</span><span class="p">&#34;</span> <span class="kt">slist</span> <span class="o">=&gt;</span> <span class="nf">getindices</span><span class="p">(</span> <span class="s">&#34;app_data.env&#34;</span> <span class="p">);</span>
+      <span class="c"># Here we take the original simple key value pair and add different prefixes
+</span><span class="c"></span>      <span class="c"># for the differnt config file types using a classic array as a generator.
+</span><span class="c"></span>        <span class="p">&#34;</span><span class="nv">systemconf[DefaultEnvironment=$(env_i)]</span><span class="p">&#34;</span> <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;</span><span class="si">$(app_data.env[$(env_i)])</span><span class="s">&#34;</span><span class="p">;</span>
+        <span class="p">&#34;</span><span class="nv">etcprofile[export $(env_i)]</span><span class="p">&#34;</span> <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;</span><span class="si">$(app_data.env[$(env_i)])</span><span class="s">&#34;</span><span class="p">;</span>
+
+    <span class="kd">files</span><span class="p">:</span>
+
+        <span class="s">&#34;/tmp/etc/environment&#34;</span>
+          <span class="kr">edit_line</span> <span class="o">=&gt;</span> <span class="nf">set_line_based</span><span class="p">(</span><span class="s">&#34;app_data.etcenv&#34;</span><span class="p">,</span> <span class="s">&#34;=&#34;</span><span class="p">,</span> <span class="s">&#34;</span><span class="se">\s</span><span class="s">*=</span><span class="se">\s</span><span class="s">*&#34;</span><span class="p">,</span> <span class="s">&#34;.*&#34;</span><span class="p">,</span> <span class="s">&#34;</span><span class="se">\s</span><span class="s">*#</span><span class="se">\s</span><span class="s">*&#34;</span><span class="p">),</span>
+          <span class="kr">edit_defaults</span> <span class="o">=&gt;</span> <span class="nf">empty</span><span class="p">,</span>
+          <span class="kr">create</span> <span class="o">=&gt;</span> <span class="s">&#34;true&#34;</span><span class="p">,</span>
+          <span class="kr">handle</span> <span class="o">=&gt;</span> <span class="s">&#34;_etc_environment&#34;</span><span class="p">;</span>
+
+        <span class="s">&#34;/tmp/etc/systemd/system.conf&#34;</span>
+          <span class="kr">edit_line</span> <span class="o">=&gt;</span> <span class="nf">set_line_based</span><span class="p">(</span><span class="s">&#34;</span><span class="si">$(this.bundle)</span><span class="s">.systemconf&#34;</span><span class="p">,</span> <span class="s">&#34;=&#34;</span><span class="p">,</span> <span class="s">&#34;</span><span class="se">\s</span><span class="s">*=</span><span class="se">\s</span><span class="s">*&#34;</span><span class="p">,</span> <span class="s">&#34;.*&#34;</span><span class="p">,</span> <span class="s">&#34;</span><span class="se">\s</span><span class="s">*#</span><span class="se">\s</span><span class="s">*&#34;</span><span class="p">),</span>
+          <span class="kr">edit_defaults</span> <span class="o">=&gt;</span> <span class="nf">empty</span><span class="p">,</span>
+          <span class="kr">classes</span>   <span class="o">=&gt;</span> <span class="nf">if_repaired</span><span class="p">(</span><span class="s">&#34;system_conf_changed&#34;</span><span class="p">),</span>
+          <span class="kr">create</span> <span class="o">=&gt;</span> <span class="s">&#34;true&#34;</span><span class="p">,</span>
+          <span class="kr">handle</span> <span class="o">=&gt;</span> <span class="s">&#34;_etc_systemd_system_conf&#34;</span><span class="p">;</span>
+
+        <span class="s">&#34;/tmp/etc/profile&#34;</span>
+          <span class="kr">edit_line</span> <span class="o">=&gt;</span> <span class="nf">set_line_based</span><span class="p">(</span><span class="s">&#34;</span><span class="si">$(this.bundle)</span><span class="s">.etcprofile&#34;</span><span class="p">,</span> <span class="s">&#34;=&#34;</span><span class="p">,</span> <span class="s">&#34;</span><span class="se">\s</span><span class="s">*=</span><span class="se">\s</span><span class="s">*&#34;</span><span class="p">,</span> <span class="s">&#34;.*&#34;</span><span class="p">,</span> <span class="s">&#34;</span><span class="se">\s</span><span class="s">*#</span><span class="se">\s</span><span class="s">*&#34;</span><span class="p">),</span>
+          <span class="kr">edit_defaults</span> <span class="o">=&gt;</span> <span class="nf">empty</span><span class="p">,</span>
+          <span class="kr">create</span> <span class="o">=&gt;</span> <span class="s">&#34;true&#34;</span><span class="p">,</span>
+          <span class="kr">handle</span> <span class="o">=&gt;</span> <span class="s">&#34;_etc_profile&#34;</span><span class="p">;</span>
+
+    <span class="kd">commands</span><span class="p">:</span>
+      <span class="nc">system_conf_changed</span><span class="p">::</span>
+        <span class="s">&#34;/sbin/systemctl daemon-reload&#34;</span>
+          <span class="kr">contain</span> <span class="o">=&gt;</span> <span class="nf">exec_owner</span><span class="p">(</span><span class="s">&#34;root&#34;</span><span class="p">),</span>
+          <span class="kr">if</span> <span class="o">=&gt;</span> <span class="nf">strcmp</span><span class="p">(</span> <span class="s">&#34;</span><span class="si">$(sys.user_data[username])</span><span class="s">&#34;</span><span class="p">,</span> <span class="s">&#34;root&#34;</span> <span class="p">),</span>
+          <span class="kr">handle</span> <span class="o">=&gt;</span> <span class="s">&#34;_sbin_systemctl_daemon_reload&#34;</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">app_data</span>
+  <span class="p">{</span>
+    <span class="kd">vars</span><span class="p">:</span>
+      <span class="nc">vagrant_vm</span><span class="p">::</span>
+        <span class="p">&#34;</span><span class="nv">env[PAPERTRAIL_HOST]</span><span class="p">&#34;</span>            <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;xxx.papertrailapp.com&#34;</span><span class="p">;</span>
+        <span class="p">&#34;</span><span class="nv">env[PAPERTRAIL_PORT]</span><span class="p">&#34;</span>            <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;12345&#34;</span><span class="p">;</span>
+        <span class="p">&#34;</span><span class="nv">env[APPOPTICS_USER]</span><span class="p">&#34;</span>            <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;ops@whatever.com&#34;</span><span class="p">;</span>
+        <span class="p">&#34;</span><span class="nv">env[APPOPTICS_APIKEY]</span><span class="p">&#34;</span>            <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;cafebabedeadbeef&#34;</span><span class="p">;</span>
+        <span class="p">&#34;</span><span class="nv">env[CORE_JDBC_URL]</span><span class="p">&#34;</span>            <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;jdbc:postgresql://localhost/xxx&#34;</span><span class="p">;</span>
+        <span class="p">&#34;</span><span class="nv">env[CORE_JDBC_USER]</span><span class="p">&#34;</span>            <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;vagrant&#34;</span><span class="p">;</span>
+        <span class="p">&#34;</span><span class="nv">env[SMS_ENABLED]</span><span class="p">&#34;</span>            <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;false&#34;</span><span class="p">;</span>
+        <span class="p">&#34;</span><span class="nv">env[SMS_AWS_REGION]</span><span class="p">&#34;</span>            <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;eu-west-1&#34;</span><span class="p">;</span>
+
+      <span class="nc">application_2</span><span class="p">::</span>
+        <span class="p">&#34;</span><span class="nv">env[PAPERTRAIL_HOST]</span><span class="p">&#34;</span>            <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;xxx.trailpaperapp.com&#34;</span><span class="p">;</span>
+        <span class="p">&#34;</span><span class="nv">env[PAPERTRAIL_PORT]</span><span class="p">&#34;</span>            <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;54321&#34;</span><span class="p">;</span>
+        <span class="p">&#34;</span><span class="nv">env[APPOPTICS_USER]</span><span class="p">&#34;</span>            <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;ops@whatever.com&#34;</span><span class="p">;</span>
+        <span class="p">&#34;</span><span class="nv">env[APPOPTICS_APIKEY]</span><span class="p">&#34;</span>            <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;xxxxiiiiiiixxixxix&#34;</span><span class="p">;</span>
+        <span class="p">&#34;</span><span class="nv">env[CORE_JDBC_URL]</span><span class="p">&#34;</span>            <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;jdbc:postgresql://localhost/xxx&#34;</span><span class="p">;</span>
+        <span class="p">&#34;</span><span class="nv">env[CORE_JDBC_USER]</span><span class="p">&#34;</span>            <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;vagrant&#34;</span><span class="p">;</span>
+        <span class="p">&#34;</span><span class="nv">env[SMS_ENABLED]</span><span class="p">&#34;</span>            <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;false&#34;</span><span class="p">;</span>
+        <span class="p">&#34;</span><span class="nv">env[SMS_AWS_REGION]</span><span class="p">&#34;</span>            <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;eu-east-2&#34;</span><span class="p">;</span>
+
+  <span class="p">}</span>
+
+  <span class="k">body</span> <span class="k">contain</span> <span class="nf">exec_owner</span><span class="p">(</span><span class="nv">user</span><span class="p">)</span>
+  <span class="p">{</span>
+          <span class="kr">exec_owner</span> <span class="o">=&gt;</span> <span class="s">&#34;</span><span class="si">$(user)</span><span class="s">&#34;</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">init</span>
+  <span class="p">{</span>
+    <span class="kd">files</span><span class="p">:</span>
+        <span class="s">&#34;/tmp/etc/environment&#34;</span> <span class="kr">delete</span> <span class="o">=&gt;</span> <span class="nf">tidy</span><span class="p">;</span>
+        <span class="s">&#34;/tmp/etc/systemd/system.conf&#34;</span> <span class="kr">delete</span> <span class="o">=&gt;</span> <span class="nf">tidy</span><span class="p">;</span>
+        <span class="s">&#34;/tmp/etc/profile&#34;</span> <span class="kr">delete</span> <span class="o">=&gt;</span> <span class="nf">tidy</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">__main__</span>
+  <span class="p">{</span>
+    <span class="kd">classes</span><span class="p">:</span>
+        <span class="s">&#34;vagrant_vm&#34;</span> <span class="kr">expression</span> <span class="o">=&gt;</span> <span class="s">&#34;any&#34;</span><span class="p">,</span> <span class="kr">scope</span> <span class="o">=&gt;</span> <span class="s">&#34;namespace&#34;</span><span class="p">;</span>
+
+    <span class="kd">methods</span><span class="p">:</span>
+        <span class="c">#&#34;init&#34;;
+</span><span class="c"></span>        <span class="s">&#34;app_data&#34;</span><span class="p">;</span>
+        <span class="s">&#34;global_env&#34;</span><span class="p">;</span>
+
+    <span class="kd">reports</span><span class="p">:</span>
+        <span class="s">&#34;CFEngine </span><span class="si">$(sys.cf_version)</span><span class="s">&#34;</span><span class="p">;</span>
+        <span class="s">&#34;/tmp/etc/environment&#34;</span>         <span class="kr">printfile</span> <span class="o">=&gt;</span> <span class="nf">cat</span><span class="p">(</span> <span class="s">&#34;</span><span class="si">$(this.promiser)</span><span class="s">&#34;</span> <span class="p">);</span>
+        <span class="s">&#34;/tmp/etc/systemd/system.conf&#34;</span> <span class="kr">printfile</span> <span class="o">=&gt;</span> <span class="nf">cat</span><span class="p">(</span> <span class="s">&#34;</span><span class="si">$(this.promiser)</span><span class="s">&#34;</span> <span class="p">);</span>
+        <span class="s">&#34;/tmp/etc/profile&#34;</span>             <span class="kr">printfile</span> <span class="o">=&gt;</span> <span class="nf">cat</span><span class="p">(</span> <span class="s">&#34;</span><span class="si">$(this.promiser)</span><span class="s">&#34;</span> <span class="p">);</span>
+  <span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<p><strong>Output:</strong></p>
+
+<p>R: CFEngine 3.12.0
+R: /tmp/etc/environment
+R: PAPERTRAIL_HOST=xxx.trailpaperapp.com
+R: PAPERTRAIL_PORT=22222
+R: APPOPTICS_USER=ops@cfengine.com
+R: APPOPTICS_APIKEY=toodledum
+R: CORE_JDBC_URL=jdbc:postgresql://localhost/xxx
+R: CORE_JDBC_USER=vagrant
+R: SMS_ENABLED=false
+R: SMS_AWS_REGION=eu-west-1
+R: /tmp/etc/systemd/system.conf
+R: DefaultEnvironment=PAPERTRAIL_PORT=22222
+R: DefaultEnvironment=APPOPTICS_APIKEY=toodledum
+R: DefaultEnvironment=SMS_ENABLED=false
+R: DefaultEnvironment=CORE_JDBC_USER=vagrant
+R: DefaultEnvironment=CORE_JDBC_URL=jdbc:postgresql://localhost/xxx
+R: DefaultEnvironment=APPOPTICS_USER=ops@cfengine.com
+R: DefaultEnvironment=PAPERTRAIL_HOST=xxx.trailpaperapp.com
+R: DefaultEnvironment=SMS_AWS_REGION=eu-west-1
+R: /tmp/etc/profile
+R: export SMS_ENABLED=false
+R: export CORE_JDBC_URL=jdbc:postgresql://localhost/xxx
+R: export APPOPTICS_USER=ops@whatever.com
+R: export CORE_JDBC_USER=vagrant
+R: export SMS_AWS_REGION=eu-west-1
+R: export PAPERTRAIL_PORT=12345
+R: export APPOPTICS_APIKEY=cafebabedeadbeef
+R: export PAPERTRAIL_HOST=xxx.papertrailapp.com</p>
+
+<h2 id="centralized-management-separate-data-bundle-with-external-data-files">Centralized management separate data bundle with external data files</h2>
+
+<p>:LOGBOOK:
+CLOCK: [2018-11-10 Sat 13:40]--[2018-11-10 Sat 16:09] =>  2:29
+:END:</p>
+
+<p>In addition to the benefits derived from separating data bundles external data
+files can further enable delegation of control working much more easily with
+external systems, reduces the size of the policy and improve policy readability,
+and eases testing of policy. We can use the json, yaml or env file formats
+interchangeably. CSV is also possible, but different parsing would be required.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-conf" data-lang="conf"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-conf" data-lang="conf">  PAPERTRAIL_HOST=&#34;xxx.papertrailapp.com&#34;
+  PAPERTRAIL_PORT=&#34;11111&#34;
+  APPOPTICS_USER=&#34;ops@whatever.com&#34;
+  APPOPTICS_APIKEY=&#34;cafebabedeadbeef&#34;
+  CORE_JDBC_URL=&#34;jdbc:postgresql://localhost/xxx&#34;
+  CORE_JDBC_USER=&#34;vagrant&#34;
+  SMS_ENABLED=&#34;false&#34;
+  SMS_AWS_REGION=&#34;eu-west-1&#34;</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-json" data-lang="json"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-json" data-lang="json">  <span class="p">{</span>
+    <span class="nt">&#34;PAPERTRAIL_HOST&#34;</span><span class="p">:</span> <span class="s2">&#34;xxx.papertrailapp.com&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;PAPERTRAIL_PORT&#34;</span><span class="p">:</span> <span class="s2">&#34;11111&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;APPOPTICS_USER&#34;</span><span class="p">:</span> <span class="s2">&#34;ops@whatever.com&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;APPOPTICS_APIKEY&#34;</span><span class="p">:</span> <span class="s2">&#34;cafebabedeadbeef&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;CORE_JDBC_URL&#34;</span><span class="p">:</span> <span class="s2">&#34;jdbc:postgresql://localhost/xxx&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;CORE_JDBC_USER&#34;</span><span class="p">:</span> <span class="s2">&#34;vagrant&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;SMS_ENABLED&#34;</span><span class="p">:</span> <span class="s2">&#34;false&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;SMS_AWS_REGION&#34;</span><span class="p">:</span> <span class="s2">&#34;eu-west-1&#34;</span>
+  <span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="w">  </span>---<span class="w">
+</span><span class="w">  </span>PAPERTRAIL_HOST<span class="p">:</span><span class="w"> </span>xxx.papertrailapp.com<span class="w">
+</span><span class="w">  </span>PAPERTRAIL_PORT<span class="p">:</span><span class="w"> </span><span class="s1">&#39;11111&#39;</span><span class="w">
+</span><span class="w">  </span>APPOPTICS_USER<span class="p">:</span><span class="w"> </span>ops@whatever.com<span class="w">
+</span><span class="w">  </span>APPOPTICS_APIKEY<span class="p">:</span><span class="w"> </span>cafebabedeadbeef<span class="w">
+</span><span class="w">  </span>CORE_JDBC_URL<span class="p">:</span><span class="w"> </span>jdbc<span class="p">:</span>postgresql<span class="p">:</span>//localhost/xxx<span class="w">
+</span><span class="w">  </span>CORE_JDBC_USER<span class="p">:</span><span class="w"> </span>vagrant<span class="w">
+</span><span class="w">  </span>SMS_ENABLED<span class="p">:</span><span class="w"> </span><span class="s1">&#39;false&#39;</span><span class="w">
+</span><span class="w">  </span>SMS_AWS_REGION<span class="p">:</span><span class="w"> </span>eu-west-<span class="m">1</span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">global_env</span>
+  <span class="p">{</span>
+    <span class="kd">vars</span><span class="p">:</span>
+        <span class="p">&#34;</span><span class="nv">env_i</span><span class="p">&#34;</span> <span class="kt">slist</span> <span class="o">=&gt;</span> <span class="nf">getindices</span><span class="p">(</span> <span class="s">&#34;app_data.env&#34;</span> <span class="p">);</span>
+        <span class="c"># Here we take the original simple key value pair and add different prefixes
+</span><span class="c"></span>        <span class="c"># for the differnt config file types using a classic array as a generator.
+</span><span class="c"></span>        <span class="p">&#34;</span><span class="nv">etc_systemd_conf[DefaultEnvironment=$(env_i)]</span><span class="p">&#34;</span> <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;</span><span class="si">$(app_data.env[$(env_i)])</span><span class="s">&#34;</span><span class="p">;</span>
+        <span class="p">&#34;</span><span class="nv">etc_profile[export $(env_i)]</span><span class="p">&#34;</span> <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;</span><span class="si">$(app_data.env[$(env_i)])</span><span class="s">&#34;</span><span class="p">;</span>
+
+    <span class="kd">files</span><span class="p">:</span>
+
+        <span class="s">&#34;/tmp/etc/environment&#34;</span>
+          <span class="kr">edit_line</span> <span class="o">=&gt;</span> <span class="nf">set_line_based</span><span class="p">(</span><span class="s">&#34;app_data.env&#34;</span><span class="p">,</span> <span class="s">&#34;=&#34;</span><span class="p">,</span> <span class="s">&#34;</span><span class="se">\s</span><span class="s">*=</span><span class="se">\s</span><span class="s">*&#34;</span><span class="p">,</span> <span class="s">&#34;.*&#34;</span><span class="p">,</span> <span class="s">&#34;</span><span class="se">\s</span><span class="s">*#</span><span class="se">\s</span><span class="s">*&#34;</span><span class="p">),</span>
+          <span class="kr">edit_defaults</span> <span class="o">=&gt;</span> <span class="nf">empty</span><span class="p">,</span>
+          <span class="kr">create</span> <span class="o">=&gt;</span> <span class="s">&#34;true&#34;</span><span class="p">,</span>
+          <span class="kr">handle</span> <span class="o">=&gt;</span> <span class="s">&#34;_etc_environment&#34;</span><span class="p">;</span>
+
+        <span class="s">&#34;/tmp/etc/systemd/system.conf&#34;</span>
+          <span class="kr">edit_line</span> <span class="o">=&gt;</span> <span class="nf">set_line_based</span><span class="p">(</span><span class="s">&#34;</span><span class="si">$(this.bundle)</span><span class="s">.etc_systemd_conf&#34;</span><span class="p">,</span> <span class="s">&#34;=&#34;</span><span class="p">,</span> <span class="s">&#34;</span><span class="se">\s</span><span class="s">*=</span><span class="se">\s</span><span class="s">*&#34;</span><span class="p">,</span> <span class="s">&#34;.*&#34;</span><span class="p">,</span> <span class="s">&#34;</span><span class="se">\s</span><span class="s">*#</span><span class="se">\s</span><span class="s">*&#34;</span><span class="p">),</span>
+          <span class="kr">edit_defaults</span> <span class="o">=&gt;</span> <span class="nf">empty</span><span class="p">,</span>
+          <span class="kr">classes</span>   <span class="o">=&gt;</span> <span class="nf">if_repaired</span><span class="p">(</span><span class="s">&#34;system_conf_changed&#34;</span><span class="p">),</span>
+          <span class="kr">create</span> <span class="o">=&gt;</span> <span class="s">&#34;true&#34;</span><span class="p">,</span>
+          <span class="kr">handle</span> <span class="o">=&gt;</span> <span class="s">&#34;_etc_systemd_system_conf&#34;</span><span class="p">;</span>
+
+        <span class="s">&#34;/tmp/etc/profile&#34;</span>
+          <span class="kr">edit_line</span> <span class="o">=&gt;</span> <span class="nf">set_line_based</span><span class="p">(</span><span class="s">&#34;</span><span class="si">$(this.bundle)</span><span class="s">.etc_profile&#34;</span><span class="p">,</span> <span class="s">&#34;export &#34;</span><span class="p">,</span> <span class="s">&#34;</span><span class="se">\s</span><span class="s">*=</span><span class="se">\s</span><span class="s">*&#34;</span><span class="p">,</span> <span class="s">&#34;.*&#34;</span><span class="p">,</span> <span class="s">&#34;</span><span class="se">\s</span><span class="s">*#</span><span class="se">\s</span><span class="s">*&#34;</span><span class="p">),</span>
+          <span class="kr">edit_defaults</span> <span class="o">=&gt;</span> <span class="nf">empty</span><span class="p">,</span>
+          <span class="kr">create</span> <span class="o">=&gt;</span> <span class="s">&#34;true&#34;</span><span class="p">,</span>
+          <span class="kr">handle</span> <span class="o">=&gt;</span> <span class="s">&#34;_etc_profile&#34;</span><span class="p">;</span>
+
+    <span class="kd">commands</span><span class="p">:</span>
+      <span class="nc">system_conf_changed</span><span class="p">::</span>
+        <span class="s">&#34;/sbin/systemctl daemon-reload&#34;</span>
+          <span class="kr">contain</span> <span class="o">=&gt;</span> <span class="nf">exec_owner</span><span class="p">(</span><span class="s">&#34;root&#34;</span><span class="p">),</span>
+          <span class="kr">if</span> <span class="o">=&gt;</span> <span class="nf">strcmp</span><span class="p">(</span> <span class="s">&#34;</span><span class="si">$(sys.user_data[username])</span><span class="s">&#34;</span><span class="p">,</span> <span class="s">&#34;root&#34;</span> <span class="p">),</span>
+          <span class="kr">handle</span> <span class="o">=&gt;</span> <span class="s">&#34;_sbin_systemctl_daemon_reload&#34;</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">app_data</span>
+  <span class="p">{</span>
+    <span class="kd">vars</span><span class="p">:</span>
+      <span class="nc">vagrant_vm</span><span class="p">::</span>
+
+        <span class="s">&#34;env&#34;</span> <span class="kr">data</span> <span class="o">=&gt;</span> <span class="nf">readdata</span><span class="p">(</span> <span class="s">&#34;/tmp/env.yaml&#34;</span><span class="p">,</span> <span class="nf">auto</span> <span class="p">);</span>
+
+  <span class="p">}</span>
+
+  <span class="k">body</span> <span class="k">contain</span> <span class="nf">exec_owner</span><span class="p">(</span><span class="nv">user</span><span class="p">)</span>
+  <span class="p">{</span>
+          <span class="kr">exec_owner</span> <span class="o">=&gt;</span> <span class="s">&#34;</span><span class="si">$(user)</span><span class="s">&#34;</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">init</span>
+  <span class="p">{</span>
+    <span class="kd">files</span><span class="p">:</span>
+        <span class="s">&#34;/tmp/etc/environment&#34;</span> <span class="kr">delete</span> <span class="o">=&gt;</span> <span class="nf">tidy</span><span class="p">;</span>
+        <span class="s">&#34;/tmp/etc/systemd/system.conf&#34;</span> <span class="kr">delete</span> <span class="o">=&gt;</span> <span class="nf">tidy</span><span class="p">;</span>
+        <span class="s">&#34;/tmp/etc/profile&#34;</span> <span class="kr">delete</span> <span class="o">=&gt;</span> <span class="nf">tidy</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">__main__</span>
+  <span class="p">{</span>
+    <span class="kd">classes</span><span class="p">:</span>
+        <span class="s">&#34;vagrant_vm&#34;</span> <span class="kr">expression</span> <span class="o">=&gt;</span> <span class="s">&#34;any&#34;</span><span class="p">,</span> <span class="kr">scope</span> <span class="o">=&gt;</span> <span class="s">&#34;namespace&#34;</span><span class="p">;</span>
+
+    <span class="kd">methods</span><span class="p">:</span>
+        <span class="c">#&#34;init&#34;;
+</span><span class="c"></span>        <span class="s">&#34;app_data&#34;</span><span class="p">;</span>
+        <span class="s">&#34;global_env&#34;</span><span class="p">;</span>
+
+    <span class="kd">reports</span><span class="p">:</span>
+        <span class="s">&#34;CFEngine </span><span class="si">$(sys.cf_version)</span><span class="s">&#34;</span><span class="p">;</span>
+        <span class="s">&#34;/tmp/etc/environment&#34;</span>         <span class="kr">printfile</span> <span class="o">=&gt;</span> <span class="nf">cat</span><span class="p">(</span> <span class="s">&#34;</span><span class="si">$(this.promiser)</span><span class="s">&#34;</span> <span class="p">);</span>
+        <span class="s">&#34;/tmp/etc/systemd/system.conf&#34;</span> <span class="kr">printfile</span> <span class="o">=&gt;</span> <span class="nf">cat</span><span class="p">(</span> <span class="s">&#34;</span><span class="si">$(this.promiser)</span><span class="s">&#34;</span> <span class="p">);</span>
+        <span class="s">&#34;/tmp/etc/profile&#34;</span>             <span class="kr">printfile</span> <span class="o">=&gt;</span> <span class="nf">cat</span><span class="p">(</span> <span class="s">&#34;</span><span class="si">$(this.promiser)</span><span class="s">&#34;</span> <span class="p">);</span>
+  <span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<p><strong>Output:</strong></p>
+
+<p>R: CFEngine 3.12.0
+R: /tmp/etc/environment
+R: PAPERTRAIL_HOST=xxx.papertrailapp.com
+R: PAPERTRAIL_PORT=11111
+R: APPOPTICS_USER=ops@whatever.com
+R: APPOPTICS_APIKEY=cafebabedeadbeef
+R: CORE_JDBC_URL=jdbc:postgresql://localhost/xxx
+R: CORE_JDBC_USER=vagrant
+R: SMS_ENABLED=false
+R: SMS_AWS_REGION=eu-west-1
+R: /tmp/etc/systemd/system.conf
+R: DefaultEnvironment=PAPERTRAIL_PORT=11111
+R: DefaultEnvironment=APPOPTICS_APIKEY=cafebabedeadbeef
+R: DefaultEnvironment=SMS_ENABLED=false
+R: DefaultEnvironment=CORE_JDBC_USER=vagrant
+R: DefaultEnvironment=CORE_JDBC_URL=jdbc:postgresql://localhost/xxx
+R: DefaultEnvironment=APPOPTICS_USER=ops@whatever.com
+R: DefaultEnvironment=PAPERTRAIL_HOST=xxx.papertrailapp.com
+R: DefaultEnvironment=SMS_AWS_REGION=eu-west-1
+R: /tmp/etc/profile
+R: export PAPERTRAIL_HOSTexport xxx.papertrailapp.com
+R: export SMS_AWS_REGIONexport eu-west-1
+R: export PAPERTRAIL_PORTexport 11111
+R: export APPOPTICS_USERexport ops@whatever.com
+R: export SMS_ENABLEDexport false
+R: export CORE_JDBC_USERexport vagrant
+R: export CORE_JDBC_URLexport jdbc:postgresql://localhost/xxx
+R: export APPOPTICS_APIKEYexport cafebabedeadbeef</p>
+
+<h1 id="cooperative-management">Cooperative management</h1>
+
+<p>Here we allow each service to define the key values they need. They <em>advertise/
+or /publish</em> their data by tagging it. In this iteration, since we have full
+knowledge of the desired state at one time we switched the file promises to be
+templates so that the full content is managed. This helps to avoid unknown
+settings.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">global_env</span>
+  <span class="p">{</span>
+    <span class="kd">vars</span><span class="p">:</span>
+        <span class="c"># Collect a datastrucutre from variables tagged as used_by this bundle
+</span><span class="c"></span>        <span class="s">&#34;env&#34;</span>
+          <span class="kr">data</span> <span class="o">=&gt;</span> <span class="nf">variablesmatching_as_data</span><span class="p">(</span> <span class="s">&#34;.*&#34;</span><span class="p">,</span> <span class="s">&#34;used_by=global_env&#34;</span> <span class="p">);</span>
+
+        <span class="c"># Get the index of the collected data (the variable names) in lexically
+</span><span class="c"></span>        <span class="c"># sorted order so that we can iterate over them
+</span><span class="c"></span>        <span class="p">&#34;</span><span class="nv">i</span><span class="p">&#34;</span> <span class="kt">slist</span> <span class="o">=&gt;</span> <span class="nf">sort</span><span class="p">(</span> <span class="nf">getindices</span><span class="p">(</span> <span class="nf">env</span> <span class="p">),</span> <span class="nf">lex</span> <span class="p">);</span>
+
+        <span class="c"># Here we merge all the objects together by picking out each objects data
+</span><span class="c"></span>        <span class="c"># and merging on top. NOTE In event of conflict the last definition
+</span><span class="c"></span>        <span class="c"># alphabetically wins
+</span><span class="c"></span>
+        <span class="s">&#34;c&#34;</span> <span class="kr">data</span> <span class="o">=&gt;</span> <span class="err">&#39;[]&#39;</span><span class="p">;</span>
+        <span class="s">&#34;c&#34;</span> <span class="kr">data</span> <span class="o">=&gt;</span> <span class="nf">mergedata</span><span class="p">(</span> <span class="nf">c</span><span class="p">,</span> <span class="nf">mergedata</span><span class="p">(</span> <span class="s">&#34;env[</span><span class="si">$(i)</span><span class="s">]&#34;</span><span class="p">));</span>
+
+    <span class="kd">files</span><span class="p">:</span>
+
+        <span class="s">&#34;/tmp/etc/environment&#34;</span>
+          <span class="kr">create</span> <span class="o">=&gt;</span> <span class="s">&#34;true&#34;</span><span class="p">,</span>
+          <span class="kr">template_method</span> <span class="o">=&gt;</span> <span class="s">&#34;inline_mustache&#34;</span><span class="p">,</span>
+          <span class="kr">template_data</span> <span class="o">=&gt;</span> <span class="nv">@(c)</span><span class="p">,</span>
+          <span class="kr">edit_template_string</span> <span class="o">=&gt;</span> <span class="s">&#34;{{#-top-}}{{{@}}}={{{.}}}</span><span class="si">$(const.n)</span><span class="s">{{/-top-}}&#34;</span><span class="p">;</span>
+
+        <span class="s">&#34;/tmp/etc/systemd/system.conf&#34;</span>
+          <span class="kr">create</span> <span class="o">=&gt;</span> <span class="s">&#34;true&#34;</span><span class="p">,</span>
+          <span class="kr">template_method</span> <span class="o">=&gt;</span> <span class="s">&#34;inline_mustache&#34;</span><span class="p">,</span>
+          <span class="kr">template_data</span> <span class="o">=&gt;</span> <span class="nv">@(c)</span><span class="p">,</span>
+          <span class="kr">edit_template_string</span> <span class="o">=&gt;</span> <span class="s">&#34;{{#-top-}}DefaultEnvironment={{{@}}}={{{.}}}</span><span class="si">$(const.n)</span><span class="s">{{/-top-}}&#34;</span><span class="p">;</span>
+
+        <span class="s">&#34;/tmp/etc/profile&#34;</span>
+          <span class="kr">create</span> <span class="o">=&gt;</span> <span class="s">&#34;true&#34;</span><span class="p">,</span>
+          <span class="kr">template_method</span> <span class="o">=&gt;</span> <span class="s">&#34;inline_mustache&#34;</span><span class="p">,</span>
+          <span class="kr">template_data</span> <span class="o">=&gt;</span> <span class="nv">@(c)</span><span class="p">,</span>
+          <span class="kr">edit_template_string</span> <span class="o">=&gt;</span> <span class="s">&#34;{{#-top-}}export {{{@}}}={{{.}}}</span><span class="si">$(const.n)</span><span class="s">{{/-top-}}&#34;</span><span class="p">;</span>
+
+    <span class="kd">commands</span><span class="p">:</span>
+      <span class="nc">system_conf_changed</span><span class="p">::</span>
+        <span class="s">&#34;/sbin/systemctl daemon-reload&#34;</span>
+          <span class="kr">contain</span> <span class="o">=&gt;</span> <span class="nf">exec_owner</span><span class="p">(</span><span class="s">&#34;root&#34;</span><span class="p">),</span>
+          <span class="kr">if</span> <span class="o">=&gt;</span> <span class="nf">strcmp</span><span class="p">(</span> <span class="s">&#34;</span><span class="si">$(sys.user_data[username])</span><span class="s">&#34;</span><span class="p">,</span> <span class="s">&#34;root&#34;</span> <span class="p">),</span>
+          <span class="kr">handle</span> <span class="o">=&gt;</span> <span class="s">&#34;_sbin_systemctl_daemon_reload_</span><span class="si">$(name)</span><span class="s">_</span><span class="si">$(value)</span><span class="s">&#34;</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">vagrant_vm</span>
+  <span class="p">{</span>
+    <span class="kd">vars</span><span class="p">:</span>
+
+        <span class="s">&#34;v&#34;</span> <span class="kr">data</span> <span class="o">=&gt;</span>  <span class="err">&#39;</span><span class="p">{</span>
+                        <span class="s">&#34;PAPERTRAIL_HOST&#34;</span><span class="err">:</span> <span class="s">&#34;xxx.papertrailapp.com&#34;</span><span class="p">,</span>
+                        <span class="s">&#34;PAPERTRAIL_PORT&#34;</span><span class="err">:</span> <span class="s">&#34;11111&#34;</span><span class="p">,</span>
+                        <span class="s">&#34;APPOPTICS_USER&#34;</span><span class="err">:</span> <span class="s">&#34;ops@whatever.com&#34;</span><span class="p">,</span>
+                        <span class="s">&#34;APPOPTICS_APIKEY&#34;</span><span class="err">:</span> <span class="s">&#34;cafebabedeadbeef&#34;</span><span class="p">,</span>
+                        <span class="s">&#34;CORE_JDBC_URL&#34;</span><span class="err">:</span> <span class="s">&#34;jdbc:postgresql://localhost/xxx&#34;</span><span class="p">,</span>
+                        <span class="s">&#34;CORE_JDBC_USER&#34;</span><span class="err">:</span> <span class="s">&#34;vagrant&#34;</span><span class="p">,</span>
+                        <span class="s">&#34;SMS_ENABLED&#34;</span><span class="err">:</span> <span class="s">&#34;false&#34;</span><span class="p">,</span>
+                        <span class="s">&#34;SMS_AWS_REGION&#34;</span><span class="err">:</span> <span class="s">&#34;eu-west-1&#34;</span>
+        <span class="p">}</span><span class="err">&#39;</span><span class="p">,</span>
+          <span class="kr">meta</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="s">&#34;used_by=global_env&#34;</span> <span class="p">};</span>
+  <span class="p">}</span>
+
+  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">application_2</span>
+  <span class="p">{</span>
+    <span class="kd">vars</span><span class="p">:</span>
+
+        <span class="s">&#34;v&#34;</span> <span class="kr">data</span> <span class="o">=&gt;</span>  <span class="err">&#39;</span><span class="p">{</span>
+                        <span class="s">&#34;PAPERTRAIL_HOST&#34;</span><span class="err">:</span> <span class="s">&#34;xxx.trailpaperapp.com&#34;</span><span class="p">,</span>
+                        <span class="s">&#34;PAPERTRAIL_PORT&#34;</span><span class="err">:</span> <span class="s">&#34;22222&#34;</span><span class="p">,</span>
+                        <span class="s">&#34;APPOPTICS_USER&#34;</span><span class="err">:</span> <span class="s">&#34;ops@cfengine.com&#34;</span><span class="p">,</span>
+                        <span class="s">&#34;APPOPTICS_APIKEY&#34;</span><span class="err">:</span> <span class="s">&#34;toodledum&#34;</span><span class="p">,</span>
+                        <span class="s">&#34;CORE_JDBC_URL&#34;</span><span class="err">:</span> <span class="s">&#34;jdbc:postgresql://localhost/xxx&#34;</span><span class="p">,</span>
+                        <span class="s">&#34;CORE_JDBC_USER&#34;</span><span class="err">:</span> <span class="s">&#34;vagrant&#34;</span><span class="p">,</span>
+                        <span class="s">&#34;SMS_ENABLED&#34;</span><span class="err">:</span> <span class="s">&#34;false&#34;</span><span class="p">,</span>
+                        <span class="s">&#34;SMS_AWS_REGION&#34;</span><span class="err">:</span> <span class="s">&#34;eu-west-1&#34;</span>
+        <span class="p">}</span><span class="err">&#39;</span><span class="p">,</span>
+          <span class="kr">meta</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="s">&#34;used_by=global_env&#34;</span> <span class="p">};</span>
+  <span class="p">}</span>
+
+
+  <span class="k">body</span> <span class="k">contain</span> <span class="nf">exec_owner</span><span class="p">(</span><span class="nv">user</span><span class="p">)</span>
+  <span class="p">{</span>
+          <span class="kr">exec_owner</span> <span class="o">=&gt;</span> <span class="s">&#34;</span><span class="si">$(user)</span><span class="s">&#34;</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">init</span>
+  <span class="p">{</span>
+    <span class="kd">files</span><span class="p">:</span>
+        <span class="s">&#34;/tmp/etc/environment&#34;</span> <span class="kr">delete</span> <span class="o">=&gt;</span> <span class="nf">tidy</span><span class="p">;</span>
+        <span class="s">&#34;/tmp/etc/systemd/system.conf&#34;</span> <span class="kr">delete</span> <span class="o">=&gt;</span> <span class="nf">tidy</span><span class="p">;</span>
+        <span class="s">&#34;/tmp/etc/profile&#34;</span> <span class="kr">delete</span> <span class="o">=&gt;</span> <span class="nf">tidy</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">__main__</span>
+  <span class="p">{</span>
+    <span class="kd">classes</span><span class="p">:</span>
+        <span class="s">&#34;vagrant_vm&#34;</span> <span class="kr">scope</span> <span class="o">=&gt;</span> <span class="s">&#34;namespace&#34;</span><span class="p">;</span>
+
+    <span class="kd">methods</span><span class="p">:</span>
+        <span class="c">#&#34;init&#34;;
+</span><span class="c"></span>        <span class="s">&#34;global_env&#34;</span><span class="p">;</span>
+
+    <span class="kd">reports</span><span class="p">:</span>
+        <span class="s">&#34;/tmp/etc/environment&#34;</span>         <span class="kr">printfile</span> <span class="o">=&gt;</span> <span class="nf">cat</span><span class="p">(</span> <span class="s">&#34;</span><span class="si">$(this.promiser)</span><span class="s">&#34;</span> <span class="p">);</span>
+        <span class="s">&#34;/tmp/etc/systemd/system.conf&#34;</span> <span class="kr">printfile</span> <span class="o">=&gt;</span> <span class="nf">cat</span><span class="p">(</span> <span class="s">&#34;</span><span class="si">$(this.promiser)</span><span class="s">&#34;</span> <span class="p">);</span>
+        <span class="s">&#34;/tmp/etc/profile&#34;</span>             <span class="kr">printfile</span> <span class="o">=&gt;</span> <span class="nf">cat</span><span class="p">(</span> <span class="s">&#34;</span><span class="si">$(this.promiser)</span><span class="s">&#34;</span> <span class="p">);</span>
+  <span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<p><strong>Output:</strong></p>
+
+<p>R: /etc/environment
+R: PAPERTRAIL_HOST=xxx.papertrailapp.com
+R: PAPERTRAIL_PORT=11111
+R: APPOPTICS_USER=ops@whatever.com
+R: APPOPTICS_APIKEY=cafebabedeadbeef
+R: CORE_JDBC_URL=jdbc:postgresql://localhost/xxx
+R: CORE_JDBC_USER=vagrant
+R: SMS_ENABLED=false
+R: SMS_AWS_REGION=eu-west-1
+R: /etc/systemd/system.conf
+R: DefaultEnvironment=PAPERTRAIL_HOST=xxx.papertrailapp.com
+R: DefaultEnvironment=PAPERTRAIL_PORT=11111
+R: DefaultEnvironment=APPOPTICS_USER=ops@whatever.com
+R: DefaultEnvironment=APPOPTICS_APIKEY=cafebabedeadbeef
+R: DefaultEnvironment=CORE_JDBC_URL=jdbc:postgresql://localhost/xxx
+R: DefaultEnvironment=CORE_JDBC_USER=vagrant
+R: DefaultEnvironment=SMS_ENABLED=false
+R: DefaultEnvironment=SMS_AWS_REGION=eu-west-1
+R: /etc/profile
+R: export PAPERTRAIL_HOST=xxx.papertrailapp.com
+R: export PAPERTRAIL_PORT=11111
+R: export APPOPTICS_USER=ops@whatever.com
+R: export APPOPTICS_APIKEY=cafebabedeadbeef
+R: export CORE_JDBC_URL=jdbc:postgresql://localhost/xxx
+R: export CORE_JDBC_USER=vagrant
+R: export SMS_ENABLED=false
+R: export SMS_AWS_REGION=eu-west-1</p>
+
+<p>As with other patterns moving the data into external files would improve
+delegation of control and tighter integration with other systems.</p>
+
+            </div>
+            
+            <div class="post-comments">
+                
+            </div>
+            
+            <div class="push"></div>
+        </div>
+        <footer class="footer text-center">
+<p>Copyright &copy; 2018 Nick Anderson -
+<span class="credit">
+	Powered by
+	<a target="_blank" href="https://gohugo.io">Hugo</a>
+	and
+	<a target="_blank" href="https://github.com/LordMathis/hugo-theme-nix/">Nix</a> theme.
+</span>
+</p>
+</footer>
+
+    </body>
