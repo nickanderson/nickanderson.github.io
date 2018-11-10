@@ -119,8 +119,6 @@ goal.</p>
 
 <h1 id="the-original-example">The original example</h1>
 
-<p>From #cfengine on irc.freenode.net:</p>
-
 <blockquote>
 <p>
   Hello everyone. I am trying to use set_line_based to set some "global"
@@ -463,7 +461,7 @@ agent run.</p>
 </div>
 <p><strong>Output:</strong></p>
 
-<p>R: CFEngine 3.12.0
+<pre><code>R: CFEngine 3.12.0
 R: /tmp/etc/environment
 R: PAPERTRAIL_HOST=xxx.papertrailapp.com
 R: PAPERTRAIL_PORT=12345
@@ -490,7 +488,8 @@ R: export APPOPTICS_APIKEY=cafebabedeadbeef
 R: export CORE_JDBC_URL=jdbc:postgresql://localhost/xxx
 R: export CORE_JDBC_USER=vagrant
 R: export SMS_ENABLED=false
-R: export SMS_AWS_REGION=eu-west-1</p>
+R: export SMS_AWS_REGION=eu-west-1
+</code></pre>
 
 <p>A common evolution for this policy would be to condense the write operations by
 altering the parameter to pass a map of key value pairs.</p>
@@ -1869,37 +1868,6 @@ settings.</p>
 </div>
 </div>
 <p><strong>Output:</strong></p>
-
-<p>R: /etc/environment
-R: PAPERTRAIL_HOST=xxx.papertrailapp.com
-R: PAPERTRAIL_PORT=11111
-R: APPOPTICS_USER=ops@whatever.com
-R: APPOPTICS_APIKEY=cafebabedeadbeef
-R: CORE_JDBC_URL=jdbc:postgresql://localhost/xxx
-R: CORE_JDBC_USER=vagrant
-R: SMS_ENABLED=false
-R: SMS_AWS_REGION=eu-west-1
-R: /etc/systemd/system.conf
-R: DefaultEnvironment=PAPERTRAIL_HOST=xxx.papertrailapp.com
-R: DefaultEnvironment=PAPERTRAIL_PORT=11111
-R: DefaultEnvironment=APPOPTICS_USER=ops@whatever.com
-R: DefaultEnvironment=APPOPTICS_APIKEY=cafebabedeadbeef
-R: DefaultEnvironment=CORE_JDBC_URL=jdbc:postgresql://localhost/xxx
-R: DefaultEnvironment=CORE_JDBC_USER=vagrant
-R: DefaultEnvironment=SMS_ENABLED=false
-R: DefaultEnvironment=SMS_AWS_REGION=eu-west-1
-R: /etc/profile
-R: export PAPERTRAIL_HOST=xxx.papertrailapp.com
-R: export PAPERTRAIL_PORT=11111
-R: export APPOPTICS_USER=ops@whatever.com
-R: export APPOPTICS_APIKEY=cafebabedeadbeef
-R: export CORE_JDBC_URL=jdbc:postgresql://localhost/xxx
-R: export CORE_JDBC_USER=vagrant
-R: export SMS_ENABLED=false
-R: export SMS_AWS_REGION=eu-west-1</p>
-
-<p>As with other patterns moving the data into external files would improve
-delegation of control and tighter integration with other systems.</p>
 
             </div>
             
