@@ -75,6 +75,20 @@
 				<li>
 					<div class="post-list-item">
 						<div class="post-header">
+							<h4 class="post-link"><a href="https://cmdln.org/2018/11/10/looking-at-three-high-level-patterns-in-cfengine-3/">Looking at three high level patterns in CFEngine 3</a></h4>
+							<h4 class="post-date">Nov 10, 2018</h4>
+						</div>
+						<div class="post-summary"><p>How do you deal with config files that need different settings based on various services that are running on a host and cooperate with other teams? It's a common question, and it came up on in #cfengine on irc.freenode.net recently.
+  The issue is that team A might be working on package A, which requires some  environment variables set. But team B might be working on a totally different  thing -- and want to achieve the same thing.</p></div>
+						<div class="post-list-footer text-center">
+							<a href="https://cmdln.org/2018/11/10/looking-at-three-high-level-patterns-in-cfengine-3/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
 							<h4 class="post-link"><a href="https://cmdln.org/2018/10/22/automatically-define-classes-for-every-promise-with-cfengine-3/">Automatically define classes for every promise with CFEngine 3</a></h4>
 							<h4 class="post-date">Oct 22, 2018</h4>
 						</div>
@@ -200,20 +214,6 @@ With the windows agent (Northern.tech builds Enterprise windows agents) you can 
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20  bundle agent php_customiztions { meta: (policy_server|am_policy_hub).enterprise_edition:: &#34;tags&#34; slist =&gt; { &#34;autorun&#34; }; &#34;description&#34; string =&gt; &#34;Tune php fo 60k hosts in Mission Portal&#34;; vars: &#34;php_ini[PHP][memory_limit]&#34; string =&gt; &#34;256M&#34;; files: policy_server.</p></div>
 						<div class="post-list-footer text-center">
 							<a href="https://cmdln.org/2018/05/22/manage-memory_limit-in-php.ini-with-cfengine-3/">Read More</a>
-						</div>
-					</div>
-				</li>
-			
-				<li>
-					<div class="post-list-item">
-						<div class="post-header">
-							<h4 class="post-link"><a href="https://cmdln.org/2018/05/21/inventorying-mac-by-interface/">Inventorying MAC by Interface</a></h4>
-							<h4 class="post-date">May 21, 2018</h4>
-						</div>
-						<div class="post-summary"><p>This tip comes from my good friend Aleksey Tsalolikin.
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17  bundle agent main { vars: # Creae a map of interface to MAC  # Generate a classic array  # Iterate over known interfaces, define interface as key and MAC as value  &#34;iface2mac[$(sys.interfaces)]&#34; string =&gt; &#34;$(sys.hardware_mac[$(sys.interfaces)])&#34;, meta =&gt; { &#34;inventory&#34;, &#34;attribute_name=$(sys.interfaces)MAC&#34; }; reports: &#34;$(sys.</p></div>
-						<div class="post-list-footer text-center">
-							<a href="https://cmdln.org/2018/05/21/inventorying-mac-by-interface/">Read More</a>
 						</div>
 					</div>
 				</li>
