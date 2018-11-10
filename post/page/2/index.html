@@ -75,6 +75,20 @@
 				<li>
 					<div class="post-list-item">
 						<div class="post-header">
+							<h4 class="post-link"><a href="https://cmdln.org/2018/05/21/inventorying-mac-by-interface/">Inventorying MAC by Interface</a></h4>
+							<h4 class="post-date">May 21, 2018</h4>
+						</div>
+						<div class="post-summary"><p>This tip comes from my good friend Aleksey Tsalolikin.
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17  bundle agent main { vars: # Creae a map of interface to MAC  # Generate a classic array  # Iterate over known interfaces, define interface as key and MAC as value  &#34;iface2mac[$(sys.interfaces)]&#34; string =&gt; &#34;$(sys.hardware_mac[$(sys.interfaces)])&#34;, meta =&gt; { &#34;inventory&#34;, &#34;attribute_name=$(sys.interfaces)MAC&#34; }; reports: &#34;$(sys.</p></div>
+						<div class="post-list-footer text-center">
+							<a href="https://cmdln.org/2018/05/21/inventorying-mac-by-interface/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
 							<h4 class="post-link"><a href="https://cmdln.org/2018/05/20/why-doesnt-ifvarclass-automatically-canonify/">Why doesn&#39;t ifvarclass automatically canonify?</a></h4>
 							<h4 class="post-date">May 20, 2018</h4>
 						</div>
@@ -198,21 +212,6 @@ In 2016 and 2017 KLF was hosted in Wichita KS at Wichita State University. The p
 In the example below we first create a file with content that spans multiple lines. Then we read that file content into a variable and use a regular expression on the variable content.</p></div>
 						<div class="post-list-footer text-center">
 							<a href="https://cmdln.org/2017/12/22/check-if-a-file-contains-a-multi-line-regex/">Read More</a>
-						</div>
-					</div>
-				</li>
-			
-				<li>
-					<div class="post-list-item">
-						<div class="post-header">
-							<h4 class="post-link"><a href="https://cmdln.org/2017/12/21/cfengine-files-preserve-with-explicit-perms/">Cfengine Files Preserve With Explicit Perms</a></h4>
-							<h4 class="post-date">Dec 21, 2017</h4>
-						</div>
-						<div class="post-summary"><p>If I have a promise with a copy_from promise where the body specifies that  permissions should be preserved and I also have a perms body on the same  promise what is expected to happen?  The files type promises documentation describes the normal order of files promise attributes during promise actuation.
-The documentation notes:
- file presence ( create | copy | link ) permissions file content  So the explicitly specified permissions should win in the end.</p></div>
-						<div class="post-list-footer text-center">
-							<a href="https://cmdln.org/2017/12/21/cfengine-files-preserve-with-explicit-perms/">Read More</a>
 						</div>
 					</div>
 				</li>
