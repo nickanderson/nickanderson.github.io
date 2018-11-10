@@ -155,6 +155,8 @@ overhead. Additionally, depending how the service restart on config change is
 managed, may lead to the same service re-starting multiple times in the same
 agent run.
 
+*Policy:*
+
 #+Caption: My competitive management pattern example
 #+Name: My competitive management pattern example
 #+BEGIN_SRC cfengine3 :exports both
@@ -274,6 +276,8 @@ altering the parameter to pass a map of key value pairs.
 
 A quick change to the parameters allows multiple key values to be set at a
 single time, reducing IO.
+
+*Policy:*
 
 #+Caption: My competitive management pattern with map parameter
 #+Name: My competitive management pattern example with map parameter
@@ -409,6 +413,8 @@ classic array as a generator to produce copies of the key values tailored for
 each config file. An alternative to creating different variables using a classic
 array generator we could copy =set_line_based= and customize it to allow a
 prefix to be specified.
+
+*Policy:*
 
 #+Caption: My centralized management pattern example 
 #+Name: My centralized management pattern example 
@@ -551,6 +557,8 @@ the data defined there. This separation enables more complex data convergence,
 delegation of control, and especially with more data can improve the readability
 of the policy.
 
+*Policy:*
+
 #+Caption: My centralized management pattern example with separate data bundle
 #+Name: My centralized management pattern example with separate data bundle
 #+BEGIN_SRC cfengine3 :exports both
@@ -687,6 +695,8 @@ R: export PAPERTRAIL_HOST=xxx.papertrailapp.com
 Here we remove the init to reset the environment and add full file content
 management by attaching edit_defaults empty to the files promises. This ensures
 no unknown content in the configuration file.
+
+*Policy:*
 
 #+CAPTION: My centralized management pattern example with separate data bundle and full file management
 #+NAME: My centralized management pattern example with separate data bundle and full file management
@@ -826,6 +836,8 @@ external systems, reduces the size of the policy and improve policy readability,
 and eases testing of policy. We can use the json, yaml or env file formats
 interchangeably. CSV is also possible, but different parsing would be required.
 
+*/tmp/env.env:*
+
 #+CAPTION: /tmp/env.env
 #+BEGIN_SRC conf :tangle /tmp/etc.env
   PAPERTRAIL_HOST="xxx.papertrailapp.com"
@@ -837,6 +849,8 @@ interchangeably. CSV is also possible, but different parsing would be required.
   SMS_ENABLED="false"
   SMS_AWS_REGION="eu-west-1"
 #+END_SRC
+
+*/tmp/env.json:*
 
 #+CAPTION: /tmp/env.json
 #+BEGIN_SRC json :tangle /tmp/env.json
@@ -852,6 +866,8 @@ interchangeably. CSV is also possible, but different parsing would be required.
   }
 #+END_SRC
 
+*/tmp/env.yaml:*
+
 #+CAPTION: /tmp/env.yaml
 #+BEGIN_SRC yaml :tangle /tmp/env.yaml
   ---
@@ -864,6 +880,8 @@ interchangeably. CSV is also possible, but different parsing would be required.
   SMS_ENABLED: 'false'
   SMS_AWS_REGION: eu-west-1
 #+END_SRC
+
+*Policy:*
 
 #+Caption: My centralized management pattern example with separate data files
 #+NAME: My centralized management pattern example with separate data files
@@ -984,6 +1002,8 @@ or /publish/ their data by tagging it. In this iteration, since we have full
 knowledge of the desired state at one time we switched the file promises to be
 templates so that the full content is managed. This helps to avoid unknown
 settings.
+
+*Policy:*
 
 #+Caption: My cooperative management pattern example 
 #+Name: My cooperative management pattern example 
