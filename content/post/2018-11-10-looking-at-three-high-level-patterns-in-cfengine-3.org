@@ -819,7 +819,7 @@ external systems, reduces the size of the policy and improve policy readability,
 and eases testing of policy. We can use the json, yaml or env file formats
 interchangeably. CSV is also possible, but different parsing would be required.
 
-#+Caption: /tmp/env.env
+#+CAPTION: /tmp/env.env
 #+BEGIN_SRC conf :tangle /tmp/etc.env
   PAPERTRAIL_HOST="xxx.papertrailapp.com"
   PAPERTRAIL_PORT="11111"
@@ -831,7 +831,7 @@ interchangeably. CSV is also possible, but different parsing would be required.
   SMS_AWS_REGION="eu-west-1"
 #+END_SRC
 
-#+Caption: /tmp/env.json
+#+CAPTION: /tmp/env.json
 #+BEGIN_SRC json :tangle /tmp/env.json
   {
     "PAPERTRAIL_HOST": "xxx.papertrailapp.com",
@@ -845,7 +845,7 @@ interchangeably. CSV is also possible, but different parsing would be required.
   }
 #+END_SRC
 
-#+Caption: /tmp/env.yaml
+#+CAPTION: /tmp/env.yaml
 #+BEGIN_SRC yaml :tangle /tmp/env.yaml
   ---
   PAPERTRAIL_HOST: xxx.papertrailapp.com
