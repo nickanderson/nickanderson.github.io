@@ -1057,13 +1057,13 @@ of the policy.</p>
           <span class="kr">handle</span> <span class="o">=&gt;</span> <span class="s">&#34;_etc_environment&#34;</span><span class="p">;</span>
 
         <span class="s">&#34;/tmp/etc/systemd/system.conf&#34;</span>
-          <span class="kr">edit_line</span> <span class="o">=&gt;</span> <span class="nf">set_line_based</span><span class="p">(</span><span class="s">&#34;systemconf&#34;</span><span class="p">,</span> <span class="s">&#34;=&#34;</span><span class="p">,</span> <span class="s">&#34;</span><span class="se">\s</span><span class="s">*=</span><span class="se">\s</span><span class="s">*&#34;</span><span class="p">,</span> <span class="s">&#34;.*&#34;</span><span class="p">,</span> <span class="s">&#34;</span><span class="se">\s</span><span class="s">*#</span><span class="se">\s</span><span class="s">*&#34;</span><span class="p">),</span>
+          <span class="kr">edit_line</span> <span class="o">=&gt;</span> <span class="nf">set_line_based</span><span class="p">(</span><span class="s">&#34;</span><span class="si">$(this.bundle)</span><span class="s">.systemconf&#34;</span><span class="p">,</span> <span class="s">&#34;=&#34;</span><span class="p">,</span> <span class="s">&#34;</span><span class="se">\s</span><span class="s">*=</span><span class="se">\s</span><span class="s">*&#34;</span><span class="p">,</span> <span class="s">&#34;.*&#34;</span><span class="p">,</span> <span class="s">&#34;</span><span class="se">\s</span><span class="s">*#</span><span class="se">\s</span><span class="s">*&#34;</span><span class="p">),</span>
           <span class="kr">classes</span>   <span class="o">=&gt;</span> <span class="nf">if_repaired</span><span class="p">(</span><span class="s">&#34;system_conf_changed&#34;</span><span class="p">),</span>
           <span class="kr">create</span> <span class="o">=&gt;</span> <span class="s">&#34;true&#34;</span><span class="p">,</span>
           <span class="kr">handle</span> <span class="o">=&gt;</span> <span class="s">&#34;_etc_systemd_system_conf&#34;</span><span class="p">;</span>
 
         <span class="s">&#34;/tmp/etc/profile&#34;</span>
-          <span class="kr">edit_line</span> <span class="o">=&gt;</span> <span class="nf">set_line_based</span><span class="p">(</span><span class="s">&#34;etcprofile&#34;</span><span class="p">,</span> <span class="s">&#34;=&#34;</span><span class="p">,</span> <span class="s">&#34;</span><span class="se">\s</span><span class="s">*=</span><span class="se">\s</span><span class="s">*&#34;</span><span class="p">,</span> <span class="s">&#34;.*&#34;</span><span class="p">,</span> <span class="s">&#34;</span><span class="se">\s</span><span class="s">*#</span><span class="se">\s</span><span class="s">*&#34;</span><span class="p">),</span>
+          <span class="kr">edit_line</span> <span class="o">=&gt;</span> <span class="nf">set_line_based</span><span class="p">(</span><span class="s">&#34;</span><span class="si">$(this.bundle)</span><span class="s">.etcprofile&#34;</span><span class="p">,</span> <span class="s">&#34;=&#34;</span><span class="p">,</span> <span class="s">&#34;</span><span class="se">\s</span><span class="s">*=</span><span class="se">\s</span><span class="s">*&#34;</span><span class="p">,</span> <span class="s">&#34;.*&#34;</span><span class="p">,</span> <span class="s">&#34;</span><span class="se">\s</span><span class="s">*#</span><span class="se">\s</span><span class="s">*&#34;</span><span class="p">),</span>
           <span class="kr">create</span> <span class="o">=&gt;</span> <span class="s">&#34;true&#34;</span><span class="p">,</span>
           <span class="kr">handle</span> <span class="o">=&gt;</span> <span class="s">&#34;_etc_profile&#34;</span><span class="p">;</span>
 
@@ -1135,24 +1135,34 @@ of the policy.</p>
 </div>
 <p><strong>Output:</strong></p>
 
-<p><em>home/nickanderson/org/cfengine3-11095nCN:8:32: error: An rvalue is quoted, but we expect an unquoted body identifier
-        edit_defaults => "true",
-                               ^
-/home/nickanderson/org/cfengine3-11095nCN:14:32: error: An rvalue is quoted, but we expect an unquoted body identifier
-        edit_defaults => "true",
-                               ^
-/home/nickanderson/org/cfengine3-11095nCN:21:32: error: An rvalue is quoted, but we expect an unquoted body identifier
-        edit_defaults => "true",
-                               ^
-   error: There are syntax errors in policy files
-   error: Policy failed validation with command '"/home/nickanderson</em>.cfagent/bin/cf-promises" -c "/home/nickanderson/org/cfengine3-11095nCN"'
-   error: CFEngine was not able to get confirmation of promises from cf-promises, so going to failsafe
-   error: CFEngine failsafe.cf: <em>home/nickanderson</em>.cfagent/inputs <em>home/nickanderson</em>.cfagent/inputs/failsafe.cf
-   error: No suitable server found
-   error: No suitable server found
-   error: No suitable server found
-   error: Method 'failsafe_cfe_internal_update' failed in some repairs
-R: Built-in failsafe policy triggered</p>
+<p>R: CFEngine 3.12.0
+R: /tmp/etc/environment
+R: CORE_JDBC_USER=vagrant
+R: PAPERTRAIL_PORT=12345
+R: CORE_JDBC_URL=jdbc:postgresql://localhost/xxx
+R: SMS_ENABLED=false
+R: SMS_AWS_REGION=eu-west-1
+R: APPOPTICS_APIKEY=cafebabedeadbeef
+R: PAPERTRAIL_HOST=xxx.papertrailapp.com
+R: APPOPTICS_USER=ops@whatever.com
+R: /tmp/etc/systemd/system.conf
+R: DefaultEnvironment=APPOPTICS_USER=ops@whatever.com
+R: DefaultEnvironment=CORE_JDBC_USER=vagrant
+R: DefaultEnvironment=SMS_AWS_REGION=eu-west-1
+R: DefaultEnvironment=SMS_ENABLED=false
+R: DefaultEnvironment=APPOPTICS_APIKEY=cafebabedeadbeef
+R: DefaultEnvironment=CORE_JDBC_URL=jdbc:postgresql://localhost/xxx
+R: DefaultEnvironment=PAPERTRAIL_HOST=xxx.papertrailapp.com
+R: DefaultEnvironment=PAPERTRAIL_PORT=12345
+R: /tmp/etc/profile
+R: export SMS_ENABLED=false
+R: export CORE_JDBC_URL=jdbc:postgresql://localhost/xxx
+R: export APPOPTICS_USER=ops@whatever.com
+R: export CORE_JDBC_USER=vagrant
+R: export SMS_AWS_REGION=eu-west-1
+R: export PAPERTRAIL_PORT=12345
+R: export APPOPTICS_APIKEY=cafebabedeadbeef
+R: export PAPERTRAIL_HOST=xxx.papertrailapp.com</p>
 
 <h2 id="centralized-management-separate-data-bundle-with-full-file-management">Centralized management separate data bundle with full file management</h2>
 
@@ -1349,7 +1359,7 @@ no unknown content in the configuration file.</p>
 </div>
 <p><strong>Output:</strong></p>
 
-<p>R: CFEngine 3.12.0
+<pre><code>R: CFEngine 3.12.0
 R: /tmp/etc/environment
 R: PAPERTRAIL_HOST=xxx.trailpaperapp.com
 R: PAPERTRAIL_PORT=22222
@@ -1376,13 +1386,10 @@ R: export CORE_JDBC_USER=vagrant
 R: export SMS_AWS_REGION=eu-west-1
 R: export PAPERTRAIL_PORT=12345
 R: export APPOPTICS_APIKEY=cafebabedeadbeef
-R: export PAPERTRAIL_HOST=xxx.papertrailapp.com</p>
+R: export PAPERTRAIL_HOST=xxx.papertrailapp.com
+</code></pre>
 
 <h2 id="centralized-management-separate-data-bundle-with-external-data-files">Centralized management separate data bundle with external data files</h2>
-
-<p>:LOGBOOK:
-CLOCK: [2018-11-10 Sat 13:40]--[2018-11-10 Sat 16:09] =>  2:29
-:END:</p>
 
 <p>In addition to the benefits derived from separating data bundles external data
 files can further enable delegation of control working much more easily with
@@ -1614,7 +1621,7 @@ interchangeably. CSV is also possible, but different parsing would be required.<
 </div>
 <p><strong>Output:</strong></p>
 
-<p>R: CFEngine 3.12.0
+<pre><code>R: CFEngine 3.12.0
 R: /tmp/etc/environment
 R: PAPERTRAIL_HOST=xxx.papertrailapp.com
 R: PAPERTRAIL_PORT=11111
@@ -1641,14 +1648,9 @@ R: export APPOPTICS_USERexport ops@whatever.com
 R: export SMS_ENABLEDexport false
 R: export CORE_JDBC_USERexport vagrant
 R: export CORE_JDBC_URLexport jdbc:postgresql://localhost/xxx
-R: export APPOPTICS_APIKEYexport cafebabedeadbeef</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"></code></pre></td></tr></table>
-</div>
-</div>
+R: export APPOPTICS_APIKEYexport cafebabedeadbeef
+</code></pre>
+
 <h1 id="cooperative-management">Cooperative management</h1>
 
 <p>Here we allow each service to define the key values they need. They <em>advertise/
