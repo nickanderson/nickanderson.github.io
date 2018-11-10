@@ -1,0 +1,1139 @@
+#+Title: Looking at three high level patterns in CFEngine 3
+#+AUTHOR: Nick Anderson
+#+DATE: 2018-11-10
+#+TAGS: cfengine3 cfengine
+#+DRAFT: false
+
+How do you deal with config files that need different settings based on various
+services that are running on a host and cooperate with other teams? It's a
+common question, and it came up on in #cfengine on irc.freenode.net recently.
+
+#+BEGIN_QUOTE
+  The issue is that team A might be working on package A, which requires some
+  environment variables set. But team B might be working on a totally different
+  thing -- and want to achieve the same thing. I hoped to give them a bit of
+  'library' code to take care of it, rather than have them touch a centralized
+  environment-setting policy file.
+#+END_QUOTE
+
+Here, I look at three high level patterns I have seen.
+
+- Competitive management :: Each bundle that needs a specific config manages it
+     by itself, typically by using a parameterized bundle.
+
+- Centralized management :: All config definition is in a single place, anyone
+     needing something edits the global config.
+
+- Cooperative management :: Each bundle that needs a specific config, publishes
+     the config it needs, and another policy handles consolidating the configs
+     and edits the config as necessary.
+
+Let's take a look at an example of each of these patterns. I will start from an
+example recently shared in #cfengine on irc.freenode.net that manages
+=/etc/environment=, =/etc/sysstemd.conf=, and =/etc/profile=. I'll first fix it,
+so that it works, then show several different patterns that ac hive the smae
+goal.
+
+* The original example
+
+
+From #cfengine on irc.freenode.net:
+
+#+BEGIN_QUOTE
+  Hello everyone. I am trying to use set_line_based to set some "global"
+  environment variables. I've created a bundle that I thought might make it
+  easier. However, using this bundle more than once only applies the first
+  'invocation'. Code here: https://pastebin.com/mbU1Bb6i
+#+END_QUOTE
+
+*Example usage:*
+
+#+Caption: bundle agent vagrant_vm
+#+BEGIN_SRC cfengine3
+  bundle agent vagrant_vm
+  {
+    meta:
+        "tags" slist => {
+                          "autorun"
+        };
+    methods:
+        "unifi";
+        "any" usebundle => global_env("PAPERTRAIL_HOST",  "xxx.papertrailapp.com");
+        "any" usebundle => global_env("PAPERTRAIL_PORT",  "12345");
+        "any" usebundle => global_env("APPOPTICS_USER",   "ops@whatever.com");
+        "any" usebundle => global_env("APPOPTICS_APIKEY", "cafebabedeadbeef");
+        "any" usebundle => global_env("CORE_JDBC_URL",    "jdbc:postgresql://localhost/xxx");
+        "any" usebundle => global_env("CORE_JDBC_USER",   "vagrant");
+        "any" usebundle => global_env("SMS_ENABLED",      "false");
+        "any" usebundle => global_env("SMS_AWS_REGION",   "eu-west-1");
+  }
+#+END_SRC
+
+*Implementation:*
+
+#+Caption: bundle agent global_env(name, value)
+#+BEGIN_SRC cfengine3
+  bundle agent global_env(name, value)
+  {
+    vars:
+        "etcenv[$(name)]" string => "$(value)";
+        "systemconf[DefaultEnvironment=$(name)]" string => "$(value)";
+        "etcprofile[export $(name)]" string => "$(value)";
+      
+    files:
+        "/etc/environment"
+          edit_line => set_line_based("global_env.etcenv", "=", "\s*=\s*", ".*", "\s*#\s*");
+        "/etc/systemd/system.conf"
+          edit_line => set_line_based("global_env.systemconf", "=", "\s*=\s*", ".*", "\s*#\s*"),
+          classes   => if_repaired("system_conf_changed");
+        "/etc/profile"
+          edit_line => set_line_based("global_env.etcprofile", "=", "\s*=\s*", ".*", "\s*#\s*");
+
+    commands:
+      system_conf_changed::
+        "/sbin/systemctl daemon-reload"
+          contain => exec_owner("root");
+  }
+#+END_SRC
+
+The reason that only the first actuation of =global_env= alters the file is
+because the promise does not differ. Once a promise has been kept or repaired,
+it is not actuated again within the same agent run. The promise can be made
+unique by including the parameters which are different between actuation's in
+the promise. Here we add a handle using both parameters, so that the promise is
+unique across actuation's of the bundle for different values of =name= and
+=value=.
+
+#+BEGIN_SRC cfengine3
+  "/etc/environment"
+    edit_line => set_line_based("global_env.etcenv", "=", "\s*=\s*", ".*", "\s*#\s*"),
+    handle => "etc_environment_$(name)_$(value)";
+#+END_SRC
+
+I will combine them together into the same policy file and make some minor
+changes.
+
+- I added handles using the parameters to make sure that the promises are unique
+  across executions with different parameter values. For more on this, see the
+  [[https://docs.cfengine.com/docs/3.12/reference-language-concepts-bundles.html][language concepts for bundles]], it discusses how bundles are not functions.
+
+- I added =bundle agent __main__= so that the =vagrant_vm= bundle will be
+  actuated when this policy file is run directly.
+  
+- I removed the =unifi= methods promise because it was not provided in the
+  original example.
+
+- I added reports that show the complete content of the files for easy
+  demonstration.
+  
+- I include the stdlib for my executions, you don't see it, but know that it's
+  in use.
+
+- I guard the ~systemd daemon-reload~ with a check that the executing user is
+  root because I prototype policy as my own user, inside org-mode using
+  [[https://github.com/nickanderson/ob-cfengine3][ob-cfengine3]] (shameless plug).
+  
+- I add an init bundle to reset as if running from a clean state with no
+  pre-existing configuration.
+
+- I added body contain =exec_owner()= because it isn't in the stdlib.
+
+- I added =create => "true"= to the files promises.
+
+- I prefixed the files promises with =/tmp=.
+
+* Competitive management
+:PROPERTIES:
+:ID:       57de7841-ac78-403a-b646-0e9ac05af7e2
+:END:
+
+This is a common pattern. I think of this pattern as competitive because each
+service manages what it needs, multiple services may compete for control over
+the same resources like configuration files. Each service only worries about
+itself, this pattern allows for extra settings to exist in the configuration
+files which is beneficial in situations where control must be shared between
+multiple agents. This pattern results in files being edited multiple times
+within a single agent run which may be useful in ordering, but results in some
+overhead. Additionally, depending how the service restart on config change is
+managed, may lead to the same service re-starting multiple times in the same
+agent run.
+
+#+Caption: My competitive management pattern example
+#+Name: My competitive management pattern example
+#+BEGIN_SRC cfengine3 :exports both
+  bundle agent global_env(name, value)
+  {
+    vars:
+        "etcenv[$(name)]" string => "$(value)";
+        "systemconf[DefaultEnvironment=$(name)]" string => "$(value)";
+        "etcprofile[export $(name)]" string => "$(value)";
+
+    files:
+
+        "/tmp/etc/environment"
+          edit_line => set_line_based("global_env.etcenv", "=", "\s*=\s*", ".*", "\s*#\s*"),
+          create => "true",
+          handle => "_etc_environment_$(name)_$(value)";
+
+        "/tmp/etc/systemd/system.conf"
+          edit_line => set_line_based("global_env.systemconf", "=", "\s*=\s*", ".*", "\s*#\s*"),
+          classes   => if_repaired("system_conf_changed"),
+          create => "true",
+          handle => "_etc_systemd_system_conf_$(name)_$(value)";
+
+        "/tmp/etc/profile"
+          edit_line => set_line_based("global_env.etcprofile", "=", "\s*=\s*", ".*", "\s*#\s*"),
+          create => "true",
+          handle => "_etc_profile_$(name)_$(value)";
+
+    commands:
+      system_conf_changed::
+        "/sbin/systemctl daemon-reload"
+          contain => exec_owner("root"),
+          if => strcmp( "$(sys.user_data[username])", "root" ),
+          handle => "_sbin_systemctl_daemon_reload_$(name)_$(value)";
+  }
+
+  body contain exec_owner(user)
+  {
+          exec_owner => "$(user)";
+  }
+
+  bundle agent vagrant_vm
+  {
+    meta:
+        "tags" slist => {
+                          "autorun"
+        };
+    methods:
+        "any" usebundle => global_env("PAPERTRAIL_HOST",  "xxx.papertrailapp.com");
+        "any" usebundle => global_env("PAPERTRAIL_PORT",  "12345");
+        "any" usebundle => global_env("APPOPTICS_USER",   "ops@whatever.com");
+        "any" usebundle => global_env("APPOPTICS_APIKEY", "cafebabedeadbeef");
+        "any" usebundle => global_env("CORE_JDBC_URL",    "jdbc:postgresql://localhost/xxx");
+        "any" usebundle => global_env("CORE_JDBC_USER",   "vagrant");
+        "any" usebundle => global_env("SMS_ENABLED",      "false");
+        "any" usebundle => global_env("SMS_AWS_REGION",   "eu-west-1");
+  }
+  bundle agent init 
+  {
+    files:
+        "/tmp/etc/environment" delete => tidy;
+        "/tmp/etc/systemd/system.conf" delete => tidy;
+        "/tmp/etc/profile" delete => tidy;
+  }
+  bundle agent __main__
+  {
+    methods:
+        "init";
+        "vagrant_vm";
+
+    reports:
+        "CFEngine $(sys.cf_version)";
+        "/tmp/etc/environment"         printfile => cat( "$(this.promiser)" );
+        "/tmp/etc/systemd/system.conf" printfile => cat( "$(this.promiser)" );
+        "/tmp/etc/profile"             printfile => cat( "$(this.promiser)" );
+  }
+#+END_SRC
+
+*Output:*
+
+#+RESULTS: My competitive management pattern example
+#+begin_example
+R: CFEngine 3.12.0
+R: /tmp/etc/environment
+R: PAPERTRAIL_HOST=xxx.papertrailapp.com
+R: PAPERTRAIL_PORT=12345
+R: APPOPTICS_USER=ops@whatever.com
+R: APPOPTICS_APIKEY=cafebabedeadbeef
+R: CORE_JDBC_URL=jdbc:postgresql://localhost/xxx
+R: CORE_JDBC_USER=vagrant
+R: SMS_ENABLED=false
+R: SMS_AWS_REGION=eu-west-1
+R: /tmp/etc/systemd/system.conf
+R: DefaultEnvironment=PAPERTRAIL_HOST=xxx.papertrailapp.com
+R: DefaultEnvironment=PAPERTRAIL_PORT=12345
+R: DefaultEnvironment=APPOPTICS_USER=ops@whatever.com
+R: DefaultEnvironment=APPOPTICS_APIKEY=cafebabedeadbeef
+R: DefaultEnvironment=CORE_JDBC_URL=jdbc:postgresql://localhost/xxx
+R: DefaultEnvironment=CORE_JDBC_USER=vagrant
+R: DefaultEnvironment=SMS_ENABLED=false
+R: DefaultEnvironment=SMS_AWS_REGION=eu-west-1
+R: /tmp/etc/profile
+R: export PAPERTRAIL_HOST=xxx.papertrailapp.com
+R: export PAPERTRAIL_PORT=12345
+R: export APPOPTICS_USER=ops@whatever.com
+R: export APPOPTICS_APIKEY=cafebabedeadbeef
+R: export CORE_JDBC_URL=jdbc:postgresql://localhost/xxx
+R: export CORE_JDBC_USER=vagrant
+R: export SMS_ENABLED=false
+R: export SMS_AWS_REGION=eu-west-1
+#+end_example
+
+A common evolution for this policy would be to condense the write operations by
+altering the parameter to pass a map of key value pairs.
+
+** Condense the write operations by changing the parameters
+
+A quick change to the parameters allows multiple key values to be set at a
+single time, reducing IO.
+
+#+Caption: My competitive management pattern with map parameter
+#+Name: My competitive management pattern example with map parameter
+#+BEGIN_SRC cfengine3 :exports both
+  bundle agent global_env(map)
+  {
+    vars:
+        # map is KEY=VAL
+        "name" slist => getindices( map );
+        "etcenv[$(name)]" string => "$(map[$(name)])";
+        "systemconf[DefaultEnvironment=$(name)]" string => "$(map[$(name)])";
+        "etcprofile[export $(name)]" string => "$(map[$(name)])";
+
+    files:
+
+        "/tmp/etc/environment"
+          edit_line => set_line_based("global_env.etcenv", "=", "\s*=\s*", ".*", "\s*#\s*"),
+          create => "true",
+          handle => "_etc_environment_$(name)_$(map[$(name)])";
+
+        "/tmp/etc/systemd/system.conf"
+          edit_line => set_line_based("global_env.systemconf", "=", "\s*=\s*", ".*", "\s*#\s*"),
+          classes   => if_repaired("system_conf_changed"),
+          create => "true",
+          handle => "_etc_systemd_system_conf_$(name)_$(map[$(name)])";
+
+        "/tmp/etc/profile"
+          edit_line => set_line_based("global_env.etcprofile", "=", "\s*=\s*", ".*", "\s*#\s*"),
+          create => "true",
+          handle => "_etc_profile_$(name)_$(map[$(name)])";
+
+    commands:
+      system_conf_changed::
+        "/sbin/systemctl daemon-reload"
+          contain => exec_owner("root"),
+          if => strcmp( "$(sys.user_data[username])", "root" ),
+          handle => "_sbin_systemctl_daemon_reload_$(name)_$(map[$(name)])";
+  }
+
+  body contain exec_owner(user)
+  {
+          exec_owner => "$(user)";
+  }
+
+  bundle agent vagrant_vm
+  {
+    meta:
+        "tags" slist => {
+                          "autorun"
+        };
+
+    vars:
+
+              "d" data => '{
+    "PAPERTRAIL_HOST": "xxx.papertrailapp.com",
+    "PAPERTRAIL_PORT": "12345",
+    "APPOPTICS_USER": "ops@whatever.com",
+    "APPOPTICS_APIKEY": "cafebabedeadbeef",
+    "CORE_JDBC_URL": "jdbc:postgresql://localhost/xxx",
+    "CORE_JDBC_USER": "vagrant",
+    "SMS_ENABLED": "false",
+    "SMS_AWS_REGION": "eu-west-1"
+  }';
+
+    methods:
+        "any" usebundle => global_env( @(d) );
+
+  }
+  bundle agent init
+  {
+    files:
+        "/tmp/etc/environment" delete => tidy;
+        "/tmp/etc/systemd/system.conf" delete => tidy;
+        "/tmp/etc/profile" delete => tidy;
+  }
+  bundle agent __main__
+  {
+    methods:
+        "init";
+        "vagrant_vm";
+
+    reports:
+        "CFEngine $(sys.cf_version)";
+        "/tmp/etc/environment"         printfile => cat( "$(this.promiser)" );
+        "/tmp/etc/systemd/system.conf" printfile => cat( "$(this.promiser)" );
+        "/tmp/etc/profile"             printfile => cat( "$(this.promiser)" );
+  }
+#+END_SRC
+
+*Output:*
+
+#+RESULTS: My competitive management pattern example with map parameter
+#+begin_example
+R: CFEngine 3.12.0
+R: /tmp/etc/environment
+R: APPOPTICS_USER=ops@whatever.com
+R: PAPERTRAIL_PORT=12345
+R: CORE_JDBC_USER=vagrant
+R: APPOPTICS_APIKEY=cafebabedeadbeef
+R: SMS_ENABLED=false
+R: PAPERTRAIL_HOST=xxx.papertrailapp.com
+R: SMS_AWS_REGION=eu-west-1
+R: CORE_JDBC_URL=jdbc:postgresql://localhost/xxx
+R: /tmp/etc/systemd/system.conf
+R: DefaultEnvironment=APPOPTICS_USER=ops@whatever.com
+R: DefaultEnvironment=CORE_JDBC_USER=vagrant
+R: DefaultEnvironment=SMS_AWS_REGION=eu-west-1
+R: DefaultEnvironment=SMS_ENABLED=false
+R: DefaultEnvironment=APPOPTICS_APIKEY=cafebabedeadbeef
+R: DefaultEnvironment=CORE_JDBC_URL=jdbc:postgresql://localhost/xxx
+R: DefaultEnvironment=PAPERTRAIL_HOST=xxx.papertrailapp.com
+R: DefaultEnvironment=PAPERTRAIL_PORT=12345
+R: /tmp/etc/profile
+R: export SMS_ENABLED=false
+R: export CORE_JDBC_URL=jdbc:postgresql://localhost/xxx
+R: export APPOPTICS_USER=ops@whatever.com
+R: export CORE_JDBC_USER=vagrant
+R: export SMS_AWS_REGION=eu-west-1
+R: export PAPERTRAIL_PORT=12345
+R: export APPOPTICS_APIKEY=cafebabedeadbeef
+R: export PAPERTRAIL_HOST=xxx.papertrailapp.com
+#+end_example
+
+* Centralized management
+
+Let's take a look at what a centralized management pattern might look like. This
+is the simplest pattern, and many times how policies begin as a prototype,
+before evolving into another pattern.
+
+We removed the =vagrant_vm= bundle, and the uniqness from the promise handles.
+Now, all the configuration data is right in the =global_env= bundle. We use a
+classic array as a generator to produce copies of the key values tailored for
+each config file. An alternative to creating different variables using a classic
+array generator we could copy =set_line_based= and customize it to allow a
+prefix to be specified.
+
+#+Caption: My centralized management pattern example 
+#+Name: My centralized management pattern example 
+#+BEGIN_SRC cfengine3 :exports both
+  bundle agent global_env
+  {
+    vars:
+
+      vagrant_vm::
+
+        "env[PAPERTRAIL_HOST]"            string => "xxx.papertrailapp.com";
+        "env[PAPERTRAIL_PORT]"            string => "12345";
+        "env[APPOPTICS_USER]"            string => "ops@whatever.com";
+        "env[APPOPTICS_APIKEY]"            string => "cafebabedeadbeef";
+        "env[CORE_JDBC_URL]"            string => "jdbc:postgresql://localhost/xxx";
+        "env[CORE_JDBC_USER]"            string => "vagrant";
+        "env[SMS_ENABLED]"            string => "false";
+        "env[SMS_AWS_REGION]"            string => "eu-west-1";
+
+      application_2::
+
+        "env[PAPERTRAIL_HOST]"            string => "xxx.trailpaperapp.com";
+        "env[PAPERTRAIL_PORT]"            string => "54321";
+        "env[APPOPTICS_USER]"            string => "ops@whatever.com";
+        "env[APPOPTICS_APIKEY]"            string => "xxxxiiiiiiixxixxix";
+        "env[CORE_JDBC_URL]"            string => "jdbc:postgresql://localhost/xxx";
+        "env[CORE_JDBC_USER]"            string => "vagrant";
+        "env[SMS_ENABLED]"            string => "false";
+        "env[SMS_AWS_REGION]"            string => "eu-east-2";
+
+
+      any::
+
+        "env_i" slist => getindices( env );
+        # Here we take the original simple key value pair and add different
+        # prefixes for the differnt config file types using a classic array as a
+        # generator. Alternatively, we could copy set_line_based and customize it
+        # allowing for a prefix parameter.
+        "systemconf[DefaultEnvironment=$(env_i)]" string => "$(env[$(env_i)])";
+        "etcprofile[export $(env_i)]" string => "$(env[$(env_i)])";
+
+    files:
+
+        "/tmp/etc/environment"
+          edit_line => set_line_based("global_env.env", "=", "\s*=\s*", ".*", "\s*#\s*"),
+          create => "true",
+          handle => "_etc_environment";
+
+        "/tmp/etc/systemd/system.conf"
+          edit_line => set_line_based("global_env.systemconf", "=", "\s*=\s*", ".*", "\s*#\s*"),
+          classes   => if_repaired("system_conf_changed"),
+          create => "true",
+          handle => "_etc_systemd_system_conf";
+
+        "/tmp/etc/profile"
+          edit_line => set_line_based("global_env.etcprofile", "=", "\s*=\s*", ".*", "\s*#\s*"),
+          create => "true",
+          handle => "_etc_profile";
+
+    commands:
+      system_conf_changed::
+        "/sbin/systemctl daemon-reload"
+          contain => exec_owner("root"),
+          if => strcmp( "$(sys.user_data[username])", "root" ),
+          handle => "_sbin_systemctl_daemon_reload";
+  }
+
+  body contain exec_owner(user)
+  {
+          exec_owner => "$(user)";
+  }
+
+  bundle agent init
+  {
+    files:
+        "/tmp/etc/environment" delete => tidy;
+        "/tmp/etc/systemd/system.conf" delete => tidy;
+        "/tmp/etc/profile" delete => tidy;
+  }
+  bundle agent __main__
+  {
+    classes:
+        "application_2" scope => "namespace";
+
+    methods:
+        "init";
+        "global_env";
+
+    reports:
+
+        "CFEngine $(sys.cf_version)";
+        "/tmp/etc/environment"         printfile => cat( "$(this.promiser)" );
+        "/tmp/etc/systemd/system.conf" printfile => cat( "$(this.promiser)" );
+        "/tmp/etc/profile"             printfile => cat( "$(this.promiser)" );
+  }
+#+END_SRC
+
+*Output:*
+
+#+RESULTS: My centralized management pattern example
+#+begin_example
+R: CFEngine 3.12.0
+R: /tmp/etc/environment
+R: SMS_AWS_REGION=eu-east-2
+R: PAPERTRAIL_HOST=xxx.trailpaperapp.com
+R: CORE_JDBC_URL=jdbc:postgresql://localhost/xxx
+R: SMS_ENABLED=false
+R: APPOPTICS_APIKEY=xxxxiiiiiiixxixxix
+R: APPOPTICS_USER=ops@whatever.com
+R: PAPERTRAIL_PORT=54321
+R: CORE_JDBC_USER=vagrant
+R: /tmp/etc/systemd/system.conf
+R: DefaultEnvironment=APPOPTICS_USER=ops@whatever.com
+R: DefaultEnvironment=CORE_JDBC_USER=vagrant
+R: DefaultEnvironment=SMS_AWS_REGION=eu-east-2
+R: DefaultEnvironment=SMS_ENABLED=false
+R: DefaultEnvironment=APPOPTICS_APIKEY=xxxxiiiiiiixxixxix
+R: DefaultEnvironment=CORE_JDBC_URL=jdbc:postgresql://localhost/xxx
+R: DefaultEnvironment=PAPERTRAIL_HOST=xxx.trailpaperapp.com
+R: DefaultEnvironment=PAPERTRAIL_PORT=54321
+R: /tmp/etc/profile
+R: export SMS_ENABLED=false
+R: export CORE_JDBC_URL=jdbc:postgresql://localhost/xxx
+R: export APPOPTICS_USER=ops@whatever.com
+R: export CORE_JDBC_USER=vagrant
+R: export SMS_AWS_REGION=eu-east-2
+R: export PAPERTRAIL_PORT=54321
+R: export APPOPTICS_APIKEY=xxxxiiiiiiixxixxix
+R: export PAPERTRAIL_HOST=xxx.trailpaperapp.com
+#+end_example
+
+Common evolution's on this policy include moving variable definition into it's
+own bundle, separating the data into external files, and since all data is known
+at one time, full file management is an option.
+
+** Centralized management separate data bundle
+
+Here I am sure to have the data bundle converge before the bundle that will use
+the data defined there. This separation enables more complex data convergence,
+delegation of control, and especially with more data can improve the readability
+of the policy.
+
+#+Caption: My centralized management pattern example with separate data bundle
+#+Name: My centralized management pattern example with separate data bundle
+#+BEGIN_SRC cfengine3 :exports both
+  bundle agent global_env
+  {
+    vars:
+
+        "env_i" slist => getindices( "app_data.env" );
+        # Here we take the original simple key value pair and add different prefixes
+        # for the differnt config file types using a classic array as a generator.
+        "systemconf[DefaultEnvironment=$(env_i)]" string => "$(app_data.env[$(env_i)])";
+        "etcprofile[export $(env_i)]" string => "$(app_data.env[$(env_i)])";
+
+    files:
+
+        "/tmp/etc/environment"
+          edit_line => set_line_based("app_data.env", "=", "\s*=\s*", ".*", "\s*#\s*"),
+          create => "true",
+          handle => "_etc_environment";
+
+        "/tmp/etc/systemd/system.conf"
+          edit_line => set_line_based("systemconf", "=", "\s*=\s*", ".*", "\s*#\s*"),
+          classes   => if_repaired("system_conf_changed"),
+          create => "true",
+          handle => "_etc_systemd_system_conf";
+
+        "/tmp/etc/profile"
+          edit_line => set_line_based("etcprofile", "=", "\s*=\s*", ".*", "\s*#\s*"),
+          create => "true",
+          handle => "_etc_profile";
+
+    commands:
+      system_conf_changed::
+        "/sbin/systemctl daemon-reload"
+          contain => exec_owner("root"),
+          if => strcmp( "$(sys.user_data[username])", "root" ),
+          handle => "_sbin_systemctl_daemon_reload";
+  }
+  bundle agent app_data
+  {
+    vars:
+          vars:
+
+      vagrant_vm::
+
+        "env[PAPERTRAIL_HOST]"            string => "xxx.papertrailapp.com";
+        "env[PAPERTRAIL_PORT]"            string => "12345";
+        "env[APPOPTICS_USER]"            string => "ops@whatever.com";
+        "env[APPOPTICS_APIKEY]"            string => "cafebabedeadbeef";
+        "env[CORE_JDBC_URL]"            string => "jdbc:postgresql://localhost/xxx";
+        "env[CORE_JDBC_USER]"            string => "vagrant";
+        "env[SMS_ENABLED]"            string => "false";
+        "env[SMS_AWS_REGION]"            string => "eu-west-1";
+
+      application_2::
+
+        "env[PAPERTRAIL_HOST]"            string => "xxx.trailpaperapp.com";
+        "env[PAPERTRAIL_PORT]"            string => "54321";
+        "env[APPOPTICS_USER]"            string => "ops@whatever.com";
+        "env[APPOPTICS_APIKEY]"            string => "xxxxiiiiiiixxixxix";
+        "env[CORE_JDBC_URL]"            string => "jdbc:postgresql://localhost/xxx";
+        "env[CORE_JDBC_USER]"            string => "vagrant";
+        "env[SMS_ENABLED]"            string => "false";
+        "env[SMS_AWS_REGION]"            string => "eu-east-2";
+
+  }
+
+  body contain exec_owner(user)
+  {
+          exec_owner => "$(user)";
+  }
+
+  bundle agent init
+  {
+    files:
+        "/tmp/etc/environment" delete => tidy;
+        "/tmp/etc/systemd/system.conf" delete => tidy;
+        "/tmp/etc/profile" delete => tidy;
+  }
+  bundle agent __main__
+  {
+    classes:
+        "vagrant_vm" expression => "any", scope => "namespace";
+
+    methods:
+        "init";
+        "app_data";
+        "global_env";
+
+    reports:
+        "CFEngine $(sys.cf_version)";
+        "/tmp/etc/environment"         printfile => cat( "$(this.promiser)" );
+        "/tmp/etc/systemd/system.conf" printfile => cat( "$(this.promiser)" );
+        "/tmp/etc/profile"             printfile => cat( "$(this.promiser)" );
+  }
+#+END_SRC
+
+*Output:*
+
+#+RESULTS: My centralized management pattern example with separate data bundle
+#+begin_example
+/home/nickanderson/org/cfengine3-11095nCN:8:32: error: An rvalue is quoted, but we expect an unquoted body identifier
+        edit_defaults => "true",
+                               ^
+/home/nickanderson/org/cfengine3-11095nCN:14:32: error: An rvalue is quoted, but we expect an unquoted body identifier
+        edit_defaults => "true",
+                               ^
+/home/nickanderson/org/cfengine3-11095nCN:21:32: error: An rvalue is quoted, but we expect an unquoted body identifier
+        edit_defaults => "true",
+                               ^
+   error: There are syntax errors in policy files
+   error: Policy failed validation with command '"/home/nickanderson/.cfagent/bin/cf-promises" -c "/home/nickanderson/org/cfengine3-11095nCN"'
+   error: CFEngine was not able to get confirmation of promises from cf-promises, so going to failsafe
+   error: CFEngine failsafe.cf: /home/nickanderson/.cfagent/inputs /home/nickanderson/.cfagent/inputs/failsafe.cf
+   error: No suitable server found
+   error: No suitable server found
+   error: No suitable server found
+   error: Method 'failsafe_cfe_internal_update' failed in some repairs
+R: Built-in failsafe policy triggered
+#+end_example
+
+** Centralized management separate data bundle with full file management
+
+Here we remove the init to reset the environment and add full file content
+management by attaching edit_defaults empty to the files promises. This ensures
+no unknown content in the configuration file.
+
+#+Caption: My centralized management pattern example with separate data bundle and full file management
+#+Name: My centralized management pattern example with separate data bundle and full file management
+#+BEGIN_SRC cfengine3 :exports both
+  bundle agent global_env
+  {
+      vars:
+      
+        "env_i" slist => getindices( "app_data.env" );
+      # Here we take the original simple key value pair and add different prefixes
+      # for the differnt config file types using a classic array as a generator.
+        "systemconf[DefaultEnvironment=$(env_i)]" string => "$(app_data.env[$(env_i)])";
+        "etcprofile[export $(env_i)]" string => "$(app_data.env[$(env_i)])";
+
+    files:
+
+        "/tmp/etc/environment"
+          edit_line => set_line_based("app_data.etcenv", "=", "\s*=\s*", ".*", "\s*#\s*"),
+          edit_defaults => empty,
+          create => "true",
+          handle => "_etc_environment";
+
+        "/tmp/etc/systemd/system.conf"
+          edit_line => set_line_based("$(this.bundle).systemconf", "=", "\s*=\s*", ".*", "\s*#\s*"),
+          edit_defaults => empty,
+          classes   => if_repaired("system_conf_changed"),
+          create => "true",
+          handle => "_etc_systemd_system_conf";
+
+        "/tmp/etc/profile"
+          edit_line => set_line_based("$(this.bundle).etcprofile", "=", "\s*=\s*", ".*", "\s*#\s*"),
+          edit_defaults => empty,
+          create => "true",
+          handle => "_etc_profile";
+
+    commands:
+      system_conf_changed::
+        "/sbin/systemctl daemon-reload"
+          contain => exec_owner("root"),
+          if => strcmp( "$(sys.user_data[username])", "root" ),
+          handle => "_sbin_systemctl_daemon_reload";
+  }
+  bundle agent app_data
+  {
+    vars:
+      vagrant_vm::
+        "env[PAPERTRAIL_HOST]"            string => "xxx.papertrailapp.com";
+        "env[PAPERTRAIL_PORT]"            string => "12345";
+        "env[APPOPTICS_USER]"            string => "ops@whatever.com";
+        "env[APPOPTICS_APIKEY]"            string => "cafebabedeadbeef";
+        "env[CORE_JDBC_URL]"            string => "jdbc:postgresql://localhost/xxx";
+        "env[CORE_JDBC_USER]"            string => "vagrant";
+        "env[SMS_ENABLED]"            string => "false";
+        "env[SMS_AWS_REGION]"            string => "eu-west-1";
+
+      application_2::
+        "env[PAPERTRAIL_HOST]"            string => "xxx.trailpaperapp.com";
+        "env[PAPERTRAIL_PORT]"            string => "54321";
+        "env[APPOPTICS_USER]"            string => "ops@whatever.com";
+        "env[APPOPTICS_APIKEY]"            string => "xxxxiiiiiiixxixxix";
+        "env[CORE_JDBC_URL]"            string => "jdbc:postgresql://localhost/xxx";
+        "env[CORE_JDBC_USER]"            string => "vagrant";
+        "env[SMS_ENABLED]"            string => "false";
+        "env[SMS_AWS_REGION]"            string => "eu-east-2";
+
+  }
+
+  body contain exec_owner(user)
+  {
+          exec_owner => "$(user)";
+  }
+
+  bundle agent init
+  {
+    files:
+        "/tmp/etc/environment" delete => tidy;
+        "/tmp/etc/systemd/system.conf" delete => tidy;
+        "/tmp/etc/profile" delete => tidy;
+  }
+  bundle agent __main__
+  {
+    classes:
+        "vagrant_vm" expression => "any", scope => "namespace";
+
+    methods:
+        #"init";
+        "app_data";
+        "global_env";
+
+    reports:
+        "CFEngine $(sys.cf_version)";
+        "/tmp/etc/environment"         printfile => cat( "$(this.promiser)" );
+        "/tmp/etc/systemd/system.conf" printfile => cat( "$(this.promiser)" );
+        "/tmp/etc/profile"             printfile => cat( "$(this.promiser)" );
+  }
+#+END_SRC
+
+*Output:*
+
+#+RESULTS: My centralized management pattern example with separate data bundle and full file management
+#+begin_example
+R: CFEngine 3.12.0
+R: /tmp/etc/environment
+R: PAPERTRAIL_HOST=xxx.trailpaperapp.com
+R: PAPERTRAIL_PORT=22222
+R: APPOPTICS_USER=ops@cfengine.com
+R: APPOPTICS_APIKEY=toodledum
+R: CORE_JDBC_URL=jdbc:postgresql://localhost/xxx
+R: CORE_JDBC_USER=vagrant
+R: SMS_ENABLED=false
+R: SMS_AWS_REGION=eu-west-1
+R: /tmp/etc/systemd/system.conf
+R: DefaultEnvironment=PAPERTRAIL_PORT=22222
+R: DefaultEnvironment=APPOPTICS_APIKEY=toodledum
+R: DefaultEnvironment=SMS_ENABLED=false
+R: DefaultEnvironment=CORE_JDBC_USER=vagrant
+R: DefaultEnvironment=CORE_JDBC_URL=jdbc:postgresql://localhost/xxx
+R: DefaultEnvironment=APPOPTICS_USER=ops@cfengine.com
+R: DefaultEnvironment=PAPERTRAIL_HOST=xxx.trailpaperapp.com
+R: DefaultEnvironment=SMS_AWS_REGION=eu-west-1
+R: /tmp/etc/profile
+R: export SMS_ENABLED=false
+R: export CORE_JDBC_URL=jdbc:postgresql://localhost/xxx
+R: export APPOPTICS_USER=ops@whatever.com
+R: export CORE_JDBC_USER=vagrant
+R: export SMS_AWS_REGION=eu-west-1
+R: export PAPERTRAIL_PORT=12345
+R: export APPOPTICS_APIKEY=cafebabedeadbeef
+R: export PAPERTRAIL_HOST=xxx.papertrailapp.com
+#+end_example
+
+** Centralized management separate data bundle with external data files
+:LOGBOOK:
+CLOCK: [2018-11-10 Sat 13:40]--[2018-11-10 Sat 16:09] =>  2:29
+:END:
+
+In addition to the benefits derived from separating data bundles external data
+files can further enable delegation of control working much more easily with
+external systems, reduces the size of the policy and improve policy readability,
+and eases testing of policy. We can use the json, yaml or env file formats
+interchangeably. CSV is also possible, but different parsing would be required.
+
+#+Caption: /tmp/env.env
+#+BEGIN_SRC conf :tangle /tmp/etc.env
+  PAPERTRAIL_HOST="xxx.papertrailapp.com"
+  PAPERTRAIL_PORT="11111"
+  APPOPTICS_USER="ops@whatever.com"
+  APPOPTICS_APIKEY="cafebabedeadbeef"
+  CORE_JDBC_URL="jdbc:postgresql://localhost/xxx"
+  CORE_JDBC_USER="vagrant"
+  SMS_ENABLED="false"
+  SMS_AWS_REGION="eu-west-1"
+#+END_SRC
+
+#+Caption: /tmp/env.json
+#+BEGIN_SRC json :tangle /tmp/env.json
+  {
+    "PAPERTRAIL_HOST": "xxx.papertrailapp.com",
+    "PAPERTRAIL_PORT": "11111",
+    "APPOPTICS_USER": "ops@whatever.com",
+    "APPOPTICS_APIKEY": "cafebabedeadbeef",
+    "CORE_JDBC_URL": "jdbc:postgresql://localhost/xxx",
+    "CORE_JDBC_USER": "vagrant",
+    "SMS_ENABLED": "false",
+    "SMS_AWS_REGION": "eu-west-1"
+  }
+#+END_SRC
+
+#+Caption: /tmp/env.yaml
+#+BEGIN_SRC yaml :tangle /tmp/env.yaml
+  ---
+  PAPERTRAIL_HOST: xxx.papertrailapp.com
+  PAPERTRAIL_PORT: '11111'
+  APPOPTICS_USER: ops@whatever.com
+  APPOPTICS_APIKEY: cafebabedeadbeef
+  CORE_JDBC_URL: jdbc:postgresql://localhost/xxx
+  CORE_JDBC_USER: vagrant
+  SMS_ENABLED: 'false'
+  SMS_AWS_REGION: eu-west-1
+#+END_SRC
+
+#+Caption: My centralized management pattern example with separate data files
+#+Name: My centralized management pattern example with separate data files
+#+BEGIN_SRC cfengine3 :exports both
+  bundle agent global_env
+  {
+    vars:
+        "env_i" slist => getindices( "app_data.env" );
+        # Here we take the original simple key value pair and add different prefixes
+        # for the differnt config file types using a classic array as a generator.
+        "etc_systemd_conf[DefaultEnvironment=$(env_i)]" string => "$(app_data.env[$(env_i)])";
+        "etc_profile[export $(env_i)]" string => "$(app_data.env[$(env_i)])";
+
+    files:
+
+        "/tmp/etc/environment"
+          edit_line => set_line_based("app_data.env", "=", "\s*=\s*", ".*", "\s*#\s*"),
+          edit_defaults => empty,
+          create => "true",
+          handle => "_etc_environment";
+
+        "/tmp/etc/systemd/system.conf"
+          edit_line => set_line_based("$(this.bundle).etc_systemd_conf", "=", "\s*=\s*", ".*", "\s*#\s*"),
+          edit_defaults => empty,
+          classes   => if_repaired("system_conf_changed"),
+          create => "true",
+          handle => "_etc_systemd_system_conf";
+
+        "/tmp/etc/profile"
+          edit_line => set_line_based("$(this.bundle).etc_profile", "export ", "\s*=\s*", ".*", "\s*#\s*"),
+          edit_defaults => empty,
+          create => "true",
+          handle => "_etc_profile";
+
+    commands:
+      system_conf_changed::
+        "/sbin/systemctl daemon-reload"
+          contain => exec_owner("root"),
+          if => strcmp( "$(sys.user_data[username])", "root" ),
+          handle => "_sbin_systemctl_daemon_reload";
+  }
+  bundle agent app_data
+  {
+    vars:
+      vagrant_vm::
+
+        "env" data => readdata( "/tmp/env.yaml", auto );
+
+  }
+
+  body contain exec_owner(user)
+  {
+          exec_owner => "$(user)";
+  }
+
+  bundle agent init
+  {
+    files:
+        "/tmp/etc/environment" delete => tidy;
+        "/tmp/etc/systemd/system.conf" delete => tidy;
+        "/tmp/etc/profile" delete => tidy;
+  }
+  bundle agent __main__
+  {
+    classes:
+        "vagrant_vm" expression => "any", scope => "namespace";
+
+    methods:
+        #"init";
+        "app_data";
+        "global_env";
+
+    reports:
+        "CFEngine $(sys.cf_version)";
+        "/tmp/etc/environment"         printfile => cat( "$(this.promiser)" );
+        "/tmp/etc/systemd/system.conf" printfile => cat( "$(this.promiser)" );
+        "/tmp/etc/profile"             printfile => cat( "$(this.promiser)" );
+  }
+#+END_SRC
+
+*Output:*
+
+#+RESULTS: My centralized management pattern example with separate data files
+#+begin_example
+R: CFEngine 3.12.0
+R: /tmp/etc/environment
+R: PAPERTRAIL_HOST=xxx.papertrailapp.com
+R: PAPERTRAIL_PORT=11111
+R: APPOPTICS_USER=ops@whatever.com
+R: APPOPTICS_APIKEY=cafebabedeadbeef
+R: CORE_JDBC_URL=jdbc:postgresql://localhost/xxx
+R: CORE_JDBC_USER=vagrant
+R: SMS_ENABLED=false
+R: SMS_AWS_REGION=eu-west-1
+R: /tmp/etc/systemd/system.conf
+R: DefaultEnvironment=PAPERTRAIL_PORT=11111
+R: DefaultEnvironment=APPOPTICS_APIKEY=cafebabedeadbeef
+R: DefaultEnvironment=SMS_ENABLED=false
+R: DefaultEnvironment=CORE_JDBC_USER=vagrant
+R: DefaultEnvironment=CORE_JDBC_URL=jdbc:postgresql://localhost/xxx
+R: DefaultEnvironment=APPOPTICS_USER=ops@whatever.com
+R: DefaultEnvironment=PAPERTRAIL_HOST=xxx.papertrailapp.com
+R: DefaultEnvironment=SMS_AWS_REGION=eu-west-1
+R: /tmp/etc/profile
+R: export PAPERTRAIL_HOSTexport xxx.papertrailapp.com
+R: export SMS_AWS_REGIONexport eu-west-1
+R: export PAPERTRAIL_PORTexport 11111
+R: export APPOPTICS_USERexport ops@whatever.com
+R: export SMS_ENABLEDexport false
+R: export CORE_JDBC_USERexport vagrant
+R: export CORE_JDBC_URLexport jdbc:postgresql://localhost/xxx
+R: export APPOPTICS_APIKEYexport cafebabedeadbeef
+#+end_example
+
+* Cooperative management
+:PROPERTIES:
+:ID:       2931e91f-0f2c-4180-b197-e1907bc4552c
+:END:
+
+Here we allow each service to define the key values they need. They /advertise/
+or /publish/ their data by tagging it. In this iteration, since we have full
+knowledge of the desired state at one time we switched the file promises to be
+templates so that the full content is managed. This helps to avoid unknown
+settings.
+
+#+Caption: My cooperative management pattern example 
+#+Name: My cooperative management pattern example 
+#+BEGIN_SRC cfengine3 :exports both
+  bundle agent global_env
+  {
+    vars:
+        # Collect a datastrucutre from variables tagged as used_by this bundle
+        "env"
+          data => variablesmatching_as_data( ".*", "used_by=global_env" );
+
+        # Get the index of the collected data (the variable names) in lexically
+        # sorted order so that we can iterate over them
+        "i" slist => sort( getindices( env ), lex );
+
+        # Here we merge all the objects together by picking out each objects data
+        # and merging on top. NOTE In event of conflict the last definition
+        # alphabetically wins
+
+        "c" data => '[]';
+        "c" data => mergedata( c, mergedata( "env[$(i)]"));
+
+    # reports:
+    #     "$(with)" with => string_mustache( "{{%-top-}}", "env");
+    #     "$(with)" with => string_mustache( "{{%-top-}}", "c");
+    #     "$(with)" with => string_mustache( "{{#-top-}}{{@}}={{.}}$(const.n){{/-top-}}", "c");
+
+    files:
+
+        "/tmp/etc/environment"
+          create => "true",
+          template_method => "inline_mustache",
+          template_data => @(c),
+          edit_template_string => "{{#-top-}}{{{@}}}={{{.}}}$(const.n){{/-top-}}";
+
+        "/tmp/etc/systemd/system.conf"
+          create => "true",
+          template_method => "inline_mustache",
+          template_data => @(c),
+          edit_template_string => "{{#-top-}}DefaultEnvironment={{{@}}}={{{.}}}$(const.n){{/-top-}}";
+
+        "/tmp/etc/profile"
+          create => "true",
+          template_method => "inline_mustache",
+          template_data => @(c),
+          edit_template_string => "{{#-top-}}export {{{@}}}={{{.}}}$(const.n){{/-top-}}";
+
+    commands:
+      system_conf_changed::
+        "/sbin/systemctl daemon-reload"
+          contain => exec_owner("root"),
+          if => strcmp( "$(sys.user_data[username])", "root" ),
+          handle => "_sbin_systemctl_daemon_reload_$(name)_$(value)";
+  }
+  bundle agent vagrant_vm
+  {
+    vars:
+
+        "v" data =>  '{
+                        "PAPERTRAIL_HOST": "xxx.papertrailapp.com",
+                        "PAPERTRAIL_PORT": "11111",
+                        "APPOPTICS_USER": "ops@whatever.com",
+                        "APPOPTICS_APIKEY": "cafebabedeadbeef",
+                        "CORE_JDBC_URL": "jdbc:postgresql://localhost/xxx",
+                        "CORE_JDBC_USER": "vagrant",
+                        "SMS_ENABLED": "false",
+                        "SMS_AWS_REGION": "eu-west-1"
+        }',
+          meta => { "used_by=global_env" };
+  }
+
+  bundle agent application_2
+  {
+    vars:
+
+        "v" data =>  '{
+                        "PAPERTRAIL_HOST": "xxx.trailpaperapp.com",
+                        "PAPERTRAIL_PORT": "22222",
+                        "APPOPTICS_USER": "ops@cfengine.com",
+                        "APPOPTICS_APIKEY": "toodledum",
+                        "CORE_JDBC_URL": "jdbc:postgresql://localhost/xxx",
+                        "CORE_JDBC_USER": "vagrant",
+                        "SMS_ENABLED": "false",
+                        "SMS_AWS_REGION": "eu-west-1"
+        }',
+          meta => { "used_by=global_env" };
+  }
+
+
+  body contain exec_owner(user)
+  {
+          exec_owner => "$(user)";
+  }
+
+  bundle agent init
+  {
+    files:
+        "/tmp/etc/environment" delete => tidy;
+        "/tmp/etc/systemd/system.conf" delete => tidy;
+        "/tmp/etc/profile" delete => tidy;
+  }
+  bundle agent __main__
+  {
+    classes:
+        "vagrant_vm" scope => "namespace";
+
+    methods:
+        #"init";
+        "global_env";
+
+    reports:
+        "/tmp/etc/environment"         printfile => cat( "$(this.promiser)" );
+        "/tmp/etc/systemd/system.conf" printfile => cat( "$(this.promiser)" );
+        "/tmp/etc/profile"             printfile => cat( "$(this.promiser)" );
+  }
+#+END_SRC
+
+*Output:*
+
+#+RESULTS: My cooperative management pattern example
+#+begin_example
+R: /etc/environment
+R: PAPERTRAIL_HOST=xxx.papertrailapp.com
+R: PAPERTRAIL_PORT=11111
+R: APPOPTICS_USER=ops@whatever.com
+R: APPOPTICS_APIKEY=cafebabedeadbeef
+R: CORE_JDBC_URL=jdbc:postgresql://localhost/xxx
+R: CORE_JDBC_USER=vagrant
+R: SMS_ENABLED=false
+R: SMS_AWS_REGION=eu-west-1
+R: /etc/systemd/system.conf
+R: DefaultEnvironment=PAPERTRAIL_HOST=xxx.papertrailapp.com
+R: DefaultEnvironment=PAPERTRAIL_PORT=11111
+R: DefaultEnvironment=APPOPTICS_USER=ops@whatever.com
+R: DefaultEnvironment=APPOPTICS_APIKEY=cafebabedeadbeef
+R: DefaultEnvironment=CORE_JDBC_URL=jdbc:postgresql://localhost/xxx
+R: DefaultEnvironment=CORE_JDBC_USER=vagrant
+R: DefaultEnvironment=SMS_ENABLED=false
+R: DefaultEnvironment=SMS_AWS_REGION=eu-west-1
+R: /etc/profile
+R: export PAPERTRAIL_HOST=xxx.papertrailapp.com
+R: export PAPERTRAIL_PORT=11111
+R: export APPOPTICS_USER=ops@whatever.com
+R: export APPOPTICS_APIKEY=cafebabedeadbeef
+R: export CORE_JDBC_URL=jdbc:postgresql://localhost/xxx
+R: export CORE_JDBC_USER=vagrant
+R: export SMS_ENABLED=false
+R: export SMS_AWS_REGION=eu-west-1
+#+end_example
+
+As with other patterns moving the data into external files would improve
+delegation of control and tighter integration with other systems.
+
