@@ -307,6 +307,8 @@ within a single agent run which may be useful in ordering, but results in some
 overhead. Additionally, depending how the service restart on config change is
 managed, may lead to the same service re-starting multiple times in the same
 agent run.</p>
+
+<p><strong>Policy:</strong></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
@@ -498,6 +500,8 @@ altering the parameter to pass a map of key value pairs.</p>
 
 <p>A quick change to the parameters allows multiple key values to be set at a
 single time, reducing IO.</p>
+
+<p><strong>Policy:</strong></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
@@ -714,6 +718,8 @@ classic array as a generator to produce copies of the key values tailored for
 each config file. An alternative to creating different variables using a classic
 array generator we could copy <code>set_line_based</code> and customize it to allow a
 prefix to be specified.</p>
+
+<p><strong>Policy:</strong></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
@@ -944,6 +950,8 @@ at one time, full file management is an option.</p>
 the data defined there. This separation enables more complex data convergence,
 delegation of control, and especially with more data can improve the readability
 of the policy.</p>
+
+<p><strong>Policy:</strong></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
@@ -1171,6 +1179,8 @@ R: export PAPERTRAIL_HOST=xxx.papertrailapp.com
 <p>Here we remove the init to reset the environment and add full file content
 management by attaching edit_defaults empty to the files promises. This ensures
 no unknown content in the configuration file.</p>
+
+<p><strong>Policy:</strong></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
@@ -1398,6 +1408,8 @@ files can further enable delegation of control working much more easily with
 external systems, reduces the size of the policy and improve policy readability,
 and eases testing of policy. We can use the json, yaml or env file formats
 interchangeably. CSV is also possible, but different parsing would be required.</p>
+
+<p><strong>/tmp/env.env:</strong></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-conf" data-lang="conf"><span class="lnt">1
@@ -1419,7 +1431,9 @@ interchangeably. CSV is also possible, but different parsing would be required.<
   SMS_ENABLED=&#34;false&#34;
   SMS_AWS_REGION=&#34;eu-west-1&#34;</code></pre></td></tr></table>
 </div>
-</div><div class="highlight"><div class="chroma">
+</div>
+<p><strong>/tmp/env.json:</strong></p>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-json" data-lang="json"><span class="lnt"> 1
 </span><span class="lnt"> 2
@@ -1444,7 +1458,9 @@ interchangeably. CSV is also possible, but different parsing would be required.<
     <span class="nt">&#34;SMS_AWS_REGION&#34;</span><span class="p">:</span> <span class="s2">&#34;eu-west-1&#34;</span>
   <span class="p">}</span></code></pre></td></tr></table>
 </div>
-</div><div class="highlight"><div class="chroma">
+</div>
+<p><strong>/tmp/env.yaml:</strong></p>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="lnt">1
 </span><span class="lnt">2
@@ -1467,7 +1483,9 @@ interchangeably. CSV is also possible, but different parsing would be required.<
 </span><span class="w">  </span>SMS_ENABLED<span class="p">:</span><span class="w"> </span><span class="s1">&#39;false&#39;</span><span class="w">
 </span><span class="w">  </span>SMS_AWS_REGION<span class="p">:</span><span class="w"> </span>eu-west-<span class="m">1</span></code></pre></td></tr></table>
 </div>
-</div><div class="highlight"><div class="chroma">
+</div>
+<p><strong>Policy:</strong></p>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
 </span><span class="lnt"> 2
@@ -1660,6 +1678,8 @@ or /publish</em> their data by tagging it. In this iteration, since we have full
 knowledge of the desired state at one time we switched the file promises to be
 templates so that the full content is managed. This helps to avoid unknown
 settings.</p>
+
+<p><strong>Policy:</strong></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt">  1
