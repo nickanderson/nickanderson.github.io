@@ -1006,11 +1006,6 @@ settings.
         "c" data => '[]';
         "c" data => mergedata( c, mergedata( "env[$(i)]"));
 
-    # reports:
-    #     "$(with)" with => string_mustache( "{{%-top-}}", "env");
-    #     "$(with)" with => string_mustache( "{{%-top-}}", "c");
-    #     "$(with)" with => string_mustache( "{{#-top-}}{{@}}={{.}}$(const.n){{/-top-}}", "c");
-
     files:
 
         "/tmp/etc/environment"
