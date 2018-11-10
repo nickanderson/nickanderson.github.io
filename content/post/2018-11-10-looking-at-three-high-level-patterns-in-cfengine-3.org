@@ -572,13 +572,13 @@ of the policy.
           handle => "_etc_environment";
 
         "/tmp/etc/systemd/system.conf"
-          edit_line => set_line_based("systemconf", "=", "\s*=\s*", ".*", "\s*#\s*"),
+          edit_line => set_line_based("$(this.bundle).systemconf", "=", "\s*=\s*", ".*", "\s*#\s*"),
           classes   => if_repaired("system_conf_changed"),
           create => "true",
           handle => "_etc_systemd_system_conf";
 
         "/tmp/etc/profile"
-          edit_line => set_line_based("etcprofile", "=", "\s*=\s*", ".*", "\s*#\s*"),
+          edit_line => set_line_based("$(this.bundle).etcprofile", "=", "\s*=\s*", ".*", "\s*#\s*"),
           create => "true",
           handle => "_etc_profile";
 
@@ -652,24 +652,34 @@ of the policy.
 
 #+RESULTS: My centralized management pattern example with separate data bundle
 #+begin_example
-/home/nickanderson/org/cfengine3-11095nCN:8:32: error: An rvalue is quoted, but we expect an unquoted body identifier
-        edit_defaults => "true",
-                               ^
-/home/nickanderson/org/cfengine3-11095nCN:14:32: error: An rvalue is quoted, but we expect an unquoted body identifier
-        edit_defaults => "true",
-                               ^
-/home/nickanderson/org/cfengine3-11095nCN:21:32: error: An rvalue is quoted, but we expect an unquoted body identifier
-        edit_defaults => "true",
-                               ^
-   error: There are syntax errors in policy files
-   error: Policy failed validation with command '"/home/nickanderson/.cfagent/bin/cf-promises" -c "/home/nickanderson/org/cfengine3-11095nCN"'
-   error: CFEngine was not able to get confirmation of promises from cf-promises, so going to failsafe
-   error: CFEngine failsafe.cf: /home/nickanderson/.cfagent/inputs /home/nickanderson/.cfagent/inputs/failsafe.cf
-   error: No suitable server found
-   error: No suitable server found
-   error: No suitable server found
-   error: Method 'failsafe_cfe_internal_update' failed in some repairs
-R: Built-in failsafe policy triggered
+R: CFEngine 3.12.0
+R: /tmp/etc/environment
+R: CORE_JDBC_USER=vagrant
+R: PAPERTRAIL_PORT=12345
+R: CORE_JDBC_URL=jdbc:postgresql://localhost/xxx
+R: SMS_ENABLED=false
+R: SMS_AWS_REGION=eu-west-1
+R: APPOPTICS_APIKEY=cafebabedeadbeef
+R: PAPERTRAIL_HOST=xxx.papertrailapp.com
+R: APPOPTICS_USER=ops@whatever.com
+R: /tmp/etc/systemd/system.conf
+R: DefaultEnvironment=APPOPTICS_USER=ops@whatever.com
+R: DefaultEnvironment=CORE_JDBC_USER=vagrant
+R: DefaultEnvironment=SMS_AWS_REGION=eu-west-1
+R: DefaultEnvironment=SMS_ENABLED=false
+R: DefaultEnvironment=APPOPTICS_APIKEY=cafebabedeadbeef
+R: DefaultEnvironment=CORE_JDBC_URL=jdbc:postgresql://localhost/xxx
+R: DefaultEnvironment=PAPERTRAIL_HOST=xxx.papertrailapp.com
+R: DefaultEnvironment=PAPERTRAIL_PORT=12345
+R: /tmp/etc/profile
+R: export SMS_ENABLED=false
+R: export CORE_JDBC_URL=jdbc:postgresql://localhost/xxx
+R: export APPOPTICS_USER=ops@whatever.com
+R: export CORE_JDBC_USER=vagrant
+R: export SMS_AWS_REGION=eu-west-1
+R: export PAPERTRAIL_PORT=12345
+R: export APPOPTICS_APIKEY=cafebabedeadbeef
+R: export PAPERTRAIL_HOST=xxx.papertrailapp.com
 #+end_example
 
 ** Centralized management separate data bundle with full file management
@@ -678,8 +688,8 @@ Here we remove the init to reset the environment and add full file content
 management by attaching edit_defaults empty to the files promises. This ensures
 no unknown content in the configuration file.
 
-#+Caption: My centralized management pattern example with separate data bundle and full file management
-#+Name: My centralized management pattern example with separate data bundle and full file management
+#+CAPTION: My centralized management pattern example with separate data bundle and full file management
+#+NAME: My centralized management pattern example with separate data bundle and full file management
 #+BEGIN_SRC cfengine3 :exports both
   bundle agent global_env
   {
@@ -777,7 +787,7 @@ no unknown content in the configuration file.
 *Output:*
 
 #+RESULTS: My centralized management pattern example with separate data bundle and full file management
-#+begin_example
+#+BEGIN_EXAMPLE
 R: CFEngine 3.12.0
 R: /tmp/etc/environment
 R: PAPERTRAIL_HOST=xxx.trailpaperapp.com
@@ -806,12 +816,9 @@ R: export SMS_AWS_REGION=eu-west-1
 R: export PAPERTRAIL_PORT=12345
 R: export APPOPTICS_APIKEY=cafebabedeadbeef
 R: export PAPERTRAIL_HOST=xxx.papertrailapp.com
-#+end_example
+#+END_EXAMPLE
 
 ** Centralized management separate data bundle with external data files
-:LOGBOOK:
-CLOCK: [2018-11-10 Sat 13:40]--[2018-11-10 Sat 16:09] =>  2:29
-:END:
 
 In addition to the benefits derived from separating data bundles external data
 files can further enable delegation of control working much more easily with
@@ -859,7 +866,7 @@ interchangeably. CSV is also possible, but different parsing would be required.
 #+END_SRC
 
 #+Caption: My centralized management pattern example with separate data files
-#+Name: My centralized management pattern example with separate data files
+#+NAME: My centralized management pattern example with separate data files
 #+BEGIN_SRC cfengine3 :exports both
   bundle agent global_env
   {
@@ -940,7 +947,7 @@ interchangeably. CSV is also possible, but different parsing would be required.
 *Output:*
 
 #+RESULTS: My centralized management pattern example with separate data files
-#+begin_example
+#+BEGIN_EXAMPLE
 R: CFEngine 3.12.0
 R: /tmp/etc/environment
 R: PAPERTRAIL_HOST=xxx.papertrailapp.com
@@ -972,10 +979,6 @@ R: export APPOPTICS_APIKEYexport cafebabedeadbeef
 #+END_EXAMPLE
 
 * Cooperative management
-:PROPERTIES:
-:ID:       2931e91f-0f2c-4180-b197-e1907bc4552c
-:END:
-
 Here we allow each service to define the key values they need. They /advertise/
 or /publish/ their data by tagging it. In this iteration, since we have full
 knowledge of the desired state at one time we switched the file promises to be
