@@ -1,0 +1,137 @@
+#+Title: Hacking custom variables for additional augments in CFEngine
+#+AUTHOR: Nick Anderson
+#+DATE: 2018-11-13
+#+TAGS: cfengine3 cfengine
+#+DRAFT: false
+
+CFEngine 3.12.0 introduced the [[https://docs.cfengine.com/docs/3.12/reference-language-concepts-augments.html#augments][/augments/ key]] to the [[https://docs.cfengine.com/docs/3.12/reference-language-concepts-augments.html#augments][Augments file format]]. If
+you are not already familiar with Augments, check it out. It's a very easy way
+to define classes and variables very early during agent execution, before
+policy.
+
+The new augments key allows you to merge additional data in the augments format
+on top of the base augments. I However, there is, I think, still a simple way to
+accomplish this. This can provide a flexible way of providing different data to
+different sets of machines.
+
+Since augments are loaded very early during policy evaluation. Currently, only
+[[https://docs.cfengine.com/docs/3.12/reference-special-variables.html][special variables]] like the [[https://docs.cfengine.com/docs/3.12/reference-special-variables-sys.html][=sys= vars]] can be used to select additional augments.
+The question arises ...
+
+#+BEGIN_QUOTE
+  How can I extend augments from custom policy?
+#+END_QUOTE
+
+The short answer is that you can't, at least not directly, but there are a
+couple of things that you can do to achieve the same result.
+
+* Customize /etc/os-release
+
+In 3.11.0 CFEngine began parsing =/etc/os-release= during system discovery into
+[[https://docs.cfengine.com/docs/master/reference-special-variables-sys.html#sys-os_release][sys.os_release]]. I think that =/etc/os-release= is perhaps a good place for you
+to encode this =DEVICE_TYPE=. It's a simple =key=value= format, and according to
+the docs on freedesktop.org [[https://www.freedesktop.org/software/systemd/man/os-release.html][the file format may be extended by vendors]]. It's
+highly recommended to prefix new fields with an OS specific name in order to
+avoid name clashes.
+
+So, let's edit =/etc/os-release= and define =CUSTOM_DEVICE_TYPE=. This is
+=/etc/os-release= on my workstation, after I have edited it to add my new key
+value.
+
+#+BEGIN_EXAMPLE
+  NAME="Ubuntu"
+  VERSION="18.10 (Cosmic Cuttlefish)"
+  ID=ubuntu
+  ID_LIKE=debian
+  PRETTY_NAME="Ubuntu 18.10"
+  VERSION_ID="18.10"
+  HOME_URL="https://www.ubuntu.com/"
+  SUPPORT_URL="https://help.ubuntu.com/"
+  BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
+  PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
+  VERSION_CODENAME=cosmic
+  UBUNTU_CODENAME=cosmic
+  CUSTOM_DEVICE_TYPE=laptop
+#+END_EXAMPLE
+
+This way, when the agent initializes, it will have
+=sys.os_release[CUSTOM_DEVICE_TYPE]= available for use. This could be set during
+initial provisioning, or of course cfengine policy could manage the extra file
+content.
+
+Here is a small example:
+
+*def.json:*
+
+#+BEGIN_SRC json
+{
+  "vars":
+  {
+    "my_var": "I am RED"
+  },
+  "augments":
+  [
+    "$(sys.os_release[CUSTOM_DEVICE_TYPE]).json"
+  ]
+}
+#+END_SRC
+
+Here is my data file that is used when =CUSTOM_DEVICE_TYPE= is set to =laptop=.
+
+*laptop.json:*
+
+#+BEGIN_SRC json
+{
+  "vars":
+  {
+    "my_var": "I am BLUE"
+  }
+}
+#+END_SRC
+
+Here is the simple policy to illustrate the point.
+
+*promises.cf:*
+
+#+BEGIN_SRC cfengine3
+  bundle agent main
+  {
+    reports:
+      "def.my_var is $(def.my_var)";
+      "My device type is $(sys.os_release[CUSTOM_DEVICE_TYPE])";
+
+  }
+#+END_SRC
+
+*Output:*
+
+#+BEGIN_EXAMPLE
+> $ cf-agent -KIf ./promises.cf                                                                                 
+R: def.my_var is I am BLUE
+R: My device type is laptop
+#+END_EXAMPLE
+
+In the above output, note that =def.my_var= is =BLUE=, what happens if you
+change the =CUSTOM_DEVICE_TYPE=?
+
+* Download device type specific data to a stable location
+
+An alternate methodology to achieve similar results would be to reference a
+stable location, but use a files promise to ensure that the proper device type
+specific data is there.
+
+For example, instead of shipping =device_type1.json= and =devices_type2.json= as
+part of the policy, you can download it to =device.json=.
+
+This copy_from files promise illustrates what I mean:
+
+#+BEGIN_SRC cfengine3
+  bundle agent device_type_data
+  {
+      files:
+        "/var/cfengine/inputs/device.json"
+          copy_from => remote_dcp( "/var/cfengine/data/devices/$(my_common.device_type).json",
+                                   $(sys.policy_hub) );
+  }
+#+END_SRC
+

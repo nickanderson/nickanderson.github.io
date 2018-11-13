@@ -156,7 +156,6 @@ managed, may lead to the same service re-starting multiple times in the same
 agent run.
 
 *Policy:*
-
 #+Caption: My competitive management pattern example
 #+Name: My competitive management pattern example
 #+BEGIN_SRC cfengine3 :exports both
