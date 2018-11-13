@@ -135,3 +135,19 @@ This copy_from files promise illustrates what I mean:
   }
 #+END_SRC
 
+Then the base augments would look like this:
+
+*def.json:*
+
+#+BEGIN_SRC json
+{
+  "vars":
+  {
+    "my_var": "I am RED"
+  },
+  "augments":
+  [
+    "device.json"
+  ]
+}
+#+END_SRC
