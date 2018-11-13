@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title> Hacking custom variables for additional augments in CFEngine &middot;  </title>
+
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.51" />
+
+
+<script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://cmdln.org/css/nix.css">
+<link rel="stylesheet" href="https://cmdln.org/css/syntax.css">
+
+
+<link href="https://fonts.googleapis.com/css?family=Inconsolata|Open+Sans|Roboto|Montserrat|Concert+One" rel="stylesheet">
+
+
+
+
+    </head>
+
+    <body>
+        <header>
+<nav class="navbar navbar-default navbar-fixed-top navbar-inverse font-header">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" id="green-terminal" href=https://cmdln.org>nick@cmdln.org ~ $</a>
+		</div>
+
+		
+		<div class="collapse navbar-collapse" id="navbar-collapse-1">
+			<ul class="nav navbar-nav navbar-right">
+				<li>
+					<a href="https://cmdln.org">/home/nick</a>
+				</li>
+				
+				
+				<li >
+					<a href="/post/">~/posts</a>
+				</li>
+				
+
+			</ul>
+		</div>
+	</div>
+</nav>
+</header>
+
+        <div class="container wrapper">
+            <h1><a href="https://cmdln.org/2018/11/13/hacking-custom-variables-for-additional-augments-in-cfengine/">Hacking custom variables for additional augments in CFEngine</a></h1>
+            <span class="post-date">Nov 13, 2018 </span>
+            <div class="post-content">
+                <p>CFEngine 3.12.0 introduced the <a href="https://docs.cfengine.com/docs/3.12/reference-language-concepts-augments.html#augments" title="&lt;em&gt;augments&lt;/em&gt; key"><em>augments</em> key</a> to the <a href="https://docs.cfengine.com/docs/3.12/reference-language-concepts-augments.html#augments" title="Augments file format">Augments file format</a>. If
+you are not already familiar with Augments, check it out. It's a very easy way
+to define classes and variables very early during agent execution, before
+policy.</p>
+
+<p>The new augments key allows you to merge additional data in the augments format
+on top of the base augments. I However, there is, I think, still a simple way to
+accomplish this. This can provide a flexible way of providing different data to
+different sets of machines.</p>
+
+<p>Since augments are loaded very early during policy evaluation. Currently, only
+<a href="https://docs.cfengine.com/docs/3.12/reference-special-variables.html" title="special variables">special variables</a> like the <a href="https://docs.cfengine.com/docs/3.12/reference-special-variables-sys.html" title="&lt;code&gt;sys&lt;/code&gt; vars"><code>sys</code> vars</a> can be used to select additional augments.
+The question arises ...</p>
+
+<blockquote>
+<p>
+  How can I extend augments from custom policy?
+</p>
+</blockquote>
+
+<p>The short answer is that you can't, at least not directly, but there are a
+couple of things that you can do to achieve the same result.</p>
+
+<h1 id="customize-etc-os-release">Customize /etc/os-release</h1>
+
+<p>In 3.11.0 CFEngine began parsing <code>/etc/os-release</code> during system discovery into
+<a href="https://docs.cfengine.com/docs/master/reference-special-variables-sys.html#sys-os_release" title="sys.os_release">sys.os_release</a>. I think that <code>/etc/os-release</code> is perhaps a good place for you
+to encode this <code>DEVICE_TYPE</code>. It's a simple <code>key=value</code> format, and according to
+the docs on freedesktop.org <a href="https://www.freedesktop.org/software/systemd/man/os-release.html" title="the file format may be extended by vendors">the file format may be extended by vendors</a>. It's
+highly recommended to prefix new fields with an OS specific name in order to
+avoid name clashes.</p>
+
+<p>So, let's edit <code>/etc/os-release</code> and define <code>CUSTOM_DEVICE_TYPE</code>. This is
+=/etc/os-release= on my workstation, after I have edited it to add my new key
+value.</p>
+
+<pre><code>  NAME=&quot;Ubuntu&quot;
+  VERSION=&quot;18.10 (Cosmic Cuttlefish)&quot;
+  ID=ubuntu
+  ID_LIKE=debian
+  PRETTY_NAME=&quot;Ubuntu 18.10&quot;
+  VERSION_ID=&quot;18.10&quot;
+  HOME_URL=&quot;https://www.ubuntu.com/&quot;
+  SUPPORT_URL=&quot;https://help.ubuntu.com/&quot;
+  BUG_REPORT_URL=&quot;https://bugs.launchpad.net/ubuntu/&quot;
+  PRIVACY_POLICY_URL=&quot;https://www.ubuntu.com/legal/terms-and-policies/privacy-policy&quot;
+  VERSION_CODENAME=cosmic
+  UBUNTU_CODENAME=cosmic
+  CUSTOM_DEVICE_TYPE=laptop
+</code></pre>
+
+<p>This way, when the agent initializes, it will have
+=sys.os_release[CUSTOM_DEVICE_TYPE]= available for use. This could be set during
+initial provisioning, or of course cfengine policy could manage the extra file
+content.</p>
+
+<p>Here is a small example:</p>
+
+<p><strong>def.json:</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-json" data-lang="json"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&#34;vars&#34;</span><span class="p">:</span>
+  <span class="p">{</span>
+    <span class="nt">&#34;my_var&#34;</span><span class="p">:</span> <span class="s2">&#34;I am RED&#34;</span>
+  <span class="p">},</span>
+  <span class="nt">&#34;augments&#34;</span><span class="p">:</span>
+  <span class="p">[</span>
+    <span class="s2">&#34;$(sys.os_release[CUSTOM_DEVICE_TYPE]).json&#34;</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Here is my data file that is used when <code>CUSTOM_DEVICE_TYPE</code> is set to <code>laptop</code>.</p>
+
+<p><strong>laptop.json:</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-json" data-lang="json"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&#34;vars&#34;</span><span class="p">:</span>
+  <span class="p">{</span>
+    <span class="nt">&#34;my_var&#34;</span><span class="p">:</span> <span class="s2">&#34;I am BLUE&#34;</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Here is the simple policy to illustrate the point.</p>
+
+<p><strong>promises.cf:</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">main</span>
+  <span class="p">{</span>
+    <span class="kd">reports</span><span class="p">:</span>
+      <span class="s">&#34;def.my_var is </span><span class="si">$(def.my_var)</span><span class="s">&#34;</span><span class="p">;</span>
+      <span class="s">&#34;My device type is </span><span class="si">$(sys.os_release[CUSTOM_DEVICE_TYPE])</span><span class="s">&#34;</span><span class="p">;</span>
+
+  <span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<p><strong>Output:</strong></p>
+
+<pre><code>&gt; $ cf-agent -KIf ./promises.cf                                                                                 
+R: def.my_var is I am BLUE
+R: My device type is laptop
+</code></pre>
+
+<p>In the above output, note that <code>def.my_var</code> is <code>BLUE</code>, what happens if you
+change the <code>CUSTOM_DEVICE_TYPE</code>?</p>
+
+<h1 id="download-device-type-specific-data-to-a-stable-location">Download device type specific data to a stable location</h1>
+
+<p>An alternate methodology to achieve similar results would be to reference a
+stable location, but use a files promise to ensure that the proper device type
+specific data is there.</p>
+
+<p>For example, instead of shipping <code>device_type1.json</code> and <code>devices_type2.json</code> as
+part of the policy, you can download it to <code>device.json</code>.</p>
+
+<p>This copy_from files promise illustrates what I mean:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">device_type_data</span>
+  <span class="p">{</span>
+      <span class="kd">files</span><span class="p">:</span>
+        <span class="s">&#34;/var/cfengine/inputs/device.json&#34;</span>
+          <span class="kr">copy_from</span> <span class="o">=&gt;</span> <span class="nf">remote_dcp</span><span class="p">(</span> <span class="s">&#34;/var/cfengine/data/devices/</span><span class="si">$(my_common.device_type)</span><span class="s">.json&#34;</span><span class="p">,</span>
+                                   <span class="err">$</span><span class="p">(</span><span class="nf">sys</span><span class="err">.</span><span class="nf">policy_hub</span><span class="p">)</span> <span class="p">);</span>
+  <span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
+            </div>
+            
+            <div class="post-comments">
+                
+            </div>
+            
+            <div class="push"></div>
+        </div>
+        <footer class="footer text-center">
+<p>Copyright &copy; 2018 Nick Anderson -
+<span class="credit">
+	Powered by
+	<a target="_blank" href="https://gohugo.io">Hugo</a>
+	and
+	<a target="_blank" href="https://github.com/LordMathis/hugo-theme-nix/">Nix</a> theme.
+</span>
+</p>
+</footer>
+
+    </body>

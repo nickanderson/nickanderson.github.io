@@ -75,6 +75,20 @@
 				<li>
 					<div class="post-list-item">
 						<div class="post-header">
+							<h4 class="post-link"><a href="https://cmdln.org/2017/11/21/in-cfengine-how-does-edit_backup-in-edit_defaults-work/">In CFEngine how does edit_backup in edit_defaults work?</a></h4>
+							<h4 class="post-date">Nov 21, 2017</h4>
+						</div>
+						<div class="post-summary"><p>This controls if and how files are backed up by cf-agent during file editing operations. If enabled previous versions of the file will be retained next to the file or in default_repository if it is defined in body agent control. Note as it relates to edited files it is only applicable when combined with =edit_line=. It has no effect when used with edit_template or copy_from.
+A value of true (the default behavior) will result in the agent retaining the previous version of the file suffixed with .</p></div>
+						<div class="post-list-footer text-center">
+							<a href="https://cmdln.org/2017/11/21/in-cfengine-how-does-edit_backup-in-edit_defaults-work/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
 							<h4 class="post-link"><a href="https://cmdln.org/2017/11/20/are-cfegine-classes-automatically-canonified/">Are CFEgine classes automatically canonified?</a></h4>
 							<h4 class="post-date">Nov 20, 2017</h4>
 						</div>
@@ -190,20 +204,6 @@ I think the mentorship program is one of the best things that LOPSA offers. You 
 						<div class="post-summary"><p>Today I start a new journey with some of the smartest people on the planet. I have accepted a position with CFEngine. Primarily I will be assisting customers with the evaluation, design, implementation and policy writing. If you know me from the CFEngine community, don&rsquo;t worry I only plan to increase my activity and continue to help in any way I can. Now one of my favourite hobbies is my job!</p></div>
 						<div class="post-list-footer text-center">
 							<a href="https://cmdln.org/2013/05/01/i-am-so-excited-and-i-just-cant-hide-it/">Read More</a>
-						</div>
-					</div>
-				</li>
-			
-				<li>
-					<div class="post-list-item">
-						<div class="post-header">
-							<h4 class="post-link"><a href="https://cmdln.org/2013/03/29/canonifying-a-list-with-cfengine-3/">Canonifying a list with CFEngine 3</a></h4>
-							<h4 class="post-date">Mar 29, 2013</h4>
-						</div>
-						<div class="post-summary"><p>John Sanders shared a pattern for canonifying lists in #CFEngine on irc.freenode.net yesterday. It&#8217;s a useful reference so I thought I would replicate it here.
- 1 2 3 4 5 6  % cf-agent -KIf ./example_canonify_list.cf  R: canonified site: www_example_com  R: canonified site: www_example2_com  R: alternate canonified site: www_example_com  R: alternate canonified site: www_example2_com  !! Method invoked repairs        &lt;div class=&quot;gist-meta&quot;&gt; &lt;a href=&quot;https://gist.</p></div>
-						<div class="post-list-footer text-center">
-							<a href="https://cmdln.org/2013/03/29/canonifying-a-list-with-cfengine-3/">Read More</a>
 						</div>
 					</div>
 				</li>
