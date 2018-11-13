@@ -75,6 +75,20 @@
 				<li>
 					<div class="post-list-item">
 						<div class="post-header">
+							<h4 class="post-link"><a href="https://cmdln.org/2018/05/22/manage-memory_limit-in-php.ini-with-cfengine-3/">Manage memory_limit in php.ini with CFEngine 3</a></h4>
+							<h4 class="post-date">May 22, 2018</h4>
+						</div>
+						<div class="post-summary"><p>This policy ensures that memory_limit in php.ini is configured properly but the pattern is generically useful for any INI style config.
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20  bundle agent php_customiztions { meta: (policy_server|am_policy_hub).enterprise_edition:: &#34;tags&#34; slist =&gt; { &#34;autorun&#34; }; &#34;description&#34; string =&gt; &#34;Tune php fo 60k hosts in Mission Portal&#34;; vars: &#34;php_ini[PHP][memory_limit]&#34; string =&gt; &#34;256M&#34;; files: policy_server.</p></div>
+						<div class="post-list-footer text-center">
+							<a href="https://cmdln.org/2018/05/22/manage-memory_limit-in-php.ini-with-cfengine-3/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
 							<h4 class="post-link"><a href="https://cmdln.org/2018/05/21/inventorying-mac-by-interface/">Inventorying MAC by Interface</a></h4>
 							<h4 class="post-date">May 21, 2018</h4>
 						</div>
@@ -198,20 +212,6 @@ In 2016 and 2017 KLF was hosted in Wichita KS at Wichita State University. The p
 1 2 3 4 5 6 7  body action if_elapsed(x) # @brief Evaluate the promise every `x` minutes  # @param x The time in minutes between promise evaluations  { ifelapsed =&gt; &#34;$(x)&#34;; expireafter =&gt; &#34;$(x)&#34;; }   The ifelapsed action body attribute is the number of minutes before next allowed assessment of a promise.</p></div>
 						<div class="post-list-footer text-center">
 							<a href="https://cmdln.org/2017/12/26/vars-cant-use-ifelapsed/">Read More</a>
-						</div>
-					</div>
-				</li>
-			
-				<li>
-					<div class="post-list-item">
-						<div class="post-header">
-							<h4 class="post-link"><a href="https://cmdln.org/2017/12/22/check-if-a-file-contains-a-multi-line-regex/">Check if a file contains a multi-line regex</a></h4>
-							<h4 class="post-date">Dec 22, 2017</h4>
-						</div>
-						<div class="post-summary"><p>Is there any way to do a multiline regex check for a file in CFEngine?  There is no function for searching a file for content. The grep() function operates on lists, not files. However using readfile() and regcmp() I was sill able to search for a multi-line string using only native functionaity
-In the example below we first create a file with content that spans multiple lines. Then we read that file content into a variable and use a regular expression on the variable content.</p></div>
-						<div class="post-list-footer text-center">
-							<a href="https://cmdln.org/2017/12/22/check-if-a-file-contains-a-multi-line-regex/">Read More</a>
 						</div>
 					</div>
 				</li>
