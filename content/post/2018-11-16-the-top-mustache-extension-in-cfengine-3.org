@@ -1,0 +1,459 @@
+#+Title: The -top- mustache extension in CFEngine 3
+#+AUTHOR: Nick Anderson
+#+DATE: 2018-11-13
+#+TAGS: cfengine3 cfengine mustache
+#+DRAFT: false
+
+#+BEGIN_QUOTE
+  What is the =-top-= extension, and how do I use it in CFEngines Mustache templating method?
+#+END_QUOTE
+
+The =-top-= extension to the mustache template method, first introduced in
+CFEngine 3.9.0, is a special key representing the complete data given to the
+templating engine. This is useful for iterating over the top level of a
+container ={{#-top-}}= ... ={{/-top-}}= and rendering json representation of
+data given with =$= and =%=. Note, when iterating over =-top-= you can expand
+the current iterations key with =@= and value with =.=.
+
+Let's take a look at a couple small examples:
+
+* Iterating over -top- for rendering simple key=value configuration files
+Many configuration file formats like =/etc/sysctl.conf= are simple key = value.
+
+In this example, we see how data for =/etc/sysctl.conf= can be modeled for simple
+rendering using =-top-=.
+
+#+NAME: Iterate over -top- key (@) values (.)
+#+CAPTION: Iterate over -top- key (@) values (.)
+#+BEGIN_SRC cfengine3 :exports both :results output
+  bundle agent main
+  {
+    vars:
+
+        # A simple data structure holding sysctl keys and values
+        "c" data => '{
+    "net.ipv6.conf.forwarding": "0",
+    "net.ipv6.conf.all.forwarding": "0",
+    "fs.protected_hardlinks": "1",
+    "fs.protected_symlinks": "1",
+    "vm.swappiness": "10"
+  }';
+
+    reports:
+        "CFEngine $(sys.cf_version)";
+
+        # A report to see what a rendered file would look like
+        "/etc/sysctl.conf$(const.n)$(with)"
+          with => string_mustache( "# Rendered by CFEngine$(const.n){{#-top-}}{{{@}}}={{{.}}}$(const.n){{/-top-}}",
+                                   c);
+  }
+#+END_SRC
+
+Let's break it down:
+- On line 6-12 we define =c= as data container with inline JSON. Note, there are
+  many alternative ways that data can be defined, see [[https://docs.cfengine.com/docs/3.12/reference-functions-readjson.html][readjson()]], [[https://docs.cfengine.com/docs/3.12/reference-functions-readyaml.html][readyaml()]],
+  [[https://docs.cfengine.com/docs/3.12/reference-functions-readenvfile.html][readenvfile()]], [[https://docs.cfengine.com/docs/3.12/reference-functions-readdata.html][readdata()]].
+- On line 18 we promise to report the name of our example file (
+  =/etc/sysctl.conf= )followed by a newline ( [[https://docs.cfengine.com/docs/3.12/reference-special-variables-const.html#const-n][$(const.n)]] ), followed by a
+  string which is rendered from a mustache template via the [[https://docs.cfengine.com/docs/3.12/reference-functions-string_mustache.html][string_mustache()]]
+  function.
+
+The above policy results in this output:
+
+#+RESULTS: Iterate over -top- key (@) values (.)
+: R: CFEngine 3.12.0
+: R: /etc/sysctl.conf
+: # Rendered by CFEngine
+: net.ipv6.conf.forwarding=0
+: net.ipv6.conf.all.forwarding=0
+: fs.protected_hardlinks=1
+: fs.protected_symlinks=1
+: vm.swappiness=10
+: 
+
+It's easy to take this reports prototype and turn it into a real files promise.
+Let's take this example one step further and make it a bit more practical.
+
+#+NAME: Iterate over -top- key (@) values (.) and render a real file
+#+CAPTION: Iterate over -top- key (@) values (.) and render a real file
+#+BEGIN_SRC cfengine3 :exports both :results output
+  bundle agent main
+  {
+    vars:
+
+        # Let's make it easy for this policy to be applied to a temporary
+        # location. Note, an empty string will result in no prefix. This is a
+        # useful pattern when combined with classes.
+
+        "PREFIX" string => "/tmp";
+
+        # A simple data structure holding sysctl keys and values
+        "c" data => '{
+    "net.ipv6.conf.forwarding": "0",
+    "net.ipv6.conf.all.forwarding": "0",
+    "fs.protected_hardlinks": "1",
+    "fs.protected_symlinks": "1",
+    "vm.swappiness": "10"
+  }';
+
+    files:
+        "$(PREFIX)/etc/sysctl.conf"
+          create => "true",
+          template_method => "inline_mustache",
+          edit_template_string => "# Rendered by CFEngine$(const.n){{#-top-}}{{{@}}}={{{.}}}$(const.n){{/-top-}}",
+          template_data => @(c);
+
+
+    reports:
+        "CFEngine $(sys.cf_version)";
+
+        # A report to see what a rendered file would look like
+        "${PREFIX}/etc/sysctl.conf"
+          printfile => cat( $(this.promiser) );
+  }
+#+END_SRC
+
+Here is the policy output:
+
+#+RESULTS: Iterate over -top- key (@) values (.) and render a real file
+: R: CFEngine 3.12.0
+: R: /tmp/etc/sysctl.conf
+: R: # Rendered by CFEngine
+: R: net.ipv6.conf.forwarding=0
+: R: net.ipv6.conf.all.forwarding=0
+: R: fs.protected_hardlinks=1
+: R: fs.protected_symlinks=1
+: R: vm.swappiness=10
+
+* Rendering data for direct use and debugging
+
+The =-top-= extension, combined with =$= or =%= is able to render data provided
+to the template as JSON. This is useful in preparing requests for REST APIs and
+general debugging in cases where you are unsure of the exact data provided.
+
+For example, if data is not explicitly provided to a template via [[https://docs.cfengine.com/docs/3.12/reference-promise-types-files.html#template_data][template_data]],
+[[https://docs.cfengine.com/docs/3.12/reference-functions-datastate.html][datastate()]] is used. Let's take a look at a small example where we render a
+couple of data structures.
+
+This example shows rendering JSON data for use in communication with a REST API.
+
+#+NAME: Render JSON data for use with APIs
+#+CAPTION: Render JSON data for use with APIs
+#+BEGIN_SRC cfengine3 :exports both :results output
+  bundle agent main
+  {
+
+    vars:
+
+        "request"
+          data => '{ "name": "morpheus", "job": "leader" }';
+
+        "response"
+          string => execresult( 'curl -s -X POST https://reqres.in/api/users -d @/tmp/request.json -H "Content-Type: application/json"', useshell),
+          depends_on => { "request_ready" };
+
+    files:
+        "/tmp/request.json"
+          handle => "request_ready",
+          create => "true",
+          template_method => "inline_mustache",
+          edit_template_string => "{{$-top-}}",
+          template_data => @(request);
+
+    reports:
+        "CFEngine $(sys.cf_version)";
+
+        "Posted Request"
+          printfile => cat( "/tmp/request.json" );
+
+        "Response$(const.n)$(response)"
+          if => isvariable( response );
+  }
+#+END_SRC
+
+We use the freely available https://reqres.in/ to show a simple way to interact
+with an API.
+
+In the above example:
+- On line 6 we define the request data describing the user we want to create.
+- On line 9 we capture the API response into a variable, alternatively we could
+  use a /commands/ promise, redirecting the output to a file.
+- On lines 13-19 we define a /files/ promise to render our request to disk. This
+  file is used by the curl command to provide the request data for the Reqres
+  API.
+- On lines 24-25 we use a /reports/ promise to show the rendered request. Note how
+  ={{$-top}}= rendered a serial representation.
+
+And here is the policy output:
+
+#+RESULTS: Render JSON data for use with APIs
+: R: CFEngine 3.12.0
+: R: Posted Request
+: R: {"job":"leader","name":"morpheus"}
+: R: Response
+: {"job":"leader","name":"morpheus","id":"771","createdAt":"2018-11-16T15:47:56.473Z"}
+
+Many times it's useful to inspect a data structure and the =%= renders
+multi-line JSON to make it easier to read. In this example, we find all the
+variables in the paths bundle and merge them together into a single data
+structure.
+
+#+NAME: Render JSON data
+#+CAPTION: Render JSON data
+#+BEGIN_SRC cfengine3 :exports both :results output
+  bundle agent main
+  {
+
+    vars:
+
+        "paths" data => variablesmatching_as_data( "default:paths\..*");
+
+    reports:
+        "CFEngine $(sys.cf_version)";
+
+        "Variable data from bundle paths$(const.n)$(with)"
+          with => string_mustache( "{{%-top-}}", paths );
+  }
+#+END_SRC
+
+In the above policy:
+- On line 6 we define a new data container /paths/ as the merged result of all
+  variables in the =paths= bundle.
+- On lines 11-12 we show the multi-line JSON representation of that merged result. 
+
+Here is the policy output:
+
+#+RESULTS: Render JSON data
+#+begin_example
+R: CFEngine 3.12.0
+R: Variable data from bundle paths
+{
+  "default:paths.all_paths": [
+    "groupadd",
+    "usermod",
+    "iptables_save",
+    "ifconfig",
+    "groupdel",
+    "dmidecode",
+    "egrep",
+    "getfacl",
+    "createrepo",
+    "mailx",
+    "logger",
+    "ethtool",
+    "service",
+    "free",
+    "diff",
+    "curl",
+    "netstat",
+    "virtualenv",
+    "apt_config",
+    "cat",
+    "sysctl",
+    "tr",
+    "hostname",
+    "bc",
+    "dc",
+    "svc",
+    "dpkg_divert",
+    "apt_get",
+    "echo",
+    "crontab",
+    "nologin",
+    "test",
+    "npm",
+    "cksum",
+    "ip",
+    "userdel",
+    "awk",
+    "ping",
+    "groupmod",
+    "dpkg",
+    "lsof",
+    "env",
+    "dig",
+    "perl",
+    "cut",
+    "domainname",
+    "apt_cache",
+    "wc",
+    "tar",
+    "pgrep",
+    "update_alternatives",
+    "aptitude",
+    "useradd",
+    "apt_key",
+    "pip",
+    "update_rc_d",
+    "find",
+    "init",
+    "df",
+    "grep",
+    "printf",
+    "realpath",
+    "sort",
+    "shadow",
+    "systemctl",
+    "chkconfig",
+    "ls",
+    "crontabs",
+    "lsattr",
+    "wget",
+    "getent",
+    "sed",
+    "iptables",
+    "git"
+  ],
+  "default:paths.apt_cache": "/usr/bin/apt-cache",
+  "default:paths.apt_config": "/usr/bin/apt-config",
+  "default:paths.apt_get": "/usr/bin/apt-get",
+  "default:paths.apt_key": "/usr/bin/apt-key",
+  "default:paths.aptitude": "/usr/bin/aptitude",
+  "default:paths.awk": "/usr/bin/awk",
+  "default:paths.bc": "/usr/bin/bc",
+  "default:paths.cat": "/bin/cat",
+  "default:paths.chkconfig": "/sbin/chkconfig",
+  "default:paths.cksum": "/usr/bin/cksum",
+  "default:paths.createrepo": "/usr/bin/createrepo",
+  "default:paths.crontab": "/usr/bin/crontab",
+  "default:paths.crontabs": "/var/spool/cron/crontabs",
+  "default:paths.curl": "/usr/bin/curl",
+  "default:paths.cut": "/usr/bin/cut",
+  "default:paths.dc": "/usr/bin/dc",
+  "default:paths.df": "/bin/df",
+  "default:paths.diff": "/usr/bin/diff",
+  "default:paths.dig": "/usr/bin/dig",
+  "default:paths.dmidecode": "/usr/sbin/dmidecode",
+  "default:paths.domainname": "/bin/domainname",
+  "default:paths.dpkg": "/usr/bin/dpkg",
+  "default:paths.dpkg_divert": "/usr/bin/dpkg-divert",
+  "default:paths.echo": "/bin/echo",
+  "default:paths.egrep": "/bin/egrep",
+  "default:paths.env": "/usr/bin/env",
+  "default:paths.ethtool": "/sbin/ethtool",
+  "default:paths.find": "/usr/bin/find",
+  "default:paths.free": "/usr/bin/free",
+  "default:paths.getent": "/usr/bin/getent",
+  "default:paths.getfacl": "/usr/bin/getfacl",
+  "default:paths.git": "/usr/bin/git",
+  "default:paths.grep": "/bin/grep",
+  "default:paths.groupadd": "/usr/sbin/groupadd",
+  "default:paths.groupdel": "/usr/sbin/groupdel",
+  "default:paths.groupmod": "/usr/sbin/groupmod",
+  "default:paths.hostname": "/bin/hostname",
+  "default:paths.ifconfig": "/sbin/ifconfig",
+  "default:paths.init": "/sbin/init",
+  "default:paths.ip": "/sbin/ip",
+  "default:paths.iptables": "/sbin/iptables",
+  "default:paths.iptables_save": "/sbin/iptables-save",
+  "default:paths.logger": "/usr/bin/logger",
+  "default:paths.ls": "/bin/ls",
+  "default:paths.lsattr": "/usr/bin/lsattr",
+  "default:paths.lsof": "/usr/bin/lsof",
+  "default:paths.mailx": "/usr/bin/mailx",
+  "default:paths.netstat": "/bin/netstat",
+  "default:paths.nologin": "/usr/sbin/nologin",
+  "default:paths.npm": "/usr/bin/npm",
+  "default:paths.path[apt_cache]": "/usr/bin/apt-cache",
+  "default:paths.path[apt_config]": "/usr/bin/apt-config",
+  "default:paths.path[apt_get]": "/usr/bin/apt-get",
+  "default:paths.path[apt_key]": "/usr/bin/apt-key",
+  "default:paths.path[aptitude]": "/usr/bin/aptitude",
+  "default:paths.path[awk]": "/usr/bin/awk",
+  "default:paths.path[bc]": "/usr/bin/bc",
+  "default:paths.path[cat]": "/bin/cat",
+  "default:paths.path[chkconfig]": "/sbin/chkconfig",
+  "default:paths.path[cksum]": "/usr/bin/cksum",
+  "default:paths.path[createrepo]": "/usr/bin/createrepo",
+  "default:paths.path[crontab]": "/usr/bin/crontab",
+  "default:paths.path[crontabs]": "/var/spool/cron/crontabs",
+  "default:paths.path[curl]": "/usr/bin/curl",
+  "default:paths.path[cut]": "/usr/bin/cut",
+  "default:paths.path[dc]": "/usr/bin/dc",
+  "default:paths.path[df]": "/bin/df",
+  "default:paths.path[diff]": "/usr/bin/diff",
+  "default:paths.path[dig]": "/usr/bin/dig",
+  "default:paths.path[dmidecode]": "/usr/sbin/dmidecode",
+  "default:paths.path[domainname]": "/bin/domainname",
+  "default:paths.path[dpkg]": "/usr/bin/dpkg",
+  "default:paths.path[dpkg_divert]": "/usr/bin/dpkg-divert",
+  "default:paths.path[echo]": "/bin/echo",
+  "default:paths.path[egrep]": "/bin/egrep",
+  "default:paths.path[env]": "/usr/bin/env",
+  "default:paths.path[ethtool]": "/sbin/ethtool",
+  "default:paths.path[find]": "/usr/bin/find",
+  "default:paths.path[free]": "/usr/bin/free",
+  "default:paths.path[getent]": "/usr/bin/getent",
+  "default:paths.path[getfacl]": "/usr/bin/getfacl",
+  "default:paths.path[git]": "/usr/bin/git",
+  "default:paths.path[grep]": "/bin/grep",
+  "default:paths.path[groupadd]": "/usr/sbin/groupadd",
+  "default:paths.path[groupdel]": "/usr/sbin/groupdel",
+  "default:paths.path[groupmod]": "/usr/sbin/groupmod",
+  "default:paths.path[hostname]": "/bin/hostname",
+  "default:paths.path[ifconfig]": "/sbin/ifconfig",
+  "default:paths.path[init]": "/sbin/init",
+  "default:paths.path[ip]": "/sbin/ip",
+  "default:paths.path[iptables]": "/sbin/iptables",
+  "default:paths.path[iptables_save]": "/sbin/iptables-save",
+  "default:paths.path[logger]": "/usr/bin/logger",
+  "default:paths.path[ls]": "/bin/ls",
+  "default:paths.path[lsattr]": "/usr/bin/lsattr",
+  "default:paths.path[lsof]": "/usr/bin/lsof",
+  "default:paths.path[mailx]": "/usr/bin/mailx",
+  "default:paths.path[netstat]": "/bin/netstat",
+  "default:paths.path[nologin]": "/usr/sbin/nologin",
+  "default:paths.path[npm]": "/usr/bin/npm",
+  "default:paths.path[perl]": "/usr/bin/perl",
+  "default:paths.path[pgrep]": "/usr/bin/pgrep",
+  "default:paths.path[ping]": "/bin/ping",
+  "default:paths.path[pip]": "/usr/bin/pip",
+  "default:paths.path[printf]": "/usr/bin/printf",
+  "default:paths.path[realpath]": "/usr/bin/realpath",
+  "default:paths.path[sed]": "/bin/sed",
+  "default:paths.path[service]": "/usr/sbin/service",
+  "default:paths.path[shadow]": "/etc/shadow",
+  "default:paths.path[sort]": "/usr/bin/sort",
+  "default:paths.path[svc]": "/usr/sbin/service",
+  "default:paths.path[sysctl]": "/sbin/sysctl",
+  "default:paths.path[systemctl]": "/bin/systemctl",
+  "default:paths.path[tar]": "/bin/tar",
+  "default:paths.path[test]": "/usr/bin/test",
+  "default:paths.path[tr]": "/usr/bin/tr",
+  "default:paths.path[update_alternatives]": "/usr/bin/update-alternatives",
+  "default:paths.path[update_rc_d]": "/usr/sbin/update-rc.d",
+  "default:paths.path[useradd]": "/usr/sbin/useradd",
+  "default:paths.path[userdel]": "/usr/sbin/userdel",
+  "default:paths.path[usermod]": "/usr/sbin/usermod",
+  "default:paths.path[virtualenv]": "/usr/bin/virtualenv",
+  "default:paths.path[wc]": "/usr/bin/wc",
+  "default:paths.path[wget]": "/usr/bin/wget",
+  "default:paths.perl": "/usr/bin/perl",
+  "default:paths.pgrep": "/usr/bin/pgrep",
+  "default:paths.ping": "/bin/ping",
+  "default:paths.pip": "/usr/bin/pip",
+  "default:paths.printf": "/usr/bin/printf",
+  "default:paths.realpath": "/usr/bin/realpath",
+  "default:paths.sed": "/bin/sed",
+  "default:paths.service": "/usr/sbin/service",
+  "default:paths.shadow": "/etc/shadow",
+  "default:paths.sort": "/usr/bin/sort",
+  "default:paths.svc": "/usr/sbin/service",
+  "default:paths.sysctl": "/sbin/sysctl",
+  "default:paths.systemctl": "/bin/systemctl",
+  "default:paths.tar": "/bin/tar",
+  "default:paths.test": "/usr/bin/test",
+  "default:paths.tr": "/usr/bin/tr",
+  "default:paths.update_alternatives": "/usr/bin/update-alternatives",
+  "default:paths.update_rc_d": "/usr/sbin/update-rc.d",
+  "default:paths.useradd": "/usr/sbin/useradd",
+  "default:paths.userdel": "/usr/sbin/userdel",
+  "default:paths.usermod": "/usr/sbin/usermod",
+  "default:paths.virtualenv": "/usr/bin/virtualenv",
+  "default:paths.wc": "/usr/bin/wc",
+  "default:paths.wget": "/usr/bin/wget"
+}
+#+end_example
+
+Try finding and merging variables by tag, rendering [[https://docs.cfengine.com/docs/3.12/reference-functions-datastate.html][datastate()]], or [[https://docs.cfengine.com/docs/3.12/reference-functions-bundlestate.html][bundlestate()]].
+
