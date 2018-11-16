@@ -69,7 +69,7 @@ The above policy results in this output:
 : fs.protected_hardlinks=1
 : fs.protected_symlinks=1
 : vm.swappiness=10
-: 
+:
 
 It's easy to take this reports prototype and turn it into a real files promise.
 Let's take this example one step further and make it a bit more practical.
@@ -219,7 +219,7 @@ structure.
 In the above policy:
 - On line 6 we define a new data container /paths/ as the merged result of all
   variables in the =paths= bundle.
-- On lines 11-12 we show the multi-line JSON representation of that merged result. 
+- On lines 11-12 we show the multi-line JSON representation of that merged result.
 
 Here is the policy output:
 
@@ -456,4 +456,3 @@ R: Variable data from bundle paths
 #+end_example
 
 Try finding and merging variables by tag, rendering [[https://docs.cfengine.com/docs/3.12/reference-functions-datastate.html][datastate()]], or [[https://docs.cfengine.com/docs/3.12/reference-functions-bundlestate.html][bundlestate()]].
-
