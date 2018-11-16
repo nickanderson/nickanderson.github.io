@@ -5,10 +5,19 @@
     <link>https://cmdln.org/</link>
     <description>Recent content on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 13 Nov 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 16 Nov 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://cmdln.org/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>The -top- mustache extension in CFEngine 3</title>
+      <link>https://cmdln.org/2018/11/16/the-top-mustache-extension-in-cfengine-3/</link>
+      <pubDate>Fri, 16 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://cmdln.org/2018/11/16/the-top-mustache-extension-in-cfengine-3/</guid>
+      <description>What is the -top- extension, and how do I use it in CFEngines Mustache templating method?  The -top- extension to the mustache template method, first introduced in CFEngine 3.9.0, is a special key representing the complete data given to the templating engine. This is useful for iterating over the top level of a container {{#-top-}} ... {{/-top-}} and rendering json representation of data given with $ and %.</description>
+    </item>
     
     <item>
       <title>Hacking custom variables for additional augments in CFEngine</title>
