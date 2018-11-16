@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://cmdln.org/2018/11/16/the-top-mustache-extension-in-cfengine-3/</loc>
+    <lastmod>2018-11-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://cmdln.org/2018/11/13/hacking-custom-variables-for-additional-augments-in-cfengine/</loc>
     <lastmod>2018-11-13T00:00:00+00:00</lastmod>
   </url>
@@ -1229,7 +1234,7 @@
   
   <url>
     <loc>https://cmdln.org/</loc>
-    <lastmod>2018-11-13T00:00:00+00:00</lastmod>
+    <lastmod>2018-11-16T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1516,13 +1521,13 @@
   
   <url>
     <loc>https://cmdln.org/tags/cfengine/</loc>
-    <lastmod>2018-11-13T00:00:00+00:00</lastmod>
+    <lastmod>2018-11-16T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/cfengine3/</loc>
-    <lastmod>2018-11-13T00:00:00+00:00</lastmod>
+    <lastmod>2018-11-16T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -2241,6 +2246,12 @@
   </url>
   
   <url>
+    <loc>https://cmdln.org/tags/mustache/</loc>
+    <lastmod>2018-11-16T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://cmdln.org/tags/mutt/</loc>
     <lastmod>2009-05-21T02:44:29+00:00</lastmod>
     <priority>0</priority>
@@ -2476,7 +2487,7 @@
   
   <url>
     <loc>https://cmdln.org/post/</loc>
-    <lastmod>2018-11-13T00:00:00+00:00</lastmod>
+    <lastmod>2018-11-16T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

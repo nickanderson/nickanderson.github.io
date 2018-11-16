@@ -418,7 +418,7 @@
     <item>
       <title>Cfengine</title>
       <link>https://cmdln.org/tags/cfengine/</link>
-      <pubDate>Tue, 13 Nov 2018 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 16 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>https://cmdln.org/tags/cfengine/</guid>
       <description></description>
@@ -427,7 +427,7 @@
     <item>
       <title>Cfengine3</title>
       <link>https://cmdln.org/tags/cfengine3/</link>
-      <pubDate>Tue, 13 Nov 2018 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 16 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>https://cmdln.org/tags/cfengine3/</guid>
       <description></description>
@@ -1501,6 +1501,15 @@
       <pubDate>Mon, 07 Apr 2008 23:16:44 +0000</pubDate>
       
       <guid>https://cmdln.org/tags/mtime/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mustache</title>
+      <link>https://cmdln.org/tags/mustache/</link>
+      <pubDate>Fri, 16 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://cmdln.org/tags/mustache/</guid>
       <description></description>
     </item>
     
