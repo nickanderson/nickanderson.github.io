@@ -212,7 +212,7 @@ structure.
         "CFEngine $(sys.cf_version)";
 
         "Variable data from bundle paths$(const.n)$(with)"
-          with => string_mustache( "{{%-top-}}", paths );
+          with => string_mustache( "{{\%-top-}}", paths );
   }
 #+END_SRC
 
@@ -224,7 +224,7 @@ In the above policy:
 Here is the policy output:
 
 #+RESULTS: Render JSON data
-#+begin_example
+#+BEGIN_EXAMPLE
 R: CFEngine 3.12.0
 R: Variable data from bundle paths
 {
@@ -453,6 +453,6 @@ R: Variable data from bundle paths
   "default:paths.wc": "/usr/bin/wc",
   "default:paths.wget": "/usr/bin/wget"
 }
-#+end_example
+#+END_EXAMPLE
 
 Try finding and merging variables by tag, rendering [[https://docs.cfengine.com/docs/3.12/reference-functions-datastate.html][datastate()]], or [[https://docs.cfengine.com/docs/3.12/reference-functions-bundlestate.html][bundlestate()]].
