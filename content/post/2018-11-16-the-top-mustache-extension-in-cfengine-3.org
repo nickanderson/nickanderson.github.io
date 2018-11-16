@@ -212,6 +212,7 @@ structure.
         "CFEngine $(sys.cf_version)";
 
         "Variable data from bundle paths$(const.n)$(with)"
+          # WARNING the escaped % is an artifacct of hugo, remove the backslash!
           with => string_mustache( "{{\%-top-}}", paths );
   }
 #+END_SRC
