@@ -5,10 +5,29 @@
     <link>https://cmdln.org/post/</link>
     <description>Recent content in Posts on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 16 Nov 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 08 Feb 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://cmdln.org/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Executing commands with substitution from CFEngine</title>
+      <link>https://cmdln.org/2019/02/08/executing-commands-with-substitution-from-cfengine/</link>
+      <pubDate>Fri, 08 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://cmdln.org/2019/02/08/executing-commands-with-substitution-from-cfengine/</guid>
+      <description>How can I execute a command that uses command substitution in CFEngine?  On the console I might execute something like this:
+1 2  touch /tmp/file-$(date --iso-8601) ls /tmp/file-*  /tmp/file-2019-03-08  I recommend not executing commands using substitution. Instead, prepare all that you need up front. Get the result of the data command and put it into a cfengine variable, then use the cfengine variable directly.</description>
+    </item>
+    
+    <item>
+      <title>Ensure all files in roots PATH are only writeable by root</title>
+      <link>https://cmdln.org/2018/11/21/ensure-all-files-in-roots-path-are-only-writeable-by-root/</link>
+      <pubDate>Wed, 21 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://cmdln.org/2018/11/21/ensure-all-files-in-roots-path-are-only-writeable-by-root/</guid>
+      <description>How can I ensure that only root has write access to the files and directories  (including symbolic links) in its $PATH?  We could get roots path and then promise that each path recursively has files that are owned by root and that those files are only writeable by root, not writeable by group and not writeable by others. In this example warning vs fixed is implemented for easy switching by the value of a variable.</description>
+    </item>
     
     <item>
       <title>The -top- mustache extension in CFEngine 3</title>

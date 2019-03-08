@@ -6,7 +6,7 @@
 
 		<meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.51" />
+<meta name="generator" content="Hugo 0.54.0" />
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -72,6 +72,33 @@
 			</div>
 			<ul id="post-list">
                 	
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
+							<h4 class="post-link"><a href="https://cmdln.org/2008/12/17/ssh-config-wildcards/">ssh config wildcards</a></h4>
+							<h4 class="post-date">Dec 17, 2008</h4>
+						</div>
+						<div class="post-summary"><p>I just wanted to make sure no one forgets that wildcards can be used in your .ssh/config. This can be extremely helpful. For example say you have 100 nodes that have a simple nameing scheme of nodexxxx. You can add the following into your ssh config and pre-poplulate settings.
+Host node* User staffuser IdentityFile ~/.ssh/staff_key  That would cause any ssh connection matching node* to use the user staffuser and .</p></div>
+						<div class="post-list-footer text-center">
+							<a href="https://cmdln.org/2008/12/17/ssh-config-wildcards/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
+							<h4 class="post-link"><a href="https://cmdln.org/2008/12/12/maintenance-mode-with-apache-mod_rewrite/">Maintenance mode with apache mod_rewrite</a></h4>
+							<h4 class="post-date">Dec 12, 2008</h4>
+						</div>
+						<div class="post-summary"><p><p>With small websites sometimes you need to put up a maintenance page while you are making some modifications. Typically you should have some staging enviornment but sometimes infrastructure does not allow for this. If you find your self in this situation you might like this tip.</p></p></div>
+						<div class="post-list-footer text-center">
+							<a href="https://cmdln.org/2008/12/12/maintenance-mode-with-apache-mod_rewrite/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
 				<li>
 					<div class="post-list-item">
 						<div class="post-header">
@@ -183,32 +210,6 @@ units -t '1Mbps' 'GB/month' 328.71798 units -t '1hour' 'seconds' 3600  </p></div
 					</div>
 				</li>
 			
-				<li>
-					<div class="post-list-item">
-						<div class="post-header">
-							<h4 class="post-link"><a href="https://cmdln.org/2008/11/07/how-i-tamed-my-mutt/">How I tamed my mutt</a></h4>
-							<h4 class="post-date">Nov 8, 2008</h4>
-						</div>
-						<div class="post-summary"><p><p>As you by now well know I try to mostly live at the console (well multiple x consoles). Mutt is my mail client of choice. I&#8217;ve tried Thunderbird, Kmail, Evolution, Sylpheed, and pine. For whatever reason I feel most comfortable with mutt. I also use IMAP for both my personal and work accounts. Mutt was originally designed to deal with local mail and while it does a very good job with IMAP I don&#8217;t like how it handles multiple accounts.</p></p></div>
-						<div class="post-list-footer text-center">
-							<a href="https://cmdln.org/2008/11/07/how-i-tamed-my-mutt/">Read More</a>
-						</div>
-					</div>
-				</li>
-			
-				<li>
-					<div class="post-list-item">
-						<div class="post-header">
-							<h4 class="post-link"><a href="https://cmdln.org/2008/11/03/parable-a-short-allegorical-story-designed-to-illustrate-or-teach-some-truth-religious-principle-or-moral-lesson/">Parable (a short allegorical story designed to illustrate or teach some truth, religious principle, or moral lesson)</a></h4>
-							<h4 class="post-date">Nov 3, 2008</h4>
-						</div>
-						<div class="post-summary"><p><p>Rarely do I get emails that are worthy of even reading let alone sharing with others. This one however, is pretty funny, and seems to be fairly accurate.</p></p></div>
-						<div class="post-list-footer text-center">
-							<a href="https://cmdln.org/2008/11/03/parable-a-short-allegorical-story-designed-to-illustrate-or-teach-some-truth-religious-principle-or-moral-lesson/">Read More</a>
-						</div>
-					</div>
-				</li>
-			
 			</ul>
             
 
@@ -316,7 +317,7 @@ units -t '1Mbps' 'GB/month' 328.71798 units -t '1hour' 'seconds' 3600  </p></div
 			<div class="push"></div>
 		</div>
 		<footer class="footer text-center">
-<p>Copyright &copy; 2018 Nick Anderson -
+<p>Copyright &copy; 2019 Nick Anderson -
 <span class="credit">
 	Powered by
 	<a target="_blank" href="https://gohugo.io">Hugo</a>
