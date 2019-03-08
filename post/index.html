@@ -6,7 +6,7 @@
 
 		<meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.51" />
+<meta name="generator" content="Hugo 0.54.0" />
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -72,6 +72,33 @@
 			</div>
 			<ul id="post-list">
                 	
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
+							<h4 class="post-link"><a href="https://cmdln.org/2019/02/08/executing-commands-with-substitution-from-cfengine/">Executing commands with substitution from CFEngine</a></h4>
+							<h4 class="post-date">Feb 8, 2019</h4>
+						</div>
+						<div class="post-summary"><p>How can I execute a command that uses command substitution in CFEngine?  On the console I might execute something like this:
+1 2  touch /tmp/file-$(date --iso-8601) ls /tmp/file-*  /tmp/file-2019-03-08  I recommend not executing commands using substitution. Instead, prepare all that you need up front. Get the result of the data command and put it into a cfengine variable, then use the cfengine variable directly.</p></div>
+						<div class="post-list-footer text-center">
+							<a href="https://cmdln.org/2019/02/08/executing-commands-with-substitution-from-cfengine/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
+							<h4 class="post-link"><a href="https://cmdln.org/2018/11/21/ensure-all-files-in-roots-path-are-only-writeable-by-root/">Ensure all files in roots PATH are only writeable by root</a></h4>
+							<h4 class="post-date">Nov 21, 2018</h4>
+						</div>
+						<div class="post-summary"><p>How can I ensure that only root has write access to the files and directories  (including symbolic links) in its $PATH?  We could get roots path and then promise that each path recursively has files that are owned by root and that those files are only writeable by root, not writeable by group and not writeable by others. In this example warning vs fixed is implemented for easy switching by the value of a variable.</p></div>
+						<div class="post-list-footer text-center">
+							<a href="https://cmdln.org/2018/11/21/ensure-all-files-in-roots-path-are-only-writeable-by-root/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
 				<li>
 					<div class="post-list-item">
 						<div class="post-header">
@@ -187,35 +214,6 @@ This policy disables known trackerd related XDG files when they are found.
 					</div>
 				</li>
 			
-				<li>
-					<div class="post-list-item">
-						<div class="post-header">
-							<h4 class="post-link"><a href="https://cmdln.org/2018/05/25/automatically-remediate-corruption-in-lmdb-with-cfengine-3/">Automatically remediate corruption in lmdb with cfengine 3</a></h4>
-							<h4 class="post-date">May 25, 2018</h4>
-						</div>
-						<div class="post-summary"><p>How can I automatically remediate the issue where corruption in LMDB causes the agent to crash?
-In some cases lmdb corruption causes cf-agent to crash. The typical fix is to remove the corrupt lmdbs causing the problem. In some cases this can be remediated from policy. This policy (run early in the bundlesequence) uses lmdump to probe all lmdbs. If the probe fails the offending lmdb and it's associated lock files are deleted.</p></div>
-						<div class="post-list-footer text-center">
-							<a href="https://cmdln.org/2018/05/25/automatically-remediate-corruption-in-lmdb-with-cfengine-3/">Read More</a>
-						</div>
-					</div>
-				</li>
-			
-				<li>
-					<div class="post-list-item">
-						<div class="post-header">
-							<h4 class="post-link"><a href="https://cmdln.org/2018/05/24/what-is-evaluated-first-in-cfengine-3-vars-or-classes/">What is evaluated first in cfengine 3? vars or classes</a></h4>
-							<h4 class="post-date">May 24, 2018</h4>
-						</div>
-						<div class="post-summary"><p>How do I know if vars or classes come first during cfengine evaluation?
-Read the documentation on Normal Order There is a wealth of information on docs.cfengine.com. Find documentation about the order of agent promise evaluation (Normal Order) in the Language Concepts section of the Reference manual.
-Run the agent with --verbose or -v and grep for pass 1. Write a test policy that has both vars and classes promises.</p></div>
-						<div class="post-list-footer text-center">
-							<a href="https://cmdln.org/2018/05/24/what-is-evaluated-first-in-cfengine-3-vars-or-classes/">Read More</a>
-						</div>
-					</div>
-				</li>
-			
 			</ul>
             
 
@@ -323,7 +321,7 @@ Run the agent with --verbose or -v and grep for pass 1. Write a test policy that
 			<div class="push"></div>
 		</div>
 		<footer class="footer text-center">
-<p>Copyright &copy; 2018 Nick Anderson -
+<p>Copyright &copy; 2019 Nick Anderson -
 <span class="credit">
 	Powered by
 	<a target="_blank" href="https://gohugo.io">Hugo</a>

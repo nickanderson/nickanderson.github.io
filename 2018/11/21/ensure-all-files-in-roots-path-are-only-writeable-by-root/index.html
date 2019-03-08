@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title> Ensure all files in roots PATH are only writeable by root &middot;  </title>
+
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.54.0" />
+
+
+<script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://cmdln.org/css/nix.css">
+<link rel="stylesheet" href="https://cmdln.org/css/syntax.css">
+
+
+<link href="https://fonts.googleapis.com/css?family=Inconsolata|Open+Sans|Roboto|Montserrat|Concert+One" rel="stylesheet">
+
+
+
+
+    </head>
+
+    <body>
+        <header>
+<nav class="navbar navbar-default navbar-fixed-top navbar-inverse font-header">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" id="green-terminal" href=https://cmdln.org>nick@cmdln.org ~ $</a>
+		</div>
+
+		
+		<div class="collapse navbar-collapse" id="navbar-collapse-1">
+			<ul class="nav navbar-nav navbar-right">
+				<li>
+					<a href="https://cmdln.org">/home/nick</a>
+				</li>
+				
+				
+				<li >
+					<a href="/post/">~/posts</a>
+				</li>
+				
+
+			</ul>
+		</div>
+	</div>
+</nav>
+</header>
+
+        <div class="container wrapper">
+            <h1><a href="https://cmdln.org/2018/11/21/ensure-all-files-in-roots-path-are-only-writeable-by-root/">Ensure all files in roots PATH are only writeable by root</a></h1>
+            <span class="post-date">Nov 21, 2018 </span>
+            <div class="post-content">
+                <blockquote>
+<p>
+How can I ensure that only root has write access to the files and directories
+</p>
+<p>
+(including symbolic links) in its $PATH?
+</p>
+</blockquote>
+
+<p>We could get roots path and then promise that each path recursively has files
+that are owned by root and that those files are only writeable by root, not
+writeable by group and not writeable by others. In this example warning vs fixed
+is implemented for easy switching by the value of a variable. CFEngine operates
+on local files, and can promise the permissions regardless if the user is from a
+directory or a local user. We locate all symlinks that exist in any of the
+directories that make up roots PATH, resolve those link targets and ensure they
+are root owned and root writeable as well.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span><span class="lnt">76
+</span><span class="lnt">77
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">main</span>
+  <span class="p">{</span>
+    <span class="kd">vars</span><span class="p">:</span>
+        <span class="p">&#34;</span><span class="nv">mode</span><span class="p">&#34;</span> <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;warn&#34;</span><span class="p">;</span>
+
+      <span class="c"># Policy runs as root, so we execute env and extract PATH
+</span><span class="c"></span>        <span class="p">&#34;</span><span class="nv">PATH</span><span class="p">&#34;</span>
+          <span class="kt">string</span> <span class="o">=&gt;</span> <span class="nf">execresult</span><span class="p">(</span> <span class="s">&#34;/usr/bin/env | awk -F &#39;=&#39; &#39;/^PATH/ {print $2}&#39;&#34;</span><span class="p">,</span> <span class="nf">useshell</span><span class="p">);</span>
+
+      <span class="c"># Here we split the PATH so that we can operate on each directory
+</span><span class="c"></span>        <span class="p">&#34;</span><span class="nv">PATHs</span><span class="p">&#34;</span> <span class="kt">slist</span> <span class="o">=&gt;</span> <span class="nf">string_split</span><span class="p">(</span> <span class="s">&#34;</span><span class="si">$(PATH)</span><span class="s">&#34;</span><span class="p">,</span> <span class="s">&#34;:&#34;</span><span class="p">,</span> <span class="nf">inf</span> <span class="p">);</span>
+
+
+     <span class="c"># We need to locate all of the symlinks that reside in PATH and resolve the
+</span><span class="c"></span>     <span class="c"># link target for each.
+</span><span class="c"></span>      <span class="p">&#34;</span><span class="nv">symlinks[$(PATHs)]</span><span class="p">&#34;</span> <span class="kt">string</span> <span class="o">=&gt;</span> <span class="nf">execresult</span><span class="p">(</span> <span class="s">&#34;/usr/bin/find </span><span class="si">$(PATHs)</span><span class="s"> -type l&#34;</span><span class="p">,</span> <span class="nf">noshell</span><span class="p">);</span>
+        <span class="s">&#34;m&#34;</span> <span class="kr">data</span> <span class="o">=&gt;</span> <span class="err">&#39;[]&#39;</span><span class="p">;</span>
+        <span class="s">&#34;m&#34;</span> <span class="kr">data</span> <span class="o">=&gt;</span> <span class="nf">mergedata</span><span class="p">(</span> <span class="err">&#39;[]&#39;</span><span class="p">,</span> <span class="nf">m</span><span class="p">,</span> <span class="nf">string_split</span><span class="p">(</span> <span class="s">&#34;</span><span class="si">$(symlinks[$(PATHs)])</span><span class="s">&#34;</span><span class="p">,</span> <span class="s">&#34;</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="nf">inf</span><span class="p">)</span> <span class="p">);</span>
+        <span class="p">&#34;</span><span class="nv">i</span><span class="p">&#34;</span> <span class="kt">slist</span> <span class="o">=&gt;</span> <span class="nf">getvalues</span><span class="p">(</span> <span class="nf">m</span> <span class="p">);</span>
+      <span class="p">&#34;</span><span class="nv">target[$(i)]</span><span class="p">&#34;</span> <span class="kt">string</span> <span class="o">=&gt;</span> <span class="nf">filestat</span><span class="p">(</span> <span class="err">$</span><span class="p">(</span><span class="nf">i</span><span class="p">),</span> <span class="nf">linktarget</span> <span class="p">);</span>
+
+    <span class="kd">files</span><span class="p">:</span>
+      <span class="c"># Recursively search each directory in PATH aserting that all files (
+</span><span class="c"></span>      <span class="c"># including directories ) are owned by root, with user write access, without
+</span><span class="c"></span>      <span class="c"># group write access, without other write access. Warn or fix based on
+</span><span class="c"></span>      <span class="c"># $(mode) variable.
+</span><span class="c"></span>
+        <span class="c"># Here we ensure files in directories that makes up $PATH are owned, and
+</span><span class="c"></span>        <span class="c"># only writeable by root.
+</span><span class="c"></span>
+        <span class="s">&#34;</span><span class="si">$(PATHs)</span><span class="s">/.&#34;</span> <span class="o">-&gt;</span> <span class="p">{</span> <span class="s">&#34;CFG-072&#34;</span> <span class="p">}</span>
+          <span class="kr">perms</span> <span class="o">=&gt;</span> <span class="nf">mo</span><span class="p">(</span> <span class="s">&#34;u+w,g-w,o-w&#34;</span><span class="p">,</span> <span class="nf">root</span> <span class="p">),</span>
+          <span class="kr">comment</span> <span class="o">=&gt;</span> <span class="s">&#34;If non root users can modify files in roots PATH, then they
+</span><span class="s">                      can subvert the system&#34;</span><span class="p">,</span>
+          <span class="kr">depth_search</span> <span class="o">=&gt;</span> <span class="nf">recurse_with_base</span><span class="p">(</span> <span class="nf">inf</span> <span class="p">),</span>
+          <span class="kr">file_select</span> <span class="o">=&gt;</span> <span class="nf">all</span><span class="p">,</span>
+          <span class="kr">action</span> <span class="o">=&gt;</span> <span class="nf">warn_or_fix</span><span class="p">(</span> <span class="err">$</span><span class="p">(</span><span class="nf">mode</span><span class="p">)</span> <span class="p">);</span>
+
+        <span class="c"># Here we ensure that targets of symlinks found in $PATH are owned and
+</span><span class="c"></span>        <span class="c"># only writable by root
+</span><span class="c"></span>
+        <span class="s">&#34;</span><span class="si">$(target[$(i)])</span><span class="s">&#34;</span> <span class="o">-&gt;</span> <span class="p">{</span> <span class="s">&#34;CFG-072&#34;</span> <span class="p">}</span>
+          <span class="kr">comment</span> <span class="o">=&gt;</span> <span class="s">&#34;If non root users can modify files that are targets of
+</span><span class="s">                      symlinks in roots PATH, then they can subvert the system.&#34;</span><span class="p">,</span>
+          <span class="kr">perms</span> <span class="o">=&gt;</span> <span class="nf">mo</span><span class="p">(</span> <span class="s">&#34;u+w,g-w,o-w&#34;</span><span class="p">,</span> <span class="nf">root</span> <span class="p">),</span>
+          <span class="kr">action</span> <span class="o">=&gt;</span> <span class="nf">warn_or_fix</span><span class="p">(</span> <span class="err">$</span><span class="p">(</span><span class="nf">mode</span><span class="p">)</span> <span class="p">);</span>
+  <span class="p">}</span>
+  <span class="k">body</span> <span class="k">action</span> <span class="nf">warn_or_fix</span><span class="p">(</span> <span class="nv">mode</span> <span class="p">)</span>
+  <span class="p">{</span>
+          <span class="kr">action_policy</span> <span class="o">=&gt;</span> <span class="s">&#34;</span><span class="si">$(mode)</span><span class="s">&#34;</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="c"># From stdlib ...
+</span><span class="c"></span>  <span class="k">body</span> <span class="k">file_select</span> <span class="nf">all</span>
+  <span class="c"># @brief Select all file system entries
+</span><span class="c"></span>  <span class="p">{</span>
+        <span class="kr">leaf_name</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="s">&#34;.*&#34;</span> <span class="p">};</span>
+        <span class="kr">file_result</span> <span class="o">=&gt;</span> <span class="s">&#34;leaf_name&#34;</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">body</span> <span class="k">perms</span> <span class="nf">mo</span><span class="p">(</span><span class="nv">mode</span><span class="p">,</span><span class="nv">user</span><span class="p">)</span>
+  <span class="c"># @brief Set the file&#39;s mode and owners
+</span><span class="c"></span>  <span class="c"># @param mode The new mode
+</span><span class="c"></span>  <span class="c"># @param user The username of the new owner
+</span><span class="c"></span>  <span class="p">{</span>
+        <span class="kr">owners</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="s">&#34;</span><span class="si">$(user)</span><span class="s">&#34;</span> <span class="p">};</span>
+        <span class="kr">mode</span>   <span class="o">=&gt;</span> <span class="s">&#34;</span><span class="si">$(mode)</span><span class="s">&#34;</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">body</span> <span class="k">depth_search</span> <span class="nf">recurse_with_base</span><span class="p">(</span><span class="nv">d</span><span class="p">)</span>
+  <span class="c"># @brief Search files and directories recursively up to the specified
+</span><span class="c"></span>  <span class="c"># depth, starting from the base directory and including directories on
+</span><span class="c"></span>  <span class="c"># other devices.
+</span><span class="c"></span>  <span class="c">#
+</span><span class="c"></span>  <span class="c"># @param d The maximum search depth
+</span><span class="c"></span>  <span class="p">{</span>
+        <span class="kr">depth</span> <span class="o">=&gt;</span> <span class="s">&#34;</span><span class="si">$(d)</span><span class="s">&#34;</span><span class="p">;</span>
+        <span class="kr">xdev</span>  <span class="o">=&gt;</span> <span class="s">&#34;true&#34;</span><span class="p">;</span>
+        <span class="kr">include_basedir</span> <span class="o">=&gt;</span> <span class="s">&#34;true&#34;</span><span class="p">;</span>
+  <span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
+            </div>
+            
+            <div class="post-comments">
+                
+            </div>
+            
+            <div class="push"></div>
+        </div>
+        <footer class="footer text-center">
+<p>Copyright &copy; 2019 Nick Anderson -
+<span class="credit">
+	Powered by
+	<a target="_blank" href="https://gohugo.io">Hugo</a>
+	and
+	<a target="_blank" href="https://github.com/LordMathis/hugo-theme-nix/">Nix</a> theme.
+</span>
+</p>
+</footer>
+
+    </body>

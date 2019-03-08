@@ -6,7 +6,7 @@
 
 		<meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.51" />
+<meta name="generator" content="Hugo 0.54.0" />
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -72,6 +72,21 @@
 			</div>
 			<ul id="post-list">
                 	
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
+							<h4 class="post-link"><a href="https://cmdln.org/2018/01/16/setting-permissions-using-uid-username-gid-or-groupname-with-cfengine-3/">Setting permissions using uid, username, gid, or groupname with cfengine 3</a></h4>
+							<h4 class="post-date">Jan 16, 2018</h4>
+						</div>
+						<div class="post-summary"><p>Can we use uid/gid to set permissions instead of username and groupname?
+Yes, you sure can.
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23  bundle agent main { files: # Here we use username and groupname  &#34;/tmp/example&#34; create =&gt; &#34;true&#34;, perms =&gt; mog( &#34;600&#34;, &#34;root&#34;, &#34;root&#34; ); # Here we use uid and gid  &#34;/tmp/example&#34; perms =&gt; mog( &#34;600&#34;, 1000, 136 ); } body perms mog(mode,user,group) # @brief Set the file&#39;s mode, owner and group  # @param mode The new mode  # @param user The username of the new owner  # @param group The group name  { owners =&gt; { &#34;$(user)&#34; }; groups =&gt; { &#34;$(group)&#34; }; mode =&gt; &#34;$(mode)&#34;; }   Run the above example:</p></div>
+						<div class="post-list-footer text-center">
+							<a href="https://cmdln.org/2018/01/16/setting-permissions-using-uid-username-gid-or-groupname-with-cfengine-3/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
 				<li>
 					<div class="post-list-item">
 						<div class="post-header">
@@ -201,20 +216,6 @@ A value of true (the default behavior) will result in the agent retaining the pr
 					</div>
 				</li>
 			
-				<li>
-					<div class="post-list-item">
-						<div class="post-header">
-							<h4 class="post-link"><a href="https://cmdln.org/2017/11/20/are-cfegine-classes-automatically-canonified/">Are CFEgine classes automatically canonified?</a></h4>
-							<h4 class="post-date">Nov 20, 2017</h4>
-						</div>
-						<div class="post-summary"><p>Is there implicit "canonify"-cation happening in in "classes:" promise type?  Yes the agent will automatically canonify classes that you define for your convenience.
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28  bundle agent main # @brief show how classes are automatically canonified during definition  { vars: &#34;invalid_class_string&#34; string =&gt; &#34;my-invalid-class&#34;; classes: @if minimum_version(3.</p></div>
-						<div class="post-list-footer text-center">
-							<a href="https://cmdln.org/2017/11/20/are-cfegine-classes-automatically-canonified/">Read More</a>
-						</div>
-					</div>
-				</li>
-			
 			</ul>
             
 
@@ -259,7 +260,7 @@ A value of true (the default behavior) will result in the agent retaining the pr
 			<div class="push"></div>
 		</div>
 		<footer class="footer text-center">
-<p>Copyright &copy; 2018 Nick Anderson -
+<p>Copyright &copy; 2019 Nick Anderson -
 <span class="credit">
 	Powered by
 	<a target="_blank" href="https://gohugo.io">Hugo</a>
