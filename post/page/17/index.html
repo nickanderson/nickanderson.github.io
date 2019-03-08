@@ -6,7 +6,7 @@
 
 		<meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.51" />
+<meta name="generator" content="Hugo 0.54.0" />
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -72,6 +72,43 @@
 			</div>
 			<ul id="post-list">
                 	
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
+							<h4 class="post-link"><a href="https://cmdln.org/2009/04/28/nice-console-regex-helper/">Nice console regex helper</a></h4>
+							<h4 class="post-date">Apr 28, 2009</h4>
+						</div>
+						<div class="post-summary"><p>Last week I stumbled on a nice console regex helper. It&#8217;s not that I&#8217;m bad at regex but switching between sed, vim, python, perl regex trips me up a bit sometimes.
+Go ahead and check it out for yourself
+sudo aptitude install txt2regex  &lt;br /&gt; [.]quit [0]reset [*]color [/]programs ^txt2regex$
+!! not supported
+RegEx perl :
+RegEx php :
+RegEx postgres:
+RegEx python :
+RegEx sed :
+RegEx vim :</p></div>
+						<div class="post-list-footer text-center">
+							<a href="https://cmdln.org/2009/04/28/nice-console-regex-helper/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
+							<h4 class="post-link"><a href="https://cmdln.org/2009/04/27/improving-debians-nginx-init-script/">Improving debians nginx init script</a></h4>
+							<h4 class="post-date">Apr 27, 2009</h4>
+						</div>
+						<div class="post-summary"><p>nginx is a high performance HTTP and mail proxy server written by Igor Sysoev.
+I&#8217;m not sure what the init scripts do for other distros but it seems a bit of an oversight to leave out checking the config file when running the init script.
+Add this line to your nginx init script right after the text -x $DAEMON line to make it check the config before proceeding to start stop or restart the service.</p></div>
+						<div class="post-list-footer text-center">
+							<a href="https://cmdln.org/2009/04/27/improving-debians-nginx-init-script/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
 				<li>
 					<div class="post-list-item">
 						<div class="post-header">
@@ -193,32 +230,6 @@ Do you keep track of configuration changes? You should. Maybe your using an adva
 					</div>
 				</li>
 			
-				<li>
-					<div class="post-list-item">
-						<div class="post-header">
-							<h4 class="post-link"><a href="https://cmdln.org/2009/02/18/movin-in-movin-out/">Movin in movin out</a></h4>
-							<h4 class="post-date">Feb 18, 2009</h4>
-						</div>
-						<div class="post-summary"><p><p>Every time I have a new shell account I end up customizing it. Making alterations to my vimrc, screenrc or whatever. It can be a huge pain when you have lots of slightly varying configs on different machines. I wrote this little script to grab my files and create a self extracting shell script so I can easily setup my environment on multiple machines.</p></p></div>
-						<div class="post-list-footer text-center">
-							<a href="https://cmdln.org/2009/02/18/movin-in-movin-out/">Read More</a>
-						</div>
-					</div>
-				</li>
-			
-				<li>
-					<div class="post-list-item">
-						<div class="post-header">
-							<h4 class="post-link"><a href="https://cmdln.org/2009/02/18/another-commandline-junkie/">Another commandline junkie</a></h4>
-							<h4 class="post-date">Feb 18, 2009</h4>
-						</div>
-						<div class="post-summary"><p>Waddya know I&#8217;m not the only geek with an affinity for the console. This could be interesting. Repository of useful one liners.</p></div>
-						<div class="post-list-footer text-center">
-							<a href="https://cmdln.org/2009/02/18/another-commandline-junkie/">Read More</a>
-						</div>
-					</div>
-				</li>
-			
 			</ul>
             
 
@@ -326,7 +337,7 @@ Do you keep track of configuration changes? You should. Maybe your using an adva
 			<div class="push"></div>
 		</div>
 		<footer class="footer text-center">
-<p>Copyright &copy; 2018 Nick Anderson -
+<p>Copyright &copy; 2019 Nick Anderson -
 <span class="credit">
 	Powered by
 	<a target="_blank" href="https://gohugo.io">Hugo</a>
