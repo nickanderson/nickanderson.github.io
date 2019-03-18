@@ -73,6 +73,8 @@ To clear the POSIX ACLs from a file, you specify the ACL with no permissions.
   }
 #+END_SRC
 
+The example policy above produces the following output:
+
 #+RESULTS:
 #+begin_example
 R: In SetAndReport
