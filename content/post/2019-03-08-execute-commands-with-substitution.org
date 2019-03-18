@@ -1,6 +1,6 @@
 #+Title: Executing commands with substitution from CFEngine
 #+AUTHOR: Nick Anderson
-#+DATE: 2019-02-08
+#+DATE: 2019-03-08
 #+TAGS: cfengine3
 #+DRAFT: false
 
