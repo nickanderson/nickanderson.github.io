@@ -201,26 +201,25 @@
 </div>
 <p>The example policy above produces the following output:</p>
 
-<p>R: In SetAndReport
-getfacl: Removing leading '/' from absolute path names</p>
-<!-- file: tmp/myFileWithAces -->
-<!-- owner: nickanderson -->
-<!-- group: nickanderson -->
-
-<p>user::r-x
+<pre><code>R: In SetAndReport
+getfacl: Removing leading '/' from absolute path names
+# file: tmp/myFileWithAces
+# owner: nickanderson
+# group: nickanderson
+user::r-x
 group::r-x
 mask::r-x
 other::r--
 R: In UnSetAndReport
-getfacl: Removing leading '/' from absolute path names</p>
-<!-- file: tmp/myFileWithAces -->
-<!-- owner: nickanderson -->
-<!-- group: nickanderson -->
-
-<p>user::---
+getfacl: Removing leading '/' from absolute path names
+# file: tmp/myFileWithAces
+# owner: nickanderson
+# group: nickanderson
+user::---
 group::---
 mask::---
-other::---</p>
+other::---
+</code></pre>
 
             </div>
             
