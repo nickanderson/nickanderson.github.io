@@ -74,6 +74,7 @@ To clear the POSIX ACLs from a file, you specify the ACL with no permissions.
 #+END_SRC
 
 The example policy above produces the following output:
+
 #+BEGIN_EXAMPLE
 R: In SetAndReport
 getfacl: Removing leading '/' from absolute path names
@@ -94,3 +95,7 @@ group::---
 mask::---
 other::---
 #+END_EXAMPLE
+
+For more information about file refer to the documentation on [[https://docs.cfengine.com/docs/3.13/reference-promise-types-files.html#acl][acl bodies]] in the
+reference manual.
+
