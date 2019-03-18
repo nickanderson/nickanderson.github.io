@@ -38,6 +38,11 @@
   </url>
   
   <url>
+    <loc>https://cmdln.org/2018/10/18/clearing-posix-acls-from-a-file-with-cfengine/</loc>
+    <lastmod>2018-10-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://cmdln.org/2018/10/18/setting-the-timeout-with-url_get-in-cfengine-3/</loc>
     <lastmod>2018-10-18T00:00:00+00:00</lastmod>
   </url>

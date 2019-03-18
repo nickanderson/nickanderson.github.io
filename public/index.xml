@@ -81,6 +81,17 @@ When providing explicit data the variables and classes from the current state ar
     </item>
     
     <item>
+      <title>Clearing POSIX ACLs from a file with CFEngine</title>
+      <link>https://cmdln.org/2018/10/18/clearing-posix-acls-from-a-file-with-cfengine/</link>
+      <pubDate>Thu, 18 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://cmdln.org/2018/10/18/clearing-posix-acls-from-a-file-with-cfengine/</guid>
+      <description>From #cfengine on irc.freenode.net:
+  How can I clear the POSIX ACLs from a file?  To clear the POSIX ACLs from a file, you specify the ACL with no permissions.
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58  bundle agent main { vars: &amp;#34;file&amp;#34; string =&amp;gt; &amp;#34;/tmp/myFileWithAces&amp;#34;; files: &amp;#34;$(file)&amp;#34; create =&amp;gt; &amp;#34;true&amp;#34;; methods: &amp;#34;Set POSIX ACL and report&amp;#34; usebundle =&amp;gt; SetAndReport( $(file) ); &amp;#34;UnSet POSIX ACL and report&amp;#34; usebundle =&amp;gt; UnSetAndReport( $(file) ); } bundle agent SetAndReport( file ) { files: &amp;#34;$(file)&amp;#34; acl =&amp;gt; my_posix_aces; reports: &amp;#34;In $(this.</description>
+    </item>
+    
+    <item>
       <title>Setting the timeout with url_get() in cfengine 3</title>
       <link>https://cmdln.org/2018/10/18/setting-the-timeout-with-url_get-in-cfengine-3/</link>
       <pubDate>Thu, 18 Oct 2018 00:00:00 +0000</pubDate>
