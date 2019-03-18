@@ -1,0 +1,96 @@
+#+Title: Clearing POSIX ACLs from a file with CFEngine
+#+AUTHOR: Nick Anderson
+#+DATE: 2018-10-18
+#+TAGS: cfengine3
+#+DRAFT: false
+
+From #cfengine on irc.freenode.net:
+
+#+BEGIN_QUOTE
+  How can I clear the POSIX ACLs from a file?
+#+END_QUOTE
+
+To clear the POSIX ACLs from a file, you specify the ACL with no permissions.
+
+#+BEGIN_SRC cfengine3 :include-stdlib t :verbose-mode nil :inform-mode nil :exports both
+  bundle agent main
+  {
+    vars:
+        "file" string => "/tmp/myFileWithAces";
+
+    files:
+        "$(file)"
+          create => "true";
+
+    methods:
+      "Set POSIX ACL and report"
+        usebundle => SetAndReport( $(file) );
+
+      "UnSet POSIX ACL and report"
+        usebundle => UnSetAndReport( $(file) );
+  }
+
+  bundle agent SetAndReport( file )
+  {
+    files:
+        "$(file)"
+          acl => my_posix_aces;
+
+    reports:
+        "In $(this.bundle)$(const.n)$(with)" with => execresult( "getfacl $(file)", useshell);
+  }
+
+  bundle agent UnSetAndReport( file )
+  {
+    files:
+        "$(file)"
+          acl => no_posix_aces;
+
+    reports:
+
+      # Yes, it is intentional that there is a space at the end of this
+      # execresult. It's there so that this identical function call does not
+      # return the cached result. Alternatively, I could havd disabled function
+      # caching globally.
+
+        "In $(this.bundle)$(const.n)$(with)" with => execresult( "getfacl $(file) ", useshell);
+  }
+
+  body acl my_posix_aces
+  # @brief Settings some aces here
+  {
+          acl_method => "overwrite";
+          acl_type   => "posix";
+          aces       => { "user:*:rx", "group:*:rx", "all:r", "mask:rx" };
+  }
+
+  body acl no_posix_aces
+  # @brief I want to remove current aces of the file
+  {
+          acl_method => "overwrite";
+          acl_type   => "posix";
+          aces       => { "user:*:", "group:*:", "all:", "mask:" };
+  }
+#+END_SRC
+
+#+RESULTS:
+#+begin_example
+R: In SetAndReport
+getfacl: Removing leading '/' from absolute path names
+# file: tmp/myFileWithAces
+# owner: nickanderson
+# group: nickanderson
+user::r-x
+group::r-x
+mask::r-x
+other::r--
+R: In UnSetAndReport
+getfacl: Removing leading '/' from absolute path names
+# file: tmp/myFileWithAces
+# owner: nickanderson
+# group: nickanderson
+user::---
+group::---
+mask::---
+other::---
+#+end_example
