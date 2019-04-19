@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Nginx on </title>
+    <title>nginx on </title>
     <link>https://cmdln.org/tags/nginx/</link>
-    <description>Recent content in Nginx on </description>
+    <description>Recent content in nginx on </description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Fri, 09 Jul 2010 23:41:53 +0000</lastBuildDate>
     
