@@ -1,0 +1,78 @@
+#+Title: Special considerations for true and false bare values with mergedata() in CFEngine 3
+#+AUTHOR: Nick Anderson
+#+DATE: 2019-04-19T10:41:04-06:00
+#+TAGS: cfengine
+#+DRAFT: false
+
+CFEngine makes it easy to render JSON data. This is incredibly useful for
+coordinating and exchanging data with other systems. Sometimes, data provided to
+other systems needs to be constructed from multiple parts. When preparing a data
+container for rendering with mergedata() beware that the /true/ and /false/
+*values* are special and will not be replaced by data containers of the same
+name.
+
+- Bare values used in [[https://docs.cfengine.com/docs/3.12/reference-functions-mergedata.html][mergedata()]] try to expand a cfengine data container named
+  for the bare word
+- /true/ and /false/ are reserved bare values
+
+This example illustrates how the /true/ and /false/ bare values are *not*
+expanded even when data containers matching those names exist.
+
+#+CAPTION: Example illustrating how bare values except true and false are expanded by mergedata()
+#+BEGIN_SRC cfengine3 :include-stdlib t :verbose-mode nil :inform-mode nil :exports both
+  bundle agent example
+  {
+    vars:
+        "false" data => '{ "one": "two", "Buckle": "Shoe" }';
+        "true" data => '{ "three": "four", "Shut": "Door" }';
+        "f" data => '{ "one": "two", "Buckle": "Shoe" }';
+        "t" data => '{ "three": "four", "Shut": "Door" }';
+
+    reports:
+        "CFEngine $(sys.cf_version)";
+
+        "NOTE 'f' and 't' are expanded$(with)"
+          with => string_mustache( "{{%-top-}}",
+                                   mergedata(
+                                              '{
+  "configured": true,
+  "watch_out_for_false": f,
+  "watch_out_for_true": t
+                                              }') );
+
+        "NOTE 'false' and 'true' are NOT expanded$(with)"
+          with => string_mustache( "{{%-top-}}",
+                                   mergedata(
+                                              '{
+  "configured": true,
+  "watch_out_for_false": false,
+  "watch_out_for_true": true
+                                              }') );
+  }
+  bundle agent __main__
+  {
+    methods:
+        "example";
+  }
+#+END_SRC
+
+#+RESULTS:
+#+begin_example
+R: CFEngine 3.14.0a.ed0158a8e
+R: NOTE 'f' and 't' are expanded{
+  "configured": true,
+  "watch_out_for_false": {
+    "Buckle": "Shoe",
+    "one": "two"
+  },
+  "watch_out_for_true": {
+    "Shut": "Door",
+    "three": "four"
+  }
+}
+R: NOTE 'false' and 'true' are NOT expanded{
+  "configured": true,
+  "watch_out_for_false": false,
+  "watch_out_for_true": true
+}
+#+end_example
