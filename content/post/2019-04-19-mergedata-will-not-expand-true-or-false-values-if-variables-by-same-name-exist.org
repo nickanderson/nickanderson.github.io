@@ -1,6 +1,6 @@
 #+Title: Special considerations for true and false bare values with mergedata() in CFEngine 3
 #+AUTHOR: Nick Anderson
-#+DATE: 2019-04-19T10:41:04-06:00
+#+DATE: 2019-04-19
 #+TAGS: cfengine
 #+DRAFT: false
 
