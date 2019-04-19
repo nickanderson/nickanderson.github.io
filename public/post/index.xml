@@ -5,10 +5,20 @@
     <link>https://cmdln.org/post/</link>
     <description>Recent content in Posts on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 18 Mar 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 19 Apr 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://cmdln.org/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Special considerations for true and false bare values with mergedata() in CFEngine 3</title>
+      <link>https://cmdln.org/2019/04/19/special-considerations-for-true-and-false-bare-values-with-mergedata-in-cfengine-3/</link>
+      <pubDate>Fri, 19 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://cmdln.org/2019/04/19/special-considerations-for-true-and-false-bare-values-with-mergedata-in-cfengine-3/</guid>
+      <description>CFEngine makes it easy to render JSON data. This is incredibly useful for coordinating and exchanging data with other systems. Sometimes, data provided to other systems needs to be constructed from multiple parts. When preparing a data container for rendering with mergedata() beware that the true and false values are special and will not be replaced by data containers of the same name.
+ Bare values used in mergedata() try to expand a cfengine data container named for the bare word true and false are reserved bare values  This example illustrates how the true and false bare values are not expanded even when data containers matching those names exist.</description>
+    </item>
     
     <item>
       <title>Clearing POSIX ACLs from a file with CFEngine</title>
