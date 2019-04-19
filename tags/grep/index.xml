@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Grep on </title>
+    <title>grep on </title>
     <link>https://cmdln.org/tags/grep/</link>
-    <description>Recent content in Grep on </description>
+    <description>Recent content in grep on </description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Thu, 10 Apr 2008 19:59:52 +0000</lastBuildDate>
     
