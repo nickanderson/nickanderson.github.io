@@ -75,6 +75,20 @@
 				<li>
 					<div class="post-list-item">
 						<div class="post-header">
+							<h4 class="post-link"><a href="https://cmdln.org/2017/11/21/in-cfengine-how-does-edit_backup-in-edit_defaults-work/">In CFEngine how does edit_backup in edit_defaults work?</a></h4>
+							<h4 class="post-date">Nov 21, 2017</h4>
+						</div>
+						<div class="post-summary"><p>This controls if and how files are backed up by cf-agent during file editing operations. If enabled previous versions of the file will be retained next to the file or in default_repository if it is defined in body agent control. Note as it relates to edited files it is only applicable when combined with =edit_line=. It has no effect when used with edit_template or copy_from.
+A value of true (the default behavior) will result in the agent retaining the previous version of the file suffixed with .</p></div>
+						<div class="post-list-footer text-center">
+							<a href="https://cmdln.org/2017/11/21/in-cfengine-how-does-edit_backup-in-edit_defaults-work/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
 							<h4 class="post-link"><a href="https://cmdln.org/2017/11/20/are-cfegine-classes-automatically-canonified/">Are CFEgine classes automatically canonified?</a></h4>
 							<h4 class="post-date">Nov 20, 2017</h4>
 						</div>
@@ -193,21 +207,6 @@ You could run something like this to see what classes are raised during executio
 cf-agent -KIv | grep "cf3&gt;\s*+" | grep -v : But that isn&#8217;t really a clear picture under normal operation. You can use the allclassesreport in body agent control to write out a list of classes defined during execution in /var/cfengine/state/allclasses.</p></div>
 						<div class="post-list-footer text-center">
 							<a href="https://cmdln.org/2012/10/18/cfengine-3-tip-find-out-what-classes-are-being-defined/">Read More</a>
-						</div>
-					</div>
-				</li>
-			
-				<li>
-					<div class="post-list-item">
-						<div class="post-header">
-							<h4 class="post-link"><a href="https://cmdln.org/2012/10/16/dynamic-method-calls-in-cfengine/">Dynamic method calls in CFEngine</a></h4>
-							<h4 class="post-date">Oct 16, 2012</h4>
-						</div>
-						<div class="post-summary"><p>Methods type promises are powerful abstraction tools in CFEngine 3. Methods allow you to activate bundles (optionally parametrized) from other bundles. This allows encapsulation of knowledge and lends itself to re-usability.
-I just want to share an example of calling bundles dynamically. It&#8217;s a contrived example, but I thought it was neat so here it is.
-R: in bundle agent handler1: I got value1  R: in bundle agent handler1: I got value2  &nbsp;!</p></div>
-						<div class="post-list-footer text-center">
-							<a href="https://cmdln.org/2012/10/16/dynamic-method-calls-in-cfengine/">Read More</a>
 						</div>
 					</div>
 				</li>
