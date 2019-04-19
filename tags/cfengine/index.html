@@ -75,6 +75,20 @@
 				<li>
 					<div class="post-list-item">
 						<div class="post-header">
+							<h4 class="post-link"><a href="https://cmdln.org/2019/04/19/special-considerations-for-true-and-false-bare-values-with-mergedata-in-cfengine-3/">Special considerations for true and false bare values with mergedata() in CFEngine 3</a></h4>
+							<h4 class="post-date">Apr 19, 2019</h4>
+						</div>
+						<div class="post-summary"><p>CFEngine makes it easy to render JSON data. This is incredibly useful for coordinating and exchanging data with other systems. Sometimes, data provided to other systems needs to be constructed from multiple parts. When preparing a data container for rendering with mergedata() beware that the true and false values are special and will not be replaced by data containers of the same name.
+ Bare values used in mergedata() try to expand a cfengine data container named for the bare word true and false are reserved bare values  This example illustrates how the true and false bare values are not expanded even when data containers matching those names exist.</p></div>
+						<div class="post-list-footer text-center">
+							<a href="https://cmdln.org/2019/04/19/special-considerations-for-true-and-false-bare-values-with-mergedata-in-cfengine-3/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
 							<h4 class="post-link"><a href="https://cmdln.org/2018/11/21/ensure-all-files-in-roots-path-are-only-writeable-by-root/">Ensure all files in roots PATH are only writeable by root</a></h4>
 							<h4 class="post-date">Nov 21, 2018</h4>
 						</div>
@@ -194,20 +208,6 @@ With the windows agent (Northern.tech builds Enterprise windows agents) you can 
 1  cf-promises --show-classes | grep time   | Day2 time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | GMT_Afternoon time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | GMT_Day2 time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | GMT_Hr14 time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | GMT_Hr14_Q1 time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | GMT_Lcycle_1 time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | GMT_March time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | GMT_Min10 time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | GMT_Min10_15 time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | GMT_Q1 time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | GMT_Thursday time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | GMT_Yr2017 time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | Hr08 time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | Hr08_Q1 time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | Hr8 time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | Lcycle_1 time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | March time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | Min10 time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | Min10_15 time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | Morning time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | Q1 time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | Thursday time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass | | Yr2017 time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass |  You can guard your promise with a time based class expression so that it can only execute during the 7:00 hour.</p></div>
 						<div class="post-list-footer text-center">
 							<a href="https://cmdln.org/2018/01/28/timeboxing-policy-in-cfengine3/">Read More</a>
-						</div>
-					</div>
-				</li>
-			
-				<li>
-					<div class="post-list-item">
-						<div class="post-header">
-							<h4 class="post-link"><a href="https://cmdln.org/2018/01/27/formatting-time-in-cfengine3/">Formatting Time in CFEngine3</a></h4>
-							<h4 class="post-date">Jan 27, 2018</h4>
-						</div>
-						<div class="post-summary"><p>How do I format and convert time strings?  The strftime() function takes unix epoch format as input and can format the time using the standard strftime templates.
-1 2 3 4 5 6 7  bundle agent main { reports: &#34;$(with)&#34; with =&gt; strftime( localtime, &#34;%FT%R:%S%Z&#34;, now() ); }  R: 2018-01-27T15:47:14CST  Unfortunately there is currently no native way to convert from other inputs formats. You can however, use an external command.</p></div>
-						<div class="post-list-footer text-center">
-							<a href="https://cmdln.org/2018/01/27/formatting-time-in-cfengine3/">Read More</a>
 						</div>
 					</div>
 				</li>
