@@ -5,10 +5,19 @@
     <link>https://cmdln.org/tags/cfengine3/</link>
     <description>Recent content in cfengine3 on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 18 Mar 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 31 May 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://cmdln.org/tags/cfengine3/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Custom services in CFEngine 3</title>
+      <link>https://cmdln.org/2019/05/31/custom-services-in-cfengine-3/</link>
+      <pubDate>Fri, 31 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://cmdln.org/2019/05/31/custom-services-in-cfengine-3/</guid>
+      <description>CFEngine provides the services promise type to manage the state of a given service. By default, bundle agent standard_services is used for the service_method. The standard_services bundle uses the status command and interprets the return codes according to the Linux Standards Base init script actions. Unfortunately some init scripts do not follow the standards. If the status command returns zero when a service is not running, cfengine will issue the commands necessary to stop the service every time the agent is run.</description>
+    </item>
     
     <item>
       <title>Clearing POSIX ACLs from a file with CFEngine</title>

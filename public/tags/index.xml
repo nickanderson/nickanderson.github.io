@@ -5,26 +5,26 @@
     <link>https://cmdln.org/tags/</link>
     <description>Recent content in Tags on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 19 Apr 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 31 May 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://cmdln.org/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>CFEngine</title>
-      <link>https://cmdln.org/tags/cfengine/</link>
-      <pubDate>Fri, 19 Apr 2019 00:00:00 +0000</pubDate>
+      <title>cfengine3</title>
+      <link>https://cmdln.org/tags/cfengine3/</link>
+      <pubDate>Fri, 31 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://cmdln.org/tags/cfengine/</guid>
+      <guid>https://cmdln.org/tags/cfengine3/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>cfengine3</title>
-      <link>https://cmdln.org/tags/cfengine3/</link>
-      <pubDate>Mon, 18 Mar 2019 00:00:00 +0000</pubDate>
+      <title>cfengine</title>
+      <link>https://cmdln.org/tags/cfengine/</link>
+      <pubDate>Mon, 20 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://cmdln.org/tags/cfengine3/</guid>
+      <guid>https://cmdln.org/tags/cfengine/</guid>
       <description></description>
     </item>
     

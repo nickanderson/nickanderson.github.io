@@ -5,19 +5,28 @@
     <link>https://cmdln.org/post/</link>
     <description>Recent content in Posts on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 19 Apr 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 31 May 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://cmdln.org/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Special considerations for true and false bare values with mergedata() in CFEngine 3</title>
-      <link>https://cmdln.org/2019/04/19/special-considerations-for-true-and-false-bare-values-with-mergedata-in-cfengine-3/</link>
-      <pubDate>Fri, 19 Apr 2019 00:00:00 +0000</pubDate>
+      <title>Custom services in CFEngine 3</title>
+      <link>https://cmdln.org/2019/05/31/custom-services-in-cfengine-3/</link>
+      <pubDate>Fri, 31 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://cmdln.org/2019/04/19/special-considerations-for-true-and-false-bare-values-with-mergedata-in-cfengine-3/</guid>
-      <description>CFEngine makes it easy to render JSON data. This is incredibly useful for coordinating and exchanging data with other systems. Sometimes, data provided to other systems needs to be constructed from multiple parts. When preparing a data container for rendering with mergedata() beware that the true and false values are special and will not be replaced by data containers of the same name.
- Bare values used in mergedata() try to expand a cfengine data container named for the bare word true and false are reserved bare values  This example illustrates how the true and false bare values are not expanded even when data containers matching those names exist.</description>
+      <guid>https://cmdln.org/2019/05/31/custom-services-in-cfengine-3/</guid>
+      <description>CFEngine provides the services promise type to manage the state of a given service. By default, bundle agent standard_services is used for the service_method. The standard_services bundle uses the status command and interprets the return codes according to the Linux Standards Base init script actions. Unfortunately some init scripts do not follow the standards. If the status command returns zero when a service is not running, cfengine will issue the commands necessary to stop the service every time the agent is run.</description>
+    </item>
+    
+    <item>
+      <title>How can I access the current KEY when iterating a dict in mustache from cfengine</title>
+      <link>https://cmdln.org/2019/05/20/how-can-i-access-the-current-key-when-iterating-a-dict-in-mustache-from-cfengine/</link>
+      <pubDate>Mon, 20 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://cmdln.org/2019/05/20/how-can-i-access-the-current-key-when-iterating-a-dict-in-mustache-from-cfengine/</guid>
+      <description>Can I access the current KEY when iterating in Mustache?  Yes, CFEngine&#39;s implementation of mustache includes an extension to be able to access the current key when iterating. @ expands the current key being iterated.
+This example defines d as a simple json data structure with index-1 and =index-2= being top level keys. The mustache template iterates over the entirety of the structure leveraging -top- (another cfengine specific extension to mustache) and prints the key using @.</description>
     </item>
     
     <item>

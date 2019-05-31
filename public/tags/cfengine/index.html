@@ -2,11 +2,11 @@
 <html lang="">
 
 	<head>
-		<title> CFEngine &middot;  </title>
+		<title> cfengine &middot;  </title>
 
 		<meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.55.2" />
+<meta name="generator" content="Hugo 0.55.6" />
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -67,7 +67,7 @@
 		<div class="container wrapper">
 			<div class="row">
 				<div class="col-xs-12 text-center">
-					<h1 id=>CFEngine</h1>
+					<h1 id=>cfengine</h1>
 				</div>
 			</div>
 			<ul id="post-list">
@@ -75,13 +75,13 @@
 				<li>
 					<div class="post-list-item">
 						<div class="post-header">
-							<h4 class="post-link"><a href="https://cmdln.org/2019/04/19/special-considerations-for-true-and-false-bare-values-with-mergedata-in-cfengine-3/">Special considerations for true and false bare values with mergedata() in CFEngine 3</a></h4>
-							<h4 class="post-date">Apr 19, 2019</h4>
+							<h4 class="post-link"><a href="https://cmdln.org/2019/05/20/how-can-i-access-the-current-key-when-iterating-a-dict-in-mustache-from-cfengine/">How can I access the current KEY when iterating a dict in mustache from cfengine</a></h4>
+							<h4 class="post-date">May 20, 2019</h4>
 						</div>
-						<div class="post-summary"><p>CFEngine makes it easy to render JSON data. This is incredibly useful for coordinating and exchanging data with other systems. Sometimes, data provided to other systems needs to be constructed from multiple parts. When preparing a data container for rendering with mergedata() beware that the true and false values are special and will not be replaced by data containers of the same name.
- Bare values used in mergedata() try to expand a cfengine data container named for the bare word true and false are reserved bare values  This example illustrates how the true and false bare values are not expanded even when data containers matching those names exist.</p></div>
+						<div class="post-summary"><p>Can I access the current KEY when iterating in Mustache?  Yes, CFEngine's implementation of mustache includes an extension to be able to access the current key when iterating. @ expands the current key being iterated.
+This example defines d as a simple json data structure with index-1 and =index-2= being top level keys. The mustache template iterates over the entirety of the structure leveraging -top- (another cfengine specific extension to mustache) and prints the key using @.</p></div>
 						<div class="post-list-footer text-center">
-							<a href="https://cmdln.org/2019/04/19/special-considerations-for-true-and-false-bare-values-with-mergedata-in-cfengine-3/">Read More</a>
+							<a href="https://cmdln.org/2019/05/20/how-can-i-access-the-current-key-when-iterating-a-dict-in-mustache-from-cfengine/">Read More</a>
 						</div>
 					</div>
 				</li>
