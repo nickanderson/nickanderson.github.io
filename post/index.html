@@ -6,7 +6,7 @@
 
 		<meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.55.2" />
+<meta name="generator" content="Hugo 0.55.6" />
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -75,13 +75,26 @@
 				<li>
 					<div class="post-list-item">
 						<div class="post-header">
-							<h4 class="post-link"><a href="https://cmdln.org/2019/04/19/special-considerations-for-true-and-false-bare-values-with-mergedata-in-cfengine-3/">Special considerations for true and false bare values with mergedata() in CFEngine 3</a></h4>
-							<h4 class="post-date">Apr 19, 2019</h4>
+							<h4 class="post-link"><a href="https://cmdln.org/2019/05/31/custom-services-in-cfengine-3/">Custom services in CFEngine 3</a></h4>
+							<h4 class="post-date">May 31, 2019</h4>
 						</div>
-						<div class="post-summary"><p>CFEngine makes it easy to render JSON data. This is incredibly useful for coordinating and exchanging data with other systems. Sometimes, data provided to other systems needs to be constructed from multiple parts. When preparing a data container for rendering with mergedata() beware that the true and false values are special and will not be replaced by data containers of the same name.
- Bare values used in mergedata() try to expand a cfengine data container named for the bare word true and false are reserved bare values  This example illustrates how the true and false bare values are not expanded even when data containers matching those names exist.</p></div>
+						<div class="post-summary"><p>CFEngine provides the services promise type to manage the state of a given service. By default, bundle agent standard_services is used for the service_method. The standard_services bundle uses the status command and interprets the return codes according to the Linux Standards Base init script actions. Unfortunately some init scripts do not follow the standards. If the status command returns zero when a service is not running, cfengine will issue the commands necessary to stop the service every time the agent is run.</p></div>
 						<div class="post-list-footer text-center">
-							<a href="https://cmdln.org/2019/04/19/special-considerations-for-true-and-false-bare-values-with-mergedata-in-cfengine-3/">Read More</a>
+							<a href="https://cmdln.org/2019/05/31/custom-services-in-cfengine-3/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
+							<h4 class="post-link"><a href="https://cmdln.org/2019/05/20/how-can-i-access-the-current-key-when-iterating-a-dict-in-mustache-from-cfengine/">How can I access the current KEY when iterating a dict in mustache from cfengine</a></h4>
+							<h4 class="post-date">May 20, 2019</h4>
+						</div>
+						<div class="post-summary"><p>Can I access the current KEY when iterating in Mustache?  Yes, CFEngine's implementation of mustache includes an extension to be able to access the current key when iterating. @ expands the current key being iterated.
+This example defines d as a simple json data structure with index-1 and =index-2= being top level keys. The mustache template iterates over the entirety of the structure leveraging -top- (another cfengine specific extension to mustache) and prints the key using @.</p></div>
+						<div class="post-list-footer text-center">
+							<a href="https://cmdln.org/2019/05/20/how-can-i-access-the-current-key-when-iterating-a-dict-in-mustache-from-cfengine/">Read More</a>
 						</div>
 					</div>
 				</li>
@@ -195,21 +208,6 @@ For example, here we run the command echo Hello World and define bundle scoped c
 When providing explicit data the variables and classes from the current state are not included.</p></div>
 						<div class="post-list-footer text-center">
 							<a href="https://cmdln.org/2018/10/19/using-classes-from-datastate-with-explicit-template_data-for-rendering-mustache-in-cfengine-3/">Read More</a>
-						</div>
-					</div>
-				</li>
-			
-				<li>
-					<div class="post-list-item">
-						<div class="post-header">
-							<h4 class="post-link"><a href="https://cmdln.org/2018/10/18/setting-the-timeout-with-url_get-in-cfengine-3/">Setting the timeout with url_get() in cfengine 3</a></h4>
-							<h4 class="post-date">Oct 18, 2018</h4>
-						</div>
-						<div class="post-summary"><p>How do I set the timeout with url_get()?  As shown in the documentation for url_get(), you set url.timeout in the data container passed for url_get() options.
-This example policy shows how to configure the timeout and demonstrates it by making a request through www.delay.me.
-1 2 3 4 5 6 7 8 9 10 11 12 13 14  bundle agent main { vars: &#34;options&#34; data =&gt; &#39;{ &#34;url.</p></div>
-						<div class="post-list-footer text-center">
-							<a href="https://cmdln.org/2018/10/18/setting-the-timeout-with-url_get-in-cfengine-3/">Read More</a>
 						</div>
 					</div>
 				</li>
