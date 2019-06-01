@@ -6,7 +6,7 @@ bundle agent mcafee_services_handler( service_name, desired_state )
   vars:
 
       "valid_states" slist => { "active", "inactive" };
-      "init_script" string => "/tmp/ma";
+      "init_script" string => "/etc/init.d/ma";
 
       "ma_status"
         string => execresult( "$(init_script) status", noshell );
@@ -43,9 +43,13 @@ bundle agent mcafee_services_handler( service_name, desired_state )
       "Something is wrong, I only expect to be used with 'ma' aka 'MacAfee Agent' but I am being used with '$(this.service_name)'"
         if => not( strcmp( $(service_name), 'ma' ) );
 
+@if minimum_version(3.11)
+# This debug message levarages the with attribute to avoid building a
+# intermediary variable (joined string) that was only useful in a single report
       "Invalid service state. Selected '$(desired_state)'. Valid states: '$(with)'"
         with => join( ", ", @(valid_states) ),
         if => "invalid_desired_state";
+@endif
 }
 
 body service_method macafee
