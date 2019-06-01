@@ -68,7 +68,7 @@
             <h1><a href="https://cmdln.org/2019/05/31/custom-services-in-cfengine-3/">Custom services in CFEngine 3</a></h1>
             <span class="post-date">May 31, 2019 </span>
             <div class="post-content">
-                <p>CFEngine provides the <a href="https://docs.cfengine.com/docs/3.12/reference-promise-types-services.html" title="&lt;code&gt;services&lt;/code&gt; promise type"><code>services</code> promise type</a> to manage the state of a given service. By default, <code>bundle agent standard_services</code> is used for the <code>service_method</code>. The <code>standard_services</code> bundle uses the <code>status</code> command and interprets the return codes according to the <a href="http://refspecs.linuxbase.org/LSB_3.0.0/LSB-PDA/LSB-PDA/iniscrptact.html" title="Linux Standards Base init script actions">Linux Standards Base init script actions</a>. Unfortunately some init scripts do not follow the standards. If the status command returns zero when a service is <strong>not</strong> running, cfengine will issue the commands necessary to stop the service every time the agent is run. Similarly, if the status command returns zero when the service is <strong>not</strong> running, cfengine will never issue the commands necessary to start a service.</p>
+                <p>CFEngine provides the <a href="https://docs.cfengine.com/docs/3.12/reference-promise-types-services.html" title="&lt;code&gt;services&lt;/code&gt; promise type"><code>services</code> promise type</a> to manage the state of a given service. By default, <code>bundle agent standard_services</code> is used for the <code>service_method</code>. The <code>standard_services</code> bundle uses the <code>status</code> command and interprets the return codes according to the <a href="http://refspecs.linuxbase.org/LSB_3.0.0/LSB-PDA/LSB-PDA/iniscrptact.html" title="Linux Standards Base init script actions">Linux Standards Base init script actions</a>. Unfortunately some init scripts do not follow the standards. On sysvinit (non-systemd) hosts, if the status command returns zero when a service is <strong>not</strong> running, cfengine will issue the commands necessary to stop the service every time the agent is run. Similarly, if the status command returns zero when the service is <strong>not</strong> running, cfengine will never issue the commands necessary to start a service.</p>
 
 <blockquote>
 <p>
@@ -88,7 +88,22 @@ McAfee compat service is not running.
 0
 </code></pre>
 
-<p>You could write a custom bundle to implement services based on the McAfee behavior.</p>
+<p>First, for testing, create a mock init script that matches the behavior seen in the output above.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">  <span class="nb">echo</span> McAfee agent service is not running.
+  <span class="nb">echo</span> McAfee common services is not running.
+  <span class="nb">echo</span> McAfee compat service is not running.
+  <span class="k">return</span> <span class="m">0</span><span class="p">;</span> <span class="c1"># Return zero means service OK/Running per the LSB</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Next you can write a custom bundle to implement services based on the McAfee behavior.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
@@ -131,47 +146,63 @@ McAfee compat service is not running.
 </span><span class="lnt">38
 </span><span class="lnt">39
 </span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">mcafee_services_handler</span><span class="p">(</span> <span class="nv">service_name</span><span class="p">,</span> <span class="nv">desired_state</span> <span class="p">)</span>
-  <span class="p">{</span>
-      <span class="c"># ....
-</span><span class="c"></span>      <span class="c"># Perform the necessary specalized checks and promises to ensure that McAfee services are at the desired state
-</span><span class="c"></span>    <span class="kd">vars</span><span class="p">:</span>
-      <span class="p">&#34;</span><span class="nv">init_script</span><span class="p">&#34;</span> <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;/tmp/ma&#34;</span><span class="p">;</span>
-      <span class="p">&#34;</span><span class="nv">ma_status</span><span class="p">&#34;</span>
-        <span class="kt">string</span> <span class="o">=&gt;</span> <span class="nf">execresult</span><span class="p">(</span> <span class="s">&#34;</span><span class="si">$(init_script)</span><span class="s"> status&#34;</span><span class="p">,</span> <span class="nf">noshell</span> <span class="p">);</span>
+  <span class="c"># @brief Works around init script not exiting with the appropriate return code for status
+</span><span class="c"></span>  <span class="c"># (per Linux Standard Base init script actions)
+</span><span class="c"></span>  <span class="p">{</span>
+    <span class="kd">vars</span><span class="p">:</span>
+
+        <span class="p">&#34;</span><span class="nv">valid_states</span><span class="p">&#34;</span> <span class="kt">slist</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="s">&#34;active&#34;</span><span class="p">,</span> <span class="s">&#34;inactive&#34;</span> <span class="p">};</span>
+        <span class="p">&#34;</span><span class="nv">init_script</span><span class="p">&#34;</span> <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;/etc/init.d/ma&#34;</span><span class="p">;</span>
+
+        <span class="p">&#34;</span><span class="nv">ma_status</span><span class="p">&#34;</span>
+          <span class="kt">string</span> <span class="o">=&gt;</span> <span class="nf">execresult</span><span class="p">(</span> <span class="s">&#34;</span><span class="si">$(init_script)</span><span class="s"> status&#34;</span><span class="p">,</span> <span class="nf">noshell</span> <span class="p">);</span>
 
     <span class="kd">classes</span><span class="p">:</span>
-      <span class="c"># Define a class for the desired state if the state is one we recognize
-</span><span class="c"></span>      <span class="s">&#34;desired_</span><span class="si">$(desired_state)</span><span class="s">&#34;</span>
-        <span class="kr">or</span> <span class="o">=&gt;</span> <span class="p">{</span>
-                <span class="nf">strcmp</span><span class="p">(</span> <span class="err">$</span><span class="p">(</span><span class="nf">desired_state</span><span class="p">),</span> <span class="err">&#39;</span><span class="nf">active</span><span class="err">&#39;</span> <span class="p">),</span>
-                <span class="nf">strcmp</span><span class="p">(</span> <span class="err">$</span><span class="p">(</span><span class="nf">desired_state</span><span class="p">),</span> <span class="err">&#39;</span><span class="nf">inactive</span><span class="err">&#39;</span> <span class="p">),</span>
-              <span class="p">};</span>
 
-      <span class="s">&#34;at_least_one_component_not_running&#34;</span>
-        <span class="kr">expression</span> <span class="o">=&gt;</span> <span class="nf">regcmp</span><span class="p">(</span> <span class="err">&#39;.*</span><span class="nf">not</span> <span class="nf">running</span><span class="err">.*&#39;</span><span class="p">,</span> <span class="err">$</span><span class="p">(</span><span class="nf">ma_status</span><span class="p">)</span> <span class="p">),</span>
-        <span class="kr">comment</span> <span class="o">=&gt;</span> <span class="s">&#34;If any component is not running, then we consider the whole service not running&#34;</span><span class="p">;</span>
+        <span class="c"># Define a class for the desired state if the state is one we recognize
+</span><span class="c"></span>        <span class="s">&#34;desired_</span><span class="si">$(desired_state)</span><span class="s">&#34;</span>
+          <span class="kr">expression</span> <span class="o">=&gt;</span> <span class="nf">strcmp</span><span class="p">(</span> <span class="err">$</span><span class="p">(</span><span class="nf">desired_state</span><span class="p">),</span> <span class="err">$</span><span class="p">(</span><span class="nf">valid_states</span><span class="p">)</span> <span class="p">);</span>
 
-      <span class="s">&#34;some_component_running&#34;</span>
-        <span class="kr">expression</span> <span class="o">=&gt;</span> <span class="nf">regcmp</span><span class="p">(</span> <span class="err">&#39;.*</span><span class="nf">is</span> <span class="nf">running</span><span class="err">.*&#39;</span><span class="p">,</span> <span class="err">$</span><span class="p">(</span><span class="nf">ma_status</span><span class="p">)</span> <span class="p">);</span>
+        <span class="c"># It&#39;s nice to know if someone is using the policy incorrectly
+</span><span class="c"></span>        <span class="s">&#34;invalid_desired_state&#34;</span>
+          <span class="kr">not</span> <span class="o">=&gt;</span> <span class="nf">some</span><span class="p">(</span> <span class="err">$</span><span class="p">(</span><span class="nf">desired_state</span><span class="p">),</span> <span class="nv">@(valid_states)</span> <span class="p">);</span>
 
-      <span class="s">&#34;all_components_running&#34;</span>
-        <span class="kr">expression</span> <span class="o">=&gt;</span> <span class="nf">not</span><span class="p">(</span> <span class="nf">regcmp</span><span class="p">(</span> <span class="err">&#39;.*</span><span class="nf">not</span> <span class="nf">running</span><span class="err">.*&#39;</span><span class="p">,</span> <span class="err">$</span><span class="p">(</span><span class="nf">ma_status</span><span class="p">)</span> <span class="p">)</span> <span class="p">),</span>
-        <span class="kr">comment</span> <span class="o">=&gt;</span> <span class="s">&#34;If no component is not running, then we consider the service running&#34;</span><span class="p">;</span>
+        <span class="s">&#34;at_least_one_component_not_running&#34;</span>
+          <span class="kr">expression</span> <span class="o">=&gt;</span> <span class="nf">regcmp</span><span class="p">(</span> <span class="err">&#39;.*</span><span class="nf">not</span> <span class="nf">running</span><span class="err">.*&#39;</span><span class="p">,</span> <span class="err">$</span><span class="p">(</span><span class="nf">ma_status</span><span class="p">)</span> <span class="p">),</span>
+          <span class="kr">comment</span> <span class="o">=&gt;</span> <span class="s">&#34;If any component is not running, then we consider the whole service not running&#34;</span><span class="p">;</span>
+
+        <span class="s">&#34;some_component_running&#34;</span>
+          <span class="kr">expression</span> <span class="o">=&gt;</span> <span class="nf">regcmp</span><span class="p">(</span> <span class="err">&#39;.*</span><span class="nf">is</span> <span class="nf">running</span><span class="err">.*&#39;</span><span class="p">,</span> <span class="err">$</span><span class="p">(</span><span class="nf">ma_status</span><span class="p">)</span> <span class="p">);</span>
+
+        <span class="s">&#34;all_components_running&#34;</span>
+          <span class="kr">expression</span> <span class="o">=&gt;</span> <span class="nf">not</span><span class="p">(</span> <span class="nf">regcmp</span><span class="p">(</span> <span class="err">&#39;.*</span><span class="nf">not</span> <span class="nf">running</span><span class="err">.*&#39;</span><span class="p">,</span> <span class="err">$</span><span class="p">(</span><span class="nf">ma_status</span><span class="p">)</span> <span class="p">)</span> <span class="p">),</span>
+          <span class="kr">comment</span> <span class="o">=&gt;</span> <span class="s">&#34;If no component is not running, then we consider the service running&#34;</span><span class="p">;</span>
 
     <span class="kd">commands</span><span class="p">:</span>
       <span class="nc">desired_active.at_least_one_component_not_running</span><span class="p">::</span>
         <span class="s">&#34;</span><span class="si">$(init_script)</span><span class="s"> start&#34;</span><span class="p">;</span>
 
-       <span class="nc">desired_inactive.some_component_running</span><span class="p">::</span>
+      <span class="nc">desired_inactive.some_component_running</span><span class="p">::</span>
         <span class="s">&#34;</span><span class="si">$(init_script)</span><span class="s"> stop&#34;</span><span class="p">;</span>
 
     <span class="kd">reports</span><span class="p">:</span>
         <span class="s">&#34;Something is wrong, I only expect to be used with &#39;ma&#39; aka &#39;MacAfee Agent&#39; but I am being used with &#39;</span><span class="si">$(this.service_name)</span><span class="s">&#39;&#34;</span>
           <span class="kr">if</span> <span class="o">=&gt;</span> <span class="nf">not</span><span class="p">(</span> <span class="nf">strcmp</span><span class="p">(</span> <span class="err">$</span><span class="p">(</span><span class="nf">service_name</span><span class="p">),</span> <span class="err">&#39;</span><span class="nf">ma</span><span class="err">&#39;</span> <span class="p">)</span> <span class="p">);</span>
 
+        <span class="s">&#34;Invalid service state. Selected &#39;</span><span class="si">$(desired_state)</span><span class="s">&#39;. Valid states: &#39;</span><span class="si">$(with)</span><span class="s">&#39;&#34;</span>
+          <span class="kr">with</span> <span class="o">=&gt;</span> <span class="nf">join</span><span class="p">(</span> <span class="s">&#34;, &#34;</span><span class="p">,</span> <span class="nv">@(valid_states)</span> <span class="p">),</span>
+          <span class="kr">if</span> <span class="o">=&gt;</span> <span class="s">&#34;invalid_desired_state&#34;</span><span class="p">;</span>
   <span class="p">}</span></code></pre></td></tr></table>
 </div>
 </div>
@@ -240,24 +271,27 @@ McAfee compat service is not running.
        <span class="kd">methods</span><span class="p">:</span> <span class="s">&#34;example_custom_services&#34;</span><span class="p">;</span> 
   <span class="p">}</span></code></pre></td></tr></table>
 </div>
-</div><div class="highlight"><div class="chroma">
+</div>
+<p>Execute the policy to see it in action:</p>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">  /tmp/example_custom_services.cf -KI</code></pre></td></tr></table>
+<pre class="chroma"><code class="language-sh" data-lang="sh">  ./example_custom_services.cf -KI</code></pre></td></tr></table>
 </div>
 </div><pre class="example">
-    info: Executing 'no timeout' ... '/tmp/ma start'
-  notice: Q: ".../tmp/ma start": McAfee agent service is not running.
-Q: ".../tmp/ma start": McAfee common services is not running.
-Q: ".../tmp/ma start": McAfee compat service is not running.
-    info: Last 3 quoted lines were generated by promiser '/tmp/ma start'
-    info: Completed execution of '/tmp/ma start'
+    info: Executing 'no timeout' ... '/etc/init.d/ma start'
+  notice: Q: ".../etc/init.d/ma start": McAfee agent service is not running.
+Q: ".../etc/init.d/ma start": McAfee common services is not running.
+Q: ".../etc/init.d/ma start": McAfee compat service is not running.
+    info: Last 3 quoted lines were generated by promiser '/etc/init.d/ma start'
+    info: Completed execution of '/etc/init.d/ma start'
 R: Something is wrong, I only expect to be used with 'ma' aka 'MacAfee Agent' but I am being used with 'my custom service'
+R: Invalid service state. Selected 'kablewy'. Valid states: 'active, inactive'
 </pre>
 
-<p>#</p>
+<p><a href="../../../../example_custom_services.cf" title="Download the full policy">Download the full policy</a></p>
 
             </div>
             
