@@ -16,7 +16,7 @@
       <pubDate>Fri, 31 May 2019 00:00:00 +0000</pubDate>
       
       <guid>https://cmdln.org/2019/05/31/custom-services-in-cfengine-3/</guid>
-      <description>CFEngine provides the services promise type to manage the state of a given service. By default, bundle agent standard_services is used for the service_method. The standard_services bundle uses the status command and interprets the return codes according to the Linux Standards Base init script actions. Unfortunately some init scripts do not follow the standards. If the status command returns zero when a service is not running, cfengine will issue the commands necessary to stop the service every time the agent is run.</description>
+      <description>CFEngine provides the services promise type to manage the state of a given service. By default, bundle agent standard_services is used for the service_method. The standard_services bundle uses the status command and interprets the return codes according to the Linux Standards Base init script actions. Unfortunately some init scripts do not follow the standards. On sysvinit (non-systemd) hosts, if the status command returns zero when a service is not running, cfengine will issue the commands necessary to stop the service every time the agent is run.</description>
     </item>
     
     <item>

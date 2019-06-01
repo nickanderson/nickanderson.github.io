@@ -1,0 +1,77 @@
+#!/var/cfengine/bin/cf-agent -f-
+bundle agent mcafee_services_handler( service_name, desired_state )
+# @brief Works around init script not exiting with the appropriate return code for status
+# (per Linux Standard Base init script actions)
+{
+  vars:
+
+      "valid_states" slist => { "active", "inactive" };
+      "init_script" string => "/tmp/ma";
+
+      "ma_status"
+        string => execresult( "$(init_script) status", noshell );
+
+  classes:
+
+      # Define a class for the desired state if the state is one we recognize
+      "desired_$(desired_state)"
+        expression => strcmp( $(desired_state), $(valid_states) );
+
+      # It's nice to know if someone is using the policy incorrectly
+      "invalid_desired_state"
+        not => some( $(desired_state), @(valid_states) );
+
+      "at_least_one_component_not_running"
+        expression => regcmp( '.*not running.*', $(ma_status) ),
+        comment => "If any component is not running, then we consider the whole service not running";
+
+      "some_component_running"
+        expression => regcmp( '.*is running.*', $(ma_status) );
+
+      "all_components_running"
+        expression => not( regcmp( '.*not running.*', $(ma_status) ) ),
+        comment => "If no component is not running, then we consider the service running";
+
+  commands:
+    desired_active.at_least_one_component_not_running::
+      "$(init_script) start";
+
+    desired_inactive.some_component_running::
+      "$(init_script) stop";
+
+  reports:
+      "Something is wrong, I only expect to be used with 'ma' aka 'MacAfee Agent' but I am being used with '$(this.service_name)'"
+        if => not( strcmp( $(service_name), 'ma' ) );
+
+      "Invalid service state. Selected '$(desired_state)'. Valid states: '$(with)'"
+        with => join( ", ", @(valid_states) ),
+        if => "invalid_desired_state";
+}
+
+body service_method macafee
+{
+    linux::
+        service_bundle => mcafee_services_handler(
+                                                 $(this.promiser), # The services promiser
+                                                 $(this.service_policy) # The value of service_policy
+      );
+}
+
+bundle agent example_custom_services
+{
+    services:
+      "ma"
+        #service_policy => "inactive", # you get to choose the state
+        service_policy => "active", # you get to choose the state
+        service_method => macafee;
+
+      "my custom service"
+        service_policy => "kablewy", # you get to choose the state
+        service_method => macafee;
+
+
+} 
+bundle agent __main__
+{
+     methods: "example_custom_services"; 
+}
