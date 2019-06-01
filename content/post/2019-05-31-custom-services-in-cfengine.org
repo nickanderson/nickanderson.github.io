@@ -5,10 +5,10 @@
 #+DRAFT: false
 
 
-CFEngine provides the [[https://docs.cfengine.com/docs/3.12/reference-promise-types-services.html][=services= promise type]] to manage the state of a given service. By default, =bundle agent standard_services= is used for the =service_method=. The =standard_services= bundle uses the =status= command and interprets the return codes according to the [[http://refspecs.linuxbase.org/LSB_3.0.0/LSB-PDA/LSB-PDA/iniscrptact.html][Linux Standards Base init script actions]]. Unfortunately some init scripts do not follow the standards. On sysvinit (non-systemd) hosts, if the status command returns zero when a service is *not* running, cfengine will issue the commands necessary to stop the service every time the agent is run. Similarly, if the status command returns zero when the service is *not* running, cfengine will never issue the commands necessary to start a service.
+CFEngine provides the [[https://docs.cfengine.com/docs/3.12/reference-promise-types-services.html][=services= promise type]] to manage the state of a given service. By default, =bundle agent standard_services= is used for the =service_method=. The =standard_services= bundle uses the =status= command and interprets the return codes according to the [[http://refspecs.linuxbase.org/LSB_3.0.0/LSB-PDA/LSB-PDA/iniscrptact.html][Linux Standard Base init script actions]]. Unfortunately some init scripts do not follow the standards. On sysvinit (non-systemd) hosts, if the status command returns zero when a service is *not* running, cfengine will issue the commands necessary to stop the service every time the agent is run. Similarly, if the status command returns zero when the service is *not* running, cfengine will never issue the commands necessary to start a service.
 
 #+BEGIN_QUOTE
-  How can I handle a service status that does not comport with the standards?
+  How can I handle a service status that does not comport with the standard?
 #+END_QUOTE
 
 One way to deal with misbehaving services is to implement a custom =service_method= that better understands the specifics for a given service.
