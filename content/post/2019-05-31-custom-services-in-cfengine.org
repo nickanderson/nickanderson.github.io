@@ -1,0 +1,149 @@
+#+Title: Custom services in CFEngine 3
+#+AUTHOR: Nick Anderson
+#+DATE: 2019-05-31
+#+TAGS: cfengine3
+#+DRAFT: false
+
+
+CFEngine provides the [[https://docs.cfengine.com/docs/3.12/reference-promise-types-services.html][=services= promise type]] to manage the state of a given service. By default, =bundle agent standard_services= is used for the =service_method=. The =standard_services= bundle uses the =status= command and interprets the return codes according to the [[http://refspecs.linuxbase.org/LSB_3.0.0/LSB-PDA/LSB-PDA/iniscrptact.html][Linux Standards Base init script actions]]. Unfortunately some init scripts do not follow the standards. On sysvinit (non-systemd) hosts, if the status command returns zero when a service is *not* running, cfengine will issue the commands necessary to stop the service every time the agent is run. Similarly, if the status command returns zero when the service is *not* running, cfengine will never issue the commands necessary to start a service.
+
+#+BEGIN_QUOTE
+  How can I handle a service status that does not comport with the standards?
+#+END_QUOTE
+
+One way to deal with misbehaving services is to implement a custom =service_method= that better understands the specifics for a given service.
+
+For example, the MacAfee Agent status command simply emits the current status for it's services and does not use the expected return codes.
+
+#+CAPTION: McAfee agent service status
+#+BEGIN_EXAMPLE
+[root@host ~]# /etc/init.d/ma status
+McAfee agent service is not running.
+McAfee common services is not running.
+McAfee compat service is not running.
+[root@host ~]# echo $?
+0
+#+END_EXAMPLE
+
+First, for testing, create a mock init script that matches the behavior seen in the output above.
+
+#+CAPTION: Mock /etc/init.d/ma
+#+BEGIN_SRC sh
+  echo McAfee agent service is not running.
+  echo McAfee common services is not running.
+  echo McAfee compat service is not running.
+  return 0; # Return zero means service OK/Running per the LSB
+#+END_SRC
+
+Next you can write a custom bundle to implement services based on the McAfee behavior.
+
+#+CAPTION: bundle agent mcafee_services_handler in example_custom_services.cf
+#+BEGIN_SRC cfengine3 :include-stdlib t :log-level info :exports both :tangle example_custom_services.cf
+  bundle agent mcafee_services_handler( service_name, desired_state )
+  # @brief Works around init script not exiting with the appropriate return code for status
+  # (per Linux Standard Base init script actions)
+  {
+    vars:
+
+        "valid_states" slist => { "active", "inactive" };
+        "init_script" string => "/etc/init.d/ma";
+
+        "ma_status"
+          string => execresult( "$(init_script) status", noshell );
+
+    classes:
+
+        # Define a class for the desired state if the state is one we recognize
+        "desired_$(desired_state)"
+          expression => strcmp( $(desired_state), $(valid_states) );
+
+        # It's nice to know if someone is using the policy incorrectly
+        "invalid_desired_state"
+          not => some( $(desired_state), @(valid_states) );
+
+        "at_least_one_component_not_running"
+          expression => regcmp( '.*not running.*', $(ma_status) ),
+          comment => "If any component is not running, then we consider the whole service not running";
+
+        "some_component_running"
+          expression => regcmp( '.*is running.*', $(ma_status) );
+
+        "all_components_running"
+          expression => not( regcmp( '.*not running.*', $(ma_status) ) ),
+          comment => "If no component is not running, then we consider the service running";
+
+    commands:
+      desired_active.at_least_one_component_not_running::
+        "$(init_script) start";
+
+      desired_inactive.some_component_running::
+        "$(init_script) stop";
+
+    reports:
+        "Something is wrong, I only expect to be used with 'ma' aka 'MacAfee Agent' but I am being used with '$(this.service_name)'"
+          if => not( strcmp( $(service_name), 'ma' ) );
+
+        "Invalid service state. Selected '$(desired_state)'. Valid states: '$(with)'"
+          with => join( ", ", @(valid_states) ),
+          if => "invalid_desired_state";
+  }
+#+END_SRC
+
+Then you can expose it as a =service_method= attribute value by defining a =service_method= body.
+
+#+CAPTION: body service_method macafee in example_custom_services.cf
+#+BEGIN_SRC cfengine3 :include-stdlib t :log-level info :exports both :tangle example_custom_services.cf
+  body service_method macafee
+  {
+      linux::
+          service_bundle => mcafee_services_handler(
+                                                   $(this.promiser), # The services promiser
+                                                   $(this.service_policy) # The value of service_policy
+        );
+  } 
+#+END_SRC
+
+And then you could specify use the services promise
+
+#+CAPTION: bundle agent example_custom_services in example_custom_services.cf
+#+BEGIN_SRC cfengine3 :include-stdlib t :log-level info :exports both :tangle example_custom_services.cf
+  bundle agent example_custom_services
+  {
+      services:
+        "ma"
+          #service_policy => "inactive", # you get to choose the state
+          service_policy => "active", # you get to choose the state
+          service_method => macafee;
+      
+        "my custom service"
+          service_policy => "kablewy", # you get to choose the state
+          service_method => macafee;
+ 
+
+  } 
+  bundle agent __main__
+  {
+       methods: "example_custom_services"; 
+  }
+#+END_SRC
+
+Execute the policy to see it in action:
+
+#+CAPTION: Running the policy
+#+BEGIN_SRC sh :exports both :results output
+  ./example_custom_services.cf -KI
+#+END_SRC
+
+#+RESULTS:
+:     info: Executing 'no timeout' ... '/etc/init.d/ma start'
+:   notice: Q: ".../etc/init.d/ma start": McAfee agent service is not running.
+: Q: ".../etc/init.d/ma start": McAfee common services is not running.
+: Q: ".../etc/init.d/ma start": McAfee compat service is not running.
+:     info: Last 3 quoted lines were generated by promiser '/etc/init.d/ma start'
+:     info: Completed execution of '/etc/init.d/ma start'
+: R: Something is wrong, I only expect to be used with 'ma' aka 'MacAfee Agent' but I am being used with 'my custom service'
+: R: Invalid service state. Selected 'kablewy'. Valid states: 'active, inactive'
+
+[[../../../../example_custom_services.cf][Download the full policy]]
+
+
