@@ -68,11 +68,11 @@
             <h1><a href="https://cmdln.org/2019/05/31/custom-services-in-cfengine-3/">Custom services in CFEngine 3</a></h1>
             <span class="post-date">May 31, 2019 </span>
             <div class="post-content">
-                <p>CFEngine provides the <a href="https://docs.cfengine.com/docs/3.12/reference-promise-types-services.html" title="&lt;code&gt;services&lt;/code&gt; promise type"><code>services</code> promise type</a> to manage the state of a given service. By default, <code>bundle agent standard_services</code> is used for the <code>service_method</code>. The <code>standard_services</code> bundle uses the <code>status</code> command and interprets the return codes according to the <a href="http://refspecs.linuxbase.org/LSB_3.0.0/LSB-PDA/LSB-PDA/iniscrptact.html" title="Linux Standards Base init script actions">Linux Standards Base init script actions</a>. Unfortunately some init scripts do not follow the standards. On sysvinit (non-systemd) hosts, if the status command returns zero when a service is <strong>not</strong> running, cfengine will issue the commands necessary to stop the service every time the agent is run. Similarly, if the status command returns zero when the service is <strong>not</strong> running, cfengine will never issue the commands necessary to start a service.</p>
+                <p>CFEngine provides the <a href="https://docs.cfengine.com/docs/3.12/reference-promise-types-services.html" title="&lt;code&gt;services&lt;/code&gt; promise type"><code>services</code> promise type</a> to manage the state of a given service. By default, <code>bundle agent standard_services</code> is used for the <code>service_method</code>. The <code>standard_services</code> bundle uses the <code>status</code> command and interprets the return codes according to the <a href="http://refspecs.linuxbase.org/LSB_3.0.0/LSB-PDA/LSB-PDA/iniscrptact.html" title="Linux Standard Base init script actions">Linux Standard Base init script actions</a>. Unfortunately some init scripts do not follow the standards. On sysvinit (non-systemd) hosts, if the status command returns zero when a service is <strong>not</strong> running, cfengine will issue the commands necessary to stop the service every time the agent is run. Similarly, if the status command returns zero when the service is <strong>not</strong> running, cfengine will never issue the commands necessary to start a service.</p>
 
 <blockquote>
 <p>
-  How can I handle a service status that does not comport with the standards?
+  How can I handle a service status that does not comport with the standard?
 </p>
 </blockquote>
 
