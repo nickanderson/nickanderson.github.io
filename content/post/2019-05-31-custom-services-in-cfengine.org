@@ -83,9 +83,13 @@ Next you can write a custom bundle to implement services based on the McAfee beh
         "Something is wrong, I only expect to be used with 'ma' aka 'MacAfee Agent' but I am being used with '$(this.service_name)'"
           if => not( strcmp( $(service_name), 'ma' ) );
 
+  @if minimum_version(3.11)
+  # This debug message levarages the with attribute to avoid building a
+  # intermediary variable (joined string) that was only useful in a single report
         "Invalid service state. Selected '$(desired_state)'. Valid states: '$(with)'"
           with => join( ", ", @(valid_states) ),
           if => "invalid_desired_state";
+  @endif
   }
 #+END_SRC
 
