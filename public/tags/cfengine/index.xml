@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>CFEngine on </title>
+    <title>cfengine on </title>
     <link>https://cmdln.org/tags/cfengine/</link>
-    <description>Recent content in CFEngine on </description>
+    <description>Recent content in cfengine on </description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Mon, 20 May 2019 00:00:00 +0000</lastBuildDate>
     

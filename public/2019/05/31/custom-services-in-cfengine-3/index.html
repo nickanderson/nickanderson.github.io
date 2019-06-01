@@ -154,6 +154,10 @@ McAfee compat service is not running.
 </span><span class="lnt">46
 </span><span class="lnt">47
 </span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">mcafee_services_handler</span><span class="p">(</span> <span class="nv">service_name</span><span class="p">,</span> <span class="nv">desired_state</span> <span class="p">)</span>
@@ -200,9 +204,13 @@ McAfee compat service is not running.
         <span class="s">&#34;Something is wrong, I only expect to be used with &#39;ma&#39; aka &#39;MacAfee Agent&#39; but I am being used with &#39;</span><span class="si">$(this.service_name)</span><span class="s">&#39;&#34;</span>
           <span class="kr">if</span> <span class="o">=&gt;</span> <span class="nf">not</span><span class="p">(</span> <span class="nf">strcmp</span><span class="p">(</span> <span class="err">$</span><span class="p">(</span><span class="nf">service_name</span><span class="p">),</span> <span class="err">&#39;</span><span class="nf">ma</span><span class="err">&#39;</span> <span class="p">)</span> <span class="p">);</span>
 
-        <span class="s">&#34;Invalid service state. Selected &#39;</span><span class="si">$(desired_state)</span><span class="s">&#39;. Valid states: &#39;</span><span class="si">$(with)</span><span class="s">&#39;&#34;</span>
+  <span class="err">@</span><span class="nf">if</span> <span class="nf">minimum_version</span><span class="p">(</span><span class="mf">3.11</span><span class="p">)</span>
+  <span class="c"># This debug message levarages the with attribute to avoid building a
+</span><span class="c"></span>  <span class="c"># intermediary variable (joined string) that was only useful in a single report
+</span><span class="c"></span>        <span class="s">&#34;Invalid service state. Selected &#39;</span><span class="si">$(desired_state)</span><span class="s">&#39;. Valid states: &#39;</span><span class="si">$(with)</span><span class="s">&#39;&#34;</span>
           <span class="kr">with</span> <span class="o">=&gt;</span> <span class="nf">join</span><span class="p">(</span> <span class="s">&#34;, &#34;</span><span class="p">,</span> <span class="nv">@(valid_states)</span> <span class="p">),</span>
           <span class="kr">if</span> <span class="o">=&gt;</span> <span class="s">&#34;invalid_desired_state&#34;</span><span class="p">;</span>
+  <span class="err">@</span><span class="nf">endif</span>
   <span class="p">}</span></code></pre></td></tr></table>
 </div>
 </div>
