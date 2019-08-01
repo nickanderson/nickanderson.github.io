@@ -6,7 +6,7 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.55.6" />
+<meta name="generator" content="Hugo 0.56.3" />
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -68,15 +68,21 @@
             <h1><a href="https://cmdln.org/2018/05/25/automatically-remediate-corruption-in-lmdb-with-cfengine-3/">Automatically remediate corruption in lmdb with cfengine 3</a></h1>
             <span class="post-date">May 25, 2018 </span>
             <div class="post-content">
-                <p>> How can I automatically remediate the issue where corruption in LMDB causes the agent to crash?</p>
-
-<p>In some cases lmdb corruption causes cf-agent to crash. The typical fix is to
+                <p>
+&gt; How can I automatically remediate the issue where corruption in LMDB causes the agent to crash?
+</p>
+<p>
+In some cases lmdb corruption causes cf-agent to crash. The typical fix is to
 remove the corrupt lmdbs causing the problem. In some cases this can be
 remediated from policy. This policy (run early in the bundlesequence) uses
-lmdump to probe all lmdbs. If the probe fails the offending lmdb and it's
-associated lock files are deleted.</p>
-
-<p><strong><strong>EDIT:</strong></strong> Now supports retaining n versions of corrupt databases</p>
+lmdump to probe all lmdbs. If the probe fails the offending lmdb and it&#39;s
+associated lock files are deleted.
+</p>
+<p>
+<strong><strong>EDIT:</strong></strong> Now supports retaining n versions of corrupt databases
+</p>
+<figure>
+<div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
@@ -207,11 +213,23 @@ associated lock files are deleted.</p>
   <span class="p">}</span></code></pre></td></tr></table>
 </div>
 </div>
-<p>Here is example output from a run where <code>performance.lmdb</code> was corrupt and the
-=DEBUG= class was set.</p>
-
-<pre><code>  R: /var/cfengine/state/performance.lmdb failed lmdump probe. Remediation retaining 3 backups
-</code></pre>
+</div>
+<figcaption>
+Policy to remediate corruption in lmdbs that can cause agent crashes
+</figcaption>
+</figure>
+<p>
+Here is example output from a run where <code class="verbatim">performance.lmdb</code> was corrupt and the
+<code class="verbatim">DEBUG</code> class was set.
+</p>
+<figure>
+<pre class="example">
+  R: /var/cfengine/state/performance.lmdb failed lmdump probe. Remediation retaining 3 backups
+</pre>
+<figcaption>
+Output from policy run
+</figcaption>
+</figure>
 
             </div>
             

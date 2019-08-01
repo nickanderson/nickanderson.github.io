@@ -6,7 +6,7 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.55.6" />
+<meta name="generator" content="Hugo 0.56.3" />
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -68,15 +68,18 @@
             <h1><a href="https://cmdln.org/2019/03/18/clearing-posix-acls-from-a-file-with-cfengine/">Clearing POSIX ACLs from a file with CFEngine</a></h1>
             <span class="post-date">Mar 18, 2019 </span>
             <div class="post-content">
-                <p>From #cfengine on irc.freenode.net:</p>
-
+                <p>
+From #cfengine on irc.freenode.net:
+</p>
 <blockquote>
 <p>
-  How can I clear the POSIX ACLs from a file?
+How can I clear the POSIX ACLs from a file?
 </p>
 </blockquote>
-
-<p>To clear the POSIX ACLs from a file, you specify the ACL with no permissions.</p>
+<p>
+To clear the POSIX ACLs from a file, you specify the ACL with no permissions.
+</p>
+<div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
@@ -199,9 +202,12 @@
   <span class="p">}</span></code></pre></td></tr></table>
 </div>
 </div>
-<p>The example policy above produces the following output:</p>
-
-<pre><code>R: In SetAndReport
+</div>
+<p>
+The example policy above produces the following output:
+</p>
+<pre class="example">
+R: In SetAndReport
 getfacl: Removing leading '/' from absolute path names
 # file: tmp/myFileWithAces
 # owner: nickanderson
@@ -219,10 +225,11 @@ user::---
 group::---
 mask::---
 other::---
-</code></pre>
-
-<p>For more information about file refer to the documentation on <a href="https://docs.cfengine.com/docs/3.13/reference-promise-types-files.html#acl" title="acl bodies">acl bodies</a> in the
-reference manual.</p>
+</pre>
+<p>
+For more information about file refer to the documentation on <a href="https://docs.cfengine.com/docs/3.13/reference-promise-types-files.html#acl">acl bodies</a> in the
+reference manual.
+</p>
 
             </div>
             

@@ -6,7 +6,7 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.55.6" />
+<meta name="generator" content="Hugo 0.56.3" />
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -68,10 +68,14 @@
             <h1><a href="https://cmdln.org/2018/05/23/how-to-enforce-legalese-on-windows-login-with-cfengine-3/">How to enforce legalese on windows login with cfengine 3</a></h1>
             <span class="post-date">May 23, 2018 </span>
             <div class="post-content">
-                <p>> How can I ensure that a notice containing legal text is presented to windows users during login?</p>
-
-<p>With the windows agent (Northern.tech builds Enterprise windows agents) you can
-accomplish this by managing the registry using the <code>databases</code> promise type.</p>
+                <p>
+&gt; How can I ensure that a notice containing legal text is presented to windows users during login?
+</p>
+<p>
+With the windows agent (Northern.tech builds Enterprise windows agents) you can
+accomplish this by managing the registry using the <code class="verbatim">databases</code> promise type.
+</p>
+<div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
@@ -125,7 +129,7 @@ accomplish this by managing the registry using the <code>databases</code> promis
     <span class="kd">databases</span><span class="p">:</span>
 
       <span class="nc">windows</span><span class="p">::</span>
-
+      
           <span class="s">&#34;HKEY_LOCAL_MACHINE</span><span class="se">\S</span><span class="s">OFTWARE</span><span class="se">\M</span><span class="s">icrosoft</span><span class="se">\W</span><span class="s">indows</span><span class="se">\C</span><span class="s">urrentVersion</span><span class="se">\P</span><span class="s">olicies</span><span class="se">\S</span><span class="s">ystem&#34;</span>
           <span class="kr">comment</span> <span class="o">=&gt;</span> <span class="s">&#34;Ensure legal notice is set&#34;</span><span class="p">,</span>
           <span class="kr">database_operation</span> <span class="o">=&gt;</span> <span class="s">&#34;create&#34;</span><span class="p">,</span>
@@ -140,6 +144,8 @@ accomplish this by managing the registry using the <code>databases</code> promis
   <span class="p">}</span></code></pre></td></tr></table>
 </div>
 </div>
+</div>
+
             </div>
             
             <div class="post-comments">

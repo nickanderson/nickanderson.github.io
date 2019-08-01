@@ -6,7 +6,7 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.55.6" />
+<meta name="generator" content="Hugo 0.56.3" />
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -68,7 +68,10 @@
             <h1><a href="https://cmdln.org/2017/11/29/using-set_line_based-with-extra-spaces/">Using set_line_based with extra spaces</a></h1>
             <span class="post-date">Nov 29, 2017 </span>
             <div class="post-content">
-                <p>How can I use <code>set_line_based</code> to manage a space separated file like <code>/etc/services</code> but include more than one space to make the config a bit easier to read.</p>
+                <p>
+How can I use <code class="verbatim">set_line_based</code> to manage a space separated file like <code class="verbatim">/etc/services</code> but include more than one space to make the config a bit easier to read.
+</p>
+<div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
@@ -120,7 +123,9 @@
         <span class="kr">printfile</span> <span class="o">=&gt;</span> <span class="nf">cat</span><span class="p">(</span><span class="s">&#34;/tmp/services&#34;</span><span class="p">);</span>
   <span class="p">}</span></code></pre></td></tr></table>
 </div>
-</div><pre class="example">
+</div>
+</div>
+<pre class="example">
 R: 3.11.0
 R: /tmp/services
 R: hpss_d_mvr2       65503/tcp

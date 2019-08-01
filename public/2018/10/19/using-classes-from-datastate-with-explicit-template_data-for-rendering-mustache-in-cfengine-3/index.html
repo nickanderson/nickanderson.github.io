@@ -6,7 +6,7 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.55.6" />
+<meta name="generator" content="Hugo 0.56.3" />
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -68,23 +68,28 @@
             <h1><a href="https://cmdln.org/2018/10/19/using-classes-from-datastate-with-explicit-template_data-for-rendering-mustache-in-cfengine-3/">Using classes from datastate() with explicit template_data for rendering mustache in cfengine 3</a></h1>
             <span class="post-date">Oct 19, 2018 </span>
             <div class="post-content">
-                <p>This was <a href="https://groups.google.com/d/msg/help-cfengine/VktwAdsQ3zc/FplxWLezAwAJ" title="asked on the CFEngine Help Mailing list">asked on the CFEngine Help Mailing list</a> on October 1st 2018.</p>
-
+                <p>
+This was <a href="https://groups.google.com/d/msg/help-cfengine/VktwAdsQ3zc/FplxWLezAwAJ">asked on the CFEngine Help Mailing list</a> on October 1st 2018.
+</p>
 <blockquote>
 <p>
-  How can I use classes in a mustache template while passing explicit data to <code>template_data</code>?  
+How can I use classes in a mustache template while passing explicit data to <code class="verbatim">template_data</code>?  
 </p>
 </blockquote>
-
-<p>When a mustache template is rendered without providing explicit data to the
- <code>template_data</code> attribute in a files promise <code>datastate()</code> is used.
- <code>datastate()</code> contains the JSON representation of the current cfengine state.</p>
-
-<p>When providing explicit data the variables and classes from the current state
+<p>
+When a mustache template is rendered without providing explicit data to the
+<code class="verbatim">template_data</code> attribute in a files promise <code class="verbatim">datastate()</code> is used.
+<code class="verbatim">datastate()</code> contains the JSON representation of the current cfengine state.
+</p>
+<p>
+When providing explicit data the variables and classes from the current state
 are not included. In order to use them, you must pick them out from the
-datastate and merge them into your explicit data.</p>
-
-<p>For example:</p>
+datastate and merge them into your explicit data.
+</p>
+<p>
+For example:
+</p>
+<div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
@@ -140,20 +145,25 @@ datastate and merge them into your explicit data.</p>
           <span class="kr">with</span> <span class="o">=&gt;</span> <span class="nf">string_mustache</span><span class="p">(</span><span class="s">&#34;My data is {{{MyData}}} and My_Class is {{#classes.My_Class}}defined{{/classes.My_Class}}{{^classes.My_Class}}not defined{{/classes.My_Class}}&#34;</span><span class="p">,</span> <span class="nf">r</span> <span class="p">);</span>
   <span class="p">}</span></code></pre></td></tr></table>
 </div>
-</div><pre class="example">
+</div>
+</div>
+<pre class="example">
 R: Without merging in classes from datastate:
 My data is explicit and My_Class is not defined
 R: With merging in classes from datastate:
 My data is explicit and My_Class is not defined
 </pre>
-
-<p>What does the full <code>datastate()</code> look like?</p>
-
-<p>I saved this for the end since it's quite long, note top level <code>vars</code> and
- <code>classes</code> keys:</p>
+<p>
+What does the full <code class="verbatim">datastate()</code> look like?
+</p>
+<p>
+I saved this for the end since it&#39;s quite long, note top level <code class="verbatim">vars</code> and
+<code class="verbatim">classes</code> keys:
+</p>
+<div class="src src-json">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-JSON" data-lang="JSON"><span class="lnt">   1
+<pre class="chroma"><code class="language-json" data-lang="json"><span class="lnt">   1
 </span><span class="lnt">   2
 </span><span class="lnt">   3
 </span><span class="lnt">   4
@@ -1249,7 +1259,7 @@ My data is explicit and My_Class is not defined
 </span><span class="lnt">1094
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-JSON" data-lang="JSON"> <span class="p">{</span>
+<pre class="chroma"><code class="language-json" data-lang="json"> <span class="p">{</span>
   <span class="nt">&#34;classes&#34;</span><span class="p">:</span> <span class="p">{</span>
     <span class="nt">&#34;127_0_0_1&#34;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
     <span class="nt">&#34;172_17_0_1&#34;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
@@ -2345,6 +2355,8 @@ My data is explicit and My_Class is not defined
 <span class="p">}</span></code></pre></td></tr></table>
 </div>
 </div>
+</div>
+
             </div>
             
             <div class="post-comments">

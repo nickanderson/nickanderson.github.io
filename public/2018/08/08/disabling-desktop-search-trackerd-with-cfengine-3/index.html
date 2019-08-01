@@ -6,7 +6,7 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.55.6" />
+<meta name="generator" content="Hugo 0.56.3" />
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -68,19 +68,23 @@
             <h1><a href="https://cmdln.org/2018/08/08/disabling-desktop-search-trackerd-with-cfengine-3/">Disabling desktop search (trackerd) with cfengine 3</a></h1>
             <span class="post-date">Aug 8, 2018 </span>
             <div class="post-content">
-                <p>Recently I noticed that my CPU was pretty busy with the desktop search indexing,
-it brought me to the question:</p>
-
+                <p>
+Recently I noticed that my CPU was pretty busy with the desktop search indexing,
+it brought me to the question:
+</p>
 <blockquote>
 <p>
-  How can I disable the desktop search service trackerd?
+How can I disable the desktop search service trackerd?
 </p>
 </blockquote>
-
-<p>After a brief investigation I found some XDG desktop needed to be edited to
-include the key <code>Hidden=true</code>.</p>
-
-<p>This policy disables known trackerd related XDG files when they are found.</p>
+<p>
+After a brief investigation I found some XDG desktop needed to be edited to
+include the key <code class="verbatim">Hidden=true</code>.
+</p>
+<p>
+This policy disables known trackerd related XDG files when they are found.
+</p>
+<div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
@@ -183,11 +187,16 @@ include the key <code>Hidden=true</code>.</p>
   <span class="err">@</span><span class="nf">endif</span></code></pre></td></tr></table>
 </div>
 </div>
-<p>How does the policy work?</p>
-
-<p>We include the standard library using body file control. This allows the policy
+</div>
+<p>
+How does the policy work?
+</p>
+<p>
+We include the standard library using body file control. This allows the policy
 file to be used directly instead of integrated with a larger policy yet still
-leverage bundles and bodies from the standard library (e.g. <code>set_line_based</code> ).</p>
+leverage bundles and bodies from the standard library (e.g. <code class="verbatim">set_line_based</code> ).
+</p>
+<div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt">1
@@ -202,8 +211,12 @@ leverage bundles and bodies from the standard library (e.g. <code>set_line_based
   <span class="p">}</span></code></pre></td></tr></table>
 </div>
 </div>
-<p>The <code>disable_desktop_search</code> bundle is tagged with autorun so that the policy
-can be easily used with the MPF autorun functionality.</p>
+</div>
+<p>
+The <code class="verbatim">disable_desktop_search</code> bundle is tagged with autorun so that the policy
+can be easily used with the MPF autorun functionality.
+</p>
+<div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt">1
@@ -224,7 +237,11 @@ can be easily used with the MPF autorun functionality.</p>
         <span class="p">&#34;</span><span class="nv">tags</span><span class="p">&#34;</span> <span class="kt">slist</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="s">&#34;autorun&#34;</span> <span class="p">};</span></code></pre></td></tr></table>
 </div>
 </div>
-<p>The list of known trackerd related XDG files is enumerated.</p>
+</div>
+<p>
+The list of known trackerd related XDG files is enumerated.
+</p>
+<div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
@@ -251,7 +268,11 @@ can be easily used with the MPF autorun functionality.</p>
           <span class="p">};</span></code></pre></td></tr></table>
 </div>
 </div>
-<p>The desired configuration is specified in the classic array <code>conf</code>.</p>
+</div>
+<p>
+The desired configuration is specified in the classic array <code class="verbatim">conf</code>.
+</p>
+<div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt">1
@@ -260,8 +281,12 @@ can be easily used with the MPF autorun functionality.</p>
 <pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3">        <span class="p">&#34;</span><span class="nv">conf[Hidden]</span><span class="p">&#34;</span> <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;true&#34;</span><span class="p">;</span></code></pre></td></tr></table>
 </div>
 </div>
-<p>Each known trackerd related XDG file is inspected for the proper configuration
-line entries and the files are repaired if necessary.</p>
+</div>
+<p>
+Each known trackerd related XDG file is inspected for the proper configuration
+line entries and the files are repaired if necessary.
+</p>
+<div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
@@ -294,9 +319,13 @@ line entries and the files are repaired if necessary.</p>
   <span class="p">}</span></code></pre></td></tr></table>
 </div>
 </div>
-<p>Finally, if we are running version 3.12.0 or greater we add support for direct
+</div>
+<p>
+Finally, if we are running version 3.12.0 or greater we add support for direct
 execution of the policy without conflicting bundle names using the new
-executable library support from the special bundle <code>__main__</code>.</p>
+executable library support from the special bundle <code class="verbatim">__main__</code>.
+</p>
+<div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt">1
@@ -319,6 +348,8 @@ executable library support from the special bundle <code>__main__</code>.</p>
   <span class="err">@</span><span class="nf">endif</span></code></pre></td></tr></table>
 </div>
 </div>
+</div>
+
             </div>
             
             <div class="post-comments">

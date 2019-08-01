@@ -6,7 +6,7 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.55.6" />
+<meta name="generator" content="Hugo 0.56.3" />
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -70,11 +70,14 @@
             <div class="post-content">
                 <blockquote>
 <p>
-  How can I execute a command that uses command substitution in CFEngine?
+How can I execute a command that uses command substitution in CFEngine?
 </p>
 </blockquote>
-
-<p>On the console I might execute something like this:</p>
+<p>
+On the console I might execute something like this:
+</p>
+<figure>
+<div class="src src-sh">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt">1
@@ -84,13 +87,22 @@
 <pre class="chroma"><code class="language-sh" data-lang="sh">  touch /tmp/file-<span class="k">$(</span>date --iso-8601<span class="k">)</span> 
   ls /tmp/file-*</code></pre></td></tr></table>
 </div>
-</div><pre class="example">
+</div>
+</div>
+<figcaption>
+Example command substitution
+</figcaption>
+</figure>
+<pre class="example">
 /tmp/file-2019-03-08
 </pre>
-
-<p>I recommend not executing commands using substitution. Instead, prepare all that
+<p>
+I recommend not executing commands using substitution. Instead, prepare all that
 you need up front. Get the result of the data command and put it into a cfengine
-variable, then use the cfengine variable directly.</p>
+variable, then use the cfengine variable directly.
+</p>
+<figure>
+<div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
@@ -120,7 +132,13 @@ variable, then use the cfengine variable directly.</p>
         <span class="s">&#34;Files:</span><span class="si">$(const.n)$(with)</span><span class="s">&#34;</span> <span class="kr">with</span> <span class="o">=&gt;</span> <span class="nf">join</span><span class="p">(</span> <span class="s">&#34;</span><span class="si">$(const.n)</span><span class="s">&#34;</span><span class="p">,</span> <span class="nf">lsdir</span><span class="p">(</span> <span class="s">&#34;/tmp/&#34;</span><span class="p">,</span> <span class="s">&#34;file-.*&#34;</span><span class="p">,</span> <span class="nf">false</span> <span class="p">));</span>
   <span class="p">}</span></code></pre></td></tr></table>
 </div>
-</div><pre class="example">
+</div>
+</div>
+<figcaption>
+Example avoiding command substitution
+</figcaption>
+</figure>
+<pre class="example">
 R: CFEngine 3.13.0
 R: Executed /usr/bin/touch /tmp/file-2019-03-08T11:34:37-06:00
 R: Files:
@@ -129,8 +147,11 @@ file-2019-03-08T11:34:34-06:00
 file-2019-03-08T11:34:37-06:00	
 file-2019-03-08T11:34:24-06:00
 </pre>
-
-<p>But, if you really want to use command substitution you can use backticks directly.</p>
+<p>
+But, if you really want to use command substitution you can use backticks directly.
+</p>
+<figure>
+<div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
@@ -158,23 +179,29 @@ file-2019-03-08T11:34:24-06:00
         <span class="s">&#34;Files:</span><span class="si">$(const.n)$(with)</span><span class="s">&#34;</span> <span class="kr">with</span> <span class="o">=&gt;</span> <span class="nf">join</span><span class="p">(</span> <span class="s">&#34;</span><span class="si">$(const.n)</span><span class="s">&#34;</span><span class="p">,</span> <span class="nf">lsdir</span><span class="p">(</span> <span class="s">&#34;/tmp/&#34;</span><span class="p">,</span> <span class="s">&#34;file2-.*&#34;</span><span class="p">,</span> <span class="nf">false</span> <span class="p">));</span>
   <span class="p">}</span></code></pre></td></tr></table>
 </div>
-</div><pre class="example">
+</div>
+</div>
+<figcaption>
+Example using backticks for command substitution
+</figcaption>
+</figure>
+<pre class="example">
 R: CFEngine 3.13.0
 R: Executed /usr/bin/touch /tmp/file2-`date --iso-8601=second`
 R: Files:
 file2-2019-03-08T11:36:30-06:00
 file2-2019-03-08T11:36:35-06:00
 </pre>
-
 <blockquote>
 <p>
-  Why is it so?
+Why is it so?
 </p>
 </blockquote>
-
-<p><a href="https://docs.cfengine.com/docs/3.13/reference-language-concepts-variables.html#scalar-referencing-and-expansion" title="CFEngine expands variables wrapped in &lt;code&gt;$()&lt;/code&gt; and &lt;code&gt;${}&lt;/code&gt;">CFEngine expands variables wrapped in <code>$()</code> and <code>${}</code></a> and <a href="https://docs.cfengine.com/docs/3.12/reference-functions.html#function-skipping" title="functions are skipped">functions are skipped</a>
-(e.g. <a href="https://docs.cfengine.com/docs/3.12/reference-functions-execresult.html" title="execresult()">execresult()</a> )if they have parameters that are variables that do not
-dereference.</p>
+<p>
+<a href="https://docs.cfengine.com/docs/3.13/reference-language-concepts-variables.html#scalar-referencing-and-expansion">CFEngine expands variables wrapped in <code class="verbatim">$()</code> and <code class="verbatim">${}</code></a> and <a href="https://docs.cfengine.com/docs/3.12/reference-functions.html#function-skipping">functions are skipped</a>
+(e.g. <a href="https://docs.cfengine.com/docs/3.12/reference-functions-execresult.html">execresult()</a> )if they have parameters that are variables that do not
+dereference.
+</p>
 
             </div>
             
