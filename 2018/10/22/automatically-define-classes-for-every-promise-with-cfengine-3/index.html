@@ -6,7 +6,7 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.55.6" />
+<meta name="generator" content="Hugo 0.56.3" />
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -68,12 +68,16 @@
             <h1><a href="https://cmdln.org/2018/10/22/automatically-define-classes-for-every-promise-with-cfengine-3/">Automatically define classes for every promise with CFEngine 3</a></h1>
             <span class="post-date">Oct 22, 2018 </span>
             <div class="post-content">
-                <p>In CFEngine <em>classes</em> are used for decision making. Classes can be defined as
+                <p>
+In CFEngine <em>classes</em> are used for decision making. Classes can be defined as
 the result of a promise by attaching a <em>classes</em> body to the promise via the
-/classes/ attribute.</p>
-
-<p>For example, here we run the command <code>echo Hello World</code> and define <em>bundle</em> 
-scoped classes using the <em>results</em> classes body prefixed with <code>Hello_World</code>.</p>
+<em>classes</em> attribute.
+</p>
+<p>
+For example, here we run the command <code>echo Hello World</code> and define <em>bundle</em> 
+scoped classes using the <em>results</em> classes body prefixed with <code class="verbatim">Hello_World</code>.
+</p>
+<div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
@@ -94,34 +98,39 @@ scoped classes using the <em>results</em> classes body prefixed with <code>Hello
        <span class="s">&#34;echo Hello World&#34;</span> 
          <span class="kr">contain</span> <span class="o">=&gt;</span> <span class="nf">in_shell</span><span class="p">,</span>
          <span class="kr">classes</span> <span class="o">=&gt;</span> <span class="nf">results</span><span class="p">(</span> <span class="s">&#34;bundle&#34;</span><span class="p">,</span> <span class="s">&#34;Hello_World&#34;</span> <span class="p">);</span>
-
+      
      <span class="kd">reports</span><span class="p">:</span>  
       <span class="s">&#34;Defined Classes: </span><span class="si">$(with)</span><span class="s">&#34;</span> <span class="kr">with</span> <span class="o">=&gt;</span> <span class="nf">join</span><span class="p">(</span> <span class="s">&#34;, &#34;</span><span class="p">,</span> <span class="nf">classesmatching</span><span class="p">(</span> <span class="s">&#34;Hello_.*&#34;</span> <span class="p">)</span>  <span class="p">);</span>
   <span class="p">}</span></code></pre></td></tr></table>
 </div>
 </div>
-<p>Note in the policy output, we see <strong>Hello_World_repaired</strong> and
- <strong>Hello_World_reached</strong> are defined.</p>
+</div>
+<p>
+Note in the policy output, we see <strong>Hello_World_repaired</strong> and
+<strong>Hello_World_reached</strong> are defined.
+</p>
 <pre class="example">
-  notice: Q: "...echo Hello Worl": Hello World
+  notice: Q: &#34;...echo Hello Worl&#34;: Hello World
 R: Defined Classes: Hello_World_repaired, Hello_World_reached
 </pre>
-
-<p>Sometimes people ask:</p>
-
+<p>
+Sometimes people ask:
+</p>
 <blockquote>
 <p>
-  Can I automatically define classes for every promise?
+Can I automatically define classes for every promise?
 </p>
 </blockquote>
-
-<p>This is possible since CFEngine 3.9.0 introduced the concept of <a href="https://docs.cfengine.com/docs/3.12/reference-language-concepts-bodies.html#default-bodies" title="default bodies">default bodies</a>.
+<p>
+This is possible since CFEngine 3.9.0 introduced the concept of <a href="https://docs.cfengine.com/docs/3.12/reference-language-concepts-bodies.html#default-bodies">default bodies</a>.
 Default bodies allow the definition of bodies in the <em>bodydefault</em> namespace
 that will be used with a promise any time a promise does not specify a body of
-that type. For example, we can define <code>body classes commands_classes</code> that will
+that type. For example, we can define <code class="verbatim">body classes commands_classes</code> that will
 be used for any commands promise that does not specify a specific classes body.
-This results in the <code>commands_classes</code> body being attached to any commands
-promise which does not use an explicit classes body.</p>
+This results in the <code class="verbatim">commands_classes</code> body being attached to any commands
+promise which does not use an explicit classes body.
+</p>
+<div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
@@ -188,7 +197,7 @@ promise which does not use an explicit classes body.</p>
           <span class="kr">handle</span> <span class="o">=&gt;</span> <span class="s">&#34;command_echo_GoodBye&#34;</span><span class="p">,</span>
           <span class="kr">contain</span> <span class="o">=&gt;</span> <span class="nf">in_shell</span><span class="p">,</span>
           <span class="kr">classes</span> <span class="o">=&gt;</span> <span class="nf">results</span><span class="p">(</span> <span class="s">&#34;namespace&#34;</span><span class="p">,</span> <span class="s">&#34;GoodBye&#34;</span> <span class="p">);</span>
-
+ 
     <span class="kd">vars</span><span class="p">:</span>
         <span class="p">&#34;</span><span class="nv">c</span><span class="p">&#34;</span> <span class="kt">slist</span> <span class="o">=&gt;</span> <span class="nf">classesmatching</span><span class="p">(</span> <span class="s">&#34;.*_(reached|repaired|kept|not_kept|error)&#34;</span> <span class="p">);</span>
 
@@ -228,13 +237,16 @@ promise which does not use an explicit classes body.</p>
   <span class="p">}</span></code></pre></td></tr></table>
 </div>
 </div>
-<p>Here is the policy output. We can see that the commands promise to echo Hello
-resulted in the definition of <code>command_echo_hello_repaired</code> and
- <code>command_echo_hello_reached</code> because it used <code>body classes commands_classes</code> 
-(the default classes body for commands promises).</p>
+</div>
+<p>
+Here is the policy output. We can see that the commands promise to echo Hello
+resulted in the definition of <code class="verbatim">command_echo_hello_repaired</code> and
+<code class="verbatim">command_echo_hello_reached</code> because it used <code class="verbatim">body classes commands_classes</code> 
+(the default classes body for commands promises).
+</p>
 <pre class="example">
-  notice: Q: "...echo Hello": Hello
-  notice: Q: "...echo GoodBye": GoodBye
+  notice: Q: &#34;...echo Hello&#34;: Hello
+  notice: Q: &#34;...echo GoodBye&#34;: GoodBye
 R: command_echo_hello_repaired
 R: GoodBye_repaired
 R: command_echo_hello_reached

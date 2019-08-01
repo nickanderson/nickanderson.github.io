@@ -6,7 +6,7 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.55.6" />
+<meta name="generator" content="Hugo 0.56.3" />
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -70,12 +70,14 @@
             <div class="post-content">
                 <blockquote>
 <p>
-  Is there implicit "canonify"-cation happening in in "classes:" promise type?
+Is there implicit &#34;canonify&#34;-cation happening in in &#34;classes:&#34; promise type?
 </p>
 </blockquote>
-
-<p>Yes the agent will automatically canonify classes that you define for your
-convenience.</p>
+<p>
+Yes the agent will automatically canonify classes that you define for your
+convenience.
+</p>
+<div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
@@ -137,16 +139,20 @@ convenience.</p>
         <span class="s">&#34;Found defined class </span><span class="si">$(c)</span><span class="s">&#34;</span><span class="p">;</span>
   <span class="p">}</span></code></pre></td></tr></table>
 </div>
-</div><pre class="example">
+</div>
+</div>
+<pre class="example">
 R: CFEngine 3.11.0
 R: Found defined class my_invalid_class_2
 R: Found defined class my_invalid_class_1
 R: Found defined class my_invalid_class_from_promise_result_repaired
 R: Found defined class my_invalid_class_from_promise_result_reached
 </pre>
-
-<p>However, it will NOT automatically canonify strings that are being checked as
-you can see in this example. You must explicitly canonify when checking.</p>
+<p>
+However, it will NOT automatically canonify strings that are being checked as
+you can see in this example. You must explicitly canonify when checking.
+</p>
+<div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
@@ -183,12 +189,14 @@ you can see in this example. You must explicitly canonify when checking.</p>
 
         <span class="s">&#34;The string </span><span class="si">$(my_invalid_class)</span><span class="s"> is NOT a valid class&#34;</span>
           <span class="kr">if</span> <span class="o">=&gt;</span> <span class="nf">not</span><span class="p">(</span> <span class="err">$</span><span class="p">(</span><span class="nf">my_invalid_class</span><span class="p">)</span> <span class="p">);</span>
-
+      
         <span class="s">&#34;The string </span><span class="si">$(my_invalid_class)</span><span class="s"> when canonified is a valid class&#34;</span>
           <span class="kr">if</span> <span class="o">=&gt;</span> <span class="nf">classify</span><span class="p">(</span> <span class="err">$</span><span class="p">(</span><span class="nf">my_invalid_class</span><span class="p">)</span> <span class="p">);</span>
   <span class="p">}</span></code></pre></td></tr></table>
 </div>
-</div><pre class="example">
+</div>
+</div>
+<pre class="example">
 R: The string my-invalid-class is NOT a valid class
 R: The string my-invalid-class when canonified is a valid class
 </pre>

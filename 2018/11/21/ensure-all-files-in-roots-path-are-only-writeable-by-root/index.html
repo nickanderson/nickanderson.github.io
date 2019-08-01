@@ -6,7 +6,7 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.55.6" />
+<meta name="generator" content="Hugo 0.56.3" />
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -71,20 +71,20 @@
                 <blockquote>
 <p>
 How can I ensure that only root has write access to the files and directories
-</p>
-<p>
 (including symbolic links) in its $PATH?
 </p>
 </blockquote>
-
-<p>We could get roots path and then promise that each path recursively has files
+<p>
+We could get roots path and then promise that each path recursively has files
 that are owned by root and that those files are only writeable by root, not
 writeable by group and not writeable by others. In this example warning vs fixed
 is implemented for easy switching by the value of a variable. CFEngine operates
 on local files, and can promise the permissions regardless if the user is from a
 directory or a local user. We locate all symlinks that exist in any of the
 directories that make up roots PATH, resolve those link targets and ensure they
-are root owned and root writeable as well.</p>
+are root owned and root writeable as well.
+</p>
+<div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
@@ -245,6 +245,8 @@ are root owned and root writeable as well.</p>
   <span class="p">}</span></code></pre></td></tr></table>
 </div>
 </div>
+</div>
+
             </div>
             
             <div class="post-comments">

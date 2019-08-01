@@ -6,7 +6,7 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.55.6" />
+<meta name="generator" content="Hugo 0.56.3" />
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -68,25 +68,33 @@
             <h1><a href="https://cmdln.org/2018/01/15/standalone-mustache-policy/">Standalone Mustache Policy</a></h1>
             <span class="post-date">Jan 15, 2018 </span>
             <div class="post-content">
-                <p>> Does CFEngine provide tool to render a mustache template?</p>
-
-<p>No, CFEngine doesn't have a standalone tool to render mustache. <a href="https://mustache.github.io/#demo" title="This online demo">This online demo</a>
-is a good place to quickly prototype a simple template and data set.</p>
-
-<p>Another option is to use a stand-alone policy file.</p>
-
-<p>Name the file whatever you like. It looks for json in a file named 
+                <p>
+&gt; Does CFEngine provide tool to render a mustache template?
+</p>
+<p>
+No, CFEngine doesn&#39;t have a standalone tool to render mustache. <a href="https://mustache.github.io/#demo">This online demo</a>
+is a good place to quickly prototype a simple template and data set.
+</p>
+<p>
+Another option is to use a stand-alone policy file.
+</p>
+<p>
+Name the file whatever you like. It looks for json in a file named 
 the same
-suffixed with <code>.json</code>, it looks for a mustache template named the 
+suffixed with <code class="verbatim">.json</code>, it looks for a mustache template named the 
 same suffixed
-with <code>.mustache</code>, and it renders to a file named the same suffixed 
-with <code>.txt</code>.</p>
-
-<p>So if you name the file <code>/tmp/standalone-mustache.cf</code> it will look 
+with <code class="verbatim">.mustache</code>, and it renders to a file named the same suffixed 
+with <code class="verbatim">.txt</code>.
+</p>
+<p>
+So if you name the file <code class="verbatim">/tmp/standalone-mustache.cf</code> it will look 
 for
-=/tmp/standalone-mustache.cf.json=, 
-=/tmp/standalone-mustache.cf.mustache=, and
-render <code>/tmp/standalone-mustache.cf.txt</code>.</p>
+<code class="verbatim">/tmp/standalone-mustache.cf.json</code>, 
+<code class="verbatim">/tmp/standalone-mustache.cf.mustache</code>, and
+render <code class="verbatim">/tmp/standalone-mustache.cf.txt</code>.
+</p>
+<figure>
+<div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
@@ -167,7 +175,16 @@ render <code>/tmp/standalone-mustache.cf.txt</code>.</p>
   <span class="p">}</span></code></pre></td></tr></table>
 </div>
 </div>
-<p>Now test the policy:</p>
+</div>
+<figcaption>
+Standalone policy file for prototyping mustache
+</figcaption>
+</figure>
+<p>
+Now test the policy:
+</p>
+<figure>
+<div class="src src-shell">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
@@ -184,15 +201,26 @@ render <code>/tmp/standalone-mustache.cf.txt</code>.</p>
   cf-agent -KIf /tmp/standalone-mustache.cf</code></pre></td></tr></table>
 </div>
 </div>
-<p>Results in this output:</p>
+</div>
+<figcaption>
+Example execution
+</figcaption>
+</figure>
+<p>
+Results in this output:
+</p>
 <pre class="example">
-    info: Created file '/tmp/standalone-mustache.cf.txt', mode 
+    info: Created file &#39;/tmp/standalone-mustache.cf.txt&#39;, mode 
 </pre>
-<p>0600</p>
+<p>
+0600
+</p>
 <pre class="example">
-    info: Updated rendering of '/tmp/standalone-mustache.cf.txt' 
+    info: Updated rendering of &#39;/tmp/standalone-mustache.cf.txt&#39; 
 </pre>
-<p>from mustache template '/tmp/standalone-mustache.cf.mustache'</p>
+<p>
+from mustache template &#39;/tmp/standalone-mustache.cf.mustache&#39;
+</p>
 <pre class="example">
 R: /tmp/standalone-mustache.cf.txt:
 R: hello world

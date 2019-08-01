@@ -6,7 +6,7 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.55.6" />
+<meta name="generator" content="Hugo 0.56.3" />
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -68,63 +68,64 @@
             <h1><a href="https://cmdln.org/2016/04/26/how-i-org-with-spacemacs/">How I org with spacemacs</a></h1>
             <span class="post-date">Apr 26, 2016 </span>
             <div class="post-content">
-                <p>This weekend Neil Watson <a href="https://twitter.com/neil_h_watson/status/723927518420570112" title="asked if I could share how I use org-mode with
-Spacemacs">asked if I could share how I use org-mode with
-Spacemacs</a>.</p>
-
+                <p>
+This weekend Neil Watson <a href="https://twitter.com/neil_h_watson/status/723927518420570112">asked if I could share how I use org-mode with
+Spacemacs</a>.
+</p>
 <blockquote>
 <p>
 @cmdln_ Care to share with an Emacs illiterate how you got Spacemacs and
-</p>
-<p>
-Org-mode to work together? -- @neil_h_watson
+Org-mode to work together? – @neil_h_watson
 </p>
 </blockquote>
-
-<p>First of all, I spend most of my time in a terminal, and <code>vim</code> is ingrained in
+<p>
+First of all, I spend most of my time in a terminal, and <code>vim</code> is ingrained in
 my muscle memory any time I need to edit a file. While Vim is my goto editor I
-consider myself just a novice <a href="http:www.vim" title="&lt;code&gt;Vim&lt;/code&gt;"><code>Vim</code></a> user. I like Vim because its everywhere and
+consider myself just a novice <a href="http:www.vim.org"><code class="verbatim">Vim</code></a> user. I like Vim because its everywhere and
 I have grown to like modal editing. I am by no means an expert but I do use
-visual block selection, and I like how Neil's great <a href="https://github.com/neilhwatson/vim_cf3" title="&lt;code&gt;vim_cf3&lt;/code&gt;"><code>vim_cf3</code></a> plugin improves
-the CFEngine policy editing experience tremendously.</p>
-
-<p>So why are we talking about <strong>Emacs</strong> if Vim is go great? Note, we are talking
-about <a href="http://spacemacs.org/" title="Spacemacs">Spacemacs</a>, which is self described as "community-driven Emacs
-distribution" and says "The best editor is neither Emacs nor Vim, it's Emacs
-*and* Vim!".</p>
-
-<p>For me <a href="http://orgmode.org/" title="Org-mode">Org-mode</a> is a (if not <strong>the</strong>) <strong>killer-feature</strong> in Emacs.</p>
-
+visual block selection, and I like how Neil&#39;s great <a href="https://github.com/neilhwatson/vim_cf3"><code class="verbatim">vim_cf3</code></a> plugin improves
+the CFEngine policy editing experience tremendously.
+</p>
+<p>
+So why are we talking about <strong>Emacs</strong> if Vim is go great? Note, we are talking
+about <a href="http://spacemacs.org/">Spacemacs</a>, which is self described as &#34;community-driven Emacs
+distribution&#34; and says &#34;The best editor is neither Emacs nor Vim, it&#39;s Emacs
+<strong>and</strong> Vim!&#34;.
+</p>
+<p>
+For me <a href="http://orgmode.org/">Org-mode</a> is a (if not <strong>the</strong>) <strong>killer-feature</strong> in Emacs.
+</p>
 <blockquote>
 <p>
 Org mode is for keeping notes, maintaining TODO lists, planning projects and
-</p>
-<p>
-authoring documents with a fast and effective plain text system. --
-</p>
-<p>
-http://orgmode.org/
+authoring documents with a fast and effective plain text system. –
+<a href="http://orgmode.org/">http://orgmode.org/</a>
 </p>
 </blockquote>
-
-<p>I have used Org mode off on and on for the past 5 years or so, and mostly on for
+<p>
+I have used Org mode off on and on for the past 5 years or so, and mostly on for
 that past 2 years. When I first tried using org-mode I think one of the main
-reasons it didn't stick was because I didn't have familiar key bindings. I
-really struggled to navigate and operate within Emacs.</p>
-
-<p>A couple years ago In order to be able to edit text inside Emacs I began
-configuring Emacs to use <a href="https://www.emacswiki.org/emacs/Evil" title="Evil">Evil</a> which made it possible for me to do things like
-save and quite with <code>:wq</code> and made most of the vim operations I was used to
+reasons it didn&#39;t stick was because I didn&#39;t have familiar key bindings. I
+really struggled to navigate and operate within Emacs.
+</p>
+<p>
+A couple years ago In order to be able to edit text inside Emacs I began
+configuring Emacs to use <a href="https://www.emacswiki.org/emacs/Evil">Evil</a> which made it possible for me to do things like
+save and quite with <code class="verbatim">:wq</code> and made most of the vim operations I was used to
 using like visual region selection work pretty much as expected. I had
 re-factored my Emacs config to try and make it more manageable about a year ago
-to use <a href="https://github.com/jwiegley/use-package" title="use-package">use-package</a> but for some reason Spacemacs escaped me until a couple
-months ago. It wasn't too difficult to switch to Spacemacs I took most of my
-custom config and dropped it into <code>dotspacemacs/user-config</code> in <code>~/.spacemacs</code>.</p>
-
-<p>Since I tend to have an org-mode buffer open all the time, getting org-mode
-configured to my liking was one of the first things I did.</p>
-
-<p>I enabled the org layer.</p>
+to use <a href="https://github.com/jwiegley/use-package">use-package</a> but for some reason Spacemacs escaped me until a couple
+months ago. It wasn&#39;t too difficult to switch to Spacemacs I took most of my
+custom config and dropped it into <code class="verbatim">dotspacemacs/user-config</code> in <code class="verbatim">~/.spacemacs</code>.
+</p>
+<p>
+Since I tend to have an org-mode buffer open all the time, getting org-mode
+configured to my liking was one of the first things I did.
+</p>
+<p>
+I enabled the org layer.
+</p>
+<div class="src src-elisp">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-elisp" data-lang="elisp"><span class="lnt">1
@@ -143,8 +144,12 @@ configured to my liking was one of the first things I did.</p>
    <span class="nv">dotspacemacs-configuration-layers</span> <span class="o">&#39;</span><span class="p">(</span> <span class="nv">org</span> <span class="p">)))</span></code></pre></td></tr></table>
 </div>
 </div>
-<p>I really like the dark <a href="http://ethanschoonover.com/solarized" title="solarized">solarized</a> theme so I set <code>soliarized-dark</code> to be the
-first theme listed in <code>dotspacemacs-themes</code> in <code>dotspacemacs/init</code>.</p>
+</div>
+<p>
+I really like the dark <a href="http://ethanschoonover.com/solarized">solarized</a> theme so I set <code class="verbatim">soliarized-dark</code> to be the
+first theme listed in <code class="verbatim">dotspacemacs-themes</code> in <code class="verbatim">dotspacemacs/init</code>.
+</p>
+<div class="src src-elisp">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-elisp" data-lang="elisp"><span class="lnt"> 1
@@ -191,8 +196,12 @@ first theme listed in <code>dotspacemacs-themes</code> in <code>dotspacemacs/ini
                          <span class="nv">zenburn</span><span class="p">)))</span></code></pre></td></tr></table>
 </div>
 </div>
-<p>Moving on to the rest of my org-mode configuration, the following blocks all
-reside within <code>dotspacemacs/user-config</code>.</p>
+</div>
+<p>
+Moving on to the rest of my org-mode configuration, the following blocks all
+reside within <code class="verbatim">dotspacemacs/user-config</code>.
+</p>
+<div class="src src-elisp">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-elisp" data-lang="elisp"><span class="lnt">1
@@ -207,10 +216,14 @@ reside within <code>dotspacemacs/user-config</code>.</p>
 </span><span class="s">  layers configuration. You are free to put any user code.&#34;</span></code></pre></td></tr></table>
 </div>
 </div>
-<p>In my notes I frequently link to tickets in zendesk, redmine, and jira so I made
+</div>
+<p>
+In my notes I frequently link to tickets in zendesk, redmine, and jira so I made
 abbreviations for them. When viewing my org notes the links are functional
 hyperlinks that I can click on and importantly they work as expected when you
-export from org mode.</p>
+export from org mode.
+</p>
+<div class="src src-elisp">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-elisp" data-lang="elisp"><span class="lnt"> 1
@@ -257,15 +270,20 @@ export from org mode.</p>
     <span class="p">(</span><span class="nb">setq</span> <span class="nv">org-startup-with-inline-images</span> <span class="no">t</span><span class="p">)</span></code></pre></td></tr></table>
 </div>
 </div>
-<p>Here I specify the org files (or directories full of files as in my case) that
-should be used when working with the <a href="http://orgmode.org/manual/Agenda-Views.html" title="agenda">agenda</a>. The agenda is neat, though I admit
+</div>
+<p>
+Here I specify the org files (or directories full of files as in my case) that
+should be used when working with the <a href="http://orgmode.org/manual/Agenda-Views.html">agenda</a>. The agenda is neat, though I admit
 I have not trained myself to live in it yet. It allows you to search and display
 items throughout your org files. You can even interact with things directly from
-agenda views.</p>
-
-<p>For example from anywhere in Spacemacs you can type <code>SPC a o t</code> that's space <code>a=
-for applications, =o</code> for org, and <code>t</code> for todos. This will list various entries
-that begin with TODO (an entry is simply a line starting with one or more <code>*</code>).</p>
+agenda views.
+</p>
+<p>
+For example from anywhere in Spacemacs you can type <code class="verbatim">SPC a o t</code> that&#39;s space <code class="verbatim">a</code>
+for applications, <code class="verbatim">o</code> for org, and <code class="verbatim">t</code> for todos. This will list various entries
+that begin with TODO (an entry is simply a line starting with one or more <code class="verbatim">*</code>).
+</p>
+<div class="src src-elisp">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-elisp" data-lang="elisp"><span class="lnt">1
@@ -280,8 +298,12 @@ that begin with TODO (an entry is simply a line starting with one or more <code>
       <span class="o">&#39;</span><span class="p">(</span><span class="s">&#34;~/org&#34;</span> <span class="s">&#34;~/org/cfengine&#34;</span><span class="p">))</span></code></pre></td></tr></table>
 </div>
 </div>
-<p>I have lots of org files. This just allows me to easily move entries from one
-file to another (re-filing).</p>
+</div>
+<p>
+I have lots of org files. This just allows me to easily move entries from one
+file to another (re-filing).
+</p>
+<div class="src src-elisp">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-elisp" data-lang="elisp"><span class="lnt">1
@@ -292,17 +314,22 @@ file to another (re-filing).</p>
     <span class="p">(</span><span class="nb">setq</span> <span class="nv">org-refile-targets</span> <span class="p">(</span><span class="nb">quote</span> <span class="p">((</span><span class="nv">org-agenda-files</span> <span class="nb">:maxlevel</span> <span class="o">.</span> <span class="mi">5</span><span class="p">))))</span></code></pre></td></tr></table>
 </div>
 </div>
-<p>Capturing new TODO items is really quick and unobtrusive with
+</div>
+<p>
+Capturing new TODO items is really quick and unobtrusive with
 capture templates. I have a capture template setup to for my TODOs. From any
-buffer within Spacemacs I can type <code>SPC C c t</code> to capture a new TODO entry. If I
-happen to be editing an org-mode file I can type <code>, c t</code> to start the capture.
-This makes it incredibly easy to capture a TODO from anything I am working on.</p>
-
-<p>I also try to keep track of the time I spend on various things, so you will
+buffer within Spacemacs I can type <code class="verbatim">SPC C c t</code> to capture a new TODO entry. If I
+happen to be editing an org-mode file I can type <code class="verbatim">, c t</code> to start the capture.
+This makes it incredibly easy to capture a TODO from anything I am working on.
+</p>
+<p>
+I also try to keep track of the time I spend on various things, so you will
 notice that my TODO capture clocks my time while capturing, and when done it
 resumes the clock wherever I was clocking time before I started the TODO
 capture. Org makes it really easy to make clock tables so you can visualize and
-account for your own time. It even has support for effort estimates.</p>
+account for your own time. It even has support for effort estimates.
+</p>
+<div class="src src-elisp">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-elisp" data-lang="elisp"><span class="lnt">1
@@ -319,10 +346,14 @@ account for your own time. It even has support for effort estimates.</p>
            <span class="s">&#34;** TODO %\1\n%i\nCreated From: %a\n&#34;</span> <span class="nb">:clock-in</span> <span class="no">t</span> <span class="nb">:clock-resume</span> <span class="no">t</span> <span class="nb">:prepend</span> <span class="no">t</span><span class="p">)))</span></code></pre></td></tr></table>
 </div>
 </div>
-<p>I picked this up from a co-worker. It automatically indents things in org-mode.
+</div>
+<p>
+I picked this up from a co-worker. It automatically indents things in org-mode.
 I think it makes the experience with org-mode feel less like working in a free
 form text editor. Before I enabled this I was always trying to manually keep
-things aligned and it was sub-optimal.</p>
+things aligned and it was sub-optimal.
+</p>
+<div class="src src-elisp">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-elisp" data-lang="elisp"><span class="lnt">1
@@ -337,8 +368,12 @@ things aligned and it was sub-optimal.</p>
     <span class="p">(</span><span class="nb">setq</span> <span class="nv">org-startup-indented</span> <span class="no">t</span><span class="p">)</span></code></pre></td></tr></table>
 </div>
 </div>
-<p>Sometimes it's nice to be able to zoom in on some text. This simply maps the
-familiar keys for zooming.</p>
+</div>
+<p>
+Sometimes it&#39;s nice to be able to zoom in on some text. This simply maps the
+familiar keys for zooming.
+</p>
+<div class="src src-elisp">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-elisp" data-lang="elisp"><span class="lnt">1
@@ -351,9 +386,13 @@ familiar keys for zooming.</p>
       <span class="p">(</span><span class="nf">define-key</span> <span class="nv">global-map</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">&#34;C--&#34;</span><span class="p">)</span> <span class="ss">&#39;text-scale-decrease</span><span class="p">)</span></code></pre></td></tr></table>
 </div>
 </div>
-<p>I haven't yet mapped all the things I do frequently into shorter key sequences.
-This binding allows me to type <code>SPC o a</code> from anywhere in Spacemacs and get to
-the main agenda dispatch where I search for entries based on tags or content.</p>
+</div>
+<p>
+I haven&#39;t yet mapped all the things I do frequently into shorter key sequences.
+This binding allows me to type <code class="verbatim">SPC o a</code> from anywhere in Spacemacs and get to
+the main agenda dispatch where I search for entries based on tags or content.
+</p>
+<div class="src src-elisp">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-elisp" data-lang="elisp"><span class="lnt">1
@@ -366,9 +405,13 @@ the main agenda dispatch where I search for entries based on tags or content.</p
        <span class="s">&#34;oa&#34;</span> <span class="ss">&#39;org-agenda</span><span class="p">)</span></code></pre></td></tr></table>
 </div>
 </div>
-<p>Moving entries between files can wreck links between entries. So I have a hook
+</div>
+<p>
+Moving entries between files can wreck links between entries. So I have a hook
 to create unique ids for each captured entry. This way notes that link to TODOs
-shouldn't break.</p>
+shouldn&#39;t break.
+</p>
+<div class="src src-elisp">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-elisp" data-lang="elisp"><span class="lnt">1
@@ -381,12 +424,16 @@ shouldn't break.</p>
     <span class="p">(</span><span class="nv">add-hook</span> <span class="ss">&#39;org-cnapture-prepare-finalize-hook</span> <span class="ss">&#39;org-id-get-create</span><span class="p">)</span></code></pre></td></tr></table>
 </div>
 </div>
-<p>My notes tend to include a lot of source code blocks. Here I allow sh blocks to
+</div>
+<p>
+My notes tend to include a lot of source code blocks. Here I allow sh blocks to
 be directly executed by org-bable. That means I can type shell code between
-=#+BEGIN_SRC sh= and <code>#+END_SRC</code> blocks and then press <code>,,</code> to execute it and
+<code class="verbatim">#+BEGIN_SRC sh</code> and <code class="verbatim">#+END_SRC</code> blocks and then press <code class="verbatim">,,</code> to execute it and
 have the result inserted into its own section below the source. This is a really
-nifty feature. It enables "<a href="http://howardism.org/Technical/Emacs/literate-devops.html" title="Literate DevOps">Literate DevOps</a>" as Howard Abrams calls it.
-Seriously, go read and bookmark that page.</p>
+nifty feature. It enables &#34;<a href="http://howardism.org/Technical/Emacs/literate-devops.html">Literate DevOps</a>&#34; as Howard Abrams calls it.
+Seriously, go read and bookmark that page.
+</p>
+<div class="src src-elisp">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-elisp" data-lang="elisp"><span class="lnt">1
@@ -401,9 +448,13 @@ Seriously, go read and bookmark that page.</p>
     <span class="p">(</span><span class="nv">org-babel-do-load-language</span> <span class="ss">&#39;org-babel-load-languages</span> <span class="o">&#39;</span><span class="p">((</span><span class="nv">sh</span> <span class="o">.</span> <span class="no">t</span><span class="p">)))</span></code></pre></td></tr></table>
 </div>
 </div>
-<p>As you can guess I type a lot of cfengine code blocks. This defines an "easy
-template" to inserting new cfengine blocks. I can simply type <code>&lt;cfe</code> followed by
-=TAB=.</p>
+</div>
+<p>
+As you can guess I type a lot of cfengine code blocks. This defines an &#34;easy
+template&#34; to inserting new cfengine blocks. I can simply type <code class="verbatim">&lt;cfe</code> followed by
+<code class="verbatim">TAB</code>.
+</p>
+<div class="src src-elisp">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-elisp" data-lang="elisp"><span class="lnt">1
@@ -424,8 +475,12 @@ template" to inserting new cfengine blocks. I can simply type <code>&lt;cfe</cod
        <span class="p">))</span></code></pre></td></tr></table>
 </div>
 </div>
-<p>Some of my notes have secret stuff, so here I set some things that allow me to
-encrypt entries.</p>
+</div>
+<p>
+Some of my notes have secret stuff, so here I set some things that allow me to
+encrypt entries.
+</p>
+<div class="src src-elisp">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-elisp" data-lang="elisp"><span class="lnt"> 1
@@ -460,12 +515,15 @@ encrypt entries.</p>
   <span class="p">(</span><span class="nb">setq</span> <span class="nv">org-crypt-key</span> <span class="s">&#34;5D1CCC11&#34;</span><span class="p">)</span></code></pre></td></tr></table>
 </div>
 </div>
-<p>In addition to those customization's I also use <a href="https://github.com/fniessen/org-html-themes#readtheorg" title="readtheorg">readtheorg</a> html theme when
+</div>
+<p>
+In addition to those customization&#39;s I also use <a href="https://github.com/fniessen/org-html-themes#readtheorg">readtheorg</a> html theme when
 exporting my notes. To make my note exports beautiful most of my org files have
-the following line at the top.</p>
-
-<pre><code>#+SETUPFILE: ~/src/org-html-themes/setup/theme-readtheorg.setup
-</code></pre>
+the following line at the top.
+</p>
+<pre class="example">
+#+SETUPFILE: ~/src/org-html-themes/setup/theme-readtheorg.setup
+</pre>
 
             </div>
             

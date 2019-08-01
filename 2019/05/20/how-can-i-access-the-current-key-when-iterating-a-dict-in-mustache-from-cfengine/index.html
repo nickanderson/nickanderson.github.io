@@ -6,7 +6,7 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.55.6" />
+<meta name="generator" content="Hugo 0.56.3" />
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -73,17 +73,20 @@
 Can I access the current KEY when iterating in Mustache?
 </p>
 </blockquote>
-
-<p>Yes, CFEngine's implementation of mustache includes an extension to be able to
-access the current key when iterating. <code>@</code> expands the current key being
-iterated.</p>
-
-<p>This example defines <code>d</code> as a simple json data structure with <code>index-1</code> and
-=index-2= being top level keys. The mustache template iterates over the entirety
-of the structure leveraging <code>-top-</code> (another cfengine specific extension to
-mustache) and prints the key using <code>@</code>. Note the use of three curly braces. This
+<p>
+Yes, CFEngine&#39;s implementation of mustache includes an extension to be able to
+access the current key when iterating. <code class="verbatim">@</code> expands the current key being
+iterated.
+</p>
+<p>
+This example defines <code class="verbatim">d</code> as a simple json data structure with <code class="verbatim">index-1</code> and
+<code class="verbatim">index-2</code> being top level keys. The mustache template iterates over the entirety
+of the structure leveraging <code class="verbatim">-top-</code> (another cfengine specific extension to
+mustache) and prints the key using <code class="verbatim">@</code>. Note the use of three curly braces. This
 is per the mustache spec to ensure that the rendered value is <strong>not</strong> html escaped
-(not usually what you want in the context of rendering configuration files).</p>
+(not usually what you want in the context of rendering configuration files).
+</p>
+<div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
@@ -134,7 +137,10 @@ is per the mustache spec to ensure that the rendered value is <strong>not</stron
   <span class="p">}</span></code></pre></td></tr></table>
 </div>
 </div>
-<p>Policy Output:</p>
+</div>
+<p>
+Policy Output:
+</p>
 <pre class="example">
 R: CFEngine 3.14.0a.4e12fcf75
 R: Iterate over -top- and print keys:

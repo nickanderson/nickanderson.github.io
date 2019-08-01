@@ -16,8 +16,7 @@
       <pubDate>Fri, 01 Dec 2017 21:41:21 -0600</pubDate>
       
       <guid>https://cmdln.org/2017/12/01/keep-table-of-contents-up-to-date-in-org-mode/</guid>
-      <description>It&#39;s easy to export an org document to html and get a table of contents, but sometimes it&#39;s nice to have a table of contents inside of an org-mode file. The =toc-org= package makes this automatic.
-Simply tag a headline with :TOC: and the headline will auto fill an index with all following headlines.</description>
+      <description> It&amp;#39;s easy to export an org document to html and get a table of contents, but sometimes it&amp;#39;s nice to have a table of contents inside of an org-mode file. The [[https://github.com/snosov1/toc-org][toc-org]] package makes this automatic.  Simply tag a headline with :TOC: and the headline will auto fill an index with all following headlines.  &amp;lt;img src=&amp;#34;&amp;#34; alt=&amp;#34;&amp;#34; width=&amp;#34;100%&amp;#34;/&amp;gt; </description>
     </item>
     
     <item>
@@ -26,8 +25,7 @@ Simply tag a headline with :TOC: and the headline will auto fill an index with a
       <pubDate>Tue, 26 Apr 2016 00:00:00 +0000</pubDate>
       
       <guid>https://cmdln.org/2016/04/26/how-i-org-with-spacemacs/</guid>
-      <description>This weekend Neil Watson asked if I could share how I use org-mode with Spacemacs.
-  @cmdln_ Care to share with an Emacs illiterate how you got Spacemacs and  Org-mode to work together? -- @neil_h_watson  First of all, I spend most of my time in a terminal, and vim is ingrained in my muscle memory any time I need to edit a file. While Vim is my goto editor I consider myself just a novice Vim user.</description>
+      <description>This weekend Neil Watson asked if I could share how I use org-mode with Spacemacs.   @cmdln_ Care to share with an Emacs illiterate how you got Spacemacs and Org-mode to work together? – @neil_h_watson   First of all, I spend most of my time in a terminal, and vim is ingrained in my muscle memory any time I need to edit a file. While Vim is my goto editor I consider myself just a novice Vim user.</description>
     </item>
     
   </channel>

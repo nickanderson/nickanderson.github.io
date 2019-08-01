@@ -6,7 +6,7 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.55.6" />
+<meta name="generator" content="Hugo 0.56.3" />
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -68,8 +68,11 @@
             <h1><a href="https://cmdln.org/2018/05/22/manage-memory_limit-in-php.ini-with-cfengine-3/">Manage memory_limit in php.ini with CFEngine 3</a></h1>
             <span class="post-date">May 22, 2018 </span>
             <div class="post-content">
-                <p>This policy ensures that <code>memory_limit</code> in <code>php.ini</code> is configured properly but
-the pattern is generically useful for any INI style config.</p>
+                <p>
+This policy ensures that <code class="verbatim">memory_limit</code> in <code class="verbatim">php.ini</code> is configured properly but
+the pattern is generically useful for any INI style config.
+</p>
+<div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
@@ -102,7 +105,7 @@ the pattern is generically useful for any INI style config.</p>
         <span class="p">&#34;</span><span class="nv">tags</span><span class="p">&#34;</span> <span class="kt">slist</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="s">&#34;autorun&#34;</span> <span class="p">};</span>
 
          <span class="p">&#34;</span><span class="nv">description</span><span class="p">&#34;</span> <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;Tune php fo 60k hosts in Mission Portal&#34;</span><span class="p">;</span>
-
+      
     <span class="kd">vars</span><span class="p">:</span>
 
         <span class="p">&#34;</span><span class="nv">php_ini[PHP][memory_limit]</span><span class="p">&#34;</span> <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;256M&#34;</span><span class="p">;</span>
@@ -116,6 +119,8 @@ the pattern is generically useful for any INI style config.</p>
   <span class="p">}</span></code></pre></td></tr></table>
 </div>
 </div>
+</div>
+
             </div>
             
             <div class="post-comments">

@@ -6,7 +6,7 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.55.6" />
+<meta name="generator" content="Hugo 0.56.3" />
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -70,13 +70,15 @@
             <div class="post-content">
                 <blockquote>
 <p>
-  How can I make cfengine do things during a specific time window?
+How can I make cfengine do things during a specific time window?
 </p>
 </blockquote>
-
-<p>You can find "time based classes" in the <code>cf-promises --show-classes</code> output,
-they are easily identified because they are tagged with <code>time_based</code>. For
-example:</p>
+<p>
+You can find &#34;time based classes&#34; in the <code>cf-promises --show-classes</code> output,
+they are easily identified because they are tagged with <code class="verbatim">time_based</code>. For
+example:
+</p>
+<div class="src src-sh">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt">1
@@ -85,7 +87,9 @@ example:</p>
 <pre class="chroma"><code class="language-sh" data-lang="sh">  cf-promises --show-classes <span class="p">|</span> grep time</code></pre></td></tr></table>
 </div>
 </div>
-<pre><code>| Day2                                    time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass |
+</div>
+<pre class="example">
+| Day2                                    time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass |
 | GMT_Afternoon                           time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass |
 | GMT_Day2                                time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass |
 | GMT_Hr14                                time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass |
@@ -108,15 +112,17 @@ example:</p>
 | Q1                                      time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass |
 | Thursday                                time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass |
 | Yr2017                                  time_based | cfengine_internal_time_based_autoremove | source=agent | hardclass |
-</code></pre>
-
-<p>You can guard your promise with a time based class expression so that it can
-only execute during the 7:00 hour. It's important to understand that <code>body
+</pre>
+<p>
+You can guard your promise with a time based class expression so that it can
+only execute during the 7:00 hour. It&#39;s important to understand that <code class="verbatim">body
 action if_elapsed</code> is based on promise locking. So that restriction will not be
-maintained if you run the agent without locks. Usually that's fine, but in some
+maintained if you run the agent without locks. Usually that&#39;s fine, but in some
 cases you might want a bit more protection to be sure that the promise does not
 execute more than once within a given time period. If you need higher assurance
-you can use persistent classes.</p>
+you can use persistent classes.
+</p>
+<div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
@@ -179,20 +185,25 @@ you can use persistent classes.</p>
   <span class="p">}</span></code></pre></td></tr></table>
 </div>
 </div>
-<pre><code>  &gt; $ sudo cf-agent -KIf ./main.cf                                                                         
+</div>
+<pre class="example">
+  > $ sudo cf-agent -KIf ./main.cf                                                                         
   R: Hello, its during the 8:00am hour here. Specifically its Thu Mar  2 08:30:55 2017
   R: This report will only be emitted once during the 8:00 hour.
   R: This report will only be emitted once during the 8:00 hour. Even if locks are skipped.
-
-  &gt; $ sudo cf-agent -KIf ./main.cf                                                                         
+                                                                                                          
+  > $ sudo cf-agent -KIf ./main.cf                                                                         
   R: Hello, its during the 8:00am hour here. Specifically its Thu Mar  2 08:30:59 2017
   R: This report will only be emitted once during the 8:00 hour.
-</code></pre>
-
-<p>Generally I do not recommend using time based classes as a direct guard because
+</pre>
+<p>
+Generally I do not recommend using time based classes as a direct guard because
 it can complicate testing or ad-hoc execution. I typically recommend setting a
 class based on the time class, and then using that soft class as your guard. I
-think this example will make it more clear:</p>
+think this example will make it more clear:
+</p>
+<figure>
+<div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
@@ -285,8 +296,14 @@ think this example will make it more clear:</p>
   <span class="p">}</span></code></pre></td></tr></table>
 </div>
 </div>
-<pre><code># Note its during 8am hour, so no reports
-&gt; $ sudo cf-agent -KIf ./main.cf                                                                                                                                                                                           
+</div>
+<figcaption>
+Example showing differences between locking and persistent classes
+</figcaption>
+</figure>
+<pre class="example">
+# Note its during 8am hour, so no reports
+> $ sudo cf-agent -KIf ./main.cf                                                                                                                                                                                           
 R: Hello, its Thu Mar  2 08:40:21 2017
 
 # We get both reports becasue I manually defined
@@ -294,7 +311,7 @@ R: Hello, its Thu Mar  2 08:40:21 2017
 # only be defined during the 8am hour.
 # This is useful for testing or ad-hoc execution.
 
-&gt; $ sudo cf-agent -KIf ./main.cf --define maintanance_window                                                                                                                                                                                                                                                                                                         
+> $ sudo cf-agent -KIf ./main.cf --define maintanance_window                                                                                                                                                                                                                                                                                                         
 R: Hello, its Thu Mar  2 08:42:41 2017
 R: This report will only be emitted once during the maintanaince window unless locks are cleared.
 R: This report will only be emitted once during the maintanance window. Even if locks are skipped.
@@ -302,12 +319,13 @@ R: This report will only be emitted once during the maintanance window. Even if 
 # Note how the persistent class is effective even when
 # promise locks are cleared.
 
-&gt; $ sudo cf-agent -KIf ./main.cf --define maintanance_window                                                                                                                                                                                                                                                                                                         
+> $ sudo cf-agent -KIf ./main.cf --define maintanance_window                                                                                                                                                                                                                                                                                                         
 R: Hello, its Thu Mar  2 08:42:56 2017
 R: This report will only be emitted once during the maintanaince window unless locks are cleared.
-</code></pre>
-
-<p>Hope this helps.</p>
+</pre>
+<p>
+Hope this helps.
+</p>
 
             </div>
             

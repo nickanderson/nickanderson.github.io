@@ -6,7 +6,7 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.55.6" />
+<meta name="generator" content="Hugo 0.56.3" />
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -68,8 +68,11 @@
             <h1><a href="https://cmdln.org/2017/11/22/in-cfengine-how-do-i-enforce-posix-acls/">In CFEngine how do I enforce POSIX ACLs?</a></h1>
             <span class="post-date">Nov 22, 2017 </span>
             <div class="post-content">
-                <p>When using the acl_method <code>overwrite</code> you must supply <code>user</code>, <code>group</code>, <code>all</code> (
-aka <code>other</code> ), and <code>mask</code> for a complete ACL specification.</p>
+                <p>
+When using the acl_method <code class="verbatim">overwrite</code> you must supply <code class="verbatim">user</code>, <code class="verbatim">group</code>, <code class="verbatim">all</code> (
+aka <code class="verbatim">other</code> ), and <code class="verbatim">mask</code> for a complete ACL specification.
+</p>
+<div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
@@ -111,7 +114,7 @@ aka <code>other</code> ), and <code>mask</code> for a complete ACL specification
 </span><span class="c"></span>                     <span class="p">};</span>
 
     <span class="kd">files</span><span class="p">:</span>
-
+      
       <span class="s">&#34;/tmp/acl/dir&#34;</span>
         <span class="kr">acl</span> <span class="o">=&gt;</span> <span class="nf">posix_acl_default_access</span><span class="p">(</span> <span class="s">&#34;overwrite&#34;</span><span class="p">,</span> <span class="nv">@(acl)</span> <span class="p">);</span>
   <span class="p">}</span>
@@ -124,16 +127,22 @@ aka <code>other</code> ), and <code>mask</code> for a complete ACL specification
   <span class="p">}</span></code></pre></td></tr></table>
 </div>
 </div>
-<p>We can use <code>getfacl</code> to inspect the permissions are as desired.</p>
+</div>
+<p>
+We can use <code>getfacl</code> to inspect the permissions are as desired.
+</p>
+<div class="src src-shell">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">  getfacl /tmp/acl/dir                                                </code></pre></td></tr></table>
+<pre class="chroma"><code class="language-shell" data-lang="shell">  getfacl /tmp/acl/dir</code></pre></td></tr></table>
 </div>
 </div>
-<pre><code># file: tmp/acl/dir
+</div>
+<pre class="example">
+# file: tmp/acl/dir
 # owner: nickanderson
 # group: nickanderson
 user::rwx
@@ -148,8 +157,7 @@ default:user:a10042:---
 default:group::rw-
 default:mask::rwx
 default:other::r--
-
-</code></pre>
+</pre>
 
             </div>
             

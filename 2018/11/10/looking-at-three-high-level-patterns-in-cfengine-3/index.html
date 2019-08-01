@@ -6,7 +6,7 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.55.6" />
+<meta name="generator" content="Hugo 0.56.3" />
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -68,73 +68,71 @@
             <h1><a href="https://cmdln.org/2018/11/10/looking-at-three-high-level-patterns-in-cfengine-3/">Looking at three high level patterns in CFEngine 3</a></h1>
             <span class="post-date">Nov 10, 2018 </span>
             <div class="post-content">
-                <p>How do you deal with config files that need different settings based on various
-services that are running on a host and cooperate with other teams? It's a
-common question, and it came up on in #cfengine on irc.freenode.net recently.</p>
-
+                
+<p>
+How do you deal with config files that need different settings based on various
+services that are running on a host and cooperate with other teams? It&#39;s a
+common question, and it came up on in #cfengine on irc.freenode.net recently.
+</p>
 <blockquote>
 <p>
-  The issue is that team A might be working on package A, which requires some
-</p>
-<p>
-  environment variables set. But team B might be working on a totally different
-</p>
-<p>
-  thing -- and want to achieve the same thing. I hoped to give them a bit of
-</p>
-<p>
-  'library' code to take care of it, rather than have them touch a centralized
-</p>
-<p>
-  environment-setting policy file.
+The issue is that team A might be working on package A, which requires some
+environment variables set. But team B might be working on a totally different
+thing – and want to achieve the same thing. I hoped to give them a bit of
+&#39;library&#39; code to take care of it, rather than have them touch a centralized
+environment-setting policy file.
 </p>
 </blockquote>
-
-<p>Here, I look at three high level patterns I have seen.</p>
-
+<p>
+Here, I look at three high level patterns I have seen.
+</p>
 <dl>
-<dt>Competitive management</dt>
-<dd>Each bundle that needs a specific config manages it</dd>
-     by itself, typically by using a parameterized bundle.
+<dt>
+Competitive management<dd>
+<p>
+Each bundle that needs a specific config manages it
+by itself, typically by using a parameterized bundle.
+</p>
+<dd>
+<dt>
+Centralized management<dd>
+<p>
+All config definition is in a single place, anyone
+needing something edits the global config.
+</p>
+<dd>
+<dt>
+Cooperative management<dd>
+<p>
+Each bundle that needs a specific config, publishes
+the config it needs, and another policy handles consolidating the configs
+and edits the config as necessary.
+</p>
+<dd>
 </dl>
-
-<dl>
-<dt>Centralized management</dt>
-<dd>All config definition is in a single place, anyone</dd>
-     needing something edits the global config.
-</dl>
-
-<dl>
-<dt>Cooperative management</dt>
-<dd>Each bundle that needs a specific config, publishes</dd>
-     the config it needs, and another policy handles consolidating the configs
-     and edits the config as necessary.
-</dl>
-
-<p>Let's take a look at an example of each of these patterns. I will start from an
+<p>
+Let&#39;s take a look at an example of each of these patterns. I will start from an
 example recently shared in #cfengine on irc.freenode.net that manages
-=/etc/environment=, <code>/etc/sysstemd.conf</code>, and <code>/etc/profile</code>. I'll first fix it,
+<code class="verbatim">/etc/environment</code>, <code class="verbatim">/etc/sysstemd.conf</code>, and <code class="verbatim">/etc/profile</code>. I&#39;ll first fix it,
 so that it works, then show several different patterns that ac hive the smae
-goal.</p>
-
-<h1 id="the-original-example">The original example</h1>
-
+goal.
+</p>
+<h1 id="headline-1">
+The original example
+</h1>
 <blockquote>
 <p>
-  Hello everyone. I am trying to use set_line_based to set some "global"
-</p>
-<p>
-  environment variables. I've created a bundle that I thought might make it
-</p>
-<p>
-  easier. However, using this bundle more than once only applies the first
-</p>
-<p>
-  'invocation'. Code here: https://pastebin.com/mbU1Bb6i
+Hello everyone. I am trying to use set_line_based to set some &#34;global&#34;
+environment variables. I&#39;ve created a bundle that I thought might make it
+easier. However, using this bundle more than once only applies the first
+&#39;invocation&#39;. Code here: <a href="https://pastebin.com/mbU1Bb6i">https://pastebin.com/mbU1Bb6i</a>
 </p>
 </blockquote>
-
-<p><strong>Example usage:</strong></p>
+<p>
+<strong>Example usage:</strong>
+</p>
+<figure>
+<div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
@@ -175,7 +173,16 @@ goal.</p>
   <span class="p">}</span></code></pre></td></tr></table>
 </div>
 </div>
-<p><strong>Implementation:</strong></p>
+</div>
+<figcaption>
+bundle agent vagrant_vm
+</figcaption>
+</figure>
+<p>
+<strong>Implementation:</strong>
+</p>
+<figure>
+<div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
@@ -207,7 +214,7 @@ goal.</p>
         <span class="p">&#34;</span><span class="nv">etcenv[$(name)]</span><span class="p">&#34;</span> <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;</span><span class="si">$(value)</span><span class="s">&#34;</span><span class="p">;</span>
         <span class="p">&#34;</span><span class="nv">systemconf[DefaultEnvironment=$(name)]</span><span class="p">&#34;</span> <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;</span><span class="si">$(value)</span><span class="s">&#34;</span><span class="p">;</span>
         <span class="p">&#34;</span><span class="nv">etcprofile[export $(name)]</span><span class="p">&#34;</span> <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;</span><span class="si">$(value)</span><span class="s">&#34;</span><span class="p">;</span>
-
+      
     <span class="kd">files</span><span class="p">:</span>
         <span class="s">&#34;/etc/environment&#34;</span>
           <span class="kr">edit_line</span> <span class="o">=&gt;</span> <span class="nf">set_line_based</span><span class="p">(</span><span class="s">&#34;global_env.etcenv&#34;</span><span class="p">,</span> <span class="s">&#34;=&#34;</span><span class="p">,</span> <span class="s">&#34;</span><span class="se">\s</span><span class="s">*=</span><span class="se">\s</span><span class="s">*&#34;</span><span class="p">,</span> <span class="s">&#34;.*&#34;</span><span class="p">,</span> <span class="s">&#34;</span><span class="se">\s</span><span class="s">*#</span><span class="se">\s</span><span class="s">*&#34;</span><span class="p">);</span>
@@ -224,13 +231,21 @@ goal.</p>
   <span class="p">}</span></code></pre></td></tr></table>
 </div>
 </div>
-<p>The reason that only the first actuation of <code>global_env</code> alters the file is
+</div>
+<figcaption>
+bundle agent global_env(name, value)
+</figcaption>
+</figure>
+<p>
+The reason that only the first actuation of <code class="verbatim">global_env</code> alters the file is
 because the promise does not differ. Once a promise has been kept or repaired,
 it is not actuated again within the same agent run. The promise can be made
-unique by including the parameters which are different between actuation's in
+unique by including the parameters which are different between actuation&#39;s in
 the promise. Here we add a handle using both parameters, so that the promise is
-unique across actuation's of the bundle for different values of <code>name</code> and
-=value=.</p>
+unique across actuation&#39;s of the bundle for different values of <code class="verbatim">name</code> and
+<code class="verbatim">value</code>.
+</p>
+<div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt">1
@@ -243,61 +258,77 @@ unique across actuation's of the bundle for different values of <code>name</code
     <span class="kr">handle</span> <span class="o">=&gt;</span> <span class="s">&#34;etc_environment_</span><span class="si">$(name)</span><span class="s">_</span><span class="si">$(value)</span><span class="s">&#34;</span><span class="p">;</span></code></pre></td></tr></table>
 </div>
 </div>
-<p>I will combine them together into the same policy file and make some minor
-changes.</p>
-
+</div>
+<p>
+I will combine them together into the same policy file and make some minor
+changes.
+</p>
 <ul>
-<li>I added handles using the parameters to make sure that the promises are unique</li>
-  across executions with different parameter values. For more on this, see the
-  <a href="https://docs.cfengine.com/docs/3.12/reference-language-concepts-bundles.html" title="language concepts for bundles">language concepts for bundles</a>, it discusses how bundles are not functions.
+<li>
+<p>
+I added handles using the parameters to make sure that the promises are unique
+across executions with different parameter values. For more on this, see the
+<a href="https://docs.cfengine.com/docs/3.12/reference-language-concepts-bundles.html">language concepts for bundles</a>, it discusses how bundles are not functions.
+</p>
+</li>
+<li>
+<p>
+I added <code class="verbatim">bundle agent __main__</code> so that the <code class="verbatim">vagrant_vm</code> bundle will be
+actuated when this policy file is run directly.
+</p>
+</li>
+<li>
+<p>
+I removed the <code class="verbatim">unifi</code> methods promise because it was not provided in the
+original example.
+</p>
+</li>
+<li>
+<p>
+I added reports that show the complete content of the files for easy
+demonstration.
+</p>
+</li>
+<li>
+<p>
+I include the stdlib for my executions, you don&#39;t see it, but know that it&#39;s
+in use.
+</p>
+</li>
+<li>
+<p>
+I guard the <code>systemd daemon-reload</code> with a check that the executing user is
+root because I prototype policy as my own user, inside org-mode using
+<a href="https://github.com/nickanderson/ob-cfengine3">ob-cfengine3</a> (shameless plug).
+</p>
+</li>
+<li>
+<p>
+I add an init bundle to reset as if running from a clean state with no
+pre-existing configuration.
+</p>
+</li>
+<li>
+<p>
+I added body contain <code class="verbatim">exec_owner()</code> because it isn&#39;t in the stdlib.
+</p>
+</li>
+<li>
+<p>
+I added <code class="verbatim">create =&gt; &#34;true&#34;</code> to the files promises.
+</p>
+</li>
+<li>
+<p>
+I prefixed the files promises with <code class="verbatim">/tmp</code>.
+</p>
+</li>
 </ul>
-
-<ul>
-<li>I added <code>bundle agent __main__</code> so that the <code>vagrant_vm</code> bundle will be</li>
-  actuated when this policy file is run directly.
-</ul>
-
-<ul>
-<li>I removed the <code>unifi</code> methods promise because it was not provided in the</li>
-  original example.
-</ul>
-
-<ul>
-<li>I added reports that show the complete content of the files for easy</li>
-  demonstration.
-</ul>
-
-<ul>
-<li>I include the stdlib for my executions, you don't see it, but know that it's</li>
-  in use.
-</ul>
-
-<ul>
-<li>I guard the <code>systemd daemon-reload</code> with a check that the executing user is</li>
-  root because I prototype policy as my own user, inside org-mode using
-  <a href="https://github.com/nickanderson/ob-cfengine3" title="ob-cfengine3">ob-cfengine3</a> (shameless plug).
-</ul>
-
-<ul>
-<li>I add an init bundle to reset as if running from a clean state with no</li>
-  pre-existing configuration.
-</ul>
-
-<ul>
-<li>I added body contain <code>exec_owner()</code> because it isn't in the stdlib.</li>
-</ul>
-
-<ul>
-<li>I added <code>create =&gt; &quot;true&quot;</code> to the files promises.</li>
-</ul>
-
-<ul>
-<li>I prefixed the files promises with <code>/tmp</code>.</li>
-</ul>
-
-<h1 id="competitive-management">Competitive management</h1>
-
-<p>This is a common pattern. I think of this pattern as competitive because each
+<h1 id="headline-2">
+Competitive management
+</h1>
+<p>
+This is a common pattern. I think of this pattern as competitive because each
 service manages what it needs, multiple services may compete for control over
 the same resources like configuration files. Each service only worries about
 itself, this pattern allows for extra settings to exist in the configuration
@@ -306,9 +337,12 @@ multiple agents. This pattern results in files being edited multiple times
 within a single agent run which may be useful in ordering, but results in some
 overhead. Additionally, depending how the service restart on config change is
 managed, may lead to the same service re-starting multiple times in the same
-agent run.</p>
-
-<p><strong>Policy:</strong></p>
+agent run.
+</p>
+<p>
+<strong>Policy:</strong>
+</p>
+<div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
@@ -461,9 +495,12 @@ agent run.</p>
   <span class="p">}</span></code></pre></td></tr></table>
 </div>
 </div>
-<p><strong>Output:</strong></p>
-
-<pre><code>R: CFEngine 3.12.0
+</div>
+<p>
+<strong>Output:</strong>
+</p>
+<pre class="example">
+R: CFEngine 3.12.0
 R: /tmp/etc/environment
 R: PAPERTRAIL_HOST=xxx.papertrailapp.com
 R: PAPERTRAIL_PORT=12345
@@ -491,17 +528,22 @@ R: export CORE_JDBC_URL=jdbc:postgresql://localhost/xxx
 R: export CORE_JDBC_USER=vagrant
 R: export SMS_ENABLED=false
 R: export SMS_AWS_REGION=eu-west-1
-</code></pre>
-
-<p>A common evolution for this policy would be to condense the write operations by
-altering the parameter to pass a map of key value pairs.</p>
-
-<h2 id="condense-the-write-operations-by-changing-the-parameters">Condense the write operations by changing the parameters</h2>
-
-<p>A quick change to the parameters allows multiple key values to be set at a
-single time, reducing IO.</p>
-
-<p><strong>Policy:</strong></p>
+</pre>
+<p>
+A common evolution for this policy would be to condense the write operations by
+altering the parameter to pass a map of key value pairs.
+</p>
+<h2 id="headline-3">
+Condense the write operations by changing the parameters
+</h2>
+<p>
+A quick change to the parameters allows multiple key values to be set at a
+single time, reducing IO.
+</p>
+<p>
+<strong>Policy:</strong>
+</p>
+<div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
@@ -674,9 +716,12 @@ single time, reducing IO.</p>
   <span class="p">}</span></code></pre></td></tr></table>
 </div>
 </div>
-<p><strong>Output:</strong></p>
-
-<pre><code>R: CFEngine 3.12.0
+</div>
+<p>
+<strong>Output:</strong>
+</p>
+<pre class="example">
+R: CFEngine 3.12.0
 R: /tmp/etc/environment
 R: APPOPTICS_USER=ops@whatever.com
 R: PAPERTRAIL_PORT=12345
@@ -704,22 +749,27 @@ R: export SMS_AWS_REGION=eu-west-1
 R: export PAPERTRAIL_PORT=12345
 R: export APPOPTICS_APIKEY=cafebabedeadbeef
 R: export PAPERTRAIL_HOST=xxx.papertrailapp.com
-</code></pre>
-
-<h1 id="centralized-management">Centralized management</h1>
-
-<p>Let's take a look at what a centralized management pattern might look like. This
+</pre>
+<h1 id="headline-4">
+Centralized management
+</h1>
+<p>
+Let&#39;s take a look at what a centralized management pattern might look like. This
 is the simplest pattern, and many times how policies begin as a prototype,
-before evolving into another pattern.</p>
-
-<p>We removed the <code>vagrant_vm</code> bundle, and the uniqness from the promise handles.
-Now, all the configuration data is right in the <code>global_env</code> bundle. We use a
+before evolving into another pattern.
+</p>
+<p>
+We removed the <code class="verbatim">vagrant_vm</code> bundle, and the uniqness from the promise handles.
+Now, all the configuration data is right in the <code class="verbatim">global_env</code> bundle. We use a
 classic array as a generator to produce copies of the key values tailored for
 each config file. An alternative to creating different variables using a classic
-array generator we could copy <code>set_line_based</code> and customize it to allow a
-prefix to be specified.</p>
-
-<p><strong>Policy:</strong></p>
+array generator we could copy <code class="verbatim">set_line_based</code> and customize it to allow a
+prefix to be specified.
+</p>
+<p>
+<strong>Policy:</strong>
+</p>
+<div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
@@ -908,9 +958,12 @@ prefix to be specified.</p>
   <span class="p">}</span></code></pre></td></tr></table>
 </div>
 </div>
-<p><strong>Output:</strong></p>
-
-<pre><code>R: CFEngine 3.12.0
+</div>
+<p>
+<strong>Output:</strong>
+</p>
+<pre class="example">
+R: CFEngine 3.12.0
 R: /tmp/etc/environment
 R: SMS_AWS_REGION=eu-east-2
 R: PAPERTRAIL_HOST=xxx.trailpaperapp.com
@@ -938,20 +991,25 @@ R: export SMS_AWS_REGION=eu-east-2
 R: export PAPERTRAIL_PORT=54321
 R: export APPOPTICS_APIKEY=xxxxiiiiiiixxixxix
 R: export PAPERTRAIL_HOST=xxx.trailpaperapp.com
-</code></pre>
-
-<p>Common evolution's on this policy include moving variable definition into it's
+</pre>
+<p>
+Common evolution&#39;s on this policy include moving variable definition into it&#39;s
 own bundle, separating the data into external files, and since all data is known
-at one time, full file management is an option.</p>
-
-<h2 id="centralized-management-separate-data-bundle">Centralized management separate data bundle</h2>
-
-<p>Here I am sure to have the data bundle converge before the bundle that will use
+at one time, full file management is an option.
+</p>
+<h2 id="headline-5">
+Centralized management separate data bundle
+</h2>
+<p>
+Here I am sure to have the data bundle converge before the bundle that will use
 the data defined there. This separation enables more complex data convergence,
 delegation of control, and especially with more data can improve the readability
-of the policy.</p>
-
-<p><strong>Policy:</strong></p>
+of the policy.
+</p>
+<p>
+<strong>Policy:</strong>
+</p>
+<div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
@@ -1142,9 +1200,12 @@ of the policy.</p>
   <span class="p">}</span></code></pre></td></tr></table>
 </div>
 </div>
-<p><strong>Output:</strong></p>
-
-<pre><code>R: CFEngine 3.12.0
+</div>
+<p>
+<strong>Output:</strong>
+</p>
+<pre class="example">
+R: CFEngine 3.12.0
 R: /tmp/etc/environment
 R: CORE_JDBC_USER=vagrant
 R: PAPERTRAIL_PORT=12345
@@ -1172,15 +1233,19 @@ R: export SMS_AWS_REGION=eu-west-1
 R: export PAPERTRAIL_PORT=12345
 R: export APPOPTICS_APIKEY=cafebabedeadbeef
 R: export PAPERTRAIL_HOST=xxx.papertrailapp.com
-</code></pre>
-
-<h2 id="centralized-management-separate-data-bundle-with-full-file-management">Centralized management separate data bundle with full file management</h2>
-
-<p>Here we remove the init to reset the environment and add full file content
+</pre>
+<h2 id="headline-6">
+Centralized management separate data bundle with full file management
+</h2>
+<p>
+Here we remove the init to reset the environment and add full file content
 management by attaching edit_defaults empty to the files promises. This ensures
-no unknown content in the configuration file.</p>
-
-<p><strong>Policy:</strong></p>
+no unknown content in the configuration file.
+</p>
+<p>
+<strong>Policy:</strong>
+</p>
+<div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
@@ -1279,7 +1344,7 @@ no unknown content in the configuration file.</p>
 <pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">global_env</span>
   <span class="p">{</span>
       <span class="kd">vars</span><span class="p">:</span>
-
+      
         <span class="p">&#34;</span><span class="nv">env_i</span><span class="p">&#34;</span> <span class="kt">slist</span> <span class="o">=&gt;</span> <span class="nf">getindices</span><span class="p">(</span> <span class="s">&#34;app_data.env&#34;</span> <span class="p">);</span>
       <span class="c"># Here we take the original simple key value pair and add different prefixes
 </span><span class="c"></span>      <span class="c"># for the differnt config file types using a classic array as a generator.
@@ -1369,9 +1434,12 @@ no unknown content in the configuration file.</p>
   <span class="p">}</span></code></pre></td></tr></table>
 </div>
 </div>
-<p><strong>Output:</strong></p>
-
-<pre><code>R: CFEngine 3.12.0
+</div>
+<p>
+<strong>Output:</strong>
+</p>
+<pre class="example">
+R: CFEngine 3.12.0
 R: /tmp/etc/environment
 R: PAPERTRAIL_HOST=xxx.trailpaperapp.com
 R: PAPERTRAIL_PORT=22222
@@ -1399,17 +1467,22 @@ R: export SMS_AWS_REGION=eu-west-1
 R: export PAPERTRAIL_PORT=12345
 R: export APPOPTICS_APIKEY=cafebabedeadbeef
 R: export PAPERTRAIL_HOST=xxx.papertrailapp.com
-</code></pre>
-
-<h2 id="centralized-management-separate-data-bundle-with-external-data-files">Centralized management separate data bundle with external data files</h2>
-
-<p>In addition to the benefits derived from separating data bundles external data
+</pre>
+<h2 id="headline-7">
+Centralized management separate data bundle with external data files
+</h2>
+<p>
+In addition to the benefits derived from separating data bundles external data
 files can further enable delegation of control working much more easily with
 external systems, reduces the size of the policy and improve policy readability,
 and eases testing of policy. We can use the json, yaml or env file formats
-interchangeably. CSV is also possible, but different parsing would be required.</p>
-
-<p><strong>/tmp/env.env:</strong></p>
+interchangeably. CSV is also possible, but different parsing would be required.
+</p>
+<p>
+<strong>/tmp/env.env:</strong>
+</p>
+<figure>
+<div class="src src-conf">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-conf" data-lang="conf"><span class="lnt">1
@@ -1432,7 +1505,16 @@ interchangeably. CSV is also possible, but different parsing would be required.<
   SMS_AWS_REGION=&#34;eu-west-1&#34;</code></pre></td></tr></table>
 </div>
 </div>
-<p><strong>/tmp/env.json:</strong></p>
+</div>
+<figcaption>
+/tmp/env.env
+</figcaption>
+</figure>
+<p>
+<strong>/tmp/env.json:</strong>
+</p>
+<figure>
+<div class="src src-json">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-json" data-lang="json"><span class="lnt"> 1
@@ -1459,7 +1541,16 @@ interchangeably. CSV is also possible, but different parsing would be required.<
   <span class="p">}</span></code></pre></td></tr></table>
 </div>
 </div>
-<p><strong>/tmp/env.yaml:</strong></p>
+</div>
+<figcaption>
+/tmp/env.json
+</figcaption>
+</figure>
+<p>
+<strong>/tmp/env.yaml:</strong>
+</p>
+<figure>
+<div class="src src-yaml">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="lnt">1
@@ -1481,10 +1572,18 @@ interchangeably. CSV is also possible, but different parsing would be required.<
 </span><span class="w">  </span>CORE_JDBC_URL<span class="p">:</span><span class="w"> </span>jdbc<span class="p">:</span>postgresql<span class="p">:</span>//localhost/xxx<span class="w">
 </span><span class="w">  </span>CORE_JDBC_USER<span class="p">:</span><span class="w"> </span>vagrant<span class="w">
 </span><span class="w">  </span>SMS_ENABLED<span class="p">:</span><span class="w"> </span><span class="s1">&#39;false&#39;</span><span class="w">
-</span><span class="w">  </span>SMS_AWS_REGION<span class="p">:</span><span class="w"> </span>eu-west-<span class="m">1</span></code></pre></td></tr></table>
+</span><span class="w">  </span>SMS_AWS_REGION<span class="p">:</span><span class="w"> </span>eu-west<span class="m">-1</span></code></pre></td></tr></table>
 </div>
 </div>
-<p><strong>Policy:</strong></p>
+</div>
+<figcaption>
+/tmp/env.yaml
+</figcaption>
+</figure>
+<p>
+<strong>Policy:</strong>
+</p>
+<div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
@@ -1639,9 +1738,12 @@ interchangeably. CSV is also possible, but different parsing would be required.<
   <span class="p">}</span></code></pre></td></tr></table>
 </div>
 </div>
-<p><strong>Output:</strong></p>
-
-<pre><code>R: CFEngine 3.12.0
+</div>
+<p>
+<strong>Output:</strong>
+</p>
+<pre class="example">
+R: CFEngine 3.12.0
 R: /tmp/etc/environment
 R: PAPERTRAIL_HOST=xxx.papertrailapp.com
 R: PAPERTRAIL_PORT=11111
@@ -1669,17 +1771,21 @@ R: export SMS_ENABLEDexport false
 R: export CORE_JDBC_USERexport vagrant
 R: export CORE_JDBC_URLexport jdbc:postgresql://localhost/xxx
 R: export APPOPTICS_APIKEYexport cafebabedeadbeef
-</code></pre>
-
-<h1 id="cooperative-management">Cooperative management</h1>
-
-<p>Here we allow each service to define the key values they need. They <em>advertise/
-or /publish</em> their data by tagging it. In this iteration, since we have full
+</pre>
+<h1 id="headline-8">
+Cooperative management
+</h1>
+<p>
+Here we allow each service to define the key values they need. They <em>advertise</em>
+or <em>publish</em> their data by tagging it. In this iteration, since we have full
 knowledge of the desired state at one time we switched the file promises to be
 templates so that the full content is managed. This helps to avoid unknown
-settings.</p>
-
-<p><strong>Policy:</strong></p>
+settings.
+</p>
+<p>
+<strong>Policy:</strong>
+</p>
+<div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt">  1
@@ -1898,9 +2004,12 @@ settings.</p>
   <span class="p">}</span></code></pre></td></tr></table>
 </div>
 </div>
-<p><strong>Output:</strong></p>
-
-<pre><code>R: /etc/environment
+</div>
+<p>
+<strong>Output:</strong>
+</p>
+<pre class="example">
+R: /etc/environment
 R: PAPERTRAIL_HOST=xxx.papertrailapp.com
 R: PAPERTRAIL_PORT=11111
 R: APPOPTICS_USER=ops@whatever.com
@@ -1927,10 +2036,11 @@ R: export CORE_JDBC_URL=jdbc:postgresql://localhost/xxx
 R: export CORE_JDBC_USER=vagrant
 R: export SMS_ENABLED=false
 R: export SMS_AWS_REGION=eu-west-1
-</code></pre>
-
-<p>As with other patterns moving the data into external files would improve
-delegation of control and tighter integration with other systems.</p>
+</pre>
+<p>
+As with other patterns moving the data into external files would improve
+delegation of control and tighter integration with other systems.
+</p>
 
             </div>
             

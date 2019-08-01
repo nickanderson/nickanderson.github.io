@@ -6,7 +6,7 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.55.6" />
+<meta name="generator" content="Hugo 0.56.3" />
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -68,17 +68,26 @@
             <h1><a href="https://cmdln.org/2018/05/24/what-is-evaluated-first-in-cfengine-3-vars-or-classes/">What is evaluated first in cfengine 3? vars or classes</a></h1>
             <span class="post-date">May 24, 2018 </span>
             <div class="post-content">
-                <p>> How do I know if vars or classes come first during cfengine evaluation?</p>
-
-<h1 id="read-the-documentation-on-normal-order">Read the documentation on Normal Order</h1>
-
-<p>There is a wealth of information on <a href="https://docs.cfengine.com" title="docs.cfengine.com">docs.cfengine.com</a>. Find documentation about
-the <a href="https://docs.cfengine.com/docs/3.10/reference-language-concepts-normal-ordering.html#agent-evaluation-step" title="order of agent promise evaluation">order of agent promise evaluation</a> (Normal Order) in the <a href="https://docs.cfengine.com/docs/3.10/reference-language-concepts-normal-ordering.html#agent-evaluation-step" title="Language Concepts">Language Concepts</a> section
-of the <a href="https://docs.cfengine.com/docs/3.10/reference-language-concepts-normal-ordering.html#agent-evaluation-step" title="Reference manual">Reference manual</a>.</p>
-
-<h1 id="run-the-agent-with-verbose-or-v-and-grep-for-pass-1">Run the agent with --verbose or -v and grep for pass 1.</h1>
-
-<p>Write a test policy that has both vars and classes promises.</p>
+                
+<p>
+&gt; How do I know if vars or classes come first during cfengine evaluation?
+</p>
+<h1 id="headline-1">
+Read the documentation on Normal Order
+</h1>
+<p>
+There is a wealth of information on <a href="https://docs.cfengine.com">docs.cfengine.com</a>. Find documentation about
+the <a href="https://docs.cfengine.com/docs/3.10/reference-language-concepts-normal-ordering.html#agent-evaluation-step">order of agent promise evaluation</a> (Normal Order) in the <a href="https://docs.cfengine.com/docs/3.10/reference-language-concepts-normal-ordering.html#agent-evaluation-step">Language Concepts</a> section
+of the <a href="https://docs.cfengine.com/docs/3.10/reference-language-concepts-normal-ordering.html#agent-evaluation-step">Reference manual</a>.
+</p>
+<h1 id="headline-2">
+Run the agent with –verbose or -v and grep for pass 1.
+</h1>
+<p>
+Write a test policy that has both vars and classes promises.
+</p>
+<figure>
+<div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt">1
@@ -95,13 +104,22 @@ of the <a href="https://docs.cfengine.com/docs/3.10/reference-language-concepts-
   <span class="p">{</span>
    <span class="kd">vars</span><span class="p">:</span>
       <span class="p">&#34;</span><span class="nv">question</span><span class="p">&#34;</span> <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;What comes first, vars or classes?&#34;</span><span class="p">;</span>
-
+  
    <span class="kd">classes</span><span class="p">:</span>
       <span class="s">&#34;grep_verbose_output_for_pass_1&#34;</span> <span class="kr">expression</span> <span class="o">=&gt;</span> <span class="s">&#34;any&#34;</span><span class="p">;</span>
   <span class="p">}</span></code></pre></td></tr></table>
 </div>
 </div>
-<p>Grep the verbose output.</p>
+</div>
+<figcaption>
+<code class="verbatim">/tmp/test.cf</code>
+</figcaption>
+</figure>
+<p>
+Grep the verbose output.
+</p>
+<figure>
+<div class="src src-shell">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
@@ -112,15 +130,25 @@ of the <a href="https://docs.cfengine.com/docs/3.10/reference-language-concepts-
   cf-agent -Kvf /tmp/test.cf <span class="p">|</span> grep <span class="s2">&#34;pass 1&#34;</span></code></pre></td></tr></table>
 </div>
 </div>
-<pre><code> verbose: V: BEGIN variables (pass 1)
+</div>
+<figcaption>
+Grepping for promises that run on the frist pass
+</figcaption>
+</figure>
+<pre class="example">
+ verbose: V: BEGIN variables (pass 1)
  verbose: C: BEGIN classes / conditions (pass 1)
-</code></pre>
-
-<h1 id="write-policy-that-tells-you">Write policy that tells you</h1>
-
-<p>This policy uses conditionals to determine if classes are evaluated before
+</pre>
+<h1 id="headline-3">
+Write policy that tells you
+</h1>
+<p>
+This policy uses conditionals to determine if classes are evaluated before
 variables, or if variables are evaluated first. It shows the determination
-using reports guarded on the class that describes which is evaluated first.</p>
+using reports guarded on the class that describes which is evaluated first.
+</p>
+<figure>
+<div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
@@ -169,12 +197,21 @@ using reports guarded on the class that describes which is evaluated first.</p>
   <span class="p">}</span></code></pre></td></tr></table>
 </div>
 </div>
-<pre><code>R: CFEngine 3.11.0
+</div>
+<figcaption>
+Policy to demonstrate evaluation order in cfengine 3
+</figcaption>
+</figure>
+<pre class="example">
+R: CFEngine 3.11.0
 R: Vars come first
 R: Without intermediary vars: ifelse: Vars come first
-</code></pre>
-
-<p>You can use the <code>with</code> attribute and <code>ifelse()</code> to reduce the policy a bit.</p>
+</pre>
+<p>
+You can use the <code class="verbatim">with</code> attribute and <code class="verbatim">ifelse()</code> to reduce the policy a bit.
+</p>
+<figure>
+<div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
@@ -212,7 +249,7 @@ R: Without intermediary vars: ifelse: Vars come first
 
       <span class="kd">reports</span><span class="p">:</span>
         <span class="s">&#34;CFEngine </span><span class="si">$(sys.cf_version)</span><span class="s">&#34;</span><span class="p">;</span>
-
+      
         <span class="s">&#34;Without intermediary vars: </span><span class="si">$(with)</span><span class="s">&#34;</span>
           <span class="kr">with</span> <span class="o">=&gt;</span> <span class="nf">ifelse</span><span class="p">(</span> <span class="nf">classes_are_first</span><span class="p">,</span> <span class="s">&#34;ifelse: Classes come first&#34;</span><span class="p">,</span>
                           <span class="nf">vars_are_first</span><span class="p">,</span> <span class="s">&#34;ifelse: Vars come first&#34;</span><span class="p">,</span>
@@ -221,9 +258,15 @@ R: Without intermediary vars: ifelse: Vars come first
     <span class="p">}</span></code></pre></td></tr></table>
 </div>
 </div>
-<pre><code>R: CFEngine 3.11.0
+</div>
+<figcaption>
+Policy to demonstrate evaluation order in cfengine 3
+</figcaption>
+</figure>
+<pre class="example">
+R: CFEngine 3.11.0
 R: Without intermediary vars: ifelse: Classes come first
-</code></pre>
+</pre>
 
             </div>
             

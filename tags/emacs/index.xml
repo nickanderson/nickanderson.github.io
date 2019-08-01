@@ -16,8 +16,7 @@
       <pubDate>Tue, 26 Apr 2016 00:00:00 +0000</pubDate>
       
       <guid>https://cmdln.org/2016/04/26/how-i-org-with-spacemacs/</guid>
-      <description>This weekend Neil Watson asked if I could share how I use org-mode with Spacemacs.
-  @cmdln_ Care to share with an Emacs illiterate how you got Spacemacs and  Org-mode to work together? -- @neil_h_watson  First of all, I spend most of my time in a terminal, and vim is ingrained in my muscle memory any time I need to edit a file. While Vim is my goto editor I consider myself just a novice Vim user.</description>
+      <description>This weekend Neil Watson asked if I could share how I use org-mode with Spacemacs.   @cmdln_ Care to share with an Emacs illiterate how you got Spacemacs and Org-mode to work together? – @neil_h_watson   First of all, I spend most of my time in a terminal, and vim is ingrained in my muscle memory any time I need to edit a file. While Vim is my goto editor I consider myself just a novice Vim user.</description>
     </item>
     
   </channel>

@@ -6,7 +6,7 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.55.6" />
+<meta name="generator" content="Hugo 0.56.3" />
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -70,14 +70,17 @@
             <div class="post-content">
                 <blockquote>
 <p>
-  How do I set the timeout with url_get()?
+How do I set the timeout with url_get()?
 </p>
 </blockquote>
-
-<p>As shown in the <a href="https://docs.cfengine.com/latest/reference-functions-url_get.html" title="documentation for url_get()">documentation for url_get()</a>, you set <code>url.timeout</code> in the data container passed for <code>url_get()</code> options.</p>
-
-<p>This example policy shows how to configure the timeout and demonstrates it by
-making a request through <a href="http://www.delay.me" title="www.delay.me">www.delay.me</a>.</p>
+<p>
+As shown in the <a href="https://docs.cfengine.com/latest/reference-functions-url_get.html">documentation for url_get()</a>, you set <code class="verbatim">url.timeout</code> in the data container passed for <code class="verbatim">url_get()</code> options.
+</p>
+<p>
+This example policy shows how to configure the timeout and demonstrates it by
+making a request through <a href="http://www.delay.me">www.delay.me</a>.
+</p>
+<div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
@@ -112,12 +115,15 @@ making a request through <a href="http://www.delay.me" title="www.delay.me">www.
   <span class="p">}</span></code></pre></td></tr></table>
 </div>
 </div>
-<p>This output shows the effect of setting the timeout to <strong>1</strong>.</p>
-
-<pre><code>  *   Trying 54.174.228.92...
+</div>
+<p>
+This output shows the effect of setting the timeout to <strong>1</strong>.
+</p>
+<pre class="example">
+  *   Trying 54.174.228.92...
   * TCP_NODELAY set
   * Connected to www.deelay.me (54.174.228.92) port 80 (#0)
-  &gt; GET /29999/google HTTP/1.1
+  > GET /29999/google HTTP/1.1
   Host: www.deelay.me
   Accept: */*
 
@@ -126,21 +132,22 @@ making a request through <a href="http://www.delay.me" title="www.delay.me">www.
   *   Trying 54.174.228.92...
   * TCP_NODELAY set
   * Connected to www.deelay.me (54.174.228.92) port 80 (#0)
-  &gt; GET /29999/google HTTP/1.1
+  > GET /29999/google HTTP/1.1
   Host: www.deelay.me
   Accept: */*
 
   * Operation timed out after 1000 milliseconds with 0 bytes received
   * Closing connection 0
-  R: {&quot;content&quot;:&quot;&quot;,&quot;error_message&quot;:&quot;Timeout was reached&quot;,&quot;headers&quot;:&quot;&quot;,&quot;rc&quot;:28,&quot;returncode&quot;:0,&quot;success&quot;:false}
-</code></pre>
-
-<p>This output shows the effect of setting the timeout to <strong>2</strong>.</p>
-
-<pre><code>  *   Trying 52.1.117.85...
+  R: {"content":"","error_message":"Timeout was reached","headers":"","rc":28,"returncode":0,"success":false}
+</pre>
+<p>
+This output shows the effect of setting the timeout to <strong>2</strong>.
+</p>
+<pre class="example">
+  *   Trying 52.1.117.85...
   * TCP_NODELAY set
   * Connected to www.deelay.me (52.1.117.85) port 80 (#0)
-  &gt; GET /29999/google HTTP/1.1
+  > GET /29999/google HTTP/1.1
   Host: www.deelay.me
   Accept: */*
 
@@ -149,14 +156,14 @@ making a request through <a href="http://www.delay.me" title="www.delay.me">www.
   *   Trying 52.1.117.85...
   * TCP_NODELAY set
   * Connected to www.deelay.me (52.1.117.85) port 80 (#0)
-  &gt; GET /29999/google HTTP/1.1
+  > GET /29999/google HTTP/1.1
   Host: www.deelay.me
   Accept: */*
 
   * Operation timed out after 2001 milliseconds with 0 bytes received
   * Closing connection 0
-  R: {&quot;content&quot;:&quot;&quot;,&quot;error_message&quot;:&quot;Timeout was reached&quot;,&quot;headers&quot;:&quot;&quot;,&quot;rc&quot;:28,&quot;returncode&quot;:0,&quot;success&quot;:false}
-</code></pre>
+  R: {"content":"","error_message":"Timeout was reached","headers":"","rc":28,"returncode":0,"success":false}
+</pre>
 
             </div>
             

@@ -6,7 +6,7 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.55.6" />
+<meta name="generator" content="Hugo 0.56.3" />
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -68,9 +68,14 @@
             <h1><a href="https://cmdln.org/2018/01/16/setting-permissions-using-uid-username-gid-or-groupname-with-cfengine-3/">Setting permissions using uid, username, gid, or groupname with cfengine 3</a></h1>
             <span class="post-date">Jan 16, 2018 </span>
             <div class="post-content">
-                <p>> Can we use uid/gid to set permissions instead of username and groupname?</p>
-
-<p>Yes, you sure can.</p>
+                <p>
+&gt; Can we use uid/gid to set permissions instead of username and groupname?
+</p>
+<p>
+Yes, you sure can.
+</p>
+<figure>
+<div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
@@ -101,7 +106,7 @@
 <pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">main</span>
   <span class="p">{</span>
     <span class="kd">files</span><span class="p">:</span>
-
+      
        <span class="c"># Here we use username and groupname
 </span><span class="c"></span>        <span class="s">&#34;/tmp/example&#34;</span>
           <span class="kr">create</span> <span class="o">=&gt;</span> <span class="s">&#34;true&#34;</span><span class="p">,</span>
@@ -123,7 +128,16 @@
   <span class="p">}</span></code></pre></td></tr></table>
 </div>
 </div>
-<p>Run the above example:</p>
+</div>
+<figcaption>
+Example (<code class="verbatim">/tmp/perms-example.cf</code>)
+</figcaption>
+</figure>
+<p>
+Run the above example:
+</p>
+<figure>
+<div class="src src-shell">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
@@ -134,12 +148,19 @@
   sudo cf-agent -KIf /tmp/perms-example.cf</code></pre></td></tr></table>
 </div>
 </div>
-<p>Check the results:</p>
-
-<pre><code>    info: Created file '/tmp/example', mode 0600
+</div>
+<figcaption>
+Example execution
+</figcaption>
+</figure>
+<p>
+Check the results:
+</p>
+<pre class="example">
+    info: Created file '/tmp/example', mode 0600
     info: Owner of '/tmp/example' was 0, setting to 1000
     info: Group of '/tmp/example' was 0, setting to 136
-</code></pre>
+</pre>
 
             </div>
             

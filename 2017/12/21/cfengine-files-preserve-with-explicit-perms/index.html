@@ -6,7 +6,7 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.55.6" />
+<meta name="generator" content="Hugo 0.56.3" />
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -70,31 +70,41 @@
             <div class="post-content">
                 <blockquote>
 <p>
-If I have a promise with a <code>copy_from</code> promise where the body specifies that
-</p>
-<p>
-permissions should be preserved and I also have a <code>perms</code> body on the same
-</p>
-<p>
+If I have a promise with a <code class="verbatim">copy_from</code> promise where the body specifies that
+permissions should be preserved and I also have a <code class="verbatim">perms</code> body on the same
 promise what is expected to happen?
 </p>
 </blockquote>
-
-<p>The <code>files</code> type promises documentation describes the <a href="https://docs.cfengine.com/docs/3.10/reference-promise-types-files.html#normal-ordering-of-promise-attributes" title="normal order of files
-promise attributes">normal order of files
-promise attributes</a> during promise actuation.</p>
-
-<p>The documentation notes:</p>
-
+<p>
+The <code class="verbatim">files</code> type promises documentation describes the <a href="https://docs.cfengine.com/docs/3.10/reference-promise-types-files.html#normal-ordering-of-promise-attributes">normal order of files
+promise attributes</a> during promise actuation.
+</p>
+<p>
+The documentation notes:
+</p>
 <ol>
-<li>file presence ( <code>create</code> | <code>copy</code> | <code>link</code> )</li>
-<li>permissions</li>
-<li>file content</li>
+<li>
+<p>
+file presence ( <code class="verbatim">create</code> | <code class="verbatim">copy</code> | <code class="verbatim">link</code> )
+</p>
+</li>
+<li>
+<p>
+permissions
+</p>
+</li>
+<li>
+<p>
+file content
+</p>
+</li>
 </ol>
-
-<p>So the explicitly specified permissions should win in the end. Here is a small
-example illustrating the behavior of a <code>copy_from</code> body that is preserving
-permissions when combined with <code>perms</code> body specifying explicit permissions.</p>
+<p>
+So the explicitly specified permissions should win in the end. Here is a small
+example illustrating the behavior of a <code class="verbatim">copy_from</code> body that is preserving
+permissions when combined with <code class="verbatim">perms</code> body specifying explicit permissions.
+</p>
+<div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
@@ -139,13 +149,16 @@ permissions when combined with <code>perms</code> body specifying explicit permi
 
       <span class="s">&#34;</span><span class="si">$(this.promise_filename)</span><span class="s">.copy_preserve mode = </span><span class="si">$(with)</span><span class="s">&#34;</span> 
         <span class="kr">with</span> <span class="o">=&gt;</span> <span class="nf">filestat</span><span class="p">(</span> <span class="s">&#34;</span><span class="si">$(this.promise_filename)</span><span class="s">.copy_preserve&#34;</span><span class="p">,</span> <span class="nf">permoct</span> <span class="p">);</span>
-
+      
       <span class="s">&#34;</span><span class="si">$(this.promise_filename)</span><span class="s">.copy_preserve_and_perms mode = </span><span class="si">$(with)</span><span class="s">&#34;</span> 
         <span class="kr">with</span> <span class="o">=&gt;</span> <span class="nf">filestat</span><span class="p">(</span> <span class="s">&#34;</span><span class="si">$(this.promise_filename)</span><span class="s">.copy_preserve_and_perms&#34;</span><span class="p">,</span> <span class="nf">permoct</span> <span class="p">);</span>
   <span class="p">}</span></code></pre></td></tr></table>
 </div>
 </div>
-<p>Results in this output:</p>
+</div>
+<p>
+Results in this output:
+</p>
 <pre class="example">
 R: CFEngine 3.11.0
 R: /home/nickanderson/org/cfengine3-8600Hlr mode = 600

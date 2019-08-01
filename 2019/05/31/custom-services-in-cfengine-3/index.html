@@ -6,7 +6,7 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.55.6" />
+<meta name="generator" content="Hugo 0.56.3" />
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -68,27 +68,38 @@
             <h1><a href="https://cmdln.org/2019/05/31/custom-services-in-cfengine-3/">Custom services in CFEngine 3</a></h1>
             <span class="post-date">May 31, 2019 </span>
             <div class="post-content">
-                <p>CFEngine provides the <a href="https://docs.cfengine.com/docs/3.12/reference-promise-types-services.html" title="&lt;code&gt;services&lt;/code&gt; promise type"><code>services</code> promise type</a> to manage the state of a given service. By default, <code>bundle agent standard_services</code> is used for the <code>service_method</code>. The <code>standard_services</code> bundle uses the <code>status</code> command and interprets the return codes according to the <a href="http://refspecs.linuxbase.org/LSB_3.0.0/LSB-PDA/LSB-PDA/iniscrptact.html" title="Linux Standard Base init script actions">Linux Standard Base init script actions</a>. Unfortunately some init scripts do not follow the standards. On sysvinit (non-systemd) hosts, if the status command returns zero when a service is <strong>not</strong> running, cfengine will issue the commands necessary to stop the service every time the agent is run. Similarly, if the status command returns zero when the service is <strong>not</strong> running, cfengine will never issue the commands necessary to start a service.</p>
-
+                <p>
+CFEngine provides the <a href="https://docs.cfengine.com/docs/3.12/reference-promise-types-services.html"><code class="verbatim">services</code> promise type</a> to manage the state of a given service. By default, <code class="verbatim">bundle agent standard_services</code> is used for the <code class="verbatim">service_method</code>. The <code class="verbatim">standard_services</code> bundle uses the <code class="verbatim">status</code> command and interprets the return codes according to the <a href="http://refspecs.linuxbase.org/LSB_3.0.0/LSB-PDA/LSB-PDA/iniscrptact.html">Linux Standard Base init script actions</a>. Unfortunately some init scripts do not follow the standards. On sysvinit (non-systemd) hosts, if the status command returns zero when a service is <strong>not</strong> running, cfengine will issue the commands necessary to stop the service every time the agent is run. Similarly, if the status command returns zero when the service is <strong>not</strong> running, cfengine will never issue the commands necessary to start a service.
+</p>
 <blockquote>
 <p>
-  How can I handle a service status that does not comport with the standard?
+How can I handle a service status that does not comport with the standard?
 </p>
 </blockquote>
-
-<p>One way to deal with misbehaving services is to implement a custom <code>service_method</code> that better understands the specifics for a given service.</p>
-
-<p>For example, the MacAfee Agent status command simply emits the current status for it's services and does not use the expected return codes.</p>
-
-<pre><code>[root@host ~]# /etc/init.d/ma status
+<p>
+One way to deal with misbehaving services is to implement a custom <code class="verbatim">service_method</code> that better understands the specifics for a given service.
+</p>
+<p>
+For example, the MacAfee Agent status command simply emits the current status for it&#39;s services and does not use the expected return codes.
+</p>
+<figure>
+<pre class="example">
+[root@host ~]# /etc/init.d/ma status
 McAfee agent service is not running.
 McAfee common services is not running.
 McAfee compat service is not running.
 [root@host ~]# echo $?
 0
-</code></pre>
-
-<p>First, for testing, create a mock init script that matches the behavior seen in the output above.</p>
+</pre>
+<figcaption>
+McAfee agent service status
+</figcaption>
+</figure>
+<p>
+First, for testing, create a mock init script that matches the behavior seen in the output above.
+</p>
+<figure>
+<div class="src src-sh">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt">1
@@ -103,7 +114,16 @@ McAfee compat service is not running.
   <span class="k">return</span> <span class="m">0</span><span class="p">;</span> <span class="c1"># Return zero means service OK/Running per the LSB</span></code></pre></td></tr></table>
 </div>
 </div>
-<p>Next you can write a custom bundle to implement services based on the McAfee behavior.</p>
+</div>
+<figcaption>
+Mock /etc/init.d/ma
+</figcaption>
+</figure>
+<p>
+Next you can write a custom bundle to implement services based on the McAfee behavior.
+</p>
+<figure>
+<div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
@@ -214,7 +234,16 @@ McAfee compat service is not running.
   <span class="p">}</span></code></pre></td></tr></table>
 </div>
 </div>
-<p>Then you can expose it as a <code>service_method</code> attribute value by defining a <code>service_method</code> body.</p>
+</div>
+<figcaption>
+bundle agent mcafee_services_handler in example_custom_services.cf
+</figcaption>
+</figure>
+<p>
+Then you can expose it as a <code class="verbatim">service_method</code> attribute value by defining a <code class="verbatim">service_method</code> body.
+</p>
+<figure>
+<div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt">1
@@ -234,10 +263,19 @@ McAfee compat service is not running.
                                                    <span class="err">$</span><span class="p">(</span><span class="nf">this</span><span class="err">.</span><span class="nf">promiser</span><span class="p">),</span> <span class="c"># The services promiser
 </span><span class="c"></span>                                                   <span class="err">$</span><span class="p">(</span><span class="nf">this</span><span class="err">.</span><span class="nf">service_policy</span><span class="p">)</span> <span class="c"># The value of service_policy
 </span><span class="c"></span>        <span class="p">);</span>
-  <span class="p">}</span> </code></pre></td></tr></table>
+  <span class="p">}</span></code></pre></td></tr></table>
 </div>
 </div>
-<p>And then you could specify use the services promise</p>
+</div>
+<figcaption>
+body service_method macafee in example_custom_services.cf
+</figcaption>
+</figure>
+<p>
+And then you could specify use the services promise
+</p>
+<figure>
+<div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
@@ -258,6 +296,8 @@ McAfee compat service is not running.
 </span><span class="lnt">16
 </span><span class="lnt">17
 </span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">example_custom_services</span>
@@ -266,11 +306,13 @@ McAfee compat service is not running.
         <span class="s">&#34;ma&#34;</span>
           <span class="c">#service_policy =&gt; &#34;inactive&#34;, # you get to choose the state
 </span><span class="c"></span>          <span class="kr">service_policy</span> <span class="o">=&gt;</span> <span class="s">&#34;active&#34;</span><span class="p">,</span> <span class="c"># you get to choose the state
-</span><span class="c"></span>          <span class="kr">service_method</span> <span class="o">=&gt;</span> <span class="nf">macafee</span><span class="p">;</span>
+</span><span class="c"></span>          <span class="kr">service_method</span> <span class="o">=&gt;</span> <span class="nf">macafee</span><span class="p">,</span>
+          <span class="kr">classes</span> <span class="o">=&gt;</span> <span class="nf">results</span><span class="p">(</span> <span class="s">&#34;namespace&#34;</span><span class="p">,</span> <span class="s">&#34;macafee&#34;</span> <span class="p">);</span>
 
         <span class="s">&#34;my custom service&#34;</span>
           <span class="kr">service_policy</span> <span class="o">=&gt;</span> <span class="s">&#34;kablewy&#34;</span><span class="p">,</span> <span class="c"># you get to choose the state
-</span><span class="c"></span>          <span class="kr">service_method</span> <span class="o">=&gt;</span> <span class="nf">macafee</span><span class="p">;</span>
+</span><span class="c"></span>          <span class="kr">service_method</span> <span class="o">=&gt;</span> <span class="nf">macafee</span><span class="p">,</span>
+          <span class="kr">classes</span> <span class="o">=&gt;</span> <span class="nf">results</span><span class="p">(</span> <span class="s">&#34;namespace&#34;</span><span class="p">,</span> <span class="s">&#34;kablewy&#34;</span> <span class="p">);</span>
 
 
   <span class="p">}</span> 
@@ -280,7 +322,16 @@ McAfee compat service is not running.
   <span class="p">}</span></code></pre></td></tr></table>
 </div>
 </div>
-<p>Execute the policy to see it in action:</p>
+</div>
+<figcaption>
+bundle agent example_custom_services in example_custom_services.cf
+</figcaption>
+</figure>
+<p>
+Execute the policy to see it in action:
+</p>
+<figure>
+<div class="src src-sh">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt">1
@@ -288,18 +339,48 @@ McAfee compat service is not running.
 <td class="lntd">
 <pre class="chroma"><code class="language-sh" data-lang="sh">  ./example_custom_services.cf -KI</code></pre></td></tr></table>
 </div>
-</div><pre class="example">
-    info: Executing 'no timeout' ... '/etc/init.d/ma start'
-  notice: Q: ".../etc/init.d/ma start": McAfee agent service is not running.
-Q: ".../etc/init.d/ma start": McAfee common services is not running.
-Q: ".../etc/init.d/ma start": McAfee compat service is not running.
-    info: Last 3 quoted lines were generated by promiser '/etc/init.d/ma start'
-    info: Completed execution of '/etc/init.d/ma start'
-R: Something is wrong, I only expect to be used with 'ma' aka 'MacAfee Agent' but I am being used with 'my custom service'
-R: Invalid service state. Selected 'kablewy'. Valid states: 'active, inactive'
+</div>
+</div>
+<figcaption>
+Running the policy
+</figcaption>
+</figure>
+<pre class="example">
+   error: Policy failed validation with command '"/home/nickanderson/.cfagent/bin/cf-promises" -c "./example_custom_services.cf"'
+   error: CFEngine was not able to get confirmation of promises from cf-promises, so going to failsafe
+   error: CFEngine failsafe.cf: /home/nickanderson/.cfagent/inputs /home/nickanderson/.cfagent/inputs/failsafe.cf
+    info: Unable to find host '$(sys.policy_hub)' service '$(sys.policy_hub_port)' (Servname not supported for ai_socktype)
+    info: No server is responding on port: $(sys.policy_hub_port)
+    info: Unable to establish connection to '$(sys.policy_hub)'
+   error: No suitable server found
+    info: Promise belongs to bundle 'failsafe_cfe_internal_update' in file '/home/nickanderson/.cfagent/inputs/failsafe.cf' near line 114
+    info: Unable to find host '$(sys.policy_hub)' service '$(sys.policy_hub_port)' (Servname not supported for ai_socktype)
+    info: No server is responding on port: $(sys.policy_hub_port)
+    info: Unable to establish connection to '$(sys.policy_hub)'
+   error: No suitable server found
+    info: Promise belongs to bundle 'failsafe_cfe_internal_update' in file '/home/nickanderson/.cfagent/inputs/failsafe.cf' near line 123
+    info: Unable to find host '$(sys.policy_hub)' service '$(sys.policy_hub_port)' (Servname not supported for ai_socktype)
+    info: No server is responding on port: $(sys.policy_hub_port)
+    info: Unable to establish connection to '$(sys.policy_hub)'
+   error: No suitable server found
+    info: Promise belongs to bundle 'failsafe_cfe_internal_update' in file '/home/nickanderson/.cfagent/inputs/failsafe.cf' near line 137
+    info: Comment is 'If we failed to fetch policy we try again using
+                    the legacy default in case we are fetching policy
+                    from a hub that is not serving mastefiles via a
+                    shortcut.'
+   error: Method 'failsafe_cfe_internal_update' failed in some repairs
+    info: Executing 'no timeout' ... '"/home/nickanderson/.cfagent/bin/cf-agent" -f /home/nickanderson/.cfagent/inputs/update.cf --define failsafe_mode'
+  notice: Q: ".../cf-agent" -f /":    error: No suitable server found
+Q: ".../cf-agent" -f /":    error: No suitable server found
+Q: ".../cf-agent" -f /":    error: No suitable server found
+Q: ".../cf-agent" -f /":    error: Method 'cfe_internal_update_policy_cpv' failed in some repairs
+    info: Last 4 quoted lines were generated by promiser '"/home/nickanderson/.cfagent/bin/cf-agent" -f /home/nickanderson/.cfagent/inputs/update.cf --define failsafe_mode'
+    info: Completed execution of '"/home/nickanderson/.cfagent/bin/cf-agent" -f /home/nickanderson/.cfagent/inputs/update.cf --define failsafe_mode'
+R: Built-in failsafe policy triggered
 </pre>
-
-<p><a href="../../../../example_custom_services.cf" title="Download the full policy">Download the full policy</a></p>
+<p>
+<a href="../../../../example_custom_services.cf">Download the full policy</a>
+</p>
 
             </div>
             

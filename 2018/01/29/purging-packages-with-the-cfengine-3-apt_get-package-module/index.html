@@ -6,7 +6,7 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.55.6" />
+<meta name="generator" content="Hugo 0.56.3" />
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -70,14 +70,15 @@
             <div class="post-content">
                 <blockquote>
 <p>
-  How can I purge a package using the apt_get package_module? <code>policy =&gt; purge</code> doesn't work.
+How can I purge a package using the apt_get package_module? <code class="verbatim">policy =&gt; purge</code> doesn&#39;t work.
 </p>
 </blockquote>
-
-<p><code>present</code> and <code>absent</code> are the package states, <code>purge</code> is an option for package
-manager. You should be able to use the <code>options</code> attribute since the <a href="https://docs.cfengine.com/docs/3.10/reference-promise-types-packages.html#apt_get" title="=apt_get=
-package module">=apt_get=
-package module</a> supports it.</p>
+<p>
+<code class="verbatim">present</code> and <code class="verbatim">absent</code> are the package states, <code class="verbatim">purge</code> is an option for package
+manager. You should be able to use the <code class="verbatim">options</code> attribute since the <a href="https://docs.cfengine.com/docs/3.10/reference-promise-types-packages.html#apt_get"><code class="verbatim">apt_get</code>
+package module</a> supports it.
+</p>
+<div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
@@ -101,10 +102,14 @@ package module</a> supports it.</p>
           <span class="kr">policy</span> <span class="o">=&gt;</span> <span class="s">&#34;absent&#34;</span><span class="p">,</span>
           <span class="kr">package_module</span> <span class="o">=&gt;</span> <span class="nf">apt_get</span><span class="p">,</span>
           <span class="kr">options</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="s">&#34;--remove&#34;</span> <span class="p">};</span>
-  <span class="p">}</span>   </code></pre></td></tr></table>
+  <span class="p">}</span></code></pre></td></tr></table>
 </div>
 </div>
-<p>Note that you can use any Configuration Item as well:</p>
+</div>
+<p>
+Note that you can use any Configuration Item as well:
+</p>
+<div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt">1
@@ -127,6 +132,8 @@ package module</a> supports it.</p>
   <span class="p">}</span></code></pre></td></tr></table>
 </div>
 </div>
+</div>
+
             </div>
             
             <div class="post-comments">

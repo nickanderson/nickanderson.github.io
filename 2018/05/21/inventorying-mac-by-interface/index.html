@@ -6,7 +6,7 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.55.6" />
+<meta name="generator" content="Hugo 0.56.3" />
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -68,7 +68,10 @@
             <h1><a href="https://cmdln.org/2018/05/21/inventorying-mac-by-interface/">Inventorying MAC by Interface</a></h1>
             <span class="post-date">May 21, 2018 </span>
             <div class="post-content">
-                <p>This tip comes from my good friend <a href="https://twitter.com/atsaloli" title="Aleksey Tsalolikin">Aleksey Tsalolikin</a>.</p>
+                <p>
+This tip comes from my good friend <a href="https://twitter.com/atsaloli">Aleksey Tsalolikin</a>.
+</p>
+<div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
@@ -101,14 +104,16 @@
         <span class="p">&#34;</span><span class="nv">iface2mac[$(sys.interfaces)]</span><span class="p">&#34;</span>
           <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;</span><span class="si">$(sys.hardware_mac[$(sys.interfaces)])</span><span class="s">&#34;</span><span class="p">,</span>
           <span class="kr">meta</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="s">&#34;inventory&#34;</span><span class="p">,</span> <span class="s">&#34;attribute_name=</span><span class="si">$(sys.interfaces)</span><span class="s"> MAC&#34;</span> <span class="p">};</span>
-
+      
     <span class="kd">reports</span><span class="p">:</span>
 
         <span class="s">&#34;</span><span class="si">$(sys.interfaces)</span><span class="s"> </span><span class="si">$(iface2mac[$(sys.interfaces)])</span><span class="s">&#34;</span><span class="p">;</span>
 
   <span class="p">}</span></code></pre></td></tr></table>
 </div>
-</div><pre class="example">
+</div>
+</div>
+<pre class="example">
 R: wlan0 5c:e0:c5:9f:f3:8f
 R: virbr0 52:54:00:6b:62:06
 R: docker0 02:42:e6:ee:26:c4

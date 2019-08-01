@@ -6,7 +6,7 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.55.6" />
+<meta name="generator" content="Hugo 0.56.3" />
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -70,24 +70,25 @@
             <div class="post-content">
                 <blockquote>
 <p>
-  How can I define custom access promises for <code>cf-serverd</code> without modifying
-</p>
-<p>
-  vendored policy?
+How can I define custom access promises for <code class="verbatim">cf-serverd</code> without modifying
+vendored policy?
 </p>
 </blockquote>
-
-<p>Commonly, when custom access promises are introduced, they are introduced by
-editing <code>bundle server access_rules</code> in <code>controls/cf_serverd.cf</code> where the
+<p>
+Commonly, when custom access promises are introduced, they are introduced by
+editing <code class="verbatim">bundle server access_rules</code> in <code class="verbatim">controls/cf_serverd.cf</code> where the
 default access rules are promised. Modifying policy maintained upstream can
 complicate future framework upgrades because care must be taken to ensure that
 modifications are preserved. There is no need to edit the vendored policy file
 to define custom access promises. All that is required, is for you to introduce
-a server bundle and make sure it is part of inputs.</p>
-
-<p>Here we define access promises to a custom bundle. This alone should make future
+a server bundle and make sure it is part of inputs.
+</p>
+<p>
+Here we define access promises to a custom bundle. This alone should make future
 framework upgrades easier as you will not have to maintain your custom
-modifications to <code>controls/cf_serverd.cf</code>.</p>
+modifications to <code class="verbatim">controls/cf_serverd.cf</code>.
+</p>
+<div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
@@ -124,24 +125,30 @@ modifications to <code>controls/cf_serverd.cf</code>.</p>
   <span class="p">}</span></code></pre></td></tr></table>
 </div>
 </div>
-<p>Taking it further:</p>
-
+</div>
+<p>
+Taking it further:
+</p>
 <blockquote>
 <p>
-  How can I make this policy data driven?
+How can I make this policy data driven?
 </p>
 </blockquote>
-
-<p><a href="https://docs.cfengine.com/docs/3.12/reference-language-concepts-augments.html" title="Augments">Augments</a> provide a way to set some variables and classes very early during agent
-execution, before policy begins to get it's full 3 pass evaluation. Variables
-defined under the <code>vars</code> key are defined inside the <code>def</code> bundle scope. You can
-leverage this to define <code>def.anything</code> without modifying policy. Note that the
-actual policy for bundle <code>def</code> can override these early settings.</p>
-
-<p>Here we start to leverage augments to populate custom data structures which
-policy can access.</p>
-
-<p>You might think of trying to do something like this:</p>
+<p>
+<a href="https://docs.cfengine.com/docs/3.12/reference-language-concepts-augments.html">Augments</a> provide a way to set some variables and classes very early during agent
+execution, before policy begins to get it&#39;s full 3 pass evaluation. Variables
+defined under the <code class="verbatim">vars</code> key are defined inside the <code class="verbatim">def</code> bundle scope. You can
+leverage this to define <code class="verbatim">def.anything</code> without modifying policy. Note that the
+actual policy for bundle <code class="verbatim">def</code> can override these early settings.
+</p>
+<p>
+Here we start to leverage augments to populate custom data structures which
+policy can access.
+</p>
+<p>
+You might think of trying to do something like this:
+</p>
+<div class="src src-json">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-json" data-lang="json"><span class="lnt"> 1
@@ -168,7 +175,11 @@ policy can access.</p>
   <span class="p">}</span></code></pre></td></tr></table>
 </div>
 </div>
-<p>With a server bundle like this:</p>
+</div>
+<p>
+With a server bundle like this:
+</p>
+<div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
@@ -209,22 +220,28 @@ policy can access.</p>
   <span class="p">}</span></code></pre></td></tr></table>
 </div>
 </div>
-<p>However, you will run into an issue with <code>cf-serverd</code> not being able to expand
-the variable. If you run <code>cf-serverd</code> in verbose mode, you will find the access
-summary say something like this:</p>
-
-<pre><code> verbose: 	Path: /var/cfengine/templates
+</div>
+<p>
+However, you will run into an issue with <code class="verbatim">cf-serverd</code> not being able to expand
+the variable. If you run <code class="verbatim">cf-serverd</code> in verbose mode, you will find the access
+summary say something like this:
+</p>
+<pre class="example">
+ verbose: 	Path: /var/cfengine/templates
  verbose: 		admit: 192.168.33.2/16
  verbose: 	Path: /bin/dash
  verbose: 		admit: 192.168.33.2
  verbose: 	Path: /tmp
- verbose: 		admit: @(def.acl) 
-</code></pre>
-
-<p>You can see that <code>@(def.acl)</code> did not expand. You can work around this by
-shifting where the expansion happens.</p>
-
-<p>In augments, your value can be the name of the variable.</p>
+ verbose: 		admit: @(def.acl)
+</pre>
+<p>
+You can see that <code class="verbatim">@(def.acl)</code> did not expand. You can work around this by
+shifting where the expansion happens.
+</p>
+<p>
+In augments, your value can be the name of the variable.
+</p>
+<div class="src src-json">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-json" data-lang="json"><span class="lnt"> 1
@@ -251,7 +268,11 @@ shifting where the expansion happens.</p>
   <span class="p">}</span></code></pre></td></tr></table>
 </div>
 </div>
-<p>And then move the expansion to policy.</p>
+</div>
+<p>
+And then move the expansion to policy.
+</p>
+<div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
@@ -290,18 +311,22 @@ shifting where the expansion happens.</p>
   <span class="p">}</span></code></pre></td></tr></table>
 </div>
 </div>
-<p>In this policy you can see that I wrapped the admit variable with list notation.
-So it gets expanded to <code>def.acl</code>, and then it's expanded by =cf-serverd=
-(instead of being a raw value).</p>
-
-<p>Verbose output from <code>cf-serverd</code> should now show the elements of the =def.acl=
-list.</p>
-
-<pre><code> verbose: 	Path: /bin/dash
+</div>
+<p>
+In this policy you can see that I wrapped the admit variable with list notation.
+So it gets expanded to <code class="verbatim">def.acl</code>, and then it&#39;s expanded by <code class="verbatim">cf-serverd</code>
+(instead of being a raw value).
+</p>
+<p>
+Verbose output from <code class="verbatim">cf-serverd</code> should now show the elements of the <code class="verbatim">def.acl</code>
+list.
+</p>
+<pre class="example">
+ verbose: 	Path: /bin/dash
  verbose: 		admit: 192.168.33.2
  verbose: 	Path: /tmp
  verbose: 		admit: 192.168.33.2/16
-</code></pre>
+</pre>
 
             </div>
             

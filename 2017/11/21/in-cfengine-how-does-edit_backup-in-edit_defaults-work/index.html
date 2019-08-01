@@ -6,7 +6,7 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.55.6" />
+<meta name="generator" content="Hugo 0.56.3" />
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -68,14 +68,18 @@
             <h1><a href="https://cmdln.org/2017/11/21/in-cfengine-how-does-edit_backup-in-edit_defaults-work/">In CFEngine how does edit_backup in edit_defaults work?</a></h1>
             <span class="post-date">Nov 21, 2017 </span>
             <div class="post-content">
-                <p>This controls if and how files are backed up by <code>cf-agent</code> during file editing
+                <p>
+This controls if and how files are backed up by <code class="verbatim">cf-agent</code> during file editing
 operations. If enabled previous versions of the file will be retained next to
-the file or in <code>default_repository</code> if it is defined in <code>body agent control</code>.
+the file or in <code class="verbatim">default_repository</code> if it is defined in <code class="verbatim">body agent control</code>.
 Note as it relates to edited files it is only applicable when combined with
-=edit_line=. It has no effect when used with <code>edit_template</code> or <code>copy_from</code>.</p>
-
-<p>A value of <code>true</code> (the default behavior) will result in the agent retaining the
-previous version of the file suffixed with <code>.cf-before-edit</code>.</p>
+<code class="verbatim">edit_line</code>. It has no effect when used with <code class="verbatim">edit_template</code> or <code class="verbatim">copy_from</code>.
+</p>
+<p>
+A value of <code class="verbatim">true</code> (the default behavior) will result in the agent retaining the
+previous version of the file suffixed with <code class="verbatim">.cf-before-edit</code>.
+</p>
+<div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
@@ -118,22 +122,27 @@ previous version of the file suffixed with <code>.cf-before-edit</code>.</p>
 
     <span class="kd">vars</span><span class="p">:</span>
       <span class="p">&#34;</span><span class="nv">example_files</span><span class="p">&#34;</span> <span class="kt">slist</span> <span class="o">=&gt;</span> <span class="nf">sort</span><span class="p">(</span><span class="nf">lsdir</span><span class="p">(</span> <span class="s">&#34;/tmp/&#34;</span><span class="p">,</span> <span class="s">&#34;example_edit_backup_true.*&#34;</span><span class="p">,</span> <span class="nf">false</span><span class="p">),</span> <span class="nf">lex</span><span class="p">);</span>
-
+      
     <span class="kd">reports</span><span class="p">:</span>
       <span class="s">&#34;</span><span class="si">$(example_files)</span><span class="s">&#34;</span><span class="p">;</span>
   <span class="p">}</span></code></pre></td></tr></table>
 </div>
-</div><pre class="example">
+</div>
+</div>
+<pre class="example">
 R: example_edit_backup_true
 R: example_edit_backup_true.cf-before-edit
 </pre>
-
-<p>A value of <code>false</code> will result in no retention of the original file.</p>
-
-<p>A value of <code>timestamp</code> will result in the original file be suffixed with the
+<p>
+A value of <code class="verbatim">false</code> will result in no retention of the original file.
+</p>
+<p>
+A value of <code class="verbatim">timestamp</code> will result in the original file be suffixed with the
 epoch and the canonified form of the date when the file was changed followed by
-=.cf-before-edit=. For example
-=_1511292441_Tue_Nov_21_13_27_22_2017.cf-before-edit=.</p>
+<code class="verbatim">.cf-before-edit</code>. For example
+<code class="verbatim">_1511292441_Tue_Nov_21_13_27_22_2017.cf-before-edit</code>.
+</p>
+<div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
@@ -176,20 +185,24 @@ epoch and the canonified form of the date when the file was changed followed by
 
     <span class="kd">vars</span><span class="p">:</span>
       <span class="p">&#34;</span><span class="nv">example_files</span><span class="p">&#34;</span> <span class="kt">slist</span> <span class="o">=&gt;</span> <span class="nf">lsdir</span><span class="p">(</span> <span class="s">&#34;/tmp/&#34;</span><span class="p">,</span> <span class="s">&#34;example_edit_backup_timestamp.*&#34;</span><span class="p">,</span> <span class="nf">false</span><span class="p">);</span>
-
+      
     <span class="kd">reports</span><span class="p">:</span>
       <span class="s">&#34;</span><span class="si">$(example_files)</span><span class="s">&#34;</span><span class="p">;</span>
   <span class="p">}</span></code></pre></td></tr></table>
 </div>
-</div><pre class="example">
+</div>
+</div>
+<pre class="example">
 R: example_edit_backup_timestamp
 R: example_edit_backup_timestamp_1511300904_Tue_Nov_21_15_48_25_2017.cf-before-edit
 </pre>
-
-<p>A value of <code>rotate</code> will result in the original file be suffixed with
-=.cf-before-edit= followed by an integer representing the nth previous version
-of the file. The number of rotations is managed by the <code>rotate</code> attribute in
-=edit_defaults=.</p>
+<p>
+A value of <code class="verbatim">rotate</code> will result in the original file be suffixed with
+<code class="verbatim">.cf-before-edit</code> followed by an integer representing the nth previous version
+of the file. The number of rotations is managed by the <code class="verbatim">rotate</code> attribute in
+<code class="verbatim">edit_defaults</code>.
+</p>
+<div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
@@ -249,7 +262,9 @@ of the file. The number of rotations is managed by the <code>rotate</code> attri
       <span class="s">&#34;</span><span class="si">$(example_files)</span><span class="s">&#34;</span><span class="p">;</span>
   <span class="p">}</span></code></pre></td></tr></table>
 </div>
-</div><pre class="example">
+</div>
+</div>
+<pre class="example">
 R: example_edit_backup_rotate
 R: example_edit_backup_rotate.cf-before-edit.1
 R: example_edit_backup_rotate.cf-before-edit.2
