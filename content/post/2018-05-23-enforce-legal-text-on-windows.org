@@ -1,7 +1,7 @@
 #+Title: How to enforce legalese on windows login with cfengine 3
 #+AUTHOR: Nick Anderson
 #+DATE: 2018-05-23T10:15:30-06:00
-#+TAGS: cfengine
+#+TAGS[]: cfengine
 #+DRAFT: false
 
 > How can I ensure that a notice containing legal text is presented to windows users during login?

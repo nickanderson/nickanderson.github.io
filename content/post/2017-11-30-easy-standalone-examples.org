@@ -1,7 +1,7 @@
 #+Title: Easiest way to make standalone examples in CFEngine 3
 #+AUTHOR: Nick Anderson
 #+DATE: 2017-11-30
-#+TAGS: cfengine3
+#+TAGS[]: cfengine3
 #+DRAFT: false
 
 #+BEGIN_QUOTE

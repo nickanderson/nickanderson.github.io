@@ -1,7 +1,7 @@
 #+Title: Setting permissions using uid, username, gid, or groupname with cfengine 3
 #+AUTHOR: Nick Anderson
 #+DATE: 2018-01-16
-#+TAGS: cfengine
+#+TAGS[]: cfengine
 #+DRAFT: false
 
 > Can we use uid/gid to set permissions instead of username and groupname?

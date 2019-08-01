@@ -1,7 +1,7 @@
 #+Title: Are CFEgine classes automatically canonified?
 #+AUTHOR: Nick Anderson
 #+DATE: 2017-11-20
-#+TAGS: cfengine
+#+TAGS[]: cfengine
 #+DRAFT: false
 
 #+BEGIN_QUOTE

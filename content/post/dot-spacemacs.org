@@ -1,7 +1,7 @@
 #+Title: dot spacemacs
 #+AUTHOR: Nick Anderson
 #+DATE: 2017-11-25
-#+TAGS: spacemacs
+#+TAGS[]: spacemacs
 #+DRAFT: false
 
 When I first tried using Emacs it was to play with Orgmode. I loved Orgmode but

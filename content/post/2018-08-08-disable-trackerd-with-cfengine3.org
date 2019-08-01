@@ -1,7 +1,7 @@
 #+Title: Disabling desktop search (trackerd) with cfengine 3
 #+AUTHOR: Nick Anderson
 #+DATE: 2018-08-08
-#+TAGS: cfengine3
+#+TAGS[]: cfengine3
 #+DRAFT: false
 
 Recently I noticed that my CPU was pretty busy with the desktop search indexing,

@@ -1,7 +1,7 @@
 #+Title: Automatically define classes for every promise with CFEngine 3
 #+AUTHOR: Nick Anderson
 #+DATE: 2018-10-22
-#+TAGS: cfengine3
+#+TAGS[]: cfengine3
 #+DRAFT: false
 
 In CFEngine /classes/ are used for decision making. Classes can be defined as

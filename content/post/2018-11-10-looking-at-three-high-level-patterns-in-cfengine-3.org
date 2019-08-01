@@ -1,7 +1,7 @@
 #+Title: Looking at three high level patterns in CFEngine 3
 #+AUTHOR: Nick Anderson
 #+DATE: 2018-11-10
-#+TAGS: cfengine3 cfengine
+#+TAGS[]: cfengine3 cfengine
 #+DRAFT: false
 
 How do you deal with config files that need different settings based on various

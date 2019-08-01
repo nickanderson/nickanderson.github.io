@@ -1,7 +1,7 @@
 #+Title: vars can't use ifelapsed
 #+AUTHOR: Nick Anderson
 #+DATE: 2017-12-26
-#+TAGS: cfengine3
+#+TAGS[]: cfengine3
 #+DRAFT: false
 
 #+BEGIN_QUOTE

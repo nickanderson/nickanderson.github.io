@@ -1,7 +1,7 @@
 #+Title: Hacking custom variables for additional augments in CFEngine
 #+AUTHOR: Nick Anderson
 #+DATE: 2018-11-13
-#+TAGS: cfengine3 cfengine
+#+TAGS[]: cfengine3 cfengine
 #+DRAFT: false
 
 CFEngine 3.12.0 introduced the [[https://docs.cfengine.com/docs/3.12/reference-language-concepts-augments.html#augments][/augments/ key]] to the [[https://docs.cfengine.com/docs/3.12/reference-language-concepts-augments.html#augments][Augments file format]]. If

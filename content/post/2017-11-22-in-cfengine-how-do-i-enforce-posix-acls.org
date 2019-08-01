@@ -1,7 +1,7 @@
 #+Title: In CFEngine how do I enforce POSIX ACLs?
 #+AUTHOR: Nick Anderson
 #+DATE: 2017-11-22
-#+TAGS: cfengine
+#+TAGS[]: cfengine
 #+DRAFT: false
 
 When using the acl_method =overwrite= you must supply =user=, =group=, =all= (

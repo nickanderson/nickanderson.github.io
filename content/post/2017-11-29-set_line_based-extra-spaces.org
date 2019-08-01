@@ -1,7 +1,7 @@
 #+Title: Using set_line_based with extra spaces
 #+AUTHOR: Nick Anderson
 #+DATE: 2017-11-29T12:10:44-06:00
-#+TAGS: cfengine
+#+TAGS[]: cfengine
 #+DRAFT: false
 
 How can I use =set_line_based= to manage a space separated file like =/etc/services= but include more than one space to make the config a bit easier to read.

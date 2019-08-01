@@ -1,7 +1,7 @@
 #+Title: Purging packages with the cfengine 3 apt_get package module
 #+AUTHOR: Nick Anderson
 #+DATE: 2018-01-29T17:25:25-06:00
-#+TAGS: cfengine
+#+TAGS[]: cfengine
 #+DRAFT: false
 
 #+BEGIN_QUOTE

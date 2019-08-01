@@ -1,7 +1,7 @@
 #+Title: Clearing POSIX ACLs from a file with CFEngine
 #+AUTHOR: Nick Anderson
 #+DATE: 2019-03-18
-#+TAGS: cfengine3
+#+TAGS[]: cfengine3
 #+DRAFT: false
 
 From #cfengine on irc.freenode.net:

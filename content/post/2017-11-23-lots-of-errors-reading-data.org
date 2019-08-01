@@ -1,7 +1,7 @@
 #+Title: Why does my policy generate so many readjson() errors and how can I prevent them?
 #+AUTHOR: Nick Anderson
 #+DATE: 2017-11-23
-#+TAGS: cfengine
+#+TAGS[]: cfengine
 #+DRAFT: false
 
 #+begin_example

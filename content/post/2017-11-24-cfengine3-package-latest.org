@@ -1,7 +1,7 @@
 #+Title: How to keep a package up to date in CFEngine 3
 #+AUTHOR: Nick Anderson
 #+DATE: 2017-11-24T12:48:53-06:00
-#+TAGS: cfengine
+#+TAGS[]: cfengine
 #+DRAFT: false
 
 > How can I make sure a package is always up to date?

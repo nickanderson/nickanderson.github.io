@@ -1,7 +1,7 @@
 #+Title: How can I access the current KEY when iterating a dict in mustache from cfengine
 #+AUTHOR: Nick Anderson
 #+DATE: 2019-05-20
-#+TAGS: cfengine
+#+TAGS[]: cfengine
 
 #+BEGIN_QUOTE
 Can I access the current KEY when iterating in Mustache?

@@ -1,7 +1,7 @@
 #+Title: No Klf 2018 :`(
 #+AUTHOR: Nick Anderson
 #+DATE: 2018-01-05T13:35:04-06:00
-#+TAGS: linux
+#+TAGS[]: linux
 #+DRAFT: false
 
 Anyone interested in organizing [[http://kansaslinuxfest.org/][Kansas Linux Fest]] in 2018?

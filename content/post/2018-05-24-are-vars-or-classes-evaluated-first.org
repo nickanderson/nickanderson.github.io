@@ -1,7 +1,7 @@
 #+Title: What is evaluated first in cfengine 3? vars or classes
 #+AUTHOR: Nick Anderson
 #+DATE: 2018-05-24T10:14:30-06:00
-#+TAGS: cfengine
+#+TAGS[]: cfengine
 #+DRAFT: false
 
 > How do I know if vars or classes come first during cfengine evaluation?

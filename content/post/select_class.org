@@ -1,7 +1,7 @@
 #+Title: Self organizing groups with select_class in cfengine 3
 #+AUTHOR: Nick Anderson
 #+DATE: 2017-12-04T10:12:44-06:00
-#+TAGS: cfengine
+#+TAGS[]: cfengine
 #+DRAFT: false
 
 > How can my hosts self organize into different groups?

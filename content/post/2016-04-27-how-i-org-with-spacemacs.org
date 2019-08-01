@@ -1,7 +1,7 @@
 #+Title: How I org with spacemacs
 #+AUTHOR: Nick Anderson
 #+DATE: 2016-04-26
-#+TAGS: spacemacs emacs org-mode
+#+TAGS[]: spacemacs emacs org-mode
 #+DRAFT: false
 
 This weekend Neil Watson [[https://twitter.com/neil_h_watson/status/723927518420570112][asked if I could share how I use org-mode with

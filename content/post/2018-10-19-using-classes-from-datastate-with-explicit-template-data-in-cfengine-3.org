@@ -1,7 +1,7 @@
 #+Title: Using classes from datastate() with explicit template_data for rendering mustache in cfengine 3
 #+AUTHOR: Nick Anderson
 #+DATE: 2018-10-19
-#+TAGS: cfengine3
+#+TAGS[]: cfengine3
 #+DRAFT: false
 
 This was [[https://groups.google.com/d/msg/help-cfengine/VktwAdsQ3zc/FplxWLezAwAJ][asked on the CFEngine Help Mailing list]] on October 1st 2018.

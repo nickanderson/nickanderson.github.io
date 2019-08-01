@@ -1,7 +1,7 @@
 #+Title: Automatically remediate corruption in lmdb with cfengine 3
 #+AUTHOR: Nick Anderson
 #+DATE: 2018-05-25T10:14:30-06:00
-#+TAGS: cfengine
+#+TAGS[]: cfengine
 #+DRAFT: false
 
 > How can I automatically remediate the issue where corruption in LMDB causes the agent to crash?
