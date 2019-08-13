@@ -5,10 +5,19 @@
     <link>https://cmdln.org/</link>
     <description>Recent content on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 31 May 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 13 Aug 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://cmdln.org/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>How to use the not() function inside a classes type promise or</title>
+      <link>https://cmdln.org/2019/08/13/how-to-use-the-not-function-inside-a-classes-type-promise-or/</link>
+      <pubDate>Tue, 13 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://cmdln.org/2019/08/13/how-to-use-the-not-function-inside-a-classes-type-promise-or/</guid>
+      <description>How can I use or with a classes type promise where an element is negated with not().  It&amp;#39;s not currently possible to use not() directly within an or classes promise since it returns a string and not boolean.  1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20  bundle agent main { vars: &amp;#34;f&amp;#34; string =&amp;gt; &amp;#34;/tmp/missing&amp;#34;; classes: &amp;#34;missing&amp;#34; or =&amp;gt; { not( fileexists( $(f) ) ) }; &amp;#34;exists&amp;#34; or =&amp;gt; { fileexists( $(f) ) }; reports: missing:: &amp;#34;$(f)is missing&amp;#34;; exists:: &amp;#34;$(f)is present&amp;#34;; }     Using not() inside a classes or results in syntax error    Running the policy results in a syntax error error: Function does not return the required type &#34;</description>
+    </item>
     
     <item>
       <title>Custom services in CFEngine 3</title>
