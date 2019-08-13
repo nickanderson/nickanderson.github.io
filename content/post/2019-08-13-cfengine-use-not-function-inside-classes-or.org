@@ -1,0 +1,79 @@
+#+Title: How to use the not() function inside a classes type promise or
+#+AUTHOR: Nick Anderson
+#+DATE: 2019-08-13
+#+TAGS[]: cfengine3
+#+DRAFT: false
+
+How can I use [[https://docs.cfengine.com/docs/3.12/reference-promise-types-classes.html#or][/or/]] with a classes type promise where an element is negated with [[https://docs.cfengine.com/docs/3.12/reference-functions-not.html][/not()/]].
+
+It's not currently possible to use /not()/ directly within an /or/ classes
+promise since it returns a string and not boolean.
+
+#+CAPTION: Using not() inside a classes or results in syntax error
+#+BEGIN_SRC cfengine3 :include-stdlib t :log-level info :exports both
+   bundle agent main
+   {
+     vars:
+       "f" string => "/tmp/missing"; 
+
+     classes:
+
+       "missing"
+         or => { not( fileexists( $(f) ) ) };
+      
+       "exists"
+         or => { fileexists( $(f) ) };
+
+      reports:
+       missing:: 
+        "$(f) is missing";
+
+       exists:: 
+        "$(f) is present";
+  }
+#+END_SRC
+
+Running the policy results in a syntax error
+
+#+RESULTS:
+#+begin_example
+   error: Function does not return the required type
+     "missing" or => { not( fileexists( $(f) ) ) };
+                                                  ^
+   error: There are syntax errors in policy files
+#+end_example
+
+Since the string returned by /not()/ is =any=, if it evaluates to false and
+=!any= if it evaluates to true we can use /classify()/ to see if the result
+matches a currently defined class.
+
+#+CAPTION: Use classify to /cast/ the result of not as a boolean_
+#+BEGIN_SRC cfengine3 :include-stdlib t :log-level info :exports both
+  bundle agent main
+  {
+    vars:
+      "f" string => "/tmp/missing"; 
+      
+    classes:
+      "missing"
+        or => {
+                classify( not( fileexists( $(f) ) ) )
+              };
+
+      "exists"
+        or => { fileexists( $(f) )  };
+
+      reports:
+       missing:: 
+        "$(f) is missing";
+
+       exists:: 
+        "$(f) is present";
+  }
+#+END_SRC
+
+Now the policy works as expected.
+
+#+RESULTS:
+: R: /tmp/missing is missing
+
