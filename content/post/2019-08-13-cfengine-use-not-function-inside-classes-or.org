@@ -47,7 +47,7 @@ Since the string returned by /not()/ is =any=, if it evaluates to false and
 =!any= if it evaluates to true we can use /classify()/ to see if the result
 matches a currently defined class.
 
-#+CAPTION: Use classify to /cast/ the result of not as a boolean_
+#+CAPTION: Use classify to /cast/ the result of not as a boolean
 #+BEGIN_SRC cfengine3 :include-stdlib t :log-level info :exports both
   bundle agent main
   {
