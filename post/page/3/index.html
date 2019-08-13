@@ -75,6 +75,19 @@
 				<li>
 					<div class="post-list-item">
 						<div class="post-header">
+							<h4 class="post-link"><a href="https://cmdln.org/2018/01/29/purging-packages-with-the-cfengine-3-apt_get-package-module/">Purging packages with the cfengine 3 apt_get package module</a></h4>
+							<h4 class="post-date">Jan 29, 2018</h4>
+						</div>
+						<div class="post-summary"><p>  How can I purge a package using the apt_get package_module? policy =&gt; purge doesn&#39;t work.   present and absent are the package states, purge is an option for package manager. You should be able to use the options attribute since the apt_get package module supports it. 1 2 3 4 5 6 7 8 9 10  bundle agent main { packages: # Purging a package using the --purge option  &#34;screen&#34; policy =&gt; &#34;absent&#34;, package_module =&gt; apt_get, options =&gt; { &#34;--remove&#34; }; }     Note that you can use any Configuration Item as well: 1 2 3 4 5 6 7 8  bundle agent main { # Purging a package using the Configuration Item option  &#34;screen&#34; policy =&gt; &#34;absent&#34;, package_module =&gt; apt_get, options =&gt; { &#34;-o&#34;, &#34;APT::Get::Purge=true&#34; }; }    </p></div>
+						<div class="post-list-footer text-center">
+							<a href="https://cmdln.org/2018/01/29/purging-packages-with-the-cfengine-3-apt_get-package-module/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
 							<h4 class="post-link"><a href="https://cmdln.org/2018/01/28/timeboxing-policy-in-cfengine3/">Timeboxing Policy in Cfengine3</a></h4>
 							<h4 class="post-date">Jan 28, 2018</h4>
 						</div>
@@ -189,19 +202,6 @@
 					</div>
 				</li>
 			
-				<li>
-					<div class="post-list-item">
-						<div class="post-header">
-							<h4 class="post-link"><a href="https://cmdln.org/2017/12/01/keep-table-of-contents-up-to-date-in-org-mode/">Keep Table of Contents Up to Date in Org Mode</a></h4>
-							<h4 class="post-date">Dec 1, 2017</h4>
-						</div>
-						<div class="post-summary"><p> It&#39;s easy to export an org document to html and get a table of contents, but sometimes it&#39;s nice to have a table of contents inside of an org-mode file. The [[https://github.com/snosov1/toc-org][toc-org]] package makes this automatic.  Simply tag a headline with :TOC: and the headline will auto fill an index with all following headlines.  &lt;img src=&#34;&#34; alt=&#34;&#34; width=&#34;100%&#34;/&gt; </p></div>
-						<div class="post-list-footer text-center">
-							<a href="https://cmdln.org/2017/12/01/keep-table-of-contents-up-to-date-in-org-mode/">Read More</a>
-						</div>
-					</div>
-				</li>
-			
 			</ul>
             
 
@@ -293,12 +293,15 @@
       ><a href="/post/page/25/">25</a></li>
       
       <li
+      ><a href="/post/page/26/">26</a></li>
+      
+      <li
       >
           <a href="/post/page/4/" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
       </li>
       
       <li>
-          <a href="/post/page/25/" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+          <a href="/post/page/26/" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
       </li>
       
     </ul>
