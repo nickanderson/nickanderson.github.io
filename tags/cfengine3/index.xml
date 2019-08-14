@@ -5,10 +5,19 @@
     <link>https://cmdln.org/tags/cfengine3/</link>
     <description>Recent content in cfengine3 on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 13 Aug 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 14 Aug 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://cmdln.org/tags/cfengine3/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Reversing key values of a JSON dict in CFEngine with jq</title>
+      <link>https://cmdln.org/2019/08/14/reversing-key-values-of-a-json-dict-in-cfengine-with-jq/</link>
+      <pubDate>Wed, 14 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://cmdln.org/2019/08/14/reversing-key-values-of-a-json-dict-in-cfengine-with-jq/</guid>
+      <description>Do you have any tips on reversing a json dictionary?  I have a map of IPv4 addresses to environments and I would like to have a map of environments to IPv4s.  1 2 3 4 5 6 7  { &amp;#34;192.0.2.131&amp;#34; : &amp;#34;TEST-NET-1&amp;#34;, &amp;#34;198.51.100.151&amp;#34; : &amp;#34;TEST-NET-2&amp;#34;, &amp;#34;198.51.100.146&amp;#34; : &amp;#34;TEST-NET-2&amp;#34;, &amp;#34;203.0.113.146&amp;#34; : &amp;#34;TEST-NET-3&amp;#34;, &amp;#34;203.0.113.21&amp;#34; : &amp;#34;TEST-NET-3&amp;#34; }      Would become:  1 2 3 4 5 6 7 8 9 10 11 12 13  { &amp;#34;TEST-NET-1&amp;#34;: [ &amp;#34;192.</description>
+    </item>
     
     <item>
       <title>How to use the not() function inside a classes type promise or</title>

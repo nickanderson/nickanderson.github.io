@@ -5,7 +5,7 @@
     <link>https://cmdln.org/tags/</link>
     <description>Recent content in Tags on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 13 Aug 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 14 Aug 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://cmdln.org/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -13,7 +13,7 @@
     <item>
       <title>cfengine3</title>
       <link>https://cmdln.org/tags/cfengine3/</link>
-      <pubDate>Tue, 13 Aug 2019 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 14 Aug 2019 00:00:00 +0000</pubDate>
       
       <guid>https://cmdln.org/tags/cfengine3/</guid>
       <description></description>
@@ -587,24 +587,6 @@
     </item>
     
     <item>
-      <title>PIPA</title>
-      <link>https://cmdln.org/tags/pipa/</link>
-      <pubDate>Wed, 18 Jan 2012 15:11:24 +0000</pubDate>
-      
-      <guid>https://cmdln.org/tags/pipa/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>SOPA</title>
-      <link>https://cmdln.org/tags/sopa/</link>
-      <pubDate>Wed, 18 Jan 2012 15:11:24 +0000</pubDate>
-      
-      <guid>https://cmdln.org/tags/sopa/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>blackout</title>
       <link>https://cmdln.org/tags/blackout/</link>
       <pubDate>Wed, 18 Jan 2012 15:11:24 +0000</pubDate>
@@ -619,6 +601,24 @@
       <pubDate>Wed, 18 Jan 2012 15:11:24 +0000</pubDate>
       
       <guid>https://cmdln.org/tags/freedom/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>PIPA</title>
+      <link>https://cmdln.org/tags/pipa/</link>
+      <pubDate>Wed, 18 Jan 2012 15:11:24 +0000</pubDate>
+      
+      <guid>https://cmdln.org/tags/pipa/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SOPA</title>
+      <link>https://cmdln.org/tags/sopa/</link>
+      <pubDate>Wed, 18 Jan 2012 15:11:24 +0000</pubDate>
+      
+      <guid>https://cmdln.org/tags/sopa/</guid>
       <description></description>
     </item>
     
@@ -1064,20 +1064,20 @@
     </item>
     
     <item>
-      <title>XenServer</title>
-      <link>https://cmdln.org/tags/xenserver/</link>
-      <pubDate>Tue, 06 Apr 2010 17:53:36 +0000</pubDate>
-      
-      <guid>https://cmdln.org/tags/xenserver/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>cli</title>
       <link>https://cmdln.org/tags/cli/</link>
       <pubDate>Tue, 06 Apr 2010 17:53:36 +0000</pubDate>
       
       <guid>https://cmdln.org/tags/cli/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>XenServer</title>
+      <link>https://cmdln.org/tags/xenserver/</link>
+      <pubDate>Tue, 06 Apr 2010 17:53:36 +0000</pubDate>
+      
+      <guid>https://cmdln.org/tags/xenserver/</guid>
       <description></description>
     </item>
     
@@ -1325,20 +1325,20 @@
     </item>
     
     <item>
-      <title>XenCenter</title>
-      <link>https://cmdln.org/tags/xencenter/</link>
-      <pubDate>Tue, 19 Jan 2010 18:07:28 +0000</pubDate>
-      
-      <guid>https://cmdln.org/tags/xencenter/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>virtualization</title>
       <link>https://cmdln.org/tags/virtualization/</link>
       <pubDate>Tue, 19 Jan 2010 18:07:28 +0000</pubDate>
       
       <guid>https://cmdln.org/tags/virtualization/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>XenCenter</title>
+      <link>https://cmdln.org/tags/xencenter/</link>
+      <pubDate>Tue, 19 Jan 2010 18:07:28 +0000</pubDate>
+      
+      <guid>https://cmdln.org/tags/xencenter/</guid>
       <description></description>
     </item>
     
@@ -2675,15 +2675,6 @@
     </item>
     
     <item>
-      <title>NetworkManager</title>
-      <link>https://cmdln.org/tags/networkmanager/</link>
-      <pubDate>Sun, 06 Apr 2008 04:38:29 +0000</pubDate>
-      
-      <guid>https://cmdln.org/tags/networkmanager/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>knetworkmanager</title>
       <link>https://cmdln.org/tags/knetworkmanager/</link>
       <pubDate>Sun, 06 Apr 2008 04:38:29 +0000</pubDate>
@@ -2698,6 +2689,15 @@
       <pubDate>Sun, 06 Apr 2008 04:38:29 +0000</pubDate>
       
       <guid>https://cmdln.org/tags/kubuntu/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>NetworkManager</title>
+      <link>https://cmdln.org/tags/networkmanager/</link>
+      <pubDate>Sun, 06 Apr 2008 04:38:29 +0000</pubDate>
+      
+      <guid>https://cmdln.org/tags/networkmanager/</guid>
       <description></description>
     </item>
     

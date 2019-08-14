@@ -6,7 +6,7 @@
 
 		<meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.56.3" />
+<meta name="generator" content="Hugo 0.57.0" />
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -72,6 +72,19 @@
 			</div>
 			<ul id="post-list">
                 	
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
+							<h4 class="post-link"><a href="https://cmdln.org/2018/10/22/automatically-define-classes-for-every-promise-with-cfengine-3/">Automatically define classes for every promise with CFEngine 3</a></h4>
+							<h4 class="post-date">Oct 22, 2018</h4>
+						</div>
+						<div class="post-summary"><p>In CFEngine classes are used for decision making. Classes can be defined as the result of a promise by attaching a classes body to the promise via the classes attribute.  For example, here we run the command echo Hello World and define bundle scoped classes using the results classes body prefixed with Hello_World. 1 2 3 4 5 6 7 8 9 10  bundle agent main { commands: &#34;echo Hello World&#34; contain =&gt; in_shell, classes =&gt; results( &#34;bundle&#34;, &#34;Hello_World&#34; ); reports: &#34;Defined Classes: $(with)&#34; with =&gt; join( &#34;, &#34;, classesmatching( &#34;Hello_.</p></div>
+						<div class="post-list-footer text-center">
+							<a href="https://cmdln.org/2018/10/22/automatically-define-classes-for-every-promise-with-cfengine-3/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
 				<li>
 					<div class="post-list-item">
 						<div class="post-header">
@@ -185,19 +198,6 @@
 						<div class="post-summary"><p>This tip comes from my good friend Aleksey Tsalolikin. 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17  bundle agent main { vars: # Creae a map of interface to MAC  # Generate a classic array  # Iterate over known interfaces, define interface as key and MAC as value  &#34;iface2mac[$(sys.interfaces)]&#34; string =&gt; &#34;$(sys.hardware_mac[$(sys.interfaces)])&#34;, meta =&gt; { &#34;inventory&#34;, &#34;attribute_name=$(sys.</p></div>
 						<div class="post-list-footer text-center">
 							<a href="https://cmdln.org/2018/05/21/inventorying-mac-by-interface/">Read More</a>
-						</div>
-					</div>
-				</li>
-			
-				<li>
-					<div class="post-list-item">
-						<div class="post-header">
-							<h4 class="post-link"><a href="https://cmdln.org/2018/05/20/why-doesnt-ifvarclass-automatically-canonify/">Why doesn&#39;t ifvarclass automatically canonify?</a></h4>
-							<h4 class="post-date">May 20, 2018</h4>
-						</div>
-						<div class="post-summary"><p>It looks like ifvarclass is one of few places in CFEngine that does not automatically canonify:  Is there a reason why ifvarclass – which takes a variable by design – does not automatically canonify that variable before checking if there’s a matching class?   Yes, it&#39;s true that ifvarclass, and it&#39;s aliases if and unless do not automatically canonify when checking a class.  Historically there was no automatic canonfication in cfengine.</p></div>
-						<div class="post-list-footer text-center">
-							<a href="https://cmdln.org/2018/05/20/why-doesnt-ifvarclass-automatically-canonify/">Read More</a>
 						</div>
 					</div>
 				</li>

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title> Reversing key values of a JSON dict in CFEngine with jq &middot;  </title>
+
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.57.0" />
+
+
+<script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://cmdln.org/css/nix.css">
+<link rel="stylesheet" href="https://cmdln.org/css/syntax.css">
+
+
+<link href="https://fonts.googleapis.com/css?family=Inconsolata|Open+Sans|Roboto|Montserrat|Concert+One" rel="stylesheet">
+
+
+
+
+    </head>
+
+    <body>
+        <header>
+<nav class="navbar navbar-default navbar-fixed-top navbar-inverse font-header">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" id="green-terminal" href=https://cmdln.org>nick@cmdln.org ~ $</a>
+		</div>
+
+		
+		<div class="collapse navbar-collapse" id="navbar-collapse-1">
+			<ul class="nav navbar-nav navbar-right">
+				<li>
+					<a href="https://cmdln.org">/home/nick</a>
+				</li>
+				
+				
+				<li >
+					<a href="/post/">~/posts</a>
+				</li>
+				
+
+			</ul>
+		</div>
+	</div>
+</nav>
+</header>
+
+        <div class="container wrapper">
+            <h1><a href="https://cmdln.org/2019/08/14/reversing-key-values-of-a-json-dict-in-cfengine-with-jq/">Reversing key values of a JSON dict in CFEngine with jq</a></h1>
+            <span class="post-date">Aug 14, 2019 </span>
+            <div class="post-content">
+                <blockquote>
+<p>
+Do you have any tips on reversing a json dictionary?
+</p>
+<p>
+I have a map of IPv4 addresses to environments and I would like to have a map of
+environments to IPv4s.
+</p>
+</blockquote>
+<div class="src src-json">
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-json" data-lang="json"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-json" data-lang="json">  <span class="p">{</span>
+      <span class="nt">&#34;192.0.2.131&#34;</span>    <span class="p">:</span> <span class="s2">&#34;TEST-NET-1&#34;</span><span class="p">,</span>
+      <span class="nt">&#34;198.51.100.151&#34;</span> <span class="p">:</span> <span class="s2">&#34;TEST-NET-2&#34;</span><span class="p">,</span>
+      <span class="nt">&#34;198.51.100.146&#34;</span> <span class="p">:</span> <span class="s2">&#34;TEST-NET-2&#34;</span><span class="p">,</span>
+      <span class="nt">&#34;203.0.113.146&#34;</span>  <span class="p">:</span> <span class="s2">&#34;TEST-NET-3&#34;</span><span class="p">,</span>
+      <span class="nt">&#34;203.0.113.21&#34;</span>   <span class="p">:</span> <span class="s2">&#34;TEST-NET-3&#34;</span>
+  <span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
+</div>
+<blockquote>
+<p>
+Would become:
+</p>
+</blockquote>
+<div class="src src-json">
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-json" data-lang="json"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&#34;TEST-NET-1&#34;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="s2">&#34;192.0.2.131&#34;</span>
+  <span class="p">],</span>
+  <span class="nt">&#34;TEST-NET-2&#34;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="s2">&#34;198.51.100.146&#34;</span><span class="p">,</span>
+    <span class="s2">&#34;198.51.100.151&#34;</span>
+  <span class="p">],</span>
+  <span class="nt">&#34;TEST-NET-3&#34;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="s2">&#34;203.0.113.146&#34;</span><span class="p">,</span>
+    <span class="s2">&#34;203.0.113.21&#34;</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
+</div>
+<p>
+I think that is too complex to do naively in policy. <code class="verbatim">jq</code> is really good for
+working with JSON and I found an answer of <a href="https://stackoverflow.com/a/54354245/2854727">how to swap key and value of an
+object using jq</a> stackoverflow.
+</p>
+<p>
+We can use <code class="verbatim">mapdata()</code> to do that same conversion from within policy.
+</p>
+<div class="src src-cfengine3">
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">example_mapdata_jq_reverse_key_values</span>
+  <span class="p">{</span>
+
+    <span class="kd">vars</span><span class="p">:</span>
+
+        <span class="s">&#34;policy_hub_zone_data&#34;</span> <span class="kr">data</span> <span class="o">=&gt;</span> <span class="err">&#39;</span><span class="p">{</span>
+        <span class="s">&#34;192.0.2.131&#34;</span>    <span class="err">:</span> <span class="s">&#34;TEST-NET-1&#34;</span><span class="p">,</span>
+        <span class="s">&#34;198.51.100.151&#34;</span> <span class="err">:</span> <span class="s">&#34;TEST-NET-2&#34;</span><span class="p">,</span>
+        <span class="s">&#34;198.51.100.146&#34;</span> <span class="err">:</span> <span class="s">&#34;TEST-NET-2&#34;</span><span class="p">,</span>
+        <span class="s">&#34;203.0.113.146&#34;</span>  <span class="err">:</span> <span class="s">&#34;TEST-NET-3&#34;</span><span class="p">,</span>
+        <span class="s">&#34;203.0.113.21&#34;</span>   <span class="err">:</span> <span class="s">&#34;TEST-NET-3&#34;</span>
+    <span class="p">}</span><span class="err">&#39;</span><span class="p">;</span>
+
+        <span class="p">&#34;</span><span class="nv">jq</span><span class="p">&#34;</span> <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;/usr/bin/jq &#39;to_entries \
+</span><span class="s">                       | map( {(.value) : {(.key):null} }) \
+</span><span class="s">                       | reduce .[] as $item ({}; . * $item) \
+</span><span class="s">                       | to_entries \
+</span><span class="s">                       | map({key:.key, value:(.value|keys)}) \
+</span><span class="s">                       | from_entries &#39;&#34;</span><span class="p">;</span>
+
+        <span class="s">&#34;rev&#34;</span>
+          <span class="kr">data</span> <span class="o">=&gt;</span> <span class="nf">mapdata</span><span class="p">(</span> <span class="s">&#34;json_pipe&#34;</span><span class="p">,</span>
+                           <span class="err">&#39;$</span><span class="p">(</span><span class="nf">jq</span><span class="p">)</span><span class="err">&#39;</span><span class="p">,</span>
+                           <span class="nf">policy_hub_zone_data</span> <span class="p">);</span>
+
+      <span class="c"># Since mapdata returns an array, you need to pick out the first element
+</span><span class="c"></span>        <span class="s">&#34;picked&#34;</span> <span class="kr">data</span> <span class="o">=&gt;</span> <span class="nf">mergedata</span><span class="p">(</span> <span class="s">&#34;rev[0]&#34;</span> <span class="p">);</span>
+
+    <span class="kd">reports</span><span class="p">:</span>
+
+        <span class="s">&#34;</span><span class="si">$(with)</span><span class="s">&#34;</span> <span class="kr">with</span> <span class="o">=&gt;</span> <span class="nf">string_mustache</span><span class="p">(</span> <span class="s">&#34;{{ %-top- }}&#34;</span><span class="p">,</span> <span class="s">&#34;picked&#34;</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">__main__</span>
+  <span class="p">{</span>
+    <span class="kd">methods</span><span class="p">:</span>
+        <span class="s">&#34;example_mapdata_jq_reverse_key_values&#34;</span><span class="p">;</span>
+  <span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
+</div>
+<p>
+Running that policy produces the reversed map:
+</p>
+<pre class="example">
+R: {
+  "TEST-NET-1": [
+    "192.0.2.131"
+  ],
+  "TEST-NET-2": [
+    "198.51.100.146",
+    "198.51.100.151"
+  ],
+  "TEST-NET-3": [
+    "203.0.113.146",
+    "203.0.113.21"
+  ]
+}
+</pre>
+
+            </div>
+            
+            <div class="post-comments">
+                
+            </div>
+            
+            <div class="push"></div>
+        </div>
+        <footer class="footer text-center">
+<p>Copyright &copy; 2019 Nick Anderson -
+<span class="credit">
+	Powered by
+	<a target="_blank" href="https://gohugo.io">Hugo</a>
+	and
+	<a target="_blank" href="https://github.com/LordMathis/hugo-theme-nix/">Nix</a> theme.
+</span>
+</p>
+</footer>
+
+    </body>
