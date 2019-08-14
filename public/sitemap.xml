@@ -4,31 +4,32 @@
   
   <url>
     <loc>https://cmdln.org/</loc>
-    <lastmod>2019-08-13T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <lastmod>2019-08-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cmdln.org/tags/cfengine3/</loc>
+    <lastmod>2019-08-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cmdln.org/post/</loc>
+    <lastmod>2019-08-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cmdln.org/2019/08/14/reversing-key-values-of-a-json-dict-in-cfengine-with-jq/</loc>
+    <lastmod>2019-08-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cmdln.org/tags/</loc>
+    <lastmod>2019-08-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://cmdln.org/2019/08/13/how-to-use-the-not-function-inside-a-classes-type-promise-or/</loc>
     <lastmod>2019-08-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://cmdln.org/post/</loc>
-    <lastmod>2019-08-13T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cmdln.org/tags/</loc>
-    <lastmod>2019-08-13T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cmdln.org/tags/cfengine3/</loc>
-    <lastmod>2019-08-13T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -39,7 +40,6 @@
   <url>
     <loc>https://cmdln.org/tags/cfengine/</loc>
     <lastmod>2019-05-20T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -63,14 +63,13 @@
   </url>
   
   <url>
-    <loc>https://cmdln.org/2018/11/16/the-top-mustache-extension-in-cfengine-3/</loc>
+    <loc>https://cmdln.org/tags/mustache/</loc>
     <lastmod>2018-11-16T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://cmdln.org/tags/mustache/</loc>
+    <loc>https://cmdln.org/2018/11/16/the-top-mustache-extension-in-cfengine-3/</loc>
     <lastmod>2018-11-16T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -164,14 +163,13 @@
   </url>
   
   <url>
-    <loc>https://cmdln.org/2018/01/05/no-klf-2018/</loc>
+    <loc>https://cmdln.org/tags/linux/</loc>
     <lastmod>2018-01-05T13:35:04-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://cmdln.org/tags/linux/</loc>
+    <loc>https://cmdln.org/2018/01/05/no-klf-2018/</loc>
     <lastmod>2018-01-05T13:35:04-06:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -202,7 +200,6 @@
   <url>
     <loc>https://cmdln.org/tags/org-mode/</loc>
     <lastmod>2017-12-01T21:41:21-06:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -223,7 +220,6 @@
   <url>
     <loc>https://cmdln.org/tags/spacemacs/</loc>
     <lastmod>2017-11-25T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -264,7 +260,6 @@
   <url>
     <loc>https://cmdln.org/about/</loc>
     <lastmod>2017-06-26T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -278,14 +273,18 @@
   </url>
   
   <url>
+    <loc>https://cmdln.org/tags/emacs/</loc>
+    <lastmod>2016-04-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://cmdln.org/2016/04/26/how-i-org-with-spacemacs/</loc>
     <lastmod>2016-04-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://cmdln.org/tags/emacs/</loc>
-    <lastmod>2016-04-26T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <loc>https://cmdln.org/categories/</loc>
+    <lastmod>2015-08-21T04:51:59+00:00</lastmod>
   </url>
   
   <url>
@@ -294,27 +293,18 @@
   </url>
   
   <url>
-    <loc>https://cmdln.org/categories/</loc>
-    <lastmod>2015-08-21T04:51:59+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://cmdln.org/tags/freebsd/</loc>
     <lastmod>2015-08-21T04:51:59+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/freenas/</loc>
     <lastmod>2015-08-21T04:51:59+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/categories/posts/</loc>
     <lastmod>2015-08-21T04:51:59+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -323,14 +313,13 @@
   </url>
   
   <url>
-    <loc>https://cmdln.org/2013/10/03/thank-you-thomas/</loc>
+    <loc>https://cmdln.org/tags/lopsa/</loc>
     <lastmod>2013-10-03T14:12:32+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://cmdln.org/tags/lopsa/</loc>
+    <loc>https://cmdln.org/2013/10/03/thank-you-thomas/</loc>
     <lastmod>2013-10-03T14:12:32+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -339,37 +328,33 @@
   </url>
   
   <url>
+    <loc>https://cmdln.org/tags/canonify/</loc>
+    <lastmod>2013-03-29T14:12:14+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://cmdln.org/2013/03/29/canonifying-a-list-with-cfengine-3/</loc>
     <lastmod>2013-03-29T14:12:14+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://cmdln.org/tags/canonify/</loc>
-    <lastmod>2013-03-29T14:12:14+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://cmdln.org/tags/list/</loc>
     <lastmod>2013-03-29T14:12:14+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/pattern/</loc>
     <lastmod>2013-03-29T14:12:14+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cmdln.org/2013/03/13/working-around-getindices-with-dynamically-generated-arrays-in-cfengine-3/</loc>
-    <lastmod>2013-03-13T17:44:58+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/tips/</loc>
     <lastmod>2013-03-13T17:44:58+00:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://cmdln.org/2013/03/13/working-around-getindices-with-dynamically-generated-arrays-in-cfengine-3/</loc>
+    <lastmod>2013-03-13T17:44:58+00:00</lastmod>
   </url>
   
   <url>
@@ -383,32 +368,33 @@
   </url>
   
   <url>
+    <loc>https://cmdln.org/tags/devops/</loc>
+    <lastmod>2012-12-06T15:01:13+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://cmdln.org/2012/12/06/quick-tip-drilling-into-zenoss-data-with-zendmd/</loc>
     <lastmod>2012-12-06T15:01:13+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://cmdln.org/tags/devops/</loc>
-    <lastmod>2012-12-06T15:01:13+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://cmdln.org/tags/sysadmin/</loc>
     <lastmod>2012-12-06T15:01:13+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/zendmd/</loc>
     <lastmod>2012-12-06T15:01:13+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/zenoss/</loc>
     <lastmod>2012-12-06T15:01:13+00:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://cmdln.org/tags/cf_promises_validated/</loc>
+    <lastmod>2012-10-25T02:07:09+00:00</lastmod>
   </url>
   
   <url>
@@ -417,21 +403,18 @@
   </url>
   
   <url>
-    <loc>https://cmdln.org/tags/cf_promises_validated/</loc>
-    <lastmod>2012-10-25T02:07:09+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://cmdln.org/tags/failsafe.cf/</loc>
     <lastmod>2012-10-25T02:07:09+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/update.cf/</loc>
     <lastmod>2012-10-25T02:07:09+00:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://cmdln.org/tags/allclassesreport/</loc>
+    <lastmod>2012-10-18T21:00:49+00:00</lastmod>
   </url>
   
   <url>
@@ -440,21 +423,13 @@
   </url>
   
   <url>
-    <loc>https://cmdln.org/tags/allclassesreport/</loc>
-    <lastmod>2012-10-18T21:00:49+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://cmdln.org/tags/classes/</loc>
     <lastmod>2012-10-18T21:00:49+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/tip/</loc>
     <lastmod>2012-10-18T21:00:49+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -463,121 +438,103 @@
   </url>
   
   <url>
-    <loc>https://cmdln.org/2012/08/01/linuxconcloudopen-2012/</loc>
-    <lastmod>2012-08-01T13:55:30+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://cmdln.org/tags/automation/</loc>
     <lastmod>2012-08-01T13:55:30+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/canonical/</loc>
     <lastmod>2012-08-01T13:55:30+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/citrix/</loc>
     <lastmod>2012-08-01T13:55:30+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/cloud/</loc>
     <lastmod>2012-08-01T13:55:30+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/cloudopen/</loc>
     <lastmod>2012-08-01T13:55:30+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/configuration-management/</loc>
     <lastmod>2012-08-01T13:55:30+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/confrence/</loc>
     <lastmod>2012-08-01T13:55:30+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/dell/</loc>
     <lastmod>2012-08-01T13:55:30+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/juju/</loc>
     <lastmod>2012-08-01T13:55:30+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/linuxcon/</loc>
     <lastmod>2012-08-01T13:55:30+00:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://cmdln.org/2012/08/01/linuxconcloudopen-2012/</loc>
+    <lastmod>2012-08-01T13:55:30+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/opennebula/</loc>
     <lastmod>2012-08-01T13:55:30+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/openstack/</loc>
     <lastmod>2012-08-01T13:55:30+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/vi/</loc>
     <lastmod>2012-08-01T13:55:30+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/vim/</loc>
     <lastmod>2012-08-01T13:55:30+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/webops/</loc>
     <lastmod>2012-08-01T13:55:30+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/xcp/</loc>
     <lastmod>2012-08-01T13:55:30+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/xen/</loc>
     <lastmod>2012-08-01T13:55:30+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cmdln.org/2012/07/17/git-pre-commit-hook-for-checking-cfengine-3-syntax/</loc>
-    <lastmod>2012-07-17T22:36:40+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/git/</loc>
     <lastmod>2012-07-17T22:36:40+00:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://cmdln.org/2012/07/17/git-pre-commit-hook-for-checking-cfengine-3-syntax/</loc>
+    <lastmod>2012-07-17T22:36:40+00:00</lastmod>
   </url>
   
   <url>
@@ -588,7 +545,11 @@
   <url>
     <loc>https://cmdln.org/tags/vagrant/</loc>
     <lastmod>2012-07-14T20:02:17+00:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://cmdln.org/tags/complex/</loc>
+    <lastmod>2012-07-13T20:15:50+00:00</lastmod>
   </url>
   
   <url>
@@ -597,21 +558,13 @@
   </url>
   
   <url>
-    <loc>https://cmdln.org/tags/complex/</loc>
-    <lastmod>2012-07-13T20:15:50+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://cmdln.org/tags/complicated/</loc>
     <lastmod>2012-07-13T20:15:50+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/simple/</loc>
     <lastmod>2012-07-13T20:15:50+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -622,7 +575,11 @@
   <url>
     <loc>https://cmdln.org/tags/design-center/</loc>
     <lastmod>2012-06-04T19:28:29+00:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://cmdln.org/tags/book-review/</loc>
+    <lastmod>2012-03-29T15:04:25+00:00</lastmod>
   </url>
   
   <url>
@@ -631,15 +588,8 @@
   </url>
   
   <url>
-    <loc>https://cmdln.org/tags/book-review/</loc>
-    <lastmod>2012-03-29T15:04:25+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://cmdln.org/tags/#photograpy/</loc>
     <lastmod>2012-03-29T04:50:54+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -648,32 +598,38 @@
   </url>
   
   <url>
-    <loc>https://cmdln.org/2012/02/27/setup-encfs-on-dropbox-for-boxcryptor-with-cfengine/</loc>
-    <lastmod>2012-02-27T20:19:39+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://cmdln.org/tags/boxcryptor/</loc>
     <lastmod>2012-02-27T20:19:39+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/dropbox/</loc>
     <lastmod>2012-02-27T20:19:39+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/encfs/</loc>
     <lastmod>2012-02-27T20:19:39+00:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://cmdln.org/2012/02/27/setup-encfs-on-dropbox-for-boxcryptor-with-cfengine/</loc>
+    <lastmod>2012-02-27T20:19:39+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/ubuntu/</loc>
     <lastmod>2012-02-27T20:19:39+00:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://cmdln.org/tags/centos/</loc>
+    <lastmod>2012-02-19T04:55:27+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cmdln.org/tags/example/</loc>
+    <lastmod>2012-02-19T04:55:27+00:00</lastmod>
   </url>
   
   <url>
@@ -682,39 +638,23 @@
   </url>
   
   <url>
-    <loc>https://cmdln.org/tags/centos/</loc>
-    <lastmod>2012-02-19T04:55:27+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cmdln.org/tags/example/</loc>
-    <lastmod>2012-02-19T04:55:27+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://cmdln.org/tags/redhat/</loc>
     <lastmod>2012-02-19T04:55:27+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/routing/</loc>
     <lastmod>2012-02-19T04:55:27+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/cf-promises/</loc>
     <lastmod>2012-02-16T17:01:38+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/pre-commit/</loc>
     <lastmod>2012-02-16T17:01:38+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -730,43 +670,46 @@
   <url>
     <loc>https://cmdln.org/tags/createrepo/</loc>
     <lastmod>2012-02-16T07:05:53+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/password-management/</loc>
     <lastmod>2012-02-16T07:05:53+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/routes/</loc>
     <lastmod>2012-02-16T07:05:53+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/selinux/</loc>
     <lastmod>2012-02-16T07:05:53+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/yum/</loc>
     <lastmod>2012-02-16T07:05:53+00:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://cmdln.org/tags/blackout/</loc>
+    <lastmod>2012-01-18T15:11:24+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cmdln.org/tags/freedom/</loc>
+    <lastmod>2012-01-18T15:11:24+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/pipa/</loc>
     <lastmod>2012-01-18T15:11:24+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/sopa/</loc>
     <lastmod>2012-01-18T15:11:24+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -775,15 +718,8 @@
   </url>
   
   <url>
-    <loc>https://cmdln.org/tags/blackout/</loc>
-    <lastmod>2012-01-18T15:11:24+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cmdln.org/tags/freedom/</loc>
-    <lastmod>2012-01-18T15:11:24+00:00</lastmod>
-    <priority>0</priority>
+    <loc>https://cmdln.org/tags/customer-service/</loc>
+    <lastmod>2011-12-15T17:02:25+00:00</lastmod>
   </url>
   
   <url>
@@ -792,15 +728,8 @@
   </url>
   
   <url>
-    <loc>https://cmdln.org/tags/customer-service/</loc>
-    <lastmod>2011-12-15T17:02:25+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://cmdln.org/tags/win/</loc>
     <lastmod>2011-12-15T17:02:25+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -811,7 +740,6 @@
   <url>
     <loc>https://cmdln.org/tags/lisa/</loc>
     <lastmod>2011-11-18T18:41:12+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -842,13 +770,11 @@
   <url>
     <loc>https://cmdln.org/tags/mentorship/</loc>
     <lastmod>2011-07-28T03:42:21+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/gnome-shell/</loc>
     <lastmod>2011-07-14T20:11:33+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -857,43 +783,38 @@
   </url>
   
   <url>
+    <loc>https://cmdln.org/tags/gnome-3/</loc>
+    <lastmod>2011-07-08T12:53:16+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://cmdln.org/2011/07/08/replace-unity-with-gnome3-and-gnome-shell-in-ubuntu-11-04/</loc>
     <lastmod>2011-07-08T12:53:16+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://cmdln.org/tags/gnome-3/</loc>
-    <lastmod>2011-07-08T12:53:16+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://cmdln.org/tags/unity/</loc>
     <lastmod>2011-07-08T12:53:16+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cmdln.org/2011/07/04/snmp-v3-support-added-to-check_snmp_extend-py/</loc>
-    <lastmod>2011-07-05T03:39:54+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/check_snmp_extend/</loc>
     <lastmod>2011-07-05T03:39:54+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/github/</loc>
     <lastmod>2011-07-05T03:39:54+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/nagios/</loc>
     <lastmod>2011-07-05T03:39:54+00:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://cmdln.org/2011/07/04/snmp-v3-support-added-to-check_snmp_extend-py/</loc>
+    <lastmod>2011-07-05T03:39:54+00:00</lastmod>
   </url>
   
   <url>
@@ -909,7 +830,6 @@
   <url>
     <loc>https://cmdln.org/tags/news/</loc>
     <lastmod>2011-06-24T17:41:30+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -918,20 +838,18 @@
   </url>
   
   <url>
-    <loc>https://cmdln.org/2011/04/05/myaprilfools/</loc>
-    <lastmod>2011-04-05T18:17:28+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://cmdln.org/tags/backups/</loc>
     <lastmod>2011-04-05T18:17:28+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/fail/</loc>
     <lastmod>2011-04-05T18:17:28+00:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://cmdln.org/2011/04/05/myaprilfools/</loc>
+    <lastmod>2011-04-05T18:17:28+00:00</lastmod>
   </url>
   
   <url>
@@ -950,14 +868,13 @@
   </url>
   
   <url>
-    <loc>https://cmdln.org/2010/12/28/quick-tip-disable-help-f1-in-gnome-terminal/</loc>
+    <loc>https://cmdln.org/tags/gnome-terminal/</loc>
     <lastmod>2010-12-29T01:36:17+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://cmdln.org/tags/gnome-terminal/</loc>
+    <loc>https://cmdln.org/2010/12/28/quick-tip-disable-help-f1-in-gnome-terminal/</loc>
     <lastmod>2010-12-29T01:36:17+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -968,7 +885,6 @@
   <url>
     <loc>https://cmdln.org/tags/lisa10/</loc>
     <lastmod>2010-11-09T15:42:43+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -977,20 +893,18 @@
   </url>
   
   <url>
-    <loc>https://cmdln.org/2010/09/23/migrating-to-google-apps-changing-mailto-link/</loc>
-    <lastmod>2010-09-24T03:42:57+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://cmdln.org/tags/firefox/</loc>
     <lastmod>2010-09-24T03:42:57+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/google-apps/</loc>
     <lastmod>2010-09-24T03:42:57+00:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://cmdln.org/2010/09/23/migrating-to-google-apps-changing-mailto-link/</loc>
+    <lastmod>2010-09-24T03:42:57+00:00</lastmod>
   </url>
   
   <url>
@@ -999,26 +913,23 @@
   </url>
   
   <url>
+    <loc>https://cmdln.org/tags/bind/</loc>
+    <lastmod>2010-08-02T16:21:42+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://cmdln.org/2010/08/02/bind-stats-in-centosrhel5/</loc>
     <lastmod>2010-08-02T16:21:42+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://cmdln.org/tags/bind/</loc>
-    <lastmod>2010-08-02T16:21:42+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://cmdln.org/tags/named/</loc>
     <lastmod>2010-08-02T16:21:42+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/stats/</loc>
     <lastmod>2010-08-02T16:21:42+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -1029,13 +940,11 @@
   <url>
     <loc>https://cmdln.org/tags/dns/</loc>
     <lastmod>2010-08-01T18:42:29+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/nscd/</loc>
     <lastmod>2010-08-01T18:42:29+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -1046,13 +955,11 @@
   <url>
     <loc>https://cmdln.org/tags/lvm/</loc>
     <lastmod>2010-07-13T14:45:21+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/vmware/</loc>
     <lastmod>2010-07-13T14:45:21+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -1063,7 +970,11 @@
   <url>
     <loc>https://cmdln.org/tags/zenpack/</loc>
     <lastmod>2010-07-12T15:52:44+00:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://cmdln.org/tags/nginx/</loc>
+    <lastmod>2010-07-09T23:41:53+00:00</lastmod>
   </url>
   
   <url>
@@ -1072,15 +983,8 @@
   </url>
   
   <url>
-    <loc>https://cmdln.org/tags/nginx/</loc>
-    <lastmod>2010-07-09T23:41:53+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://cmdln.org/tags/autofs/</loc>
     <lastmod>2010-06-30T02:53:29+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -1111,7 +1015,6 @@
   <url>
     <loc>https://cmdln.org/tags/bash/</loc>
     <lastmod>2010-05-20T15:14:41+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -1127,13 +1030,16 @@
   <url>
     <loc>https://cmdln.org/tags/emc/</loc>
     <lastmod>2010-05-19T18:19:27+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/networker/</loc>
     <lastmod>2010-05-19T18:19:27+00:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://cmdln.org/tags/networking/</loc>
+    <lastmod>2010-05-17T15:29:06+00:00</lastmod>
   </url>
   
   <url>
@@ -1142,15 +1048,8 @@
   </url>
   
   <url>
-    <loc>https://cmdln.org/tags/networking/</loc>
-    <lastmod>2010-05-17T15:29:06+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://cmdln.org/tags/podcast/</loc>
     <lastmod>2010-05-17T15:29:06+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -1159,14 +1058,23 @@
   </url>
   
   <url>
+    <loc>https://cmdln.org/tags/cpanel/</loc>
+    <lastmod>2010-05-08T03:05:12+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://cmdln.org/2010/05/07/install-git-on-centos-cpanel-server/</loc>
     <lastmod>2010-05-08T03:05:12+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://cmdln.org/tags/cpanel/</loc>
-    <lastmod>2010-05-08T03:05:12+00:00</lastmod>
-    <priority>0</priority>
+    <loc>https://cmdln.org/tags/google/</loc>
+    <lastmod>2010-05-06T13:41:36+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cmdln.org/tags/hack/</loc>
+    <lastmod>2010-05-06T13:41:36+00:00</lastmod>
   </url>
   
   <url>
@@ -1175,26 +1083,13 @@
   </url>
   
   <url>
-    <loc>https://cmdln.org/tags/google/</loc>
-    <lastmod>2010-05-06T13:41:36+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cmdln.org/tags/hack/</loc>
-    <lastmod>2010-05-06T13:41:36+00:00</lastmod>
-    <priority>0</priority>
+    <loc>https://cmdln.org/tags/bofh/</loc>
+    <lastmod>2010-05-06T02:25:32+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://cmdln.org/2010/05/05/very-funny-good-troubleshooting/</loc>
     <lastmod>2010-05-06T02:25:32+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://cmdln.org/tags/bofh/</loc>
-    <lastmod>2010-05-06T02:25:32+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -1215,30 +1110,26 @@
   <url>
     <loc>https://cmdln.org/tags/performance/</loc>
     <lastmod>2010-04-22T16:26:16+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cmdln.org/2010/04/16/software-review-advanced-web-ranking-and-advanced-link-manager/</loc>
-    <lastmod>2010-04-16T19:13:35+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/alm/</loc>
     <lastmod>2010-04-16T19:13:35+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/awr/</loc>
     <lastmod>2010-04-16T19:13:35+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/seo/</loc>
     <lastmod>2010-04-16T19:13:35+00:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://cmdln.org/2010/04/16/software-review-advanced-web-ranking-and-advanced-link-manager/</loc>
+    <lastmod>2010-04-16T19:13:35+00:00</lastmod>
   </url>
   
   <url>
@@ -1249,7 +1140,6 @@
   <url>
     <loc>https://cmdln.org/tags/storage/</loc>
     <lastmod>2010-04-15T14:26:35+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -1260,7 +1150,6 @@
   <url>
     <loc>https://cmdln.org/tags/ulimit/</loc>
     <lastmod>2010-04-12T15:47:43+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -1271,13 +1160,31 @@
   <url>
     <loc>https://cmdln.org/tags/nfs/</loc>
     <lastmod>2010-04-08T17:36:17+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/osx/</loc>
     <lastmod>2010-04-08T17:36:17+00:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://cmdln.org/tags/debian/</loc>
+    <lastmod>2010-04-07T15:04:03+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cmdln.org/tags/gentoo/</loc>
+    <lastmod>2010-04-07T15:04:03+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cmdln.org/tags/gpg-agent/</loc>
+    <lastmod>2010-04-07T15:04:03+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cmdln.org/tags/keychain/</loc>
+    <lastmod>2010-04-07T15:04:03+00:00</lastmod>
   </url>
   
   <url>
@@ -1286,33 +1193,13 @@
   </url>
   
   <url>
-    <loc>https://cmdln.org/tags/debian/</loc>
-    <lastmod>2010-04-07T15:04:03+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cmdln.org/tags/gentoo/</loc>
-    <lastmod>2010-04-07T15:04:03+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cmdln.org/tags/gpg-agent/</loc>
-    <lastmod>2010-04-07T15:04:03+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cmdln.org/tags/keychain/</loc>
-    <lastmod>2010-04-07T15:04:03+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://cmdln.org/tags/ssh-agent/</loc>
     <lastmod>2010-04-07T15:04:03+00:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://cmdln.org/tags/cli/</loc>
+    <lastmod>2010-04-06T17:53:36+00:00</lastmod>
   </url>
   
   <url>
@@ -1323,13 +1210,6 @@
   <url>
     <loc>https://cmdln.org/tags/xenserver/</loc>
     <lastmod>2010-04-06T17:53:36+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cmdln.org/tags/cli/</loc>
-    <lastmod>2010-04-06T17:53:36+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -1340,7 +1220,6 @@
   <url>
     <loc>https://cmdln.org/tags/telnet/</loc>
     <lastmod>2010-04-06T14:46:30+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -1351,13 +1230,16 @@
   <url>
     <loc>https://cmdln.org/tags/python/</loc>
     <lastmod>2010-03-31T17:11:06+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/sun/</loc>
     <lastmod>2010-03-31T17:11:06+00:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://cmdln.org/tags/bornfree/</loc>
+    <lastmod>2010-03-20T21:17:10+00:00</lastmod>
   </url>
   
   <url>
@@ -1366,27 +1248,18 @@
   </url>
   
   <url>
-    <loc>https://cmdln.org/tags/bornfree/</loc>
-    <lastmod>2010-03-20T21:17:10+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://cmdln.org/tags/kudos/</loc>
     <lastmod>2010-03-20T21:17:10+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/notfail/</loc>
     <lastmod>2010-03-20T21:17:10+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/readynas/</loc>
     <lastmod>2010-03-20T21:17:10+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -1395,20 +1268,23 @@
   </url>
   
   <url>
-    <loc>https://cmdln.org/2010/03/09/sysstat-sar-performance-metrics-via-nagios-plugin/</loc>
-    <lastmod>2010-03-09T15:42:06+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://cmdln.org/tags/cacti/</loc>
     <lastmod>2010-03-09T15:42:06+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/sysstat/</loc>
     <lastmod>2010-03-09T15:42:06+00:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://cmdln.org/2010/03/09/sysstat-sar-performance-metrics-via-nagios-plugin/</loc>
+    <lastmod>2010-03-09T15:42:06+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cmdln.org/tags/nrpe/</loc>
+    <lastmod>2010-03-08T14:51:23+00:00</lastmod>
   </url>
   
   <url>
@@ -1417,9 +1293,8 @@
   </url>
   
   <url>
-    <loc>https://cmdln.org/tags/nrpe/</loc>
-    <lastmod>2010-03-08T14:51:23+00:00</lastmod>
-    <priority>0</priority>
+    <loc>https://cmdln.org/tags/flashback/</loc>
+    <lastmod>2010-03-05T15:17:23+00:00</lastmod>
   </url>
   
   <url>
@@ -1428,21 +1303,13 @@
   </url>
   
   <url>
-    <loc>https://cmdln.org/tags/flashback/</loc>
-    <lastmod>2010-03-05T15:17:23+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://cmdln.org/tags/logging/</loc>
     <lastmod>2010-03-05T15:17:23+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/netconsole/</loc>
     <lastmod>2010-03-05T15:17:23+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -1463,7 +1330,6 @@
   <url>
     <loc>https://cmdln.org/tags/hacking/</loc>
     <lastmod>2010-03-03T14:31:37+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -1474,7 +1340,6 @@
   <url>
     <loc>https://cmdln.org/tags/screen/</loc>
     <lastmod>2010-03-02T14:31:02+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -1485,13 +1350,11 @@
   <url>
     <loc>https://cmdln.org/tags/reverse-proxy/</loc>
     <lastmod>2010-03-02T05:01:58+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/discussions/</loc>
     <lastmod>2010-01-29T17:52:12+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -1502,19 +1365,16 @@
   <url>
     <loc>https://cmdln.org/tags/spamassassin/</loc>
     <lastmod>2010-01-29T17:52:12+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/mediaroom/</loc>
     <lastmod>2010-01-27T15:09:15+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/microsoft/</loc>
     <lastmod>2010-01-27T15:09:15+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -1525,7 +1385,6 @@
   <url>
     <loc>https://cmdln.org/tags/personal-server/</loc>
     <lastmod>2010-01-27T15:09:15+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -1536,7 +1395,11 @@
   <url>
     <loc>https://cmdln.org/tags/shoutout/</loc>
     <lastmod>2010-01-27T14:46:29+00:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://cmdln.org/tags/arccos/</loc>
+    <lastmod>2010-01-23T02:32:58+00:00</lastmod>
   </url>
   
   <url>
@@ -1545,33 +1408,23 @@
   </url>
   
   <url>
-    <loc>https://cmdln.org/tags/arccos/</loc>
-    <lastmod>2010-01-23T02:32:58+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://cmdln.org/tags/backup-dvd/</loc>
     <lastmod>2010-01-23T02:32:58+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/copy-dvd/</loc>
     <lastmod>2010-01-23T02:32:58+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/decss/</loc>
     <lastmod>2010-01-23T02:32:58+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/ripguard/</loc>
     <lastmod>2010-01-23T02:32:58+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -1585,15 +1438,13 @@
   </url>
   
   <url>
-    <loc>https://cmdln.org/tags/xencenter/</loc>
+    <loc>https://cmdln.org/tags/virtualization/</loc>
     <lastmod>2010-01-19T18:07:28+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://cmdln.org/tags/virtualization/</loc>
+    <loc>https://cmdln.org/tags/xencenter/</loc>
     <lastmod>2010-01-19T18:07:28+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -1614,7 +1465,6 @@
   <url>
     <loc>https://cmdln.org/tags/9/</loc>
     <lastmod>2009-09-10T03:46:36+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -1623,14 +1473,23 @@
   </url>
   
   <url>
+    <loc>https://cmdln.org/tags/cable/</loc>
+    <lastmod>2009-09-08T04:47:45+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://cmdln.org/2009/09/07/service-providors-and-big-brother-wag-each-others-tails-again/</loc>
     <lastmod>2009-09-08T04:47:45+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://cmdln.org/tags/cable/</loc>
-    <lastmod>2009-09-08T04:47:45+00:00</lastmod>
-    <priority>0</priority>
+    <loc>https://cmdln.org/tags/backup/</loc>
+    <lastmod>2009-08-28T14:19:14+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cmdln.org/tags/rsync/</loc>
+    <lastmod>2009-08-28T14:19:14+00:00</lastmod>
   </url>
   
   <url>
@@ -1639,21 +1498,8 @@
   </url>
   
   <url>
-    <loc>https://cmdln.org/tags/backup/</loc>
-    <lastmod>2009-08-28T14:19:14+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cmdln.org/tags/rsync/</loc>
-    <lastmod>2009-08-28T14:19:14+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://cmdln.org/tags/windows/</loc>
     <lastmod>2009-08-28T14:19:14+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -1662,20 +1508,23 @@
   </url>
   
   <url>
+    <loc>https://cmdln.org/tags/erase/</loc>
+    <lastmod>2009-08-26T06:00:44+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://cmdln.org/2009/08/26/secure-hard-drive-wipe/</loc>
     <lastmod>2009-08-26T06:00:44+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://cmdln.org/tags/erase/</loc>
+    <loc>https://cmdln.org/tags/shred/</loc>
     <lastmod>2009-08-26T06:00:44+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://cmdln.org/tags/shred/</loc>
-    <lastmod>2009-08-26T06:00:44+00:00</lastmod>
-    <priority>0</priority>
+    <loc>https://cmdln.org/tags/funny/</loc>
+    <lastmod>2009-08-25T22:47:56+00:00</lastmod>
   </url>
   
   <url>
@@ -1684,31 +1533,23 @@
   </url>
   
   <url>
-    <loc>https://cmdln.org/tags/funny/</loc>
-    <lastmod>2009-08-25T22:47:56+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://cmdln.org/2009/08/24/support-fail/</loc>
     <lastmod>2009-08-24T19:12:51+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://cmdln.org/2009/08/22/one-liners-a-tip/</loc>
-    <lastmod>2009-08-22T19:07:46+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://cmdln.org/tags/command-line/</loc>
     <lastmod>2009-08-22T19:07:46+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/console/</loc>
     <lastmod>2009-08-22T19:07:46+00:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://cmdln.org/2009/08/22/one-liners-a-tip/</loc>
+    <lastmod>2009-08-22T19:07:46+00:00</lastmod>
   </url>
   
   <url>
@@ -1724,13 +1565,11 @@
   <url>
     <loc>https://cmdln.org/tags/phog/</loc>
     <lastmod>2009-08-20T02:47:22+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/rant/</loc>
     <lastmod>2009-08-20T02:47:22+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -1751,7 +1590,6 @@
   <url>
     <loc>https://cmdln.org/tags/fud/</loc>
     <lastmod>2009-08-01T09:43:01+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -1762,7 +1600,6 @@
   <url>
     <loc>https://cmdln.org/tags/puppet/</loc>
     <lastmod>2009-07-30T04:57:02+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -1783,7 +1620,6 @@
   <url>
     <loc>https://cmdln.org/tags/structured-systems-management/</loc>
     <lastmod>2009-07-18T06:00:21+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -1792,14 +1628,13 @@
   </url>
   
   <url>
-    <loc>https://cmdln.org/2009/07/12/transparent_dynamic-reverse-proxy-with-nginx/</loc>
+    <loc>https://cmdln.org/tags/proxy/</loc>
     <lastmod>2009-07-12T17:29:21+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://cmdln.org/tags/proxy/</loc>
+    <loc>https://cmdln.org/2009/07/12/transparent_dynamic-reverse-proxy-with-nginx/</loc>
     <lastmod>2009-07-12T17:29:21+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -1813,14 +1648,13 @@
   </url>
   
   <url>
-    <loc>https://cmdln.org/2009/07/06/redhats-init-is-teh-suck/</loc>
+    <loc>https://cmdln.org/tags/initscript/</loc>
     <lastmod>2009-07-07T00:56:27+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://cmdln.org/tags/initscript/</loc>
+    <loc>https://cmdln.org/2009/07/06/redhats-init-is-teh-suck/</loc>
     <lastmod>2009-07-07T00:56:27+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -1839,20 +1673,18 @@
   </url>
   
   <url>
-    <loc>https://cmdln.org/2009/05/20/mutt-like-evolution-keybindings/</loc>
-    <lastmod>2009-05-21T02:44:29+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://cmdln.org/tags/evolution/</loc>
     <lastmod>2009-05-21T02:44:29+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/mutt/</loc>
     <lastmod>2009-05-21T02:44:29+00:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://cmdln.org/2009/05/20/mutt-like-evolution-keybindings/</loc>
+    <lastmod>2009-05-21T02:44:29+00:00</lastmod>
   </url>
   
   <url>
@@ -1863,7 +1695,6 @@
   <url>
     <loc>https://cmdln.org/tags/three-letters/</loc>
     <lastmod>2009-05-19T13:03:53+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -1874,7 +1705,6 @@
   <url>
     <loc>https://cmdln.org/tags/sqlite/</loc>
     <lastmod>2009-04-29T21:40:40+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -1885,13 +1715,11 @@
   <url>
     <loc>https://cmdln.org/tags/regex/</loc>
     <lastmod>2009-04-28T18:19:39+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/terminal/</loc>
     <lastmod>2009-04-28T18:19:39+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -1900,20 +1728,18 @@
   </url>
   
   <url>
-    <loc>https://cmdln.org/2009/04/16/testing-mail-servers-with-swaks/</loc>
-    <lastmod>2009-04-16T17:45:43+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://cmdln.org/tags/email/</loc>
     <lastmod>2009-04-16T17:45:43+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/testing/</loc>
     <lastmod>2009-04-16T17:45:43+00:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://cmdln.org/2009/04/16/testing-mail-servers-with-swaks/</loc>
+    <lastmod>2009-04-16T17:45:43+00:00</lastmod>
   </url>
   
   <url>
@@ -1924,7 +1750,6 @@
   <url>
     <loc>https://cmdln.org/tags/video/</loc>
     <lastmod>2009-03-19T04:22:36+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -1943,20 +1768,23 @@
   </url>
   
   <url>
+    <loc>https://cmdln.org/tags/decrypt/</loc>
+    <lastmod>2009-02-23T14:45:04+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://cmdln.org/2009/02/23/howto-remove-pdf-passwords-and-encryption/</loc>
     <lastmod>2009-02-23T14:45:04+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://cmdln.org/tags/decrypt/</loc>
+    <loc>https://cmdln.org/tags/pdf/</loc>
     <lastmod>2009-02-23T14:45:04+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://cmdln.org/tags/pdf/</loc>
-    <lastmod>2009-02-23T14:45:04+00:00</lastmod>
-    <priority>0</priority>
+    <loc>https://cmdln.org/tags/gibak/</loc>
+    <lastmod>2009-02-20T14:56:53+00:00</lastmod>
   </url>
   
   <url>
@@ -1965,26 +1793,18 @@
   </url>
   
   <url>
-    <loc>https://cmdln.org/tags/gibak/</loc>
-    <lastmod>2009-02-20T14:56:53+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cmdln.org/2009/02/19/version-your-etc/</loc>
-    <lastmod>2009-02-19T15:19:36+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://cmdln.org/tags/etc/</loc>
     <lastmod>2009-02-19T15:19:36+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/version-control/</loc>
     <lastmod>2009-02-19T15:19:36+00:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://cmdln.org/2009/02/19/version-your-etc/</loc>
+    <lastmod>2009-02-19T15:19:36+00:00</lastmod>
   </url>
   
   <url>
@@ -2000,7 +1820,6 @@
   <url>
     <loc>https://cmdln.org/tags/one-liner/</loc>
     <lastmod>2009-02-18T16:08:58+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -2011,19 +1830,16 @@
   <url>
     <loc>https://cmdln.org/tags/followup/</loc>
     <lastmod>2009-01-30T03:34:39+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/performance-analysis/</loc>
     <lastmod>2009-01-30T03:34:39+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/sar/</loc>
     <lastmod>2009-01-30T03:34:39+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -2064,7 +1880,6 @@
   <url>
     <loc>https://cmdln.org/tags/ssh/</loc>
     <lastmod>2008-12-17T17:07:58+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -2073,20 +1888,18 @@
   </url>
   
   <url>
+    <loc>https://cmdln.org/tags/apache/</loc>
+    <lastmod>2008-12-12T19:41:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://cmdln.org/2008/12/12/maintenance-mode-with-apache-mod_rewrite/</loc>
     <lastmod>2008-12-12T19:41:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://cmdln.org/tags/apache/</loc>
-    <lastmod>2008-12-12T19:41:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://cmdln.org/tags/mod_rewrite/</loc>
     <lastmod>2008-12-12T19:41:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -2102,13 +1915,16 @@
   <url>
     <loc>https://cmdln.org/tags/utility/</loc>
     <lastmod>2008-12-08T18:20:09+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/worklog/</loc>
     <lastmod>2008-12-08T18:20:09+00:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://cmdln.org/tags/code/</loc>
+    <lastmod>2008-12-07T05:19:26+00:00</lastmod>
   </url>
   
   <url>
@@ -2117,15 +1933,18 @@
   </url>
   
   <url>
-    <loc>https://cmdln.org/tags/code/</loc>
+    <loc>https://cmdln.org/tags/script/</loc>
     <lastmod>2008-12-07T05:19:26+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://cmdln.org/tags/script/</loc>
-    <lastmod>2008-12-07T05:19:26+00:00</lastmod>
-    <priority>0</priority>
+    <loc>https://cmdln.org/tags/monitoring/</loc>
+    <lastmod>2008-12-06T07:57:12+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cmdln.org/tags/mysql/</loc>
+    <lastmod>2008-12-06T07:57:12+00:00</lastmod>
   </url>
   
   <url>
@@ -2134,15 +1953,8 @@
   </url>
   
   <url>
-    <loc>https://cmdln.org/tags/monitoring/</loc>
-    <lastmod>2008-12-06T07:57:12+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cmdln.org/tags/mysql/</loc>
-    <lastmod>2008-12-06T07:57:12+00:00</lastmod>
-    <priority>0</priority>
+    <loc>https://cmdln.org/tags/gnu-screen/</loc>
+    <lastmod>2008-12-05T18:01:20+00:00</lastmod>
   </url>
   
   <url>
@@ -2151,9 +1963,8 @@
   </url>
   
   <url>
-    <loc>https://cmdln.org/tags/gnu-screen/</loc>
-    <lastmod>2008-12-05T18:01:20+00:00</lastmod>
-    <priority>0</priority>
+    <loc>https://cmdln.org/tags/shell/</loc>
+    <lastmod>2008-12-05T17:34:01+00:00</lastmod>
   </url>
   
   <url>
@@ -2162,9 +1973,8 @@
   </url>
   
   <url>
-    <loc>https://cmdln.org/tags/shell/</loc>
-    <lastmod>2008-12-05T17:34:01+00:00</lastmod>
-    <priority>0</priority>
+    <loc>https://cmdln.org/tags/conversion/</loc>
+    <lastmod>2008-12-05T05:14:20+00:00</lastmod>
   </url>
   
   <url>
@@ -2173,32 +1983,23 @@
   </url>
   
   <url>
-    <loc>https://cmdln.org/tags/conversion/</loc>
-    <lastmod>2008-12-05T05:14:20+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://cmdln.org/tags/math/</loc>
     <lastmod>2008-12-05T05:14:20+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/units/</loc>
     <lastmod>2008-12-05T05:14:20+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cmdln.org/2008/11/19/debian-etccrond-gotcha/</loc>
-    <lastmod>2008-11-19T14:57:53+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/cron/</loc>
     <lastmod>2008-11-19T14:57:53+00:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://cmdln.org/2008/11/19/debian-etccrond-gotcha/</loc>
+    <lastmod>2008-11-19T14:57:53+00:00</lastmod>
   </url>
   
   <url>
@@ -2209,13 +2010,16 @@
   <url>
     <loc>https://cmdln.org/tags/imap/</loc>
     <lastmod>2008-11-08T04:09:19+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/profiles/</loc>
     <lastmod>2008-11-08T04:09:19+00:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://cmdln.org/tags/off-topic/</loc>
+    <lastmod>2008-11-03T21:05:18+00:00</lastmod>
   </url>
   
   <url>
@@ -2224,15 +2028,13 @@
   </url>
   
   <url>
-    <loc>https://cmdln.org/tags/off-topic/</loc>
-    <lastmod>2008-11-03T21:05:18+00:00</lastmod>
-    <priority>0</priority>
+    <loc>https://cmdln.org/tags/dns-ttl/</loc>
+    <lastmod>2008-11-02T00:08:08+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://cmdln.org/tags/dns-ttl/</loc>
+    <loc>https://cmdln.org/tags/mod_proxy/</loc>
     <lastmod>2008-11-02T00:08:08+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -2241,15 +2043,23 @@
   </url>
   
   <url>
-    <loc>https://cmdln.org/tags/mod_proxy/</loc>
+    <loc>https://cmdln.org/tags/website-migration/</loc>
     <lastmod>2008-11-02T00:08:08+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://cmdln.org/tags/website-migration/</loc>
-    <lastmod>2008-11-02T00:08:08+00:00</lastmod>
-    <priority>0</priority>
+    <loc>https://cmdln.org/tags/bottom-posting/</loc>
+    <lastmod>2008-10-31T05:28:48+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cmdln.org/tags/email-etiquette/</loc>
+    <lastmod>2008-10-31T05:28:48+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cmdln.org/tags/top-posting/</loc>
+    <lastmod>2008-10-31T05:28:48+00:00</lastmod>
   </url>
   
   <url>
@@ -2258,26 +2068,13 @@
   </url>
   
   <url>
-    <loc>https://cmdln.org/tags/bottom-posting/</loc>
-    <lastmod>2008-10-31T05:28:48+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cmdln.org/tags/email-etiquette/</loc>
-    <lastmod>2008-10-31T05:28:48+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cmdln.org/tags/top-posting/</loc>
-    <lastmod>2008-10-31T05:28:48+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://cmdln.org/2008/10/28/why-you-should-give-your-sysadmin-a-day-off/</loc>
     <lastmod>2008-10-29T03:43:49+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cmdln.org/tags/blog/</loc>
+    <lastmod>2008-10-26T15:37:48+00:00</lastmod>
   </url>
   
   <url>
@@ -2286,15 +2083,18 @@
   </url>
   
   <url>
-    <loc>https://cmdln.org/tags/blog/</loc>
+    <loc>https://cmdln.org/tags/wordpress/</loc>
     <lastmod>2008-10-26T15:37:48+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://cmdln.org/tags/wordpress/</loc>
-    <lastmod>2008-10-26T15:37:48+00:00</lastmod>
-    <priority>0</priority>
+    <loc>https://cmdln.org/tags/gitosis/</loc>
+    <lastmod>2008-10-26T05:50:59+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cmdln.org/tags/hosting/</loc>
+    <lastmod>2008-10-26T05:50:59+00:00</lastmod>
   </url>
   
   <url>
@@ -2303,27 +2103,13 @@
   </url>
   
   <url>
-    <loc>https://cmdln.org/tags/gitosis/</loc>
-    <lastmod>2008-10-26T05:50:59+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cmdln.org/tags/hosting/</loc>
-    <lastmod>2008-10-26T05:50:59+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://cmdln.org/tags/test/</loc>
     <lastmod>2008-10-26T02:49:58+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/vimpress/</loc>
     <lastmod>2008-10-26T02:49:58+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -2332,31 +2118,28 @@
   </url>
   
   <url>
+    <loc>https://cmdln.org/tags/point-in-time-recovery/</loc>
+    <lastmod>2008-10-20T19:19:07+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://cmdln.org/2008/10/20/tip-vim-point-in-time-recovery/</loc>
     <lastmod>2008-10-20T19:19:07+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://cmdln.org/tags/point-in-time-recovery/</loc>
-    <lastmod>2008-10-20T19:19:07+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://cmdln.org/tags/vim-undo/</loc>
     <lastmod>2008-10-20T19:19:07+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cmdln.org/2008/10/18/vim-customization-for-python/</loc>
-    <lastmod>2008-10-18T19:19:06+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/python-ide/</loc>
     <lastmod>2008-10-18T19:19:06+00:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://cmdln.org/2008/10/18/vim-customization-for-python/</loc>
+    <lastmod>2008-10-18T19:19:06+00:00</lastmod>
   </url>
   
   <url>
@@ -2367,25 +2150,21 @@
   <url>
     <loc>https://cmdln.org/tags/personal-growth/</loc>
     <lastmod>2008-08-29T07:56:58+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/sys-admin/</loc>
     <lastmod>2008-08-29T07:56:58+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/systems-administrator/</loc>
     <lastmod>2008-08-29T07:56:58+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/top-10/</loc>
     <lastmod>2008-08-29T07:56:58+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -2396,13 +2175,16 @@
   <url>
     <loc>https://cmdln.org/tags/kibitz/</loc>
     <lastmod>2008-08-25T21:34:33+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/shared-console/</loc>
     <lastmod>2008-08-25T21:34:33+00:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://cmdln.org/tags/shared-command-line/</loc>
+    <lastmod>2008-08-14T01:14:34+00:00</lastmod>
   </url>
   
   <url>
@@ -2411,21 +2193,13 @@
   </url>
   
   <url>
-    <loc>https://cmdln.org/tags/shared-command-line/</loc>
-    <lastmod>2008-08-14T01:14:34+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://cmdln.org/tags/shared-session/</loc>
     <lastmod>2008-08-14T01:14:34+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/shared-terminal/</loc>
     <lastmod>2008-08-14T01:14:34+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -2436,19 +2210,16 @@
   <url>
     <loc>https://cmdln.org/tags/corperate-sabatoge/</loc>
     <lastmod>2008-07-10T01:07:45+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/dnsmadeeasy/</loc>
     <lastmod>2008-07-10T01:07:45+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/ultradns/</loc>
     <lastmod>2008-07-10T01:07:45+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -2459,13 +2230,21 @@
   <url>
     <loc>https://cmdln.org/tags/kde4/</loc>
     <lastmod>2008-06-16T01:43:05+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/time-format/</loc>
     <lastmod>2008-06-16T01:43:05+00:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://cmdln.org/tags/apache2/</loc>
+    <lastmod>2008-06-10T13:50:27+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cmdln.org/tags/dynamic-proxy/</loc>
+    <lastmod>2008-06-10T13:50:27+00:00</lastmod>
   </url>
   
   <url>
@@ -2474,27 +2253,28 @@
   </url>
   
   <url>
-    <loc>https://cmdln.org/tags/apache2/</loc>
-    <lastmod>2008-06-10T13:50:27+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cmdln.org/tags/dynamic-proxy/</loc>
-    <lastmod>2008-06-10T13:50:27+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://cmdln.org/tags/mod-proxy/</loc>
     <lastmod>2008-06-10T13:50:27+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/mod-rewrite/</loc>
     <lastmod>2008-06-10T13:50:27+00:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://cmdln.org/tags/bios/</loc>
+    <lastmod>2008-05-03T22:35:04+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cmdln.org/tags/increse-timeout/</loc>
+    <lastmod>2008-05-03T22:35:04+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cmdln.org/tags/slowdown/</loc>
+    <lastmod>2008-05-03T22:35:04+00:00</lastmod>
   </url>
   
   <url>
@@ -2503,27 +2283,8 @@
   </url>
   
   <url>
-    <loc>https://cmdln.org/tags/bios/</loc>
-    <lastmod>2008-05-03T22:35:04+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cmdln.org/tags/increse-timeout/</loc>
-    <lastmod>2008-05-03T22:35:04+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cmdln.org/tags/slowdown/</loc>
-    <lastmod>2008-05-03T22:35:04+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://cmdln.org/tags/add-new-tag/</loc>
     <lastmod>2008-05-02T00:19:53+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -2534,30 +2295,26 @@
   <url>
     <loc>https://cmdln.org/tags/rinse/</loc>
     <lastmod>2008-05-02T00:19:53+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/xen-tools/</loc>
     <lastmod>2008-05-02T00:19:53+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cmdln.org/2008/04/28/review-running-xen-a-hands-on-guide-to-the-art-of-virtualization/</loc>
-    <lastmod>2008-04-28T23:32:23+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/book/</loc>
     <lastmod>2008-04-28T23:32:23+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/review/</loc>
     <lastmod>2008-04-28T23:32:23+00:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://cmdln.org/2008/04/28/review-running-xen-a-hands-on-guide-to-the-art-of-virtualization/</loc>
+    <lastmod>2008-04-28T23:32:23+00:00</lastmod>
   </url>
   
   <url>
@@ -2568,7 +2325,6 @@
   <url>
     <loc>https://cmdln.org/tags/bonnie/</loc>
     <lastmod>2008-04-26T19:41:21+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -2579,7 +2335,16 @@
   <url>
     <loc>https://cmdln.org/tags/xen-create-image/</loc>
     <lastmod>2008-04-25T18:12:51+00:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://cmdln.org/tags/bootstrap/</loc>
+    <lastmod>2008-04-25T13:27:59+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cmdln.org/tags/centos-5/</loc>
+    <lastmod>2008-04-25T13:27:59+00:00</lastmod>
   </url>
   
   <url>
@@ -2588,15 +2353,13 @@
   </url>
   
   <url>
-    <loc>https://cmdln.org/tags/bootstrap/</loc>
-    <lastmod>2008-04-25T13:27:59+00:00</lastmod>
-    <priority>0</priority>
+    <loc>https://cmdln.org/tags/cleanup/</loc>
+    <lastmod>2008-04-19T05:33:14+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://cmdln.org/tags/centos-5/</loc>
-    <lastmod>2008-04-25T13:27:59+00:00</lastmod>
-    <priority>0</priority>
+    <loc>https://cmdln.org/tags/purge/</loc>
+    <lastmod>2008-04-19T05:33:14+00:00</lastmod>
   </url>
   
   <url>
@@ -2605,21 +2368,13 @@
   </url>
   
   <url>
-    <loc>https://cmdln.org/tags/cleanup/</loc>
-    <lastmod>2008-04-19T05:33:14+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cmdln.org/tags/purge/</loc>
-    <lastmod>2008-04-19T05:33:14+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://cmdln.org/tags/tasksel/</loc>
     <lastmod>2008-04-19T05:33:14+00:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://cmdln.org/tags/fix/</loc>
+    <lastmod>2008-04-17T23:34:20+00:00</lastmod>
   </url>
   
   <url>
@@ -2628,27 +2383,33 @@
   </url>
   
   <url>
-    <loc>https://cmdln.org/tags/fix/</loc>
-    <lastmod>2008-04-17T23:34:20+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://cmdln.org/tags/maildir/</loc>
     <lastmod>2008-04-17T23:34:20+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/permissions/</loc>
     <lastmod>2008-04-17T23:34:20+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/virtual-users/</loc>
     <lastmod>2008-04-17T23:34:20+00:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://cmdln.org/tags/firewall/</loc>
+    <lastmod>2008-04-16T23:19:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cmdln.org/tags/ftp/</loc>
+    <lastmod>2008-04-16T23:19:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cmdln.org/tags/pfsense/</loc>
+    <lastmod>2008-04-16T23:19:00+00:00</lastmod>
   </url>
   
   <url>
@@ -2657,27 +2418,28 @@
   </url>
   
   <url>
-    <loc>https://cmdln.org/tags/firewall/</loc>
-    <lastmod>2008-04-16T23:19:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cmdln.org/tags/ftp/</loc>
-    <lastmod>2008-04-16T23:19:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cmdln.org/tags/pfsense/</loc>
-    <lastmod>2008-04-16T23:19:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://cmdln.org/tags/1700/</loc>
     <lastmod>2008-04-16T03:50:16+00:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://cmdln.org/tags/imaging-drum/</loc>
+    <lastmod>2008-04-16T03:50:16+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cmdln.org/tags/photo-conductor/</loc>
+    <lastmod>2008-04-16T03:50:16+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cmdln.org/tags/printer/</loc>
+    <lastmod>2008-04-16T03:50:16+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cmdln.org/tags/reset/</loc>
+    <lastmod>2008-04-16T03:50:16+00:00</lastmod>
   </url>
   
   <url>
@@ -2686,50 +2448,23 @@
   </url>
   
   <url>
-    <loc>https://cmdln.org/tags/imaging-drum/</loc>
-    <lastmod>2008-04-16T03:50:16+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cmdln.org/tags/photo-conductor/</loc>
-    <lastmod>2008-04-16T03:50:16+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cmdln.org/tags/printer/</loc>
-    <lastmod>2008-04-16T03:50:16+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cmdln.org/tags/reset/</loc>
-    <lastmod>2008-04-16T03:50:16+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cmdln.org/2008/04/14/sphinx-init-script-for-rhel3/</loc>
-    <lastmod>2008-04-14T23:36:07+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://cmdln.org/tags/init/</loc>
     <lastmod>2008-04-14T23:36:07+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/rhel3/</loc>
     <lastmod>2008-04-14T23:36:07+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/sphinx/</loc>
     <lastmod>2008-04-14T23:36:07+00:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://cmdln.org/2008/04/14/sphinx-init-script-for-rhel3/</loc>
+    <lastmod>2008-04-14T23:36:07+00:00</lastmod>
   </url>
   
   <url>
@@ -2740,7 +2475,6 @@
   <url>
     <loc>https://cmdln.org/tags/blocks-to-megabytes/</loc>
     <lastmod>2008-04-14T02:29:17+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -2751,19 +2485,21 @@
   <url>
     <loc>https://cmdln.org/tags/ruby/</loc>
     <lastmod>2008-04-11T18:53:16+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/ticketing-system/</loc>
     <lastmod>2008-04-11T18:53:16+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/todo/</loc>
     <lastmod>2008-04-11T18:53:16+00:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://cmdln.org/tags/grep/</loc>
+    <lastmod>2008-04-10T19:59:52+00:00</lastmod>
   </url>
   
   <url>
@@ -2772,39 +2508,33 @@
   </url>
   
   <url>
-    <loc>https://cmdln.org/tags/grep/</loc>
-    <lastmod>2008-04-10T19:59:52+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://cmdln.org/tags/oneliner/</loc>
     <lastmod>2008-04-10T19:59:52+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/pattern-matching/</loc>
     <lastmod>2008-04-10T19:59:52+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/previous-line/</loc>
     <lastmod>2008-04-10T19:59:52+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/scripting/</loc>
     <lastmod>2008-04-10T19:59:52+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/2.6.42/</loc>
     <lastmod>2008-04-09T18:45:52+00:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://cmdln.org/tags/patch/</loc>
+    <lastmod>2008-04-09T18:45:52+00:00</lastmod>
   </url>
   
   <url>
@@ -2813,21 +2543,28 @@
   </url>
   
   <url>
-    <loc>https://cmdln.org/tags/patch/</loc>
-    <lastmod>2008-04-09T18:45:52+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://cmdln.org/tags/vmmon/</loc>
     <lastmod>2008-04-09T18:45:52+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/vmnet/</loc>
     <lastmod>2008-04-09T18:45:52+00:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://cmdln.org/tags/delete/</loc>
+    <lastmod>2008-04-09T15:21:09+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cmdln.org/tags/faster/</loc>
+    <lastmod>2008-04-09T15:21:09+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cmdln.org/tags/find/</loc>
+    <lastmod>2008-04-09T15:21:09+00:00</lastmod>
   </url>
   
   <url>
@@ -2836,33 +2573,13 @@
   </url>
   
   <url>
-    <loc>https://cmdln.org/tags/delete/</loc>
-    <lastmod>2008-04-09T15:21:09+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cmdln.org/tags/faster/</loc>
-    <lastmod>2008-04-09T15:21:09+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cmdln.org/tags/find/</loc>
-    <lastmod>2008-04-09T15:21:09+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://cmdln.org/tags/maintainance/</loc>
     <lastmod>2008-04-09T15:21:09+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/xargs/</loc>
     <lastmod>2008-04-09T15:21:09+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -2873,13 +2590,11 @@
   <url>
     <loc>https://cmdln.org/tags/atime/</loc>
     <lastmod>2008-04-07T23:16:44+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/ctime/</loc>
     <lastmod>2008-04-07T23:16:44+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -2890,25 +2605,46 @@
   <url>
     <loc>https://cmdln.org/tags/file-times/</loc>
     <lastmod>2008-04-07T23:16:44+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/linux-times/</loc>
     <lastmod>2008-04-07T23:16:44+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/mtime/</loc>
     <lastmod>2008-04-07T23:16:44+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/unix-times/</loc>
     <lastmod>2008-04-07T23:16:44+00:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://cmdln.org/tags/contribution/</loc>
+    <lastmod>2008-04-07T06:04:59+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cmdln.org/tags/highlight/</loc>
+    <lastmod>2008-04-07T06:04:59+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cmdln.org/tags/open-source/</loc>
+    <lastmod>2008-04-07T06:04:59+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cmdln.org/tags/syntax/</loc>
+    <lastmod>2008-04-07T06:04:59+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cmdln.org/tags/syntaxhighlighter-plus/</loc>
+    <lastmod>2008-04-07T06:04:59+00:00</lastmod>
   </url>
   
   <url>
@@ -2917,33 +2653,18 @@
   </url>
   
   <url>
-    <loc>https://cmdln.org/tags/contribution/</loc>
-    <lastmod>2008-04-07T06:04:59+00:00</lastmod>
-    <priority>0</priority>
+    <loc>https://cmdln.org/tags/manual/</loc>
+    <lastmod>2008-04-06T17:15:35+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://cmdln.org/tags/highlight/</loc>
-    <lastmod>2008-04-07T06:04:59+00:00</lastmod>
-    <priority>0</priority>
+    <loc>https://cmdln.org/tags/smtp/</loc>
+    <lastmod>2008-04-06T17:15:35+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://cmdln.org/tags/open-source/</loc>
-    <lastmod>2008-04-07T06:04:59+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cmdln.org/tags/syntax/</loc>
-    <lastmod>2008-04-07T06:04:59+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cmdln.org/tags/syntaxhighlighter-plus/</loc>
-    <lastmod>2008-04-07T06:04:59+00:00</lastmod>
-    <priority>0</priority>
+    <loc>https://cmdln.org/tags/spoof/</loc>
+    <lastmod>2008-04-06T17:15:35+00:00</lastmod>
   </url>
   
   <url>
@@ -2952,27 +2673,18 @@
   </url>
   
   <url>
-    <loc>https://cmdln.org/tags/manual/</loc>
-    <lastmod>2008-04-06T17:15:35+00:00</lastmod>
-    <priority>0</priority>
+    <loc>https://cmdln.org/tags/knetworkmanager/</loc>
+    <lastmod>2008-04-06T04:38:29+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://cmdln.org/tags/smtp/</loc>
-    <lastmod>2008-04-06T17:15:35+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cmdln.org/tags/spoof/</loc>
-    <lastmod>2008-04-06T17:15:35+00:00</lastmod>
-    <priority>0</priority>
+    <loc>https://cmdln.org/tags/kubuntu/</loc>
+    <lastmod>2008-04-06T04:38:29+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/networkmanager/</loc>
     <lastmod>2008-04-06T04:38:29+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -2981,21 +2693,13 @@
   </url>
   
   <url>
-    <loc>https://cmdln.org/tags/knetworkmanager/</loc>
-    <lastmod>2008-04-06T04:38:29+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cmdln.org/tags/kubuntu/</loc>
-    <lastmod>2008-04-06T04:38:29+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://cmdln.org/tags/wireless/</loc>
     <lastmod>2008-04-06T04:38:29+00:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://cmdln.org/tags/screencast/</loc>
+    <lastmod>2008-02-25T05:16:50+00:00</lastmod>
   </url>
   
   <url>
@@ -3004,9 +2708,8 @@
   </url>
   
   <url>
-    <loc>https://cmdln.org/tags/screencast/</loc>
-    <lastmod>2008-02-25T05:16:50+00:00</lastmod>
-    <priority>0</priority>
+    <loc>https://cmdln.org/tags/bash-prompt/</loc>
+    <lastmod>2008-02-25T03:59:17+00:00</lastmod>
   </url>
   
   <url>
@@ -3015,9 +2718,8 @@
   </url>
   
   <url>
-    <loc>https://cmdln.org/tags/bash-prompt/</loc>
-    <lastmod>2008-02-25T03:59:17+00:00</lastmod>
-    <priority>0</priority>
+    <loc>https://cmdln.org/tags/bypass/</loc>
+    <lastmod>2008-02-12T18:12:18+00:00</lastmod>
   </url>
   
   <url>
@@ -3026,27 +2728,28 @@
   </url>
   
   <url>
-    <loc>https://cmdln.org/tags/bypass/</loc>
-    <lastmod>2008-02-12T18:12:18+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://cmdln.org/tags/howto/</loc>
     <lastmod>2008-02-12T18:12:18+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/security/</loc>
     <lastmod>2008-02-12T18:12:18+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/tsocks/</loc>
     <lastmod>2008-02-12T18:12:18+00:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://cmdln.org/tags/authprogs/</loc>
+    <lastmod>2008-02-11T06:01:54+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cmdln.org/tags/restrict-commands/</loc>
+    <lastmod>2008-02-11T06:01:54+00:00</lastmod>
   </url>
   
   <url>
@@ -3055,15 +2758,23 @@
   </url>
   
   <url>
-    <loc>https://cmdln.org/tags/authprogs/</loc>
-    <lastmod>2008-02-11T06:01:54+00:00</lastmod>
-    <priority>0</priority>
+    <loc>https://cmdln.org/tags/install/</loc>
+    <lastmod>2008-02-11T02:00:27+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://cmdln.org/tags/restrict-commands/</loc>
-    <lastmod>2008-02-11T06:01:54+00:00</lastmod>
-    <priority>0</priority>
+    <loc>https://cmdln.org/tags/setup/</loc>
+    <lastmod>2008-02-11T02:00:27+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cmdln.org/tags/walkthrough/</loc>
+    <lastmod>2008-02-11T02:00:27+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cmdln.org/tags/zabbix/</loc>
+    <lastmod>2008-02-11T02:00:27+00:00</lastmod>
   </url>
   
   <url>
@@ -3072,27 +2783,8 @@
   </url>
   
   <url>
-    <loc>https://cmdln.org/tags/install/</loc>
-    <lastmod>2008-02-11T02:00:27+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cmdln.org/tags/setup/</loc>
-    <lastmod>2008-02-11T02:00:27+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cmdln.org/tags/walkthrough/</loc>
-    <lastmod>2008-02-11T02:00:27+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cmdln.org/tags/zabbix/</loc>
-    <lastmod>2008-02-11T02:00:27+00:00</lastmod>
-    <priority>0</priority>
+    <loc>https://cmdln.org/tags/password/</loc>
+    <lastmod>2008-02-09T15:13:03+00:00</lastmod>
   </url>
   
   <url>
@@ -3101,15 +2793,8 @@
   </url>
   
   <url>
-    <loc>https://cmdln.org/tags/password/</loc>
-    <lastmod>2008-02-09T15:13:03+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://cmdln.org/tags/root/</loc>
     <lastmod>2008-02-09T15:13:03+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -3120,13 +2805,11 @@
   <url>
     <loc>https://cmdln.org/tags/self-healing/</loc>
     <lastmod>2008-02-08T23:01:17+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/.screenrc/</loc>
     <lastmod>2008-02-08T14:04:26+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -3137,7 +2820,11 @@
   <url>
     <loc>https://cmdln.org/tags/commandline/</loc>
     <lastmod>2008-02-08T14:04:26+00:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://cmdln.org/tags/exim/</loc>
+    <lastmod>2008-02-08T03:26:56+00:00</lastmod>
   </url>
   
   <url>
@@ -3146,9 +2833,8 @@
   </url>
   
   <url>
-    <loc>https://cmdln.org/tags/exim/</loc>
-    <lastmod>2008-02-08T03:26:56+00:00</lastmod>
-    <priority>0</priority>
+    <loc>https://cmdln.org/tags/cups/</loc>
+    <lastmod>2008-02-08T03:25:06+00:00</lastmod>
   </url>
   
   <url>
@@ -3157,15 +2843,13 @@
   </url>
   
   <url>
-    <loc>https://cmdln.org/tags/cups/</loc>
+    <loc>https://cmdln.org/tags/printing/</loc>
     <lastmod>2008-02-08T03:25:06+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://cmdln.org/tags/printing/</loc>
-    <lastmod>2008-02-08T03:25:06+00:00</lastmod>
-    <priority>0</priority>
+    <loc>https://cmdln.org/tags/recovery/</loc>
+    <lastmod>2008-02-08T03:23:26+00:00</lastmod>
   </url>
   
   <url>
@@ -3174,9 +2858,13 @@
   </url>
   
   <url>
-    <loc>https://cmdln.org/tags/recovery/</loc>
-    <lastmod>2008-02-08T03:23:26+00:00</lastmod>
-    <priority>0</priority>
+    <loc>https://cmdln.org/tags/exiqgrep/</loc>
+    <lastmod>2008-02-08T03:22:20+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cmdln.org/tags/queue/</loc>
+    <lastmod>2008-02-08T03:22:20+00:00</lastmod>
   </url>
   
   <url>
@@ -3185,26 +2873,13 @@
   </url>
   
   <url>
-    <loc>https://cmdln.org/tags/exiqgrep/</loc>
-    <lastmod>2008-02-08T03:22:20+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cmdln.org/tags/queue/</loc>
-    <lastmod>2008-02-08T03:22:20+00:00</lastmod>
-    <priority>0</priority>
+    <loc>https://cmdln.org/tags/bc/</loc>
+    <lastmod>2008-02-08T03:21:15+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://cmdln.org/2008/02/07/use-bc-for-command-line-math/</loc>
     <lastmod>2008-02-08T03:21:15+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://cmdln.org/tags/bc/</loc>
-    <lastmod>2008-02-08T03:21:15+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -3225,7 +2900,6 @@
   <url>
     <loc>https://cmdln.org/tags/scrolling/</loc>
     <lastmod>2007-07-31T17:52:56+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -3236,7 +2910,6 @@
   <url>
     <loc>https://cmdln.org/tags/session/</loc>
     <lastmod>2007-07-20T14:07:53+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -3252,13 +2925,11 @@
   <url>
     <loc>https://cmdln.org/tags/raid/</loc>
     <lastmod>2006-09-04T14:10:32+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cmdln.org/tags/3ware/</loc>
     <lastmod>2006-09-02T14:05:38+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -3269,7 +2940,6 @@
   <url>
     <loc>https://cmdln.org/tags/hardware/</loc>
     <lastmod>2006-09-02T14:05:38+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
 </urlset>

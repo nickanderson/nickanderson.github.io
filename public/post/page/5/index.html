@@ -6,7 +6,7 @@
 
 		<meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.56.3" />
+<meta name="generator" content="Hugo 0.57.0" />
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -72,6 +72,19 @@
 			</div>
 			<ul id="post-list">
                 	
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
+							<h4 class="post-link"><a href="https://cmdln.org/2017/11/18/long-time-no-blog/">Long Time No Blog</a></h4>
+							<h4 class="post-date">Nov 18, 2017</h4>
+						</div>
+						<div class="post-summary"><p>1  echo hello world    1 2 3 4 5  bundle agent main { reports: &#34;Hello World&#34;; }    R: Hello World  </p></div>
+						<div class="post-list-footer text-center">
+							<a href="https://cmdln.org/2017/11/18/long-time-no-blog/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
 				<li>
 					<div class="post-list-item">
 						<div class="post-header">
@@ -189,19 +202,6 @@ I think the mentorship program is one of the best things that LOPSA offers. You 
 						<div class="post-summary"><p>There is a known bug where getindices is unable to get the index of a dynamically generated array until the next pass. This comes up from time to time so I thought I would post an example using a pattern shared on the CFEngine help mailing list. The policy below shows 3 working examples. They are mostly similar, example0 shows the simplest workaround, example1 and example2 in addition show ways to suppress the &#8220;Duplicate selection of value for variable&#8221; messages.</p></div>
 						<div class="post-list-footer text-center">
 							<a href="https://cmdln.org/2013/03/13/working-around-getindices-with-dynamically-generated-arrays-in-cfengine-3/">Read More</a>
-						</div>
-					</div>
-				</li>
-			
-				<li>
-					<div class="post-list-item">
-						<div class="post-header">
-							<h4 class="post-link"><a href="https://cmdln.org/2013/03/09/deep-thoughts/">Deep thoughts</a></h4>
-							<h4 class="post-date">Mar 9, 2013</h4>
-						</div>
-						<div class="post-summary"><p>bundle common knowledge(status) { vars: "software" string =&gt; "$(status)", policy =&gt; "free"; !isUsable:: "software" string =&gt; "usable", policy =&gt; "free"; isUsable:: "software" string =&gt; "reusable", policy =&gt; "free"; classes: "isUsable" expression =&gt; regcmp("$(software)", "usable"); "reUsable" expression =&gt; regcmp("$(software)", "resuable"); reports: Morning|Afternoon|Evening|Night:: "Before software can be reusable it first has to be useable.", comment =&gt; "Ralph Johnson"; } </p></div>
-						<div class="post-list-footer text-center">
-							<a href="https://cmdln.org/2013/03/09/deep-thoughts/">Read More</a>
 						</div>
 					</div>
 				</li>
