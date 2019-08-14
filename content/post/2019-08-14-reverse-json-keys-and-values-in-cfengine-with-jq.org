@@ -1,0 +1,106 @@
+#+Title: Reversing key values of a JSON dict in CFEngine with jq
+#+AUTHOR: Nick Anderson
+#+DATE: 2019-08-14
+#+TAGS[]: cfengine3
+#+DRAFT: false
+
+#+begin_quote
+Do you have any tips on reversing a json dictionary?
+
+I have a map of IPv4 addresses to environments and I would like to have a map of
+environments to IPv4s.
+
+#+BEGIN_SRC json
+  {
+      "192.0.2.131"    : "TEST-NET-1",
+      "198.51.100.151" : "TEST-NET-2",
+      "198.51.100.146" : "TEST-NET-2",
+      "203.0.113.146"  : "TEST-NET-3",
+      "203.0.113.21"   : "TEST-NET-3"
+  }
+#+END_SRC
+
+Would become:
+
+#+BEGIN_SRC json
+{
+  "TEST-NET-1": [
+    "192.0.2.131"
+  ],
+  "TEST-NET-2": [
+    "198.51.100.146",
+    "198.51.100.151"
+  ],
+  "TEST-NET-3": [
+    "203.0.113.146",
+    "203.0.113.21"
+  ]
+}
+#+END_SRC
+#+end_quote
+
+I think that is too complex to do naively in policy. =jq= is really good for
+working with JSON and I found an answer of [[https://stackoverflow.com/a/54354245/2854727][how to swap key and value of an
+object using jq]] stackoverflow.
+
+We can use =mapdata()= to do that same conversion from within policy.
+
+#+BEGIN_SRC cfengine3 :include-stdlib t :log-level info :exports both
+  bundle agent example_mapdata_jq_reverse_key_values
+  {
+
+    vars:
+
+        "policy_hub_zone_data" data => '{
+        "192.0.2.131"    : "TEST-NET-1",
+        "198.51.100.151" : "TEST-NET-2",
+        "198.51.100.146" : "TEST-NET-2",
+        "203.0.113.146"  : "TEST-NET-3",
+        "203.0.113.21"   : "TEST-NET-3"
+    }';
+
+        "jq" string => "/usr/bin/jq 'to_entries \
+                       | map( {(.value) : {(.key):null} }) \
+                       | reduce .[] as $item ({}; . * $item) \
+                       | to_entries \
+                       | map({key:.key, value:(.value|keys)}) \
+                       | from_entries '";
+
+        "rev"
+          data => mapdata( "json_pipe",
+                           '$(jq)',
+                           policy_hub_zone_data );
+
+      # Since mapdata returns an array, you need to pick out the first element
+        "picked" data => mergedata( "rev[0]" );
+
+    reports:
+
+        "$(with)" with => string_mustache( "{{%-top-}}", "picked");
+  }
+
+  bundle agent __main__
+  {
+    methods:
+        "example_mapdata_jq_reverse_key_values";
+  }
+#+END_SRC
+
+Running that policy produces the reversed map:
+
+#+RESULTS:
+#+begin_example
+R: {
+  "TEST-NET-1": [
+    "192.0.2.131"
+  ],
+  "TEST-NET-2": [
+    "198.51.100.146",
+    "198.51.100.151"
+  ],
+  "TEST-NET-3": [
+    "203.0.113.146",
+    "203.0.113.21"
+  ]
+}
+#+end_example
