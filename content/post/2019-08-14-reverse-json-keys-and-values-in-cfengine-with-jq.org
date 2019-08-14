@@ -9,6 +9,7 @@ Do you have any tips on reversing a json dictionary?
 
 I have a map of IPv4 addresses to environments and I would like to have a map of
 environments to IPv4s.
+#+end_quote
 
 #+BEGIN_SRC json
   {
@@ -20,7 +21,9 @@ environments to IPv4s.
   }
 #+END_SRC
 
+#+begin_quote
 Would become:
+#+end_quote
 
 #+BEGIN_SRC json
 {
@@ -37,7 +40,6 @@ Would become:
   ]
 }
 #+END_SRC
-#+end_quote
 
 I think that is too complex to do naively in policy. =jq= is really good for
 working with JSON and I found an answer of [[https://stackoverflow.com/a/54354245/2854727][how to swap key and value of an
@@ -45,7 +47,7 @@ object using jq]] stackoverflow.
 
 We can use =mapdata()= to do that same conversion from within policy.
 
-#+BEGIN_SRC cfengine3 :include-stdlib t :log-level info :exports both
+#+BEGIN_SRC cfengine3 :exports both
   bundle agent example_mapdata_jq_reverse_key_values
   {
 
@@ -76,7 +78,7 @@ We can use =mapdata()= to do that same conversion from within policy.
 
     reports:
 
-        "$(with)" with => string_mustache( "{{%-top-}}", "picked");
+        "$(with)" with => string_mustache( "{{ %-top- }}", "picked");
   }
 
   bundle agent __main__
