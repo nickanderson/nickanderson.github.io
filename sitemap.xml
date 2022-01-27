@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
@@ -55,11 +55,6 @@
   <url>
     <loc>https://cmdln.org/2019/03/08/executing-commands-with-substitution-from-cfengine/</loc>
     <lastmod>2019-03-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://cmdln.org/2018/11/21/ensure-all-files-in-roots-path-are-only-writeable-by-root/</loc>
-    <lastmod>2018-11-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -255,16 +250,6 @@
   <url>
     <loc>https://cmdln.org/2017/07/02/northern-tech/</loc>
     <lastmod>2017-07-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://cmdln.org/about/</loc>
-    <lastmod>2017-06-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://cmdln.org/about/back-and-spare-parts/</loc>
-    <lastmod>2017-06-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -1128,7 +1113,7 @@
   </url>
   
   <url>
-    <loc>https://cmdln.org/2010/04/16/software-review-advanced-web-ranking-and-advanced-link-manager/</loc>
+    <loc>https://cmdln.org/2010/04/16/software-review-%E2%80%93-advanced-web-ranking-and-advanced-link-manager/</loc>
     <lastmod>2010-04-16T19:13:35+00:00</lastmod>
   </url>
   

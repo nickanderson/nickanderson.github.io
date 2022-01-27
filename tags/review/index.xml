@@ -1,15 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>review on </title>
     <link>https://cmdln.org/tags/review/</link>
     <description>Recent content in review on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 28 Apr 2008 23:32:23 +0000</lastBuildDate>
-    
-	<atom:link href="https://cmdln.org/tags/review/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 28 Apr 2008 23:32:23 +0000</lastBuildDate><atom:link href="https://cmdln.org/tags/review/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Review: Running Xen a Hands-On guide to the Art of Virtualization</title>
       <link>https://cmdln.org/2008/04/28/review-running-xen-a-hands-on-guide-to-the-art-of-virtualization/</link>

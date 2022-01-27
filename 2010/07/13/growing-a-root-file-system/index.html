@@ -6,7 +6,7 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.57.0" />
+<meta name="generator" content="Hugo 0.80.0" />
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -69,9 +69,7 @@
             <span class="post-date">Jul 13, 2010 </span>
             <div class="post-content">
                 <p>IMHO one of the great benefits of virtualization is the ability to properly size your guests. Many times 512M memory and an 8G / is plenty. Increasing memory for a virtual machine is typically pretty straight forward, but there are several options when adding disk space. Mounting the space in the file system and doing something with LVM are likely the most common paths.</p>
-
-<p>Depending on the situation I typically lean toward keeping my small 8G root and mounting extra storage where needed in the file system. I think its the simplest solution for most cases. I don&#8217;t like ending up with a bunch of mounts, so in the cases where storage needs are spread across the file system growing the root becomes important. You can add a new virtual disk, partition it, toss it into the Volume Group and then extend your volume and file system. There is absolutely nothing wrong with this approach but having all those virtual hard drives attached just seems a bit hap-hazard and messy. When I need more space at / I think its much cleaner to just extend the partition that is in the VG of my systemroot. Anyway here are my notes. The block devices are specific to Xen but the actions should work on other platforms and on bare metal. My default partitioning scheme is as follows, /dev/xvda 2 partitions, 100M /boot, LVM with / being comprised of the full available space. Swap is on /dev/xvdb. This allows me to keep growing xvda and extending the second partition when I need to add space.</p>
-
+<p>Depending on the situation I typically lean toward keeping my small 8G root and mounting extra storage where needed in the file system. I think its the simplest solution for most cases. I don’t like ending up with a bunch of mounts, so in the cases where storage needs are spread across the file system growing the root becomes important. You can add a new virtual disk, partition it, toss it into the Volume Group and then extend your volume and file system. There is absolutely nothing wrong with this approach but having all those virtual hard drives attached just seems a bit hap-hazard and messy. When I need more space at / I think its much cleaner to just extend the partition that is in the VG of my systemroot. Anyway here are my notes. The block devices are specific to Xen but the actions should work on other platforms and on bare metal. My default partitioning scheme is as follows, /dev/xvda 2 partitions, 100M /boot, LVM with / being comprised of the full available space. Swap is on /dev/xvdb. This allows me to keep growing xvda and extending the second partition when I need to add space.</p>
 <ol>
 <li>Power vm off</li>
 <li>Create snapshot incase things go horribly wrong</li>
@@ -97,7 +95,7 @@
             <div class="push"></div>
         </div>
         <footer class="footer text-center">
-<p>Copyright &copy; 2019 Nick Anderson -
+<p>Copyright &copy; 2022 Nick Anderson -
 <span class="credit">
 	Powered by
 	<a target="_blank" href="https://gohugo.io">Hugo</a>

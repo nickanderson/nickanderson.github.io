@@ -6,7 +6,7 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.57.0" />
+<meta name="generator" content="Hugo 0.80.0" />
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -73,55 +73,49 @@
 CFEngine 3.12.0 introduced the <a href="https://docs.cfengine.com/docs/3.12/reference-language-concepts-augments.html#augments"><em>augments</em> key</a> to the <a href="https://docs.cfengine.com/docs/3.12/reference-language-concepts-augments.html#augments">Augments file format</a>. If
 you are not already familiar with Augments, check it out. It&#39;s a very easy way
 to define classes and variables very early during agent execution, before
-policy.
-</p>
+policy.</p>
 <p>
 The new augments key allows you to merge additional data in the augments format
 on top of the base augments. I However, there is, I think, still a simple way to
 accomplish this. This can provide a flexible way of providing different data to
-different sets of machines.
-</p>
+different sets of machines.</p>
 <p>
 Since augments are loaded very early during policy evaluation. Currently, only
 <a href="https://docs.cfengine.com/docs/3.12/reference-special-variables.html">special variables</a> like the <a href="https://docs.cfengine.com/docs/3.12/reference-special-variables-sys.html"><code class="verbatim">sys</code> vars</a> can be used to select additional augments.
-The question arises …
-</p>
+The question arises …</p>
 <blockquote>
-<p>
-How can I extend augments from custom policy?
-</p>
+<p>How can I extend augments from custom policy?</p>
 </blockquote>
 <p>
 The short answer is that you can&#39;t, at least not directly, but there are a
-couple of things that you can do to achieve the same result.
-</p>
-<h1 id="headline-1">
+couple of things that you can do to achieve the same result.</p>
+<div id="outline-container-headline-1" class="outline-2">
+<h2 id="headline-1">
 Customize /etc/os-release
-</h1>
+</h2>
+<div id="outline-text-headline-1" class="outline-text-2">
 <p>
 In 3.11.0 CFEngine began parsing <code class="verbatim">/etc/os-release</code> during system discovery into
 <a href="https://docs.cfengine.com/docs/master/reference-special-variables-sys.html#sys-os_release">sys.os_release</a>. I think that <code class="verbatim">/etc/os-release</code> is perhaps a good place for you
 to encode this <code class="verbatim">DEVICE_TYPE</code>. It&#39;s a simple <code class="verbatim">key=value</code> format, and according to
 the docs on freedesktop.org <a href="https://www.freedesktop.org/software/systemd/man/os-release.html">the file format may be extended by vendors</a>. It&#39;s
 highly recommended to prefix new fields with an OS specific name in order to
-avoid name clashes.
-</p>
+avoid name clashes.</p>
 <p>
 So, let&#39;s edit <code class="verbatim">/etc/os-release</code> and define <code class="verbatim">CUSTOM_DEVICE_TYPE</code>. This is
 <code class="verbatim">/etc/os-release</code> on my workstation, after I have edited it to add my new key
-value.
-</p>
+value.</p>
 <pre class="example">
-  NAME="Ubuntu"
-  VERSION="18.10 (Cosmic Cuttlefish)"
+  NAME=&#34;Ubuntu&#34;
+  VERSION=&#34;18.10 (Cosmic Cuttlefish)&#34;
   ID=ubuntu
   ID_LIKE=debian
-  PRETTY_NAME="Ubuntu 18.10"
-  VERSION_ID="18.10"
-  HOME_URL="https://www.ubuntu.com/"
-  SUPPORT_URL="https://help.ubuntu.com/"
-  BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
-  PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
+  PRETTY_NAME=&#34;Ubuntu 18.10&#34;
+  VERSION_ID=&#34;18.10&#34;
+  HOME_URL=&#34;https://www.ubuntu.com/&#34;
+  SUPPORT_URL=&#34;https://help.ubuntu.com/&#34;
+  BUG_REPORT_URL=&#34;https://bugs.launchpad.net/ubuntu/&#34;
+  PRIVACY_POLICY_URL=&#34;https://www.ubuntu.com/legal/terms-and-policies/privacy-policy&#34;
   VERSION_CODENAME=cosmic
   UBUNTU_CODENAME=cosmic
   CUSTOM_DEVICE_TYPE=laptop
@@ -130,18 +124,15 @@ value.
 This way, when the agent initializes, it will have
 <code class="verbatim">sys.os_release[CUSTOM_DEVICE_TYPE]</code> available for use. This could be set during
 initial provisioning, or of course cfengine policy could manage the extra file
-content.
-</p>
+content.</p>
 <p>
-Here is a small example:
-</p>
+Here is a small example:</p>
 <p>
-<strong>def.json:</strong>
-</p>
+<strong>def.json:</strong></p>
 <div class="src src-json">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-json" data-lang="json"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -167,15 +158,13 @@ Here is a small example:
 </div>
 </div>
 <p>
-Here is my data file that is used when <code class="verbatim">CUSTOM_DEVICE_TYPE</code> is set to <code class="verbatim">laptop</code>.
-</p>
+Here is my data file that is used when <code class="verbatim">CUSTOM_DEVICE_TYPE</code> is set to <code class="verbatim">laptop</code>.</p>
 <p>
-<strong>laptop.json:</strong>
-</p>
+<strong>laptop.json:</strong></p>
 <div class="src src-json">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-json" data-lang="json"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -193,15 +182,13 @@ Here is my data file that is used when <code class="verbatim">CUSTOM_DEVICE_TYPE
 </div>
 </div>
 <p>
-Here is the simple policy to illustrate the point.
-</p>
+Here is the simple policy to illustrate the point.</p>
 <p>
-<strong>promises.cf:</strong>
-</p>
+<strong>promises.cf:</strong></p>
 <div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -221,36 +208,35 @@ Here is the simple policy to illustrate the point.
 </div>
 </div>
 <p>
-<strong>Output:</strong>
-</p>
+<strong>Output:</strong></p>
 <pre class="example">
-> $ cf-agent -KIf ./promises.cf                                                                                 
+&gt; $ cf-agent -KIf ./promises.cf                                                                                 
 R: def.my_var is I am BLUE
 R: My device type is laptop
 </pre>
 <p>
 In the above output, note that <code class="verbatim">def.my_var</code> is <code class="verbatim">BLUE</code>, what happens if you
-change the <code class="verbatim">CUSTOM_DEVICE_TYPE</code>?
-</p>
-<h1 id="headline-2">
+change the <code class="verbatim">CUSTOM_DEVICE_TYPE</code>?</p>
+</div>
+</div>
+<div id="outline-container-headline-2" class="outline-2">
+<h2 id="headline-2">
 Download device type specific data to a stable location
-</h1>
+</h2>
+<div id="outline-text-headline-2" class="outline-text-2">
 <p>
 An alternate methodology to achieve similar results would be to reference a
 stable location, but use a files promise to ensure that the proper device type
-specific data is there.
-</p>
+specific data is there.</p>
 <p>
 For example, instead of shipping <code class="verbatim">device_type1.json</code> and <code class="verbatim">devices_type2.json</code> as
-part of the policy, you can download it to <code class="verbatim">device.json</code>.
-</p>
+part of the policy, you can download it to <code class="verbatim">device.json</code>.</p>
 <p>
-This copy_from files promise illustrates what I mean:
-</p>
+This copy_from files promise illustrates what I mean:</p>
 <div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -270,15 +256,13 @@ This copy_from files promise illustrates what I mean:
 </div>
 </div>
 <p>
-Then the base augments would look like this:
-</p>
+Then the base augments would look like this:</p>
 <p>
-<strong>def.json:</strong>
-</p>
+<strong>def.json:</strong></p>
 <div class="src src-json">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-json" data-lang="json"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -303,6 +287,8 @@ Then the base augments would look like this:
 </div>
 </div>
 </div>
+</div>
+</div>
 
             </div>
             
@@ -313,7 +299,7 @@ Then the base augments would look like this:
             <div class="push"></div>
         </div>
         <footer class="footer text-center">
-<p>Copyright &copy; 2019 Nick Anderson -
+<p>Copyright &copy; 2022 Nick Anderson -
 <span class="credit">
 	Powered by
 	<a target="_blank" href="https://gohugo.io">Hugo</a>

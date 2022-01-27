@@ -1,15 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>mod_proxy on </title>
     <link>https://cmdln.org/tags/mod_proxy/</link>
     <description>Recent content in mod_proxy on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 02 Nov 2008 00:08:08 +0000</lastBuildDate>
-    
-	<atom:link href="https://cmdln.org/tags/mod_proxy/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 02 Nov 2008 00:08:08 +0000</lastBuildDate><atom:link href="https://cmdln.org/tags/mod_proxy/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Trust not DNS or How to properly move a website</title>
       <link>https://cmdln.org/2008/11/01/trust-not-dns-or-how-to-properly-move-a-website/</link>

@@ -1,22 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>sar on </title>
     <link>https://cmdln.org/tags/sar/</link>
     <description>Recent content in sar on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 30 Jan 2009 03:34:39 +0000</lastBuildDate>
-    
-	<atom:link href="https://cmdln.org/tags/sar/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 30 Jan 2009 03:34:39 +0000</lastBuildDate><atom:link href="https://cmdln.org/tags/sar/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Baseline Analysis is Important, CPU Performance Analysis in Linux Revisited</title>
       <link>https://cmdln.org/2009/01/29/baseline-analysis-is-important-cpu-performance-analysis-in-linux-revisited/</link>
       <pubDate>Fri, 30 Jan 2009 03:34:39 +0000</pubDate>
       
       <guid>https://cmdln.org/2009/01/29/baseline-analysis-is-important-cpu-performance-analysis-in-linux-revisited/</guid>
-      <description>&lt;p&gt;Yesterday I wrote about &lt;a href=http://www.cmdln.org/2009/01/28/cpu-performance-analysis-in-linux/&gt;CPU Performance Analysis in Linux&lt;/a&gt;. I explained how to tell if you are experiencing a CPU bottleneck. This is just a quick followup to show the effect of adding more cpu power.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Yesterday I wrote about &lt;!-- raw HTML omitted --&gt;CPU Performance Analysis in Linux&lt;!-- raw HTML omitted --&gt;. I explained how to tell if you are experiencing a CPU bottleneck. This is just a quick followup to show the effect of adding more cpu power.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -25,7 +21,7 @@
       <pubDate>Wed, 28 Jan 2009 06:03:17 +0000</pubDate>
       
       <guid>https://cmdln.org/2009/01/28/cpu-performance-analysis-in-linux/</guid>
-      <description>&lt;p&gt;A while back I wrote a post &lt;a href=http://www.cmdln.org/2008/04/13/analyzing-linux-system-performance-and-finding-bottle-necks/&gt;Analyzing Linux System Performance and Finding Bottlenecks&lt;/a&gt;. I did&amp;#8217;t really give a good explanation of determining if you are CPU bound or not so I am writing this post to clear that up.&lt;/p&gt;</description>
+      <description>&lt;p&gt;A while back I wrote a post &lt;!-- raw HTML omitted --&gt;Analyzing Linux System Performance and Finding Bottlenecks&lt;!-- raw HTML omitted --&gt;. I did’t really give a good explanation of determining if you are CPU bound or not so I am writing this post to clear that up.&lt;/p&gt;</description>
     </item>
     
     <item>

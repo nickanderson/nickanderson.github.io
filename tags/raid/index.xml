@@ -1,22 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>raid on </title>
     <link>https://cmdln.org/tags/raid/</link>
     <description>Recent content in raid on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 04 Sep 2006 14:10:32 +0000</lastBuildDate>
-    
-	<atom:link href="https://cmdln.org/tags/raid/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 04 Sep 2006 14:10:32 +0000</lastBuildDate><atom:link href="https://cmdln.org/tags/raid/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Gentoo on Software RAID1</title>
       <link>https://cmdln.org/2006/09/04/gentoo-on-software-raid1/</link>
       <pubDate>Mon, 04 Sep 2006 14:10:32 +0000</pubDate>
       
       <guid>https://cmdln.org/2006/09/04/gentoo-on-software-raid1/</guid>
-      <description>I am in the process of setting up one of my new servers. Yes my old dual pIII machines are going to retire. They are going to live in a &amp;#8220;retirement community&amp;#8221; :P. Any way This time around I am going to use a mirror to protect my data. I never experienced a hardware failure before but I figure better safe than sorry right? So I am going to outline the steps needed to boot from a RAID0.</description>
+      <description>I am in the process of setting up one of my new servers. Yes my old dual pIII machines are going to retire. They are going to live in a “retirement community” :P. Any way This time around I am going to use a mirror to protect my data. I never experienced a hardware failure before but I figure better safe than sorry right? So I am going to outline the steps needed to boot from a RAID0.</description>
     </item>
     
     <item>

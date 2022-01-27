@@ -6,7 +6,7 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.57.0" />
+<meta name="generator" content="Hugo 0.80.0" />
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -69,22 +69,18 @@
             <span class="post-date">Nov 30, 2017 </span>
             <div class="post-content">
                 <blockquote>
-<p>
-What&#39;s the simplest, easiest, no-fuss way to wrap up standalone example?
-</p>
+<p>What&#39;s the simplest, easiest, no-fuss way to wrap up standalone example?</p>
 </blockquote>
 <p>
 I use <a href="https://github.com/nickanderson/ob-cfengine3">ob-cfengine3</a> with org-mode inside of spacemacs for most of my self
-contained examples and when I start prototyping new policy.
-</p>
+contained examples and when I start prototyping new policy.</p>
 <p>
 When I have a cfengine3 SRC block and I execute it body file control is
-magically inserted to load the stdlib.
-</p>
+magically inserted to load the stdlib.</p>
 <div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -105,27 +101,24 @@ magically inserted to load the stdlib.
 </div>
 <p>
 You can see in the output here the body file control that was automatically
-inserted.
-</p>
+inserted.</p>
 <pre class="example">
 R: /home/nickanderson/src/blog/hugo-export/content/post/cfengine3-182209dH:
-R: body file control{ inputs => { '$(sys.libdir)/stdlib.cf' };}
+R: body file control{ inputs =&gt; { &#39;$(sys.libdir)/stdlib.cf&#39; };}
 R: bundle agent main
 R: {
 R:   reports:
-R:       "$(this.promise_filename):" printfile => cat( $(this.promise_filename) );
-R:       "Running CFEngine $(sys.cf_version)";
+R:       &#34;$(this.promise_filename):&#34; printfile =&gt; cat( $(this.promise_filename) );
+R:       &#34;Running CFEngine $(sys.cf_version)&#34;;
 R: 
 R: }
 R: Running CFEngine 3.11.0
 </pre>
 <p>
 In my opinion using <a href="https://docs.cfengine.com/docs/3.10/reference-components-file_control_promises.html">body file control</a> is the easiest way to include another
-policy file.
-</p>
+policy file.</p>
 <p>
-&lt;img src=&#34;<img src="http://cmdln.org/images/demo-ob-cfengine3.gif" alt="http://cmdln.org/images/demo-ob-cfengine3.gif" title="http://cmdln.org/images/demo-ob-cfengine3.gif" />&#34; alt=&#34;&#34; width=&#34;100%&#34;/&gt;
-</p>
+&lt;img src=&#34;<img src="http://cmdln.org/images/demo-ob-cfengine3.gif" alt="http://cmdln.org/images/demo-ob-cfengine3.gif" title="http://cmdln.org/images/demo-ob-cfengine3.gif" />&#34; alt=&#34;&#34; width=&#34;100%&#34;/&gt;</p>
 
             </div>
             
@@ -136,7 +129,7 @@ policy file.
             <div class="push"></div>
         </div>
         <footer class="footer text-center">
-<p>Copyright &copy; 2019 Nick Anderson -
+<p>Copyright &copy; 2022 Nick Anderson -
 <span class="credit">
 	Powered by
 	<a target="_blank" href="https://gohugo.io">Hugo</a>

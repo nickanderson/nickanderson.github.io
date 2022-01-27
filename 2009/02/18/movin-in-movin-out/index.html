@@ -6,7 +6,7 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.57.0" />
+<meta name="generator" content="Hugo 0.80.0" />
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -69,115 +69,61 @@
             <span class="post-date">Feb 18, 2009 </span>
             <div class="post-content">
                 <p>Every time I have a new shell account I end up customizing it. Making alterations to my vimrc, screenrc or whatever. It can be a huge pain when you have lots of slightly varying configs on different machines. I wrote this little script to grab my files and create a self extracting shell script so I can easily setup my environment on multiple machines.</p>
-
 <p>The usage is pretty straightforward. Define your remote path, and the filename along with your user that has scp access. Then define the files you want to include. To create the archive just run the moveout script. Once the self extracting script is uploaded you can just download it and execute it.</p>
-
 <p>Example Restore:</p>
-
-<pre class="brush: bash; title: ; notranslate" title="">wget example.com/movein && bash movein
-</pre>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>moveout script</p>
-
 <p>#!/bin/bash</p>
-
 <p># Nick Anderson</p>
-
 <p># <a href="http://www.cmdln.org">http://www.cmdln.org</a></p>
-
-<p># This script eases &#8220;moving&#8221; into a new account.</p>
-
+<p># This script eases “moving” into a new account.</p>
 <p># You define files that are staple configs like your vimrc,</p>
-
-<p># .bashrc, .screenrc etc &#8230; The files are added to a self</p>
-
+<p># .bashrc, .screenrc etc … The files are added to a self</p>
 <p># extracting shell script and uploaded via scp to a remote</p>
-
 <p># server. Once the self extracting shell script is available</p>
-
 <p># you can wget it and execute it.</p>
-
 <p>TMPDIR=$(mktemp -d -t moveout.XXXX)</p>
-
 <p>PAYLOADDIR=$TMPDIR/payload</p>
-
 <p>BUILDER=$TMPDIR/build</p>
-
 <p>DECOMPRESSOR=$TMPDIR/decompress</p>
-
 <p># Create directories</p>
-
 <p>mkdir $TMPDIR/payload</p>
-
 <p>function addFile() {</p>
-
 <p>cp -R $1 $PAYLOADDIR</p>
-
 <p>}</p>
-
 <p>#################################################</p>
-
 <p># Remote path (uses scp)</p>
-
 <p>#################################################</p>
-
-<p>export REMOTEPATHSPEC=&#8221;example.com:public_html/&#8221;</p>
-
-<p>export REMOTEFILE=&#8221;movein&#8221;</p>
-
-<p>export REMOTESSHUSER=&#8221;remoteuser&#8221;</p>
-
+<p>export REMOTEPATHSPEC=”example.com:public_html/”</p>
+<p>export REMOTEFILE=”movein”</p>
+<p>export REMOTESSHUSER=”remoteuser”</p>
 <p>#################################################</p>
-
 <p># Include these files in movin #</p>
-
 <p>#################################################</p>
-
 <p>addFile ~/.vim</p>
-
 <p>addFile ~/.bashrc</p>
-
 <p>addFile ~/.bash_logout</p>
-
 <p>addFile ~/.screenrc</p>
-
 <p>addFile ~/.profile</p>
-
 <p>#################################################</p>
-
 <p>cd $TMPDIR</p>
-
 <p># Generate selfextraction builder</p>
-
-<p>cat &gt;&gt; $TMPDIR/build &lt;<EOF #!/bin/bash cd payload tar cf ../payload.tar . cd .. if [ -e "payload.tar" ]; then gzip payload.tar if [ -e "payload.tar.gz" ]; then cat decompress payload.tar.gz > movein</p>
-
+<p>cat &raquo; $TMPDIR/build &laquo;EOF #!/bin/bash cd payload tar cf ../payload.tar . cd .. if [ -e &ldquo;payload.tar&rdquo; ]; then gzip payload.tar if [ -e &ldquo;payload.tar.gz&rdquo; ]; then cat decompress payload.tar.gz &gt; movein</p>
 <p>else</p>
-
-<p>echo &#8220;payload.tar.gz does not exist&#8221;</p>
-
+<p>echo “payload.tar.gz does not exist”</p>
 <p>exit 1</p>
-
 <p>fi</p>
-
 <p>else</p>
-
-<p>echo &#8220;payload.tar does not exist&#8221;</p>
-
+<p>echo “payload.tar does not exist”</p>
 <p>exit 1</p>
-
 <p>fi</p>
-
-<p>echo &#8220;movein created&#8221;</p>
-
+<p>echo “movein created”</p>
 <p>exit 0</p>
-
 <p>EOF</p>
-
 <p>chmod +x $TMPDIR/build</p>
-
 <p># Generate decompression script</p>
-
-<p>cat &gt;&gt; $TMPDIR/decompress &lt;&lt;EOF #!/bin/bash cd ~ ARCHIVE=\$(awk &lsquo;/^__ARCHIVE__/ { print NR + 1; exit 0; }&rsquo; \$0) # Pipe tarfile into tar tail -n+\$ARCHIVE \$0 | tar xzv -C ~ exit 0 __ARCHIVE__ EOF chmod +x $TMPDIR/decompress cd $TMPDIR ./build scp $TMPDIR/movein $REMOTESSHUSER@$REMOTEPATHSPEC/$REMOTEFILE rm -rf $TMPDIR [/bash] Note: Be careful to not expose any sensitive information if your put your self extracting script on a publicly available address.</p>
+<p>cat &raquo; $TMPDIR/decompress &laquo;EOF #!/bin/bash cd ~ ARCHIVE=$(awk &lsquo;/^__ARCHIVE__/ { print NR + 1; exit 0; }&rsquo; $0) # Pipe tarfile into tar tail -n+$ARCHIVE $0 | tar xzv -C ~ exit 0 __ARCHIVE__ EOF chmod +x $TMPDIR/decompress cd $TMPDIR ./build scp $TMPDIR/movein $REMOTESSHUSER@$REMOTEPATHSPEC/$REMOTEFILE rm -rf $TMPDIR [/bash] Note: Be careful to not expose any sensitive information if your put your self extracting script on a publicly available address.</p>
             </div>
             
             <div class="post-comments">
@@ -187,7 +133,7 @@
             <div class="push"></div>
         </div>
         <footer class="footer text-center">
-<p>Copyright &copy; 2019 Nick Anderson -
+<p>Copyright &copy; 2022 Nick Anderson -
 <span class="credit">
 	Powered by
 	<a target="_blank" href="https://gohugo.io">Hugo</a>

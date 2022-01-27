@@ -6,7 +6,7 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.57.0" />
+<meta name="generator" content="Hugo 0.80.0" />
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -68,19 +68,18 @@
             <h1><a href="https://cmdln.org/2010/05/07/install-git-on-centos-cpanel-server/">Install git on CentOS cpanel server</a></h1>
             <span class="post-date">May 8, 2010 </span>
             <div class="post-content">
-                <p>I have a love/hate relationship with cpanel. On one hand it makes low end hosting a breeze, on the other its a huge pita if you want to do anything &#8220;outside the box&#8221;. Perhaps it&#8217;s not such a pain if you work with cpanel frequently. But I find cpanel beneficial because it aids in tasks that I don&#8217;t do frequently, and can offload many of those tasks to less technical people.</p>
-
+                <p>I have a love/hate relationship with cpanel. On one hand it makes low end hosting a breeze, on the other its a huge pita if you want to do anything “outside the box”. Perhaps it’s not such a pain if you work with cpanel frequently. But I find cpanel beneficial because it aids in tasks that I don’t do frequently, and can offload many of those tasks to less technical people.</p>
 <p>I was recently setting up a cpanel instance for someone and had the need to install git for version control. I configured the epel repository for use as usual and went to yum install git only to be met with a nasty error.</p>
-
 <blockquote>
-<pre>git-1.5.5.6-2.el5.i386 from epel has depsolving problems
-  --&gt; Missing Dependency: perl(Error) is needed by package 
+<!-- raw HTML omitted -->
+</blockquote>
+<p>&ndash;&gt; Missing Dependency: perl(Error) is needed by package 
 git-1.5.5.6-2.el5.i386 (epel)
 git-1.5.5.6-2.el5.i386 from epel has depsolving problems
-  --&gt; Missing Dependency: perl-Git = 1.5.5.6-2.el5 is needed by package 
+&ndash;&gt; Missing Dependency: perl-Git = 1.5.5.6-2.el5 is needed by package 
 git-1.5.5.6-2.el5.i386 (epel)
 git-1.5.5.6-2.el5.i386 from epel has depsolving problems
-  --&gt; Missing Dependency: perl(Git) is needed by package 
+&ndash;&gt; Missing Dependency: perl(Git) is needed by package 
 git-1.5.5.6-2.el5.i386 (epel)
 Error: Missing Dependency: perl(Git) is needed by package 
 git-1.5.5.6-2.el5.i386 (epel)
@@ -88,28 +87,23 @@ Error: Missing Dependency: perl(Error) is needed by package
 git-1.5.5.6-2.el5.i386 (epel)
 Error: Missing Dependency: perl-Git = 1.5.5.6-2.el5 is needed by package 
 git-1.5.5.6-2.el5.i386 (epel)
-</pre>
-</blockquote>
-
+<!-- raw HTML omitted --></p>
 <p>I was pretty surprised as I have installed git without issue before on CentOS boxes before. A bit of digging showed that installing cpanel actually made some modifications to my /etc/yum.conf.</p>
-
 <blockquote>
 <p>exclude=apache* bind-chroot courier* dovecot* exim* httpd* mod_ssl* mysql* nsd* perl* php* proftpd* pure-ftpd* ruby* spamassassin* squirrelmail*</p>
 </blockquote>
-
-<p>So cpanel has blocked all perl packages from being installed or updated because they don&#8217;t want updates to break or conflict with their packages. Thankfully yum provides a nice one time workaround for this kind of situation.</p>
-
+<p>So cpanel has blocked all perl packages from being installed or updated because they don’t want updates to break or conflict with their packages. Thankfully yum provides a nice one time workaround for this kind of situation.</p>
 <blockquote>
-<p>&#8211;disableexcludes=[repo]</p>
-
+<p>–disableexcludes=[repo]</p>
+</blockquote>
+<blockquote>
 <p>disable exclude from main, for a repo or for</p>
-
+</blockquote>
+<blockquote>
 <p>everything</p>
 </blockquote>
-
 <p>So one command later and I now have git installed.</p>
-
-<pre class="brush: bash; title: ; notranslate" title="">yum --disableexcludes=main install git</pre>
+<!-- raw HTML omitted -->
 
             </div>
             
@@ -120,7 +114,7 @@ git-1.5.5.6-2.el5.i386 (epel)
             <div class="push"></div>
         </div>
         <footer class="footer text-center">
-<p>Copyright &copy; 2019 Nick Anderson -
+<p>Copyright &copy; 2022 Nick Anderson -
 <span class="credit">
 	Powered by
 	<a target="_blank" href="https://gohugo.io">Hugo</a>

@@ -6,7 +6,7 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.57.0" />
+<meta name="generator" content="Hugo 0.80.0" />
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -69,89 +69,54 @@
             <span class="post-date">Apr 10, 2008 </span>
             <div class="post-content">
                 <p>Text processing is fun. Well, fun if you like to beat your head against a wall. Most of the time I just string a few things together to get whatever I am doing done. Its much better to find the shortest way to do something, it spawns less processes, is more efficient and generally a good idea. So if you have ever wanted to match a string from some given output and only print the preceding line here you go.</p>
-
-<!--adsense-->
-
-<pre class="brush: bash; title: ; notranslate" title="">awk '/pattern/{print x};{x=$0}'
-</pre>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>You might also wonder why you might want to do that. Well the reason I wanted to do it was to pull the sar output of the last run. Sar output ends in ^Average: but I just wanted the line before that so this is what I came up with.</p>
-
-<pre class="brush: bash; title: ; notranslate" title="">sar | awk '/^Average:/{print x};{x=$0}'
-</pre>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>That just spits out the last recorded sar information like this.</p>
-
-<p>`Text processing is fun. Well, fun if you like to beat your head against a wall. Most of the time I just string a few things together to get whatever I am doing done. Its much better to find the shortest way to do something, it spawns less processes, is more efficient and generally a good idea. So if you have ever wanted to match a string from some given output and only print the preceding line here you go.<!--more--></p>
-
-<!--adsense-->
-
-<pre class="brush: bash; title: ; notranslate" title="">awk '/pattern/{print x};{x=$0}'
-</pre>
-
+<p>`Text processing is fun. Well, fun if you like to beat your head against a wall. Most of the time I just string a few things together to get whatever I am doing done. Its much better to find the shortest way to do something, it spawns less processes, is more efficient and generally a good idea. So if you have ever wanted to match a string from some given output and only print the preceding line here you go.<!-- raw HTML omitted --></p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>You might also wonder why you might want to do that. Well the reason I wanted to do it was to pull the sar output of the last run. Sar output ends in ^Average: but I just wanted the line before that so this is what I came up with.</p>
-
-<pre class="brush: bash; title: ; notranslate" title="">sar | awk '/^Average:/{print x};{x=$0}'
-</pre>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>That just spits out the last recorded sar information like this.</p>
-
 <p>`</p>
-
 <p>Great for using in scripts to collect bits of information you might need.</p>
-
 <p>Oh and for good measure if I wanted to do this before I would have done this.</p>
-
-<pre class="brush: bash; title: ; notranslate" title="">sar | grep -B1 ^Average: | grep -v ^Average
-</pre>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>And look at how much time I saved by not having the extra pipe!</p>
-
-<p>``Text processing is fun. Well, fun if you like to beat your head against a wall. Most of the time I just string a few things together to get whatever I am doing done. Its much better to find the shortest way to do something, it spawns less processes, is more efficient and generally a good idea. So if you have ever wanted to match a string from some given output and only print the preceding line here you go.<!--more--></p>
-
-<!--adsense-->
-
-<pre class="brush: bash; title: ; notranslate" title="">awk '/pattern/{print x};{x=$0}'
-</pre>
-
+<p>``Text processing is fun. Well, fun if you like to beat your head against a wall. Most of the time I just string a few things together to get whatever I am doing done. Its much better to find the shortest way to do something, it spawns less processes, is more efficient and generally a good idea. So if you have ever wanted to match a string from some given output and only print the preceding line here you go.<!-- raw HTML omitted --></p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>You might also wonder why you might want to do that. Well the reason I wanted to do it was to pull the sar output of the last run. Sar output ends in ^Average: but I just wanted the line before that so this is what I came up with.</p>
-
-<pre class="brush: bash; title: ; notranslate" title="">sar | awk '/^Average:/{print x};{x=$0}'
-</pre>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>That just spits out the last recorded sar information like this.</p>
-
-<p>`Text processing is fun. Well, fun if you like to beat your head against a wall. Most of the time I just string a few things together to get whatever I am doing done. Its much better to find the shortest way to do something, it spawns less processes, is more efficient and generally a good idea. So if you have ever wanted to match a string from some given output and only print the preceding line here you go.<!--more--></p>
-
-<!--adsense-->
-
-<pre class="brush: bash; title: ; notranslate" title="">awk '/pattern/{print x};{x=$0}'
-</pre>
-
+<p>`Text processing is fun. Well, fun if you like to beat your head against a wall. Most of the time I just string a few things together to get whatever I am doing done. Its much better to find the shortest way to do something, it spawns less processes, is more efficient and generally a good idea. So if you have ever wanted to match a string from some given output and only print the preceding line here you go.<!-- raw HTML omitted --></p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>You might also wonder why you might want to do that. Well the reason I wanted to do it was to pull the sar output of the last run. Sar output ends in ^Average: but I just wanted the line before that so this is what I came up with.</p>
-
-<pre class="brush: bash; title: ; notranslate" title="">sar | awk '/^Average:/{print x};{x=$0}'
-</pre>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>That just spits out the last recorded sar information like this.</p>
-
 <p>`</p>
-
 <p>Great for using in scripts to collect bits of information you might need.</p>
-
 <p>Oh and for good measure if I wanted to do this before I would have done this.</p>
-
-<pre class="brush: bash; title: ; notranslate" title="">sar | grep -B1 ^Average: | grep -v ^Average
-</pre>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>And look at how much time I saved by not having the extra pipe!</p>
-
 <p>``</p>
-
 <p>vs</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-Text processing is fun. Well, fun if you like to beat your head against a wall. Most of the time I just string a few things together to get whatever I am doing done. Its much better to find the shortest way to do something, it spawns less processes, is more efficient and generally a good idea. So if you have ever wanted to match a string from some given output and only print the preceding line here you go.<!--more-->" data-lang="Text processing is fun. Well, fun if you like to beat your head against a wall. Most of the time I just string a few things together to get whatever I am doing done. Its much better to find the shortest way to do something, it spawns less processes, is more efficient and generally a good idea. So if you have ever wanted to match a string from some given output and only print the preceding line here you go.<!--more-->"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -231,9 +196,11 @@
 </span><span class="lnt">78
 </span><span class="lnt">79
 </span><span class="lnt">80
+</span><span class="lnt">81
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-Text processing is fun. Well, fun if you like to beat your head against a wall. Most of the time I just string a few things together to get whatever I am doing done. Its much better to find the shortest way to do something, it spawns less processes, is more efficient and generally a good idea. So if you have ever wanted to match a string from some given output and only print the preceding line here you go.<!--more-->" data-lang="Text processing is fun. Well, fun if you like to beat your head against a wall. Most of the time I just string a few things together to get whatever I am doing done. Its much better to find the shortest way to do something, it spawns less processes, is more efficient and generally a good idea. So if you have ever wanted to match a string from some given output and only print the preceding line here you go.<!--more-->">&lt;!--adsense--&gt;
+<pre class="chroma"><code class="language-Text" data-lang="Text">
+&lt;!--adsense--&gt;
 
 &lt;pre class=&#34;brush: bash; title: ; notranslate&#34; title=&#34;&#34;&gt;awk &#39;/pattern/{print x};{x=$0}&#39;
 &lt;/pre&gt;
@@ -312,7 +279,8 @@ And look at how much time I saved by not having the extra pipe!
 `` 
   
 vs
-  </code></pre></td></tr></table>
+  
+</code></pre></td></tr></table>
 </div>
 </div>
             </div>
@@ -324,7 +292,7 @@ vs
             <div class="push"></div>
         </div>
         <footer class="footer text-center">
-<p>Copyright &copy; 2019 Nick Anderson -
+<p>Copyright &copy; 2022 Nick Anderson -
 <span class="credit">
 	Powered by
 	<a target="_blank" href="https://gohugo.io">Hugo</a>

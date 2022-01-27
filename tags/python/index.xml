@@ -1,23 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>python on </title>
     <link>https://cmdln.org/tags/python/</link>
     <description>Recent content in python on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 31 Mar 2010 17:11:06 +0000</lastBuildDate>
-    
-	<atom:link href="https://cmdln.org/tags/python/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 31 Mar 2010 17:11:06 +0000</lastBuildDate><atom:link href="https://cmdln.org/tags/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Automate Sun iLOM settings</title>
       <link>https://cmdln.org/2010/03/31/automate-sun-ilom-settings/</link>
       <pubDate>Wed, 31 Mar 2010 17:11:06 +0000</pubDate>
       
       <guid>https://cmdln.org/2010/03/31/automate-sun-ilom-settings/</guid>
-      <description>I recently had a need to push out a few settings to a group of iLOMs on new Sun servers. I really despise using a web interface for everything so I took the ssh route. The first thing I tried to do after determining the commands I needed was to shove the commands in with ssh directly. I quickly became apparent that route just wasn&amp;#8217;t going to work.
-When you log into the iLOM &amp;#8220;daemons&amp;#8221; need to initialize.</description>
+      <description>I recently had a need to push out a few settings to a group of iLOMs on new Sun servers. I really despise using a web interface for everything so I took the ssh route. The first thing I tried to do after determining the commands I needed was to shove the commands in with ssh directly. I quickly became apparent that route just wasn’t going to work.
+When you log into the iLOM “daemons” need to initialize.</description>
     </item>
     
     <item>
@@ -36,7 +32,7 @@ Vim customization for python</description>
       <pubDate>Thu, 18 Dec 2008 15:13:55 +0000</pubDate>
       
       <guid>https://cmdln.org/2008/12/18/simple-network-popup-with-python-and-libnotify/</guid>
-      <description>&lt;p&gt;Im sure everyone is familiar with smb messages especially as everyone was assulted with them about 10 years ago (stupid soho routers and spammers unite!). Anyway, there are clients for linux like Linpopup. Well recently I didn&amp;#8217;t want to use one of those to be able to send messages to my linux workstations so I cobbled together a simple network popup app with python.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Im sure everyone is familiar with smb messages especially as everyone was assulted with them about 10 years ago (stupid soho routers and spammers unite!). Anyway, there are clients for linux like Linpopup. Well recently I didn’t want to use one of those to be able to send messages to my linux workstations so I cobbled together a simple network popup app with python.&lt;/p&gt;</description>
     </item>
     
     <item>

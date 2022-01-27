@@ -1,15 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>centos on </title>
     <link>https://cmdln.org/tags/centos/</link>
     <description>Recent content in centos on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 19 Feb 2012 04:55:27 +0000</lastBuildDate>
-    
-	<atom:link href="https://cmdln.org/tags/centos/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 19 Feb 2012 04:55:27 +0000</lastBuildDate><atom:link href="https://cmdln.org/tags/centos/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>New bundle to manage routes for RedHat/CentOS with CFEngine 3</title>
       <link>https://cmdln.org/2012/02/18/new-bundle-to-manage-routes-for-redhatcentos-with-cfengine-3/</link>
@@ -37,8 +33,8 @@ http://qaweb.dev.centos.org/qa</description>
       <pubDate>Mon, 12 Apr 2010 15:47:43 +0000</pubDate>
       
       <guid>https://cmdln.org/2010/04/12/persistent-ulimit-settings-in-centosrh/</guid>
-      <description>Recently a developer came to me and said they are starting to see failed builds apparently due to open file handle limitations on the build server. In case your not aware, by default there are limitations on users to ensure they don&amp;#8217;t hog the entire resources of a system. Sometimes these limitations need to be adjusted.
-In my case the &amp;#8220;bamboo&amp;#8221; user needed more than 1024 open files on occasion. I determined my system had a maximum number of open files of 1572928.</description>
+      <description>Recently a developer came to me and said they are starting to see failed builds apparently due to open file handle limitations on the build server. In case your not aware, by default there are limitations on users to ensure they don’t hog the entire resources of a system. Sometimes these limitations need to be adjusted.
+In my case the “bamboo” user needed more than 1024 open files on occasion. I determined my system had a maximum number of open files of 1572928.</description>
     </item>
     
     <item>
@@ -47,7 +43,7 @@ In my case the &amp;#8220;bamboo&amp;#8221; user needed more than 1024 open file
       <pubDate>Tue, 06 Apr 2010 14:46:30 +0000</pubDate>
       
       <guid>https://cmdln.org/2010/04/06/error-msg-fail-how-to-enable-telnet-on-centosrhel/</guid>
-      <description>Don&amp;#8217;t even start with me about how telnet is horrid. Out side of my control but I recently had issues trying to enable telnet on a server. Typically its pretty straightforward.
+      <description>Don’t even start with me about how telnet is horrid. Out side of my control but I recently had issues trying to enable telnet on a server. Typically its pretty straightforward.
  yum install telnet-server chkconfig telnet on chkconfig xinetd on service xinetd start  Unfortunately for me this was not working. Every time I tried to telnet to the host after enabling it I would get an error message.</description>
     </item>
     
@@ -66,7 +62,7 @@ In my case the &amp;#8220;bamboo&amp;#8221; user needed more than 1024 open file
       <pubDate>Fri, 02 May 2008 00:19:53 +0000</pubDate>
       
       <guid>https://cmdln.org/2008/05/01/cpanel-whm-inside-centos-51-domu/</guid>
-      <description>&lt;p&gt;I needed to install cpanel inside of one of my Centos 5.1 domU. The centos install was bootstrapped by the default rinse configuration (see &lt;a href=&#34;http://www.xen-tools.org/software/xen-tools/&#34;&gt;xen-tools&lt;/a&gt; with my &lt;a href=&#34;http://www.cmdln.org/images/wp-content/uploads/2008/04/rinse-centos5.patch&#34;&gt;patch&lt;/a&gt; that you can see from a &lt;a href=&#34;http://www.cmdln.org/2008/04/25/xen-installing-centos-5-domu-inside-debian-etch-dom0-with-xen-tools-and-rinse-the-patch-to-fix-it/&#34;&gt;previous post&lt;/a&gt;). If you follow the &lt;a href=&#34;http://www.cpanel.net/docs/vps/&#34;&gt;install docs&lt;/a&gt; you will have tried to uninstall openldap etc &amp;#8230;.&lt;/p&gt;</description>
+      <description>&lt;p&gt;I needed to install cpanel inside of one of my Centos 5.1 domU. The centos install was bootstrapped by the default rinse configuration (see &lt;a href=&#34;http://www.xen-tools.org/software/xen-tools/&#34;&gt;xen-tools&lt;/a&gt; with my &lt;a href=&#34;http://www.cmdln.org/images/wp-content/uploads/2008/04/rinse-centos5.patch&#34;&gt;patch&lt;/a&gt; that you can see from a &lt;a href=&#34;http://www.cmdln.org/2008/04/25/xen-installing-centos-5-domu-inside-debian-etch-dom0-with-xen-tools-and-rinse-the-patch-to-fix-it/&#34;&gt;previous post&lt;/a&gt;). If you follow the &lt;a href=&#34;http://www.cpanel.net/docs/vps/&#34;&gt;install docs&lt;/a&gt; you will have tried to uninstall openldap etc ….&lt;/p&gt;</description>
     </item>
     
     <item>

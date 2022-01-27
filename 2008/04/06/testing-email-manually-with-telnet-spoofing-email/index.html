@@ -6,7 +6,7 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.57.0" />
+<meta name="generator" content="Hugo 0.80.0" />
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -69,59 +69,19 @@
             <span class="post-date">Apr 6, 2008 </span>
             <div class="post-content">
                 <p>Being able to send email manually seems to be a bit of a lost art. It is extremely handy to know how to use telnet to send email for testing procmail filters, and any other part of your mail system. It can also be fun to spoof email to a friend or co-worker. Read on for a quick run down.</p>
-
-<!--adsense-->
-
+<!-- raw HTML omitted -->
 <p>Open a connection to the mail server.</p>
-
 <p><code>telnet mail.server.com 25</code></p>
-
-<p>Now initiate the SMTP session. The host connecting to the remote SMTP server identifies itself by it&#8217;s fully qualified DNS host name, so be sure to replace localhost.localdomain with your sending servers FQDN.</p>
-
-<p>``Being able to send email manually seems to be a bit of a lost art. It is extremely handy to know how to use telnet to send email for testing procmail filters, and any other part of your mail system. It can also be fun to spoof email to a friend or co-worker. Read on for a quick run down.<!--more--></p>
-
-<!--adsense-->
-
+<p>Now initiate the SMTP session. The host connecting to the remote SMTP server identifies itself by it’s fully qualified DNS host name, so be sure to replace localhost.localdomain with your sending servers FQDN.</p>
+<p>``Being able to send email manually seems to be a bit of a lost art. It is extremely handy to know how to use telnet to send email for testing procmail filters, and any other part of your mail system. It can also be fun to spoof email to a friend or co-worker. Read on for a quick run down.<!-- raw HTML omitted --></p>
+<!-- raw HTML omitted -->
 <p>Open a connection to the mail server.</p>
-
 <p><code>telnet mail.server.com 25</code></p>
-
-<p>Now initiate the SMTP session. The host connecting to the remote SMTP server identifies itself by it&#8217;s fully qualified DNS host name, so be sure to replace localhost.localdomain with your sending servers FQDN.</p>
-
+<p>Now initiate the SMTP session. The host connecting to the remote SMTP server identifies itself by it’s fully qualified DNS host name, so be sure to replace localhost.localdomain with your sending servers FQDN.</p>
 <p>``</p>
-
 <p>MAIL indicates who is sending the mail. Any returned mail will be sent back to this address.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-Being able to send email manually seems to be a bit of a lost art. It is extremely handy to know how to use telnet to send email for testing procmail filters, and any other part of your mail system. It can also be fun to spoof email to a friend or co-worker. Read on for a quick run down.<!--more-->" data-lang="Being able to send email manually seems to be a bit of a lost art. It is extremely handy to know how to use telnet to send email for testing procmail filters, and any other part of your mail system. It can also be fun to spoof email to a friend or co-worker. Read on for a quick run down.<!--more-->"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-Being able to send email manually seems to be a bit of a lost art. It is extremely handy to know how to use telnet to send email for testing procmail filters, and any other part of your mail system. It can also be fun to spoof email to a friend or co-worker. Read on for a quick run down.<!--more-->" data-lang="Being able to send email manually seems to be a bit of a lost art. It is extremely handy to know how to use telnet to send email for testing procmail filters, and any other part of your mail system. It can also be fun to spoof email to a friend or co-worker. Read on for a quick run down.<!--more-->">&lt;!--adsense--&gt;
+<pre><code class="language-Being" data-lang="Being">
+&lt;!--adsense--&gt;
 
 
   
@@ -146,27 +106,14 @@ Now initiate the SMTP session. The host connecting to the remote SMTP server ide
 `` 
   
 MAIL indicates who is sending the mail. Any returned mail will be sent back to this address.
-  </code></pre></td></tr></table>
-</div>
-</div>
-<p>RCPT indicates who will be receiving the mail. You can indicate more than one user by issuing multiple RCPT commands.</p>
-
+  
+</code></pre><p>RCPT indicates who will be receiving the mail. You can indicate more than one user by issuing multiple RCPT commands.</p>
 <p><code>rcpt to: someguy@hisdomain.com</code></p>
-
-<p>DATA indicates that you are about to send the text (or body) of the message. The message text must end with the following five letter sequence: &#8220;\r\n.\r\n.&#8221;</p>
-
-<p><code>data&lt;br /&gt;
-From: Your Name&lt;br /&gt;
-Subject: Very important&lt;br /&gt;
-This is the first line&lt;br /&gt;
-This is the second line&lt;br /&gt;
-.</code></p>
-
+<p>DATA indicates that you are about to send the text (or body) of the message. The message text must end with the following five letter sequence: “\r\n.\r\n.”</p>
+<p><code>data&lt;br /&gt; From: Your Name&lt;br /&gt; Subject: Very important&lt;br /&gt; This is the first line&lt;br /&gt; This is the second line&lt;br /&gt; .</code></p>
 <p>QUIT ends the SMTP session.</p>
-
 <p><code>quit</code></p>
-
-<!--adsense-->
+<!-- raw HTML omitted -->
             </div>
             
             <div class="post-comments">
@@ -176,7 +123,7 @@ This is the second line&lt;br /&gt;
             <div class="push"></div>
         </div>
         <footer class="footer text-center">
-<p>Copyright &copy; 2019 Nick Anderson -
+<p>Copyright &copy; 2022 Nick Anderson -
 <span class="credit">
 	Powered by
 	<a target="_blank" href="https://gohugo.io">Hugo</a>

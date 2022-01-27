@@ -1,15 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>zenoss on </title>
     <link>https://cmdln.org/tags/zenoss/</link>
     <description>Recent content in zenoss on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 06 Dec 2012 15:01:13 +0000</lastBuildDate>
-    
-	<atom:link href="https://cmdln.org/tags/zenoss/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 06 Dec 2012 15:01:13 +0000</lastBuildDate><atom:link href="https://cmdln.org/tags/zenoss/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Quick Tip: Drilling into zenoss data with zendmd</title>
       <link>https://cmdln.org/2012/12/06/quick-tip-drilling-into-zenoss-data-with-zendmd/</link>
@@ -36,7 +32,7 @@ I stumbled on the check_domain nagios plugin this weekend so I figured I would m
       
       <guid>https://cmdln.org/2010/07/09/nginx-stub_status-zenpack/</guid>
       <description>Nginx is a great little web server. I have posted previously about using it as a reverse proxy. Weather your using it as a reverse proxy or as a normal webserver you will probably eventually want to know what its doing over time so you can adjust resources as necessary.
-The other day I threw together a Zenpack to make it easier to setup monitoring on new Zenoss instances. It contains a command data source &amp;#8220;check_nginx_ng&amp;#8221; which is a slightly modified version of Chris Kellys check_nginx_ng which in turn was based on check_nginx by Mike Adolphs.</description>
+The other day I threw together a Zenpack to make it easier to setup monitoring on new Zenoss instances. It contains a command data source “check_nginx_ng” which is a slightly modified version of Chris Kellys check_nginx_ng which in turn was based on check_nginx by Mike Adolphs.</description>
     </item>
     
     <item>
@@ -55,8 +51,9 @@ Monitoring A/B power is not as easy as monitoring the individual PDUs. Some serv
       <pubDate>Mon, 24 May 2010 20:00:20 +0000</pubDate>
       
       <guid>https://cmdln.org/2010/05/24/notes-on-zenoss-zenpacks/</guid>
-      <description>Recently I was building a ZenPack for Zenoss. The ZenPack included an Event Command which executed a custom script. I wanted to store the custom script in the ZenPack and I didn&amp;#8217;t want to do anything other than have proper script dependencies in place for it to work.
-${here/ZenPackManager/packs/ZenPacks.community.YOURZENPACK/path}/libexec/yourscript.sh ${dev/manageIp}  Custom scripts can be placed in $ZENHOME/ZenPacks/ZenPacks.CompanyName.Package/Zenpacks/CompanyName/Package/lib but if you want them to be executable place them in libexec.</description>
+      <description>Recently I was building a ZenPack for Zenoss. The ZenPack included an Event Command which executed a custom script. I wanted to store the custom script in the ZenPack and I didn’t want to do anything other than have proper script dependencies in place for it to work.
+Custom scripts can be placed in $ZENHOME/ZenPacks/ZenPacks.CompanyName.Package/Zenpacks/CompanyName/Package/lib but if you want them to be executable place them in libexec.
+Thanks to Matt Ray for telling me how to properly path the Event Command and the note about scripts in libexec getting the executable bit set, the docs I found only specified the lib directory.</description>
     </item>
     
     <item>
@@ -65,7 +62,7 @@ ${here/ZenPackManager/packs/ZenPacks.community.YOURZENPACK/path}/libexec/yourscr
       <pubDate>Tue, 09 Mar 2010 15:42:06 +0000</pubDate>
       
       <guid>https://cmdln.org/2010/03/09/sysstat-sar-performance-metrics-via-nagios-plugin/</guid>
-      <description>I know I&amp;#8217;ve mentioned how much I love the sysstat package before. I use sar regularly to help with performance diagnostics (Analyzing Linux System Performance And Finding Bottle Necks, CPU Performance Analysis In Linux, Baseline Analysis Is Important, CPU Performance Analysis In Linux Revisited). I wrote this little Nagios plugin to collect the performance metrics that sar collects.
+      <description>I know I’ve mentioned how much I love the sysstat package before. I use sar regularly to help with performance diagnostics (Analyzing Linux System Performance And Finding Bottle Necks, CPU Performance Analysis In Linux, Baseline Analysis Is Important, CPU Performance Analysis In Linux Revisited). I wrote this little Nagios plugin to collect the performance metrics that sar collects.
 I use this plugin with Zenoss and I set any performance thresholds there, more important to me was collecting the information for historical graphing.</description>
     </item>
     

@@ -1,24 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>testing on </title>
     <link>https://cmdln.org/tags/testing/</link>
     <description>Recent content in testing on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 16 Apr 2009 17:45:43 +0000</lastBuildDate>
-    
-	<atom:link href="https://cmdln.org/tags/testing/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 16 Apr 2009 17:45:43 +0000</lastBuildDate><atom:link href="https://cmdln.org/tags/testing/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Testing mail servers with swaks</title>
       <link>https://cmdln.org/2009/04/16/testing-mail-servers-with-swaks/</link>
       <pubDate>Thu, 16 Apr 2009 17:45:43 +0000</pubDate>
       
       <guid>https://cmdln.org/2009/04/16/testing-mail-servers-with-swaks/</guid>
-      <description>I hadn&amp;#8217;t seen this tool before so I figured I would share. Swaks is the swiss army knife SMTP according to the homepage.
-I&amp;#8217;ve covered testing email from the command line before but this tool sure makes it easier.
-swaks --to nick@tld --from nick@tld *** MX Routing not available: requires Net::DNS. Using localhost as mail server === Trying localhost:25... === Connected to localhost. &amp;lt;- 220 cmdln-laptop ESMTP Exim 4.69 Thu, 16 Apr 2009 12:23:24 -0500 -&amp;gt; EHLO cmdln-laptop &amp;lt;- 250-cmdln-laptop Hello localhost [127.</description>
+      <description>I hadn’t seen this tool before so I figured I would share. Swaks is the swiss army knife SMTP according to the homepage.
+I’ve covered testing email from the command line before but this tool sure makes it easier.</description>
     </item>
     
     <item>

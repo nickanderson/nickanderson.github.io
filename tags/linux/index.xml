@@ -1,22 +1,20 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>linux on </title>
     <link>https://cmdln.org/tags/linux/</link>
     <description>Recent content in linux on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 05 Jan 2018 13:35:04 -0600</lastBuildDate>
-    
-	<atom:link href="https://cmdln.org/tags/linux/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 05 Jan 2018 13:35:04 -0600</lastBuildDate><atom:link href="https://cmdln.org/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>No Klf 2018 :`(</title>
       <link>https://cmdln.org/2018/01/05/no-klf-2018/</link>
       <pubDate>Fri, 05 Jan 2018 13:35:04 -0600</pubDate>
       
       <guid>https://cmdln.org/2018/01/05/no-klf-2018/</guid>
-      <description>Anyone interested in organizing Kansas Linux Fest in 2018?  In 2016 and 2017 KLF was hosted in Wichita KS at Wichita State University. The prior two years organizers are a bit burned out and are taking a break.    &amp;lt;ben_roose&amp;gt; Hi nickanderson, Sadly at the moment there is not a KLF 2018 planned. The few of us who created KLF 2017 are rather burned out and need a break this year :-( &amp;lt;ben_roose&amp;gt; However, if we can find some new people who are willing to take it on either in Wichita or somewhere else in Kansas, then we would be more than happy to assist in the infrastructure side and to consult as part of the conference …but as of now, we have not found any one new who wishes to take on this task for KLF 2018   Ben Roose [Wed Nov 15 2017] irc.</description>
+      <description>Anyone interested in organizing Kansas Linux Fest in 2018?
+ In 2016 and 2017 KLF was hosted in Wichita KS at Wichita State University. The prior two years organizers are a bit burned out and are taking a break.
+  &amp;lt;ben_roose&amp;gt; Hi nickanderson, Sadly at the moment there is not a KLF 2018 planned. The few of us who created KLF 2017 are rather burned out and need a break this year :-( &amp;lt;ben_roose&amp;gt; However, if we can find some new people who are willing to take it on either in Wichita or somewhere else in Kansas, then we would be more than happy to assist in the infrastructure side and to consult as part of the conference …but as of now, we have not found any one new who wishes to take on this task for KLF 2018</description>
     </item>
     
     <item>
@@ -28,7 +26,7 @@
       <description>Are you going to LinuxCon/CloudOpen 2012? I am, and I think I have settled on my picks (at least until I look at the schedule again, lots of great options).
 Special thanks to CFEngine for sponsering me!
 Here are my picks for the minute.
- Building the Open Cloud &amp;#8211; Mark Hinkle, Citrix{#9046eff8494ef50f48da95349905592e} The OpenNebula Cloud Platform for Data Center Virtualization &amp;#8211; Carlos Martin, OpenNebula{#5561a1f9b3d063dcca4b7abdc5dbc44b} Cloning SysAdmins with the Cloud and Juju &amp;#8211; Clint Byrum, Canonical{#82e5d5410f32e11be9bd9bddf2b81570} A Collaborative Approach to Managing Linux Configurations &amp;#8211; Diego Zamboni, CFEngine{#da5dea5f6f017f925dac66eec964f13f} Building FOSS Clouds &amp;#8211; Joe Brockmeier, Citrix{#c28982d2a4f52cbfbb4000ce030a1771} Automation and DevOps Best Practices &amp;#8211; Rob Hirschfeld, Dell{#f0cd279b854c642d12e7d531c68c53f0} Scaling Configuration Management Across Data Center and Cloud &amp;#8211; Mark Burgess, CFEngine{#e9936ee3a0369080a61b61f5eb9a88d4} Editing with vi: Advanced Topics, Part I &amp;#8211; Aleksey Tsaloikhin, Vertical Sysadmin, Inc.</description>
+ Building the Open Cloud – Mark Hinkle, Citrix{#9046eff8494ef50f48da95349905592e} The OpenNebula Cloud Platform for Data Center Virtualization – Carlos Martin, OpenNebula{#5561a1f9b3d063dcca4b7abdc5dbc44b} Cloning SysAdmins with the Cloud and Juju – Clint Byrum, Canonical{#82e5d5410f32e11be9bd9bddf2b81570} A Collaborative Approach to Managing Linux Configurations – Diego Zamboni, CFEngine{#da5dea5f6f017f925dac66eec964f13f} Building FOSS Clouds – Joe Brockmeier, Citrix{#c28982d2a4f52cbfbb4000ce030a1771} Automation and DevOps Best Practices – Rob Hirschfeld, Dell{#f0cd279b854c642d12e7d531c68c53f0} Scaling Configuration Management Across Data Center and Cloud – Mark Burgess, CFEngine{#e9936ee3a0369080a61b61f5eb9a88d4} Editing with vi: Advanced Topics, Part I – Aleksey Tsaloikhin, Vertical Sysadmin, Inc.</description>
     </item>
     
     <item>
@@ -37,7 +35,7 @@ Here are my picks for the minute.
       <pubDate>Thu, 29 Mar 2012 04:50:54 +0000</pubDate>
       
       <guid>https://cmdln.org/2012/03/28/bibble-the-best-photo-editing-software-for-linux-bought-by-corel/</guid>
-      <description>I have been using bibble for about a year now. Its the best photo editing software that ran on linux that I could find. It probably isn&amp;#8217;t as polished as Photoshop but it has its own great features like threading so it can use all of your cores for rendering.
+      <description>I have been using bibble for about a year now. Its the best photo editing software that ran on linux that I could find. It probably isn’t as polished as Photoshop but it has its own great features like threading so it can use all of your cores for rendering.
 Just over a week ago I noticed it had been bought by Corel and its been re-branded to AfterShotPro. I really hope they continue to develop it and provide Linux support.</description>
     </item>
     
@@ -47,7 +45,7 @@ Just over a week ago I noticed it had been bought by Corel and its been re-brand
       <pubDate>Thu, 29 Apr 2010 14:03:23 +0000</pubDate>
       
       <guid>https://cmdln.org/2010/04/29/ubuntu-server-fit-for-production-or-a-change-in-the-sa-guard/</guid>
-      <description>I&amp;#8217;m curious what anyone who reads this blog thinks. My first reaction when someone mentions Ubuntu server is to grab the nearest trout and start slapping. Don&amp;#8217;t get me wrong I like Ubuntu. It&amp;#8217;s very nice on a workstation, and suitable for my wife, mother, aunt, etc &amp;#8230;. But do you really think its good enough for prime time in the data center? According to a server-survey conducted by the Ubuntu marketing team almost 80% of users see Ubuntu as ready for mission critical use.</description>
+      <description>I’m curious what anyone who reads this blog thinks. My first reaction when someone mentions Ubuntu server is to grab the nearest trout and start slapping. Don’t get me wrong I like Ubuntu. It’s very nice on a workstation, and suitable for my wife, mother, aunt, etc …. But do you really think its good enough for prime time in the data center? According to a server-survey conducted by the Ubuntu marketing team almost 80% of users see Ubuntu as ready for mission critical use.</description>
     </item>
     
     <item>
@@ -65,8 +63,8 @@ Just over a week ago I noticed it had been bought by Corel and its been re-brand
       <pubDate>Mon, 12 Apr 2010 15:47:43 +0000</pubDate>
       
       <guid>https://cmdln.org/2010/04/12/persistent-ulimit-settings-in-centosrh/</guid>
-      <description>Recently a developer came to me and said they are starting to see failed builds apparently due to open file handle limitations on the build server. In case your not aware, by default there are limitations on users to ensure they don&amp;#8217;t hog the entire resources of a system. Sometimes these limitations need to be adjusted.
-In my case the &amp;#8220;bamboo&amp;#8221; user needed more than 1024 open files on occasion. I determined my system had a maximum number of open files of 1572928.</description>
+      <description>Recently a developer came to me and said they are starting to see failed builds apparently due to open file handle limitations on the build server. In case your not aware, by default there are limitations on users to ensure they don’t hog the entire resources of a system. Sometimes these limitations need to be adjusted.
+In my case the “bamboo” user needed more than 1024 open files on occasion. I determined my system had a maximum number of open files of 1572928.</description>
     </item>
     
     <item>
@@ -75,8 +73,8 @@ In my case the &amp;#8220;bamboo&amp;#8221; user needed more than 1024 open file
       <pubDate>Thu, 08 Apr 2010 17:36:17 +0000</pubDate>
       
       <guid>https://cmdln.org/2010/04/08/mount-linux-nfs-exports-in-osx/</guid>
-      <description>I&amp;#8217;m not a fan of OSX and I try to avoid it with the same veracity that I avoid Windows. But I recently needed to have a Linux NFS export mounted on an OSX server. A simple mount server:/export /mymountpoint didn&amp;#8217;t work and returned &amp;#8220;Operation not permitted&amp;#8221;. After a bit of digging I found the solution.
-I needed to instruct the client to use a privledged port by adding the &amp;#8220;-P&amp;#8221; option.</description>
+      <description>I’m not a fan of OSX and I try to avoid it with the same veracity that I avoid Windows. But I recently needed to have a Linux NFS export mounted on an OSX server. A simple mount server:/export /mymountpoint didn’t work and returned “Operation not permitted”. After a bit of digging I found the solution.
+I needed to instruct the client to use a privledged port by adding the “-P” option.</description>
     </item>
     
     <item>
@@ -85,7 +83,7 @@ I needed to instruct the client to use a privledged port by adding the &amp;#822
       <pubDate>Tue, 06 Apr 2010 14:46:30 +0000</pubDate>
       
       <guid>https://cmdln.org/2010/04/06/error-msg-fail-how-to-enable-telnet-on-centosrhel/</guid>
-      <description>Don&amp;#8217;t even start with me about how telnet is horrid. Out side of my control but I recently had issues trying to enable telnet on a server. Typically its pretty straightforward.
+      <description>Don’t even start with me about how telnet is horrid. Out side of my control but I recently had issues trying to enable telnet on a server. Typically its pretty straightforward.
  yum install telnet-server chkconfig telnet on chkconfig xinetd on service xinetd start  Unfortunately for me this was not working. Every time I tried to telnet to the host after enabling it I would get an error message.</description>
     </item>
     
@@ -104,7 +102,7 @@ I needed to instruct the client to use a privledged port by adding the &amp;#822
       <pubDate>Tue, 31 Jul 2007 17:52:56 +0000</pubDate>
       
       <guid>https://cmdln.org/2007/07/31/fix-terminal-scrolling-when-inside-gnu-screen/</guid>
-      <description>&lt;p&gt;My post on &lt;a href=&#34;http://www.cmdln.org/2007/07/20/automatic-session-logging-and-monitoring-with-gnu-screen-for-the-paranoid/&#34; mce_href=&#34;http://www.cmdln.org/2007/07/20/automatic-session-logging-and-monitoring-with-gnu-screen-for-the-paranoid/&#34;&gt; Automatic session logging and monitoring with GNU screen&lt;/a&gt; seems to have been well received. I have had more hits by far on that post today than ever before. I noticed a nagging issue with screen and a friend of mine Travis Cline pointed me to the fix.&lt;/p&gt;</description>
+      <description>&lt;p&gt;My post on &lt;!-- raw HTML omitted --&gt; Automatic session logging and monitoring with GNU screen&lt;!-- raw HTML omitted --&gt; seems to have been well received. I have had more hits by far on that post today than ever before. I noticed a nagging issue with screen and a friend of mine Travis Cline pointed me to the fix.&lt;/p&gt;</description>
     </item>
     
   </channel>

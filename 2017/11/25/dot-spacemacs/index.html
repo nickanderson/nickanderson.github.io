@@ -6,7 +6,7 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.57.0" />
+<meta name="generator" content="Hugo 0.80.0" />
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -72,37 +72,33 @@
 <p>
 When I first tried using Emacs it was to play with Orgmode. I loved Orgmode but
 being a staunch vim user I really struggled with the key bindings. Ultimately my
-first attempt to use Orgmode fell by the wayside.
-</p>
+first attempt to use Orgmode fell by the wayside.</p>
 <p>
 When I learned about evil mode I gave it another go. I stumbled my way through
 just enough to get evil-mode working and Orgmode became much more usable. I
 still primarily interacted with Orgmode via direct files. I didn&#39;t make use of
-the agenda other than for searching. I only used Emacs for Orgmode.
-</p>
+the agenda other than for searching. I only used Emacs for Orgmode.</p>
 <p>
-Spacemacs is now my primary editor.
-</p>
+Spacemacs is now my primary editor.</p>
 <p>
 For a vim user coming to spacemacs I found <a href="https://github.com/syl20bnr/spacemacs/blob/master/doc/VIMUSERS.org">this document</a> very helpful.
-<a href="https://spin.atomicobject.com/2016/08/30/introduction-to-spacemacs/">https://spin.atomicobject.com/2016/08/30/introduction-to-spacemacs/</a>
-</p>
+<a href="https://spin.atomicobject.com/2016/08/30/introduction-to-spacemacs/">https://spin.atomicobject.com/2016/08/30/introduction-to-spacemacs/</a></p>
 <p>
 I maintain my spacemacs config in an org file and the configuration snippets are
-tangled out to <code class="verbatim">~/.spacemacs</code>.
-</p>
-<h1 id="headline-1">
+tangled out to <code class="verbatim">~/.spacemacs</code>.</p>
+<div id="outline-container-headline-1" class="outline-2">
+<h2 id="headline-1">
 <code class="verbatim">dotspacemacs/layers</code>
-</h1>
+</h2>
+<div id="outline-text-headline-1" class="outline-text-2">
 <p>
 These are the layers that I use. I tend to run on <code class="verbatim">develop</code> branch and update at
-no particular interval.
-</p>
+no particular interval.</p>
 <figure>
 <div class="src src-emacs-lisp">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -187,32 +183,37 @@ no particular interval.
 The defautl heading that comes from the wizard
 </figcaption>
 </figure>
-<h2 id="headline-2">
+<div id="outline-container-headline-2" class="outline-3">
+<h3 id="headline-2">
 Completion (Ivy)
-</h2>
+</h3>
+<div id="outline-text-headline-2" class="outline-text-3">
 <p>
 I have started to prefer ivy over helm. It seems significantly snappier. I don&#39;t
 seem to miss much from helm. Some of the auto complete for helm took frequncy
 into account I think, but its easy enough to be more specific in trade for the
-speed.
-</p>
+speed.</p>
 <div class="src src-emacs-lisp">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp">     <span class="nv">helm</span></code></pre></td></tr></table>
 </div>
 </div>
 </div>
-<h2 id="headline-3">
+</div>
+</div>
+<div id="outline-container-headline-3" class="outline-3">
+<h3 id="headline-3">
 Language Support
-</h2>
+</h3>
+<div id="outline-text-headline-3" class="outline-text-3">
 <div class="src src-emacs-lisp">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -241,18 +242,21 @@ Language Support
 </div>
 </div>
 </div>
-<h2 id="headline-4">
+</div>
+</div>
+<div id="outline-container-headline-4" class="outline-3">
+<h3 id="headline-4">
 Org-mode
-</h2>
+</h3>
+<div id="outline-text-headline-4" class="outline-text-3">
 <p>
 I pretty much live in org-mode. I keep my personal journal with the excellent
 org-journal package. I do my presentations with org-reveal, and much more config
-down in <code class="verbatim">dotspacemacs/user-config</code>.
-</p>
+down in <code class="verbatim">dotspacemacs/user-config</code>.</p>
 <div class="src src-emacs-lisp">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -285,18 +289,21 @@ down in <code class="verbatim">dotspacemacs/user-config</code>.
 </div>
 </div>
 </div>
-<h2 id="headline-5">
+</div>
+</div>
+<div id="outline-container-headline-5" class="outline-3">
+<h3 id="headline-5">
 Spell Checking
-</h2>
+</h3>
+<div id="outline-text-headline-5" class="outline-text-3">
 <p>
 Werd 
 Spell checking is nice, and auto completion will pop up correction suggestions
-when the insertion point is on a misspelled word.
-</p>
+when the insertion point is on a misspelled word.</p>
 <div class="src src-emacs-lisp">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
@@ -305,18 +312,21 @@ when the insertion point is on a misspelled word.
 </div>
 </div>
 </div>
-<h2 id="headline-6">
+</div>
+</div>
+<div id="outline-container-headline-6" class="outline-3">
+<h3 id="headline-6">
 Email (mu4e)
-</h2>
+</h3>
+<div id="outline-text-headline-6" class="outline-text-3">
 <p>
 mu4e must be installed on the system for this to work. I started using mu4e
 while I was running Ubuntu 16.04. 0.9.11 (the version readily available) worked
-fine while I got started with a single account.
-</p>
+fine while I got started with a single account.</p>
 <div class="src src-emacs-lisp">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -342,51 +352,47 @@ fine while I got started with a single account.
 <p>
 I am currently running Ubuntu 16.10 which has mu4e 0.9.16 available in the
 default repos. 0.9.16 adds <code class="verbatim">Contexts</code> as the <a href="https://www.djcbsoftware.nl/code/mu/mu4e/Multiple-accounts.html">reccomended way to handle multiple
-acccounts</a>. I am configuring contexts in <code class="verbatim">dotspacemacs/user-config</code>.
-</p>
+acccounts</a>. I am configuring contexts in <code class="verbatim">dotspacemacs/user-config</code>.</p>
 <p>
 How can I apply <code class="verbatim">format=flowed</code> to my outgoing messages, enabling receiving
 clients that support this feature to reflow my paragraphs? Plain text emails
 with <code class="verbatim">Content-Type: text/plain; format=flowed</code> can be reflowed (i.e. line
 endings removed, paragraphs refilled) by receiving clients that support this
 standard. Clients that don’t support this, show them as is, which means this
-feature is truly non-invasive.
-</p>
+feature is truly non-invasive.</p>
 <p>
 Here’s an explanatory blog post which also shows why this is a desirable
 feature: <a href="https://mathiasbynens.be/notes/gmail-plain-text">https://mathiasbynens.be/notes/gmail-plain-text</a> (if you don’t have it,
 your mails mostly look quite bad especially on mobile devices) and here’s the
-RFC with all the details: <a href="http://www.ietf.org/rfc/rfc2646.txt.">http://www.ietf.org/rfc/rfc2646.txt.</a>
-</p>
+RFC with all the details: <a href="http://www.ietf.org/rfc/rfc2646.txt.">http://www.ietf.org/rfc/rfc2646.txt.</a></p>
 <p>
-Since version 0.9.17, mu4e send emails with <code class="verbatim">format=flowed</code> by setting
-</p>
+Since version 0.9.17, mu4e send emails with <code class="verbatim">format=flowed</code> by setting</p>
 <blockquote>
-<p>
-(setq mu4e-compose-format-flowed t)
-</p>
+<p>(setq mu4e-compose-format-flowed t)</p>
 </blockquote>
 <p>
 in your Emacs init file (<code class="verbatim">~/.emacs</code> or <code class="verbatim">~/.emacs.d/init.el</code>). The transformation
 of your message into the proper format is done at the time of sending. In order
 to happen properly, you should write each paragraph of your message of as a long
 line (i.e. without carriage return). If you introduce unwanted newlines in your
-paragraph, use M-q to reformat it as a single line.
-</p>
+paragraph, use M-q to reformat it as a single line.</p>
 <p>
 If you want to send the message with paragraphs on single lines but without
 <code class="verbatim">format=flowed</code> (because, say, the receiver does not understand the latter as it
 is the case for Google or Github), use M-x use-hard-newlines (to turn
 <code class="verbatim">use-hard-newlines</code> off) or uncheck the box <code class="verbatim">format=flowed</code> in the Text menu
-when composing a message.
-</p>
-<h2 id="headline-7">
+when composing a message.</p>
+</div>
+</div>
+<div id="outline-container-headline-7" class="outline-3">
+<h3 id="headline-7">
 Useful tools
-</h2>
+</h3>
+<div id="outline-text-headline-7" class="outline-text-3">
 <div class="src src-emacs-lisp">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
@@ -399,7 +405,7 @@ Useful tools
 <div class="src src-emacs-lisp">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -440,13 +446,17 @@ Useful tools
 End of dotspacemacs-configuration-layers
 </figcaption>
 </figure>
-<h2 id="headline-8">
+</div>
+</div>
+<div id="outline-container-headline-8" class="outline-3">
+<h3 id="headline-8">
 Additional Packages
-</h2>
+</h3>
+<div id="outline-text-headline-8" class="outline-text-3">
 <div class="src src-emacs-lisp">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -461,20 +471,23 @@ Additional Packages
 </div>
 </div>
 </div>
-<h2 id="headline-9">
+</div>
+</div>
+<div id="outline-container-headline-9" class="outline-3">
+<h3 id="headline-9">
 END dotspacemacs/layers
-</h2>
+</h3>
+<div id="outline-text-headline-9" class="outline-text-3">
 <p>
 -I disable <code class="verbatim">magithub</code> because I keep getting API errors and it asks me if I want
 to work offline-. I am still trying to learn magit by itself so better to have
 something that doesn&#39;t nag at me constantly before trying to improve my workflow
-integration with github specifically.
-</p>
+integration with github specifically.</p>
 <figure>
 <div class="src src-emacs-lisp">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -507,13 +520,19 @@ integration with github specifically.
 The end of the default dotspacemacs/layers
 </figcaption>
 </figure>
-<h1 id="headline-10">
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-10" class="outline-2">
+<h2 id="headline-10">
 <code class="verbatim">dotspacemacs/init</code>
-</h1>
+</h2>
+<div id="outline-text-headline-10" class="outline-text-2">
 <div class="src src-emacs-lisp">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -634,13 +653,15 @@ The end of the default dotspacemacs/layers
 </div>
 </div>
 </div>
-<h2 id="headline-11">
+<div id="outline-container-headline-11" class="outline-3">
+<h3 id="headline-11">
 Theme
-</h2>
+</h3>
+<div id="outline-text-headline-11" class="outline-text-3">
 <div class="src src-emacs-lisp">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -655,16 +676,19 @@ Theme
 </div>
 </div>
 </div>
-<h2 id="headline-12">
+</div>
+</div>
+<div id="outline-container-headline-12" class="outline-3">
+<h3 id="headline-12">
 More Defaults
-</h2>
+</h3>
+<div id="outline-text-headline-12" class="outline-text-3">
 <p>
-A better font? <a href="http://www.tutysara.net/posts/2016/09/03/good-font-for-spacemacs/">http://www.tutysara.net/posts/2016/09/03/good-font-for-spacemacs/</a>
-</p>
+A better font? <a href="http://www.tutysara.net/posts/2016/09/03/good-font-for-spacemacs/">http://www.tutysara.net/posts/2016/09/03/good-font-for-spacemacs/</a></p>
 <div class="src src-emacs-lisp">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="lnt">  1
+<pre class="chroma"><code><span class="lnt">  1
 </span><span class="lnt">  2
 </span><span class="lnt">  3
 </span><span class="lnt">  4
@@ -977,13 +1001,17 @@ A better font? <a href="http://www.tutysara.net/posts/2016/09/03/good-font-for-s
 </div>
 </div>
 </div>
-<h2 id="headline-13">
+</div>
+</div>
+<div id="outline-container-headline-13" class="outline-3">
+<h3 id="headline-13">
 Whitespace Cleanup 
-</h2>
+</h3>
+<div id="outline-text-headline-13" class="outline-text-3">
 <div class="src src-emacs-lisp">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -1004,7 +1032,7 @@ Whitespace Cleanup
 <div class="src src-emacs-lisp">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp">   <span class="p">))</span></code></pre></td></tr></table>
@@ -1015,13 +1043,19 @@ Whitespace Cleanup
 End of whitespace dotspacemacs/init
 </figcaption>
 </figure>
-<h1 id="headline-14">
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-14" class="outline-2">
+<h2 id="headline-14">
 <code class="verbatim">dotspacemcacs/user-init</code>
-</h1>
+</h2>
+<div id="outline-text-headline-14" class="outline-text-2">
 <div class="src src-emacs-lisp">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -1040,13 +1074,15 @@ End of whitespace dotspacemacs/init
 </div>
 </div>
 </div>
-<h2 id="headline-15">
+<div id="outline-container-headline-15" class="outline-3">
+<h3 id="headline-15">
 Functions for executing cfengine src blocks
-</h2>
+</h3>
+<div id="outline-text-headline-15" class="outline-text-3">
 <div class="src src-emacs-lisp">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1151,13 +1187,17 @@ Functions for executing cfengine src blocks
 </div>
 </div>
 </div>
-<h2 id="headline-16">
+</div>
+</div>
+<div id="outline-container-headline-16" class="outline-3">
+<h3 id="headline-16">
 CFEngine
-</h2>
+</h3>
+<div id="outline-text-headline-16" class="outline-text-3">
 <div class="src src-emacs-lisp">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -1175,20 +1215,23 @@ CFEngine
 <pre class="example">
 nickanderson/cfengine-policy-perms
 </pre>
-<h2 id="headline-17">
+</div>
+</div>
+<div id="outline-container-headline-17" class="outline-3">
+<h3 id="headline-17">
 Function to add unique ID to each entry
-</h2>
+</h3>
+<div id="outline-text-headline-17" class="outline-text-3">
 <p>
 I have this function so that I can add a unique id to each entry in the file. It
 can be obnoxious but my property drawers are folded so its not that intrusive,
 and it does allow for linking to a nodes unique id so that links can remain
 working after re-filing entries into different files. Sometimes I have a save
-hook configured to run this.
-</p>
+hook configured to run this.</p>
 <div class="src src-emacs-lisp">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -1203,29 +1246,38 @@ hook configured to run this.
 </div>
 </div>
 </div>
-<h2 id="headline-18">
+</div>
+</div>
+<div id="outline-container-headline-18" class="outline-3">
+<h3 id="headline-18">
 END of <code class="verbatim">dotspacemacs/user-init</code>
-</h2>
+</h3>
+<div id="outline-text-headline-18" class="outline-text-3">
 <div class="src src-emacs-lisp">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp">  <span class="p">)</span></code></pre></td></tr></table>
 </div>
 </div>
 </div>
-<h1 id="headline-19">
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-19" class="outline-2">
+<h2 id="headline-19">
 <code class="verbatim">dotspacemacs/user-config</code>
-</h1>
+</h2>
+<div id="outline-text-headline-19" class="outline-text-2">
 <p>
-This is where the bulk of my custom config lives.
-</p>
+This is where the bulk of my custom config lives.</p>
 <div class="src src-emacs-lisp">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -1244,23 +1296,23 @@ This is where the bulk of my custom config lives.
 </div>
 </div>
 </div>
-<h2 id="headline-20">
+<div id="outline-container-headline-20" class="outline-3">
+<h3 id="headline-20">
 IRC
-</h2>
+</h3>
+<div id="outline-text-headline-20" class="outline-text-3">
 <p>
 In October of 2017 I started using ERC for my IRC needs. Previously I used irssi
 inside of a tmux session. I miss the mobile notifications I had setup for irssi,
 and I miss the always connected agent, but it&#39;s much easier to move text inside
-emacs than from an external console.
-</p>
+emacs than from an external console.</p>
 <p>
 Probably with some effort I could replace the functionality of irssinotifier and
-have some kind of bounder.
-</p>
+have some kind of bounder.</p>
 <div class="src src-emacs-lisp">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1319,36 +1371,35 @@ have some kind of bounder.
 </div>
 </div>
 </div>
-<h2 id="headline-21">
+</div>
+</div>
+<div id="outline-container-headline-21" class="outline-3">
+<h3 id="headline-21">
 Org-mode
-</h2>
+</h3>
+<div id="outline-text-headline-21" class="outline-text-3">
 <p>
 Org-mode is <strong>the killer app</strong> for emacs. Checkout the details of the org layer by
 typing <code class="verbatim">SPC h l org</code>. The org-layer has support for org-buillets, org-pomodoro,
-org-download, and org-projectile.
-</p>
+org-download, and org-projectile.</p>
 <p>
-I have an open pull request to add org-journal support.
-</p>
+I have an open pull request to add org-journal support.</p>
 <p>
-The org layer documentation states: 
-</p>
+The org layer documentation states: </p>
 <p>
 Since version 0.104, spacemacs uses the <code class="verbatim">org</code> version from the org ELPA
 repository instead of the one shipped with emacs. Then, any <code class="verbatim">org</code> related code
 should not be loaded before <code class="verbatim">dotspacemacs/user-config</code>, otherwise both versions
-will be loaded and will conflict.
-</p>
+will be loaded and will conflict.</p>
 <p>
 Because of autoloading, calling to <code class="verbatim">org</code> functions will trigger the loading up
 of the <code class="verbatim">org</code> shipped with emacs which will induce conflicts.
 One way to avoid conflict is to wrap your <code class="verbatim">org</code> config code in a
-<code class="verbatim">with-eval-after-load</code> block like this:
-</p>
+<code class="verbatim">with-eval-after-load</code> block like this:</p>
 <div class="src src-emacs-lisp">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp">  <span class="p">(</span><span class="nb">with-eval-after-load</span> <span class="ss">&#39;org</span></code></pre></td></tr></table>
@@ -1357,12 +1408,11 @@ One way to avoid conflict is to wrap your <code class="verbatim">org</code> conf
 </div>
 <p>
 But I get errors when I try and use that. Somewhere along the way I picked up
-this different style:
-</p>
+this different style:</p>
 <div class="src src-elisp">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-elisp" data-lang="elisp"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
@@ -1373,18 +1423,19 @@ this different style:
 </div>
 </div>
 </div>
-<h3 id="headline-22">
+<div id="outline-container-headline-22" class="outline-4">
+<h4 id="headline-22">
 Configure TODO Keywords
-</h3>
+</h4>
+<div id="outline-text-headline-22" class="outline-text-4">
 <p>
 This sets up quick access to <code class="verbatim">TODO</code> states. I definitely use <code class="verbatim">TODO</code> and <code class="verbatim">DONE</code>
 but I haven&#39;t really found my flow with any other states so this gets messed
-with from time to time.
-</p>
+with from time to time.</p>
 <div class="src src-emacs-lisp">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -1400,12 +1451,11 @@ with from time to time.
 <p>
 I like these fancy utf characters in the TODO keywords, but it could complicate
 manual editing and I would need to fix all my existing keywords first. Keeping
-it here in case I get a wild hair someday.
-</p>
+it here in case I get a wild hair someday.</p>
 <div class="src src-emacs-lisp">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -1418,30 +1468,37 @@ it here in case I get a wild hair someday.
 </div>
 </div>
 </div>
-<h3 id="headline-23">
+</div>
+</div>
+<div id="outline-container-headline-23" class="outline-4">
+<h4 id="headline-23">
 Fast TODO selection
-</h3>
+</h4>
+<div id="outline-text-headline-23" class="outline-text-4">
 <p>
 This enables fast todo selection to bring up the menu of TODO keywords when
-pressing <code class="verbatim">t</code> on a headline.
-</p>
+pressing <code class="verbatim">t</code> on a headline.</p>
 <div class="src src-emacs-lisp">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp">  <span class="p">(</span><span class="nb">setq</span> <span class="nv">org-use-fast-todo-selection</span> <span class="no">t</span><span class="p">)</span></code></pre></td></tr></table>
 </div>
 </div>
 </div>
-<h3 id="headline-24">
+</div>
+</div>
+<div id="outline-container-headline-24" class="outline-4">
+<h4 id="headline-24">
 Babel Languages
-</h3>
+</h4>
+<div id="outline-text-headline-24" class="outline-text-4">
 <div class="src src-emacs-lisp">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1473,7 +1530,7 @@ Babel Languages
 <div class="src src-elisp">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-elisp" data-lang="elisp"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1502,7 +1559,7 @@ Babel Languages
 <div class="src src-emacs-lisp">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -1525,25 +1582,27 @@ Babel Languages
 Load org-bable languages on demand (<a href="https://emacs.stackexchange.com/questions/20577/org-babel-load-all-languages-on-demand)">https://emacs.stackexchange.com/questions/20577/org-babel-load-all-languages-on-demand)</a>
 </figcaption>
 </figure>
-<h3 id="headline-25">
+</div>
+</div>
+<div id="outline-container-headline-25" class="outline-4">
+<h4 id="headline-25">
 Agenda
-</h3>
+</h4>
+<div id="outline-text-headline-25" class="outline-text-4">
 <p>
 I consider myself quite unorganized. At least inside my head it feels that way.
 Org mode really helps me because it can search across multiple files. So I can
 have as many different files as I like for different projects or clients and
 then I can search across all of them for something using the agenda view. This
 specifies each of your org files, or the directories to be searched for org
-files.
-</p>
+files.</p>
 <p>
 I might want to add the deft directory so that my searches cover those notes as
-well.
-</p>
+well.</p>
 <div class="src src-emacs-lisp">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
@@ -1557,7 +1616,7 @@ well.
 <div class="src src-emacs-lisp">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
@@ -1572,7 +1631,7 @@ well.
 <div class="src src-emacs-lisp">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp">  <span class="p">(</span><span class="nb">setq</span> <span class="nv">org-tags-match-list-sublevels</span> <span class="ss">&#39;indented</span><span class="p">)</span></code></pre></td></tr></table>
@@ -1587,7 +1646,7 @@ Indent agenda children todos (only in tag and tag-todo searches).
 <div class="src src-emacs-lisp">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp">  <span class="p">(</span><span class="nb">setq</span> <span class="nv">org-agenda-prefix-format</span> <span class="o">&#39;</span><span class="s">&#34;%b&#34;</span><span class="p">)</span></code></pre></td></tr></table>
@@ -1598,17 +1657,20 @@ Indent agenda children todos (only in tag and tag-todo searches).
 Show breadcrumbs in the agenda
 </figcaption>
 </figure>
-<h3 id="headline-26">
+</div>
+</div>
+<div id="outline-container-headline-26" class="outline-4">
+<h4 id="headline-26">
 Clocktables
-</h3>
+</h4>
+<div id="outline-text-headline-26" class="outline-text-4">
 <p>
 Use hours for clocktable summaries and show the current clock time in the
-modeline.
-</p>
+modeline.</p>
 <div class="src src-emacs-lisp">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
@@ -1617,17 +1679,20 @@ modeline.
 </div>
 </div>
 </div>
-<h3 id="headline-27">
+</div>
+</div>
+<div id="outline-container-headline-27" class="outline-4">
+<h4 id="headline-27">
 Hyperlink abbreviations
-</h3>
+</h4>
+<div id="outline-text-headline-27" class="outline-text-4">
 <p>
 I link to several issue tracking systems frequently, and link abbreviations make
-it much nicer.
-</p>
+it much nicer.</p>
 <div class="src src-emacs-lisp">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1656,18 +1721,21 @@ it much nicer.
 </div>
 </div>
 </div>
-<h3 id="headline-28">
+</div>
+</div>
+<div id="outline-container-headline-28" class="outline-4">
+<h4 id="headline-28">
 Journal
-</h3>
+</h4>
+<div id="outline-text-headline-28" class="outline-text-4">
 <p>
 To enable <code class="verbatim">org-journal</code> in the org layer I need to define
 <code class="verbatim">org-enable-org-journal-support</code> when I enable the layer. If not the org-journal
-package won&#39;t be installed.
-</p>
+package won&#39;t be installed.</p>
 <div class="src src-emacs-lisp">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
@@ -1680,15 +1748,13 @@ package won&#39;t be installed.
 </div>
 <p>
 The default is <code class="verbatim">~/Documents/journal/</code> but I prefer to keep my journal inside my
-org directory for now.
-</p>
+org directory for now.</p>
 <p>
-I now set this when i load the layer.
-</p>
+I now set this when i load the layer.</p>
 <div class="src src-emacs-lisp">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp">    <span class="p">(</span><span class="nb">setq</span> <span class="nv">org-journal-dir</span> <span class="s">&#34;~/org/journal/&#34;</span><span class="p">)</span></code></pre></td></tr></table>
@@ -1697,19 +1763,16 @@ I now set this when i load the layer.
 </div>
 <p>
 I find the default journal file names hard to read and prefer some visual
-separation.
-</p>
+separation.</p>
 <p>
 <em>Note:</em> I would prefer to have them named with a <code class="verbatim">.org</code> extension but I found
-that broke the calendar search functionality.
-</p>
+that broke the calendar search functionality.</p>
 <p>
-I now set this when I load the layer
-</p>
+I now set this when I load the layer</p>
 <div class="src src-emacs-lisp">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -1724,15 +1787,13 @@ I now set this when I load the layer
 </div>
 <p>
 I like my org files to start off with a Title with a human readable day so that
-they might look nice if I ever decide to export them.
-</p>
+they might look nice if I ever decide to export them.</p>
 <p>
-I now set this when I load the layer
-</p>
+I now set this when I load the layer</p>
 <div class="src src-emacs-lisp">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
@@ -1745,15 +1806,13 @@ I now set this when I load the layer
 The default entry is a second level heading (=** =). But since I start with a
 Title instead of a first level heading I like to bump this back out.
 Additionally I really dislike the timestamps being inserted at the beginning of
-each entry. Perhaps for a worklog journal I would like it a bit more.
-</p>
+each entry. Perhaps for a worklog journal I would like it a bit more.</p>
 <p>
-I now set this when I load the layer.
-</p>
+I now set this when I load the layer.</p>
 <div class="src src-emacs-lisp">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
@@ -1762,16 +1821,19 @@ I now set this when I load the layer.
 </div>
 </div>
 </div>
-<h3 id="headline-29">
+</div>
+</div>
+<div id="outline-container-headline-29" class="outline-4">
+<h4 id="headline-29">
 Notes (deft)
-</h3>
+</h4>
+<div id="outline-text-headline-29" class="outline-text-4">
 <p>
-I like to use <code class="verbatim">#+Title</code> as the first line in note files.
-</p>
+I like to use <code class="verbatim">#+Title</code> as the first line in note files.</p>
 <div class="src src-emacs-lisp">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1798,19 +1860,22 @@ I like to use <code class="verbatim">#+Title</code> as the first line in note fi
 </div>
 </div>
 </div>
-<h3 id="headline-30">
+</div>
+</div>
+<div id="outline-container-headline-30" class="outline-4">
+<h4 id="headline-30">
 Images&#xa0;&#xa0;&#xa0;<span class="tags"><span>ATTACH</span></span>
-</h3>
+</h4>
+<div id="outline-text-headline-30" class="outline-text-4">
 <p>
 I now do the majority of my writing in org-mode. Sometimes I include images.
 This makes them render in-line by default. I might switch this back off. It&#39;s
 nice but I have found it makes navigating documents more difficult when images
-are displayed inline.
-</p>
+are displayed inline.</p>
 <div class="src src-emacs-lisp">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
@@ -1824,12 +1889,11 @@ are displayed inline.
 <p>
 <code class="verbatim">org-download</code> provides functions for capturing and automatically inserting a
 screenshot. I didn&#39;t like the directories it would create so I figure that using
-the normal org attach machinery will keep things tidy.
-</p>
+the normal org attach machinery will keep things tidy.</p>
 <div class="src src-emacs-lisp">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp">  <span class="p">(</span><span class="nb">setq-default</span> <span class="nv">org-download-method</span> <span class="ss">&#39;attach</span><span class="p">)</span></code></pre></td></tr></table>
@@ -1837,44 +1901,40 @@ the normal org attach machinery will keep things tidy.
 </div>
 </div>
 <p>
-Note:
-</p>
+Note:</p>
 <ul>
 <li>
-<p>
-<code class="verbatim">ATTR_HTML: :width x</code> can be used to control the image rendering within org as well.
-</p>
+<p><code class="verbatim">ATTR_HTML: :width x</code> can be used to control the image rendering within org as well.</p>
 </li>
 <li>
-<p>
-Pressing <code class="verbatim">C-c C-c</code> while point is on <code class="verbatim">DOWNLOADED</code> will cause a refresh and the
-image will resize.
-</p>
+<p>Pressing <code class="verbatim">C-c C-c</code> while point is on <code class="verbatim">DOWNLOADED</code> will cause a refresh and the
+image will resize.</p>
 </li>
 </ul>
 <img src="data/d1/8bf31e-9e06-4ec4-be2b-2e47adb6d7b0/screenshot_2016-09-23_13-32-43.png" alt="data/d1/8bf31e-9e06-4ec4-be2b-2e47adb6d7b0/screenshot_2016-09-23_13-32-43.png" title="data/d1/8bf31e-9e06-4ec4-be2b-2e47adb6d7b0/screenshot_2016-09-23_13-32-43.png" width="100px"/>
 <p>
-Drag and drop images into org-mode can be useful.
-</p>
+Drag and drop images into org-mode can be useful.</p>
 <img src="data/d1/8bf31e-9e06-4ec4-be2b-2e47adb6d7b0/CFEngine_New_Logo-01-1_2016-09-23_13-43-18.jpg" alt="data/d1/8bf31e-9e06-4ec4-be2b-2e47adb6d7b0/CFEngine_New_Logo-01-1_2016-09-23_13-43-18.jpg" title="data/d1/8bf31e-9e06-4ec4-be2b-2e47adb6d7b0/CFEngine_New_Logo-01-1_2016-09-23_13-43-18.jpg" width="300px"/>
-<h3 id="headline-31">
+</div>
+</div>
+<div id="outline-container-headline-31" class="outline-4">
+<h4 id="headline-31">
 Capturing 
-</h3>
+</h4>
+<div id="outline-text-headline-31" class="outline-text-4">
 <p>
 I use the <code class="verbatim">TODO</code> capture all the time. All of the captured TODOs goto the same
 place and then I re-file them (Rarely, but I&#39;m trying to get better about it.
 There is a slight pain factor involved at times when a single org file gets up
 to 30K lines) into other files later on. Note that I clock time during the
 capture and then automatically resume the previously clocked task when I am done
-capturing.
-</p>
+capturing.</p>
 <p>
-I keep trying other templates.
-</p>
+I keep trying other templates.</p>
 <div class="src src-emacs-lisp">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1979,17 +2039,19 @@ I keep trying other templates.
 </div>
 </div>
 </div>
-<h3 id="headline-32">
+</div>
+</div>
+<div id="outline-container-headline-32" class="outline-4">
+<h4 id="headline-32">
 Refiling
-</h3>
-<p>
-When I refile, I want to be able to go up to 5 levels deep. Probably I could
-take this down a notch or two. Usually I am only filing 1 or 2 levels deep.
-</p>
+</h4>
+<div id="outline-text-headline-32" class="outline-text-4">
+<p>When I refile, I want to be able to go up to 5 levels deep. Probably I could
+take this down a notch or two. Usually I am only filing 1 or 2 levels deep.</p>
 <div class="src src-emacs-lisp">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
@@ -1998,20 +2060,22 @@ take this down a notch or two. Usually I am only filing 1 or 2 levels deep.
 </div>
 </div>
 </div>
-<h3 id="headline-33">
+</div>
+</div>
+<div id="outline-container-headline-33" class="outline-4">
+<h4 id="headline-33">
 Indention
-</h3>
-<p>
-I picked this up from a co-worker. Before I started using this setting I was
+</h4>
+<div id="outline-text-headline-33" class="outline-text-4">
+<p>I picked this up from a co-worker. Before I started using this setting I was
 managing whitespace indentation inside my org files. Now its all indented
 automatically but the source itself is not indented. This really makes org-mode
 feel like more of an application than working in free form text. Slightly more
-of a word processor feel.
-</p>
+of a word processor feel.</p>
 <div class="src src-emacs-lisp">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -2024,17 +2088,20 @@ of a word processor feel.
 </div>
 </div>
 </div>
-<h3 id="headline-34">
+</div>
+</div>
+<div id="outline-container-headline-34" class="outline-4">
+<h4 id="headline-34">
 Exporting
-</h3>
+</h4>
+<div id="outline-text-headline-34" class="outline-text-4">
 <p>
 My primary authoring tool is org. Being able to easily export to other formats
-is amazing.
-</p>
+is amazing.</p>
 <div class="src src-emacs-lisp">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp">  <span class="p">(</span><span class="nb">setq</span> <span class="nv">org-export-backends</span> <span class="o">&#39;</span><span class="p">(</span><span class="nv">org</span> <span class="nv">html</span> <span class="nv">ascii</span> <span class="nv">md</span> <span class="nv">jira</span><span class="p">))</span></code></pre></td></tr></table>
@@ -2044,7 +2111,7 @@ is amazing.
 <div class="src src-emacs-lisp">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
@@ -2053,18 +2120,21 @@ is amazing.
 </div>
 </div>
 </div>
-<h3 id="headline-35">
+</div>
+</div>
+<div id="outline-container-headline-35" class="outline-4">
+<h4 id="headline-35">
 Publishing
-</h3>
+</h4>
+<div id="outline-text-headline-35" class="outline-text-4">
 <p>
 You can export sets of files using the publishing functionality. I use this to
 export my notes for colleagues to be able to access. I publish my notes in
-multiple formats because different strokes for different folks.
-</p>
+multiple formats because different strokes for different folks.</p>
 <div class="src src-emacs-lisp">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -2139,39 +2209,46 @@ multiple formats because different strokes for different folks.
 </div>
 </div>
 </div>
-<h3 id="headline-36">
+</div>
+</div>
+<div id="outline-container-headline-36" class="outline-4">
+<h4 id="headline-36">
 END of Org
-</h3>
+</h4>
+<div id="outline-text-headline-36" class="outline-text-4">
 <p>
-And here we close out <code class="verbatim">with-eval-after-load &#39;org</code>
-</p>
+And here we close out <code class="verbatim">with-eval-after-load &#39;org</code></p>
 <div class="src src-emacs-lisp">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp">  <span class="p">)</span></code></pre></td></tr></table>
 </div>
 </div>
 </div>
-<h2 id="headline-37">
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-37" class="outline-3">
+<h3 id="headline-37">
 Blogging via Hugo
-</h2>
+</h3>
+<div id="outline-text-headline-37" class="outline-text-3">
 <p>
 I switched from wordpress to hugo for my blog. I really wanted a to move to a
-static site generator and Hugo can nativly parse org formatted source files.
-</p>
+static site generator and Hugo can nativly parse org formatted source files.</p>
 <p>
 The <code class="verbatim">easy-hugo</code> package makes creating new posts with <code class="verbatim">easy-hugo-newpost</code>,
 previewing the blog with <code class="verbatim">easy=hugo=preview</code>, and publishing the blog with
 <code class="verbatim">easy-hugo-publish</code> convenient. The <code class="verbatim">easy-hugo</code> mode doesn&#39;t really work well
-inside spacemacs yet.
-</p>
+inside spacemacs yet.</p>
 <div class="src src-elisp">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-elisp" data-lang="elisp"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -2200,20 +2277,21 @@ inside spacemacs yet.
 </div>
 </div>
 </div>
-<h2 id="headline-38">
+</div>
+</div>
+<div id="outline-container-headline-38" class="outline-3">
+<h3 id="headline-38">
 CFEngine
-</h2>
-<p>
-I am constantly working with CFEngine. These customizations improve my life.
-</p>
+</h3>
+<div id="outline-text-headline-38" class="outline-text-3">
+<p>I am constantly working with CFEngine. These customizations improve my life.</p>
 <p>
 CFEngine complains if files are writable by other users. This function is used
-to set permissions on CFEngine policy files correctly as they are edited.
-</p>
+to set permissions on CFEngine policy files correctly as they are edited.</p>
 <div class="src src-emacs-lisp">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -2241,7 +2319,7 @@ to set permissions on CFEngine policy files correctly as they are edited.
 <div class="src src-emacs-lisp">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -2263,28 +2341,29 @@ to set permissions on CFEngine policy files correctly as they are edited.
 </tbody>
 </table>
 <p>
-I like line numbers when I am doing policy.
-</p>
+I like line numbers when I am doing policy.</p>
 <p>
 Turn on line numbers for cfengine3-mode and set permissions of saved files to owner only.
 The Masterfiles Policy Framework restricts policy file permissions down
 by default, this helps to stay in line with those defaults, additionally
-it helps to avoid errors when testing locally.
-</p>
+it helps to avoid errors when testing locally.</p>
 <pre class="example">
-> $ cf-agent -Kf ./example.cf
+&gt; $ cf-agent -Kf ./example.cf
   error: File ./example.cf (owner 1000) is writable by others (security exception)
 </pre>
-<h2 id="headline-39">
+</div>
+</div>
+<div id="outline-container-headline-39" class="outline-3">
+<h3 id="headline-39">
 Zooming
-</h2>
+</h3>
+<div id="outline-text-headline-39" class="outline-text-3">
 <p>
-Add these keys in to support familiar zooming of text with <code class="verbatim">Ctrl+</code> and <code class="verbatim">Ctrl-</code>.
-</p>
+Add these keys in to support familiar zooming of text with <code class="verbatim">Ctrl+</code> and <code class="verbatim">Ctrl-</code>.</p>
 <div class="src src-emacs-lisp">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
@@ -2295,19 +2374,22 @@ Add these keys in to support familiar zooming of text with <code class="verbatim
 </div>
 </div>
 </div>
-<h2 id="headline-40">
+</div>
+</div>
+<div id="outline-container-headline-40" class="outline-3">
+<h3 id="headline-40">
 mu4e (Email)
-</h2>
+</h3>
+<div id="outline-text-headline-40" class="outline-text-3">
 <p>
 All of my email accounts are currently hosted on google infrastructure (ewww i
 know). At any rate, changing the filename when moving messages is very important
 for mbsync to work correctly. Without this config option mbsync will begin to
-throw errors during sync.
-</p>
+throw errors during sync.</p>
 <div class="src src-emacs-lisp">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
@@ -2318,12 +2400,11 @@ throw errors during sync.
 </div>
 <p>
 Since mu4e 0.9.16 which I have begun using the builtin contexts to help manage
-multiple email accounts.
-</p>
+multiple email accounts.</p>
 <div class="src src-emacs-lisp">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -2442,26 +2523,34 @@ multiple email accounts.
 </div>
 </div>
 </div>
-<h2 id="headline-41">
+</div>
+</div>
+<div id="outline-container-headline-41" class="outline-3">
+<h3 id="headline-41">
 END of <code class="verbatim">dotspacemacs/user-config</code>
-</h2>
+</h3>
+<div id="outline-text-headline-41" class="outline-text-3">
 <div class="src src-emacs-lisp">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp">  <span class="p">)</span></code></pre></td></tr></table>
 </div>
 </div>
 </div>
-<h2 id="headline-42">
+</div>
+</div>
+<div id="outline-container-headline-42" class="outline-3">
+<h3 id="headline-42">
 Custom set variables and faces
-</h2>
+</h3>
+<div id="outline-text-headline-42" class="outline-text-3">
 <div class="src src-emacs-lisp">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -2500,6 +2589,10 @@ Custom set variables and faces
 </div>
 </div>
 </div>
+</div>
+</div>
+</div>
+</div>
 
             </div>
             
@@ -2510,7 +2603,7 @@ Custom set variables and faces
             <div class="push"></div>
         </div>
         <footer class="footer text-center">
-<p>Copyright &copy; 2019 Nick Anderson -
+<p>Copyright &copy; 2022 Nick Anderson -
 <span class="credit">
 	Powered by
 	<a target="_blank" href="https://gohugo.io">Hugo</a>

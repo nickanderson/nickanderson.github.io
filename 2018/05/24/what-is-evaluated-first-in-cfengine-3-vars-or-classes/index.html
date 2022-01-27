@@ -6,7 +6,7 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.57.0" />
+<meta name="generator" content="Hugo 0.80.0" />
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -70,27 +70,30 @@
             <div class="post-content">
                 
 <p>
-&gt; How do I know if vars or classes come first during cfengine evaluation?
-</p>
-<h1 id="headline-1">
+&gt; How do I know if vars or classes come first during cfengine evaluation?</p>
+<div id="outline-container-headline-1" class="outline-2">
+<h2 id="headline-1">
 Read the documentation on Normal Order
-</h1>
+</h2>
+<div id="outline-text-headline-1" class="outline-text-2">
 <p>
 There is a wealth of information on <a href="https://docs.cfengine.com">docs.cfengine.com</a>. Find documentation about
 the <a href="https://docs.cfengine.com/docs/3.10/reference-language-concepts-normal-ordering.html#agent-evaluation-step">order of agent promise evaluation</a> (Normal Order) in the <a href="https://docs.cfengine.com/docs/3.10/reference-language-concepts-normal-ordering.html#agent-evaluation-step">Language Concepts</a> section
-of the <a href="https://docs.cfengine.com/docs/3.10/reference-language-concepts-normal-ordering.html#agent-evaluation-step">Reference manual</a>.
-</p>
-<h1 id="headline-2">
+of the <a href="https://docs.cfengine.com/docs/3.10/reference-language-concepts-normal-ordering.html#agent-evaluation-step">Reference manual</a>.</p>
+</div>
+</div>
+<div id="outline-container-headline-2" class="outline-2">
+<h2 id="headline-2">
 Run the agent with –verbose or -v and grep for pass 1.
-</h1>
+</h2>
+<div id="outline-text-headline-2" class="outline-text-2">
 <p>
-Write a test policy that has both vars and classes promises.
-</p>
+Write a test policy that has both vars and classes promises.</p>
 <figure>
 <div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -116,13 +119,12 @@ Write a test policy that has both vars and classes promises.
 </figcaption>
 </figure>
 <p>
-Grep the verbose output.
-</p>
+Grep the verbose output.</p>
 <figure>
 <div class="src src-shell">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
@@ -131,27 +133,30 @@ Grep the verbose output.
 </div>
 </div>
 </div>
-<figcaption>
-Grepping for promises that run on the frist pass
-</figcaption>
-</figure>
 <pre class="example">
  verbose: V: BEGIN variables (pass 1)
  verbose: C: BEGIN classes / conditions (pass 1)
 </pre>
-<h1 id="headline-3">
+<figcaption>
+Grepping for promises that run on the frist pass
+</figcaption>
+</figure>
+</div>
+</div>
+<div id="outline-container-headline-3" class="outline-2">
+<h2 id="headline-3">
 Write policy that tells you
-</h1>
+</h2>
+<div id="outline-text-headline-3" class="outline-text-2">
 <p>
 This policy uses conditionals to determine if classes are evaluated before
 variables, or if variables are evaluated first. It shows the determination
-using reports guarded on the class that describes which is evaluated first.
-</p>
+using reports guarded on the class that describes which is evaluated first.</p>
 <figure>
 <div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -202,19 +207,23 @@ using reports guarded on the class that describes which is evaluated first.
 Policy to demonstrate evaluation order in cfengine 3
 </figcaption>
 </figure>
+<figure>
 <pre class="example">
 R: CFEngine 3.11.0
 R: Vars come first
 R: Without intermediary vars: ifelse: Vars come first
 </pre>
+<figcaption>
+Output of policy to demonstrate evaluation order in cfengine 3
+</figcaption>
+</figure>
 <p>
-You can use the <code class="verbatim">with</code> attribute and <code class="verbatim">ifelse()</code> to reduce the policy a bit.
-</p>
+You can use the <code class="verbatim">with</code> attribute and <code class="verbatim">ifelse()</code> to reduce the policy a bit.</p>
 <figure>
 <div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -263,10 +272,17 @@ You can use the <code class="verbatim">with</code> attribute and <code class="ve
 Policy to demonstrate evaluation order in cfengine 3
 </figcaption>
 </figure>
+<figure>
 <pre class="example">
 R: CFEngine 3.11.0
 R: Without intermediary vars: ifelse: Classes come first
 </pre>
+<figcaption>
+Output of policy using <code class="verbatim">with</code> and <code class="verbatim">ifelse()</code> to demonstrate evaluation order in cfengine 3
+</figcaption>
+</figure>
+</div>
+</div>
 
             </div>
             
@@ -277,7 +293,7 @@ R: Without intermediary vars: ifelse: Classes come first
             <div class="push"></div>
         </div>
         <footer class="footer text-center">
-<p>Copyright &copy; 2019 Nick Anderson -
+<p>Copyright &copy; 2022 Nick Anderson -
 <span class="credit">
 	Powered by
 	<a target="_blank" href="https://gohugo.io">Hugo</a>

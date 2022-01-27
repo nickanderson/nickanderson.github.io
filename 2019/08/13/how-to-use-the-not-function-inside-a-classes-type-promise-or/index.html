@@ -6,7 +6,7 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.57.0" />
+<meta name="generator" content="Hugo 0.80.0" />
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -69,17 +69,15 @@
             <span class="post-date">Aug 13, 2019 </span>
             <div class="post-content">
                 <p>
-How can I use <a href="https://docs.cfengine.com/docs/3.12/reference-promise-types-classes.html#or"><em>or</em></a> with a classes type promise where an element is negated with <a href="https://docs.cfengine.com/docs/3.12/reference-functions-not.html"><em>not()</em></a>.
-</p>
+How can I use <a href="https://docs.cfengine.com/docs/3.12/reference-promise-types-classes.html#or"><em>or</em></a> with a classes type promise where an element is negated with <a href="https://docs.cfengine.com/docs/3.12/reference-functions-not.html"><em>not()</em></a>.</p>
 <p>
 It&#39;s not currently possible to use <em>not()</em> directly within an <em>or</em> classes
-promise since it returns a string and not boolean.
-</p>
+promise since it returns a string and not boolean.</p>
 <figure>
 <div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -129,24 +127,22 @@ Using not() inside a classes or results in syntax error
 </figcaption>
 </figure>
 <p>
-Running the policy results in a syntax error
-</p>
+Running the policy results in a syntax error</p>
 <pre class="example">
    error: Function does not return the required type
-     "missing" or => { not( fileexists( $(f) ) ) };
+     &#34;missing&#34; or =&gt; { not( fileexists( $(f) ) ) };
                                                   ^
    error: There are syntax errors in policy files
 </pre>
 <p>
 Since the string returned by <em>not()</em> is <code class="verbatim">any</code>, if it evaluates to false and
 <code class="verbatim">!any</code> if it evaluates to true we can use <em>classify()</em> to see if the result
-matches a currently defined class.
-</p>
+matches a currently defined class.</p>
 <figure>
 <div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -198,8 +194,7 @@ Use classify to <em>cast</em> the result of not as a boolean
 </figcaption>
 </figure>
 <p>
-Now the policy works as expected.
-</p>
+Now the policy works as expected.</p>
 <pre class="example">
 R: /tmp/missing is missing
 </pre>
@@ -213,7 +208,7 @@ R: /tmp/missing is missing
             <div class="push"></div>
         </div>
         <footer class="footer text-center">
-<p>Copyright &copy; 2019 Nick Anderson -
+<p>Copyright &copy; 2022 Nick Anderson -
 <span class="credit">
 	Powered by
 	<a target="_blank" href="https://gohugo.io">Hugo</a>

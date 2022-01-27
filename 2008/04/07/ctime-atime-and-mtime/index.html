@@ -6,7 +6,7 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.57.0" />
+<meta name="generator" content="Hugo 0.80.0" />
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -68,15 +68,11 @@
             <h1><a href="https://cmdln.org/2008/04/07/ctime-atime-and-mtime/">ctime, atime, and mtime</a></h1>
             <span class="post-date">Apr 7, 2008 </span>
             <div class="post-content">
-                <p>It is important to distinguish between a file or directory&#8217;s change time (ctime), access time (atime), and modify time (mtime).</p>
-
-<!--adsense-->
-
-<p><strong>ctime</strong> &#8212; In UNIX, it is not possible to tell the actual creation time of a file. The ctime&#8211;change time&#8211;is the time when changes were made to the file or directory&#8217;s inode (owner, permissions, etc.). It is needed by the dump command to determine if the file needs to be backed up. You can view the ctime with the ls -lc command.</p>
-
-<p><strong>atime</strong> &#8212; The atime&#8211;access time&#8211;is the time when the data of a file was last accessed. Displaying the contents of a file or executing a shell script will update a file&#8217;s atime, for example. You can view the atime with the ls -lu command.</p>
-
-<p><strong>mtime</strong> &#8212; The mtime&#8211;modify time&#8211;is the time when the actual contents of a file was last modified. This is the time displayed in a long directory listing (ls -l).</p>
+                <p>It is important to distinguish between a file or directory’s change time (ctime), access time (atime), and modify time (mtime).</p>
+<!-- raw HTML omitted -->
+<p><strong>ctime</strong> — In UNIX, it is not possible to tell the actual creation time of a file. The ctime–change time–is the time when changes were made to the file or directory’s inode (owner, permissions, etc.). It is needed by the dump command to determine if the file needs to be backed up. You can view the ctime with the ls -lc command.</p>
+<p><strong>atime</strong> — The atime–access time–is the time when the data of a file was last accessed. Displaying the contents of a file or executing a shell script will update a file’s atime, for example. You can view the atime with the ls -lu command.</p>
+<p><strong>mtime</strong> — The mtime–modify time–is the time when the actual contents of a file was last modified. This is the time displayed in a long directory listing (ls -l).</p>
             </div>
             
             <div class="post-comments">
@@ -86,7 +82,7 @@
             <div class="push"></div>
         </div>
         <footer class="footer text-center">
-<p>Copyright &copy; 2019 Nick Anderson -
+<p>Copyright &copy; 2022 Nick Anderson -
 <span class="credit">
 	Powered by
 	<a target="_blank" href="https://gohugo.io">Hugo</a>

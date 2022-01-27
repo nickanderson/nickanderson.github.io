@@ -1,15 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>redhat on </title>
     <link>https://cmdln.org/tags/redhat/</link>
     <description>Recent content in redhat on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 19 Feb 2012 04:55:27 +0000</lastBuildDate>
-    
-	<atom:link href="https://cmdln.org/tags/redhat/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 19 Feb 2012 04:55:27 +0000</lastBuildDate><atom:link href="https://cmdln.org/tags/redhat/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>New bundle to manage routes for RedHat/CentOS with CFEngine 3</title>
       <link>https://cmdln.org/2012/02/18/new-bundle-to-manage-routes-for-redhatcentos-with-cfengine-3/</link>
@@ -27,13 +23,10 @@ Second major improvement is the direct use of ip route del/add to update current
       <pubDate>Thu, 16 Feb 2012 07:05:53 +0000</pubDate>
       
       <guid>https://cmdln.org/2012/02/16/bundles-of-bundles-with-cfengine-3/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;http://www.cmdln.org/images/wp-content/uploads/2012/02/Extrusion-Bundles2.jpg&#34;&gt;&lt;img class=&#34;alignleft size-thumbnail wp-image-936&#34; title=&#34;Bundles of Bundles&#34; src=&#34;http://www.cmdln.org/images/wp-content/uploads/2012/02/Extrusion-Bundles2-150x150.jpg&#34; alt=&#34;&#34; width=&#34;150&#34; height=&#34;150&#34; /&gt;&lt;/a&gt;I&amp;#8217;ve been working more and more with CFEngine lately and I have been slowly building a &lt;a href=&#34;http://www.laurand.net/images/Extrusion%20Bundles2.jpg&#34;&gt;tiny library&lt;/a&gt;. These are all pretty much redhat specific but I welcome patches and comments. Most of the bundles have comments that show usage, if there is interest I may post some example usage later.&lt;/p&gt;
-
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;a href=&#34;http://www.cmdln.org/images/wp-content/uploads/2012/02/Extrusion-Bundles2.jpg&#34;&gt;&lt;!-- raw HTML omitted --&gt;&lt;/a&gt;I’ve been working more and more with CFEngine lately and I have been slowly building a &lt;a href=&#34;http://www.laurand.net/images/Extrusion%20Bundles2.jpg&#34;&gt;tiny library&lt;/a&gt;. These are all pretty much redhat specific but I welcome patches and comments. Most of the bundles have comments that show usage, if there is interest I may post some example usage later.&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;</description>
     </item>
     
     <item>
@@ -51,7 +44,7 @@ Second major improvement is the direct use of ip route del/add to update current
       <pubDate>Mon, 14 Apr 2008 23:36:07 +0000</pubDate>
       
       <guid>https://cmdln.org/2008/04/14/sphinx-init-script-for-rhel3/</guid>
-      <description>&lt;p&gt;Had some planned maintenance on one of our servers this weekend. After bringing the server back up I forgot to start searchd for sphinx. Don&amp;#8217;t want that to happen again so I wrote a quick init script for searchd.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Had some planned maintenance on one of our servers this weekend. After bringing the server back up I forgot to start searchd for sphinx. Don’t want that to happen again so I wrote a quick init script for searchd.&lt;/p&gt;</description>
     </item>
     
   </channel>

@@ -6,7 +6,7 @@
 
 		<meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.57.0" />
+<meta name="generator" content="Hugo 0.80.0" />
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -79,7 +79,7 @@
 							<h4 class="post-date">Jul 9, 2010</h4>
 						</div>
 						<div class="post-summary"><p>Nginx is a great little web server. I have posted previously about using it as a reverse proxy. Weather your using it as a reverse proxy or as a normal webserver you will probably eventually want to know what its doing over time so you can adjust resources as necessary.
-The other day I threw together a Zenpack to make it easier to setup monitoring on new Zenoss instances. It contains a command data source &#8220;check_nginx_ng&#8221; which is a slightly modified version of Chris Kellys check_nginx_ng which in turn was based on check_nginx by Mike Adolphs.</p></div>
+The other day I threw together a Zenpack to make it easier to setup monitoring on new Zenoss instances. It contains a command data source “check_nginx_ng” which is a slightly modified version of Chris Kellys check_nginx_ng which in turn was based on check_nginx by Mike Adolphs.</p></div>
 						<div class="post-list-footer text-center">
 							<a href="https://cmdln.org/2010/07/09/nginx-stub_status-zenpack/">Read More</a>
 						</div>
@@ -93,8 +93,7 @@ The other day I threw together a Zenpack to make it easier to setup monitoring o
 							<h4 class="post-date">Jun 30, 2010</h4>
 						</div>
 						<div class="post-summary"><p>Why do applications have such horrible error messages. Non-specific errors are really not any more helpful than not logging at all.
-I was recently setting up autofs for mounting home directories from an nfs server. The little buggers refused to work right. All I was seeing in the logfile was a notice that an attempt was made, and failed.
-attempting to mount entry /home/nanderso failed to mount /home/nanderso   How helpful is that?</p></div>
+I was recently setting up autofs for mounting home directories from an nfs server. The little buggers refused to work right. All I was seeing in the logfile was a notice that an attempt was made, and failed.</p></div>
 						<div class="post-list-footer text-center">
 							<a href="https://cmdln.org/2010/06/29/autofs-error-logging-fail/">Read More</a>
 						</div>
@@ -121,7 +120,7 @@ Monitoring A/B power is not as easy as monitoring the individual PDUs. Some serv
 							<h4 class="post-link"><a href="https://cmdln.org/2010/06/10/google-hath-raped-me/">Google hath raped me eyes</a></h4>
 							<h4 class="post-date">Jun 10, 2010</h4>
 						</div>
-						<div class="post-summary"><p>Today I woke up to another abrupt Google change, the background image. I know some people want so much candy they can&#8217;t see the cane. Some of these changes Google has been making lately makes me wonder if the next time I open up vanilla ice cream I will be looking at a tub of Rocky Road. Yes, the background is only there for a day as publicity for the new feature to make Google more bingesque but I would be pretty upset if my vanilla ice cream turned to Rocky Road as well, even if only for a day.</p></div>
+						<div class="post-summary"><p>Today I woke up to another abrupt Google change, the background image. I know some people want so much candy they can’t see the cane. Some of these changes Google has been making lately makes me wonder if the next time I open up vanilla ice cream I will be looking at a tub of Rocky Road. Yes, the background is only there for a day as publicity for the new feature to make Google more bingesque but I would be pretty upset if my vanilla ice cream turned to Rocky Road as well, even if only for a day.</p></div>
 						<div class="post-list-footer text-center">
 							<a href="https://cmdln.org/2010/06/10/google-hath-raped-me/">Read More</a>
 						</div>
@@ -134,7 +133,7 @@ Monitoring A/B power is not as easy as monitoring the individual PDUs. Some serv
 							<h4 class="post-link"><a href="https://cmdln.org/2010/05/28/henry-a-co-worker-networker-and-friend-you-will-be-missed/">Henry: a co-worker, networker, and friend. You will be missed</a></h4>
 							<h4 class="post-date">May 28, 2010</h4>
 						</div>
-						<div class="post-summary"><p>I don&#8217;t have much to say about the loss. Henry Sieff was a brilliant network, security engineer and friend.</p></div>
+						<div class="post-summary"><p>I don’t have much to say about the loss. Henry Sieff was a brilliant network, security engineer and friend.</p></div>
 						<div class="post-list-footer text-center">
 							<a href="https://cmdln.org/2010/05/28/henry-a-co-worker-networker-and-friend-you-will-be-missed/">Read More</a>
 						</div>
@@ -147,8 +146,9 @@ Monitoring A/B power is not as easy as monitoring the individual PDUs. Some serv
 							<h4 class="post-link"><a href="https://cmdln.org/2010/05/24/notes-on-zenoss-zenpacks/">Notes on Zenoss ZenPacks</a></h4>
 							<h4 class="post-date">May 24, 2010</h4>
 						</div>
-						<div class="post-summary"><p>Recently I was building a ZenPack for Zenoss. The ZenPack included an Event Command which executed a custom script. I wanted to store the custom script in the ZenPack and I didn&#8217;t want to do anything other than have proper script dependencies in place for it to work.
-${here/ZenPackManager/packs/ZenPacks.community.YOURZENPACK/path}/libexec/yourscript.sh ${dev/manageIp}  Custom scripts can be placed in $ZENHOME/ZenPacks/ZenPacks.CompanyName.Package/Zenpacks/CompanyName/Package/lib but if you want them to be executable place them in libexec.</p></div>
+						<div class="post-summary"><p>Recently I was building a ZenPack for Zenoss. The ZenPack included an Event Command which executed a custom script. I wanted to store the custom script in the ZenPack and I didn’t want to do anything other than have proper script dependencies in place for it to work.
+Custom scripts can be placed in $ZENHOME/ZenPacks/ZenPacks.CompanyName.Package/Zenpacks/CompanyName/Package/lib but if you want them to be executable place them in libexec.
+Thanks to Matt Ray for telling me how to properly path the Event Command and the note about scripts in libexec getting the executable bit set, the docs I found only specified the lib directory.</p></div>
 						<div class="post-list-footer text-center">
 							<a href="https://cmdln.org/2010/05/24/notes-on-zenoss-zenpacks/">Read More</a>
 						</div>
@@ -175,9 +175,9 @@ Instead of blowing away your entire current buffer with history -c you can redir
 							<h4 class="post-link"><a href="https://cmdln.org/2010/05/19/archive-creation-fail/">Archive creation fail</a></h4>
 							<h4 class="post-date">May 19, 2010</h4>
 						</div>
-						<div class="post-summary"><p>I just downloaded EMC Networker client for a 32bit linux box. The file I downloaded was nw74sp5_linux_x86.tar.gz. Of course when I go to extract it &#8230;.
-# tar zxvf ../nw74sp5_linux_x86.tar.gz gzip: stdin: not in gzip format tar: Child returned status 1 tar: Error exit delayed from previous errors  Umm not in gzip format &#8230;.
-# tar xvf ../nw74sp5_linux_x86.tar.gz linux_x86/ linux_x86/lgtoclnt-7.4.5-1.i686.rpm linux_x86/lgtolicm-7.4.5-1.i686.rpm linux_x86/lgtoman-7.4.5-1.i686.rpm ... 🙂</p></div>
+						<div class="post-summary"><p>I just downloaded EMC Networker client for a 32bit linux box. The file I downloaded was nw74sp5_linux_x86.tar.gz. Of course when I go to extract it ….
+Umm not in gzip format ….
+🙂</p></div>
 						<div class="post-list-footer text-center">
 							<a href="https://cmdln.org/2010/05/19/archive-creation-fail/">Read More</a>
 						</div>
@@ -203,7 +203,7 @@ Instead of blowing away your entire current buffer with history -c you can redir
 							<h4 class="post-link"><a href="https://cmdln.org/2010/05/11/and-were-back/">And we&amp;#8217;re back</a></h4>
 							<h4 class="post-date">May 12, 2010</h4>
 						</div>
-						<div class="post-summary"><p>Gah, still recovering from a hardware issue that hit early Monday morning. Back to restoring data &#8230;</p></div>
+						<div class="post-summary"><p>Gah, still recovering from a hardware issue that hit early Monday morning. Back to restoring data …</p></div>
 						<div class="post-list-footer text-center">
 							<a href="https://cmdln.org/2010/05/11/and-were-back/">Read More</a>
 						</div>
@@ -305,7 +305,7 @@ Instead of blowing away your entire current buffer with history -c you can redir
 			<div class="push"></div>
 		</div>
 		<footer class="footer text-center">
-<p>Copyright &copy; 2019 Nick Anderson -
+<p>Copyright &copy; 2022 Nick Anderson -
 <span class="credit">
 	Powered by
 	<a target="_blank" href="https://gohugo.io">Hugo</a>

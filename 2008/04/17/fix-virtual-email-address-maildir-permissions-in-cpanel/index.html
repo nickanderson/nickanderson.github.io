@@ -6,7 +6,7 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.57.0" />
+<meta name="generator" content="Hugo 0.80.0" />
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -69,20 +69,12 @@
             <span class="post-date">Apr 17, 2008 </span>
             <div class="post-content">
                 <p>Im not a big fan of cpanel but I do manage a server that runs it. Recently some update was pushed down that caused about 50% of my users to not be able to access mail. It all boiled down to a permission issue that the cpanel scripts /scripts/mailperm did not take care of. Their scripts do not correct the permissions of the virtual user maildirs.</p>
-
-<!--adsense-->
-
+<!-- raw HTML omitted -->
 <p>From my testing the virtual users maildirs need to be UID and GID the same as the domain user account. This little shell script fixed it for me as far as I can tell. Well it mostly takes care of the issue, I had a few that the script does not handle but for the vast majority it worked.</p>
-
-<pre class="brush: bash; title: ; notranslate" title="">#!/bin/bash
-for i in $(find /home/ -type d  -maxdepth 1 ! -name '.*' -printf &quot;%f\n&quot;);do
-    local_user=$i
-    echo $local_user
-    domain=$(awk -F '=' '/DNS=/ {print $2}' /var/cpanel/users/$local_user)
-    find /home/$local_user/mail/$domain -type d  -maxdepth 1 ! -name '.*' -printf &quot;%f\n | xargs -n 1 chown $local_user.$local_user
-    
-done
-</pre>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<blockquote>
+</blockquote>
             </div>
             
             <div class="post-comments">
@@ -92,7 +84,7 @@ done
             <div class="push"></div>
         </div>
         <footer class="footer text-center">
-<p>Copyright &copy; 2019 Nick Anderson -
+<p>Copyright &copy; 2022 Nick Anderson -
 <span class="credit">
 	Powered by
 	<a target="_blank" href="https://gohugo.io">Hugo</a>

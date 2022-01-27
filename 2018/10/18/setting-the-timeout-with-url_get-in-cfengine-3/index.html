@@ -6,7 +6,7 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.57.0" />
+<meta name="generator" content="Hugo 0.80.0" />
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -69,21 +69,17 @@
             <span class="post-date">Oct 18, 2018 </span>
             <div class="post-content">
                 <blockquote>
-<p>
-How do I set the timeout with url_get()?
-</p>
+<p>How do I set the timeout with url_get()?</p>
 </blockquote>
 <p>
-As shown in the <a href="https://docs.cfengine.com/latest/reference-functions-url_get.html">documentation for url_get()</a>, you set <code class="verbatim">url.timeout</code> in the data container passed for <code class="verbatim">url_get()</code> options.
-</p>
+As shown in the <a href="https://docs.cfengine.com/latest/reference-functions-url_get.html">documentation for url_get()</a>, you set <code class="verbatim">url.timeout</code> in the data container passed for <code class="verbatim">url_get()</code> options.</p>
 <p>
 This example policy shows how to configure the timeout and demonstrates it by
-making a request through <a href="http://www.delay.me">www.delay.me</a>.
-</p>
+making a request through <a href="http://www.delay.me">www.delay.me</a>.</p>
 <div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -117,13 +113,12 @@ making a request through <a href="http://www.delay.me">www.delay.me</a>.
 </div>
 </div>
 <p>
-This output shows the effect of setting the timeout to <strong>1</strong>.
-</p>
+This output shows the effect of setting the timeout to <strong>1</strong>.</p>
 <pre class="example">
   *   Trying 54.174.228.92...
   * TCP_NODELAY set
   * Connected to www.deelay.me (54.174.228.92) port 80 (#0)
-  > GET /29999/google HTTP/1.1
+  &gt; GET /29999/google HTTP/1.1
   Host: www.deelay.me
   Accept: */*
 
@@ -132,22 +127,21 @@ This output shows the effect of setting the timeout to <strong>1</strong>.
   *   Trying 54.174.228.92...
   * TCP_NODELAY set
   * Connected to www.deelay.me (54.174.228.92) port 80 (#0)
-  > GET /29999/google HTTP/1.1
+  &gt; GET /29999/google HTTP/1.1
   Host: www.deelay.me
   Accept: */*
 
   * Operation timed out after 1000 milliseconds with 0 bytes received
   * Closing connection 0
-  R: {"content":"","error_message":"Timeout was reached","headers":"","rc":28,"returncode":0,"success":false}
+  R: {&#34;content&#34;:&#34;&#34;,&#34;error_message&#34;:&#34;Timeout was reached&#34;,&#34;headers&#34;:&#34;&#34;,&#34;rc&#34;:28,&#34;returncode&#34;:0,&#34;success&#34;:false}
 </pre>
 <p>
-This output shows the effect of setting the timeout to <strong>2</strong>.
-</p>
+This output shows the effect of setting the timeout to <strong>2</strong>.</p>
 <pre class="example">
   *   Trying 52.1.117.85...
   * TCP_NODELAY set
   * Connected to www.deelay.me (52.1.117.85) port 80 (#0)
-  > GET /29999/google HTTP/1.1
+  &gt; GET /29999/google HTTP/1.1
   Host: www.deelay.me
   Accept: */*
 
@@ -156,13 +150,13 @@ This output shows the effect of setting the timeout to <strong>2</strong>.
   *   Trying 52.1.117.85...
   * TCP_NODELAY set
   * Connected to www.deelay.me (52.1.117.85) port 80 (#0)
-  > GET /29999/google HTTP/1.1
+  &gt; GET /29999/google HTTP/1.1
   Host: www.deelay.me
   Accept: */*
 
   * Operation timed out after 2001 milliseconds with 0 bytes received
   * Closing connection 0
-  R: {"content":"","error_message":"Timeout was reached","headers":"","rc":28,"returncode":0,"success":false}
+  R: {&#34;content&#34;:&#34;&#34;,&#34;error_message&#34;:&#34;Timeout was reached&#34;,&#34;headers&#34;:&#34;&#34;,&#34;rc&#34;:28,&#34;returncode&#34;:0,&#34;success&#34;:false}
 </pre>
 
             </div>
@@ -174,7 +168,7 @@ This output shows the effect of setting the timeout to <strong>2</strong>.
             <div class="push"></div>
         </div>
         <footer class="footer text-center">
-<p>Copyright &copy; 2019 Nick Anderson -
+<p>Copyright &copy; 2022 Nick Anderson -
 <span class="credit">
 	Powered by
 	<a target="_blank" href="https://gohugo.io">Hugo</a>

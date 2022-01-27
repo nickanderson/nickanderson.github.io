@@ -6,7 +6,7 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.57.0" />
+<meta name="generator" content="Hugo 0.80.0" />
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -68,62 +68,19 @@
             <h1><a href="https://cmdln.org/2010/04/12/persistent-ulimit-settings-in-centosrh/">Persistent ulimit settings in Centos/RH</a></h1>
             <span class="post-date">Apr 12, 2010 </span>
             <div class="post-content">
-                <p>Recently a developer came to me and said they are starting to see failed builds apparently due to open file handle limitations on the build server. In case your not aware, by default there are limitations on users to ensure they don&#8217;t hog the entire resources of a system. Sometimes these limitations need to be adjusted.</p>
-
-<p>In my case the &#8220;bamboo&#8221; user needed more than 1024 open files on occasion. I determined my system had a maximum number of open files of 1572928.</p>
-
-<pre class="brush: bash; title: ; notranslate" title="">$ cat /proc/sys/fs/file-max
-1572928
-</pre>
-
+                <p>Recently a developer came to me and said they are starting to see failed builds apparently due to open file handle limitations on the build server. In case your not aware, by default there are limitations on users to ensure they don’t hog the entire resources of a system. Sometimes these limitations need to be adjusted.</p>
+<p>In my case the “bamboo” user needed more than 1024 open files on occasion. I determined my system had a maximum number of open files of 1572928.</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>And my bamboo user has a limit of 1024 based on the output of the ulimit -a command run as the bamboo user.</p>
-
-<pre class="brush: bash; title: ; notranslate" title="">$ ulimit -a
-core file size          (blocks, -c) 0
-data seg size           (kbytes, -d) unlimited
-scheduling priority             (-e) 0
-file size               (blocks, -f) unlimited
-pending signals                 (-i) 139264
-max locked memory       (kbytes, -l) 32
-max memory size         (kbytes, -m) unlimited
-open files                      (-n) 1024
-pipe size            (512 bytes, -p) 8
-POSIX message queues     (bytes, -q) 819200
-real-time priority              (-r) 0
-stack size              (kbytes, -s) 10240
-cpu time               (seconds, -t) unlimited
-max user processes              (-u) 139264
-virtual memory          (kbytes, -v) unlimited
-file locks                      (-x) unlimited
-</pre>
-
-<p>It seems to be an intermittent problem so I&#8217;m pretty sure just doubling the number of open files the bamboo user can have will resolve the issue. To make the change you just need to edit /etc/security/limits.conf I added new hard and soft limits by adding these lines.</p>
-
-<pre class="brush: bash; title: ; notranslate" title="">bamboo        hard    nofile    2048
-bamboo        soft    nofile    2048
-</pre>
-
-<p>Now lets just make sure the new limits are in place. No need to reboot just log in as the bamboo user again and run &#8220;ulimit -a&#8221;.</p>
-
-<pre class="brush: bash; title: ; notranslate" title="">$ ulimit -a
-core file size          (blocks, -c) 0
-data seg size           (kbytes, -d) unlimited
-scheduling priority             (-e) 0
-file size               (blocks, -f) unlimited
-pending signals                 (-i) 139264
-max locked memory       (kbytes, -l) 32
-max memory size         (kbytes, -m) unlimited
-open files                      (-n) 2048
-pipe size            (512 bytes, -p) 8
-POSIX message queues     (bytes, -q) 819200
-real-time priority              (-r) 0
-stack size              (kbytes, -s) 10240
-cpu time               (seconds, -t) unlimited
-max user processes              (-u) 139264
-virtual memory          (kbytes, -v) unlimited
-file locks                      (-x) unlimited
-</pre>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>It seems to be an intermittent problem so I’m pretty sure just doubling the number of open files the bamboo user can have will resolve the issue. To make the change you just need to edit /etc/security/limits.conf I added new hard and soft limits by adding these lines.</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>Now lets just make sure the new limits are in place. No need to reboot just log in as the bamboo user again and run “ulimit -a”.</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>As you can see open files is now 2048.</p>
 
             </div>
@@ -135,7 +92,7 @@ file locks                      (-x) unlimited
             <div class="push"></div>
         </div>
         <footer class="footer text-center">
-<p>Copyright &copy; 2019 Nick Anderson -
+<p>Copyright &copy; 2022 Nick Anderson -
 <span class="credit">
 	Powered by
 	<a target="_blank" href="https://gohugo.io">Hugo</a>

@@ -1,15 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>evolution on </title>
     <link>https://cmdln.org/tags/evolution/</link>
     <description>Recent content in evolution on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 21 May 2009 02:44:29 +0000</lastBuildDate>
-    
-	<atom:link href="https://cmdln.org/tags/evolution/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 21 May 2009 02:44:29 +0000</lastBuildDate><atom:link href="https://cmdln.org/tags/evolution/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Mutt like evolution keybindings</title>
       <link>https://cmdln.org/2009/05/20/mutt-like-evolution-keybindings/</link>

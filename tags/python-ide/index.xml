@@ -1,15 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>python ide on </title>
     <link>https://cmdln.org/tags/python-ide/</link>
     <description>Recent content in python ide on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 18 Oct 2008 19:19:06 +0000</lastBuildDate>
-    
-	<atom:link href="https://cmdln.org/tags/python-ide/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 18 Oct 2008 19:19:06 +0000</lastBuildDate><atom:link href="https://cmdln.org/tags/python-ide/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Vim customization for python</title>
       <link>https://cmdln.org/2008/10/18/vim-customization-for-python/</link>

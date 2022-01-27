@@ -1,22 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>authprogs on </title>
     <link>https://cmdln.org/tags/authprogs/</link>
     <description>Recent content in authprogs on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 11 Feb 2008 06:01:54 +0000</lastBuildDate>
-    
-	<atom:link href="https://cmdln.org/tags/authprogs/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 11 Feb 2008 06:01:54 +0000</lastBuildDate><atom:link href="https://cmdln.org/tags/authprogs/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Restricting SSH commands</title>
       <link>https://cmdln.org/2008/02/11/restricting-ssh-commands/</link>
       <pubDate>Mon, 11 Feb 2008 06:01:54 +0000</pubDate>
       
       <guid>https://cmdln.org/2008/02/11/restricting-ssh-commands/</guid>
-      <description>&lt;p&gt;SSH is a powerful tool. When combined with ssh keys, it becomes easy to automate remote procedures like backups. However leaving key access wide open can be a bad idea. It is possible to use restrict ssh keys to specific commands, even coming from specific hosts. There is this nice little perl script called &lt;a HREF=&#34;http://www.hackinglinuxexposed.com/tools/authprogs&#34;&gt;Authprogs&lt;/a&gt; that makes this somewhat easier. Ill show you how to use authprogs for an automated rsync over ssh.&lt;/p&gt;</description>
+      <description>&lt;p&gt;SSH is a powerful tool. When combined with ssh keys, it becomes easy to automate remote procedures like backups. However leaving key access wide open can be a bad idea. It is possible to use restrict ssh keys to specific commands, even coming from specific hosts. There is this nice little perl script called &lt;!-- raw HTML omitted --&gt;Authprogs&lt;!-- raw HTML omitted --&gt; that makes this somewhat easier. Ill show you how to use authprogs for an automated rsync over ssh.&lt;/p&gt;</description>
     </item>
     
   </channel>

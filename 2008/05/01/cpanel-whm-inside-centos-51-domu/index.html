@@ -6,7 +6,7 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.57.0" />
+<meta name="generator" content="Hugo 0.80.0" />
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -68,11 +68,9 @@
             <h1><a href="https://cmdln.org/2008/05/01/cpanel-whm-inside-centos-51-domu/">Cpanel WHM inside Centos 5.1 domU</a></h1>
             <span class="post-date">May 2, 2008 </span>
             <div class="post-content">
-                <p>I needed to install cpanel inside of one of my Centos 5.1 domU. The centos install was bootstrapped by the default rinse configuration (see <a href="http://www.xen-tools.org/software/xen-tools/">xen-tools</a> with my <a href="http://www.cmdln.org/images/wp-content/uploads/2008/04/rinse-centos5.patch">patch</a> that you can see from a <a href="http://www.cmdln.org/2008/04/25/xen-installing-centos-5-domu-inside-debian-etch-dom0-with-xen-tools-and-rinse-the-patch-to-fix-it/">previous post</a>). If you follow the <a href="http://www.cpanel.net/docs/vps/">install docs</a> you will have tried to uninstall openldap etc &#8230;.</p>
-
-<!--adsense-->
-
-<p>I can tell you from experience don&#8217;t even try. The install docs are not that great. All you need to do (if you have bootstrapped with rinse) is install a few packages so that the cpanel installer can complete successfully. I had to install tar, gzip, wget, and perl. The error that I got when first trying to install was related to uncompressing. I contacted Cpanel about the issue and one of their techs logged into my vm to see what was going on. All we did was install the above packages then run the installer. We did not remove any other packages, and I have yet to have an issue (granted its been hours, and it is cpanel, so I expect something to rear its ugly head). But if anyone else is trying to get cpanel installed on a fresh xen-create-image with rinse and centos 5.1 is having issues try installing the above packages before doing anything else to your system and see how you fair.</p>
+                <p>I needed to install cpanel inside of one of my Centos 5.1 domU. The centos install was bootstrapped by the default rinse configuration (see <a href="http://www.xen-tools.org/software/xen-tools/">xen-tools</a> with my <a href="http://www.cmdln.org/images/wp-content/uploads/2008/04/rinse-centos5.patch">patch</a> that you can see from a <a href="http://www.cmdln.org/2008/04/25/xen-installing-centos-5-domu-inside-debian-etch-dom0-with-xen-tools-and-rinse-the-patch-to-fix-it/">previous post</a>). If you follow the <a href="http://www.cpanel.net/docs/vps/">install docs</a> you will have tried to uninstall openldap etc ….</p>
+<!-- raw HTML omitted -->
+<p>I can tell you from experience don’t even try. The install docs are not that great. All you need to do (if you have bootstrapped with rinse) is install a few packages so that the cpanel installer can complete successfully. I had to install tar, gzip, wget, and perl. The error that I got when first trying to install was related to uncompressing. I contacted Cpanel about the issue and one of their techs logged into my vm to see what was going on. All we did was install the above packages then run the installer. We did not remove any other packages, and I have yet to have an issue (granted its been hours, and it is cpanel, so I expect something to rear its ugly head). But if anyone else is trying to get cpanel installed on a fresh xen-create-image with rinse and centos 5.1 is having issues try installing the above packages before doing anything else to your system and see how you fair.</p>
             </div>
             
             <div class="post-comments">
@@ -82,7 +80,7 @@
             <div class="push"></div>
         </div>
         <footer class="footer text-center">
-<p>Copyright &copy; 2019 Nick Anderson -
+<p>Copyright &copy; 2022 Nick Anderson -
 <span class="credit">
 	Powered by
 	<a target="_blank" href="https://gohugo.io">Hugo</a>

@@ -6,7 +6,7 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.57.0" />
+<meta name="generator" content="Hugo 0.80.0" />
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -68,12 +68,9 @@
             <h1><a href="https://cmdln.org/2010/03/08/xenserver-license-check-nagios-nrpe-plugin/">XenServer License Check &amp;#8211; Nagios NRPE Plugin</a></h1>
             <span class="post-date">Mar 8, 2010 </span>
             <div class="post-content">
-                <p>If you hadn&#8217;t already guessed I am a big fan of the Xen hypervisor. Lately I have been using the Citrix XenServer release because it makes it quite palatable for my co-workers. One annoyance that I do have about XenServer is the requirement that you license it (with a free license) every year. If you fail to license it the GUI stops working. Now I hate relying on GUIs but the fact of the matter is others in my team expect to have a working GUI when they need to do something. And I dont know about you but I don&#8217;t really log onto the management console very often. Really I only log on to it if I need to provision a new server so its entirely plausible that a license would expire and I wouldn&#8217;t know about it until I really needed to do something.</p>
-
-<p>I ended up writing a little Nagios plugin that checks the license expiration date using XenAPI. I don&#8217;t know that it&#8217;s 100% compliant with the plugin specification but it does work for me. I actually don&#8217;t prefer to use the warn and critical states with the Nagios (I use the performance data with Zenoss and apply thresholds there. I find that to be a bit more flexible.) but I did implement them. The plugin can be executed on the XenServer (you may want to reference <a href="http://www.cmdln.org/2010/03/04/installing-nrpe-on-xenserver/">how to install nrpe on XenServer</a>) or on from your monitoring host as long as the host performing the check has the python XenAPI installed.</p>
-
+                <p>If you hadn’t already guessed I am a big fan of the Xen hypervisor. Lately I have been using the Citrix XenServer release because it makes it quite palatable for my co-workers. One annoyance that I do have about XenServer is the requirement that you license it (with a free license) every year. If you fail to license it the GUI stops working. Now I hate relying on GUIs but the fact of the matter is others in my team expect to have a working GUI when they need to do something. And I dont know about you but I don’t really log onto the management console very often. Really I only log on to it if I need to provision a new server so its entirely plausible that a license would expire and I wouldn’t know about it until I really needed to do something.</p>
+<p>I ended up writing a little Nagios plugin that checks the license expiration date using XenAPI. I don’t know that it’s 100% compliant with the plugin specification but it does work for me. I actually don’t prefer to use the warn and critical states with the Nagios (I use the performance data with Zenoss and apply thresholds there. I find that to be a bit more flexible.) but I did implement them. The plugin can be executed on the XenServer (you may want to reference <a href="http://www.cmdln.org/2010/03/04/installing-nrpe-on-xenserver/">how to install nrpe on XenServer</a>) or on from your monitoring host as long as the host performing the check has the python XenAPI installed.</p>
 <p>The plugin <a href="https://github.com/nickanderson/nagios-plugins-check_xs-license">check_citrix_xenserver_license can be found on github</a>.</p>
-
 <p>I hope someone can find it useful.</p>
 
             </div>
@@ -85,7 +82,7 @@
             <div class="push"></div>
         </div>
         <footer class="footer text-center">
-<p>Copyright &copy; 2019 Nick Anderson -
+<p>Copyright &copy; 2022 Nick Anderson -
 <span class="credit">
 	Powered by
 	<a target="_blank" href="https://gohugo.io">Hugo</a>

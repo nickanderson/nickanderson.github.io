@@ -1,15 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>pfsense on </title>
     <link>https://cmdln.org/tags/pfsense/</link>
     <description>Recent content in pfsense on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 16 Apr 2008 23:19:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://cmdln.org/tags/pfsense/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 16 Apr 2008 23:19:00 +0000</lastBuildDate><atom:link href="https://cmdln.org/tags/pfsense/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Pfsense outbound ftp with multiwan</title>
       <link>https://cmdln.org/2008/04/16/pfsense-outbound-ftp-with-multiwan/</link>

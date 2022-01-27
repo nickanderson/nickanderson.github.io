@@ -6,7 +6,7 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.57.0" />
+<meta name="generator" content="Hugo 0.80.0" />
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -70,9 +70,7 @@
             <div class="post-content">
                 
 <blockquote>
-<p>
-What is the <code class="verbatim">-top-</code> extension, and how do I use it in CFEngines Mustache templating method?
-</p>
+<p>What is the <code class="verbatim">-top-</code> extension, and how do I use it in CFEngines Mustache templating method?</p>
 </blockquote>
 <p>
 The <code class="verbatim">-top-</code> extension to the mustache template method, first introduced in
@@ -80,26 +78,23 @@ CFEngine 3.9.0, is a special key representing the complete data given to the
 templating engine. This is useful for iterating over the top level of a
 container <code class="verbatim">{{#-top-}}</code> … <code class="verbatim">{{/-top-}}</code> and rendering json representation of
 data given with <code class="verbatim">$</code> and <code class="verbatim">%</code>. Note, when iterating over <code class="verbatim">-top-</code> you can expand
-the current iterations key with <code class="verbatim">@</code> and value with <code class="verbatim">.</code>.
-</p>
+the current iterations key with <code class="verbatim">@</code> and value with <code class="verbatim">.</code>.</p>
 <p>
-Let&#39;s take a look at a couple small examples:
-</p>
-<h1 id="headline-1">
+Let&#39;s take a look at a couple small examples:</p>
+<div id="outline-container-headline-1" class="outline-2">
+<h2 id="headline-1">
 Iterating over -top- for rendering simple key=value configuration files
-</h1>
-<p>
-Many configuration file formats like <code class="verbatim">/etc/sysctl.conf</code> are simple key = value.
-</p>
+</h2>
+<div id="outline-text-headline-1" class="outline-text-2">
+<p>Many configuration file formats like <code class="verbatim">/etc/sysctl.conf</code> are simple key = value.</p>
 <p>
 In this example, we see how data for <code class="verbatim">/etc/sysctl.conf</code> can be modeled for simple
-rendering using <code class="verbatim">-top-</code>.
-</p>
+rendering using <code class="verbatim">-top-</code>.</p>
 <figure>
 <div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -151,28 +146,21 @@ Iterate over -top- key (@) values (.)
 </figcaption>
 </figure>
 <p>
-Let&#39;s break it down:
-</p>
+Let&#39;s break it down:</p>
 <ul>
 <li>
-<p>
-On line 6-12 we define <code class="verbatim">c</code> as data container with inline JSON. Note, there are
+<p>On line 6-12 we define <code class="verbatim">c</code> as data container with inline JSON. Note, there are
 many alternative ways that data can be defined, see <a href="https://docs.cfengine.com/docs/3.12/reference-functions-readjson.html">readjson()</a>, <a href="https://docs.cfengine.com/docs/3.12/reference-functions-readyaml.html">readyaml()</a>,
-<a href="https://docs.cfengine.com/docs/3.12/reference-functions-readenvfile.html">readenvfile()</a>, <a href="https://docs.cfengine.com/docs/3.12/reference-functions-readdata.html">readdata()</a>.
-</p>
+<a href="https://docs.cfengine.com/docs/3.12/reference-functions-readenvfile.html">readenvfile()</a>, <a href="https://docs.cfengine.com/docs/3.12/reference-functions-readdata.html">readdata()</a>.</p>
 </li>
 <li>
-<p>
-On line 18 we promise to report the name of our example file (
+<p>On line 18 we promise to report the name of our example file (
 <code class="verbatim">/etc/sysctl.conf</code> )followed by a newline ( <a href="https://docs.cfengine.com/docs/3.12/reference-special-variables-const.html#const-n">$(const.n)</a> ), followed by a
 string which is rendered from a mustache template via the <a href="https://docs.cfengine.com/docs/3.12/reference-functions-string_mustache.html">string_mustache()</a>
-function.
-</p>
+function.</p>
 </li>
 </ul>
-<p>
-The above policy results in this output:
-</p>
+<p>The above policy results in this output:</p>
 <pre class="example">
 R: CFEngine 3.12.0
 R: /etc/sysctl.conf
@@ -186,13 +174,12 @@ vm.swappiness=10
 </pre>
 <p>
 It&#39;s easy to take this reports prototype and turn it into a real files promise.
-Let&#39;s take this example one step further and make it a bit more practical.
-</p>
+Let&#39;s take this example one step further and make it a bit more practical.</p>
 <figure>
 <div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -270,8 +257,7 @@ Iterate over -top- key (@) values (.) and render a real file
 </figcaption>
 </figure>
 <p>
-Here is the policy output:
-</p>
+Here is the policy output:</p>
 <pre class="example">
 R: CFEngine 3.12.0
 R: /tmp/etc/sysctl.conf
@@ -282,27 +268,28 @@ R: fs.protected_hardlinks=1
 R: fs.protected_symlinks=1
 R: vm.swappiness=10
 </pre>
-<h1 id="headline-2">
+</div>
+</div>
+<div id="outline-container-headline-2" class="outline-2">
+<h2 id="headline-2">
 Rendering data for direct use and debugging
-</h1>
+</h2>
+<div id="outline-text-headline-2" class="outline-text-2">
 <p>
 The <code class="verbatim">-top-</code> extension, combined with <code class="verbatim">$</code> or <code class="verbatim">%</code> is able to render data provided
 to the template as JSON. This is useful in preparing requests for REST APIs and
-general debugging in cases where you are unsure of the exact data provided.
-</p>
+general debugging in cases where you are unsure of the exact data provided.</p>
 <p>
 For example, if data is not explicitly provided to a template via <a href="https://docs.cfengine.com/docs/3.12/reference-promise-types-files.html#template_data">template_data</a>,
 <a href="https://docs.cfengine.com/docs/3.12/reference-functions-datastate.html">datastate()</a> is used. Let&#39;s take a look at a small example where we render a
-couple of data structures.
-</p>
+couple of data structures.</p>
 <p>
-This example shows rendering JSON data for use in communication with a REST API.
-</p>
+This example shows rendering JSON data for use in communication with a REST API.</p>
 <figure>
 <div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -371,40 +358,28 @@ Render JSON data for use with APIs
 </figure>
 <p>
 We use the freely available <a href="https://reqres.in/">https://reqres.in/</a> to show a simple way to interact
-with an API.
-</p>
+with an API.</p>
 <p>
-In the above example:
-</p>
+In the above example:</p>
 <ul>
 <li>
-<p>
-On line 6 we define the request data describing the user we want to create.
-</p>
+<p>On line 6 we define the request data describing the user we want to create.</p>
 </li>
 <li>
-<p>
-On line 9 we capture the API response into a variable, alternatively we could
-use a <em>commands</em> promise, redirecting the output to a file.
-</p>
+<p>On line 9 we capture the API response into a variable, alternatively we could
+use a <em>commands</em> promise, redirecting the output to a file.</p>
 </li>
 <li>
-<p>
-On lines 13-19 we define a <em>files</em> promise to render our request to disk. This
+<p>On lines 13-19 we define a <em>files</em> promise to render our request to disk. This
 file is used by the curl command to provide the request data for the Reqres
-API.
-</p>
+API.</p>
 </li>
 <li>
-<p>
-On lines 24-25 we use a <em>reports</em> promise to show the rendered request. Note how
-<code class="verbatim">{{$-top}}</code> rendered a serial representation.
-</p>
+<p>On lines 24-25 we use a <em>reports</em> promise to show the rendered request. Note how
+<code class="verbatim">{{$-top}}</code> rendered a serial representation.</p>
 </li>
 </ul>
-<p>
-And here is the policy output:
-</p>
+<p>And here is the policy output:</p>
 <pre class="example">
 R: CFEngine 3.12.0
 R: Posted Request
@@ -416,13 +391,12 @@ R: Response
 Many times it&#39;s useful to inspect a data structure and the <code class="verbatim">%</code> renders
 multi-line JSON to make it easier to read. In this example, we find all the
 variables in the paths bundle and merge them together into a single data
-structure.
-</p>
+structure.</p>
 <figure>
 <div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -460,257 +434,251 @@ Render JSON data
 </figcaption>
 </figure>
 <p>
-In the above policy:
-</p>
+In the above policy:</p>
 <ul>
 <li>
-<p>
-On line 6 we define a new data container <em>paths</em> as the merged result of all
-variables in the <code class="verbatim">paths</code> bundle.
-</p>
+<p>On line 6 we define a new data container <em>paths</em> as the merged result of all
+variables in the <code class="verbatim">paths</code> bundle.</p>
 </li>
 <li>
-<p>
-On lines 11-12 we show the multi-line JSON representation of that merged result.
-</p>
+<p>On lines 11-12 we show the multi-line JSON representation of that merged result.</p>
 </li>
 </ul>
-<p>
-Here is the policy output:
-</p>
+<p>Here is the policy output:</p>
 <pre class="example">
 R: CFEngine 3.12.0
 R: Variable data from bundle paths
 {
-  "default:paths.all_paths": [
-    "groupadd",
-    "usermod",
-    "iptables_save",
-    "ifconfig",
-    "groupdel",
-    "dmidecode",
-    "egrep",
-    "getfacl",
-    "createrepo",
-    "mailx",
-    "logger",
-    "ethtool",
-    "service",
-    "free",
-    "diff",
-    "curl",
-    "netstat",
-    "virtualenv",
-    "apt_config",
-    "cat",
-    "sysctl",
-    "tr",
-    "hostname",
-    "bc",
-    "dc",
-    "svc",
-    "dpkg_divert",
-    "apt_get",
-    "echo",
-    "crontab",
-    "nologin",
-    "test",
-    "npm",
-    "cksum",
-    "ip",
-    "userdel",
-    "awk",
-    "ping",
-    "groupmod",
-    "dpkg",
-    "lsof",
-    "env",
-    "dig",
-    "perl",
-    "cut",
-    "domainname",
-    "apt_cache",
-    "wc",
-    "tar",
-    "pgrep",
-    "update_alternatives",
-    "aptitude",
-    "useradd",
-    "apt_key",
-    "pip",
-    "update_rc_d",
-    "find",
-    "init",
-    "df",
-    "grep",
-    "printf",
-    "realpath",
-    "sort",
-    "shadow",
-    "systemctl",
-    "chkconfig",
-    "ls",
-    "crontabs",
-    "lsattr",
-    "wget",
-    "getent",
-    "sed",
-    "iptables",
-    "git"
+  &#34;default:paths.all_paths&#34;: [
+    &#34;groupadd&#34;,
+    &#34;usermod&#34;,
+    &#34;iptables_save&#34;,
+    &#34;ifconfig&#34;,
+    &#34;groupdel&#34;,
+    &#34;dmidecode&#34;,
+    &#34;egrep&#34;,
+    &#34;getfacl&#34;,
+    &#34;createrepo&#34;,
+    &#34;mailx&#34;,
+    &#34;logger&#34;,
+    &#34;ethtool&#34;,
+    &#34;service&#34;,
+    &#34;free&#34;,
+    &#34;diff&#34;,
+    &#34;curl&#34;,
+    &#34;netstat&#34;,
+    &#34;virtualenv&#34;,
+    &#34;apt_config&#34;,
+    &#34;cat&#34;,
+    &#34;sysctl&#34;,
+    &#34;tr&#34;,
+    &#34;hostname&#34;,
+    &#34;bc&#34;,
+    &#34;dc&#34;,
+    &#34;svc&#34;,
+    &#34;dpkg_divert&#34;,
+    &#34;apt_get&#34;,
+    &#34;echo&#34;,
+    &#34;crontab&#34;,
+    &#34;nologin&#34;,
+    &#34;test&#34;,
+    &#34;npm&#34;,
+    &#34;cksum&#34;,
+    &#34;ip&#34;,
+    &#34;userdel&#34;,
+    &#34;awk&#34;,
+    &#34;ping&#34;,
+    &#34;groupmod&#34;,
+    &#34;dpkg&#34;,
+    &#34;lsof&#34;,
+    &#34;env&#34;,
+    &#34;dig&#34;,
+    &#34;perl&#34;,
+    &#34;cut&#34;,
+    &#34;domainname&#34;,
+    &#34;apt_cache&#34;,
+    &#34;wc&#34;,
+    &#34;tar&#34;,
+    &#34;pgrep&#34;,
+    &#34;update_alternatives&#34;,
+    &#34;aptitude&#34;,
+    &#34;useradd&#34;,
+    &#34;apt_key&#34;,
+    &#34;pip&#34;,
+    &#34;update_rc_d&#34;,
+    &#34;find&#34;,
+    &#34;init&#34;,
+    &#34;df&#34;,
+    &#34;grep&#34;,
+    &#34;printf&#34;,
+    &#34;realpath&#34;,
+    &#34;sort&#34;,
+    &#34;shadow&#34;,
+    &#34;systemctl&#34;,
+    &#34;chkconfig&#34;,
+    &#34;ls&#34;,
+    &#34;crontabs&#34;,
+    &#34;lsattr&#34;,
+    &#34;wget&#34;,
+    &#34;getent&#34;,
+    &#34;sed&#34;,
+    &#34;iptables&#34;,
+    &#34;git&#34;
   ],
-  "default:paths.apt_cache": "/usr/bin/apt-cache",
-  "default:paths.apt_config": "/usr/bin/apt-config",
-  "default:paths.apt_get": "/usr/bin/apt-get",
-  "default:paths.apt_key": "/usr/bin/apt-key",
-  "default:paths.aptitude": "/usr/bin/aptitude",
-  "default:paths.awk": "/usr/bin/awk",
-  "default:paths.bc": "/usr/bin/bc",
-  "default:paths.cat": "/bin/cat",
-  "default:paths.chkconfig": "/sbin/chkconfig",
-  "default:paths.cksum": "/usr/bin/cksum",
-  "default:paths.createrepo": "/usr/bin/createrepo",
-  "default:paths.crontab": "/usr/bin/crontab",
-  "default:paths.crontabs": "/var/spool/cron/crontabs",
-  "default:paths.curl": "/usr/bin/curl",
-  "default:paths.cut": "/usr/bin/cut",
-  "default:paths.dc": "/usr/bin/dc",
-  "default:paths.df": "/bin/df",
-  "default:paths.diff": "/usr/bin/diff",
-  "default:paths.dig": "/usr/bin/dig",
-  "default:paths.dmidecode": "/usr/sbin/dmidecode",
-  "default:paths.domainname": "/bin/domainname",
-  "default:paths.dpkg": "/usr/bin/dpkg",
-  "default:paths.dpkg_divert": "/usr/bin/dpkg-divert",
-  "default:paths.echo": "/bin/echo",
-  "default:paths.egrep": "/bin/egrep",
-  "default:paths.env": "/usr/bin/env",
-  "default:paths.ethtool": "/sbin/ethtool",
-  "default:paths.find": "/usr/bin/find",
-  "default:paths.free": "/usr/bin/free",
-  "default:paths.getent": "/usr/bin/getent",
-  "default:paths.getfacl": "/usr/bin/getfacl",
-  "default:paths.git": "/usr/bin/git",
-  "default:paths.grep": "/bin/grep",
-  "default:paths.groupadd": "/usr/sbin/groupadd",
-  "default:paths.groupdel": "/usr/sbin/groupdel",
-  "default:paths.groupmod": "/usr/sbin/groupmod",
-  "default:paths.hostname": "/bin/hostname",
-  "default:paths.ifconfig": "/sbin/ifconfig",
-  "default:paths.init": "/sbin/init",
-  "default:paths.ip": "/sbin/ip",
-  "default:paths.iptables": "/sbin/iptables",
-  "default:paths.iptables_save": "/sbin/iptables-save",
-  "default:paths.logger": "/usr/bin/logger",
-  "default:paths.ls": "/bin/ls",
-  "default:paths.lsattr": "/usr/bin/lsattr",
-  "default:paths.lsof": "/usr/bin/lsof",
-  "default:paths.mailx": "/usr/bin/mailx",
-  "default:paths.netstat": "/bin/netstat",
-  "default:paths.nologin": "/usr/sbin/nologin",
-  "default:paths.npm": "/usr/bin/npm",
-  "default:paths.path[apt_cache]": "/usr/bin/apt-cache",
-  "default:paths.path[apt_config]": "/usr/bin/apt-config",
-  "default:paths.path[apt_get]": "/usr/bin/apt-get",
-  "default:paths.path[apt_key]": "/usr/bin/apt-key",
-  "default:paths.path[aptitude]": "/usr/bin/aptitude",
-  "default:paths.path[awk]": "/usr/bin/awk",
-  "default:paths.path[bc]": "/usr/bin/bc",
-  "default:paths.path[cat]": "/bin/cat",
-  "default:paths.path[chkconfig]": "/sbin/chkconfig",
-  "default:paths.path[cksum]": "/usr/bin/cksum",
-  "default:paths.path[createrepo]": "/usr/bin/createrepo",
-  "default:paths.path[crontab]": "/usr/bin/crontab",
-  "default:paths.path[crontabs]": "/var/spool/cron/crontabs",
-  "default:paths.path[curl]": "/usr/bin/curl",
-  "default:paths.path[cut]": "/usr/bin/cut",
-  "default:paths.path[dc]": "/usr/bin/dc",
-  "default:paths.path[df]": "/bin/df",
-  "default:paths.path[diff]": "/usr/bin/diff",
-  "default:paths.path[dig]": "/usr/bin/dig",
-  "default:paths.path[dmidecode]": "/usr/sbin/dmidecode",
-  "default:paths.path[domainname]": "/bin/domainname",
-  "default:paths.path[dpkg]": "/usr/bin/dpkg",
-  "default:paths.path[dpkg_divert]": "/usr/bin/dpkg-divert",
-  "default:paths.path[echo]": "/bin/echo",
-  "default:paths.path[egrep]": "/bin/egrep",
-  "default:paths.path[env]": "/usr/bin/env",
-  "default:paths.path[ethtool]": "/sbin/ethtool",
-  "default:paths.path[find]": "/usr/bin/find",
-  "default:paths.path[free]": "/usr/bin/free",
-  "default:paths.path[getent]": "/usr/bin/getent",
-  "default:paths.path[getfacl]": "/usr/bin/getfacl",
-  "default:paths.path[git]": "/usr/bin/git",
-  "default:paths.path[grep]": "/bin/grep",
-  "default:paths.path[groupadd]": "/usr/sbin/groupadd",
-  "default:paths.path[groupdel]": "/usr/sbin/groupdel",
-  "default:paths.path[groupmod]": "/usr/sbin/groupmod",
-  "default:paths.path[hostname]": "/bin/hostname",
-  "default:paths.path[ifconfig]": "/sbin/ifconfig",
-  "default:paths.path[init]": "/sbin/init",
-  "default:paths.path[ip]": "/sbin/ip",
-  "default:paths.path[iptables]": "/sbin/iptables",
-  "default:paths.path[iptables_save]": "/sbin/iptables-save",
-  "default:paths.path[logger]": "/usr/bin/logger",
-  "default:paths.path[ls]": "/bin/ls",
-  "default:paths.path[lsattr]": "/usr/bin/lsattr",
-  "default:paths.path[lsof]": "/usr/bin/lsof",
-  "default:paths.path[mailx]": "/usr/bin/mailx",
-  "default:paths.path[netstat]": "/bin/netstat",
-  "default:paths.path[nologin]": "/usr/sbin/nologin",
-  "default:paths.path[npm]": "/usr/bin/npm",
-  "default:paths.path[perl]": "/usr/bin/perl",
-  "default:paths.path[pgrep]": "/usr/bin/pgrep",
-  "default:paths.path[ping]": "/bin/ping",
-  "default:paths.path[pip]": "/usr/bin/pip",
-  "default:paths.path[printf]": "/usr/bin/printf",
-  "default:paths.path[realpath]": "/usr/bin/realpath",
-  "default:paths.path[sed]": "/bin/sed",
-  "default:paths.path[service]": "/usr/sbin/service",
-  "default:paths.path[shadow]": "/etc/shadow",
-  "default:paths.path[sort]": "/usr/bin/sort",
-  "default:paths.path[svc]": "/usr/sbin/service",
-  "default:paths.path[sysctl]": "/sbin/sysctl",
-  "default:paths.path[systemctl]": "/bin/systemctl",
-  "default:paths.path[tar]": "/bin/tar",
-  "default:paths.path[test]": "/usr/bin/test",
-  "default:paths.path[tr]": "/usr/bin/tr",
-  "default:paths.path[update_alternatives]": "/usr/bin/update-alternatives",
-  "default:paths.path[update_rc_d]": "/usr/sbin/update-rc.d",
-  "default:paths.path[useradd]": "/usr/sbin/useradd",
-  "default:paths.path[userdel]": "/usr/sbin/userdel",
-  "default:paths.path[usermod]": "/usr/sbin/usermod",
-  "default:paths.path[virtualenv]": "/usr/bin/virtualenv",
-  "default:paths.path[wc]": "/usr/bin/wc",
-  "default:paths.path[wget]": "/usr/bin/wget",
-  "default:paths.perl": "/usr/bin/perl",
-  "default:paths.pgrep": "/usr/bin/pgrep",
-  "default:paths.ping": "/bin/ping",
-  "default:paths.pip": "/usr/bin/pip",
-  "default:paths.printf": "/usr/bin/printf",
-  "default:paths.realpath": "/usr/bin/realpath",
-  "default:paths.sed": "/bin/sed",
-  "default:paths.service": "/usr/sbin/service",
-  "default:paths.shadow": "/etc/shadow",
-  "default:paths.sort": "/usr/bin/sort",
-  "default:paths.svc": "/usr/sbin/service",
-  "default:paths.sysctl": "/sbin/sysctl",
-  "default:paths.systemctl": "/bin/systemctl",
-  "default:paths.tar": "/bin/tar",
-  "default:paths.test": "/usr/bin/test",
-  "default:paths.tr": "/usr/bin/tr",
-  "default:paths.update_alternatives": "/usr/bin/update-alternatives",
-  "default:paths.update_rc_d": "/usr/sbin/update-rc.d",
-  "default:paths.useradd": "/usr/sbin/useradd",
-  "default:paths.userdel": "/usr/sbin/userdel",
-  "default:paths.usermod": "/usr/sbin/usermod",
-  "default:paths.virtualenv": "/usr/bin/virtualenv",
-  "default:paths.wc": "/usr/bin/wc",
-  "default:paths.wget": "/usr/bin/wget"
+  &#34;default:paths.apt_cache&#34;: &#34;/usr/bin/apt-cache&#34;,
+  &#34;default:paths.apt_config&#34;: &#34;/usr/bin/apt-config&#34;,
+  &#34;default:paths.apt_get&#34;: &#34;/usr/bin/apt-get&#34;,
+  &#34;default:paths.apt_key&#34;: &#34;/usr/bin/apt-key&#34;,
+  &#34;default:paths.aptitude&#34;: &#34;/usr/bin/aptitude&#34;,
+  &#34;default:paths.awk&#34;: &#34;/usr/bin/awk&#34;,
+  &#34;default:paths.bc&#34;: &#34;/usr/bin/bc&#34;,
+  &#34;default:paths.cat&#34;: &#34;/bin/cat&#34;,
+  &#34;default:paths.chkconfig&#34;: &#34;/sbin/chkconfig&#34;,
+  &#34;default:paths.cksum&#34;: &#34;/usr/bin/cksum&#34;,
+  &#34;default:paths.createrepo&#34;: &#34;/usr/bin/createrepo&#34;,
+  &#34;default:paths.crontab&#34;: &#34;/usr/bin/crontab&#34;,
+  &#34;default:paths.crontabs&#34;: &#34;/var/spool/cron/crontabs&#34;,
+  &#34;default:paths.curl&#34;: &#34;/usr/bin/curl&#34;,
+  &#34;default:paths.cut&#34;: &#34;/usr/bin/cut&#34;,
+  &#34;default:paths.dc&#34;: &#34;/usr/bin/dc&#34;,
+  &#34;default:paths.df&#34;: &#34;/bin/df&#34;,
+  &#34;default:paths.diff&#34;: &#34;/usr/bin/diff&#34;,
+  &#34;default:paths.dig&#34;: &#34;/usr/bin/dig&#34;,
+  &#34;default:paths.dmidecode&#34;: &#34;/usr/sbin/dmidecode&#34;,
+  &#34;default:paths.domainname&#34;: &#34;/bin/domainname&#34;,
+  &#34;default:paths.dpkg&#34;: &#34;/usr/bin/dpkg&#34;,
+  &#34;default:paths.dpkg_divert&#34;: &#34;/usr/bin/dpkg-divert&#34;,
+  &#34;default:paths.echo&#34;: &#34;/bin/echo&#34;,
+  &#34;default:paths.egrep&#34;: &#34;/bin/egrep&#34;,
+  &#34;default:paths.env&#34;: &#34;/usr/bin/env&#34;,
+  &#34;default:paths.ethtool&#34;: &#34;/sbin/ethtool&#34;,
+  &#34;default:paths.find&#34;: &#34;/usr/bin/find&#34;,
+  &#34;default:paths.free&#34;: &#34;/usr/bin/free&#34;,
+  &#34;default:paths.getent&#34;: &#34;/usr/bin/getent&#34;,
+  &#34;default:paths.getfacl&#34;: &#34;/usr/bin/getfacl&#34;,
+  &#34;default:paths.git&#34;: &#34;/usr/bin/git&#34;,
+  &#34;default:paths.grep&#34;: &#34;/bin/grep&#34;,
+  &#34;default:paths.groupadd&#34;: &#34;/usr/sbin/groupadd&#34;,
+  &#34;default:paths.groupdel&#34;: &#34;/usr/sbin/groupdel&#34;,
+  &#34;default:paths.groupmod&#34;: &#34;/usr/sbin/groupmod&#34;,
+  &#34;default:paths.hostname&#34;: &#34;/bin/hostname&#34;,
+  &#34;default:paths.ifconfig&#34;: &#34;/sbin/ifconfig&#34;,
+  &#34;default:paths.init&#34;: &#34;/sbin/init&#34;,
+  &#34;default:paths.ip&#34;: &#34;/sbin/ip&#34;,
+  &#34;default:paths.iptables&#34;: &#34;/sbin/iptables&#34;,
+  &#34;default:paths.iptables_save&#34;: &#34;/sbin/iptables-save&#34;,
+  &#34;default:paths.logger&#34;: &#34;/usr/bin/logger&#34;,
+  &#34;default:paths.ls&#34;: &#34;/bin/ls&#34;,
+  &#34;default:paths.lsattr&#34;: &#34;/usr/bin/lsattr&#34;,
+  &#34;default:paths.lsof&#34;: &#34;/usr/bin/lsof&#34;,
+  &#34;default:paths.mailx&#34;: &#34;/usr/bin/mailx&#34;,
+  &#34;default:paths.netstat&#34;: &#34;/bin/netstat&#34;,
+  &#34;default:paths.nologin&#34;: &#34;/usr/sbin/nologin&#34;,
+  &#34;default:paths.npm&#34;: &#34;/usr/bin/npm&#34;,
+  &#34;default:paths.path[apt_cache]&#34;: &#34;/usr/bin/apt-cache&#34;,
+  &#34;default:paths.path[apt_config]&#34;: &#34;/usr/bin/apt-config&#34;,
+  &#34;default:paths.path[apt_get]&#34;: &#34;/usr/bin/apt-get&#34;,
+  &#34;default:paths.path[apt_key]&#34;: &#34;/usr/bin/apt-key&#34;,
+  &#34;default:paths.path[aptitude]&#34;: &#34;/usr/bin/aptitude&#34;,
+  &#34;default:paths.path[awk]&#34;: &#34;/usr/bin/awk&#34;,
+  &#34;default:paths.path[bc]&#34;: &#34;/usr/bin/bc&#34;,
+  &#34;default:paths.path[cat]&#34;: &#34;/bin/cat&#34;,
+  &#34;default:paths.path[chkconfig]&#34;: &#34;/sbin/chkconfig&#34;,
+  &#34;default:paths.path[cksum]&#34;: &#34;/usr/bin/cksum&#34;,
+  &#34;default:paths.path[createrepo]&#34;: &#34;/usr/bin/createrepo&#34;,
+  &#34;default:paths.path[crontab]&#34;: &#34;/usr/bin/crontab&#34;,
+  &#34;default:paths.path[crontabs]&#34;: &#34;/var/spool/cron/crontabs&#34;,
+  &#34;default:paths.path[curl]&#34;: &#34;/usr/bin/curl&#34;,
+  &#34;default:paths.path[cut]&#34;: &#34;/usr/bin/cut&#34;,
+  &#34;default:paths.path[dc]&#34;: &#34;/usr/bin/dc&#34;,
+  &#34;default:paths.path[df]&#34;: &#34;/bin/df&#34;,
+  &#34;default:paths.path[diff]&#34;: &#34;/usr/bin/diff&#34;,
+  &#34;default:paths.path[dig]&#34;: &#34;/usr/bin/dig&#34;,
+  &#34;default:paths.path[dmidecode]&#34;: &#34;/usr/sbin/dmidecode&#34;,
+  &#34;default:paths.path[domainname]&#34;: &#34;/bin/domainname&#34;,
+  &#34;default:paths.path[dpkg]&#34;: &#34;/usr/bin/dpkg&#34;,
+  &#34;default:paths.path[dpkg_divert]&#34;: &#34;/usr/bin/dpkg-divert&#34;,
+  &#34;default:paths.path[echo]&#34;: &#34;/bin/echo&#34;,
+  &#34;default:paths.path[egrep]&#34;: &#34;/bin/egrep&#34;,
+  &#34;default:paths.path[env]&#34;: &#34;/usr/bin/env&#34;,
+  &#34;default:paths.path[ethtool]&#34;: &#34;/sbin/ethtool&#34;,
+  &#34;default:paths.path[find]&#34;: &#34;/usr/bin/find&#34;,
+  &#34;default:paths.path[free]&#34;: &#34;/usr/bin/free&#34;,
+  &#34;default:paths.path[getent]&#34;: &#34;/usr/bin/getent&#34;,
+  &#34;default:paths.path[getfacl]&#34;: &#34;/usr/bin/getfacl&#34;,
+  &#34;default:paths.path[git]&#34;: &#34;/usr/bin/git&#34;,
+  &#34;default:paths.path[grep]&#34;: &#34;/bin/grep&#34;,
+  &#34;default:paths.path[groupadd]&#34;: &#34;/usr/sbin/groupadd&#34;,
+  &#34;default:paths.path[groupdel]&#34;: &#34;/usr/sbin/groupdel&#34;,
+  &#34;default:paths.path[groupmod]&#34;: &#34;/usr/sbin/groupmod&#34;,
+  &#34;default:paths.path[hostname]&#34;: &#34;/bin/hostname&#34;,
+  &#34;default:paths.path[ifconfig]&#34;: &#34;/sbin/ifconfig&#34;,
+  &#34;default:paths.path[init]&#34;: &#34;/sbin/init&#34;,
+  &#34;default:paths.path[ip]&#34;: &#34;/sbin/ip&#34;,
+  &#34;default:paths.path[iptables]&#34;: &#34;/sbin/iptables&#34;,
+  &#34;default:paths.path[iptables_save]&#34;: &#34;/sbin/iptables-save&#34;,
+  &#34;default:paths.path[logger]&#34;: &#34;/usr/bin/logger&#34;,
+  &#34;default:paths.path[ls]&#34;: &#34;/bin/ls&#34;,
+  &#34;default:paths.path[lsattr]&#34;: &#34;/usr/bin/lsattr&#34;,
+  &#34;default:paths.path[lsof]&#34;: &#34;/usr/bin/lsof&#34;,
+  &#34;default:paths.path[mailx]&#34;: &#34;/usr/bin/mailx&#34;,
+  &#34;default:paths.path[netstat]&#34;: &#34;/bin/netstat&#34;,
+  &#34;default:paths.path[nologin]&#34;: &#34;/usr/sbin/nologin&#34;,
+  &#34;default:paths.path[npm]&#34;: &#34;/usr/bin/npm&#34;,
+  &#34;default:paths.path[perl]&#34;: &#34;/usr/bin/perl&#34;,
+  &#34;default:paths.path[pgrep]&#34;: &#34;/usr/bin/pgrep&#34;,
+  &#34;default:paths.path[ping]&#34;: &#34;/bin/ping&#34;,
+  &#34;default:paths.path[pip]&#34;: &#34;/usr/bin/pip&#34;,
+  &#34;default:paths.path[printf]&#34;: &#34;/usr/bin/printf&#34;,
+  &#34;default:paths.path[realpath]&#34;: &#34;/usr/bin/realpath&#34;,
+  &#34;default:paths.path[sed]&#34;: &#34;/bin/sed&#34;,
+  &#34;default:paths.path[service]&#34;: &#34;/usr/sbin/service&#34;,
+  &#34;default:paths.path[shadow]&#34;: &#34;/etc/shadow&#34;,
+  &#34;default:paths.path[sort]&#34;: &#34;/usr/bin/sort&#34;,
+  &#34;default:paths.path[svc]&#34;: &#34;/usr/sbin/service&#34;,
+  &#34;default:paths.path[sysctl]&#34;: &#34;/sbin/sysctl&#34;,
+  &#34;default:paths.path[systemctl]&#34;: &#34;/bin/systemctl&#34;,
+  &#34;default:paths.path[tar]&#34;: &#34;/bin/tar&#34;,
+  &#34;default:paths.path[test]&#34;: &#34;/usr/bin/test&#34;,
+  &#34;default:paths.path[tr]&#34;: &#34;/usr/bin/tr&#34;,
+  &#34;default:paths.path[update_alternatives]&#34;: &#34;/usr/bin/update-alternatives&#34;,
+  &#34;default:paths.path[update_rc_d]&#34;: &#34;/usr/sbin/update-rc.d&#34;,
+  &#34;default:paths.path[useradd]&#34;: &#34;/usr/sbin/useradd&#34;,
+  &#34;default:paths.path[userdel]&#34;: &#34;/usr/sbin/userdel&#34;,
+  &#34;default:paths.path[usermod]&#34;: &#34;/usr/sbin/usermod&#34;,
+  &#34;default:paths.path[virtualenv]&#34;: &#34;/usr/bin/virtualenv&#34;,
+  &#34;default:paths.path[wc]&#34;: &#34;/usr/bin/wc&#34;,
+  &#34;default:paths.path[wget]&#34;: &#34;/usr/bin/wget&#34;,
+  &#34;default:paths.perl&#34;: &#34;/usr/bin/perl&#34;,
+  &#34;default:paths.pgrep&#34;: &#34;/usr/bin/pgrep&#34;,
+  &#34;default:paths.ping&#34;: &#34;/bin/ping&#34;,
+  &#34;default:paths.pip&#34;: &#34;/usr/bin/pip&#34;,
+  &#34;default:paths.printf&#34;: &#34;/usr/bin/printf&#34;,
+  &#34;default:paths.realpath&#34;: &#34;/usr/bin/realpath&#34;,
+  &#34;default:paths.sed&#34;: &#34;/bin/sed&#34;,
+  &#34;default:paths.service&#34;: &#34;/usr/sbin/service&#34;,
+  &#34;default:paths.shadow&#34;: &#34;/etc/shadow&#34;,
+  &#34;default:paths.sort&#34;: &#34;/usr/bin/sort&#34;,
+  &#34;default:paths.svc&#34;: &#34;/usr/sbin/service&#34;,
+  &#34;default:paths.sysctl&#34;: &#34;/sbin/sysctl&#34;,
+  &#34;default:paths.systemctl&#34;: &#34;/bin/systemctl&#34;,
+  &#34;default:paths.tar&#34;: &#34;/bin/tar&#34;,
+  &#34;default:paths.test&#34;: &#34;/usr/bin/test&#34;,
+  &#34;default:paths.tr&#34;: &#34;/usr/bin/tr&#34;,
+  &#34;default:paths.update_alternatives&#34;: &#34;/usr/bin/update-alternatives&#34;,
+  &#34;default:paths.update_rc_d&#34;: &#34;/usr/sbin/update-rc.d&#34;,
+  &#34;default:paths.useradd&#34;: &#34;/usr/sbin/useradd&#34;,
+  &#34;default:paths.userdel&#34;: &#34;/usr/sbin/userdel&#34;,
+  &#34;default:paths.usermod&#34;: &#34;/usr/sbin/usermod&#34;,
+  &#34;default:paths.virtualenv&#34;: &#34;/usr/bin/virtualenv&#34;,
+  &#34;default:paths.wc&#34;: &#34;/usr/bin/wc&#34;,
+  &#34;default:paths.wget&#34;: &#34;/usr/bin/wget&#34;
 }
 </pre>
 <p>
-Try finding and merging variables by tag, rendering <a href="https://docs.cfengine.com/docs/3.12/reference-functions-datastate.html">datastate()</a>, or <a href="https://docs.cfengine.com/docs/3.12/reference-functions-bundlestate.html">bundlestate()</a>.
-</p>
+Try finding and merging variables by tag, rendering <a href="https://docs.cfengine.com/docs/3.12/reference-functions-datastate.html">datastate()</a>, or <a href="https://docs.cfengine.com/docs/3.12/reference-functions-bundlestate.html">bundlestate()</a>.</p>
+</div>
+</div>
 
             </div>
             
@@ -721,7 +689,7 @@ Try finding and merging variables by tag, rendering <a href="https://docs.cfengi
             <div class="push"></div>
         </div>
         <footer class="footer text-center">
-<p>Copyright &copy; 2019 Nick Anderson -
+<p>Copyright &copy; 2022 Nick Anderson -
 <span class="credit">
 	Powered by
 	<a target="_blank" href="https://gohugo.io">Hugo</a>

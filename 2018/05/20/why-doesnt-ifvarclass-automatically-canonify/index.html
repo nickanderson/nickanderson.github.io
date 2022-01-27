@@ -6,7 +6,7 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.57.0" />
+<meta name="generator" content="Hugo 0.80.0" />
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -69,40 +69,33 @@
             <span class="post-date">May 20, 2018 </span>
             <div class="post-content">
                 <blockquote>
+<p>It looks like ifvarclass is one of few places in CFEngine that does not
+  automatically canonify:</p>
 <p>
-It looks like ifvarclass is one of few places in CFEngine that does not
-automatically canonify:
-</p>
-<p>
-Is there a reason why ifvarclass – which takes a variable by design – does not
-automatically canonify that variable before checking if there’s a matching
-class?
-</p>
+  Is there a reason why ifvarclass – which takes a variable by design – does not
+  automatically canonify that variable before checking if there’s a matching
+  class?</p>
 </blockquote>
 <p>
 Yes, it&#39;s true that <code class="verbatim">ifvarclass</code>, and it&#39;s aliases <code class="verbatim">if</code> and <code class="verbatim">unless</code> do not
-automatically canonify when checking a class.
-</p>
+automatically canonify when checking a class.</p>
 <p>
 Historically there was no automatic canonfication in cfengine. If you defined a
 class or var that contains an invalid character you would get an error. Based on
 user feedback this restriction loosened over time. Now if you define a class
 using an invalid character, the agent does not log an error, (it will let you
-know that it was automatically canonified in verbose mode)
-</p>
+know that it was automatically canonified in verbose mode)</p>
 <p>
 Cfengine doesn&#39;t automatically canonify when <strong>checking</strong> with <code class="verbatim">ifvarclass</code> class
-expressions because that would prevent the use of complex expressions
-</p>
+expressions because that would prevent the use of complex expressions</p>
 <p>
 Here is an example that shows automatic canonification as well as a contrived
-use case for conditioning <code class="verbatim">ifvarclass</code> using a class expression.
-</p>
+use case for conditioning <code class="verbatim">ifvarclass</code> using a class expression.</p>
 <figure>
 <div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -155,20 +148,19 @@ use case for conditioning <code class="verbatim">ifvarclass</code> using a class
 </div>
 </div>
 </div>
-<figcaption>
-Example showing automatic canonification and ifvarclass expression
-</figcaption>
-</figure>
 <pre class="example">
 R: my_illegal_class
 R: my-illegal-class is NOT defined (as expected, its invalid)
 R: my_illegal_class is defined
 R: Slice and dice using `with`
 </pre>
+<figcaption>
+Example showing automatic canonification and ifvarclass expression
+</figcaption>
+</figure>
 <p>
 See <a href="https://docs.cfengine.com/docs/3.10/reference-language-concepts-classes.html#making-decisions-based-on-classes">making decisions based on classes</a> in the language concepts section of the
-reference manual.
-</p>
+reference manual.</p>
 
             </div>
             
@@ -179,7 +171,7 @@ reference manual.
             <div class="push"></div>
         </div>
         <footer class="footer text-center">
-<p>Copyright &copy; 2019 Nick Anderson -
+<p>Copyright &copy; 2022 Nick Anderson -
 <span class="credit">
 	Powered by
 	<a target="_blank" href="https://gohugo.io">Hugo</a>

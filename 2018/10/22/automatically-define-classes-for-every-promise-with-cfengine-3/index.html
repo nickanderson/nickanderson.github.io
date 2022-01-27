@@ -6,7 +6,7 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.57.0" />
+<meta name="generator" content="Hugo 0.80.0" />
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -71,16 +71,14 @@
                 <p>
 In CFEngine <em>classes</em> are used for decision making. Classes can be defined as
 the result of a promise by attaching a <em>classes</em> body to the promise via the
-<em>classes</em> attribute.
-</p>
+<em>classes</em> attribute.</p>
 <p>
 For example, here we run the command <code>echo Hello World</code> and define <em>bundle</em> 
-scoped classes using the <em>results</em> classes body prefixed with <code class="verbatim">Hello_World</code>.
-</p>
+scoped classes using the <em>results</em> classes body prefixed with <code class="verbatim">Hello_World</code>.</p>
 <div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -107,19 +105,15 @@ scoped classes using the <em>results</em> classes body prefixed with <code class
 </div>
 <p>
 Note in the policy output, we see <strong>Hello_World_repaired</strong> and
-<strong>Hello_World_reached</strong> are defined.
-</p>
+ <strong>Hello_World_reached</strong> are defined.</p>
 <pre class="example">
   notice: Q: &#34;...echo Hello Worl&#34;: Hello World
 R: Defined Classes: Hello_World_repaired, Hello_World_reached
 </pre>
 <p>
-Sometimes people ask:
-</p>
+Sometimes people ask:</p>
 <blockquote>
-<p>
-Can I automatically define classes for every promise?
-</p>
+<p>Can I automatically define classes for every promise?</p>
 </blockquote>
 <p>
 This is possible since CFEngine 3.9.0 introduced the concept of <a href="https://docs.cfengine.com/docs/3.12/reference-language-concepts-bodies.html#default-bodies">default bodies</a>.
@@ -128,12 +122,11 @@ that will be used with a promise any time a promise does not specify a body of
 that type. For example, we can define <code class="verbatim">body classes commands_classes</code> that will
 be used for any commands promise that does not specify a specific classes body.
 This results in the <code class="verbatim">commands_classes</code> body being attached to any commands
-promise which does not use an explicit classes body.
-</p>
+promise which does not use an explicit classes body.</p>
 <div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -241,9 +234,8 @@ promise which does not use an explicit classes body.
 <p>
 Here is the policy output. We can see that the commands promise to echo Hello
 resulted in the definition of <code class="verbatim">command_echo_hello_repaired</code> and
-<code class="verbatim">command_echo_hello_reached</code> because it used <code class="verbatim">body classes commands_classes</code> 
-(the default classes body for commands promises).
-</p>
+ <code class="verbatim">command_echo_hello_reached</code> because it used <code class="verbatim">body classes commands_classes</code> 
+(the default classes body for commands promises).</p>
 <pre class="example">
   notice: Q: &#34;...echo Hello&#34;: Hello
   notice: Q: &#34;...echo GoodBye&#34;: GoodBye
@@ -262,7 +254,7 @@ R: GoodBye_reached
             <div class="push"></div>
         </div>
         <footer class="footer text-center">
-<p>Copyright &copy; 2019 Nick Anderson -
+<p>Copyright &copy; 2022 Nick Anderson -
 <span class="credit">
 	Powered by
 	<a target="_blank" href="https://gohugo.io">Hugo</a>

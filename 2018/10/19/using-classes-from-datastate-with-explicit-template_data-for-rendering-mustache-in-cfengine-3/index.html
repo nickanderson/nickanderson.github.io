@@ -6,7 +6,7 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.57.0" />
+<meta name="generator" content="Hugo 0.80.0" />
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -69,30 +69,24 @@
             <span class="post-date">Oct 19, 2018 </span>
             <div class="post-content">
                 <p>
-This was <a href="https://groups.google.com/d/msg/help-cfengine/VktwAdsQ3zc/FplxWLezAwAJ">asked on the CFEngine Help Mailing list</a> on October 1st 2018.
-</p>
+This was <a href="https://groups.google.com/d/msg/help-cfengine/VktwAdsQ3zc/FplxWLezAwAJ">asked on the CFEngine Help Mailing list</a> on October 1st 2018.</p>
 <blockquote>
-<p>
-How can I use classes in a mustache template while passing explicit data to <code class="verbatim">template_data</code>?  
-</p>
+<p>How can I use classes in a mustache template while passing explicit data to <code class="verbatim">template_data</code>?  </p>
 </blockquote>
 <p>
 When a mustache template is rendered without providing explicit data to the
-<code class="verbatim">template_data</code> attribute in a files promise <code class="verbatim">datastate()</code> is used.
-<code class="verbatim">datastate()</code> contains the JSON representation of the current cfengine state.
-</p>
+ <code class="verbatim">template_data</code> attribute in a files promise <code class="verbatim">datastate()</code> is used.
+ <code class="verbatim">datastate()</code> contains the JSON representation of the current cfengine state.</p>
 <p>
 When providing explicit data the variables and classes from the current state
 are not included. In order to use them, you must pick them out from the
-datastate and merge them into your explicit data.
-</p>
+datastate and merge them into your explicit data.</p>
 <p>
-For example:
-</p>
+For example:</p>
 <div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -154,16 +148,14 @@ R: With merging in classes from datastate:
 My data is explicit and My_Class is not defined
 </pre>
 <p>
-What does the full <code class="verbatim">datastate()</code> look like?
-</p>
+What does the full <code class="verbatim">datastate()</code> look like?</p>
 <p>
 I saved this for the end since it&#39;s quite long, note top level <code class="verbatim">vars</code> and
-<code class="verbatim">classes</code> keys:
-</p>
+ <code class="verbatim">classes</code> keys:</p>
 <div class="src src-json">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-json" data-lang="json"><span class="lnt">   1
+<pre class="chroma"><code><span class="lnt">   1
 </span><span class="lnt">   2
 </span><span class="lnt">   3
 </span><span class="lnt">   4
@@ -2366,7 +2358,7 @@ I saved this for the end since it&#39;s quite long, note top level <code class="
             <div class="push"></div>
         </div>
         <footer class="footer text-center">
-<p>Copyright &copy; 2019 Nick Anderson -
+<p>Copyright &copy; 2022 Nick Anderson -
 <span class="credit">
 	Powered by
 	<a target="_blank" href="https://gohugo.io">Hugo</a>

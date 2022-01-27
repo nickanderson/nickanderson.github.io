@@ -6,7 +6,7 @@
 
 		<meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.57.0" />
+<meta name="generator" content="Hugo 0.80.0" />
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -75,26 +75,15 @@
 				<li>
 					<div class="post-list-item">
 						<div class="post-header">
-							<h4 class="post-link"><a href="https://cmdln.org/2008/10/26/vim-wordpress-vimpress-happiness/">Vim &#43; wordpress == vimpress, happiness</a></h4>
-							<h4 class="post-date">Oct 26, 2008</h4>
-						</div>
-						<div class="post-summary"><p><p>I recently found a vim plug-in for WordPress. <a href="http://friggeri.net/blog/2007/07/13/vimpress">Vimpress</a> allows your to write and edit your blog posts directly from vim. Sure it has its limitations. There does not appear to be support for future data publishing or drafts. But overall its a much better experience to write in vim than the built in editor.</p></p></div>
-						<div class="post-list-footer text-center">
-							<a href="https://cmdln.org/2008/10/26/vim-wordpress-vimpress-happiness/">Read More</a>
-						</div>
-					</div>
-				</li>
-			
-				<li>
-					<div class="post-list-item">
-						<div class="post-header">
 							<h4 class="post-link"><a href="https://cmdln.org/2008/10/25/secure-git-hosting-with-gitosis/">Secure git hosting with gitosis</a></h4>
 							<h4 class="post-date">Oct 26, 2008</h4>
 						</div>
 						<div class="post-summary"><p>I hope you are already using ssh keys, but just in case your not go ahead and generate one with ssh-keygen -t rsa (you should do this on your local box)
 You may as well go ahead and copy your publick key to your git server now as well.
-scp ~/.ssh/id_rsa.pub gitserver:/tmp/  Log into your gitosis server
-ssh gitserver   Make sure setuptools is installed  sudo aptitude install python-setuptools</p></div>
+Log into your gitosis server
+ Make sure setuptools is installed  sudo aptitude install python-setuptools
+git clone git://eagain.net/gitosis.git
+cd gitosis</p></div>
 						<div class="post-list-footer text-center">
 							<a href="https://cmdln.org/2008/10/25/secure-git-hosting-with-gitosis/">Read More</a>
 						</div>
@@ -185,7 +174,7 @@ ssh gitserver   Make sure setuptools is installed  sudo aptitude install python-
 							<h4 class="post-link"><a href="https://cmdln.org/2008/07/09/backdoor-corporate-sabotage-with-dns/">Backdoor corporate sabotage with DNS</a></h4>
 							<h4 class="post-date">Jul 10, 2008</h4>
 						</div>
-						<div class="post-summary"><p><p>I&#8217;m not really certain how common corporate sabotage is. Sure there are DOS attacks daily on this or that network or this or that server but what percentage of those are script kiddies and what percentage are well thought out planned attacks designed to cripple a competitor even if only for a short time. Typically DOS attacks are dealt with by Server and Network Admins adding black holes to offending networks. Recently while doing some research I stumbled on what seems to be a neglected DNS attack. One that the target may not become aware of until the next billing cycle or if carried out methodically months.</p></p></div>
+						<div class="post-summary"><p><p>I’m not really certain how common corporate sabotage is. Sure there are DOS attacks daily on this or that network or this or that server but what percentage of those are script kiddies and what percentage are well thought out planned attacks designed to cripple a competitor even if only for a short time. Typically DOS attacks are dealt with by Server and Network Admins adding black holes to offending networks. Recently while doing some research I stumbled on what seems to be a neglected DNS attack. One that the target may not become aware of until the next billing cycle or if carried out methodically months.</p></p></div>
 						<div class="post-list-footer text-center">
 							<a href="https://cmdln.org/2008/07/09/backdoor-corporate-sabotage-with-dns/">Read More</a>
 						</div>
@@ -198,9 +187,22 @@ ssh gitserver   Make sure setuptools is installed  sudo aptitude install python-
 							<h4 class="post-link"><a href="https://cmdln.org/2008/06/15/change-kde-4-panel-clock-to-12hr-from-24hr-military/">Change KDE 4 panel clock to 12hr from 24hr military</a></h4>
 							<h4 class="post-date">Jun 16, 2008</h4>
 						</div>
-						<div class="post-summary"><p><p>It&#8217;s not that I can not read 24 hour time, it&#8217;s just a pain to deal with on a daily basis. I was raised with 12 hr, and its just quicker for me to read. So if you are running KDE4 and you would prefer 12 hour format in your panel read on.</p></p></div>
+						<div class="post-summary"><p><p>It’s not that I can not read 24 hour time, it’s just a pain to deal with on a daily basis. I was raised with 12 hr, and its just quicker for me to read. So if you are running KDE4 and you would prefer 12 hour format in your panel read on.</p></p></div>
 						<div class="post-list-footer text-center">
 							<a href="https://cmdln.org/2008/06/15/change-kde-4-panel-clock-to-12hr-from-24hr-military/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
+							<h4 class="post-link"><a href="https://cmdln.org/2008/06/10/dynamic-reverse-proxy-with-apache-mod_rewrite-and-mod_proxy/">Dynamic Reverse Proxy with Apache, mod_rewrite, and mod_proxy</a></h4>
+							<h4 class="post-date">Jun 10, 2008</h4>
+						</div>
+						<div class="post-summary"><p><p>Recently I found myself wanting to expose more and more internal web services to the outside. We have an internal mail caching server, ticket system, a handful of development sites, as well as several other internal web services that would be handy to access from remote locations. If you have internal dns, and your dns heirichy is sane you can probably use the same trick I did to allow any internal webservice that has a proper fqdn to work from outside your local LAN. I used Apache2, mod_proxy, and mod_rewrite. Only a few lines need to be altered in the default apache site install.</p></p></div>
+						<div class="post-list-footer text-center">
+							<a href="https://cmdln.org/2008/06/10/dynamic-reverse-proxy-with-apache-mod_rewrite-and-mod_proxy/">Read More</a>
 						</div>
 					</div>
 				</li>
@@ -315,7 +317,7 @@ ssh gitserver   Make sure setuptools is installed  sudo aptitude install python-
 			<div class="push"></div>
 		</div>
 		<footer class="footer text-center">
-<p>Copyright &copy; 2019 Nick Anderson -
+<p>Copyright &copy; 2022 Nick Anderson -
 <span class="credit">
 	Powered by
 	<a target="_blank" href="https://gohugo.io">Hugo</a>

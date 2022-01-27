@@ -6,7 +6,7 @@
 
 		<meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.57.0" />
+<meta name="generator" content="Hugo 0.80.0" />
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -75,24 +75,10 @@
 				<li>
 					<div class="post-list-item">
 						<div class="post-header">
-							<h4 class="post-link"><a href="https://cmdln.org/2010/03/09/sysstat-sar-performance-metrics-via-nagios-plugin/">Sysstat Sar Performance Metrics Via Nagios Plugin</a></h4>
-							<h4 class="post-date">Mar 9, 2010</h4>
-						</div>
-						<div class="post-summary"><p>I know I&#8217;ve mentioned how much I love the sysstat package before. I use sar regularly to help with performance diagnostics (Analyzing Linux System Performance And Finding Bottle Necks, CPU Performance Analysis In Linux, Baseline Analysis Is Important, CPU Performance Analysis In Linux Revisited). I wrote this little Nagios plugin to collect the performance metrics that sar collects.
-I use this plugin with Zenoss and I set any performance thresholds there, more important to me was collecting the information for historical graphing.</p></div>
-						<div class="post-list-footer text-center">
-							<a href="https://cmdln.org/2010/03/09/sysstat-sar-performance-metrics-via-nagios-plugin/">Read More</a>
-						</div>
-					</div>
-				</li>
-			
-				<li>
-					<div class="post-list-item">
-						<div class="post-header">
 							<h4 class="post-link"><a href="https://cmdln.org/2010/03/08/xenserver-license-check-nagios-nrpe-plugin/">XenServer License Check &amp;#8211; Nagios NRPE Plugin</a></h4>
 							<h4 class="post-date">Mar 8, 2010</h4>
 						</div>
-						<div class="post-summary"><p>If you hadn&#8217;t already guessed I am a big fan of the Xen hypervisor. Lately I have been using the Citrix XenServer release because it makes it quite palatable for my co-workers. One annoyance that I do have about XenServer is the requirement that you license it (with a free license) every year. If you fail to license it the GUI stops working. Now I hate relying on GUIs but the fact of the matter is others in my team expect to have a working GUI when they need to do something.</p></div>
+						<div class="post-summary"><p>If you hadn’t already guessed I am a big fan of the Xen hypervisor. Lately I have been using the Citrix XenServer release because it makes it quite palatable for my co-workers. One annoyance that I do have about XenServer is the requirement that you license it (with a free license) every year. If you fail to license it the GUI stops working. Now I hate relying on GUIs but the fact of the matter is others in my team expect to have a working GUI when they need to do something.</p></div>
 						<div class="post-list-footer text-center">
 							<a href="https://cmdln.org/2010/03/08/xenserver-license-check-nagios-nrpe-plugin/">Read More</a>
 						</div>
@@ -105,7 +91,7 @@ I use this plugin with Zenoss and I set any performance thresholds there, more i
 							<h4 class="post-link"><a href="https://cmdln.org/2010/03/05/flashback-remote-kernel-logging-with-netconsole-for-fun-and-profit/">Flashback: Remote kernel logging with netconsole for fun and profit</a></h4>
 							<h4 class="post-date">Mar 5, 2010</h4>
 						</div>
-						<div class="post-summary"><p>Have you ever had a machine that was a bit flaky? You know those ones that occasionally crash and don&#8217;t write anything useful into the log file. Sometimes you can capture those messages with netconsole. Just revisiting a small walk-through I wrote a while back.
+						<div class="post-summary"><p>Have you ever had a machine that was a bit flaky? You know those ones that occasionally crash and don’t write anything useful into the log file. Sometimes you can capture those messages with netconsole. Just revisiting a small walk-through I wrote a while back.
 Remote kernel logging with netconsole for fun and profit</p></div>
 						<div class="post-list-footer text-center">
 							<a href="https://cmdln.org/2010/03/05/flashback-remote-kernel-logging-with-netconsole-for-fun-and-profit/">Read More</a>
@@ -120,8 +106,7 @@ Remote kernel logging with netconsole for fun and profit</p></div>
 							<h4 class="post-date">Mar 4, 2010</h4>
 						</div>
 						<div class="post-summary"><p>I like to have as little run in dom0 as possible. However some things you really need checked from dom0, like the status of your raid perhaps. Just some quick instructions on getting Nagios NRPE running in XenServer.
- Install EPEL repository and disable it by default (remember we don&#8217;t want to accidentally install unnecessary packages) wget http://download.fedora.redhat.com/pub/epel/5/$(uname -i)/epel-release-5-3.noarch.rpm rpm -hiv epel-release*.rpm sed -i &rsquo;s/enabled=1/enabled=0/g&rsquo; /etc/yum.repos.d/epel.repo 
- Install nrpe and configure it to start on boot yum install &ndash;enablerepo=epel nrpe chkconfig nrpe on</p></div>
+  Install EPEL repository and disable it by default (remember we don’t want to accidentally install unnecessary packages) wget http://download.fedora.redhat.com/pub/epel/5/$(uname -i)/epel-release-5-3.noarch.rpm rpm -hiv epel-release*.rpm sed -i &rsquo;s/enabled=1/enabled=0/g' /etc/yum.repos.d/epel.repo   Install nrpe and configure it to start on boot yum install &ndash;enablerepo=epel nrpe chkconfig nrpe on   Modify the firewall to allow NRPE connections.</p></div>
 						<div class="post-list-footer text-center">
 							<a href="https://cmdln.org/2010/03/04/installing-nrpe-on-xenserver/">Read More</a>
 						</div>
@@ -148,7 +133,7 @@ Vim customization for python</p></div>
 							<h4 class="post-link"><a href="https://cmdln.org/2010/03/03/flashback-backdoor-corporate-sabotage-with-dns/">Flashback: Backdoor Corporate Sabotage With DNS</a></h4>
 							<h4 class="post-date">Mar 3, 2010</h4>
 						</div>
-						<div class="post-summary"><p>This is just an old entry that I thought was interesting, and it appears its still relevant. Like a broken record, &#8220;economic times are rough&#8221;, what better way to boost your revenue than to exploit your customers. What better way to suppress a competitor than to increase a competitors infrastructure costs (with little visibility to boot). I did some repeated lookups this morning and got similar results.
+						<div class="post-summary"><p>This is just an old entry that I thought was interesting, and it appears its still relevant. Like a broken record, “economic times are rough”, what better way to boost your revenue than to exploit your customers. What better way to suppress a competitor than to increase a competitors infrastructure costs (with little visibility to boot). I did some repeated lookups this morning and got similar results.
 Backdoor Corporate Sabotage With DNS</p></div>
 						<div class="post-list-footer text-center">
 							<a href="https://cmdln.org/2010/03/03/flashback-backdoor-corporate-sabotage-with-dns/">Read More</a>
@@ -162,7 +147,7 @@ Backdoor Corporate Sabotage With DNS</p></div>
 							<h4 class="post-link"><a href="https://cmdln.org/2010/03/02/flashback-automatic-session-logging-and-monitoring-with-gnu-screen-for-the-paranoid/">Flashback: Automatic session logging and monitoring with GNU screen for the paranoid</a></h4>
 							<h4 class="post-date">Mar 2, 2010</h4>
 						</div>
-						<div class="post-summary"><p>Another day, another flashback. I don&#8217;t know about you but at times I have had some very odd and uncomfortable requests from vendors. It&#8217;s not wholly uncommon for them to want to log into your system to diagnose an issue for themselves. Or perhaps for whatever reason your manager says hey give this random outside person access to some important box. As a SA you get used to extremely odd requests and figure out how to just solve the problem.</p></div>
+						<div class="post-summary"><p>Another day, another flashback. I don’t know about you but at times I have had some very odd and uncomfortable requests from vendors. It’s not wholly uncommon for them to want to log into your system to diagnose an issue for themselves. Or perhaps for whatever reason your manager says hey give this random outside person access to some important box. As a SA you get used to extremely odd requests and figure out how to just solve the problem.</p></div>
 						<div class="post-list-footer text-center">
 							<a href="https://cmdln.org/2010/03/02/flashback-automatic-session-logging-and-monitoring-with-gnu-screen-for-the-paranoid/">Read More</a>
 						</div>
@@ -201,9 +186,22 @@ Backdoor Corporate Sabotage With DNS</p></div>
 							<h4 class="post-link"><a href="https://cmdln.org/2010/01/27/microsoft-mediaroom-personal-server-odyssey/">Microsoft Mediaroom Personal Server Odyssey</a></h4>
 							<h4 class="post-date">Jan 27, 2010</h4>
 						</div>
-						<div class="post-summary"><p><p>Ewwww, scary isn&#8217;t it. No Its not Halloween, but you may have entered the twilight zone. Right, I never touch Microsoft products. Well in actuality sometimes I do (I just don&#8217;t brag about it). Some of the development at $work uses Microsofts Mediaroom, and I have a &#8220;Personal Server&#8221; (great name right?) that the developers use. I was trying to install the Mediaroom service pack yesterday and took some notes on the process. Some of my friends found it quite entertaining. I found it quite aggravating﻿ as you might imagine.</p></p></div>
+						<div class="post-summary"><p><p>Ewwww, scary isn’t it. No Its not Halloween, but you may have entered the twilight zone. Right, I never touch Microsoft products. Well in actuality sometimes I do (I just don’t brag about it). Some of the development at $work uses Microsofts Mediaroom, and I have a “Personal Server” (great name right?) that the developers use. I was trying to install the Mediaroom service pack yesterday and took some notes on the process. Some of my friends found it quite entertaining. I found it quite aggravating﻿ as you might imagine.</p></p></div>
 						<div class="post-list-footer text-center">
 							<a href="https://cmdln.org/2010/01/27/microsoft-mediaroom-personal-server-odyssey/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
+							<h4 class="post-link"><a href="https://cmdln.org/2010/01/27/now-mobile-ready/">Now Mobile Ready</a></h4>
+							<h4 class="post-date">Jan 27, 2010</h4>
+						</div>
+						<div class="post-summary"><p>I’d like to thank ﻿﻿﻿Dale Mugford and Duane Storey from BraveNewCode for the nice WordPress plugin and bundled mobile theme. If you visit my site on your mobile device you should get a slimmed down page, let me know what ya think.</p></div>
+						<div class="post-list-footer text-center">
+							<a href="https://cmdln.org/2010/01/27/now-mobile-ready/">Read More</a>
 						</div>
 					</div>
 				</li>
@@ -318,7 +316,7 @@ Backdoor Corporate Sabotage With DNS</p></div>
 			<div class="push"></div>
 		</div>
 		<footer class="footer text-center">
-<p>Copyright &copy; 2019 Nick Anderson -
+<p>Copyright &copy; 2022 Nick Anderson -
 <span class="credit">
 	Powered by
 	<a target="_blank" href="https://gohugo.io">Hugo</a>

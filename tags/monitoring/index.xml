@@ -1,22 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>monitoring on </title>
     <link>https://cmdln.org/tags/monitoring/</link>
     <description>Recent content in monitoring on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 06 Dec 2008 07:57:12 +0000</lastBuildDate>
-    
-	<atom:link href="https://cmdln.org/tags/monitoring/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 06 Dec 2008 07:57:12 +0000</lastBuildDate><atom:link href="https://cmdln.org/tags/monitoring/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Top for MySQL with mytop</title>
       <link>https://cmdln.org/2008/12/06/top-for-mysql-with-mytop/</link>
       <pubDate>Sat, 06 Dec 2008 07:57:12 +0000</pubDate>
       
       <guid>https://cmdln.org/2008/12/06/top-for-mysql-with-mytop/</guid>
-      <description>I see Samuel Huckins just had a post about apachetop http://dancingpenguinsoflight.com/2008/12/top-for-apache-activity/ which I have been meaning to mention for a while, but being that there is a fresh post about it I will mention Mytop instead.
+      <description>I see Samuel Huckinsjust had a post about apachetop http://dancingpenguinsoflight.com/2008/12/top-for-apache-activity/ which I have been meaning to mention for a while, but being that there is a fresh post about it I will mention Mytop instead.
 Mytop is top for mysql. It can be used for monitoring the threads and overall performance of a MySQL.
 Its an easy install in debain with a quick aptitude install mytop.
 Here is some example output (sorry my mysql server isnt very busy atm).</description>

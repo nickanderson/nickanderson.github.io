@@ -1,15 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>personal growth on </title>
     <link>https://cmdln.org/tags/personal-growth/</link>
     <description>Recent content in personal growth on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 29 Aug 2008 07:56:58 +0000</lastBuildDate>
-    
-	<atom:link href="https://cmdln.org/tags/personal-growth/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 29 Aug 2008 07:56:58 +0000</lastBuildDate><atom:link href="https://cmdln.org/tags/personal-growth/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>10 Traits of a Successful SysAdmin</title>
       <link>https://cmdln.org/2008/08/29/10-traits-of-a-successful-sysadmin/</link>
