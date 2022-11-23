@@ -1,61 +1,83 @@
 {{ with .Site.Params.GnuPGFingerprint }}
-<a href="https://pgp.key-server.io/pks/lookup?op=vindex&search=0x{{.}}" title="GPG"><i class="fa fa-unlock-alt fa-3x" aria-hidden="true"></i></a>
+<a href="https://pgp.key-server.io/pks/lookup?op=vindex&search=0x{{.}}" title="GPG"><i class="fas fa-unlock-alt fa-3x" aria-hidden="true"></i></a>
 {{ end }}
 {{ with .Site.Params.StackExchangeID }}
-<a href="https://stackexchange.com/users/{{.}}" title="StackExchange"><i class="fa fa-stack-exchange fa-3x" aria-hidden="true"></i></a>
+<a href="https://stackexchange.com/users/{{.}}" rel="me" title="StackExchange"><i class="fab fa-stack-exchange fa-3x" aria-hidden="true"></i></a>
 {{ end }}
 {{ with .Site.Params.StackOverflowID }}
-<a href="https://stackoverflow.com/users/{{.}}" title="StackExchange"><i class="fa fa-stack-overflow fa-3x" aria-hidden="true"></i></a>
+<a href="https://stackoverflow.com/users/{{.}}" rel="me" title="StackExchange"><i class="fab fa-stack-overflow fa-3x" aria-hidden="true"></i></a>
 {{ end }}
 {{ with .Site.Params.SlackURL }}
-<a href="{{.}}" title="Slack"><i class="fa fa-slack fa-3x" aria-hidden="true"></i></a>
+<a href="{{.}}" title="Slack"><i class="fab fa-slack fa-3x" aria-hidden="true"></i></a>
 {{ end }}
 {{ with .Site.Params.TwitterID }}
-<a href="https://twitter.com/{{.}}" title="Twitter"><i class="fa fa-twitter fa-3x" aria-hidden="true"></i></a>
+<a href="https://twitter.com/{{.}}" rel="me" title="Twitter"><i class="fab fa-twitter fa-3x" aria-hidden="true"></i></a>
+{{ end }}
+{{ with .Site.Params.MastodonURL }}
+<a href="{{.}}" title="Mastodon"><i class="fab fa-mastodon fa-3x" aria-hidden="true"></i></a>
 {{ end }}
 {{ with .Site.Params.GoogleplusID }}
-<a href="https://plus.google.com/{{.}}/about" title="Google+"><i class="fa fa-google-plus fa-3x" aria-hidden="true"></i></a>
+<a href="https://plus.google.com/{{.}}/about" rel="me" title="Google+"><i class="fab fa-google-plus fa-3x" aria-hidden="true"></i></a>
 {{ end }}
 {{ with .Site.Params.FacebookID }}
-<a href="https://facebook.com/{{.}}" title="Facebook"><i class="fa fa-facebook fa-3x" aria-hidden="true"></i></a>
+<a href="https://facebook.com/{{.}}" rel="me" title="Facebook"><i class="fab fa-facebook fa-3x" aria-hidden="true"></i></a>
 {{ end }}
 {{ with .Site.Params.BitbucketID }}
-<a href="https://bitbucket.org/{{.}}" title="Bitbucket"><i class="fa fa-bitbucket fa-3x" aria-hidden="true"></i></a>
+<a href="https://bitbucket.org/{{.}}" rel="me" title="Bitbucket"><i class="fab fa-bitbucket fa-3x" aria-hidden="true"></i></a>
 {{ end }}
 {{ with .Site.Params.GithubID }}
-<a href="https://github.com/{{.}}" title="GitHub"><i class="fa fa-github fa-3x" aria-hidden="true"></i></a>
+<a href="https://github.com/{{.}}" rel="me" title="GitHub"><i class="fab fa-github fa-3x" aria-hidden="true"></i></a>
 {{ end }}
 {{ with .Site.Params.GitlabId }}
-<a href="https://gitlab.com/{{.}}" title="GitLab"><i class="fa fa-gitlab fa-3x" aria-hidden="true"></i></a>
+<a href="https://gitlab.com/{{.}}" rel="me" title="GitLab"><i class="fab fa-gitlab fa-3x" aria-hidden="true"></i></a>
 {{ end }}
 {{ with .Site.Params.CodepenID }}
-<a href="https://codepen.io/{{.}}" title="Codepen"><i class="fa fa-codepen fa-3x" aria-hidden="true"></i></a>
+<a href="https://codepen.io/{{.}}" rel="me" title="Codepen"><i class="fab fa-codepen fa-3x" aria-hidden="true"></i></a>
 {{ end }}
 {{ with .Site.Params.LinkedInID }}
-<a href="https://linkedin.com/in/{{.}}" title="LinkedIn"><i class="fa fa-linkedin fa-3x" aria-hidden="true"></i></a>
+<a href="https://linkedin.com/in/{{.}}" rel="me" title="LinkedIn"><i class="fab fa-linkedin fa-3x" aria-hidden="true"></i></a>
+{{ end }}
+{{ with .Site.Params.MediumID }}
+<a href="https://medium.com/@{{.}}" rel="me" title="Medium"><i class="fab fa-medium fa-3x" aria-hidden="true"></i></a>
+{{ end }}
+{{ with .Site.Params.YoutubeID }}
+<!-- For youtube, since there are multiple path urls please add everything after https://youtube.com/ in channel url -->
+<a href="https://youtube.com/{{.}}" rel="me" title="Youtube"><i class="fab fa-youtube fa-3x" aria-hidden="true"></i></a>
+{{ end }}
+{{ with .Site.Params.TwitchID }}
+<a href="https://twitch.tv/{{.}}" rel="me" title="Twitch"><i class="fab fa-twitch fa-3x" aria-hidden="true"></i></a>
+{{ end }}
+{{ with .Site.Params.SpotifyID }}
+<a href="https://open.spotify.com/user/{{.}}" rel="me" title="Spotify"><i class="fab fa-spotify fa-3x" aria-hidden="true"></i></a>
+{{ end }}
+{{ with .Site.Params.SoundcloudID }}
+<a href="https://soundcloud.com/{{.}}" rel="me" title="Soundcloud"><i class="fab fa-soundcloud fa-3x" aria-hidden="true"></i></a>
 {{ end }}
 {{ with .Site.Params.InstagramID }}
-<a href="https://instagram.com/{{.}}" title="Instagram"><i class="fa fa-instagram fa-3x" aria-hidden="true"></i></a>
+<a href="https://instagram.com/{{.}}" rel="me" title="Instagram"><i class="fab fa-instagram fa-3x" aria-hidden="true"></i></a>
 {{ end }}
 {{ with .Site.Params.TelegramID }}
-<a href="https://t.me/{{.}}" title="Telegram"><i class="fa fa-telegram fa-3x" aria-hidden="true"></i></a>
+<a href="https://t.me/{{.}}" rel="me" title="Telegram"><i class="fab fa-telegram fa-3x" aria-hidden="true"></i></a>
+{{ end }}
+{{ with .Site.Params.RedditID }}
+<a href="https://reddit.com/user/{{.}}" rel="me" title="Reddit"><i class="fab fa-reddit fa-3x" aria-hidden="true"></i></a>
 {{ end }}
 {{ with .Site.Params.Email }}
-<a href="mailto:{{.}}" title="Email"><i class="fa fa-envelope fa-3x" aria-hidden="true"></i></a>
+<a href="mailto:{{.}}" title="Email"><i class="fas fa-envelope fa-3x" aria-hidden="true"></i></a>
 {{ end }}
 {{ with .Site.Params.Phone }}
-<a href="tel:{{.}}" title="Phone"><i class="fa fa-phone fa-3x" aria-hidden="true"></i></a>
+<a href="tel:{{.}}" title="Phone"><i class="fas fa-phone fa-3x" aria-hidden="true"></i></a>
 {{ end }}
 {{ with .Site.Params.Mobile }}
-<a href="tel:{{.}}" title="Mobile"><i class="fa fa-mobile fa-3x" aria-hidden="true"></i></a>
+<a href="tel:{{.}}" title="Mobile"><i class="fas fa-mobile fa-3x" aria-hidden="true"></i></a>
 {{ end }}
 {{ with .Site.Params.PayPalMeID }}
-<a href="https://www.paypal.me/{{.}}" title="PayPal.Me"><i class="fa fa-paypal fa-3x" aria-hidden="true"></i></a>
+<a href="https://www.paypal.me/{{.}}" rel="me" title="PayPal.Me"><i class="fab fa-paypal fa-3x" aria-hidden="true"></i></a>
 {{ end }}
 {{ with .Site.Params.XingURL }}
-<a href="{{.}}" title="XING"><i class="fa fa-xing fa-3x" aria-hidden="true"></i></a>
+<a href="{{.}}" rel="me" title="XING"><i class="fab fa-xing fa-3x" aria-hidden="true"></i></a>
 {{ end }}
 {{ with .Site.Params.CvURL }}
-<a href="{{.}}" title="Curriculum Vitae"><i class="fa fa-file-text fa-3x" aria-hidden="true"></i></a>
+<a href="{{.}}" title="Curriculum Vitae"><i class="fas fa-file-alt fa-3x" aria-hidden="true"></i></a>
 {{ end }}
 
