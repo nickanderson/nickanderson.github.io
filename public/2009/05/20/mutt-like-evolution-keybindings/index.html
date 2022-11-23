@@ -6,7 +6,11 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<<<<<<< HEAD
 <meta name="generator" content="Hugo 0.57.0" />
+=======
+<meta name="generator" content="Hugo 0.80.0" />
+>>>>>>> a7d29a8a28a02281741be1a86cca3627b7cdd579
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -69,35 +73,22 @@
             <span class="post-date">May 21, 2009 </span>
             <div class="post-content">
                 <p>In preparation for connecting to (im guessing here) an Exchange server at my new job I am switching from my beloved Mutt to Evolution. The absolute first thing I noticed about Evolution that I disliked was the keybindings for things like deleting messages, replying to messages and creating a new message. After some digging in the UI I could not find any place to change them. Some more sleuthing turned up some XML files down in /usr/share/evolution/$VERSION/ui.</p>
-
-<p>You can easily edit these files to your liking but be ware the changes are global. Either I have missed how you can override these settings on a per user basis or there have been some major oversights from the evolution development team. At any rate I&#8217;ve only made a few changes so far but I wanted to share them for anyone else who would prefer to use Mutt but is stuck connecting to an Exchange server.</p>
-
+<p>You can easily edit these files to your liking but be ware the changes are global. Either I have missed how you can override these settings on a per user basis or there have been some major oversights from the evolution development team. At any rate I’ve only made a few changes so far but I wanted to share them for anyone else who would prefer to use Mutt but is stuck connecting to an Exchange server.</p>
 <p>@@ -58,6 +58,7 @@</p>
-
-<p><cmd name="MessageDelete" _tip="Mark the selected messages for deletion" + accel="d" pixtype="pixbuf"/></p>
-
-<p><cmd name="MessageFollowUpFlag" @@ -67,7 +68,7 @@ <cmd name="MessageForward" _tip="Forward the selected message to someone" - accel="\*Control\*f" + accel="f" pixtype="pixbuf"/></p>
-
-<p><cmd name="MessageForwardAttached" @@ -98,12 +99,12 @@ <cmd name="MessageMarkAsJunk" _tip="Mark the selected messages as junk" - accel="\*Control\*j" + accel="j" pixtype="pixbuf"/></p>
-
-<p><cmd name="MessageMarkAsNotJunk" _tip="Mark the selected messages as not being junk" - accel="\*Control\*\*Shift\*j" + accel="J" pixtype="pixbuf"/></p>
-
-<p><cmd name="MessageFilterJunk" @@ -113,7 +114,7 @@ <cmd name="MailCompose" _tip="Open a window for composing a mail message" pixtype="pixbuf" - accel="\*Control\*\*Shift\*m"/></p>
-
+<p>&lt;cmd name=&ldquo;MessageDelete&rdquo; _tip=&ldquo;Mark the selected messages for deletion&rdquo; + accel=&ldquo;d&rdquo; pixtype=&ldquo;pixbuf&rdquo;/&gt;</p>
+<p>&lt;cmd name=&ldquo;MessageFollowUpFlag&rdquo; @@ -67,7 +68,7 @@ &lt;cmd name=&ldquo;MessageForward&rdquo; _tip=&ldquo;Forward the selected message to someone&rdquo; - accel=&quot;*Control*f&quot; + accel=&ldquo;f&rdquo; pixtype=&ldquo;pixbuf&rdquo;/&gt;</p>
+<p>&lt;cmd name=&ldquo;MessageForwardAttached&rdquo; @@ -98,12 +99,12 @@ &lt;cmd name=&ldquo;MessageMarkAsJunk&rdquo; _tip=&ldquo;Mark the selected messages as junk&rdquo; - accel=&quot;*Control*j&quot; + accel=&ldquo;j&rdquo; pixtype=&ldquo;pixbuf&rdquo;/&gt;</p>
+<p>&lt;cmd name=&ldquo;MessageMarkAsNotJunk&rdquo; _tip=&ldquo;Mark the selected messages as not being junk&rdquo; - accel=&quot;*Control**Shift*j&quot; + accel=&ldquo;J&rdquo; pixtype=&ldquo;pixbuf&rdquo;/&gt;</p>
+<p>&lt;cmd name=&ldquo;MessageFilterJunk&rdquo; @@ -113,7 +114,7 @@ &lt;cmd name=&ldquo;MailCompose&rdquo; _tip=&ldquo;Open a window for composing a mail message&rdquo; pixtype=&ldquo;pixbuf&rdquo; - accel=&quot;*Control**Shift*m&quot;/&gt;</p>
 <ul>
-<li>accel=&#8221;m&#8221;/&gt;</li>
+<li>accel=”m”/&gt;</li>
 </ul>
-
-<p><cmd name="MessageMove" _tip="Move selected messages to another folder" @@ -136,11 +137,11 @@ <cmd name="MessageRedirect" _tip="Redirect (bounce) the selected message to someone" - accel=""/></p>
-
+<p>&lt;cmd name=&ldquo;MessageMove&rdquo; _tip=&ldquo;Move selected messages to another folder&rdquo; @@ -136,11 +137,11 @@ &lt;cmd name=&ldquo;MessageRedirect&rdquo; _tip=&ldquo;Redirect (bounce) the selected message to someone&rdquo; - accel=&quot;&quot;/&gt;</p>
 <ul>
-<li>accel=&#8221;b&#8221;/&gt;</li>
+<li>accel=”b”/&gt;</li>
 </ul>
-
-<p><cmd name="MessageReplyAll" _tip="Compose a reply to all of the recipients of the selected message" - accel="\*Control\*\*Shift\*r" + accel="g" pixtype="pixbuf"/></p>
-
-<p><cmd name="MessageReplyList" @@ -149,7 +150,7 @@ <cmd name="MessageReplySender" _tip="Compose a reply to the sender of the selected message" - accel="\*Control\*r" + accel="r" pixtype="pixbuf"/></p>
-
+<p>&lt;cmd name=&ldquo;MessageReplyAll&rdquo; _tip=&ldquo;Compose a reply to all of the recipients of the selected message&rdquo; - accel=&quot;*Control**Shift*r&quot; + accel=&ldquo;g&rdquo; pixtype=&ldquo;pixbuf&rdquo;/&gt;</p>
+<p>&lt;cmd name=&ldquo;MessageReplyList&rdquo; @@ -149,7 +150,7 @@ &lt;cmd name=&ldquo;MessageReplySender&rdquo; _tip=&ldquo;Compose a reply to the sender of the selected message&rdquo; - accel=&quot;*Control*r&quot; + accel=&ldquo;r&rdquo; pixtype=&ldquo;pixbuf&rdquo;/&gt;</p>
 <p>&lt;cmd name=&ldquo;MessageSaveAs&rdquo; [/code]</p>
             </div>
             
@@ -108,7 +99,7 @@
             <div class="push"></div>
         </div>
         <footer class="footer text-center">
-<p>Copyright &copy; 2019 Nick Anderson -
+<p>Copyright &copy; 2022 Nick Anderson -
 <span class="credit">
 	Powered by
 	<a target="_blank" href="https://gohugo.io">Hugo</a>

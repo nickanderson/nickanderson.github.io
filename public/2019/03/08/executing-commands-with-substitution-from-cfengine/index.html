@@ -6,7 +6,11 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<<<<<<< HEAD
 <meta name="generator" content="Hugo 0.57.0" />
+=======
+<meta name="generator" content="Hugo 0.80.0" />
+>>>>>>> a7d29a8a28a02281741be1a86cca3627b7cdd579
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -69,18 +73,15 @@
             <span class="post-date">Mar 8, 2019 </span>
             <div class="post-content">
                 <blockquote>
-<p>
-How can I execute a command that uses command substitution in CFEngine?
-</p>
+<p>How can I execute a command that uses command substitution in CFEngine?</p>
 </blockquote>
 <p>
-On the console I might execute something like this:
-</p>
+On the console I might execute something like this:</p>
 <figure>
 <div class="src src-sh">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
@@ -89,23 +90,22 @@ On the console I might execute something like this:
 </div>
 </div>
 </div>
+<pre class="example">
+/tmp/file-2019-03-08
+</pre>
 <figcaption>
 Example command substitution
 </figcaption>
 </figure>
-<pre class="example">
-/tmp/file-2019-03-08
-</pre>
 <p>
 I recommend not executing commands using substitution. Instead, prepare all that
 you need up front. Get the result of the data command and put it into a cfengine
-variable, then use the cfengine variable directly.
-</p>
+variable, then use the cfengine variable directly.</p>
 <figure>
 <div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -134,10 +134,6 @@ variable, then use the cfengine variable directly.
 </div>
 </div>
 </div>
-<figcaption>
-Example avoiding command substitution
-</figcaption>
-</figure>
 <pre class="example">
 R: CFEngine 3.13.0
 R: Executed /usr/bin/touch /tmp/file-2019-03-08T11:34:37-06:00
@@ -147,14 +143,17 @@ file-2019-03-08T11:34:34-06:00
 file-2019-03-08T11:34:37-06:00	
 file-2019-03-08T11:34:24-06:00
 </pre>
+<figcaption>
+Example avoiding command substitution
+</figcaption>
+</figure>
 <p>
-But, if you really want to use command substitution you can use backticks directly.
-</p>
+But, if you really want to use command substitution you can use backticks directly.</p>
 <figure>
 <div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -181,10 +180,6 @@ But, if you really want to use command substitution you can use backticks direct
 </div>
 </div>
 </div>
-<figcaption>
-Example using backticks for command substitution
-</figcaption>
-</figure>
 <pre class="example">
 R: CFEngine 3.13.0
 R: Executed /usr/bin/touch /tmp/file2-`date --iso-8601=second`
@@ -192,16 +187,17 @@ R: Files:
 file2-2019-03-08T11:36:30-06:00
 file2-2019-03-08T11:36:35-06:00
 </pre>
+<figcaption>
+Example using backticks for command substitution
+</figcaption>
+</figure>
 <blockquote>
-<p>
-Why is it so?
-</p>
+<p>Why is it so?</p>
 </blockquote>
 <p>
 <a href="https://docs.cfengine.com/docs/3.13/reference-language-concepts-variables.html#scalar-referencing-and-expansion">CFEngine expands variables wrapped in <code class="verbatim">$()</code> and <code class="verbatim">${}</code></a> and <a href="https://docs.cfengine.com/docs/3.12/reference-functions.html#function-skipping">functions are skipped</a>
 (e.g. <a href="https://docs.cfengine.com/docs/3.12/reference-functions-execresult.html">execresult()</a> )if they have parameters that are variables that do not
-dereference.
-</p>
+dereference.</p>
 
             </div>
             
@@ -212,7 +208,7 @@ dereference.
             <div class="push"></div>
         </div>
         <footer class="footer text-center">
-<p>Copyright &copy; 2019 Nick Anderson -
+<p>Copyright &copy; 2022 Nick Anderson -
 <span class="credit">
 	Powered by
 	<a target="_blank" href="https://gohugo.io">Hugo</a>

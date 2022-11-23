@@ -1,22 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>debian on </title>
     <link>https://cmdln.org/tags/debian/</link>
     <description>Recent content in debian on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 07 Apr 2010 15:04:03 +0000</lastBuildDate>
-    
-	<atom:link href="https://cmdln.org/tags/debian/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 07 Apr 2010 15:04:03 +0000</lastBuildDate><atom:link href="https://cmdln.org/tags/debian/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Keychain: a love once forgotten now found</title>
       <link>https://cmdln.org/2010/04/07/keychain-a-love-once-forgotten-now-found/</link>
       <pubDate>Wed, 07 Apr 2010 15:04:03 +0000</pubDate>
       
       <guid>https://cmdln.org/2010/04/07/keychain-a-love-once-forgotten-now-found/</guid>
-      <description>I don&amp;#8217;t know how many of you know that I am a recovering gentoo user. One of the staples of my desktop used to be keychain. Keychain is a simple wrapper for ssh-agent and gpg-agent. It eases the use of a single long running agent per system instead of per login session. For some reason this tool had fallen out of my basket when I switched to debian several years ago.</description>
+      <description>I don’t know how many of you know that I am a recovering gentoo user. One of the staples of my desktop used to be keychain. Keychain is a simple wrapper for ssh-agent and gpg-agent. It eases the use of a single long running agent per system instead of per login session. For some reason this tool had fallen out of my basket when I switched to debian several years ago.</description>
     </item>
     
     <item>
@@ -25,7 +21,7 @@
       <pubDate>Sat, 01 Aug 2009 18:50:59 +0000</pubDate>
       
       <guid>https://cmdln.org/2009/08/01/debian-adopting-time-based-freeze/</guid>
-      <description>Debian is departing (if ever so slightly) from the historical mantra &amp;#8220;It ships when its ready&amp;#8221;.
+      <description>Debian is departing (if ever so slightly) from the historical mantra “It ships when its ready”.
 Looks as if Debian has decided time based freeze schedules will help them better manage time. Note they are not adopting time based releases, only the freeze is time based. I personally think this is a good thing. It will still ship when its ready but at least there will be some semblance of a time line for new releases.</description>
     </item>
     
@@ -36,7 +32,7 @@ Looks as if Debian has decided time based freeze schedules will help them better
       
       <guid>https://cmdln.org/2008/11/19/debian-etccrond-gotcha/</guid>
       <description>I typically use /etc/cron.d to store all of my system crontabs. I recently ran into an issue that I had either not run into before, or fixed and paid no attention to. Files stored in /etc/cron.d/ or any /etc/cron.* directory need to adhear to the run-parts Debian cron script namespace which consists is
-(^[a-z0-9][a-z0-9-]*$)  for the regex impared this does not include the dot character. If you have a file in /etc/cron.</description>
+for the regex impared this does not include the dot character. If you have a file in /etc/cron.</description>
     </item>
     
     <item>
@@ -45,7 +41,7 @@ Looks as if Debian has decided time based freeze schedules will help them better
       <pubDate>Sat, 19 Apr 2008 05:33:14 +0000</pubDate>
       
       <guid>https://cmdln.org/2008/04/18/purge-previously-uninstalled-packages-in-debian/</guid>
-      <description>&lt;p&gt;Recently I ordered a server with Debian etch. Unfortunately during testing I noticed that startx was on the system, along with a whole slew of other junk that I don&amp;#8217;t generally want on a fresh server. I wanted to remove all of the cruft but I didn&amp;#8217;t have the exact package list.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Recently I ordered a server with Debian etch. Unfortunately during testing I noticed that startx was on the system, along with a whole slew of other junk that I don’t generally want on a fresh server. I wanted to remove all of the cruft but I didn’t have the exact package list.&lt;/p&gt;</description>
     </item>
     
   </channel>

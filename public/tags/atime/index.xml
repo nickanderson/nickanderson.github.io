@@ -1,22 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>atime on </title>
     <link>https://cmdln.org/tags/atime/</link>
     <description>Recent content in atime on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 07 Apr 2008 23:16:44 +0000</lastBuildDate>
-    
-	<atom:link href="https://cmdln.org/tags/atime/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 07 Apr 2008 23:16:44 +0000</lastBuildDate><atom:link href="https://cmdln.org/tags/atime/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ctime, atime, and mtime</title>
       <link>https://cmdln.org/2008/04/07/ctime-atime-and-mtime/</link>
       <pubDate>Mon, 07 Apr 2008 23:16:44 +0000</pubDate>
       
       <guid>https://cmdln.org/2008/04/07/ctime-atime-and-mtime/</guid>
-      <description>&lt;p&gt;It is important to distinguish between a file or directory&amp;#8217;s change time (ctime), access time (atime), and modify time (mtime).&lt;/p&gt;</description>
+      <description>&lt;p&gt;It is important to distinguish between a file or directory’s change time (ctime), access time (atime), and modify time (mtime).&lt;/p&gt;</description>
     </item>
     
   </channel>

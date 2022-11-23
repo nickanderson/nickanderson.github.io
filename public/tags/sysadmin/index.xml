@@ -1,15 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>sysadmin on </title>
     <link>https://cmdln.org/tags/sysadmin/</link>
     <description>Recent content in sysadmin on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 06 Dec 2012 15:01:13 +0000</lastBuildDate>
-    
-	<atom:link href="https://cmdln.org/tags/sysadmin/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 06 Dec 2012 15:01:13 +0000</lastBuildDate><atom:link href="https://cmdln.org/tags/sysadmin/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Quick Tip: Drilling into zenoss data with zendmd</title>
       <link>https://cmdln.org/2012/12/06/quick-tip-drilling-into-zenoss-data-with-zendmd/</link>
@@ -28,7 +24,7 @@
       <description>Are you going to LinuxCon/CloudOpen 2012? I am, and I think I have settled on my picks (at least until I look at the schedule again, lots of great options).
 Special thanks to CFEngine for sponsering me!
 Here are my picks for the minute.
- Building the Open Cloud &amp;#8211; Mark Hinkle, Citrix{#9046eff8494ef50f48da95349905592e} The OpenNebula Cloud Platform for Data Center Virtualization &amp;#8211; Carlos Martin, OpenNebula{#5561a1f9b3d063dcca4b7abdc5dbc44b} Cloning SysAdmins with the Cloud and Juju &amp;#8211; Clint Byrum, Canonical{#82e5d5410f32e11be9bd9bddf2b81570} A Collaborative Approach to Managing Linux Configurations &amp;#8211; Diego Zamboni, CFEngine{#da5dea5f6f017f925dac66eec964f13f} Building FOSS Clouds &amp;#8211; Joe Brockmeier, Citrix{#c28982d2a4f52cbfbb4000ce030a1771} Automation and DevOps Best Practices &amp;#8211; Rob Hirschfeld, Dell{#f0cd279b854c642d12e7d531c68c53f0} Scaling Configuration Management Across Data Center and Cloud &amp;#8211; Mark Burgess, CFEngine{#e9936ee3a0369080a61b61f5eb9a88d4} Editing with vi: Advanced Topics, Part I &amp;#8211; Aleksey Tsaloikhin, Vertical Sysadmin, Inc.</description>
+ Building the Open Cloud – Mark Hinkle, Citrix{#9046eff8494ef50f48da95349905592e} The OpenNebula Cloud Platform for Data Center Virtualization – Carlos Martin, OpenNebula{#5561a1f9b3d063dcca4b7abdc5dbc44b} Cloning SysAdmins with the Cloud and Juju – Clint Byrum, Canonical{#82e5d5410f32e11be9bd9bddf2b81570} A Collaborative Approach to Managing Linux Configurations – Diego Zamboni, CFEngine{#da5dea5f6f017f925dac66eec964f13f} Building FOSS Clouds – Joe Brockmeier, Citrix{#c28982d2a4f52cbfbb4000ce030a1771} Automation and DevOps Best Practices – Rob Hirschfeld, Dell{#f0cd279b854c642d12e7d531c68c53f0} Scaling Configuration Management Across Data Center and Cloud – Mark Burgess, CFEngine{#e9936ee3a0369080a61b61f5eb9a88d4} Editing with vi: Advanced Topics, Part I – Aleksey Tsaloikhin, Vertical Sysadmin, Inc.</description>
     </item>
     
     <item>
@@ -37,7 +33,7 @@ Here are my picks for the minute.
       <pubDate>Thu, 29 Mar 2012 15:04:25 +0000</pubDate>
       
       <guid>https://cmdln.org/2012/03/29/review-learning-cfengine-3/</guid>
-      <description>I just finished reading the final release of Diego Zambonis&amp;#8217; Learning CFEngine 3. I can&amp;#8217;t recommend this book enough. If your just learning CFEngine 3, if you are versed but not an expert and you like CFEngine you will like this book. If you meet all those criteria and you don&amp;#8217;t like the book, I&amp;#8217;ll buy you a beer if we ever meet. It&amp;#8217;s well worth the 20 dollars, or 14 if you want the ebook (DRM FREE!</description>
+      <description>I just finished reading the final release of Diego Zambonis’ Learning CFEngine 3. I can’t recommend this book enough. If your just learning CFEngine 3, if you are versed but not an expert and you like CFEngine you will like this book. If you meet all those criteria and you don’t like the book, I’ll buy you a beer if we ever meet. It’s well worth the 20 dollars, or 14 if you want the ebook (DRM FREE!</description>
     </item>
     
     <item>
@@ -46,7 +42,7 @@ Here are my picks for the minute.
       <pubDate>Mon, 27 Feb 2012 20:19:39 +0000</pubDate>
       
       <guid>https://cmdln.org/2012/02/27/setup-encfs-on-dropbox-for-boxcryptor-with-cfengine/</guid>
-      <description>Here is an easy way to configure encfs with dropbox that is compatible with boxcryptor. Boxcryptor makes Windows, Mac Android, and IOS applications to assist you in accessing data that you have stored in encfs. They do require that you create your encfs with some specific options: Cipher algorithm: AES, Plaintext or Stream encrypted filenames, No filename initialization vector chaining, No per-file initialization vectors, No external IV chaining, No block MAC headers, No per-block random bytes.</description>
+      <description>Here is an easy way to configure encfswith dropboxthat is compatible with boxcryptor. Boxcryptormakes Windows, Mac Android, and IOS applications to assist you in accessing data that you have stored in encfs. They do require that you create your encfs with some specific options: Cipher algorithm: AES, Plaintext or Stream encrypted filenames, No filename initialization vector chaining, No per-file initialization vectors, No external IV chaining, No block MAC headers, No per-block random bytes.</description>
     </item>
     
     <item>
@@ -66,7 +62,7 @@ Second major improvement is the direct use of ip route del/add to update current
       <pubDate>Thu, 16 Feb 2012 17:01:38 +0000</pubDate>
       
       <guid>https://cmdln.org/2012/02/16/pre-commit-hook-for-git-to-check-cfengine-syntax/</guid>
-      <description>Sometimes I am not so disciplined to run cf-promises on my policy before I commit it. I make a small change and I think I&amp;#8217;m golden, but inevitably that breaks things. I wrote a simple commit hook to check policy syntax and stop you from shooting yourself in the foot. You can find the pre-commit{#a71b90d9d3bb7e4d1f4be225eb124c42527855a3} script over on my github account. I hope you find it useful.</description>
+      <description>Sometimes I am not so disciplined to run cf-promises on my policy before I commit it. I make a small change and I think I’m golden, but inevitably that breaks things. I wrote a simple commit hook to check policy syntax and stop you from shooting yourself in the foot. You can find the pre-commit{#a71b90d9d3bb7e4d1f4be225eb124c42527855a3} script over on my github account. I hope you find it useful.</description>
     </item>
     
     <item>
@@ -75,13 +71,10 @@ Second major improvement is the direct use of ip route del/add to update current
       <pubDate>Thu, 16 Feb 2012 07:05:53 +0000</pubDate>
       
       <guid>https://cmdln.org/2012/02/16/bundles-of-bundles-with-cfengine-3/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;http://www.cmdln.org/images/wp-content/uploads/2012/02/Extrusion-Bundles2.jpg&#34;&gt;&lt;img class=&#34;alignleft size-thumbnail wp-image-936&#34; title=&#34;Bundles of Bundles&#34; src=&#34;http://www.cmdln.org/images/wp-content/uploads/2012/02/Extrusion-Bundles2-150x150.jpg&#34; alt=&#34;&#34; width=&#34;150&#34; height=&#34;150&#34; /&gt;&lt;/a&gt;I&amp;#8217;ve been working more and more with CFEngine lately and I have been slowly building a &lt;a href=&#34;http://www.laurand.net/images/Extrusion%20Bundles2.jpg&#34;&gt;tiny library&lt;/a&gt;. These are all pretty much redhat specific but I welcome patches and comments. Most of the bundles have comments that show usage, if there is interest I may post some example usage later.&lt;/p&gt;
-
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;a href=&#34;http://www.cmdln.org/images/wp-content/uploads/2012/02/Extrusion-Bundles2.jpg&#34;&gt;&lt;!-- raw HTML omitted --&gt;&lt;/a&gt;I’ve been working more and more with CFEngine lately and I have been slowly building a &lt;a href=&#34;http://www.laurand.net/images/Extrusion%20Bundles2.jpg&#34;&gt;tiny library&lt;/a&gt;. These are all pretty much redhat specific but I welcome patches and comments. Most of the bundles have comments that show usage, if there is interest I may post some example usage later.&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;</description>
     </item>
     
     <item>
@@ -99,8 +92,8 @@ Second major improvement is the direct use of ip route del/add to update current
       <pubDate>Thu, 15 Dec 2011 17:02:25 +0000</pubDate>
       
       <guid>https://cmdln.org/2011/12/15/netapp-customer-service-win/</guid>
-      <description>I just wanted to share my NetApp customer service experience since usually people only share negative experiences. I needed to download a mib for a NetApp today. I really don&amp;#8217;t like that I have to register an account just to download a mib but whatever. I was really upset after registering the account and entering a system-id to find that I didn&amp;#8217;t have access to download any mibs.
-I saw that feedback button glaring at me so decided to give it a shot, left a &amp;#8220;very dissatisfied&amp;#8221; about download experience review.</description>
+      <description>I just wanted to share my NetApp customer service experience since usually people only share negative experiences. I needed to download a mib for a NetApp today. I really don’t like that I have to register an account just to download a mib but whatever. I was really upset after registering the account and entering a system-id to find that I didn’t have access to download any mibs.
+I saw that feedback button glaring at me so decided to give it a shot, left a “very dissatisfied” about download experience review.</description>
     </item>
     
     <item>
@@ -110,7 +103,7 @@ I saw that feedback button glaring at me so decided to give it a shot, left a &a
       
       <guid>https://cmdln.org/2011/12/05/remember-to-register-for-xen-day-boston-2011/</guid>
       <description>Just a reminder that Xen Day Boston 2011 is coming up (December 9th).
-There&amp;#8217;s still room to register, but spots are going fast!
+There’s still room to register, but spots are going fast!
 For more information see:
 http://blog.xen.org/index.php/2011/12/02/xen-day-presenters/</description>
     </item>
@@ -123,7 +116,7 @@ http://blog.xen.org/index.php/2011/12/02/xen-day-presenters/</description>
       <guid>https://cmdln.org/2011/11/18/xen-day-lisa11/</guid>
       <description>[
 ]1
-If you&amp;#8217;re going to LISA in Boston this year consider registering for Xen Day on Friday Dec, 9. Registration is free and the schedule looks great.</description>
+If you’re going to LISA in Boston this year consider registering for Xen Day on Friday Dec, 9. Registration is free and the schedule looks great.</description>
     </item>
     
     <item>
@@ -132,7 +125,7 @@ If you&amp;#8217;re going to LISA in Boston this year consider registering for 
       <pubDate>Thu, 28 Jul 2011 03:42:21 +0000</pubDate>
       
       <guid>https://cmdln.org/2011/07/27/lopsa-mentorship-program-cuts-first-teeth/</guid>
-      <description>That&amp;#8217;s right the Mentorship Program is turning 1. Like any youngster we&amp;#8217;re still learning our place in the world. We have had growing pains but we still have a bright future. In the past year we have had three program chairs Jesse Trucks, Ian Parades, and Thomas Leyer (current chair). The core team consists of Lois Bennett, Thomas Leyer and me. I&amp;#8217;d like to share some statistics with you.
+      <description>That’s right the Mentorship Program is turning 1. Like any youngster we’re still learning our place in the world. We have had growing pains but we still have a bright future. In the past year we have had three program chairs Jesse Trucks, Ian Parades, and Thomas Leyer (current chair). The core team consists of Lois Bennett, Thomas Leyer and me. I’d like to share some statistics with you.
 Projects initiated: 15</description>
     </item>
     
@@ -142,7 +135,7 @@ Projects initiated: 15</description>
       <pubDate>Fri, 08 Jul 2011 12:53:16 +0000</pubDate>
       
       <guid>https://cmdln.org/2011/07/08/replace-unity-with-gnome3-and-gnome-shell-in-ubuntu-11-04/</guid>
-      <description>Well I gave unity the old college try in ubuntu 11.04. But last night I just couldn&amp;#8217;t take it any more. There were some small rendering issues occasionally plus some tray programs like workrave had no place to go, at least that I could find anyway and I really need workrave to remind me to change from sitting to standing positions every so often.
+      <description>Well I gave unity the old college try in ubuntu 11.04. But last night I just couldn’t take it any more. There were some small rendering issues occasionally plus some tray programs like workrave had no place to go, at least that I could find anyway and I really need workrave to remind me to change from sitting to standing positions every so often.
 At any rate I decided to try gnome3 and gnome-shell.</description>
     </item>
     
@@ -152,7 +145,7 @@ At any rate I decided to try gnome3 and gnome-shell.</description>
       <pubDate>Tue, 05 Jul 2011 03:39:54 +0000</pubDate>
       
       <guid>https://cmdln.org/2011/07/04/snmp-v3-support-added-to-check_snmp_extend-py/</guid>
-      <description>check_snmp_extend is a python script that I found orphaned on some Nagios forum. It facilitates using snmpd as an agent for executing Nagios plugin scripts. I adopted it made a few changes and tossed it on github a while back. I&amp;#8217;m happy to merge initial snmp v3 support from Lee Whalen</description>
+      <description>check_snmp_extend is a python script that I found orphaned on some Nagios forum. It facilitates using snmpd as an agent for executing Nagios plugin scripts. I adopted it made a few changes and tossed it on github a while back. I’m happy to merge initial snmp v3 support from Lee Whalen</description>
     </item>
     
     <item>
@@ -181,7 +174,7 @@ The phone system Several months back a new phone system was installed at my offi
       <pubDate>Wed, 29 Dec 2010 01:36:17 +0000</pubDate>
       
       <guid>https://cmdln.org/2010/12/28/quick-tip-disable-help-f1-in-gnome-terminal/</guid>
-      <description>I know I have been pretty silent for a while, what can I say it has been busy. I did want to drop this little tip though. I use vim and gnome-terminal a LOT, so I hit ESC quite frequently. Being so close to the F1 key can be hazardous as I tend to mash the ESC key several times. I have no idea where I picked up the habbit of hitting ESC multiple times but its something I have done for a long time and I don&amp;#8217;t see me retraining myself any time soon.</description>
+      <description>I know I have been pretty silent for a while, what can I say it has been busy. I did want to drop this little tip though. I use vim and gnome-terminal a LOT, so I hit ESC quite frequently. Being so close to the F1 key can be hazardous as I tend to mash the ESC key several times. I have no idea where I picked up the habbit of hitting ESC multiple times but its something I have done for a long time and I don’t see me retraining myself any time soon.</description>
     </item>
     
     <item>
@@ -222,9 +215,9 @@ First you need to set ﻿﻿gecko.handlerService.allowRegisterFromDifferentHost 
       
       <guid>https://cmdln.org/2010/08/02/bind-stats-in-centosrhel5/</guid>
       <description>Just a little tip, if your looking for bind stats and your chrooted
-rndc stats will give you
-rndc: &#39;stats&#39; failed: permission denied All you have to do is
-touch /var/named/chroot/var/named/named.stats chown named:named /var/named/chroot/var/named/named.stats Now after you run rndc stats your named.stats fill will be populated with information.</description>
+will give you
+All you have to do is
+Now after you run rndc stats your named.stats fill will be populated with information.</description>
     </item>
     
     <item>
@@ -233,8 +226,8 @@ touch /var/named/chroot/var/named/named.stats chown named:named /var/named/chroo
       <pubDate>Sun, 01 Aug 2010 18:42:29 +0000</pubDate>
       
       <guid>https://cmdln.org/2010/08/01/clear-dns-cache-in-linux/</guid>
-      <description>Had a slightly vexing issue the other day. During a migration the destination host ended up caching some stale DNS entries. I tried a quick restart of nscd to no avail, rebooted the VM, again no joy. Even overriding the host in /etc/hosts wasn&amp;#8217;t working. Took a few minutes of digging but what did work was
-nscd -i hosts . Just something to remember if you ever seem to have a stubborn caching issue, rebooting/restarting wont always solve the issue.</description>
+      <description>Had a slightly vexing issue the other day. During a migration the destination host ended up caching some stale DNS entries. I tried a quick restart of nscd to no avail, rebooted the VM, again no joy. Even overriding the host in /etc/hosts wasn’t working. Took a few minutes of digging but what did work was
+. Just something to remember if you ever seem to have a stubborn caching issue, rebooting/restarting wont always solve the issue.</description>
     </item>
     
     <item>
@@ -264,7 +257,7 @@ I stumbled on the check_domain nagios plugin this weekend so I figured I would m
       
       <guid>https://cmdln.org/2010/07/09/nginx-stub_status-zenpack/</guid>
       <description>Nginx is a great little web server. I have posted previously about using it as a reverse proxy. Weather your using it as a reverse proxy or as a normal webserver you will probably eventually want to know what its doing over time so you can adjust resources as necessary.
-The other day I threw together a Zenpack to make it easier to setup monitoring on new Zenoss instances. It contains a command data source &amp;#8220;check_nginx_ng&amp;#8221; which is a slightly modified version of Chris Kellys check_nginx_ng which in turn was based on check_nginx by Mike Adolphs.</description>
+The other day I threw together a Zenpack to make it easier to setup monitoring on new Zenoss instances. It contains a command data source “check_nginx_ng” which is a slightly modified version of Chris Kellys check_nginx_ng which in turn was based on check_nginx by Mike Adolphs.</description>
     </item>
     
     <item>
@@ -274,8 +267,7 @@ The other day I threw together a Zenpack to make it easier to setup monitoring o
       
       <guid>https://cmdln.org/2010/06/29/autofs-error-logging-fail/</guid>
       <description>Why do applications have such horrible error messages. Non-specific errors are really not any more helpful than not logging at all.
-I was recently setting up autofs for mounting home directories from an nfs server. The little buggers refused to work right. All I was seeing in the logfile was a notice that an attempt was made, and failed.
-attempting to mount entry /home/nanderso failed to mount /home/nanderso   How helpful is that?</description>
+I was recently setting up autofs for mounting home directories from an nfs server. The little buggers refused to work right. All I was seeing in the logfile was a notice that an attempt was made, and failed.</description>
     </item>
     
     <item>
@@ -284,8 +276,9 @@ attempting to mount entry /home/nanderso failed to mount /home/nanderso   How he
       <pubDate>Mon, 24 May 2010 20:00:20 +0000</pubDate>
       
       <guid>https://cmdln.org/2010/05/24/notes-on-zenoss-zenpacks/</guid>
-      <description>Recently I was building a ZenPack for Zenoss. The ZenPack included an Event Command which executed a custom script. I wanted to store the custom script in the ZenPack and I didn&amp;#8217;t want to do anything other than have proper script dependencies in place for it to work.
-${here/ZenPackManager/packs/ZenPacks.community.YOURZENPACK/path}/libexec/yourscript.sh ${dev/manageIp}  Custom scripts can be placed in $ZENHOME/ZenPacks/ZenPacks.CompanyName.Package/Zenpacks/CompanyName/Package/lib but if you want them to be executable place them in libexec.</description>
+      <description>Recently I was building a ZenPack for Zenoss. The ZenPack included an Event Command which executed a custom script. I wanted to store the custom script in the ZenPack and I didn’t want to do anything other than have proper script dependencies in place for it to work.
+Custom scripts can be placed in $ZENHOME/ZenPacks/ZenPacks.CompanyName.Package/Zenpacks/CompanyName/Package/lib but if you want them to be executable place them in libexec.
+Thanks to Matt Ray for telling me how to properly path the Event Command and the note about scripts in libexec getting the executable bit set, the docs I found only specified the lib directory.</description>
     </item>
     
     <item>
@@ -304,9 +297,9 @@ Instead of blowing away your entire current buffer with history -c you can redir
       <pubDate>Wed, 19 May 2010 18:19:27 +0000</pubDate>
       
       <guid>https://cmdln.org/2010/05/19/archive-creation-fail/</guid>
-      <description>I just downloaded EMC Networker client for a 32bit linux box. The file I downloaded was nw74sp5_linux_x86.tar.gz. Of course when I go to extract it &amp;#8230;.
-# tar zxvf ../nw74sp5_linux_x86.tar.gz gzip: stdin: not in gzip format tar: Child returned status 1 tar: Error exit delayed from previous errors  Umm not in gzip format &amp;#8230;.
-# tar xvf ../nw74sp5_linux_x86.tar.gz linux_x86/ linux_x86/lgtoclnt-7.4.5-1.i686.rpm linux_x86/lgtolicm-7.4.5-1.i686.rpm linux_x86/lgtoman-7.4.5-1.i686.rpm ... 🙂</description>
+      <description>I just downloaded EMC Networker client for a 32bit linux box. The file I downloaded was nw74sp5_linux_x86.tar.gz. Of course when I go to extract it ….
+Umm not in gzip format ….
+🙂</description>
     </item>
     
     <item>
@@ -324,7 +317,7 @@ Instead of blowing away your entire current buffer with history -c you can redir
       <pubDate>Sat, 08 May 2010 03:05:12 +0000</pubDate>
       
       <guid>https://cmdln.org/2010/05/07/install-git-on-centos-cpanel-server/</guid>
-      <description>I have a love/hate relationship with cpanel. On one hand it makes low end hosting a breeze, on the other its a huge pita if you want to do anything &amp;#8220;outside the box&amp;#8221;. Perhaps it&amp;#8217;s not such a pain if you work with cpanel frequently. But I find cpanel beneficial because it aids in tasks that I don&amp;#8217;t do frequently, and can offload many of those tasks to less technical people.</description>
+      <description>I have a love/hate relationship with cpanel. On one hand it makes low end hosting a breeze, on the other its a huge pita if you want to do anything “outside the box”. Perhaps it’s not such a pain if you work with cpanel frequently. But I find cpanel beneficial because it aids in tasks that I don’t do frequently, and can offload many of those tasks to less technical people.</description>
     </item>
     
     <item>
@@ -334,8 +327,8 @@ Instead of blowing away your entire current buffer with history -c you can redir
       
       <guid>https://cmdln.org/2010/05/05/very-funny-good-troubleshooting/</guid>
       <description>This deserved a repost. Originally sourced from http://www.csua.berkeley.edu/~ranga/humor/500_mile_email.txt
- To: 0xdeadbeef@petting-zoo.net Subject: The case of the 500-mile email. Date: Tue, 26 Nov 2002 14:57:40 -0800
- Here&amp;rsquo;s a problem that sounded impossible&amp;hellip; I almost regret posting the story to a wide audience, because it makes a great tale over drinks at a conference. :-) The story is slightly altered in order to protect the guilty, elide over irrelevant and boring details, and generally make the whole thing more entertaining.</description>
+  Subject: The case of the 500-mile email. Date: Tue, 26 Nov 2002 14:57:40 -0800
+Here&amp;rsquo;s a problem that sounded impossible&amp;hellip; I almost regret posting the story to a wide audience, because it makes a great tale over drinks at a conference. :-) The story is slightly altered in order to protect the guilty, elide over irrelevant and boring details, and generally make the whole thing more entertaining.</description>
     </item>
     
     <item>
@@ -344,7 +337,7 @@ Instead of blowing away your entire current buffer with history -c you can redir
       <pubDate>Thu, 29 Apr 2010 14:03:23 +0000</pubDate>
       
       <guid>https://cmdln.org/2010/04/29/ubuntu-server-fit-for-production-or-a-change-in-the-sa-guard/</guid>
-      <description>I&amp;#8217;m curious what anyone who reads this blog thinks. My first reaction when someone mentions Ubuntu server is to grab the nearest trout and start slapping. Don&amp;#8217;t get me wrong I like Ubuntu. It&amp;#8217;s very nice on a workstation, and suitable for my wife, mother, aunt, etc &amp;#8230;. But do you really think its good enough for prime time in the data center? According to a server-survey conducted by the Ubuntu marketing team almost 80% of users see Ubuntu as ready for mission critical use.</description>
+      <description>I’m curious what anyone who reads this blog thinks. My first reaction when someone mentions Ubuntu server is to grab the nearest trout and start slapping. Don’t get me wrong I like Ubuntu. It’s very nice on a workstation, and suitable for my wife, mother, aunt, etc …. But do you really think its good enough for prime time in the data center? According to a server-survey conducted by the Ubuntu marketing team almost 80% of users see Ubuntu as ready for mission critical use.</description>
     </item>
     
     <item>
@@ -362,8 +355,8 @@ Instead of blowing away your entire current buffer with history -c you can redir
       <pubDate>Thu, 15 Apr 2010 14:26:35 +0000</pubDate>
       
       <guid>https://cmdln.org/2010/04/15/dell-acquiesces-firmware-locked-controllers/</guid>
-      <description>I don&amp;#8217;t think I bothered to complain here but I sure sent my fair share of nasty grams. In fact Dell became one of my four letter words after I heard they were firmware locking Gen11 servers to only dell drives. Of course it was a mistake but I loved to unashamedly repeat the famous quote from Howard Shoobe.
- &amp;#8220;There are a number of benefits for using Dell qualified drives in particular ensuring a positive experience and protecting our data.</description>
+      <description>I don’t think I bothered to complain here but I sure sent my fair share of nasty grams. In fact Dell became one of my four letter words after I heard they were firmware locking Gen11 servers to only dell drives. Of course it was a mistake but I loved to unashamedly repeat the famous quote from Howard Shoobe.
+ “There are a number of benefits for using Dell qualified drives in particular ensuring a positive experience and protecting our data.</description>
     </item>
     
     <item>
@@ -372,8 +365,8 @@ Instead of blowing away your entire current buffer with history -c you can redir
       <pubDate>Mon, 12 Apr 2010 15:47:43 +0000</pubDate>
       
       <guid>https://cmdln.org/2010/04/12/persistent-ulimit-settings-in-centosrh/</guid>
-      <description>Recently a developer came to me and said they are starting to see failed builds apparently due to open file handle limitations on the build server. In case your not aware, by default there are limitations on users to ensure they don&amp;#8217;t hog the entire resources of a system. Sometimes these limitations need to be adjusted.
-In my case the &amp;#8220;bamboo&amp;#8221; user needed more than 1024 open files on occasion. I determined my system had a maximum number of open files of 1572928.</description>
+      <description>Recently a developer came to me and said they are starting to see failed builds apparently due to open file handle limitations on the build server. In case your not aware, by default there are limitations on users to ensure they don’t hog the entire resources of a system. Sometimes these limitations need to be adjusted.
+In my case the “bamboo” user needed more than 1024 open files on occasion. I determined my system had a maximum number of open files of 1572928.</description>
     </item>
     
     <item>
@@ -382,8 +375,8 @@ In my case the &amp;#8220;bamboo&amp;#8221; user needed more than 1024 open file
       <pubDate>Thu, 08 Apr 2010 17:36:17 +0000</pubDate>
       
       <guid>https://cmdln.org/2010/04/08/mount-linux-nfs-exports-in-osx/</guid>
-      <description>I&amp;#8217;m not a fan of OSX and I try to avoid it with the same veracity that I avoid Windows. But I recently needed to have a Linux NFS export mounted on an OSX server. A simple mount server:/export /mymountpoint didn&amp;#8217;t work and returned &amp;#8220;Operation not permitted&amp;#8221;. After a bit of digging I found the solution.
-I needed to instruct the client to use a privledged port by adding the &amp;#8220;-P&amp;#8221; option.</description>
+      <description>I’m not a fan of OSX and I try to avoid it with the same veracity that I avoid Windows. But I recently needed to have a Linux NFS export mounted on an OSX server. A simple mount server:/export /mymountpoint didn’t work and returned “Operation not permitted”. After a bit of digging I found the solution.
+I needed to instruct the client to use a privledged port by adding the “-P” option.</description>
     </item>
     
     <item>
@@ -392,7 +385,7 @@ I needed to instruct the client to use a privledged port by adding the &amp;#822
       <pubDate>Wed, 07 Apr 2010 15:04:03 +0000</pubDate>
       
       <guid>https://cmdln.org/2010/04/07/keychain-a-love-once-forgotten-now-found/</guid>
-      <description>I don&amp;#8217;t know how many of you know that I am a recovering gentoo user. One of the staples of my desktop used to be keychain. Keychain is a simple wrapper for ssh-agent and gpg-agent. It eases the use of a single long running agent per system instead of per login session. For some reason this tool had fallen out of my basket when I switched to debian several years ago.</description>
+      <description>I don’t know how many of you know that I am a recovering gentoo user. One of the staples of my desktop used to be keychain. Keychain is a simple wrapper for ssh-agent and gpg-agent. It eases the use of a single long running agent per system instead of per login session. For some reason this tool had fallen out of my basket when I switched to debian several years ago.</description>
     </item>
     
     <item>
@@ -412,7 +405,7 @@ On the host console:
       <pubDate>Tue, 06 Apr 2010 14:46:30 +0000</pubDate>
       
       <guid>https://cmdln.org/2010/04/06/error-msg-fail-how-to-enable-telnet-on-centosrhel/</guid>
-      <description>Don&amp;#8217;t even start with me about how telnet is horrid. Out side of my control but I recently had issues trying to enable telnet on a server. Typically its pretty straightforward.
+      <description>Don’t even start with me about how telnet is horrid. Out side of my control but I recently had issues trying to enable telnet on a server. Typically its pretty straightforward.
  yum install telnet-server chkconfig telnet on chkconfig xinetd on service xinetd start  Unfortunately for me this was not working. Every time I tried to telnet to the host after enabling it I would get an error message.</description>
     </item>
     
@@ -422,8 +415,8 @@ On the host console:
       <pubDate>Wed, 31 Mar 2010 17:11:06 +0000</pubDate>
       
       <guid>https://cmdln.org/2010/03/31/automate-sun-ilom-settings/</guid>
-      <description>I recently had a need to push out a few settings to a group of iLOMs on new Sun servers. I really despise using a web interface for everything so I took the ssh route. The first thing I tried to do after determining the commands I needed was to shove the commands in with ssh directly. I quickly became apparent that route just wasn&amp;#8217;t going to work.
-When you log into the iLOM &amp;#8220;daemons&amp;#8221; need to initialize.</description>
+      <description>I recently had a need to push out a few settings to a group of iLOMs on new Sun servers. I really despise using a web interface for everything so I took the ssh route. The first thing I tried to do after determining the commands I needed was to shove the commands in with ssh directly. I quickly became apparent that route just wasn’t going to work.
+When you log into the iLOM “daemons” need to initialize.</description>
     </item>
     
     <item>
@@ -432,7 +425,7 @@ When you log into the iLOM &amp;#8220;daemons&amp;#8221; need to initialize.</de
       <pubDate>Tue, 09 Mar 2010 15:42:06 +0000</pubDate>
       
       <guid>https://cmdln.org/2010/03/09/sysstat-sar-performance-metrics-via-nagios-plugin/</guid>
-      <description>I know I&amp;#8217;ve mentioned how much I love the sysstat package before. I use sar regularly to help with performance diagnostics (Analyzing Linux System Performance And Finding Bottle Necks, CPU Performance Analysis In Linux, Baseline Analysis Is Important, CPU Performance Analysis In Linux Revisited). I wrote this little Nagios plugin to collect the performance metrics that sar collects.
+      <description>I know I’ve mentioned how much I love the sysstat package before. I use sar regularly to help with performance diagnostics (Analyzing Linux System Performance And Finding Bottle Necks, CPU Performance Analysis In Linux, Baseline Analysis Is Important, CPU Performance Analysis In Linux Revisited). I wrote this little Nagios plugin to collect the performance metrics that sar collects.
 I use this plugin with Zenoss and I set any performance thresholds there, more important to me was collecting the information for historical graphing.</description>
     </item>
     
@@ -442,7 +435,7 @@ I use this plugin with Zenoss and I set any performance thresholds there, more i
       <pubDate>Mon, 08 Mar 2010 14:51:23 +0000</pubDate>
       
       <guid>https://cmdln.org/2010/03/08/xenserver-license-check-nagios-nrpe-plugin/</guid>
-      <description>If you hadn&amp;#8217;t already guessed I am a big fan of the Xen hypervisor. Lately I have been using the Citrix XenServer release because it makes it quite palatable for my co-workers. One annoyance that I do have about XenServer is the requirement that you license it (with a free license) every year. If you fail to license it the GUI stops working. Now I hate relying on GUIs but the fact of the matter is others in my team expect to have a working GUI when they need to do something.</description>
+      <description>If you hadn’t already guessed I am a big fan of the Xen hypervisor. Lately I have been using the Citrix XenServer release because it makes it quite palatable for my co-workers. One annoyance that I do have about XenServer is the requirement that you license it (with a free license) every year. If you fail to license it the GUI stops working. Now I hate relying on GUIs but the fact of the matter is others in my team expect to have a working GUI when they need to do something.</description>
     </item>
     
     <item>
@@ -451,7 +444,7 @@ I use this plugin with Zenoss and I set any performance thresholds there, more i
       <pubDate>Fri, 05 Mar 2010 15:17:23 +0000</pubDate>
       
       <guid>https://cmdln.org/2010/03/05/flashback-remote-kernel-logging-with-netconsole-for-fun-and-profit/</guid>
-      <description>Have you ever had a machine that was a bit flaky? You know those ones that occasionally crash and don&amp;#8217;t write anything useful into the log file. Sometimes you can capture those messages with netconsole. Just revisiting a small walk-through I wrote a while back.
+      <description>Have you ever had a machine that was a bit flaky? You know those ones that occasionally crash and don’t write anything useful into the log file. Sometimes you can capture those messages with netconsole. Just revisiting a small walk-through I wrote a while back.
 Remote kernel logging with netconsole for fun and profit</description>
     </item>
     
@@ -462,8 +455,7 @@ Remote kernel logging with netconsole for fun and profit</description>
       
       <guid>https://cmdln.org/2010/03/04/installing-nrpe-on-xenserver/</guid>
       <description>I like to have as little run in dom0 as possible. However some things you really need checked from dom0, like the status of your raid perhaps. Just some quick instructions on getting Nagios NRPE running in XenServer.
- Install EPEL repository and disable it by default (remember we don&amp;#8217;t want to accidentally install unnecessary packages) wget http://download.fedora.redhat.com/pub/epel/5/$(uname -i)/epel-release-5-3.noarch.rpm rpm -hiv epel-release*.rpm sed -i &amp;rsquo;s/enabled=1/enabled=0/g&amp;rsquo; /etc/yum.repos.d/epel.repo 
- Install nrpe and configure it to start on boot yum install &amp;ndash;enablerepo=epel nrpe chkconfig nrpe on</description>
+  Install EPEL repository and disable it by default (remember we don’t want to accidentally install unnecessary packages) wget http://download.fedora.redhat.com/pub/epel/5/$(uname -i)/epel-release-5-3.noarch.rpm rpm -hiv epel-release*.rpm sed -i &amp;rsquo;s/enabled=1/enabled=0/g&#39; /etc/yum.repos.d/epel.repo   Install nrpe and configure it to start on boot yum install &amp;ndash;enablerepo=epel nrpe chkconfig nrpe on   Modify the firewall to allow NRPE connections.</description>
     </item>
     
     <item>

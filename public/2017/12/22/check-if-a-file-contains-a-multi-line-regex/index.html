@@ -6,7 +6,11 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<<<<<<< HEAD
 <meta name="generator" content="Hugo 0.57.0" />
+=======
+<meta name="generator" content="Hugo 0.80.0" />
+>>>>>>> a7d29a8a28a02281741be1a86cca3627b7cdd579
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -69,25 +73,21 @@
             <span class="post-date">Dec 22, 2017 </span>
             <div class="post-content">
                 <blockquote>
-<p>
-Is there any way to do a multiline regex check for a file in CFEngine?
-</p>
+<p>Is there any way to do a multiline regex check for a file in CFEngine?</p>
 </blockquote>
 <p>
 There is no function for searching a file for content. The <a href="https://docs.cfengine.com/docs/master/reference-functions-grep.html"><code class="verbatim">grep()</code> function</a>
 operates on lists, not files. However using <a href="https://docs.cfengine.com/docs/master/reference-functions-readfile.html"><code class="verbatim">readfile()</code></a> and <a href="https://docs.cfengine.com/docs/master/reference-functions-regcmp.html"><code class="verbatim">regcmp()</code></a> I was
-sill able to search for a multi-line string using only native functionaity
-</p>
+sill able to search for a multi-line string using only native functionaity</p>
 <p>
 In the example below we first create a file with content that spans multiple
 lines. Then we read that file content into a variable and use a regular
-expression on the variable content.
-</p>
+expression on the variable content.</p>
 <figure>
 <div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -177,8 +177,7 @@ Example showing how to search for a mutliline pattern in a file using native fun
 </figcaption>
 </figure>
 <p>
-Results in this output:
-</p>
+Results in this output:</p>
 <pre class="example">
 R: CFEngine 3.11.0
 R: /tmp/example.txt contains:
@@ -190,8 +189,7 @@ R: I see no droids.
 </pre>
 <p>
 You may also want to check out this post about <a href="https://watson-wilson.ca/blog/2015/08/20/build-better-regular-expressions-in-cfengine/">building better regular
-expressions in CFEngine</a> from <a href="https://www.linkedin.com/in/neilhwatson/">Neil Watson</a>.
-</p>
+expressions in CFEngine</a> from <a href="https://www.linkedin.com/in/neilhwatson/">Neil Watson</a>.</p>
 
             </div>
             
@@ -202,7 +200,7 @@ expressions in CFEngine</a> from <a href="https://www.linkedin.com/in/neilhwatso
             <div class="push"></div>
         </div>
         <footer class="footer text-center">
-<p>Copyright &copy; 2019 Nick Anderson -
+<p>Copyright &copy; 2022 Nick Anderson -
 <span class="credit">
 	Powered by
 	<a target="_blank" href="https://gohugo.io">Hugo</a>

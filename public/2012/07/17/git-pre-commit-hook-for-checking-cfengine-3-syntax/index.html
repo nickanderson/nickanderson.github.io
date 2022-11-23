@@ -6,7 +6,11 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<<<<<<< HEAD
 <meta name="generator" content="Hugo 0.57.0" />
+=======
+<meta name="generator" content="Hugo 0.80.0" />
+>>>>>>> a7d29a8a28a02281741be1a86cca3627b7cdd579
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -68,10 +72,8 @@
             <h1><a href="https://cmdln.org/2012/07/17/git-pre-commit-hook-for-checking-cfengine-3-syntax/">Git pre-commit hook for checking CFEngine 3 syntax</a></h1>
             <span class="post-date">Jul 17, 2012 </span>
             <div class="post-content">
-                <p>I was inspired by <a href="http://worrbase.com">William Orr&#8217;s</a> <a href="https://cfengine.com/forum/read.php?3,26459">svn commit hook</a> and looked up the magic needed to flesh out the <a href="https://github.com/cfengine/design-center/tree/master/tools/git-pre-commit">git pre-commit hook</a> I submitted to the <a href="https://github.com/cfengine/design-center/">Design Center</a> a while back.<a href="http://www.cmdln.org/images/wp-content/uploads/2012/07/git_cf3.png"><img class="aligncenter size-medium wp-image-1049" title="git_cf3" src="http://www.cmdln.org/images/wp-content/uploads/2012/07/git_cf3-300x92.png" alt="" width="300" height="92" srcset="http://www.cmdln.org/images/wp-content/uploads/2012/07/git_cf3-300x92.png 300w, http://www.cmdln.org/images/wp-content/uploads/2012/07/git_cf3.png 423w" sizes="(max-width: 300px) 100vw, 300px" /></a></p>
-
-<p>Now the index is checked out to its own temporary directory and cf-promises validates promises.cf and failsafe.cf before allowing the commit to proceed. Now you won&#8217;t get syntax errors if you have forgotten to add a new policy file to the index but its already included in your body common control inputs list. If your using a generated inputs list then you might want to add a separate file that includes everything for syntax checks. Be sure to include that file in the checkfiles list.</p>
-
+                <p>I was inspired by <a href="http://worrbase.com">William Orr’s</a> <a href="https://cfengine.com/forum/read.php?3,26459">svn commit hook</a> and looked up the magic needed to flesh out the <a href="https://github.com/cfengine/design-center/tree/master/tools/git-pre-commit">git pre-commit hook</a> I submitted to the <a href="https://github.com/cfengine/design-center/">Design Center</a> a while back.<a href="http://www.cmdln.org/images/wp-content/uploads/2012/07/git_cf3.png"><!-- raw HTML omitted --></a></p>
+<p>Now the index is checked out to its own temporary directory and cf-promises validates promises.cf and failsafe.cf before allowing the commit to proceed. Now you won’t get syntax errors if you have forgotten to add a new policy file to the index but its already included in your body common control inputs list. If your using a generated inputs list then you might want to add a separate file that includes everything for syntax checks. Be sure to include that file in the checkfiles list.</p>
 <p>I would like to see a pre-receive version of this some day.</p>
 
             </div>
@@ -83,7 +85,7 @@
             <div class="push"></div>
         </div>
         <footer class="footer text-center">
-<p>Copyright &copy; 2019 Nick Anderson -
+<p>Copyright &copy; 2022 Nick Anderson -
 <span class="credit">
 	Powered by
 	<a target="_blank" href="https://gohugo.io">Hugo</a>

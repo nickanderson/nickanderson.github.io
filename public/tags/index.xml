@@ -1,15 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on </title>
     <link>https://cmdln.org/tags/</link>
     <description>Recent content in Tags on </description>
     <generator>Hugo -- gohugo.io</generator>
+<<<<<<< HEAD
     <lastBuildDate>Wed, 14 Aug 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://cmdln.org/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
+=======
+    <lastBuildDate>Wed, 14 Aug 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://cmdln.org/tags/index.xml" rel="self" type="application/rss+xml" />
+>>>>>>> a7d29a8a28a02281741be1a86cca3627b7cdd579
     <item>
       <title>cfengine3</title>
       <link>https://cmdln.org/tags/cfengine3/</link>

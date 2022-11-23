@@ -6,7 +6,11 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<<<<<<< HEAD
 <meta name="generator" content="Hugo 0.57.0" />
+=======
+<meta name="generator" content="Hugo 0.80.0" />
+>>>>>>> a7d29a8a28a02281741be1a86cca3627b7cdd579
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -68,51 +72,28 @@
             <h1><a href="https://cmdln.org/2015/08/20/cfengine-fixin-my-freenas/">CFEngine fixin my FreeNAS</a></h1>
             <span class="post-date">Aug 21, 2015 </span>
             <div class="post-content">
-                <p>I recently built a new file server and I based it on the well renowned <a href="http://www.freenas.org/" target="_blank">FreeNAS</a> by <a href="https://www.ixsystems.com/" target="_blank">iXsystems</a>. It&#8217;s been pretty solid over the past few weeks but today I ran into an issue. The web ui stopped responding. Actually it turned out that the django service had stopped. Well, that was the perfect opportunity to use CFEngine to make sure I never have the issue again.</p>
-
-<p><img class="alignright size-full wp-image-1210" src="/images/wp-content/uploads/2015/08/cfenginefreebsd.png" alt="cfenginefreebsd" width="900" height="600" srcset="/images/wp-content/uploads/2015/08/cfenginefreebsd.png 900w, /images/wp-content/uploads/2015/08/cfenginefreebsd-300x200.png 300w" sizes="(max-width: 900px) 100vw, 900px" /></p>
-
-<p>I grabbed the <a href="http://www.cfengineers.net/files/packages/cfengine-community/3.7.0/cfengine-community-3.7.0_1-freebsd_9.x_amd64.tbz">cfengine community 3.7.0 package</a> for Freebsd 9.3 package from <a href="http://www.cfengineers.net" target="_blank">CFEngineers.net</a> (thanks guys!) and it installed without issue.</p>
-
-<pre>wget http://www.cfengineers.net/files/packages/cfengine-community/3.7.0/cfengine-community-3.7.0_1-freebsd_9.x_amd64.tbz
-pkg_add cfengine-community-3.7.0_1-freebsd_9.x_amd64.tbz</pre>
-
+                <p>I recently built a new file server and I based it on the well renowned <!-- raw HTML omitted -->FreeNAS<!-- raw HTML omitted --> by <!-- raw HTML omitted -->iXsystems<!-- raw HTML omitted -->. It’s been pretty solid over the past few weeks but today I ran into an issue. The web ui stopped responding. Actually it turned out that the django service had stopped. Well, that was the perfect opportunity to use CFEngine to make sure I never have the issue again.</p>
+<p><!-- raw HTML omitted --></p>
+<p>I grabbed the <a href="http://www.cfengineers.net/files/packages/cfengine-community/3.7.0/cfengine-community-3.7.0_1-freebsd_9.x_amd64.tbz">cfengine community 3.7.0 package</a> for Freebsd 9.3 package from <!-- raw HTML omitted -->CFEngineers.net<!-- raw HTML omitted --> (thanks guys!) and it installed without issue.</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>I just wanted to experiment locally instead of bootstrapping to a policy server so I grabbed the <a href="https://cfengine-package-repos.s3.amazonaws.com/tarballs/cfengine-masterfiles-3.7.0-2.tar.gz">masterfiles source tarball for 3.7.0</a> and installed the masterfiles policy framework.</p>
-
-<pre>tar zxvf cfengine-masterfiles-3.7.0-2.tar.gz
-cd cfengine-masterfiles-3.7.0/
-./configure
-make install</pre>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>Since I am only going to have local policy for now I went ahead and linked inputs to masterfiles.</p>
-
-<pre>rm -rf /var/cfengine/inputs
-ln -s /var/cfengine/masterfiles /var/cfengine/inputs</pre>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>And then I enabled cfengine.</p>
-
-<pre>cfengine3_enable="YES" &gt;&gt; /etc/rc.conf
-service cfengine3.sh start</pre>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>I enabled autorun for convenience.</p>
-
-<pre>sed -i 's/.*services_autorun.*expression.*/      "services_autorun" expression =&gt; "any";/' /var/cfengine/masterfiles/controls/3.7/def.cf</pre>
-
+<!-- raw HTML omitted -->
 <p>And then I installed <a href="https://gist.github.com/nickanderson/a46fdf764da3370e2bce">this policy</a> into services/autorun.</p>
-
-<pre data-wpview-marker="https%3A%2F%2Fgist.github.com%2Fnickanderson%2Fa46fdf764da3370e2bce">wget https://gist.githubusercontent.com/nickanderson/a46fdf764da3370e2bce/raw/a9116f64f8cf6158738a82e136de676325ab0a0e/freenas.cf -O /var/cfengine/masterfiles/services/autorun/freenas.cf</pre>
-
+<!-- raw HTML omitted -->
 <p>Now any time django decides to die, CFEngine will come along and fix it up.</p>
-
-<pre>[root@freenas] ~# service django stop
-Stopping django.
-Waiting for PIDS: 17087.
-[root@freenas] ~# cf-agent -K
-[root@freenas] ~# service django status
-django is running as pid 17203.
-[root@freenas] ~# tail /var/log</pre>
-
-<p>Maybe I&#8217;ll do some Software Defined Storage :-p</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>Maybe I’ll do some Software Defined Storage :-p</p>
 
             </div>
             
@@ -123,7 +104,7 @@ django is running as pid 17203.
             <div class="push"></div>
         </div>
         <footer class="footer text-center">
-<p>Copyright &copy; 2019 Nick Anderson -
+<p>Copyright &copy; 2022 Nick Anderson -
 <span class="credit">
 	Powered by
 	<a target="_blank" href="https://gohugo.io">Hugo</a>

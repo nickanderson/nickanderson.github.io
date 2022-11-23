@@ -1,15 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>cable on </title>
     <link>https://cmdln.org/tags/cable/</link>
     <description>Recent content in cable on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 08 Sep 2009 04:47:45 +0000</lastBuildDate>
-    
-	<atom:link href="https://cmdln.org/tags/cable/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 08 Sep 2009 04:47:45 +0000</lastBuildDate><atom:link href="https://cmdln.org/tags/cable/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Service Providors and Big Brother Wag Each Others Tails Again</title>
       <link>https://cmdln.org/2009/09/07/service-providors-and-big-brother-wag-each-others-tails-again/</link>
@@ -17,7 +13,7 @@
       
       <guid>https://cmdln.org/2009/09/07/service-providors-and-big-brother-wag-each-others-tails-again/</guid>
       <description>I love how there is all of this squabbling about what the definition of broadband is.
-&amp;#8220;The Commission should continue to look at maximum advertised speed rather than some measure of &amp;#8216;actual&amp;#8217; speed,&amp;#8221;
+“The Commission should continue to look at maximum advertised speed rather than some measure of ‘actual’ speed,”
 and
 consumers have “access to broadband capability” whenever they have the opportunity to
 purchase services and equipment that enable them to access the Internet at any time and use the

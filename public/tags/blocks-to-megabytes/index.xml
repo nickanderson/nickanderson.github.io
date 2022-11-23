@@ -1,15 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>blocks to megabytes on </title>
     <link>https://cmdln.org/tags/blocks-to-megabytes/</link>
     <description>Recent content in blocks to megabytes on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 14 Apr 2008 02:29:17 +0000</lastBuildDate>
-    
-	<atom:link href="https://cmdln.org/tags/blocks-to-megabytes/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 14 Apr 2008 02:29:17 +0000</lastBuildDate><atom:link href="https://cmdln.org/tags/blocks-to-megabytes/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Analyzing linux system performance and finding bottle necks</title>
       <link>https://cmdln.org/2008/04/13/analyzing-linux-system-performance-and-finding-bottle-necks/</link>

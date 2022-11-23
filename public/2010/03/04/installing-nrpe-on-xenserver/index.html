@@ -6,7 +6,11 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<<<<<<< HEAD
 <meta name="generator" content="Hugo 0.57.0" />
+=======
+<meta name="generator" content="Hugo 0.80.0" />
+>>>>>>> a7d29a8a28a02281741be1a86cca3627b7cdd579
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -69,25 +73,30 @@
             <span class="post-date">Mar 4, 2010 </span>
             <div class="post-content">
                 <p>I like to have as little run in dom0 as possible. However some things you really need checked from dom0, like the status of your raid perhaps. Just some quick instructions on getting Nagios NRPE running in XenServer.</p>
-
 <ol>
-<li><p>Install EPEL repository and disable it by default (remember we don&#8217;t want to accidentally install unnecessary packages) <pre class="brush: bash; title: ; notranslate" title="">wget <a href="http://download.fedora.redhat.com/pub/epel/5/$(uname">http://download.fedora.redhat.com/pub/epel/5/$(uname</a> -i)/epel-release-5-3.noarch.rpm
+<li>
+<p>Install EPEL repository and disable it by default (remember we don’t want to accidentally install unnecessary packages) <!-- raw HTML omitted -->wget <a href="http://download.fedora.redhat.com/pub/epel/5/$(uname">http://download.fedora.redhat.com/pub/epel/5/$(uname</a> -i)/epel-release-5-3.noarch.rpm
 rpm -hiv epel-release*.rpm
-sed -i &rsquo;s/enabled=1/enabled=0/g&rsquo; /etc/yum.repos.d/epel.repo
-</pre></p></li>
-
-<li><p>Install nrpe and configure it to start on boot <pre class="brush: bash; title: ; notranslate" title="">yum install &ndash;enablerepo=epel nrpe
+sed -i &rsquo;s/enabled=1/enabled=0/g' /etc/yum.repos.d/epel.repo
+<!-- raw HTML omitted --></p>
+</li>
+<li>
+<p>Install nrpe and configure it to start on boot <!-- raw HTML omitted -->yum install &ndash;enablerepo=epel nrpe
 chkconfig nrpe on
-</pre></p></li>
-
-<li><p>Modify the firewall to allow NRPE connections. Add the following before the REJECT line in /etc/sysconfig/iptables <pre class="brush: bash; title: ; notranslate" title="">-A RH-Firewall-1-INPUT -m state &ndash;state NEW -m tcp -p tcp &ndash;dport 5666 -j ACCEPT
-</pre></p></li>
-
-<li><p>Restart your firewall and start nrpe <pre class="brush: bash; title: ; notranslate" title="">restart your firewall , and start nrpe
+<!-- raw HTML omitted --></p>
+</li>
+<li>
+<p>Modify the firewall to allow NRPE connections. Add the following before the REJECT line in /etc/sysconfig/iptables <!-- raw HTML omitted -->-A RH-Firewall-1-INPUT -m state &ndash;state NEW -m tcp -p tcp &ndash;dport 5666 -j ACCEPT
+<!-- raw HTML omitted --></p>
+</li>
+<li>
+<p>Restart your firewall and start nrpe <!-- raw HTML omitted -->restart your firewall , and start nrpe
 /etc/init.d/iptables restart &amp;&amp; /etc/init.d/nrpe start
-</pre></p></li>
-
-<li><p>Configure nrpe like normal and have fun</p></li>
+<!-- raw HTML omitted --></p>
+</li>
+<li>
+<p>Configure nrpe like normal and have fun</p>
+</li>
 </ol>
 
             </div>
@@ -99,7 +108,7 @@ chkconfig nrpe on
             <div class="push"></div>
         </div>
         <footer class="footer text-center">
-<p>Copyright &copy; 2019 Nick Anderson -
+<p>Copyright &copy; 2022 Nick Anderson -
 <span class="credit">
 	Powered by
 	<a target="_blank" href="https://gohugo.io">Hugo</a>

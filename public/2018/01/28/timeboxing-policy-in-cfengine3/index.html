@@ -6,7 +6,11 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<<<<<<< HEAD
 <meta name="generator" content="Hugo 0.57.0" />
+=======
+<meta name="generator" content="Hugo 0.80.0" />
+>>>>>>> a7d29a8a28a02281741be1a86cca3627b7cdd579
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -69,19 +73,16 @@
             <span class="post-date">Jan 28, 2018 </span>
             <div class="post-content">
                 <blockquote>
-<p>
-How can I make cfengine do things during a specific time window?
-</p>
+<p>How can I make cfengine do things during a specific time window?</p>
 </blockquote>
 <p>
 You can find &#34;time based classes&#34; in the <code>cf-promises --show-classes</code> output,
 they are easily identified because they are tagged with <code class="verbatim">time_based</code>. For
-example:
-</p>
+example:</p>
 <div class="src src-sh">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-sh" data-lang="sh">  cf-promises --show-classes <span class="p">|</span> grep time</code></pre></td></tr></table>
@@ -120,12 +121,11 @@ action if_elapsed</code> is based on promise locking. So that restriction will n
 maintained if you run the agent without locks. Usually that&#39;s fine, but in some
 cases you might want a bit more protection to be sure that the promise does not
 execute more than once within a given time period. If you need higher assurance
-you can use persistent classes.
-</p>
+you can use persistent classes.</p>
 <div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -187,12 +187,12 @@ you can use persistent classes.
 </div>
 </div>
 <pre class="example">
-  > $ sudo cf-agent -KIf ./main.cf                                                                         
+  &gt; $ sudo cf-agent -KIf ./main.cf                                                                         
   R: Hello, its during the 8:00am hour here. Specifically its Thu Mar  2 08:30:55 2017
   R: This report will only be emitted once during the 8:00 hour.
   R: This report will only be emitted once during the 8:00 hour. Even if locks are skipped.
                                                                                                           
-  > $ sudo cf-agent -KIf ./main.cf                                                                         
+  &gt; $ sudo cf-agent -KIf ./main.cf                                                                         
   R: Hello, its during the 8:00am hour here. Specifically its Thu Mar  2 08:30:59 2017
   R: This report will only be emitted once during the 8:00 hour.
 </pre>
@@ -200,13 +200,12 @@ you can use persistent classes.
 Generally I do not recommend using time based classes as a direct guard because
 it can complicate testing or ad-hoc execution. I typically recommend setting a
 class based on the time class, and then using that soft class as your guard. I
-think this example will make it more clear:
-</p>
+think this example will make it more clear:</p>
 <figure>
 <div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -303,7 +302,7 @@ Example showing differences between locking and persistent classes
 </figure>
 <pre class="example">
 # Note its during 8am hour, so no reports
-> $ sudo cf-agent -KIf ./main.cf                                                                                                                                                                                           
+&gt; $ sudo cf-agent -KIf ./main.cf                                                                                                                                                                                           
 R: Hello, its Thu Mar  2 08:40:21 2017
 
 # We get both reports becasue I manually defined
@@ -311,7 +310,7 @@ R: Hello, its Thu Mar  2 08:40:21 2017
 # only be defined during the 8am hour.
 # This is useful for testing or ad-hoc execution.
 
-> $ sudo cf-agent -KIf ./main.cf --define maintanance_window                                                                                                                                                                                                                                                                                                         
+&gt; $ sudo cf-agent -KIf ./main.cf --define maintanance_window                                                                                                                                                                                                                                                                                                         
 R: Hello, its Thu Mar  2 08:42:41 2017
 R: This report will only be emitted once during the maintanaince window unless locks are cleared.
 R: This report will only be emitted once during the maintanance window. Even if locks are skipped.
@@ -319,13 +318,12 @@ R: This report will only be emitted once during the maintanance window. Even if 
 # Note how the persistent class is effective even when
 # promise locks are cleared.
 
-> $ sudo cf-agent -KIf ./main.cf --define maintanance_window                                                                                                                                                                                                                                                                                                         
+&gt; $ sudo cf-agent -KIf ./main.cf --define maintanance_window                                                                                                                                                                                                                                                                                                         
 R: Hello, its Thu Mar  2 08:42:56 2017
 R: This report will only be emitted once during the maintanaince window unless locks are cleared.
 </pre>
 <p>
-Hope this helps.
-</p>
+Hope this helps.</p>
 
             </div>
             
@@ -336,7 +334,7 @@ Hope this helps.
             <div class="push"></div>
         </div>
         <footer class="footer text-center">
-<p>Copyright &copy; 2019 Nick Anderson -
+<p>Copyright &copy; 2022 Nick Anderson -
 <span class="credit">
 	Powered by
 	<a target="_blank" href="https://gohugo.io">Hugo</a>

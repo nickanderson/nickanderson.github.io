@@ -1,22 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>flashback on </title>
     <link>https://cmdln.org/tags/flashback/</link>
     <description>Recent content in flashback on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 05 Mar 2010 15:17:23 +0000</lastBuildDate>
-    
-	<atom:link href="https://cmdln.org/tags/flashback/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 05 Mar 2010 15:17:23 +0000</lastBuildDate><atom:link href="https://cmdln.org/tags/flashback/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Flashback: Remote kernel logging with netconsole for fun and profit</title>
       <link>https://cmdln.org/2010/03/05/flashback-remote-kernel-logging-with-netconsole-for-fun-and-profit/</link>
       <pubDate>Fri, 05 Mar 2010 15:17:23 +0000</pubDate>
       
       <guid>https://cmdln.org/2010/03/05/flashback-remote-kernel-logging-with-netconsole-for-fun-and-profit/</guid>
-      <description>Have you ever had a machine that was a bit flaky? You know those ones that occasionally crash and don&amp;#8217;t write anything useful into the log file. Sometimes you can capture those messages with netconsole. Just revisiting a small walk-through I wrote a while back.
+      <description>Have you ever had a machine that was a bit flaky? You know those ones that occasionally crash and don’t write anything useful into the log file. Sometimes you can capture those messages with netconsole. Just revisiting a small walk-through I wrote a while back.
 Remote kernel logging with netconsole for fun and profit</description>
     </item>
     
@@ -36,7 +32,7 @@ Vim customization for python</description>
       <pubDate>Wed, 03 Mar 2010 14:31:37 +0000</pubDate>
       
       <guid>https://cmdln.org/2010/03/03/flashback-backdoor-corporate-sabotage-with-dns/</guid>
-      <description>This is just an old entry that I thought was interesting, and it appears its still relevant. Like a broken record, &amp;#8220;economic times are rough&amp;#8221;, what better way to boost your revenue than to exploit your customers. What better way to suppress a competitor than to increase a competitors infrastructure costs (with little visibility to boot). I did some repeated lookups this morning and got similar results.
+      <description>This is just an old entry that I thought was interesting, and it appears its still relevant. Like a broken record, “economic times are rough”, what better way to boost your revenue than to exploit your customers. What better way to suppress a competitor than to increase a competitors infrastructure costs (with little visibility to boot). I did some repeated lookups this morning and got similar results.
 Backdoor Corporate Sabotage With DNS</description>
     </item>
     
@@ -46,7 +42,7 @@ Backdoor Corporate Sabotage With DNS</description>
       <pubDate>Tue, 02 Mar 2010 14:31:02 +0000</pubDate>
       
       <guid>https://cmdln.org/2010/03/02/flashback-automatic-session-logging-and-monitoring-with-gnu-screen-for-the-paranoid/</guid>
-      <description>Another day, another flashback. I don&amp;#8217;t know about you but at times I have had some very odd and uncomfortable requests from vendors. It&amp;#8217;s not wholly uncommon for them to want to log into your system to diagnose an issue for themselves. Or perhaps for whatever reason your manager says hey give this random outside person access to some important box. As a SA you get used to extremely odd requests and figure out how to just solve the problem.</description>
+      <description>Another day, another flashback. I don’t know about you but at times I have had some very odd and uncomfortable requests from vendors. It’s not wholly uncommon for them to want to log into your system to diagnose an issue for themselves. Or perhaps for whatever reason your manager says hey give this random outside person access to some important box. As a SA you get used to extremely odd requests and figure out how to just solve the problem.</description>
     </item>
     
     <item>

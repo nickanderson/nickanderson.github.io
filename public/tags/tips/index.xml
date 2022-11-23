@@ -1,22 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>tips on </title>
     <link>https://cmdln.org/tags/tips/</link>
     <description>Recent content in tips on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 13 Mar 2013 17:44:58 +0000</lastBuildDate>
-    
-	<atom:link href="https://cmdln.org/tags/tips/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 13 Mar 2013 17:44:58 +0000</lastBuildDate><atom:link href="https://cmdln.org/tags/tips/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Working around getindices with dynamically generated arrays in CFEngine 3</title>
       <link>https://cmdln.org/2013/03/13/working-around-getindices-with-dynamically-generated-arrays-in-cfengine-3/</link>
       <pubDate>Wed, 13 Mar 2013 17:44:58 +0000</pubDate>
       
       <guid>https://cmdln.org/2013/03/13/working-around-getindices-with-dynamically-generated-arrays-in-cfengine-3/</guid>
-      <description>There is a known bug where getindices is unable to get the index of a dynamically generated array until the next pass. This comes up from time to time so I thought I would post an example using a pattern shared on the CFEngine help mailing list. The policy below shows 3 working examples. They are mostly similar, example0 shows the simplest workaround, example1 and example2 in addition show ways to suppress the &amp;#8220;Duplicate selection of value for variable&amp;#8221; messages.</description>
+      <description>There is a known bugwhere getindicesis unable to get the index of a dynamically generated array until the next pass. This comes up from time to time so I thought I would post an example using a pattern shared on the CFEngine help mailing list. The policy below shows 3 working examples. They are mostly similar, example0 shows the simplest workaround, example1 and example2 in addition show ways to suppress the “Duplicate selection of value for variable” messages.</description>
     </item>
     
     <item>

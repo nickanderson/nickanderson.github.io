@@ -1,15 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>shell on </title>
     <link>https://cmdln.org/tags/shell/</link>
     <description>Recent content in shell on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 05 Dec 2008 17:34:01 +0000</lastBuildDate>
-    
-	<atom:link href="https://cmdln.org/tags/shell/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 05 Dec 2008 17:34:01 +0000</lastBuildDate><atom:link href="https://cmdln.org/tags/shell/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>What webserver shell function</title>
       <link>https://cmdln.org/2008/12/05/what-webserver-shell-function/</link>
@@ -18,7 +14,7 @@
       <guid>https://cmdln.org/2008/12/05/what-webserver-shell-function/</guid>
       <description>This is lifted from http://bashcurescancer.com/shell-function-which-webserver-does-that-site-run.html.
 Handy shell function you can put in your .bashrc. Quickly find out what server a host is running.
-what-http-server() { curl -s -I $(for h in &#34;$@&#34;; do printf &#34;http://%s &#34; &#34;$h&#34;; done) | awk -F&#39;: &#39; &#39;/^Server:/ {print $2}&#39;; }  Now try what-http-server kernel.org google.com hotmail.com.</description>
+Now try what-http-server kernel.org google.com hotmail.com.</description>
     </item>
     
   </channel>

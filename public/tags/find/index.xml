@@ -1,15 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>find on </title>
     <link>https://cmdln.org/tags/find/</link>
     <description>Recent content in find on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 09 Apr 2008 15:21:09 +0000</lastBuildDate>
-    
-	<atom:link href="https://cmdln.org/tags/find/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 09 Apr 2008 15:21:09 +0000</lastBuildDate><atom:link href="https://cmdln.org/tags/find/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Find and delete old files in linux redux</title>
       <link>https://cmdln.org/2008/04/09/find-and-delete-old-files-in-linux-redux/</link>
@@ -25,7 +21,7 @@
       <pubDate>Tue, 08 Apr 2008 23:47:58 +0000</pubDate>
       
       <guid>https://cmdln.org/2008/04/08/find-and-delete-old-files-in-linux/</guid>
-      <description>&lt;p&gt;I have a few of those directories that files tend to pile up in. I don&amp;#8217;t need the files but I also don&amp;#8217;t take the time to delete them. Pruning these old files is a good thing to keep your used disk space under control as well as your sanity. Find is a great tool to do this, its extremely flexible I recommend you read the man page next time your bored.&lt;/p&gt;</description>
+      <description>&lt;p&gt;I have a few of those directories that files tend to pile up in. I don’t need the files but I also don’t take the time to delete them. Pruning these old files is a good thing to keep your used disk space under control as well as your sanity. Find is a great tool to do this, its extremely flexible I recommend you read the man page next time your bored.&lt;/p&gt;</description>
     </item>
     
   </channel>

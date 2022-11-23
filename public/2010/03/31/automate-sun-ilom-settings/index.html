@@ -6,7 +6,11 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<<<<<<< HEAD
 <meta name="generator" content="Hugo 0.57.0" />
+=======
+<meta name="generator" content="Hugo 0.80.0" />
+>>>>>>> a7d29a8a28a02281741be1a86cca3627b7cdd579
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -68,12 +72,9 @@
             <h1><a href="https://cmdln.org/2010/03/31/automate-sun-ilom-settings/">Automate Sun iLOM settings</a></h1>
             <span class="post-date">Mar 31, 2010 </span>
             <div class="post-content">
-                <p>I recently had a need to push out a few settings to a group of iLOMs on new Sun servers. I really despise using a web interface for everything so I took the ssh route. The first thing I tried to do after determining the commands I needed was to shove the commands in with ssh directly.  I quickly became apparent that route just wasn&#8217;t going to work.</p>
-
-<p>When you log into the iLOM &#8220;daemons&#8221; need to initialize. Based on the errors that I got while trying to shove the commands in with ssh I assume these &#8220;daemons&#8221; have something to do with access controls. It became apparent that I needed to use expect if I wanted to automate over the ssh connection. I used the pexpect module in python and wrote a simple script to push a batch of commands to a list of hosts.</p>
-
-<p>It was written from the point of view that most of these settings need to happen when you receive a new box so it defaults to the iLOM default username and password (root/changeme). I&#8217;m not sure how often I will use this tool but I will be sure to keep my command snippets in version control as its highly likely I will be using the same settings over and over again or with slight permutations.</p>
-
+                <p>I recently had a need to push out a few settings to a group of iLOMs on new Sun servers. I really despise using a web interface for everything so I took the ssh route. The first thing I tried to do after determining the commands I needed was to shove the commands in with ssh directly.  I quickly became apparent that route just wasn’t going to work.</p>
+<p>When you log into the iLOM “daemons” need to initialize. Based on the errors that I got while trying to shove the commands in with ssh I assume these “daemons” have something to do with access controls. It became apparent that I needed to use expect if I wanted to automate over the ssh connection. I used the pexpect module in python and wrote a simple script to push a batch of commands to a list of hosts.</p>
+<p>It was written from the point of view that most of these settings need to happen when you receive a new box so it defaults to the iLOM default username and password (root/changeme). I’m not sure how often I will use this tool but I will be sure to keep my command snippets in version control as its highly likely I will be using the same settings over and over again or with slight permutations.</p>
 <p><a href="http://github.com/nickanderson/iLOM-commander">iLOM-commander can be found in my github</a> (patches accepted)</p>
 
             </div>
@@ -85,7 +86,7 @@
             <div class="push"></div>
         </div>
         <footer class="footer text-center">
-<p>Copyright &copy; 2019 Nick Anderson -
+<p>Copyright &copy; 2022 Nick Anderson -
 <span class="credit">
 	Powered by
 	<a target="_blank" href="https://gohugo.io">Hugo</a>
