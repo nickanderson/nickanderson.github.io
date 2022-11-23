@@ -6,7 +6,11 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<<<<<<< HEAD
 <meta name="generator" content="Hugo 0.57.0" />
+=======
+<meta name="generator" content="Hugo 0.80.0" />
+>>>>>>> a7d29a8a28a02281741be1a86cca3627b7cdd579
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -69,18 +73,15 @@
             <span class="post-date">Dec 26, 2017 </span>
             <div class="post-content">
                 <blockquote>
-<p>
-Why doesn&#39;t <code class="verbatim">body action if_elapsed</code> work with <code class="verbatim">vars</code> type promises?
-</p>
+<p>Why doesn&#39;t <code class="verbatim">body action if_elapsed</code> work with <code class="verbatim">vars</code> type promises?</p>
 </blockquote>
 <p>
-Let&#39;s start with the details of <code class="verbatim">body action if_elapsed</code>.
-</p>
+Let&#39;s start with the details of <code class="verbatim">body action if_elapsed</code>.</p>
 <figure>
 <div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -109,28 +110,25 @@ allowed assessment of a promise. It overrides <a href="https://docs.cfengine.com
 which defaults to 1 minute. It&#39;s intended to prevent overload due to
 unintentional resource consumption, but it can be used to control frequency. The
 <a href="https://docs.cfengine.com/docs/master/reference-promise-types.html#expireafter"><code class="verbatim">expireafter</code> action body attribute</a> is the number of minutes a promise is
-allowed to run before the agent is subject to termination.
-</p>
+allowed to run before the agent is subject to termination.</p>
 <p>
 So the <code class="verbatim">if_elapsed</code> action body is saying that once the promise has been
 verified as having an outcome of kept or repaired it should remain locked for x
 minutes. The agent should not try to re-verify it until that lock is no longer
 valid. Additionally if another agent sees that an agent is still executing the
-promise after x minutes then the apparently stuck agent should be terminated.
-</p>
+promise after x minutes then the apparently stuck agent should be terminated.</p>
 <p>
 In cfengine a <a href="https://docs.cfengine.com/docs/master/reference-language-concepts-promises.html#promise-locking">promise is locked once it is seen to be kept or repaired</a>. By
 default promises are locked for 1 minute. Until a lock expires the promise will
 be skipped. In this example, there are two promises. One promise to report the
 date, and one promise to report <code class="verbatim">Hello</code>. The date will be different each time
 the agent is run so the promise lock will not be the same between two agent runs
-and thus it will not be affected by promise locking.
-</p>
+and thus it will not be affected by promise locking.</p>
 <figure>
 <div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -156,42 +154,70 @@ Example illustrating promise locking
 </figcaption>
 </figure>
 <p>
-Here are the results of several executions of <code>cf-agent -f /tmp/example.cf</code>.
-</p>
+Here are the results of several executions of <code>cf-agent -f /tmp/example.cf</code>.</p>
+<figure>
 <pre class="example">
 R: Sat Dec 23 09:53:57 2017
 R: Hello
 R: Infrequent hello
 </pre>
+<figcaption>
+Example illustrating promise locking first run
+</figcaption>
+</figure>
+<figure>
 <pre class="example">
 R: Sat Dec 23 09:54:19 2017
 </pre>
+<figcaption>
+Example illustrating promise locking second run
+</figcaption>
+</figure>
+<figure>
 <pre class="example">
 R: Sat Dec 23 09:54:59 2017
 R: Hello
 </pre>
+<figcaption>
+Example illustrating promise locking third run
+</figcaption>
+</figure>
+<figure>
 <pre class="example">
 R: Sat Dec 23 09:55:14 2017
 </pre>
+<figcaption>
+Example illustrating promise locking fourth run
+</figcaption>
+</figure>
+<figure>
 <pre class="example">
 R: Sat Dec 23 09:55:59 2017
 R: Hello
 </pre>
+<figcaption>
+Example illustrating promise locking fifth run
+</figcaption>
+</figure>
+<figure>
 <pre class="example">
 R: Sat Dec 23 10:38:03 2017
 R: Hello
 R: Infrequent hello
 </pre>
+<figcaption>
+Example illustrating promise locking sixth run
+</figcaption>
+</figure>
 <p>
 <code class="verbatim">vars</code> type promises do not participate in promise locking and as such can not
 be affected by the <code class="verbatim">ifelapsed</code> action body attribute or the <code class="verbatim">ifelapsed</code> agent
-control attribute.
-</p>
+control attribute.</p>
 <figure>
 <div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -225,15 +251,13 @@ Example illustrating vars don&#39;t participate in locking
 </figcaption>
 </figure>
 <p>
-Here are the results of a couple runs ( <code>cf-agent -f /tmp/vars-are-not-locked.cf</code> ).
-</p>
+Here are the results of a couple runs ( <code>cf-agent -f /tmp/vars-are-not-locked.cf</code> ).</p>
 <pre class="example">
 R: Tue Dec 26 13:03:15 2017
 R: Hello World
 </pre>
 <p>
-Another run a few seconds later:
-</p>
+Another run a few seconds later:</p>
 <pre class="example">
 R: Tue Dec 26 13:03:28 2017
 R: Hello World
@@ -241,9 +265,8 @@ R: Hello World
 <p>
 We can see that <code class="verbatim">Hello World</code> was reported in both runs. It was only reported
 because we attached <code class="verbatim">body action immediate</code> to the reports promise. Note the
-<code class="verbatim">vars</code> promise did not require <code class="verbatim">body action immediate</code> in order for the variable
-<code class="verbatim">msg</code> to hold the value <code class="verbatim">Hello World</code>.
-</p>
+ <code class="verbatim">vars</code> promise did not require <code class="verbatim">body action immediate</code> in order for the variable
+ <code class="verbatim">msg</code> to hold the value <code class="verbatim">Hello World</code>.</p>
 
             </div>
             
@@ -254,7 +277,7 @@ because we attached <code class="verbatim">body action immediate</code> to the r
             <div class="push"></div>
         </div>
         <footer class="footer text-center">
-<p>Copyright &copy; 2019 Nick Anderson -
+<p>Copyright &copy; 2022 Nick Anderson -
 <span class="credit">
 	Powered by
 	<a target="_blank" href="https://gohugo.io">Hugo</a>

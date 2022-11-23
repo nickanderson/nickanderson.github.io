@@ -6,7 +6,11 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<<<<<<< HEAD
 <meta name="generator" content="Hugo 0.57.0" />
+=======
+<meta name="generator" content="Hugo 0.80.0" />
+>>>>>>> a7d29a8a28a02281741be1a86cca3627b7cdd579
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -69,40 +73,25 @@
             <span class="post-date">Jan 8, 2010 </span>
             <div class="post-content">
                 <p>This comes up from time to time for me. Either myself or someone else needs to see what address are either in use or not in use (at least as far as ping is concerned). So here are a few oneliners to hopefully make your day brighter.</p>
-
 <p>Assuming your network is 192.168.1.0/24 (thats 192.168.1.0-255 255.255.255.0).</p>
-
 <h4 id="use-nmap-to-ping-scan-your-network">Use nmap to ping scan your network</h4>
-
-<pre class="brush: bash; title: ; notranslate" title="">nmap -v -sP 192.168.1.0/24
-
-</pre>
-
-<h4 id="use-nmap-and-grep-to-scan-your-network-and-filter-for-hosts-that-are-8220-up-8221">Use nmap and grep to scan your network and filter for hosts that are &#8220;up&#8221;</h4>
-
-<pre class="brush: bash; title: ; notranslate" title="">nmap -v -sP 192.168.1.0/24 | grep up
-
-</pre>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h4 id="use-nmap-and-grep-to-scan-your-network-and-filter-for-hosts-that-are-8220up8221">Use nmap and grep to scan your network and filter for hosts that are “up”</h4>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <h4 id="use-nmap-and-grep-to-scan-your-network-and-filter-for-ips-that-are-unused-or-non-responsive">Use nmap and grep to scan your network and filter for ips that are unused or non-responsive</h4>
-
-<pre class="brush: bash; title: ; notranslate" title="">nmap -v -sP 192.168.1.0/24 | grep down
-
-</pre>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>Many times you just want the list of addresses because you are going to do some other processing on them.</p>
-
 <h4 id="use-nmap-and-awk-to-get-only-the-list-of-ips-that-are-unresponsive">Use nmap,  and awk to get only the list of ips that are unresponsive</h4>
-
-<pre class="brush: bash; title: ; notranslate" title="">nmap -v -sP 192.168.1.0/24 | awk '/down/ {print $2}'
-
-</pre>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>Of course you can add some file redirection here if you need to save the output.</p>
-
-<pre class="brush: bash; title: ; notranslate" title="">nmap -v -sP 192.168.1.0/24 | awk '/down' {print $2}' &gt; iplist.txt
-
-</pre>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<blockquote>
+</blockquote>
             </div>
             
             <div class="post-comments">
@@ -112,7 +101,7 @@
             <div class="push"></div>
         </div>
         <footer class="footer text-center">
-<p>Copyright &copy; 2019 Nick Anderson -
+<p>Copyright &copy; 2022 Nick Anderson -
 <span class="credit">
 	Powered by
 	<a target="_blank" href="https://gohugo.io">Hugo</a>

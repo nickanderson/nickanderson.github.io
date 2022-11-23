@@ -1,22 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>nrpe on </title>
     <link>https://cmdln.org/tags/nrpe/</link>
     <description>Recent content in nrpe on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 08 Mar 2010 14:51:23 +0000</lastBuildDate>
-    
-	<atom:link href="https://cmdln.org/tags/nrpe/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 08 Mar 2010 14:51:23 +0000</lastBuildDate><atom:link href="https://cmdln.org/tags/nrpe/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>XenServer License Check &amp;#8211; Nagios NRPE Plugin</title>
       <link>https://cmdln.org/2010/03/08/xenserver-license-check-nagios-nrpe-plugin/</link>
       <pubDate>Mon, 08 Mar 2010 14:51:23 +0000</pubDate>
       
       <guid>https://cmdln.org/2010/03/08/xenserver-license-check-nagios-nrpe-plugin/</guid>
-      <description>If you hadn&amp;#8217;t already guessed I am a big fan of the Xen hypervisor. Lately I have been using the Citrix XenServer release because it makes it quite palatable for my co-workers. One annoyance that I do have about XenServer is the requirement that you license it (with a free license) every year. If you fail to license it the GUI stops working. Now I hate relying on GUIs but the fact of the matter is others in my team expect to have a working GUI when they need to do something.</description>
+      <description>If you hadn’t already guessed I am a big fan of the Xen hypervisor. Lately I have been using the Citrix XenServer release because it makes it quite palatable for my co-workers. One annoyance that I do have about XenServer is the requirement that you license it (with a free license) every year. If you fail to license it the GUI stops working. Now I hate relying on GUIs but the fact of the matter is others in my team expect to have a working GUI when they need to do something.</description>
     </item>
     
     <item>
@@ -26,8 +22,7 @@
       
       <guid>https://cmdln.org/2010/03/04/installing-nrpe-on-xenserver/</guid>
       <description>I like to have as little run in dom0 as possible. However some things you really need checked from dom0, like the status of your raid perhaps. Just some quick instructions on getting Nagios NRPE running in XenServer.
- Install EPEL repository and disable it by default (remember we don&amp;#8217;t want to accidentally install unnecessary packages) wget http://download.fedora.redhat.com/pub/epel/5/$(uname -i)/epel-release-5-3.noarch.rpm rpm -hiv epel-release*.rpm sed -i &amp;rsquo;s/enabled=1/enabled=0/g&amp;rsquo; /etc/yum.repos.d/epel.repo 
- Install nrpe and configure it to start on boot yum install &amp;ndash;enablerepo=epel nrpe chkconfig nrpe on</description>
+  Install EPEL repository and disable it by default (remember we don’t want to accidentally install unnecessary packages) wget http://download.fedora.redhat.com/pub/epel/5/$(uname -i)/epel-release-5-3.noarch.rpm rpm -hiv epel-release*.rpm sed -i &amp;rsquo;s/enabled=1/enabled=0/g&#39; /etc/yum.repos.d/epel.repo   Install nrpe and configure it to start on boot yum install &amp;ndash;enablerepo=epel nrpe chkconfig nrpe on   Modify the firewall to allow NRPE connections.</description>
     </item>
     
   </channel>

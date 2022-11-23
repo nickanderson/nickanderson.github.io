@@ -6,7 +6,11 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<<<<<<< HEAD
 <meta name="generator" content="Hugo 0.57.0" />
+=======
+<meta name="generator" content="Hugo 0.80.0" />
+>>>>>>> a7d29a8a28a02281741be1a86cca3627b7cdd579
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -70,24 +74,19 @@
             <div class="post-content">
                 <p>
 Recently I noticed that my CPU was pretty busy with the desktop search indexing,
-it brought me to the question:
-</p>
+it brought me to the question:</p>
 <blockquote>
-<p>
-How can I disable the desktop search service trackerd?
-</p>
+<p>How can I disable the desktop search service trackerd?</p>
 </blockquote>
 <p>
 After a brief investigation I found some XDG desktop needed to be edited to
-include the key <code class="verbatim">Hidden=true</code>.
-</p>
+include the key <code class="verbatim">Hidden=true</code>.</p>
 <p>
-This policy disables known trackerd related XDG files when they are found.
-</p>
+This policy disables known trackerd related XDG files when they are found.</p>
 <div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -189,17 +188,15 @@ This policy disables known trackerd related XDG files when they are found.
 </div>
 </div>
 <p>
-How does the policy work?
-</p>
+How does the policy work?</p>
 <p>
 We include the standard library using body file control. This allows the policy
 file to be used directly instead of integrated with a larger policy yet still
-leverage bundles and bodies from the standard library (e.g. <code class="verbatim">set_line_based</code> ).
-</p>
+leverage bundles and bodies from the standard library (e.g. <code class="verbatim">set_line_based</code> ).</p>
 <div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -214,12 +211,11 @@ leverage bundles and bodies from the standard library (e.g. <code class="verbati
 </div>
 <p>
 The <code class="verbatim">disable_desktop_search</code> bundle is tagged with autorun so that the policy
-can be easily used with the MPF autorun functionality.
-</p>
+can be easily used with the MPF autorun functionality.</p>
 <div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -239,12 +235,11 @@ can be easily used with the MPF autorun functionality.
 </div>
 </div>
 <p>
-The list of known trackerd related XDG files is enumerated.
-</p>
+The list of known trackerd related XDG files is enumerated.</p>
 <div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -270,12 +265,11 @@ The list of known trackerd related XDG files is enumerated.
 </div>
 </div>
 <p>
-The desired configuration is specified in the classic array <code class="verbatim">conf</code>.
-</p>
+The desired configuration is specified in the classic array <code class="verbatim">conf</code>.</p>
 <div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3">        <span class="p">&#34;</span><span class="nv">conf[Hidden]</span><span class="p">&#34;</span> <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;true&#34;</span><span class="p">;</span></code></pre></td></tr></table>
@@ -284,12 +278,11 @@ The desired configuration is specified in the classic array <code class="verbati
 </div>
 <p>
 Each known trackerd related XDG file is inspected for the proper configuration
-line entries and the files are repaired if necessary.
-</p>
+line entries and the files are repaired if necessary.</p>
 <div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -323,12 +316,11 @@ line entries and the files are repaired if necessary.
 <p>
 Finally, if we are running version 3.12.0 or greater we add support for direct
 execution of the policy without conflicting bundle names using the new
-executable library support from the special bundle <code class="verbatim">__main__</code>.
-</p>
+executable library support from the special bundle <code class="verbatim">__main__</code>.</p>
 <div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -359,7 +351,7 @@ executable library support from the special bundle <code class="verbatim">__main
             <div class="push"></div>
         </div>
         <footer class="footer text-center">
-<p>Copyright &copy; 2019 Nick Anderson -
+<p>Copyright &copy; 2022 Nick Anderson -
 <span class="credit">
 	Powered by
 	<a target="_blank" href="https://gohugo.io">Hugo</a>

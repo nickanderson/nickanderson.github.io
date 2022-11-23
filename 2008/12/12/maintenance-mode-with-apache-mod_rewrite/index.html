@@ -6,7 +6,11 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<<<<<<< HEAD
 <meta name="generator" content="Hugo 0.57.0" />
+=======
+<meta name="generator" content="Hugo 0.80.0" />
+>>>>>>> a7d29a8a28a02281741be1a86cca3627b7cdd579
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -69,38 +73,21 @@
             <span class="post-date">Dec 12, 2008 </span>
             <div class="post-content">
                 <p>With small websites sometimes you need to put up a maintenance page while you are making some modifications. Typically you should have some staging enviornment but sometimes infrastructure does not allow for this. If you find your self in this situation you might like this tip.</p>
-
 <p>It is not sufficient to just replace your index with a maintenance page for multiple reasons. First what about sub pages? Without a redirect on those people will be able to access other areas of your site which may of may not be desireble.</p>
-
 <p>Using mod_rewrite you can be friendly to search engines, and your users.</p>
-
 <p>Try this in your .htaccess</p>
-
-<pre class="brush: bash; title: ; notranslate" title="">ErrorDocument 404 /maint.html
-RewriteEngine on
-RewriteCond %{REQUEST_URI} !/maint.html$
-RewriteCond %{REQUEST_URI} !/maint.jpg$
-RewriteRule $/maint.html$ [R=302,L]
-</pre>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>This will give a 302 (Moved Temporarily) msg to clients and serve</p>
-
 <p>maint.html. maint.html can have content similar to this.</p>
-
-<pre class="brush: bash; title: ; notranslate" title="">&lt;img src="/maint.jpg" alt="We are currently undergoing maintenance. We will be back shortly"&gt;'
-</pre>
-
-<p>The leading slash on the image is important as it will serve the image even if someone accesses <a href="http://yourdomain/somethig/somethingelse">http://yourdomain/somethig/somethingelse</a>.</p>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>The leading slash on the image is important as it will serve the image even if someone accesses http://yourdomain/somethig/somethingelse.</p>
 <p>Its also important to set your 404 as your maint.html so anyone accessing pages that do not exist get the same maintenance content.</p>
-
 <p>You might want to add a condition like the following if you want to be able to browse your website normally while in maintenance mode.</p>
-
-<pre class="brush: bash; title: ; notranslate" title="">RewriteCond %{REMOTE_HOST} !^123\.123\.123\.123
-</pre>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>Be sure to replace 123.123.123.123 with your ip address. This will cause apache to not apply the rule to the specifed ip.</p>
-
 <p>Hope someone finds this useful. I know I have used it several times in the past.</p>
             </div>
             
@@ -111,7 +98,7 @@ RewriteRule $/maint.html$ [R=302,L]
             <div class="push"></div>
         </div>
         <footer class="footer text-center">
-<p>Copyright &copy; 2019 Nick Anderson -
+<p>Copyright &copy; 2022 Nick Anderson -
 <span class="credit">
 	Powered by
 	<a target="_blank" href="https://gohugo.io">Hugo</a>

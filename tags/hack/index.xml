@@ -1,15 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>hack on </title>
     <link>https://cmdln.org/tags/hack/</link>
     <description>Recent content in hack on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 06 May 2010 13:41:36 +0000</lastBuildDate>
-    
-	<atom:link href="https://cmdln.org/tags/hack/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 06 May 2010 13:41:36 +0000</lastBuildDate><atom:link href="https://cmdln.org/tags/hack/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Remove Google Everything Sidebar &amp;#8212; Again</title>
       <link>https://cmdln.org/2010/05/06/remove-google-everything-sidebar-again/</link>

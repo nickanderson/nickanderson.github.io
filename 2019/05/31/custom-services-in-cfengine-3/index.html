@@ -6,7 +6,11 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<<<<<<< HEAD
 <meta name="generator" content="Hugo 0.57.0" />
+=======
+<meta name="generator" content="Hugo 0.80.0" />
+>>>>>>> a7d29a8a28a02281741be1a86cca3627b7cdd579
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -69,19 +73,14 @@
             <span class="post-date">May 31, 2019 </span>
             <div class="post-content">
                 <p>
-CFEngine provides the <a href="https://docs.cfengine.com/docs/3.12/reference-promise-types-services.html"><code class="verbatim">services</code> promise type</a> to manage the state of a given service. By default, <code class="verbatim">bundle agent standard_services</code> is used for the <code class="verbatim">service_method</code>. The <code class="verbatim">standard_services</code> bundle uses the <code class="verbatim">status</code> command and interprets the return codes according to the <a href="http://refspecs.linuxbase.org/LSB_3.0.0/LSB-PDA/LSB-PDA/iniscrptact.html">Linux Standard Base init script actions</a>. Unfortunately some init scripts do not follow the standards. On sysvinit (non-systemd) hosts, if the status command returns zero when a service is <strong>not</strong> running, cfengine will issue the commands necessary to stop the service every time the agent is run. Similarly, if the status command returns zero when the service is <strong>not</strong> running, cfengine will never issue the commands necessary to start a service.
-</p>
+CFEngine provides the <a href="https://docs.cfengine.com/docs/3.12/reference-promise-types-services.html"><code class="verbatim">services</code> promise type</a> to manage the state of a given service. By default, <code class="verbatim">bundle agent standard_services</code> is used for the <code class="verbatim">service_method</code>. The <code class="verbatim">standard_services</code> bundle uses the <code class="verbatim">status</code> command and interprets the return codes according to the <a href="http://refspecs.linuxbase.org/LSB_3.0.0/LSB-PDA/LSB-PDA/iniscrptact.html">Linux Standard Base init script actions</a>. Unfortunately some init scripts do not follow the standards. On sysvinit (non-systemd) hosts, if the status command returns zero when a service is <strong>not</strong> running, cfengine will issue the commands necessary to stop the service every time the agent is run. Similarly, if the status command returns zero when the service is <strong>not</strong> running, cfengine will never issue the commands necessary to start a service.</p>
 <blockquote>
-<p>
-How can I handle a service status that does not comport with the standard?
-</p>
+<p>How can I handle a service status that does not comport with the standard?</p>
 </blockquote>
 <p>
-One way to deal with misbehaving services is to implement a custom <code class="verbatim">service_method</code> that better understands the specifics for a given service.
-</p>
+One way to deal with misbehaving services is to implement a custom <code class="verbatim">service_method</code> that better understands the specifics for a given service.</p>
 <p>
-For example, the MacAfee Agent status command simply emits the current status for it&#39;s services and does not use the expected return codes.
-</p>
+For example, the MacAfee Agent status command simply emits the current status for it&#39;s services and does not use the expected return codes.</p>
 <figure>
 <pre class="example">
 [root@host ~]# /etc/init.d/ma status
@@ -96,13 +95,12 @@ McAfee agent service status
 </figcaption>
 </figure>
 <p>
-First, for testing, create a mock init script that matches the behavior seen in the output above.
-</p>
+First, for testing, create a mock init script that matches the behavior seen in the output above.</p>
 <figure>
 <div class="src src-sh">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -111,7 +109,7 @@ First, for testing, create a mock init script that matches the behavior seen in 
 <pre class="chroma"><code class="language-sh" data-lang="sh">  <span class="nb">echo</span> McAfee agent service is not running.
   <span class="nb">echo</span> McAfee common services is not running.
   <span class="nb">echo</span> McAfee compat service is not running.
-  <span class="k">return</span> <span class="m">0</span><span class="p">;</span> <span class="c1"># Return zero means service OK/Running per the LSB</span></code></pre></td></tr></table>
+  <span class="k">return</span> 0<span class="p">;</span> <span class="c1"># Return zero means service OK/Running per the LSB</span></code></pre></td></tr></table>
 </div>
 </div>
 </div>
@@ -120,13 +118,12 @@ Mock /etc/init.d/ma
 </figcaption>
 </figure>
 <p>
-Next you can write a custom bundle to implement services based on the McAfee behavior.
-</p>
+Next you can write a custom bundle to implement services based on the McAfee behavior.</p>
 <figure>
 <div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -240,13 +237,12 @@ bundle agent mcafee_services_handler in example_custom_services.cf
 </figcaption>
 </figure>
 <p>
-Then you can expose it as a <code class="verbatim">service_method</code> attribute value by defining a <code class="verbatim">service_method</code> body.
-</p>
+Then you can expose it as a <code class="verbatim">service_method</code> attribute value by defining a <code class="verbatim">service_method</code> body.</p>
 <figure>
 <div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -272,13 +268,12 @@ body service_method macafee in example_custom_services.cf
 </figcaption>
 </figure>
 <p>
-And then you could specify use the services promise
-</p>
+And then you could specify use the services promise</p>
 <figure>
 <div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -328,59 +323,57 @@ bundle agent example_custom_services in example_custom_services.cf
 </figcaption>
 </figure>
 <p>
-Execute the policy to see it in action:
-</p>
+Execute the policy to see it in action:</p>
 <figure>
 <div class="src src-sh">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-sh" data-lang="sh">  ./example_custom_services.cf -KI</code></pre></td></tr></table>
 </div>
 </div>
 </div>
+<pre class="example">
+   error: Policy failed validation with command &#39;&#34;/home/nickanderson/.cfagent/bin/cf-promises&#34; -c &#34;./example_custom_services.cf&#34;&#39;
+   error: CFEngine was not able to get confirmation of promises from cf-promises, so going to failsafe
+   error: CFEngine failsafe.cf: /home/nickanderson/.cfagent/inputs /home/nickanderson/.cfagent/inputs/failsafe.cf
+    info: Unable to find host &#39;$(sys.policy_hub)&#39; service &#39;$(sys.policy_hub_port)&#39; (Servname not supported for ai_socktype)
+    info: No server is responding on port: $(sys.policy_hub_port)
+    info: Unable to establish connection to &#39;$(sys.policy_hub)&#39;
+   error: No suitable server found
+    info: Promise belongs to bundle &#39;failsafe_cfe_internal_update&#39; in file &#39;/home/nickanderson/.cfagent/inputs/failsafe.cf&#39; near line 114
+    info: Unable to find host &#39;$(sys.policy_hub)&#39; service &#39;$(sys.policy_hub_port)&#39; (Servname not supported for ai_socktype)
+    info: No server is responding on port: $(sys.policy_hub_port)
+    info: Unable to establish connection to &#39;$(sys.policy_hub)&#39;
+   error: No suitable server found
+    info: Promise belongs to bundle &#39;failsafe_cfe_internal_update&#39; in file &#39;/home/nickanderson/.cfagent/inputs/failsafe.cf&#39; near line 123
+    info: Unable to find host &#39;$(sys.policy_hub)&#39; service &#39;$(sys.policy_hub_port)&#39; (Servname not supported for ai_socktype)
+    info: No server is responding on port: $(sys.policy_hub_port)
+    info: Unable to establish connection to &#39;$(sys.policy_hub)&#39;
+   error: No suitable server found
+    info: Promise belongs to bundle &#39;failsafe_cfe_internal_update&#39; in file &#39;/home/nickanderson/.cfagent/inputs/failsafe.cf&#39; near line 137
+    info: Comment is &#39;If we failed to fetch policy we try again using
+                    the legacy default in case we are fetching policy
+                    from a hub that is not serving mastefiles via a
+                    shortcut.&#39;
+   error: Method &#39;failsafe_cfe_internal_update&#39; failed in some repairs
+    info: Executing &#39;no timeout&#39; ... &#39;&#34;/home/nickanderson/.cfagent/bin/cf-agent&#34; -f /home/nickanderson/.cfagent/inputs/update.cf --define failsafe_mode&#39;
+  notice: Q: &#34;.../cf-agent&#34; -f /&#34;:    error: No suitable server found
+Q: &#34;.../cf-agent&#34; -f /&#34;:    error: No suitable server found
+Q: &#34;.../cf-agent&#34; -f /&#34;:    error: No suitable server found
+Q: &#34;.../cf-agent&#34; -f /&#34;:    error: Method &#39;cfe_internal_update_policy_cpv&#39; failed in some repairs
+    info: Last 4 quoted lines were generated by promiser &#39;&#34;/home/nickanderson/.cfagent/bin/cf-agent&#34; -f /home/nickanderson/.cfagent/inputs/update.cf --define failsafe_mode&#39;
+    info: Completed execution of &#39;&#34;/home/nickanderson/.cfagent/bin/cf-agent&#34; -f /home/nickanderson/.cfagent/inputs/update.cf --define failsafe_mode&#39;
+R: Built-in failsafe policy triggered
+</pre>
 <figcaption>
 Running the policy
 </figcaption>
 </figure>
-<pre class="example">
-   error: Policy failed validation with command '"/home/nickanderson/.cfagent/bin/cf-promises" -c "./example_custom_services.cf"'
-   error: CFEngine was not able to get confirmation of promises from cf-promises, so going to failsafe
-   error: CFEngine failsafe.cf: /home/nickanderson/.cfagent/inputs /home/nickanderson/.cfagent/inputs/failsafe.cf
-    info: Unable to find host '$(sys.policy_hub)' service '$(sys.policy_hub_port)' (Servname not supported for ai_socktype)
-    info: No server is responding on port: $(sys.policy_hub_port)
-    info: Unable to establish connection to '$(sys.policy_hub)'
-   error: No suitable server found
-    info: Promise belongs to bundle 'failsafe_cfe_internal_update' in file '/home/nickanderson/.cfagent/inputs/failsafe.cf' near line 114
-    info: Unable to find host '$(sys.policy_hub)' service '$(sys.policy_hub_port)' (Servname not supported for ai_socktype)
-    info: No server is responding on port: $(sys.policy_hub_port)
-    info: Unable to establish connection to '$(sys.policy_hub)'
-   error: No suitable server found
-    info: Promise belongs to bundle 'failsafe_cfe_internal_update' in file '/home/nickanderson/.cfagent/inputs/failsafe.cf' near line 123
-    info: Unable to find host '$(sys.policy_hub)' service '$(sys.policy_hub_port)' (Servname not supported for ai_socktype)
-    info: No server is responding on port: $(sys.policy_hub_port)
-    info: Unable to establish connection to '$(sys.policy_hub)'
-   error: No suitable server found
-    info: Promise belongs to bundle 'failsafe_cfe_internal_update' in file '/home/nickanderson/.cfagent/inputs/failsafe.cf' near line 137
-    info: Comment is 'If we failed to fetch policy we try again using
-                    the legacy default in case we are fetching policy
-                    from a hub that is not serving mastefiles via a
-                    shortcut.'
-   error: Method 'failsafe_cfe_internal_update' failed in some repairs
-    info: Executing 'no timeout' ... '"/home/nickanderson/.cfagent/bin/cf-agent" -f /home/nickanderson/.cfagent/inputs/update.cf --define failsafe_mode'
-  notice: Q: ".../cf-agent" -f /":    error: No suitable server found
-Q: ".../cf-agent" -f /":    error: No suitable server found
-Q: ".../cf-agent" -f /":    error: No suitable server found
-Q: ".../cf-agent" -f /":    error: Method 'cfe_internal_update_policy_cpv' failed in some repairs
-    info: Last 4 quoted lines were generated by promiser '"/home/nickanderson/.cfagent/bin/cf-agent" -f /home/nickanderson/.cfagent/inputs/update.cf --define failsafe_mode'
-    info: Completed execution of '"/home/nickanderson/.cfagent/bin/cf-agent" -f /home/nickanderson/.cfagent/inputs/update.cf --define failsafe_mode'
-R: Built-in failsafe policy triggered
-</pre>
 <p>
-<a href="../../../../example_custom_services.cf">Download the full policy</a>
-</p>
+<a href="../../../../example_custom_services.cf">Download the full policy</a></p>
 
             </div>
             
@@ -391,7 +384,7 @@ R: Built-in failsafe policy triggered
             <div class="push"></div>
         </div>
         <footer class="footer text-center">
-<p>Copyright &copy; 2019 Nick Anderson -
+<p>Copyright &copy; 2022 Nick Anderson -
 <span class="credit">
 	Powered by
 	<a target="_blank" href="https://gohugo.io">Hugo</a>

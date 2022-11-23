@@ -6,7 +6,11 @@
 
 		<meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<<<<<<< HEAD
 <meta name="generator" content="Hugo 0.57.0" />
+=======
+<meta name="generator" content="Hugo 0.80.0" />
+>>>>>>> a7d29a8a28a02281741be1a86cca3627b7cdd579
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -91,7 +95,7 @@
 							<h4 class="post-link"><a href="https://cmdln.org/2013/01/11/cfengine-3-4-2-changelog-for-breakfast/">CFEngine 3.4.2 Changelog for Breakfast</a></h4>
 							<h4 class="post-date">Jan 11, 2013</h4>
 						</div>
-						<div class="post-summary"><p>Changelogs are just as important as the most important meal of the day. OK so I don&#8217;t always eat breakfast, but I do make an effort to read changelogs. CFEngine 3.4.2 was released today.
+						<div class="post-summary"><p>Changelogs are just as important as the most important meal of the day. OK so I don’t always eat breakfast, but I do make an effort to read changelogs. CFEngine 3.4.2was released today.
 What I found interesting was that the default masterfiles policy has been updated. body executor control now calls $(sys.workdir)/inputs/update.cf instead of failsafe.cf. And $(sys.workdir)/failsafe/failsafe.cf (which was new as of 3.4.0) is gone. I think its a good change.</p></div>
 						<div class="post-list-footer text-center">
 							<a href="https://cmdln.org/2013/01/11/cfengine-3-4-2-changelog-for-breakfast/">Read More</a>
@@ -118,8 +122,8 @@ What I found interesting was that the default masterfiles policy has been update
 							<h4 class="post-link"><a href="https://cmdln.org/2012/10/24/cfengine-3-policy-update-or-how-cf_promises_validated-works/">CFEngine 3 Policy Update or How cf_promises_validated Works</a></h4>
 							<h4 class="post-date">Oct 25, 2012</h4>
 						</div>
-						<div class="post-summary"><p>Over the past several months 2 years (since 3.1.2 release, wow time flys when your having fun. I checked and 3.1.2 was released on Dec 9th 2010.) I have seen a few questions regarding how the default CFEngine policy update works, and more specifically how cf_promises_validated plays into the update process. This is my stab at describing the history and behaviour. I welcome any corrections.
-The default failsafe.cf update policy is simple in nature.</p></div>
+						<div class="post-summary"><p>Over the past several months2 years (since 3.1.2 release, wow time flys when your having fun. I checked and 3.1.2 was releasedon Dec 9th 2010.) I have seenafewquestionsregarding how the default CFEngine policy update works, and more specifically how cf_promises_validated plays into the update process. This is my stab at describing the history and behaviour. I welcome any corrections.
+The default failsafe.cf update policy is simple in nature. (We could probably debate what is simpleor complex, but I am comfortable with the label in this case.</p></div>
 						<div class="post-list-footer text-center">
 							<a href="https://cmdln.org/2012/10/24/cfengine-3-policy-update-or-how-cf_promises_validated-works/">Read More</a>
 						</div>
@@ -134,7 +138,7 @@ The default failsafe.cf update policy is simple in nature.</p></div>
 						</div>
 						<div class="post-summary"><p>CFEngine defines a classes for decision making during runs. Many of these hard classes you can see by running cf-promises -v. That wont show you all the other classes that are raised during a policy run.
 You could run something like this to see what classes are raised during execution.
-cf-agent -KIv | grep "cf3&gt;\s*+" | grep -v : But that isn&#8217;t really a clear picture under normal operation. You can use the allclassesreport in body agent control to write out a list of classes defined during execution in /var/cfengine/state/allclasses.</p></div>
+But that isn’t really a clear picture under normal operation. You can use the allclassesreport in body agent control to write out a list of classes defined during execution in /var/cfengine/state/allclasses.</p></div>
 						<div class="post-list-footer text-center">
 							<a href="https://cmdln.org/2012/10/18/cfengine-3-tip-find-out-what-classes-are-being-defined/">Read More</a>
 						</div>
@@ -148,8 +152,8 @@ cf-agent -KIv | grep "cf3&gt;\s*+" | grep -v : But that isn&#8217;t really a cle
 							<h4 class="post-date">Oct 16, 2012</h4>
 						</div>
 						<div class="post-summary"><p>Methods type promises are powerful abstraction tools in CFEngine 3. Methods allow you to activate bundles (optionally parametrized) from other bundles. This allows encapsulation of knowledge and lends itself to re-usability.
-I just want to share an example of calling bundles dynamically. It&#8217;s a contrived example, but I thought it was neat so here it is.
-R: in bundle agent handler1: I got value1  R: in bundle agent handler1: I got value2  &nbsp;!</p></div>
+I just want to share an example of calling bundles dynamically. It’s a contrived example, but I thought it was neat so here it is.
+ &lt;div class=&quot;gist-meta&quot;&gt; &lt;a href=&quot;https://gist.github.com/raw/3901453/0b683269921c056b4e821dd2c63ca6b622122e26/output&quot; style=&quot;float:right;&quot;&gt;view raw&lt;/a&gt; &lt;a href=&quot;https://gist.github.com/3901453#file_output&quot; style=&quot;float:right;margin-right:10px;color:#666&quot;&gt;output&lt;/a&gt; &lt;a href=&quot;https://gist.github.com/3901453&quot;&gt;This Gist&lt;/a&gt; is brought to you using &lt;a href=&quot;http://en.</p></div>
 						<div class="post-list-footer text-center">
 							<a href="https://cmdln.org/2012/10/16/dynamic-method-calls-in-cfengine/">Read More</a>
 						</div>
@@ -165,7 +169,7 @@ R: in bundle agent handler1: I got value1  R: in bundle agent handler1: I got va
 						<div class="post-summary"><p>Are you going to LinuxCon/CloudOpen 2012? I am, and I think I have settled on my picks (at least until I look at the schedule again, lots of great options).
 Special thanks to CFEngine for sponsering me!
 Here are my picks for the minute.
- Building the Open Cloud &#8211; Mark Hinkle, Citrix{#9046eff8494ef50f48da95349905592e} The OpenNebula Cloud Platform for Data Center Virtualization &#8211; Carlos Martin, OpenNebula{#5561a1f9b3d063dcca4b7abdc5dbc44b} Cloning SysAdmins with the Cloud and Juju &#8211; Clint Byrum, Canonical{#82e5d5410f32e11be9bd9bddf2b81570} A Collaborative Approach to Managing Linux Configurations &#8211; Diego Zamboni, CFEngine{#da5dea5f6f017f925dac66eec964f13f} Building FOSS Clouds &#8211; Joe Brockmeier, Citrix{#c28982d2a4f52cbfbb4000ce030a1771} Automation and DevOps Best Practices &#8211; Rob Hirschfeld, Dell{#f0cd279b854c642d12e7d531c68c53f0} Scaling Configuration Management Across Data Center and Cloud &#8211; Mark Burgess, CFEngine{#e9936ee3a0369080a61b61f5eb9a88d4} Editing with vi: Advanced Topics, Part I &#8211; Aleksey Tsaloikhin, Vertical Sysadmin, Inc.</p></div>
+ Building the Open Cloud – Mark Hinkle, Citrix{#9046eff8494ef50f48da95349905592e} The OpenNebula Cloud Platform for Data Center Virtualization – Carlos Martin, OpenNebula{#5561a1f9b3d063dcca4b7abdc5dbc44b} Cloning SysAdmins with the Cloud and Juju – Clint Byrum, Canonical{#82e5d5410f32e11be9bd9bddf2b81570} A Collaborative Approach to Managing Linux Configurations – Diego Zamboni, CFEngine{#da5dea5f6f017f925dac66eec964f13f} Building FOSS Clouds – Joe Brockmeier, Citrix{#c28982d2a4f52cbfbb4000ce030a1771} Automation and DevOps Best Practices – Rob Hirschfeld, Dell{#f0cd279b854c642d12e7d531c68c53f0} Scaling Configuration Management Across Data Center and Cloud – Mark Burgess, CFEngine{#e9936ee3a0369080a61b61f5eb9a88d4} Editing with vi: Advanced Topics, Part I – Aleksey Tsaloikhin, Vertical Sysadmin, Inc.</p></div>
 						<div class="post-list-footer text-center">
 							<a href="https://cmdln.org/2012/08/01/linuxconcloudopen-2012/">Read More</a>
 						</div>
@@ -178,8 +182,8 @@ Here are my picks for the minute.
 							<h4 class="post-link"><a href="https://cmdln.org/2012/07/17/git-pre-commit-hook-for-checking-cfengine-3-syntax/">Git pre-commit hook for checking CFEngine 3 syntax</a></h4>
 							<h4 class="post-date">Jul 17, 2012</h4>
 						</div>
-						<div class="post-summary"><p>I was inspired by William Orr&#8217;s svn commit hook and looked up the magic needed to flesh out the git pre-commit hook I submitted to the Design Center a while back.
-Now the index is checked out to its own temporary directory and cf-promises validates promises.cf and failsafe.cf before allowing the commit to proceed. Now you won&#8217;t get syntax errors if you have forgotten to add a new policy file to the index but its already included in your body common control inputs list.</p></div>
+						<div class="post-summary"><p>I was inspired by William Orr’s svn commit hook and looked up the magic needed to flesh out the git pre-commit hook I submitted to the Design Center a while back.
+Now the index is checked out to its own temporary directory and cf-promises validates promises.cf and failsafe.cf before allowing the commit to proceed. Now you won’t get syntax errors if you have forgotten to add a new policy file to the index but its already included in your body common control inputs list.</p></div>
 						<div class="post-list-footer text-center">
 							<a href="https://cmdln.org/2012/07/17/git-pre-commit-hook-for-checking-cfengine-3-syntax/">Read More</a>
 						</div>
@@ -207,7 +211,7 @@ Now the index is checked out to its own temporary directory and cf-promises vali
 						</div>
 						<div class="post-summary"><p>I liked this, so I thought I would share. Found on the inter-webs.
 Something that is complex can be broken down into simple parts, without being simple itself. This allows mostly smooth functioning with solvable problems.
-Something that is complicated cannot be broken down into simple parts, for it is made of complicated parts. &#8220;Complicated&#8221; is indicative of something that is problematic, convoluted, difficult and inconsistent.
+Something that is complicated cannot be broken down into simple parts, for it is made of complicated parts. “Complicated” is indicative of something that is problematic, convoluted, difficult and inconsistent.
 The difference can be made by imagining a piece of string tied to be a circle.</p></div>
 						<div class="post-list-footer text-center">
 							<a href="https://cmdln.org/2012/07/13/complex-vs-complicated/">Read More</a>
@@ -215,6 +219,23 @@ The difference can be made by imagining a piece of string tied to be a circle.</
 					</div>
 				</li>
 			
+<<<<<<< HEAD
+=======
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
+							<h4 class="post-link"><a href="https://cmdln.org/2012/06/04/cfengine-design-center-launches/">CFEngine Design Center Launches</a></h4>
+							<h4 class="post-date">Jun 4, 2012</h4>
+						</div>
+						<div class="post-summary"><p>If you follow CFEngine you may have notices that the multiple pay versions have been condensed down to CFEngine Enterprise with the latest release. You may not have noticed that the CFEngine Design Center also launched.
+Don’t get me wrong, I am excited about the new 25 free enterprise nodes and the new features in the Enterprise edition, but I see greater value in the Design Center. This is a great resource for new and old users.</p></div>
+						<div class="post-list-footer text-center">
+							<a href="https://cmdln.org/2012/06/04/cfengine-design-center-launches/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
+>>>>>>> a7d29a8a28a02281741be1a86cca3627b7cdd579
 			</ul>
             
 
@@ -325,7 +346,7 @@ The difference can be made by imagining a piece of string tied to be a circle.</
 			<div class="push"></div>
 		</div>
 		<footer class="footer text-center">
-<p>Copyright &copy; 2019 Nick Anderson -
+<p>Copyright &copy; 2022 Nick Anderson -
 <span class="credit">
 	Powered by
 	<a target="_blank" href="https://gohugo.io">Hugo</a>

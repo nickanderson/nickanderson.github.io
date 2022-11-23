@@ -1,15 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>tip on </title>
     <link>https://cmdln.org/tags/tip/</link>
     <description>Recent content in tip on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 18 Oct 2012 21:00:49 +0000</lastBuildDate>
-    
-	<atom:link href="https://cmdln.org/tags/tip/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 18 Oct 2012 21:00:49 +0000</lastBuildDate><atom:link href="https://cmdln.org/tags/tip/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CFEngine 3 Tip: Find out what classes are being defined</title>
       <link>https://cmdln.org/2012/10/18/cfengine-3-tip-find-out-what-classes-are-being-defined/</link>
@@ -18,7 +14,7 @@
       <guid>https://cmdln.org/2012/10/18/cfengine-3-tip-find-out-what-classes-are-being-defined/</guid>
       <description>CFEngine defines a classes for decision making during runs. Many of these hard classes you can see by running cf-promises -v. That wont show you all the other classes that are raised during a policy run.
 You could run something like this to see what classes are raised during execution.
-cf-agent -KIv | grep &#34;cf3&amp;gt;\s*+&#34; | grep -v : But that isn&amp;#8217;t really a clear picture under normal operation. You can use the allclassesreport in body agent control to write out a list of classes defined during execution in /var/cfengine/state/allclasses.</description>
+But that isn’t really a clear picture under normal operation. You can use the allclassesreport in body agent control to write out a list of classes defined during execution in /var/cfengine/state/allclasses.</description>
     </item>
     
     <item>
@@ -27,7 +23,7 @@ cf-agent -KIv | grep &#34;cf3&amp;gt;\s*+&#34; | grep -v : But that isn&amp;#821
       <pubDate>Wed, 29 Dec 2010 01:36:17 +0000</pubDate>
       
       <guid>https://cmdln.org/2010/12/28/quick-tip-disable-help-f1-in-gnome-terminal/</guid>
-      <description>I know I have been pretty silent for a while, what can I say it has been busy. I did want to drop this little tip though. I use vim and gnome-terminal a LOT, so I hit ESC quite frequently. Being so close to the F1 key can be hazardous as I tend to mash the ESC key several times. I have no idea where I picked up the habbit of hitting ESC multiple times but its something I have done for a long time and I don&amp;#8217;t see me retraining myself any time soon.</description>
+      <description>I know I have been pretty silent for a while, what can I say it has been busy. I did want to drop this little tip though. I use vim and gnome-terminal a LOT, so I hit ESC quite frequently. Being so close to the F1 key can be hazardous as I tend to mash the ESC key several times. I have no idea where I picked up the habbit of hitting ESC multiple times but its something I have done for a long time and I don’t see me retraining myself any time soon.</description>
     </item>
     
     <item>
@@ -67,7 +63,7 @@ It will take your current line and stuff it into the your default editor (export
       <pubDate>Fri, 20 Jul 2007 14:07:53 +0000</pubDate>
       
       <guid>https://cmdln.org/2007/07/20/automatic-session-logging-and-monitoring-with-gnu-screen-for-the-paranoid/</guid>
-      <description>&lt;p&gt;Yes its been a while since I have checked in. Sorry I&amp;#8217;ve just been too busy. But I have a great tip this time. Recently I had the need to do automatic session logging. A 3rd party was going to be logging into one of my servers to check out some software glitches that were happening. I love using GNU Screen for many shell tasks so using it for monitoring was logical. Screen is great for several reasons. First you can detach from it so you can leave the office, go home and re-attach and not have lost your place. Second, you can share another screen. It can be shared input or you can just watch what someone else is doing. Finally screen can do native logging. I wanted to automattically launch a screen session when somone logged in so if I happened to be on the server I could monitor them in real time. I also wanted a log of the session in case I wanted to look over it later or if I was not able to monitor the session live.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Yes its been a while since I have checked in. Sorry I’ve just been too busy. But I have a great tip this time. Recently I had the need to do automatic session logging. A 3rd party was going to be logging into one of my servers to check out some software glitches that were happening. I love using GNU Screen for many shell tasks so using it for monitoring was logical. Screen is great for several reasons. First you can detach from it so you can leave the office, go home and re-attach and not have lost your place. Second, you can share another screen. It can be shared input or you can just watch what someone else is doing. Finally screen can do native logging. I wanted to automattically launch a screen session when somone logged in so if I happened to be on the server I could monitor them in real time. I also wanted a log of the session in case I wanted to look over it later or if I was not able to monitor the session live.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -78,7 +74,7 @@ It will take your current line and stuff it into the your default editor (export
       <guid>https://cmdln.org/2006/09/11/xen-and-gentoo/</guid>
       <description>I am in the process of setting up Xen on one of my new servers. Just sticking some notes here. Will clean them up later
 `I am in the process of setting up Xen on one of my new servers. Just sticking some notes here. Will clean them up later
-` No need for kernel level ip address in xen config file set ip =&amp;#8221;off&amp;#8221;;
+` No need for kernel level ip address in xen config file set ip =”off”;
 DO NOT SET eth0 to start on boot!</description>
     </item>
     

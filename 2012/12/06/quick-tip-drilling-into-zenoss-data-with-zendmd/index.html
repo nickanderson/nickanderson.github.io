@@ -6,7 +6,11 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<<<<<<< HEAD
 <meta name="generator" content="Hugo 0.57.0" />
+=======
+<meta name="generator" content="Hugo 0.80.0" />
+>>>>>>> a7d29a8a28a02281741be1a86cca3627b7cdd579
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -69,16 +73,9 @@
             <span class="post-date">Dec 6, 2012 </span>
             <div class="post-content">
                 <p>Sometimes you want to know what value zenoss has for something. The numbers sent in alerts seem to be the value that zenoss has, but the graphs are usually formatted to make more sense. 1394606080 might come in an alert, but on the graph it would show as 1.3 or 1.4G. It can cause some slight confusion when other people expect 90% of 1.4G instead of 90% of 1394606080 to be an alert threshold.</p>
-
 <p>Any way, log in to your zenoss box as the zenoss user at a terminal and run zendmd. We will select a device, and then get a value from one of the RRDs.</p>
-
-<pre class="brush: plain; title: ; notranslate" title="">d = dmd.Devices.findDevice('myjavaserver')
-d.getRRDValue('HeapMemory_max')
-
-1394606080.0
-
-</pre>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>You can look up other things from here as well for example zproperties, try d.zDeviceTemplates or d.zCommandCycleTime.</p>
 
             </div>
@@ -90,7 +87,7 @@ d.getRRDValue('HeapMemory_max')
             <div class="push"></div>
         </div>
         <footer class="footer text-center">
-<p>Copyright &copy; 2019 Nick Anderson -
+<p>Copyright &copy; 2022 Nick Anderson -
 <span class="credit">
 	Powered by
 	<a target="_blank" href="https://gohugo.io">Hugo</a>

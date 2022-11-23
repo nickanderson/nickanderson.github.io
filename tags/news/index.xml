@@ -1,15 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>news on </title>
     <link>https://cmdln.org/tags/news/</link>
     <description>Recent content in news on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 24 Jun 2011 17:41:30 +0000</lastBuildDate>
-    
-	<atom:link href="https://cmdln.org/tags/news/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 24 Jun 2011 17:41:30 +0000</lastBuildDate><atom:link href="https://cmdln.org/tags/news/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Centos 6 on the horizon</title>
       <link>https://cmdln.org/2011/06/24/centos-6-on-the-horizon/</link>

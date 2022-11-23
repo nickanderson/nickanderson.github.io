@@ -6,7 +6,11 @@
 
 		<meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<<<<<<< HEAD
 <meta name="generator" content="Hugo 0.57.0" />
+=======
+<meta name="generator" content="Hugo 0.80.0" />
+>>>>>>> a7d29a8a28a02281741be1a86cca3627b7cdd579
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -79,7 +83,7 @@
 							<h4 class="post-date">Nov 19, 2008</h4>
 						</div>
 						<div class="post-summary"><p>I typically use /etc/cron.d to store all of my system crontabs. I recently ran into an issue that I had either not run into before, or fixed and paid no attention to. Files stored in /etc/cron.d/ or any /etc/cron.* directory need to adhear to the run-parts Debian cron script namespace which consists is
-(^[a-z0-9][a-z0-9-]*$)  for the regex impared this does not include the dot character. If you have a file in /etc/cron.</p></div>
+for the regex impared this does not include the dot character. If you have a file in /etc/cron.</p></div>
 						<div class="post-list-footer text-center">
 							<a href="https://cmdln.org/2008/11/19/debian-etccrond-gotcha/">Read More</a>
 						</div>
@@ -92,7 +96,7 @@
 							<h4 class="post-link"><a href="https://cmdln.org/2008/11/07/how-i-tamed-my-mutt/">How I tamed my mutt</a></h4>
 							<h4 class="post-date">Nov 8, 2008</h4>
 						</div>
-						<div class="post-summary"><p><p>As you by now well know I try to mostly live at the console (well multiple x consoles). Mutt is my mail client of choice. I&#8217;ve tried Thunderbird, Kmail, Evolution, Sylpheed, and pine. For whatever reason I feel most comfortable with mutt. I also use IMAP for both my personal and work accounts. Mutt was originally designed to deal with local mail and while it does a very good job with IMAP I don&#8217;t like how it handles multiple accounts.</p></p></div>
+						<div class="post-summary"><p><p>As you by now well know I try to mostly live at the console (well multiple x consoles). Mutt is my mail client of choice. I’ve tried Thunderbird, Kmail, Evolution, Sylpheed, and pine. For whatever reason I feel most comfortable with mutt. I also use IMAP for both my personal and work accounts. Mutt was originally designed to deal with local mail and while it does a very good job with IMAP I don’t like how it handles multiple accounts.</p></p></div>
 						<div class="post-list-footer text-center">
 							<a href="https://cmdln.org/2008/11/07/how-i-tamed-my-mutt/">Read More</a>
 						</div>
@@ -131,10 +135,8 @@
 							<h4 class="post-link"><a href="https://cmdln.org/2008/10/30/why-you-should-bottom-post-small-rant/">Why you should bottom post &#43; small rant</a></h4>
 							<h4 class="post-date">Oct 31, 2008</h4>
 						</div>
-						<div class="post-summary"><p><p>Proper email form (specifically top vs bottom posting) is something that has been on my mind lately. I am trying to share the benefits of trimming and bottom posting with my co-workers. They don&#8217;t seem to be taking kindly to it.</p>
-
-<p>I would say my largest pet peeve when trying to teach good email habits is the &#8220;It takes to long&#8221; comment. In a business setting this sends shooting pains through my bones. Essentially you are saying the customer is not deserving or worth the time to take a few extra seconds when crafting a response.</p>
-
+						<div class="post-summary"><p><p>Proper email form (specifically top vs bottom posting) is something that has been on my mind lately. I am trying to share the benefits of trimming and bottom posting with my co-workers. They don’t seem to be taking kindly to it.</p>
+<p>I would say my largest pet peeve when trying to teach good email habits is the “It takes to long” comment. In a business setting this sends shooting pains through my bones. Essentially you are saying the customer is not deserving or worth the time to take a few extra seconds when crafting a response.</p>
 <p>If your interested in what my thoughts on top vs bottom posting read on.</p></p></div>
 						<div class="post-list-footer text-center">
 							<a href="https://cmdln.org/2008/10/30/why-you-should-bottom-post-small-rant/">Read More</a>
@@ -148,8 +150,7 @@
 							<h4 class="post-link"><a href="https://cmdln.org/2008/10/28/why-you-should-give-your-sysadmin-a-day-off/">Why you should give your sysadmin a day off</a></h4>
 							<h4 class="post-date">Oct 29, 2008</h4>
 						</div>
-						<div class="post-summary"><p>We will eventually go crazy without some rest. Looks like solaris cluster may have saved the day. Us Linux admins unfortunately do not have ZFS.
-Share and Enjoy:</p></div>
+						<div class="post-summary"><p>We will eventually go crazy without some rest. Looks like solaris cluster may have saved the day. Us Linux admins unfortunately do not have ZFS.</p></div>
 						<div class="post-list-footer text-center">
 							<a href="https://cmdln.org/2008/10/28/why-you-should-give-your-sysadmin-a-day-off/">Read More</a>
 						</div>
@@ -177,8 +178,10 @@ Share and Enjoy:</p></div>
 						</div>
 						<div class="post-summary"><p>I hope you are already using ssh keys, but just in case your not go ahead and generate one with ssh-keygen -t rsa (you should do this on your local box)
 You may as well go ahead and copy your publick key to your git server now as well.
-scp ~/.ssh/id_rsa.pub gitserver:/tmp/  Log into your gitosis server
-ssh gitserver   Make sure setuptools is installed  sudo aptitude install python-setuptools</p></div>
+Log into your gitosis server
+ Make sure setuptools is installed  sudo aptitude install python-setuptools
+git clone git://eagain.net/gitosis.git
+cd gitosis</p></div>
 						<div class="post-list-footer text-center">
 							<a href="https://cmdln.org/2008/10/25/secure-git-hosting-with-gitosis/">Read More</a>
 						</div>
@@ -306,7 +309,7 @@ ssh gitserver   Make sure setuptools is installed  sudo aptitude install python-
 			<div class="push"></div>
 		</div>
 		<footer class="footer text-center">
-<p>Copyright &copy; 2019 Nick Anderson -
+<p>Copyright &copy; 2022 Nick Anderson -
 <span class="credit">
 	Powered by
 	<a target="_blank" href="https://gohugo.io">Hugo</a>

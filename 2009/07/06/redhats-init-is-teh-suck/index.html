@@ -6,7 +6,11 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<<<<<<< HEAD
 <meta name="generator" content="Hugo 0.57.0" />
+=======
+<meta name="generator" content="Hugo 0.80.0" />
+>>>>>>> a7d29a8a28a02281741be1a86cca3627b7cdd579
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -68,19 +72,12 @@
             <h1><a href="https://cmdln.org/2009/07/06/redhats-init-is-teh-suck/">Redhats&amp;#8217; init is teh suck</a></h1>
             <span class="post-date">Jul 7, 2009 </span>
             <div class="post-content">
-                
-
-<p>I recently had to write an init script for our continuous integration systems remote build agent. Of course this agent is a java jar and does not write its own pidfile. On debian or gentoo (yes I used to rice it) this would not have been an issue. Both have and use start-stop-daemon in their init scripts. start-stop-daemon actually understands that not every process you might want to daemonize writes its own pidfile and thus gives you the ability to daemonize a process, capture its pid, and write a pidfile.</p>
-
-<p>Oh, but not on redhat/centos. No, they have daemon(), which really doesnt do much of anything. <pompus voice> Each process must write its own pidfile </pompus voice>. Well I already have a custom init script, I really don&#8217;t want to write a custom wrapper, nor do I want to add yet another dependency to what ought to be a simple task. Perhaps I just don&#8217;t see the proper way to do this so I welcome solutions. This feature lack causes lines like this to show up in init scripts.</p>
-
-<pre>PID=$(pgrep -n -f "$LAUNCH_CMD")</pre>
-
-<p>I don&#8217;t know about you but that is horribly ugly and error prone in my eyes.</p>
-
+                <p>I recently had to write an init script for our continuous integration systems remote build agent. Of course this agent is a java jar and does not write its own pidfile. On debian or gentoo (yes I used to rice it) this would not have been an issue. Both have and use start-stop-daemon in their init scripts. start-stop-daemon actually understands that not every process you might want to daemonize writes its own pidfile and thus gives you the ability to daemonize a process, capture its pid, and write a pidfile.</p>
+<p>Oh, but not on redhat/centos. No, they have daemon(), which really doesnt do much of anything. <!-- raw HTML omitted --> Each process must write its own pidfile &lt;/pompus voice&gt;. Well I already have a custom init script, I really don’t want to write a custom wrapper, nor do I want to add yet another dependency to what ought to be a simple task. Perhaps I just don’t see the proper way to do this so I welcome solutions. This feature lack causes lines like this to show up in init scripts.</p>
+<!-- raw HTML omitted -->
+<p>I don’t know about you but that is horribly ugly and error prone in my eyes.</p>
 <h2 id="chkconfig-the-other-suck">chkconfig, the other suck.</h2>
-
-<p>Yes its documented that the tags chkconfig and description are required or your init script will not support chkconfig. That&#8217;s all fine and dandy. I copied my init template from /usr/share/doc/initscripts-8.45.25/sysvinitfiles. It has doc at the end of the initscript after exit is run. This is perfectly valid. There is nothing that is going to cause issues with the execution of the script. I left that doc there as I was developing my script. When it came time to chkconfig &#8211;add my script it continually failed. Granted it only took me a few minutes to figure out but what fixed it? Oh yes by removing all the doc at the end of the file. Why is this conflicting with chkconfig no reason that I can see to make it just not work. It would make a bit more sense if the example tags below just overrode the ones at the top of the file.</p>
+<p>Yes its documented that the tags chkconfig and description are required or your init script will not support chkconfig. That’s all fine and dandy. I copied my init template from /usr/share/doc/initscripts-8.45.25/sysvinitfiles. It has doc at the end of the initscript after exit is run. This is perfectly valid. There is nothing that is going to cause issues with the execution of the script. I left that doc there as I was developing my script. When it came time to chkconfig –add my script it continually failed. Granted it only took me a few minutes to figure out but what fixed it? Oh yes by removing all the doc at the end of the file. Why is this conflicting with chkconfig no reason that I can see to make it just not work. It would make a bit more sense if the example tags below just overrode the ones at the top of the file.</p>
 
             </div>
             
@@ -91,7 +88,7 @@
             <div class="push"></div>
         </div>
         <footer class="footer text-center">
-<p>Copyright &copy; 2019 Nick Anderson -
+<p>Copyright &copy; 2022 Nick Anderson -
 <span class="credit">
 	Powered by
 	<a target="_blank" href="https://gohugo.io">Hugo</a>

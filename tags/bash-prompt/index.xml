@@ -1,15 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>bash prompt on </title>
     <link>https://cmdln.org/tags/bash-prompt/</link>
     <description>Recent content in bash prompt on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 25 Feb 2008 03:59:17 +0000</lastBuildDate>
-    
-	<atom:link href="https://cmdln.org/tags/bash-prompt/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 25 Feb 2008 03:59:17 +0000</lastBuildDate><atom:link href="https://cmdln.org/tags/bash-prompt/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Spice up your bash prompt</title>
       <link>https://cmdln.org/2008/02/24/spice-up-your-bash-prompt/</link>

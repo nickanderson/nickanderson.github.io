@@ -1,15 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>mod_rewrite on </title>
     <link>https://cmdln.org/tags/mod_rewrite/</link>
     <description>Recent content in mod_rewrite on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 12 Dec 2008 19:41:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://cmdln.org/tags/mod_rewrite/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 12 Dec 2008 19:41:00 +0000</lastBuildDate><atom:link href="https://cmdln.org/tags/mod_rewrite/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Maintenance mode with apache mod_rewrite</title>
       <link>https://cmdln.org/2008/12/12/maintenance-mode-with-apache-mod_rewrite/</link>

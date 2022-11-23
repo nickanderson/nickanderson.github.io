@@ -1,15 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>zendmd on </title>
     <link>https://cmdln.org/tags/zendmd/</link>
     <description>Recent content in zendmd on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 06 Dec 2012 15:01:13 +0000</lastBuildDate>
-    
-	<atom:link href="https://cmdln.org/tags/zendmd/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 06 Dec 2012 15:01:13 +0000</lastBuildDate><atom:link href="https://cmdln.org/tags/zendmd/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Quick Tip: Drilling into zenoss data with zendmd</title>
       <link>https://cmdln.org/2012/12/06/quick-tip-drilling-into-zenoss-data-with-zendmd/</link>

@@ -6,7 +6,11 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<<<<<<< HEAD
 <meta name="generator" content="Hugo 0.57.0" />
+=======
+<meta name="generator" content="Hugo 0.80.0" />
+>>>>>>> a7d29a8a28a02281741be1a86cca3627b7cdd579
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -68,22 +72,21 @@
             <h1><a href="https://cmdln.org/2010/01/22/backing-up-disney-dvds/">Backing up Disney DVDs</a></h1>
             <span class="post-date">Jan 23, 2010 </span>
             <div class="post-content">
-                
-
-<p>Many of you know that I had a son about 6 months ago now. What you may not know is that my wife decided to quit her job and start a home daycare so she could be at home with our son. We all know how hard kids can be on DVDs and the like, so its important to be able to back them up. I am not a fan of the encryption or the new copy protections that have been put in place (ARccOS, RipGuard). These copy protections introduce bad sectors in the DVD, and set top players are supposed to just ignore them. The problem is not all players follow the rules. I&#8217;ve got a few cheapo players that just wont play many newer titles because of this copy protection.</p>
-
+                <p>Many of you know that I had a son about 6 months ago now. What you may not know is that my wife decided to quit her job and start a home daycare so she could be at home with our son. We all know how hard kids can be on DVDs and the like, so its important to be able to back them up. I am not a fan of the encryption or the new copy protections that have been put in place (ARccOS, RipGuard). These copy protections introduce bad sectors in the DVD, and set top players are supposed to just ignore them. The problem is not all players follow the rules. I’ve got a few cheapo players that just wont play many newer titles because of this copy protection.</p>
 <p>Now that there is a swarm of children in the house I have several motivations to backing up my DVDs.</p>
-
-<p>1) I want the kids to be able to use the cheap DVD players. If something bad happens no big deal.</p>
-
-<p>2) I want the kids to use copies of the original DVDs instead of the original. Again burning a new dvd is much cheaper than buying a new one.</p>
-
-<p>3) My MythTV frontends can stream ISOs and thats more convenient, I never have to get up and put a DVD in the player.</p>
-
+<ol>
+<li>
+<p>I want the kids to be able to use the cheap DVD players. If something bad happens no big deal.</p>
+</li>
+<li>
+<p>I want the kids to use copies of the original DVDs instead of the original. Again burning a new dvd is much cheaper than buying a new one.</p>
+</li>
+<li>
+<p>My MythTV frontends can stream ISOs and thats more convenient, I never have to get up and put a DVD in the player.</p>
+</li>
+</ol>
 <p>So a bit of research and some trial and error I believe I have come up with a pretty easy process.</p>
-
 <h2 id="packages-needed">Packages needed:</h2>
-
 <ul>
 <li>Gnu ddrescue</li>
 <li>dvdbackup</li>
@@ -91,23 +94,16 @@
 <li>vlc</li>
 <li>mkisofs</li>
 </ul>
-
 <h2 id="the-process">The process:</h2>
-
 <ol>
 <li>ddrescue -n -b 2048 /dev/dvd output.iso</li>
 <li>dvdbackup -M -i output.iso -o dvd_structure</li>
 <li>mkisofs -dvd-video -o clean_dvd.iso dvd_structure</li>
 </ol>
-
 <p>Step 1 copys the DVD to disk block by block but any bad sectors found zero data is filled in. At this point you are left with a DVD iso that has the copy protection removed but the encryption is still intact. Step 2 extract the contents to a directory. This second step leaves you with the structure of a dvd without the encryption. I want to preserve everything about the original DVD (except the copy protection and encryption) so I used the mirror option. This leaves me with all the features and original menus. Step 3 take the DVD structure and pack it up into a nice ISO.</p>
-
 <h2 id="a-few-things-to-note">A few things to note:</h2>
-
 <p>I took no steps to make the DVD fit on a single layer DVD (4.something GB). If you wanted to do that you should requantize after step 2. To verify that the final ISO did indeed have the encryption removed I un-installed libdvdcss2 and attempted to play the first ISO with VLC. VLC failed to properly play the ISO with only the copy protection removed but succeeded in playing the final ISO. After testing that I reinstalled libdvdcss2.</p>
-
 <p>Process tested on Disney Pixar Cars.</p>
-
 <p>I hope you find this helpful.</p>
 
             </div>
@@ -119,7 +115,7 @@
             <div class="push"></div>
         </div>
         <footer class="footer text-center">
-<p>Copyright &copy; 2019 Nick Anderson -
+<p>Copyright &copy; 2022 Nick Anderson -
 <span class="credit">
 	Powered by
 	<a target="_blank" href="https://gohugo.io">Hugo</a>

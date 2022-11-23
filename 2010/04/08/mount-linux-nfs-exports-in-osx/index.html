@@ -6,7 +6,11 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<<<<<<< HEAD
 <meta name="generator" content="Hugo 0.57.0" />
+=======
+<meta name="generator" content="Hugo 0.80.0" />
+>>>>>>> a7d29a8a28a02281741be1a86cca3627b7cdd579
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -68,21 +72,13 @@
             <h1><a href="https://cmdln.org/2010/04/08/mount-linux-nfs-exports-in-osx/">Mount Linux NFS exports in OSX</a></h1>
             <span class="post-date">Apr 8, 2010 </span>
             <div class="post-content">
-                <p>I&#8217;m not a fan of OSX and I try to avoid it with the same veracity that I avoid Windows. But I recently needed to have a Linux NFS export mounted on an OSX server. A simple mount server:/export /mymountpoint didn&#8217;t work and returned &#8220;Operation not permitted&#8221;. After a bit of digging I found the solution.</p>
-
-<p>I needed to instruct the client to use a privledged port by adding the &#8220;-P&#8221; option.</p>
-
-<pre class="brush: bash; title: ; notranslate" title="">mount -o -P nfssrv:/export /mymount
-</pre>
-
-<p>Now to make it persistent of course its not as simple as shoving it in /etc/fstab and running &#8220;mount -a&#8221;. No OSX has to be difficult. It turned out lookupd got in the way.  To fix it I did the following after configuring my fstab.</p>
-
-<pre class="brush: bash; title: ; notranslate" title="">mkdir /etc/lookupd
-echo "LookupOrder Cache NI FF" &gt;&gt; /etc/lookupd/mounts
-kill -HUP `cat /var/run/lookupd.pid`
-mount -a
-</pre>
-
+                <p>I’m not a fan of OSX and I try to avoid it with the same veracity that I avoid Windows. But I recently needed to have a Linux NFS export mounted on an OSX server. A simple mount server:/export /mymountpoint didn’t work and returned “Operation not permitted”. After a bit of digging I found the solution.</p>
+<p>I needed to instruct the client to use a privledged port by adding the “-P” option.</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>Now to make it persistent of course its not as simple as shoving it in /etc/fstab and running “mount -a”. No OSX has to be difficult. It turned out lookupd got in the way.  To fix it I did the following after configuring my fstab.</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>Yay that should have mounted your NFS mount and have it be persistent.</p>
 
             </div>
@@ -94,7 +90,7 @@ mount -a
             <div class="push"></div>
         </div>
         <footer class="footer text-center">
-<p>Copyright &copy; 2019 Nick Anderson -
+<p>Copyright &copy; 2022 Nick Anderson -
 <span class="credit">
 	Powered by
 	<a target="_blank" href="https://gohugo.io">Hugo</a>

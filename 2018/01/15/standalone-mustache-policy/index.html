@@ -6,7 +6,11 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<<<<<<< HEAD
 <meta name="generator" content="Hugo 0.57.0" />
+=======
+<meta name="generator" content="Hugo 0.80.0" />
+>>>>>>> a7d29a8a28a02281741be1a86cca3627b7cdd579
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -69,35 +73,30 @@
             <span class="post-date">Jan 15, 2018 </span>
             <div class="post-content">
                 <p>
-&gt; Does CFEngine provide tool to render a mustache template?
-</p>
+&gt; Does CFEngine provide tool to render a mustache template?</p>
 <p>
 No, CFEngine doesn&#39;t have a standalone tool to render mustache. <a href="https://mustache.github.io/#demo">This online demo</a>
-is a good place to quickly prototype a simple template and data set.
-</p>
+is a good place to quickly prototype a simple template and data set.</p>
 <p>
-Another option is to use a stand-alone policy file.
-</p>
+Another option is to use a stand-alone policy file.</p>
 <p>
 Name the file whatever you like. It looks for json in a file named 
 the same
 suffixed with <code class="verbatim">.json</code>, it looks for a mustache template named the 
 same suffixed
 with <code class="verbatim">.mustache</code>, and it renders to a file named the same suffixed 
-with <code class="verbatim">.txt</code>.
-</p>
+with <code class="verbatim">.txt</code>.</p>
 <p>
 So if you name the file <code class="verbatim">/tmp/standalone-mustache.cf</code> it will look 
 for
 <code class="verbatim">/tmp/standalone-mustache.cf.json</code>, 
 <code class="verbatim">/tmp/standalone-mustache.cf.mustache</code>, and
-render <code class="verbatim">/tmp/standalone-mustache.cf.txt</code>.
-</p>
+render <code class="verbatim">/tmp/standalone-mustache.cf.txt</code>.</p>
 <figure>
 <div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -181,13 +180,12 @@ Standalone policy file for prototyping mustache
 </figcaption>
 </figure>
 <p>
-Now test the policy:
-</p>
+Now test the policy:</p>
 <figure>
 <div class="src src-shell">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -207,20 +205,20 @@ Example execution
 </figcaption>
 </figure>
 <p>
-Results in this output:
-</p>
+Results in this output:</p>
+<figure>
 <pre class="example">
     info: Created file &#39;/tmp/standalone-mustache.cf.txt&#39;, mode 
 </pre>
-<p>
-0600
-</p>
+<figcaption>
+Execution output
+</figcaption>
+</figure>
+<p>0600</p>
 <pre class="example">
     info: Updated rendering of &#39;/tmp/standalone-mustache.cf.txt&#39; 
 </pre>
-<p>
-from mustache template &#39;/tmp/standalone-mustache.cf.mustache&#39;
-</p>
+<p>from mustache template &#39;/tmp/standalone-mustache.cf.mustache&#39;</p>
 <pre class="example">
 R: /tmp/standalone-mustache.cf.txt:
 R: hello world
@@ -235,7 +233,7 @@ R: hello world
             <div class="push"></div>
         </div>
         <footer class="footer text-center">
-<p>Copyright &copy; 2019 Nick Anderson -
+<p>Copyright &copy; 2022 Nick Anderson -
 <span class="credit">
 	Powered by
 	<a target="_blank" href="https://gohugo.io">Hugo</a>
