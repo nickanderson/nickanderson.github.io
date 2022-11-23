@@ -5,30 +5,31 @@
         <title> Puppet works hard to make sure nodes are in compliance &middot;  </title>
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<<<<<<< HEAD
-<meta name="generator" content="Hugo 0.57.0" />
-=======
-<meta name="generator" content="Hugo 0.80.0" />
->>>>>>> a7d29a8a28a02281741be1a86cca3627b7cdd579
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.92.2" />
 
 
-<script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
 
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
 
 
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
 
 <link rel="stylesheet" href="https://cmdln.org/css/nix.css">
-<link rel="stylesheet" href="https://cmdln.org/css/syntax.css">
 
 
-<link href="https://fonts.googleapis.com/css?family=Inconsolata|Open+Sans|Roboto|Montserrat|Concert+One" rel="stylesheet">
+
+
+
+<link href="https://fonts.googleapis.com/css?family=Inconsolata%7COpen+Sans%7CConcert+One" rel="stylesheet">
+
+
 
 
 
@@ -37,56 +38,58 @@
 
     <body>
         <header>
-<nav class="navbar navbar-default navbar-fixed-top navbar-inverse font-header">
-	<div class="container-fluid">
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
-				<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
+	<nav class="navbar navbar-dark bg-dark fixed-top navbar-expand-lg font-header">
+		<div class="container-fluid">
+			<a class="navbar-brand" id="green-terminal" href='https://cmdln.org/'>
+				nick@cmdln.org ~ $
+			</a>
+			<button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse-1" 
+					aria-controls="navbar-collapse-1" aria-expanded="false">
+				<span class="visually-hidden">Toggle navigation</span>
+				<span class="navbar-toggler-icon"></span>
 			</button>
-			<a class="navbar-brand" id="green-terminal" href=https://cmdln.org>nick@cmdln.org ~ $</a>
+	
+			
+			<div class="collapse navbar-collapse" id="navbar-collapse-1">
+				<ul class="nav navbar-nav ms-auto">
+					<li class="nav-item">
+						<a class="nav-link" href='https://cmdln.org/'>
+							/home/nick</a>
+					</li>
+					
+					
+					
+					<li class="nav-item dropdown">
+						
+						<a class="nav-link" href="https://cmdln.org/post/">~/posts</a>
+						
+					</li>
+					
+				</ul>
+			</div>
 		</div>
-
-		
-		<div class="collapse navbar-collapse" id="navbar-collapse-1">
-			<ul class="nav navbar-nav navbar-right">
-				<li>
-					<a href="https://cmdln.org">/home/nick</a>
-				</li>
-				
-				
-				<li >
-					<a href="/post/">~/posts</a>
-				</li>
-				
-
-			</ul>
-		</div>
-	</div>
-</nav>
+	</nav>
 </header>
 
-        <div class="container wrapper">
-            <h1><a href="https://cmdln.org/2009/07/29/puppet-works-hard-to-make-sure-nodes-are-in-compliance/">Puppet works hard to make sure nodes are in compliance</a></h1>
-            <span class="post-date">Jul 30, 2009 </span>
-            <div class="post-content">
-                <p>I’ve been working with puppet a lot in the last few weeks. I really enjoy this style of administration compared to “ssh in a for loop”. Its great to script things and I still do it but for maintaining configuration I don’t know if it gets much better than puppet. That being said I ran into a few issues today that had me splitting my head open on my desk, keyboard, pop cans and just about everything else I could reach.</p>
+        <div class="flex-wrapper">
+            <div class="container wrapper">
+                <h1><a href="https://cmdln.org/2009/07/29/puppet-works-hard-to-make-sure-nodes-are-in-compliance/">Puppet works hard to make sure nodes are in compliance</a></h1>
+                <span class="post-date">2009-07-30 </span>
+                <div class="post-content">
+                    <p>I’ve been working with puppet a lot in the last few weeks. I really enjoy this style of administration compared to “ssh in a for loop”. Its great to script things and I still do it but for maintaining configuration I don’t know if it gets much better than puppet. That being said I ran into a few issues today that had me splitting my head open on my desk, keyboard, pop cans and just about everything else I could reach.</p>
 <p>It’s standard practice to keep your puppet configuration in version control and I am doing this with subversion. It provides a central authority with log history so we can audit why changes were made. It’s also handy for my co-workers to be able to use tortisesvn on their windows clients to update configuration. Be careful with that! I do all of my editing in vim and neglected to take into account what using various editors might do to my puppet configuration. Today as we were testing some puppet configurations and I was showing co-workers how to add new nodes to the puppet cluster this bit me right in the soft bits.</p>
 <p>My co-worker added a new node by copy and pasting a previous node definition and updating the node name. Of course he did this with notepad in windows. We noticed when we ran puppetd –test on the new node that it failed with a parser error. It complained about a missing } at line one of our nodes.pp. This was very odd since he was editing the bottom of the file. I opened the file in vim and everything looked right. I could find no such missing curly braces. I went ahead and removed his node definition and ran puppetd –test again. Not surprisingly the node complained of having no definition (I did not have a default node setup). I re-added the node definition and again the node was successful. I initially chalked this up to some error I must have missed in the node definition. But when my co-worker added more nodes and we saw the same behavior it was obvious there was a different issue going on. Now you would think this would be an easy conclusion to draw but that was not the case for me, at least it wasn’t today.</p>
 <p>I noticed that after he added a node if I called in with an already configured node that node would complain about the same parse error. However if I called in again it would receive its configuration just fine and it would say it was ignoring the cache. I saw nothing exceptional in the puppetmaster logs. Of course the same parser error was there the first time a node called in to get its configuration after he altered it with a windows editor but all subsequent call ins of previously configured nodes succeeded. After I noticed this pattern things started coming together. To complicate my troubleshooting I started trying to restart puppetmasterd. This at first sent me for a tail spin. After puppet master was restarted with the file that had been updated with notepad on windows ALL node call ins were failing. No longer was it only the first time. Eventually this lead me to the conclusion. Puppetmasterd works very hard to make sure that your clients get served a valid configuration. If you update the config and do not restart puppetmasterd and that new config is invalid puppetmasterd appears to serve up the previous version of the config that it knew worked. This was all well and dandy and probably a desirable behavior. My issue is that the logs didn’t appear to say “Hey by the way I see you jacked up your puppet config. This config wont work dummy, Im going to go ahead and serve up your last config since it works.”. I saw no mention of this behavior in the docs but perhaps I missed something.</p>
 <p>The moral of the story. Don’t use windows to edit your puppet configs and if you do use vim for windows. Secondary to that test! test! and test some more. Its pretty easy to screw up some syntax and have things start breaking on you.</p>
 
-            </div>
-            
-            <div class="post-comments">
+                </div>
+                
+                <div class="post-comments">
+                    
+                </div>
                 
             </div>
-            
-            <div class="push"></div>
-        </div>
-        <footer class="footer text-center">
+            <footer class="footer text-center">
 <p>Copyright &copy; 2022 Nick Anderson -
 <span class="credit">
 	Powered by
@@ -97,4 +100,5 @@
 </p>
 </footer>
 
+        </div>
     </body>

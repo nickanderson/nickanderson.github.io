@@ -155,8 +155,7 @@ Read the documentation on Normal Order   There is a wealth of information on doc
       <description>If I have a promise with a copy_from promise where the body specifies that permissions should be preserved and I also have a perms body on the same promise what is expected to happen?
   The files type promises documentation describes the normal order of files promise attributes during promise actuation.
  The documentation notes:
-  file presence ( create | copy | link )
-  permissions</description>
+ file presence ( create | copy | link ) permissions file content  So the explicitly specified permissions should win in the end.</description>
     </item>
     
     <item>

@@ -5,30 +5,31 @@
         <title> Reversing key values of a JSON dict in CFEngine with jq &middot;  </title>
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<<<<<<< HEAD
-<meta name="generator" content="Hugo 0.57.0" />
-=======
-<meta name="generator" content="Hugo 0.80.0" />
->>>>>>> a7d29a8a28a02281741be1a86cca3627b7cdd579
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.92.2" />
 
 
-<script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
 
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
 
 
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
 
 <link rel="stylesheet" href="https://cmdln.org/css/nix.css">
-<link rel="stylesheet" href="https://cmdln.org/css/syntax.css">
 
 
-<link href="https://fonts.googleapis.com/css?family=Inconsolata|Open+Sans|Roboto|Montserrat|Concert+One" rel="stylesheet">
+
+
+
+<link href="https://fonts.googleapis.com/css?family=Inconsolata%7COpen+Sans%7CConcert+One" rel="stylesheet">
+
+
 
 
 
@@ -37,65 +38,54 @@
 
     <body>
         <header>
-<nav class="navbar navbar-default navbar-fixed-top navbar-inverse font-header">
-	<div class="container-fluid">
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
-				<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
+	<nav class="navbar navbar-dark bg-dark fixed-top navbar-expand-lg font-header">
+		<div class="container-fluid">
+			<a class="navbar-brand" id="green-terminal" href='https://cmdln.org/'>
+				nick@cmdln.org ~ $
+			</a>
+			<button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse-1" 
+					aria-controls="navbar-collapse-1" aria-expanded="false">
+				<span class="visually-hidden">Toggle navigation</span>
+				<span class="navbar-toggler-icon"></span>
 			</button>
-			<a class="navbar-brand" id="green-terminal" href=https://cmdln.org>nick@cmdln.org ~ $</a>
+	
+			
+			<div class="collapse navbar-collapse" id="navbar-collapse-1">
+				<ul class="nav navbar-nav ms-auto">
+					<li class="nav-item">
+						<a class="nav-link" href='https://cmdln.org/'>
+							/home/nick</a>
+					</li>
+					
+					
+					
+					<li class="nav-item dropdown">
+						
+						<a class="nav-link" href="https://cmdln.org/post/">~/posts</a>
+						
+					</li>
+					
+				</ul>
+			</div>
 		</div>
-
-		
-		<div class="collapse navbar-collapse" id="navbar-collapse-1">
-			<ul class="nav navbar-nav navbar-right">
-				<li>
-					<a href="https://cmdln.org">/home/nick</a>
-				</li>
-				
-				
-				<li >
-					<a href="/post/">~/posts</a>
-				</li>
-				
-
-			</ul>
-		</div>
-	</div>
-</nav>
+	</nav>
 </header>
 
-        <div class="container wrapper">
-            <h1><a href="https://cmdln.org/2019/08/14/reversing-key-values-of-a-json-dict-in-cfengine-with-jq/">Reversing key values of a JSON dict in CFEngine with jq</a></h1>
-            <span class="post-date">Aug 14, 2019 </span>
-            <div class="post-content">
-                <blockquote>
-<<<<<<< HEAD
-<p>
-Do you have any tips on reversing a json dictionary?
-</p>
-<p>
-I have a map of IPv4 addresses to environments and I would like to have a map of
-environments to IPv4s.
-</p>
-=======
+        <div class="flex-wrapper">
+            <div class="container wrapper">
+                <h1><a href="https://cmdln.org/2019/08/14/reversing-key-values-of-a-json-dict-in-cfengine-with-jq/">Reversing key values of a JSON dict in CFEngine with jq</a></h1>
+                <span class="post-date">2019-08-14 </span>
+                <div class="post-content">
+                    <blockquote>
 <p>Do you have any tips on reversing a json dictionary?</p>
 <p>
 I have a map of IPv4 addresses to environments and I would like to have a map of
 environments to IPv4s.</p>
->>>>>>> a7d29a8a28a02281741be1a86cca3627b7cdd579
 </blockquote>
 <div class="src src-json">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<<<<<<< HEAD
-<pre class="chroma"><code class="language-json" data-lang="json"><span class="lnt">1
-=======
-<pre class="chroma"><code><span class="lnt">1
->>>>>>> a7d29a8a28a02281741be1a86cca3627b7cdd579
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -104,7 +94,7 @@ environments to IPv4s.</p>
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-json" data-lang="json">  <span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json">  <span class="p">{</span>
       <span class="nt">&#34;192.0.2.131&#34;</span>    <span class="p">:</span> <span class="s2">&#34;TEST-NET-1&#34;</span><span class="p">,</span>
       <span class="nt">&#34;198.51.100.151&#34;</span> <span class="p">:</span> <span class="s2">&#34;TEST-NET-2&#34;</span><span class="p">,</span>
       <span class="nt">&#34;198.51.100.146&#34;</span> <span class="p">:</span> <span class="s2">&#34;TEST-NET-2&#34;</span><span class="p">,</span>
@@ -115,22 +105,12 @@ environments to IPv4s.</p>
 </div>
 </div>
 <blockquote>
-<<<<<<< HEAD
-<p>
-Would become:
-</p>
-=======
 <p>Would become:</p>
->>>>>>> a7d29a8a28a02281741be1a86cca3627b7cdd579
 </blockquote>
 <div class="src src-json">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<<<<<<< HEAD
-<pre class="chroma"><code class="language-json" data-lang="json"><span class="lnt"> 1
-=======
-<pre class="chroma"><code><span class="lnt"> 1
->>>>>>> a7d29a8a28a02281741be1a86cca3627b7cdd579
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -145,7 +125,7 @@ Would become:
 </span><span class="lnt">13
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
   <span class="nt">&#34;TEST-NET-1&#34;</span><span class="p">:</span> <span class="p">[</span>
     <span class="s2">&#34;192.0.2.131&#34;</span>
   <span class="p">],</span>
@@ -164,25 +144,13 @@ Would become:
 <p>
 I think that is too complex to do naively in policy. <code class="verbatim">jq</code> is really good for
 working with JSON and I found an answer of <a href="https://stackoverflow.com/a/54354245/2854727">how to swap key and value of an
-<<<<<<< HEAD
-object using jq</a> stackoverflow.
-</p>
-<p>
-We can use <code class="verbatim">mapdata()</code> to do that same conversion from within policy.
-</p>
-<div class="src src-cfengine3">
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="lnt"> 1
-=======
 object using jq</a> stackoverflow.</p>
 <p>
 We can use <code class="verbatim">mapdata()</code> to do that same conversion from within policy.</p>
 <div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
->>>>>>> a7d29a8a28a02281741be1a86cca3627b7cdd579
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -222,7 +190,7 @@ We can use <code class="verbatim">mapdata()</code> to do that same conversion fr
 </span><span class="lnt">38
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">example_mapdata_jq_reverse_key_values</span>
+<pre tabindex="0" class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">example_mapdata_jq_reverse_key_values</span>
   <span class="p">{</span>
 
     <span class="kd">vars</span><span class="p">:</span>
@@ -264,22 +232,6 @@ We can use <code class="verbatim">mapdata()</code> to do that same conversion fr
 </div>
 </div>
 <p>
-<<<<<<< HEAD
-Running that policy produces the reversed map:
-</p>
-<pre class="example">
-R: {
-  "TEST-NET-1": [
-    "192.0.2.131"
-  ],
-  "TEST-NET-2": [
-    "198.51.100.146",
-    "198.51.100.151"
-  ],
-  "TEST-NET-3": [
-    "203.0.113.146",
-    "203.0.113.21"
-=======
 Running that policy produces the reversed map:</p>
 <pre class="example">
 R: {
@@ -293,25 +245,19 @@ R: {
   &#34;TEST-NET-3&#34;: [
     &#34;203.0.113.146&#34;,
     &#34;203.0.113.21&#34;
->>>>>>> a7d29a8a28a02281741be1a86cca3627b7cdd579
   ]
 }
 </pre>
 
-            </div>
-            
-            <div class="post-comments">
+                </div>
+                
+                <div class="post-comments">
+                    
+                </div>
                 
             </div>
-            
-            <div class="push"></div>
-        </div>
-        <footer class="footer text-center">
-<<<<<<< HEAD
-<p>Copyright &copy; 2019 Nick Anderson -
-=======
+            <footer class="footer text-center">
 <p>Copyright &copy; 2022 Nick Anderson -
->>>>>>> a7d29a8a28a02281741be1a86cca3627b7cdd579
 <span class="credit">
 	Powered by
 	<a target="_blank" href="https://gohugo.io">Hugo</a>
@@ -321,4 +267,5 @@ R: {
 </p>
 </footer>
 
+        </div>
     </body>

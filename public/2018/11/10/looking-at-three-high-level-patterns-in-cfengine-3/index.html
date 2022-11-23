@@ -5,30 +5,31 @@
         <title> Looking at three high level patterns in CFEngine 3 &middot;  </title>
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<<<<<<< HEAD
-<meta name="generator" content="Hugo 0.57.0" />
-=======
-<meta name="generator" content="Hugo 0.80.0" />
->>>>>>> a7d29a8a28a02281741be1a86cca3627b7cdd579
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.92.2" />
 
 
-<script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
 
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
 
 
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
 
 <link rel="stylesheet" href="https://cmdln.org/css/nix.css">
-<link rel="stylesheet" href="https://cmdln.org/css/syntax.css">
 
 
-<link href="https://fonts.googleapis.com/css?family=Inconsolata|Open+Sans|Roboto|Montserrat|Concert+One" rel="stylesheet">
+
+
+
+<link href="https://fonts.googleapis.com/css?family=Inconsolata%7COpen+Sans%7CConcert+One" rel="stylesheet">
+
+
 
 
 
@@ -37,42 +38,45 @@
 
     <body>
         <header>
-<nav class="navbar navbar-default navbar-fixed-top navbar-inverse font-header">
-	<div class="container-fluid">
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
-				<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
+	<nav class="navbar navbar-dark bg-dark fixed-top navbar-expand-lg font-header">
+		<div class="container-fluid">
+			<a class="navbar-brand" id="green-terminal" href='https://cmdln.org/'>
+				nick@cmdln.org ~ $
+			</a>
+			<button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse-1" 
+					aria-controls="navbar-collapse-1" aria-expanded="false">
+				<span class="visually-hidden">Toggle navigation</span>
+				<span class="navbar-toggler-icon"></span>
 			</button>
-			<a class="navbar-brand" id="green-terminal" href=https://cmdln.org>nick@cmdln.org ~ $</a>
+	
+			
+			<div class="collapse navbar-collapse" id="navbar-collapse-1">
+				<ul class="nav navbar-nav ms-auto">
+					<li class="nav-item">
+						<a class="nav-link" href='https://cmdln.org/'>
+							/home/nick</a>
+					</li>
+					
+					
+					
+					<li class="nav-item dropdown">
+						
+						<a class="nav-link" href="https://cmdln.org/post/">~/posts</a>
+						
+					</li>
+					
+				</ul>
+			</div>
 		</div>
-
-		
-		<div class="collapse navbar-collapse" id="navbar-collapse-1">
-			<ul class="nav navbar-nav navbar-right">
-				<li>
-					<a href="https://cmdln.org">/home/nick</a>
-				</li>
-				
-				
-				<li >
-					<a href="/post/">~/posts</a>
-				</li>
-				
-
-			</ul>
-		</div>
-	</div>
-</nav>
+	</nav>
 </header>
 
-        <div class="container wrapper">
-            <h1><a href="https://cmdln.org/2018/11/10/looking-at-three-high-level-patterns-in-cfengine-3/">Looking at three high level patterns in CFEngine 3</a></h1>
-            <span class="post-date">Nov 10, 2018 </span>
-            <div class="post-content">
-                
+        <div class="flex-wrapper">
+            <div class="container wrapper">
+                <h1><a href="https://cmdln.org/2018/11/10/looking-at-three-high-level-patterns-in-cfengine-3/">Looking at three high level patterns in CFEngine 3</a></h1>
+                <span class="post-date">2018-11-10 </span>
+                <div class="post-content">
+                    
 <p>
 How do you deal with config files that need different settings based on various
 services that are running on a host and cooperate with other teams? It&#39;s a
@@ -90,25 +94,19 @@ Here, I look at three high level patterns I have seen.</p>
 <dt>
 Competitive management
 </dt>
-<dd>
-<p>Each bundle that needs a specific config manages it
-by itself, typically by using a parameterized bundle.</p>
-</dd>
+<dd>Each bundle that needs a specific config manages it
+by itself, typically by using a parameterized bundle.</dd>
 <dt>
 Centralized management
 </dt>
-<dd>
-<p>All config definition is in a single place, anyone
-needing something edits the global config.</p>
-</dd>
+<dd>All config definition is in a single place, anyone
+needing something edits the global config.</dd>
 <dt>
 Cooperative management
 </dt>
-<dd>
-<p>Each bundle that needs a specific config, publishes
+<dd>Each bundle that needs a specific config, publishes
 the config it needs, and another policy handles consolidating the configs
-and edits the config as necessary.</p>
-</dd>
+and edits the config as necessary.</dd>
 </dl>
 <p>Let&#39;s take a look at an example of each of these patterns. I will start from an
 example recently shared in #cfengine on irc.freenode.net that manages
@@ -132,7 +130,7 @@ The original example
 <div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -151,7 +149,7 @@ The original example
 </span><span class="lnt">17
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">vagrant_vm</span>
+<pre tabindex="0" class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">vagrant_vm</span>
   <span class="p">{</span>
     <span class="kd">meta</span><span class="p">:</span>
         <span class="p">&#34;</span><span class="nv">tags</span><span class="p">&#34;</span> <span class="kt">slist</span> <span class="o">=&gt;</span> <span class="p">{</span>
@@ -181,7 +179,7 @@ bundle agent vagrant_vm
 <div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -204,7 +202,7 @@ bundle agent vagrant_vm
 </span><span class="lnt">21
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">global_env</span><span class="p">(</span><span class="nv">name</span><span class="p">,</span> <span class="nv">value</span><span class="p">)</span>
+<pre tabindex="0" class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">global_env</span><span class="p">(</span><span class="nv">name</span><span class="p">,</span> <span class="nv">value</span><span class="p">)</span>
   <span class="p">{</span>
     <span class="kd">vars</span><span class="p">:</span>
         <span class="p">&#34;</span><span class="nv">etcenv[$(name)]</span><span class="p">&#34;</span> <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;</span><span class="si">$(value)</span><span class="s">&#34;</span><span class="p">;</span>
@@ -243,12 +241,12 @@ unique across actuation&#39;s of the bundle for different values of <code class=
 <div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="s">&#34;/etc/environment&#34;</span>
+<pre tabindex="0" class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="s">&#34;/etc/environment&#34;</span>
     <span class="kr">edit_line</span> <span class="o">=&gt;</span> <span class="nf">set_line_based</span><span class="p">(</span><span class="s">&#34;global_env.etcenv&#34;</span><span class="p">,</span> <span class="s">&#34;=&#34;</span><span class="p">,</span> <span class="s">&#34;</span><span class="se">\s</span><span class="s">*=</span><span class="se">\s</span><span class="s">*&#34;</span><span class="p">,</span> <span class="s">&#34;.*&#34;</span><span class="p">,</span> <span class="s">&#34;</span><span class="se">\s</span><span class="s">*#</span><span class="se">\s</span><span class="s">*&#34;</span><span class="p">),</span>
     <span class="kr">handle</span> <span class="o">=&gt;</span> <span class="s">&#34;etc_environment_</span><span class="si">$(name)</span><span class="s">_</span><span class="si">$(value)</span><span class="s">&#34;</span><span class="p">;</span></code></pre></td></tr></table>
 </div>
@@ -258,45 +256,25 @@ unique across actuation&#39;s of the bundle for different values of <code class=
 I will combine them together into the same policy file and make some minor
 changes.</p>
 <ul>
-<li>
-<p>I added handles using the parameters to make sure that the promises are unique
+<li>I added handles using the parameters to make sure that the promises are unique
 across executions with different parameter values. For more on this, see the
-<a href="https://docs.cfengine.com/docs/3.12/reference-language-concepts-bundles.html">language concepts for bundles</a>, it discusses how bundles are not functions.</p>
-</li>
-<li>
-<p>I added <code class="verbatim">bundle agent __main__</code> so that the <code class="verbatim">vagrant_vm</code> bundle will be
-actuated when this policy file is run directly.</p>
-</li>
-<li>
-<p>I removed the <code class="verbatim">unifi</code> methods promise because it was not provided in the
-original example.</p>
-</li>
-<li>
-<p>I added reports that show the complete content of the files for easy
-demonstration.</p>
-</li>
-<li>
-<p>I include the stdlib for my executions, you don&#39;t see it, but know that it&#39;s
-in use.</p>
-</li>
-<li>
-<p>I guard the <code>systemd daemon-reload</code> with a check that the executing user is
+<a href="https://docs.cfengine.com/docs/3.12/reference-language-concepts-bundles.html">language concepts for bundles</a>, it discusses how bundles are not functions.</li>
+<li>I added <code class="verbatim">bundle agent __main__</code> so that the <code class="verbatim">vagrant_vm</code> bundle will be
+actuated when this policy file is run directly.</li>
+<li>I removed the <code class="verbatim">unifi</code> methods promise because it was not provided in the
+original example.</li>
+<li>I added reports that show the complete content of the files for easy
+demonstration.</li>
+<li>I include the stdlib for my executions, you don&#39;t see it, but know that it&#39;s
+in use.</li>
+<li>I guard the <code>systemd daemon-reload</code> with a check that the executing user is
 root because I prototype policy as my own user, inside org-mode using
-<a href="https://github.com/nickanderson/ob-cfengine3">ob-cfengine3</a> (shameless plug).</p>
-</li>
-<li>
-<p>I add an init bundle to reset as if running from a clean state with no
-pre-existing configuration.</p>
-</li>
-<li>
-<p>I added body contain <code class="verbatim">exec_owner()</code> because it isn&#39;t in the stdlib.</p>
-</li>
-<li>
-<p>I added <code class="verbatim">create =&gt; &#34;true&#34;</code> to the files promises.</p>
-</li>
-<li>
-<p>I prefixed the files promises with <code class="verbatim">/tmp</code>.</p>
-</li>
+<a href="https://github.com/nickanderson/ob-cfengine3">ob-cfengine3</a> (shameless plug).</li>
+<li>I add an init bundle to reset as if running from a clean state with no
+pre-existing configuration.</li>
+<li>I added body contain <code class="verbatim">exec_owner()</code> because it isn&#39;t in the stdlib.</li>
+<li>I added <code class="verbatim">create =&gt; &#34;true&#34;</code> to the files promises.</li>
+<li>I prefixed the files promises with <code class="verbatim">/tmp</code>.</li>
 </ul>
 </div>
 </div>
@@ -321,7 +299,7 @@ agent run.</p>
 <div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -396,7 +374,7 @@ agent run.</p>
 </span><span class="lnt">73
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">global_env</span><span class="p">(</span><span class="nv">name</span><span class="p">,</span> <span class="nv">value</span><span class="p">)</span>
+<pre tabindex="0" class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">global_env</span><span class="p">(</span><span class="nv">name</span><span class="p">,</span> <span class="nv">value</span><span class="p">)</span>
   <span class="p">{</span>
     <span class="kd">vars</span><span class="p">:</span>
         <span class="p">&#34;</span><span class="nv">etcenv[$(name)]</span><span class="p">&#34;</span> <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;</span><span class="si">$(value)</span><span class="s">&#34;</span><span class="p">;</span>
@@ -520,7 +498,7 @@ single time, reducing IO.</p>
 <div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -605,7 +583,7 @@ single time, reducing IO.</p>
 </span><span class="lnt">83
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">global_env</span><span class="p">(</span><span class="nv">map</span><span class="p">)</span>
+<pre tabindex="0" class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">global_env</span><span class="p">(</span><span class="nv">map</span><span class="p">)</span>
   <span class="p">{</span>
     <span class="kd">vars</span><span class="p">:</span>
         <span class="c"># map is KEY=VAL
@@ -748,7 +726,7 @@ prefix to be specified.</p>
 <div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -841,7 +819,7 @@ prefix to be specified.</p>
 </span><span class="lnt">91
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">global_env</span>
+<pre tabindex="0" class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">global_env</span>
   <span class="p">{</span>
     <span class="kd">vars</span><span class="p">:</span>
 
@@ -986,7 +964,7 @@ of the policy.</p>
 <div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1080,7 +1058,7 @@ of the policy.</p>
 </span><span class="lnt">92
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">global_env</span>
+<pre tabindex="0" class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">global_env</span>
   <span class="p">{</span>
     <span class="kd">vars</span><span class="p">:</span>
 
@@ -1223,7 +1201,7 @@ no unknown content in the configuration file.</p>
 <div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1316,7 +1294,7 @@ no unknown content in the configuration file.</p>
 </span><span class="lnt">91
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">global_env</span>
+<pre tabindex="0" class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">global_env</span>
   <span class="p">{</span>
       <span class="kd">vars</span><span class="p">:</span>
       
@@ -1459,7 +1437,7 @@ interchangeably. CSV is also possible, but different parsing would be required.<
 <strong>/tmp/env.env:</strong></p>
 <figure>
 <div class="src src-conf">
-<pre><code class="language-conf" data-lang="conf">  PAPERTRAIL_HOST=&#34;xxx.papertrailapp.com&#34;
+<pre tabindex="0"><code class="language-conf" data-lang="conf">  PAPERTRAIL_HOST=&#34;xxx.papertrailapp.com&#34;
   PAPERTRAIL_PORT=&#34;11111&#34;
   APPOPTICS_USER=&#34;ops@whatever.com&#34;
   APPOPTICS_APIKEY=&#34;cafebabedeadbeef&#34;
@@ -1478,7 +1456,7 @@ interchangeably. CSV is also possible, but different parsing would be required.<
 <div class="src src-json">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1490,7 +1468,7 @@ interchangeably. CSV is also possible, but different parsing would be required.<
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-json" data-lang="json">  <span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json">  <span class="p">{</span>
     <span class="nt">&#34;PAPERTRAIL_HOST&#34;</span><span class="p">:</span> <span class="s2">&#34;xxx.papertrailapp.com&#34;</span><span class="p">,</span>
     <span class="nt">&#34;PAPERTRAIL_PORT&#34;</span><span class="p">:</span> <span class="s2">&#34;11111&#34;</span><span class="p">,</span>
     <span class="nt">&#34;APPOPTICS_USER&#34;</span><span class="p">:</span> <span class="s2">&#34;ops@whatever.com&#34;</span><span class="p">,</span>
@@ -1513,7 +1491,7 @@ interchangeably. CSV is also possible, but different parsing would be required.<
 <div class="src src-yaml">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -1524,7 +1502,7 @@ interchangeably. CSV is also possible, but different parsing would be required.<
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="w">  </span>---<span class="w">
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="w">  </span>---<span class="w">
 </span><span class="w">  </span><span class="nt">PAPERTRAIL_HOST</span><span class="p">:</span><span class="w"> </span><span class="l">xxx.papertrailapp.com</span><span class="w">
 </span><span class="w">  </span><span class="nt">PAPERTRAIL_PORT</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;11111&#39;</span><span class="w">
 </span><span class="w">  </span><span class="nt">APPOPTICS_USER</span><span class="p">:</span><span class="w"> </span><span class="l">ops@whatever.com</span><span class="w">
@@ -1545,7 +1523,7 @@ interchangeably. CSV is also possible, but different parsing would be required.<
 <div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1621,7 +1599,7 @@ interchangeably. CSV is also possible, but different parsing would be required.<
 </span><span class="lnt">74
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">global_env</span>
+<pre tabindex="0" class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">global_env</span>
   <span class="p">{</span>
     <span class="kd">vars</span><span class="p">:</span>
         <span class="p">&#34;</span><span class="nv">env_i</span><span class="p">&#34;</span> <span class="kt">slist</span> <span class="o">=&gt;</span> <span class="nf">getindices</span><span class="p">(</span> <span class="s">&#34;app_data.env&#34;</span> <span class="p">);</span>
@@ -1749,7 +1727,7 @@ settings.</p>
 <div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">  1
+<pre tabindex="0" class="chroma"><code><span class="lnt">  1
 </span><span class="lnt">  2
 </span><span class="lnt">  3
 </span><span class="lnt">  4
@@ -1857,7 +1835,7 @@ settings.</p>
 </span><span class="lnt">106
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">global_env</span>
+<pre tabindex="0" class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">global_env</span>
   <span class="p">{</span>
     <span class="kd">vars</span><span class="p">:</span>
         <span class="c"># Collect a datastrucutre from variables tagged as used_by this bundle
@@ -2003,15 +1981,14 @@ delegation of control and tighter integration with other systems.</p>
 </div>
 </div>
 
-            </div>
-            
-            <div class="post-comments">
+                </div>
+                
+                <div class="post-comments">
+                    
+                </div>
                 
             </div>
-            
-            <div class="push"></div>
-        </div>
-        <footer class="footer text-center">
+            <footer class="footer text-center">
 <p>Copyright &copy; 2022 Nick Anderson -
 <span class="credit">
 	Powered by
@@ -2022,4 +1999,5 @@ delegation of control and tighter integration with other systems.</p>
 </p>
 </footer>
 
+        </div>
     </body>
