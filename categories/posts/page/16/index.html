@@ -1,34 +1,35 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="en">
 
 	<head>
 		<title> Posts &middot;  </title>
 
 		<meta http-equiv="content-type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<<<<<<< HEAD
-<meta name="generator" content="Hugo 0.57.0" />
-=======
-<meta name="generator" content="Hugo 0.80.0" />
->>>>>>> a7d29a8a28a02281741be1a86cca3627b7cdd579
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.92.2" />
 
 
-<script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
 
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
 
 
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
 
 <link rel="stylesheet" href="https://cmdln.org/css/nix.css">
-<link rel="stylesheet" href="https://cmdln.org/css/syntax.css">
 
 
-<link href="https://fonts.googleapis.com/css?family=Inconsolata|Open+Sans|Roboto|Montserrat|Concert+One" rel="stylesheet">
+
+
+
+<link href="https://fonts.googleapis.com/css?family=Inconsolata%7COpen+Sans%7CConcert+One" rel="stylesheet">
+
+
 
 
 
@@ -37,185 +38,189 @@
 
 	<body>
 		<header>
-<nav class="navbar navbar-default navbar-fixed-top navbar-inverse font-header">
-	<div class="container-fluid">
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
-				<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
+	<nav class="navbar navbar-dark bg-dark fixed-top navbar-expand-lg font-header">
+		<div class="container-fluid">
+			<a class="navbar-brand" id="green-terminal" href='https://cmdln.org/'>
+				nick@cmdln.org ~ $
+			</a>
+			<button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse-1" 
+					aria-controls="navbar-collapse-1" aria-expanded="false">
+				<span class="visually-hidden">Toggle navigation</span>
+				<span class="navbar-toggler-icon"></span>
 			</button>
-			<a class="navbar-brand" id="green-terminal" href=https://cmdln.org>nick@cmdln.org ~ $</a>
+	
+			
+			<div class="collapse navbar-collapse" id="navbar-collapse-1">
+				<ul class="nav navbar-nav ms-auto">
+					<li class="nav-item">
+						<a class="nav-link" href='https://cmdln.org/'>
+							/home/nick</a>
+					</li>
+					
+					
+					
+					<li class="nav-item dropdown">
+						
+						<a class="nav-link" href="https://cmdln.org/post/">~/posts</a>
+						
+					</li>
+					
+				</ul>
+			</div>
 		</div>
-
-		
-		<div class="collapse navbar-collapse" id="navbar-collapse-1">
-			<ul class="nav navbar-nav navbar-right">
-				<li>
-					<a href="https://cmdln.org">/home/nick</a>
-				</li>
-				
-				
-				<li >
-					<a href="/post/">~/posts</a>
-				</li>
-				
-
-			</ul>
-		</div>
-	</div>
-</nav>
+	</nav>
 </header>
 
-		<div class="container wrapper">
-			<div class="row">
-				<div class="col-xs-12 text-center">
-					<h1 id=>Posts</h1>
+		<div class="flex-wrapper">
+			<div class="container wrapper">
+				<div class="row">
+					<div class="col-xs-12 text-center">
+						<h1 id=>Posts</h1>
+					</div>
 				</div>
+				<ul id="post-list">
+	
+	<li>
+		<div class="post-list-item">
+			<div class="post-header">
+				<h4 class="post-link"><a href="https://cmdln.org/2008/11/19/debian-etccrond-gotcha/">Debian /etc/cron.d/ gotcha</a></h4>
+				<h4 class="post-date">2008-11-19</h4>
 			</div>
-			<ul id="post-list">
-                	
-				<li>
-					<div class="post-list-item">
-						<div class="post-header">
-							<h4 class="post-link"><a href="https://cmdln.org/2008/11/19/debian-etccrond-gotcha/">Debian /etc/cron.d/ gotcha</a></h4>
-							<h4 class="post-date">Nov 19, 2008</h4>
-						</div>
-						<div class="post-summary"><p>I typically use /etc/cron.d to store all of my system crontabs. I recently ran into an issue that I had either not run into before, or fixed and paid no attention to. Files stored in /etc/cron.d/ or any /etc/cron.* directory need to adhear to the run-parts Debian cron script namespace which consists is
+			<div class="post-summary"><p>I typically use /etc/cron.d to store all of my system crontabs. I recently ran into an issue that I had either not run into before, or fixed and paid no attention to. Files stored in /etc/cron.d/ or any /etc/cron.* directory need to adhear to the run-parts Debian cron script namespace which consists is
 for the regex impared this does not include the dot character. If you have a file in /etc/cron.</p></div>
-						<div class="post-list-footer text-center">
-							<a href="https://cmdln.org/2008/11/19/debian-etccrond-gotcha/">Read More</a>
-						</div>
-					</div>
-				</li>
-			
-				<li>
-					<div class="post-list-item">
-						<div class="post-header">
-							<h4 class="post-link"><a href="https://cmdln.org/2008/11/07/how-i-tamed-my-mutt/">How I tamed my mutt</a></h4>
-							<h4 class="post-date">Nov 8, 2008</h4>
-						</div>
-						<div class="post-summary"><p><p>As you by now well know I try to mostly live at the console (well multiple x consoles). Mutt is my mail client of choice. I’ve tried Thunderbird, Kmail, Evolution, Sylpheed, and pine. For whatever reason I feel most comfortable with mutt. I also use IMAP for both my personal and work accounts. Mutt was originally designed to deal with local mail and while it does a very good job with IMAP I don’t like how it handles multiple accounts.</p></p></div>
-						<div class="post-list-footer text-center">
-							<a href="https://cmdln.org/2008/11/07/how-i-tamed-my-mutt/">Read More</a>
-						</div>
-					</div>
-				</li>
-			
-				<li>
-					<div class="post-list-item">
-						<div class="post-header">
-							<h4 class="post-link"><a href="https://cmdln.org/2008/11/03/parable-a-short-allegorical-story-designed-to-illustrate-or-teach-some-truth-religious-principle-or-moral-lesson/">Parable (a short allegorical story designed to illustrate or teach some truth, religious principle, or moral lesson)</a></h4>
-							<h4 class="post-date">Nov 3, 2008</h4>
-						</div>
-						<div class="post-summary"><p><p>Rarely do I get emails that are worthy of even reading let alone sharing with others. This one however, is pretty funny, and seems to be fairly accurate.</p></p></div>
-						<div class="post-list-footer text-center">
-							<a href="https://cmdln.org/2008/11/03/parable-a-short-allegorical-story-designed-to-illustrate-or-teach-some-truth-religious-principle-or-moral-lesson/">Read More</a>
-						</div>
-					</div>
-				</li>
-			
-				<li>
-					<div class="post-list-item">
-						<div class="post-header">
-							<h4 class="post-link"><a href="https://cmdln.org/2008/11/01/trust-not-dns-or-how-to-properly-move-a-website/">Trust not DNS or How to properly move a website</a></h4>
-							<h4 class="post-date">Nov 2, 2008</h4>
-						</div>
-						<div class="post-summary"><p><p>Recently I had to move a website that gets a fair amount of traffic. I prepared for this by lowering the TTL on the domains associated several weeks in advance to 600 seconds. Originally my plan was to toss up a maintenance page on the old server, change the DNS, and figured that within a few hours max the vast majority of DNS servers would have the update being that TTL had been set at 600 seconds for several weeks and prior to that it was set at 48 hours. This was all planned for the middle of the night on a weekend (very slow traffic time). I was in for a rude awakening the next morning.</p></p></div>
-						<div class="post-list-footer text-center">
-							<a href="https://cmdln.org/2008/11/01/trust-not-dns-or-how-to-properly-move-a-website/">Read More</a>
-						</div>
-					</div>
-				</li>
-			
-				<li>
-					<div class="post-list-item">
-						<div class="post-header">
-							<h4 class="post-link"><a href="https://cmdln.org/2008/10/30/why-you-should-bottom-post-small-rant/">Why you should bottom post &#43; small rant</a></h4>
-							<h4 class="post-date">Oct 31, 2008</h4>
-						</div>
-						<div class="post-summary"><p><p>Proper email form (specifically top vs bottom posting) is something that has been on my mind lately. I am trying to share the benefits of trimming and bottom posting with my co-workers. They don’t seem to be taking kindly to it.</p>
+			<div class="post-list-footer text-center">
+				<a href="https://cmdln.org/2008/11/19/debian-etccrond-gotcha/">Read More</a>
+			</div>
+		</div>
+	</li>
+	
+	<li>
+		<div class="post-list-item">
+			<div class="post-header">
+				<h4 class="post-link"><a href="https://cmdln.org/2008/11/07/how-i-tamed-my-mutt/">How I tamed my mutt</a></h4>
+				<h4 class="post-date">2008-11-08</h4>
+			</div>
+			<div class="post-summary"><p><p>As you by now well know I try to mostly live at the console (well multiple x consoles). Mutt is my mail client of choice. I’ve tried Thunderbird, Kmail, Evolution, Sylpheed, and pine. For whatever reason I feel most comfortable with mutt. I also use IMAP for both my personal and work accounts. Mutt was originally designed to deal with local mail and while it does a very good job with IMAP I don’t like how it handles multiple accounts.</p></p></div>
+			<div class="post-list-footer text-center">
+				<a href="https://cmdln.org/2008/11/07/how-i-tamed-my-mutt/">Read More</a>
+			</div>
+		</div>
+	</li>
+	
+	<li>
+		<div class="post-list-item">
+			<div class="post-header">
+				<h4 class="post-link"><a href="https://cmdln.org/2008/11/03/parable-a-short-allegorical-story-designed-to-illustrate-or-teach-some-truth-religious-principle-or-moral-lesson/">Parable (a short allegorical story designed to illustrate or teach some truth, religious principle, or moral lesson)</a></h4>
+				<h4 class="post-date">2008-11-03</h4>
+			</div>
+			<div class="post-summary"><p><p>Rarely do I get emails that are worthy of even reading let alone sharing with others. This one however, is pretty funny, and seems to be fairly accurate.</p></p></div>
+			<div class="post-list-footer text-center">
+				<a href="https://cmdln.org/2008/11/03/parable-a-short-allegorical-story-designed-to-illustrate-or-teach-some-truth-religious-principle-or-moral-lesson/">Read More</a>
+			</div>
+		</div>
+	</li>
+	
+	<li>
+		<div class="post-list-item">
+			<div class="post-header">
+				<h4 class="post-link"><a href="https://cmdln.org/2008/11/01/trust-not-dns-or-how-to-properly-move-a-website/">Trust not DNS or How to properly move a website</a></h4>
+				<h4 class="post-date">2008-11-02</h4>
+			</div>
+			<div class="post-summary"><p><p>Recently I had to move a website that gets a fair amount of traffic. I prepared for this by lowering the TTL on the domains associated several weeks in advance to 600 seconds. Originally my plan was to toss up a maintenance page on the old server, change the DNS, and figured that within a few hours max the vast majority of DNS servers would have the update being that TTL had been set at 600 seconds for several weeks and prior to that it was set at 48 hours. This was all planned for the middle of the night on a weekend (very slow traffic time). I was in for a rude awakening the next morning.</p></p></div>
+			<div class="post-list-footer text-center">
+				<a href="https://cmdln.org/2008/11/01/trust-not-dns-or-how-to-properly-move-a-website/">Read More</a>
+			</div>
+		</div>
+	</li>
+	
+	<li>
+		<div class="post-list-item">
+			<div class="post-header">
+				<h4 class="post-link"><a href="https://cmdln.org/2008/10/30/why-you-should-bottom-post-small-rant/">Why you should bottom post &#43; small rant</a></h4>
+				<h4 class="post-date">2008-10-31</h4>
+			</div>
+			<div class="post-summary"><p><p>Proper email form (specifically top vs bottom posting) is something that has been on my mind lately. I am trying to share the benefits of trimming and bottom posting with my co-workers. They don’t seem to be taking kindly to it.</p>
 <p>I would say my largest pet peeve when trying to teach good email habits is the “It takes to long” comment. In a business setting this sends shooting pains through my bones. Essentially you are saying the customer is not deserving or worth the time to take a few extra seconds when crafting a response.</p>
 <p>If your interested in what my thoughts on top vs bottom posting read on.</p></p></div>
-						<div class="post-list-footer text-center">
-							<a href="https://cmdln.org/2008/10/30/why-you-should-bottom-post-small-rant/">Read More</a>
-						</div>
-					</div>
-				</li>
-			
-				<li>
-					<div class="post-list-item">
-						<div class="post-header">
-							<h4 class="post-link"><a href="https://cmdln.org/2008/10/28/why-you-should-give-your-sysadmin-a-day-off/">Why you should give your sysadmin a day off</a></h4>
-							<h4 class="post-date">Oct 29, 2008</h4>
-						</div>
-						<div class="post-summary"><p>We will eventually go crazy without some rest. Looks like solaris cluster may have saved the day. Us Linux admins unfortunately do not have ZFS.</p></div>
-						<div class="post-list-footer text-center">
-							<a href="https://cmdln.org/2008/10/28/why-you-should-give-your-sysadmin-a-day-off/">Read More</a>
-						</div>
-					</div>
-				</li>
-			
-				<li>
-					<div class="post-list-item">
-						<div class="post-header">
-							<h4 class="post-link"><a href="https://cmdln.org/2008/10/26/vim-wordpress-vimpress-happiness/">Vim &#43; wordpress == vimpress, happiness</a></h4>
-							<h4 class="post-date">Oct 26, 2008</h4>
-						</div>
-						<div class="post-summary"><p><p>I recently found a vim plug-in for WordPress. <a href="http://friggeri.net/blog/2007/07/13/vimpress">Vimpress</a> allows your to write and edit your blog posts directly from vim. Sure it has its limitations. There does not appear to be support for future data publishing or drafts. But overall its a much better experience to write in vim than the built in editor.</p></p></div>
-						<div class="post-list-footer text-center">
-							<a href="https://cmdln.org/2008/10/26/vim-wordpress-vimpress-happiness/">Read More</a>
-						</div>
-					</div>
-				</li>
-			
-				<li>
-					<div class="post-list-item">
-						<div class="post-header">
-							<h4 class="post-link"><a href="https://cmdln.org/2008/10/25/secure-git-hosting-with-gitosis/">Secure git hosting with gitosis</a></h4>
-							<h4 class="post-date">Oct 26, 2008</h4>
-						</div>
-						<div class="post-summary"><p>I hope you are already using ssh keys, but just in case your not go ahead and generate one with ssh-keygen -t rsa (you should do this on your local box)
+			<div class="post-list-footer text-center">
+				<a href="https://cmdln.org/2008/10/30/why-you-should-bottom-post-small-rant/">Read More</a>
+			</div>
+		</div>
+	</li>
+	
+	<li>
+		<div class="post-list-item">
+			<div class="post-header">
+				<h4 class="post-link"><a href="https://cmdln.org/2008/10/28/why-you-should-give-your-sysadmin-a-day-off/">Why you should give your sysadmin a day off</a></h4>
+				<h4 class="post-date">2008-10-29</h4>
+			</div>
+			<div class="post-summary"><p>We will eventually go crazy without some rest. Looks like solaris cluster may have saved the day. Us Linux admins unfortunately do not have ZFS.</p></div>
+			<div class="post-list-footer text-center">
+				<a href="https://cmdln.org/2008/10/28/why-you-should-give-your-sysadmin-a-day-off/">Read More</a>
+			</div>
+		</div>
+	</li>
+	
+	<li>
+		<div class="post-list-item">
+			<div class="post-header">
+				<h4 class="post-link"><a href="https://cmdln.org/2008/10/26/vim-wordpress-vimpress-happiness/">Vim &#43; wordpress == vimpress, happiness</a></h4>
+				<h4 class="post-date">2008-10-26</h4>
+			</div>
+			<div class="post-summary"><p><p>I recently found a vim plug-in for WordPress. <a href="http://friggeri.net/blog/2007/07/13/vimpress">Vimpress</a> allows your to write and edit your blog posts directly from vim. Sure it has its limitations. There does not appear to be support for future data publishing or drafts. But overall its a much better experience to write in vim than the built in editor.</p></p></div>
+			<div class="post-list-footer text-center">
+				<a href="https://cmdln.org/2008/10/26/vim-wordpress-vimpress-happiness/">Read More</a>
+			</div>
+		</div>
+	</li>
+	
+	<li>
+		<div class="post-list-item">
+			<div class="post-header">
+				<h4 class="post-link"><a href="https://cmdln.org/2008/10/25/secure-git-hosting-with-gitosis/">Secure git hosting with gitosis</a></h4>
+				<h4 class="post-date">2008-10-26</h4>
+			</div>
+			<div class="post-summary"><p>I hope you are already using ssh keys, but just in case your not go ahead and generate one with ssh-keygen -t rsa (you should do this on your local box)
 You may as well go ahead and copy your publick key to your git server now as well.
 Log into your gitosis server
  Make sure setuptools is installed  sudo aptitude install python-setuptools
 git clone git://eagain.net/gitosis.git
 cd gitosis</p></div>
-						<div class="post-list-footer text-center">
-							<a href="https://cmdln.org/2008/10/25/secure-git-hosting-with-gitosis/">Read More</a>
-						</div>
-					</div>
-				</li>
-			
-				<li>
-					<div class="post-list-item">
-						<div class="post-header">
-							<h4 class="post-link"><a href="https://cmdln.org/2008/10/25/vimpress-test/">vimpress test</a></h4>
-							<h4 class="post-date">Oct 26, 2008</h4>
-						</div>
-						<div class="post-summary"><p>This is just a test post from vimpress. Vimpress is a vim plugin to post to wordpress. Seems there is an issue with not supporting the more tag, but it is much easier to write a post in vim than it is to use the builtin editor.</p></div>
-						<div class="post-list-footer text-center">
-							<a href="https://cmdln.org/2008/10/25/vimpress-test/">Read More</a>
-						</div>
-					</div>
-				</li>
-			
-				<li>
-					<div class="post-list-item">
-						<div class="post-header">
-							<h4 class="post-link"><a href="https://cmdln.org/2008/10/20/tip-vim-point-in-time-recovery/">Tip: Vim point in time recovery</a></h4>
-							<h4 class="post-date">Oct 20, 2008</h4>
-						</div>
-						<div class="post-summary"><p>Hopefully you know how to undo and redo in vim using u and Ctrl-R. But with newer versions of vim you get point in time recovery. with :earlier. Give it a shot, make some changes to a script and then try :earlier 1m. Very cool and an easy way to undo a bunch of changes.</p></div>
-						<div class="post-list-footer text-center">
-							<a href="https://cmdln.org/2008/10/20/tip-vim-point-in-time-recovery/">Read More</a>
-						</div>
-					</div>
-				</li>
-			
-			</ul>
-            
+			<div class="post-list-footer text-center">
+				<a href="https://cmdln.org/2008/10/25/secure-git-hosting-with-gitosis/">Read More</a>
+			</div>
+		</div>
+	</li>
+	
+	<li>
+		<div class="post-list-item">
+			<div class="post-header">
+				<h4 class="post-link"><a href="https://cmdln.org/2008/10/25/vimpress-test/">vimpress test</a></h4>
+				<h4 class="post-date">2008-10-26</h4>
+			</div>
+			<div class="post-summary"><p>This is just a test post from vimpress. Vimpress is a vim plugin to post to wordpress. Seems there is an issue with not supporting the more tag, but it is much easier to write a post in vim than it is to use the builtin editor.</p></div>
+			<div class="post-list-footer text-center">
+				<a href="https://cmdln.org/2008/10/25/vimpress-test/">Read More</a>
+			</div>
+		</div>
+	</li>
+	
+	<li>
+		<div class="post-list-item">
+			<div class="post-header">
+				<h4 class="post-link"><a href="https://cmdln.org/2008/10/20/tip-vim-point-in-time-recovery/">Tip: Vim point in time recovery</a></h4>
+				<h4 class="post-date">2008-10-20</h4>
+			</div>
+			<div class="post-summary"><p>Hopefully you know how to undo and redo in vim using u and Ctrl-R. But with newer versions of vim you get point in time recovery. with :earlier. Give it a shot, make some changes to a script and then try :earlier 1m. Very cool and an easy way to undo a bunch of changes.</p></div>
+			<div class="post-list-footer text-center">
+				<a href="https://cmdln.org/2008/10/20/tip-vim-point-in-time-recovery/">Read More</a>
+			</div>
+		</div>
+	</li>
+	
+</ul>
+
+				
 
 <div class="pagination-wrapper text-center">
   <ul class="pagination">
@@ -306,9 +311,8 @@ cd gitosis</p></div>
 
 
 
-			<div class="push"></div>
-		</div>
-		<footer class="footer text-center">
+			</div>
+			<footer class="footer text-center">
 <p>Copyright &copy; 2022 Nick Anderson -
 <span class="credit">
 	Powered by
@@ -319,5 +323,6 @@ cd gitosis</p></div>
 </p>
 </footer>
 
+		</div>
 	</body>
 </html>

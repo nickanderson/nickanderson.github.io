@@ -1,34 +1,35 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="en">
 
 	<head>
 		<title> nginx &middot;  </title>
 
 		<meta http-equiv="content-type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<<<<<<< HEAD
-<meta name="generator" content="Hugo 0.57.0" />
-=======
-<meta name="generator" content="Hugo 0.80.0" />
->>>>>>> a7d29a8a28a02281741be1a86cca3627b7cdd579
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.92.2" />
 
 
-<script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
 
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
 
 
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
 
 <link rel="stylesheet" href="https://cmdln.org/css/nix.css">
-<link rel="stylesheet" href="https://cmdln.org/css/syntax.css">
 
 
-<link href="https://fonts.googleapis.com/css?family=Inconsolata|Open+Sans|Roboto|Montserrat|Concert+One" rel="stylesheet">
+
+
+
+<link href="https://fonts.googleapis.com/css?family=Inconsolata%7COpen+Sans%7CConcert+One" rel="stylesheet">
+
+
 
 
 
@@ -37,96 +38,99 @@
 
 	<body>
 		<header>
-<nav class="navbar navbar-default navbar-fixed-top navbar-inverse font-header">
-	<div class="container-fluid">
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
-				<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
+	<nav class="navbar navbar-dark bg-dark fixed-top navbar-expand-lg font-header">
+		<div class="container-fluid">
+			<a class="navbar-brand" id="green-terminal" href='https://cmdln.org/'>
+				nick@cmdln.org ~ $
+			</a>
+			<button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse-1" 
+					aria-controls="navbar-collapse-1" aria-expanded="false">
+				<span class="visually-hidden">Toggle navigation</span>
+				<span class="navbar-toggler-icon"></span>
 			</button>
-			<a class="navbar-brand" id="green-terminal" href=https://cmdln.org>nick@cmdln.org ~ $</a>
+	
+			
+			<div class="collapse navbar-collapse" id="navbar-collapse-1">
+				<ul class="nav navbar-nav ms-auto">
+					<li class="nav-item">
+						<a class="nav-link" href='https://cmdln.org/'>
+							/home/nick</a>
+					</li>
+					
+					
+					
+					<li class="nav-item dropdown">
+						
+						<a class="nav-link" href="https://cmdln.org/post/">~/posts</a>
+						
+					</li>
+					
+				</ul>
+			</div>
 		</div>
-
-		
-		<div class="collapse navbar-collapse" id="navbar-collapse-1">
-			<ul class="nav navbar-nav navbar-right">
-				<li>
-					<a href="https://cmdln.org">/home/nick</a>
-				</li>
-				
-				
-				<li >
-					<a href="/post/">~/posts</a>
-				</li>
-				
-
-			</ul>
-		</div>
-	</div>
-</nav>
+	</nav>
 </header>
 
-		<div class="container wrapper">
-			<div class="row">
-				<div class="col-xs-12 text-center">
-					<h1 id=>nginx</h1>
+		<div class="flex-wrapper">
+			<div class="container wrapper">
+				<div class="row">
+					<div class="col-xs-12 text-center">
+						<h1 id=>nginx</h1>
+					</div>
 				</div>
+				<ul id="post-list">
+	
+	<li>
+		<div class="post-list-item">
+			<div class="post-header">
+				<h4 class="post-link"><a href="https://cmdln.org/2010/07/09/nginx-stub_status-zenpack/">Nginx stub_status Zenpack</a></h4>
+				<h4 class="post-date">2010-07-09</h4>
 			</div>
-			<ul id="post-list">
-                	
-				<li>
-					<div class="post-list-item">
-						<div class="post-header">
-							<h4 class="post-link"><a href="https://cmdln.org/2010/07/09/nginx-stub_status-zenpack/">Nginx stub_status Zenpack</a></h4>
-							<h4 class="post-date">Jul 9, 2010</h4>
-						</div>
-						<div class="post-summary"><p>Nginx is a great little web server. I have posted previously about using it as a reverse proxy. Weather your using it as a reverse proxy or as a normal webserver you will probably eventually want to know what its doing over time so you can adjust resources as necessary.
+			<div class="post-summary"><p>Nginx is a great little web server. I have posted previously about using it as a reverse proxy. Weather your using it as a reverse proxy or as a normal webserver you will probably eventually want to know what its doing over time so you can adjust resources as necessary.
 The other day I threw together a Zenpack to make it easier to setup monitoring on new Zenoss instances. It contains a command data source “check_nginx_ng” which is a slightly modified version of Chris Kellys check_nginx_ng which in turn was based on check_nginx by Mike Adolphs.</p></div>
-						<div class="post-list-footer text-center">
-							<a href="https://cmdln.org/2010/07/09/nginx-stub_status-zenpack/">Read More</a>
-						</div>
-					</div>
-				</li>
-			
-				<li>
-					<div class="post-list-item">
-						<div class="post-header">
-							<h4 class="post-link"><a href="https://cmdln.org/2009/07/12/transparent_dynamic-reverse-proxy-with-nginx/">Transparent dynamic reverse proxy with nginx</a></h4>
-							<h4 class="post-date">Jul 12, 2009</h4>
-						</div>
-						<div class="post-summary"><p>A while back I wrote about using Apache as a dynamic reverse proxy. Anyone who has done even minimal research into web servers knows that Apache is the swiss army knife. It trys to be everything for everyone, and like a swiss army knife may not be as good as a more refined too at least as far as efficiency is concerned.
+			<div class="post-list-footer text-center">
+				<a href="https://cmdln.org/2010/07/09/nginx-stub_status-zenpack/">Read More</a>
+			</div>
+		</div>
+	</li>
+	
+	<li>
+		<div class="post-list-item">
+			<div class="post-header">
+				<h4 class="post-link"><a href="https://cmdln.org/2009/07/12/transparent_dynamic-reverse-proxy-with-nginx/">Transparent dynamic reverse proxy with nginx</a></h4>
+				<h4 class="post-date">2009-07-12</h4>
+			</div>
+			<div class="post-summary"><p>A while back I wrote about using Apache as a dynamic reverse proxy. Anyone who has done even minimal research into web servers knows that Apache is the swiss army knife. It trys to be everything for everyone, and like a swiss army knife may not be as good as a more refined too at least as far as efficiency is concerned.
 Here is the situation. You have a single pinhole into your private network.</p></div>
-						<div class="post-list-footer text-center">
-							<a href="https://cmdln.org/2009/07/12/transparent_dynamic-reverse-proxy-with-nginx/">Read More</a>
-						</div>
-					</div>
-				</li>
-			
-				<li>
-					<div class="post-list-item">
-						<div class="post-header">
-							<h4 class="post-link"><a href="https://cmdln.org/2009/04/27/improving-debians-nginx-init-script/">Improving debians nginx init script</a></h4>
-							<h4 class="post-date">Apr 27, 2009</h4>
-						</div>
-						<div class="post-summary"><p>nginx is a high performance HTTP and mail proxy server written by Igor Sysoev.
+			<div class="post-list-footer text-center">
+				<a href="https://cmdln.org/2009/07/12/transparent_dynamic-reverse-proxy-with-nginx/">Read More</a>
+			</div>
+		</div>
+	</li>
+	
+	<li>
+		<div class="post-list-item">
+			<div class="post-header">
+				<h4 class="post-link"><a href="https://cmdln.org/2009/04/27/improving-debians-nginx-init-script/">Improving debians nginx init script</a></h4>
+				<h4 class="post-date">2009-04-27</h4>
+			</div>
+			<div class="post-summary"><p>nginx is a high performance HTTP and mail proxy server written by Igor Sysoev.
 I’m not sure what the init scripts do for other distros but it seems a bit of an oversight to leave out checking the config file when running the init script.
 Add this line to your nginx init script right after the text -x $DAEMON line to make it check the config before proceeding to start stop or restart the service.</p></div>
-						<div class="post-list-footer text-center">
-							<a href="https://cmdln.org/2009/04/27/improving-debians-nginx-init-script/">Read More</a>
-						</div>
-					</div>
-				</li>
-			
-			</ul>
-            
-
-
-
-			<div class="push"></div>
+			<div class="post-list-footer text-center">
+				<a href="https://cmdln.org/2009/04/27/improving-debians-nginx-init-script/">Read More</a>
+			</div>
 		</div>
-		<footer class="footer text-center">
+	</li>
+	
+</ul>
+
+				
+
+
+
+			</div>
+			<footer class="footer text-center">
 <p>Copyright &copy; 2022 Nick Anderson -
 <span class="credit">
 	Powered by
@@ -137,5 +141,6 @@ Add this line to your nginx init script right after the text -x $DAEMON line to 
 </p>
 </footer>
 
+		</div>
 	</body>
 </html>

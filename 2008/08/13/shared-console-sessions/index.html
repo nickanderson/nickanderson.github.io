@@ -5,30 +5,31 @@
         <title> Shared console sessions &middot;  </title>
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<<<<<<< HEAD
-<meta name="generator" content="Hugo 0.57.0" />
-=======
-<meta name="generator" content="Hugo 0.80.0" />
->>>>>>> a7d29a8a28a02281741be1a86cca3627b7cdd579
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.92.2" />
 
 
-<script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
 
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
 
 
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
 
 <link rel="stylesheet" href="https://cmdln.org/css/nix.css">
-<link rel="stylesheet" href="https://cmdln.org/css/syntax.css">
 
 
-<link href="https://fonts.googleapis.com/css?family=Inconsolata|Open+Sans|Roboto|Montserrat|Concert+One" rel="stylesheet">
+
+
+
+<link href="https://fonts.googleapis.com/css?family=Inconsolata%7COpen+Sans%7CConcert+One" rel="stylesheet">
+
+
 
 
 
@@ -37,42 +38,45 @@
 
     <body>
         <header>
-<nav class="navbar navbar-default navbar-fixed-top navbar-inverse font-header">
-	<div class="container-fluid">
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
-				<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
+	<nav class="navbar navbar-dark bg-dark fixed-top navbar-expand-lg font-header">
+		<div class="container-fluid">
+			<a class="navbar-brand" id="green-terminal" href='https://cmdln.org/'>
+				nick@cmdln.org ~ $
+			</a>
+			<button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse-1" 
+					aria-controls="navbar-collapse-1" aria-expanded="false">
+				<span class="visually-hidden">Toggle navigation</span>
+				<span class="navbar-toggler-icon"></span>
 			</button>
-			<a class="navbar-brand" id="green-terminal" href=https://cmdln.org>nick@cmdln.org ~ $</a>
+	
+			
+			<div class="collapse navbar-collapse" id="navbar-collapse-1">
+				<ul class="nav navbar-nav ms-auto">
+					<li class="nav-item">
+						<a class="nav-link" href='https://cmdln.org/'>
+							/home/nick</a>
+					</li>
+					
+					
+					
+					<li class="nav-item dropdown">
+						
+						<a class="nav-link" href="https://cmdln.org/post/">~/posts</a>
+						
+					</li>
+					
+				</ul>
+			</div>
 		</div>
-
-		
-		<div class="collapse navbar-collapse" id="navbar-collapse-1">
-			<ul class="nav navbar-nav navbar-right">
-				<li>
-					<a href="https://cmdln.org">/home/nick</a>
-				</li>
-				
-				
-				<li >
-					<a href="/post/">~/posts</a>
-				</li>
-				
-
-			</ul>
-		</div>
-	</div>
-</nav>
+	</nav>
 </header>
 
-        <div class="container wrapper">
-            <h1><a href="https://cmdln.org/2008/08/13/shared-console-sessions/">Shared console sessions</a></h1>
-            <span class="post-date">Aug 14, 2008 </span>
-            <div class="post-content">
-                <p>I have had several posts regarding screen. Hopefully you have already realized the greatness of screen. Screen has a great feature that allows screen sessions to be shared. To my knowledge there are two ways to use this feature. First you can connect to a screen multiple times as the same user. Second you can use the multiuser mode of screen.</p>
+        <div class="flex-wrapper">
+            <div class="container wrapper">
+                <h1><a href="https://cmdln.org/2008/08/13/shared-console-sessions/">Shared console sessions</a></h1>
+                <span class="post-date">2008-08-14 </span>
+                <div class="post-content">
+                    <p>I have had several posts regarding screen. Hopefully you have already realized the greatness of screen. Screen has a great feature that allows screen sessions to be shared. To my knowledge there are two ways to use this feature. First you can connect to a screen multiple times as the same user. Second you can use the multiuser mode of screen.</p>
 <p>Obviously the first option is less helpful in a multi user environment as one has to wheel up to a different user to share a screen. At first glance screens multiuser mode seems to be a great option. However multiuser mode requires that screen be setuid. Hopefully you are well aware of the dangers of running setuid processes. I will not drive the point home any more. If you still wish to use multiuser mode on screen by all means proceed.</p>
 <p>I assume you have already installed screen. To enable multiuser mode log in to your machine</p>
 <p><code>sudo setuid /usr/bin/screen&lt;br /&gt; sudo chmod 755 /usr/bin/screen</code></p>
@@ -82,15 +86,14 @@
 <p>and joe could connect to a screen with</p>
 <p><code>screen -x youruser/(optional name of session)</code></p>
 <p>For those of you who yearn for a better way to share a session without the setuid stay tuned for the next post where we actually address this issue.</p>
-            </div>
-            
-            <div class="post-comments">
+                </div>
+                
+                <div class="post-comments">
+                    
+                </div>
                 
             </div>
-            
-            <div class="push"></div>
-        </div>
-        <footer class="footer text-center">
+            <footer class="footer text-center">
 <p>Copyright &copy; 2022 Nick Anderson -
 <span class="credit">
 	Powered by
@@ -101,4 +104,5 @@
 </p>
 </footer>
 
+        </div>
     </body>

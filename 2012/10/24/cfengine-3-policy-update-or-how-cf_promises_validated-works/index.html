@@ -5,30 +5,31 @@
         <title> CFEngine 3 Policy Update or How cf_promises_validated Works &middot;  </title>
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<<<<<<< HEAD
-<meta name="generator" content="Hugo 0.57.0" />
-=======
-<meta name="generator" content="Hugo 0.80.0" />
->>>>>>> a7d29a8a28a02281741be1a86cca3627b7cdd579
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.92.2" />
 
 
-<script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
 
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
 
 
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
 
 <link rel="stylesheet" href="https://cmdln.org/css/nix.css">
-<link rel="stylesheet" href="https://cmdln.org/css/syntax.css">
 
 
-<link href="https://fonts.googleapis.com/css?family=Inconsolata|Open+Sans|Roboto|Montserrat|Concert+One" rel="stylesheet">
+
+
+
+<link href="https://fonts.googleapis.com/css?family=Inconsolata%7COpen+Sans%7CConcert+One" rel="stylesheet">
+
+
 
 
 
@@ -37,42 +38,45 @@
 
     <body>
         <header>
-<nav class="navbar navbar-default navbar-fixed-top navbar-inverse font-header">
-	<div class="container-fluid">
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
-				<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
+	<nav class="navbar navbar-dark bg-dark fixed-top navbar-expand-lg font-header">
+		<div class="container-fluid">
+			<a class="navbar-brand" id="green-terminal" href='https://cmdln.org/'>
+				nick@cmdln.org ~ $
+			</a>
+			<button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse-1" 
+					aria-controls="navbar-collapse-1" aria-expanded="false">
+				<span class="visually-hidden">Toggle navigation</span>
+				<span class="navbar-toggler-icon"></span>
 			</button>
-			<a class="navbar-brand" id="green-terminal" href=https://cmdln.org>nick@cmdln.org ~ $</a>
+	
+			
+			<div class="collapse navbar-collapse" id="navbar-collapse-1">
+				<ul class="nav navbar-nav ms-auto">
+					<li class="nav-item">
+						<a class="nav-link" href='https://cmdln.org/'>
+							/home/nick</a>
+					</li>
+					
+					
+					
+					<li class="nav-item dropdown">
+						
+						<a class="nav-link" href="https://cmdln.org/post/">~/posts</a>
+						
+					</li>
+					
+				</ul>
+			</div>
 		</div>
-
-		
-		<div class="collapse navbar-collapse" id="navbar-collapse-1">
-			<ul class="nav navbar-nav navbar-right">
-				<li>
-					<a href="https://cmdln.org">/home/nick</a>
-				</li>
-				
-				
-				<li >
-					<a href="/post/">~/posts</a>
-				</li>
-				
-
-			</ul>
-		</div>
-	</div>
-</nav>
+	</nav>
 </header>
 
-        <div class="container wrapper">
-            <h1><a href="https://cmdln.org/2012/10/24/cfengine-3-policy-update-or-how-cf_promises_validated-works/">CFEngine 3 Policy Update or How cf_promises_validated Works</a></h1>
-            <span class="post-date">Oct 25, 2012 </span>
-            <div class="post-content">
-                <p>Over the past <!-- raw HTML omitted -->several months<!-- raw HTML omitted --> 2 years (since 3.1.2 release, wow time flys when your having fun. I checked and <!-- raw HTML omitted -->3.1.2<!-- raw HTML omitted --><a href="http://www.cmdln.org/images/wp-content/uploads/2012/10/question-mark.jpg"><!-- raw HTML omitted --></a> <!-- raw HTML omitted -->was released<!-- raw HTML omitted --> on Dec 9th 2010.) I have <!-- raw HTML omitted -->seen<!-- raw HTML omitted --> <!-- raw HTML omitted -->a<!-- raw HTML omitted --> <!-- raw HTML omitted -->few<!-- raw HTML omitted --> <!-- raw HTML omitted -->questions<!-- raw HTML omitted --> regarding how the default CFEngine policy update works, and more specifically how cf_promises_validated plays into the update process. This is my stab at describing the history and behaviour. I welcome any corrections.</p>
+        <div class="flex-wrapper">
+            <div class="container wrapper">
+                <h1><a href="https://cmdln.org/2012/10/24/cfengine-3-policy-update-or-how-cf_promises_validated-works/">CFEngine 3 Policy Update or How cf_promises_validated Works</a></h1>
+                <span class="post-date">2012-10-25 </span>
+                <div class="post-content">
+                    <p>Over the past <!-- raw HTML omitted -->several months<!-- raw HTML omitted --> 2 years (since 3.1.2 release, wow time flys when your having fun. I checked and <!-- raw HTML omitted -->3.1.2<!-- raw HTML omitted --><a href="http://www.cmdln.org/images/wp-content/uploads/2012/10/question-mark.jpg"><!-- raw HTML omitted --></a> <!-- raw HTML omitted -->was released<!-- raw HTML omitted --> on Dec 9th 2010.) I have <!-- raw HTML omitted -->seen<!-- raw HTML omitted --> <!-- raw HTML omitted -->a<!-- raw HTML omitted --> <!-- raw HTML omitted -->few<!-- raw HTML omitted --> <!-- raw HTML omitted -->questions<!-- raw HTML omitted --> regarding how the default CFEngine policy update works, and more specifically how cf_promises_validated plays into the update process. This is my stab at describing the history and behaviour. I welcome any corrections.</p>
 <p>The default failsafe.cf update policy is simple in nature. (We could probably debate what is <!-- raw HTML omitted -->simple<!-- raw HTML omitted --> or <!-- raw HTML omitted -->complex<!-- raw HTML omitted -->, but I am comfortable with the label in this case.) Agents copy policy from /var/cfengine/masterfiles on the policy hub, to /var/cfengine/inputs. This is the same for all agents, even the agent that runs on the policy hub, the only difference is that since the files are already local on the policy hub they don’t have to go over the network, but they are still copied from the same source, to the same destination.</p>
 <p>The 3.1.2 release was an efficiency related release. One of the enhancements was the introduction of cf_promises_validated. <!-- raw HTML omitted -->Eystein<!-- raw HTML omitted --> wrote a <!-- raw HTML omitted -->great extended change log<!-- raw HTML omitted --> on his blog covering the release including a section on cf_promises_validated which is where I first learned of the feature and how to use it. Again, the cf_promises_validated mechanism is simple in nature. From his post “this file (/var/cfengine/masterfiles) is created by <code>cf-agent</code> or any other CFEngine component after it has successfully verified the policy with <code>cf-promises</code>.” What I think is missing from this description is that /var/cfengine/masterfiles is created/updated when policy has been verified <strong><!-- raw HTML omitted -->after<!-- raw HTML omitted --></strong> the policy has changed (so it’s not supposed to update this file every execution, there <!-- raw HTML omitted -->seems to be a bug<!-- raw HTML omitted --> with this but that is not expected behaviour). I do not know what constitutes change but I suspect it’s some variation of a tripwire policy similar to the following. Remember this is a simple mechanism and is the same for <!-- raw HTML omitted --><!-- raw HTML omitted -->any<!-- raw HTML omitted --><!-- raw HTML omitted --> agent, policy hub or not.</p>
 <!-- raw HTML omitted -->
@@ -86,15 +90,14 @@
 <p>So, policy hubs <!-- raw HTML omitted --><!-- raw HTML omitted -->always<!-- raw HTML omitted --><!-- raw HTML omitted --> perform this update and copy files that are different from /var/cfengine/masterfiles to /var/cfengine/inputs. and non policy hubs only update /var/cfengine/inputs from /var/cfengine/masterfiles on the policy hub if cf_promises_validated has changes. The hub must always perform this update if you recall how cf_promises_validated is created/updated. New policy that successfully validates in /var/cfengine/inputs triggers cf_promises_validated to be updated in /var/cfengine/masterfiles. Agents need to see that file be different from the cf_promises_validated file in /var/cfengine/inputs in order to trigger a full policy update.</p>
 <p>If its still not clear, read it a few more times. Things are usually pretty hard until they aren’t :). I recall reading the extended change log from 3.1.2 several times, as well as the example policy until I thought I had a good grasp on the flow. I hope you find this useful and I expect that this post will become less useful in the near future. I have filed a <!-- raw HTML omitted -->bug<!-- raw HTML omitted --> requesting better documentation coverage of the default update policy.</p>
 
-            </div>
-            
-            <div class="post-comments">
+                </div>
+                
+                <div class="post-comments">
+                    
+                </div>
                 
             </div>
-            
-            <div class="push"></div>
-        </div>
-        <footer class="footer text-center">
+            <footer class="footer text-center">
 <p>Copyright &copy; 2022 Nick Anderson -
 <span class="credit">
 	Powered by
@@ -105,4 +108,5 @@
 </p>
 </footer>
 
+        </div>
     </body>

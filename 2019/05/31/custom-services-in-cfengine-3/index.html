@@ -5,30 +5,31 @@
         <title> Custom services in CFEngine 3 &middot;  </title>
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<<<<<<< HEAD
-<meta name="generator" content="Hugo 0.57.0" />
-=======
-<meta name="generator" content="Hugo 0.80.0" />
->>>>>>> a7d29a8a28a02281741be1a86cca3627b7cdd579
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.92.2" />
 
 
-<script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
 
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
 
 
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
 
 <link rel="stylesheet" href="https://cmdln.org/css/nix.css">
-<link rel="stylesheet" href="https://cmdln.org/css/syntax.css">
 
 
-<link href="https://fonts.googleapis.com/css?family=Inconsolata|Open+Sans|Roboto|Montserrat|Concert+One" rel="stylesheet">
+
+
+
+<link href="https://fonts.googleapis.com/css?family=Inconsolata%7COpen+Sans%7CConcert+One" rel="stylesheet">
+
+
 
 
 
@@ -37,42 +38,45 @@
 
     <body>
         <header>
-<nav class="navbar navbar-default navbar-fixed-top navbar-inverse font-header">
-	<div class="container-fluid">
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
-				<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
+	<nav class="navbar navbar-dark bg-dark fixed-top navbar-expand-lg font-header">
+		<div class="container-fluid">
+			<a class="navbar-brand" id="green-terminal" href='https://cmdln.org/'>
+				nick@cmdln.org ~ $
+			</a>
+			<button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse-1" 
+					aria-controls="navbar-collapse-1" aria-expanded="false">
+				<span class="visually-hidden">Toggle navigation</span>
+				<span class="navbar-toggler-icon"></span>
 			</button>
-			<a class="navbar-brand" id="green-terminal" href=https://cmdln.org>nick@cmdln.org ~ $</a>
+	
+			
+			<div class="collapse navbar-collapse" id="navbar-collapse-1">
+				<ul class="nav navbar-nav ms-auto">
+					<li class="nav-item">
+						<a class="nav-link" href='https://cmdln.org/'>
+							/home/nick</a>
+					</li>
+					
+					
+					
+					<li class="nav-item dropdown">
+						
+						<a class="nav-link" href="https://cmdln.org/post/">~/posts</a>
+						
+					</li>
+					
+				</ul>
+			</div>
 		</div>
-
-		
-		<div class="collapse navbar-collapse" id="navbar-collapse-1">
-			<ul class="nav navbar-nav navbar-right">
-				<li>
-					<a href="https://cmdln.org">/home/nick</a>
-				</li>
-				
-				
-				<li >
-					<a href="/post/">~/posts</a>
-				</li>
-				
-
-			</ul>
-		</div>
-	</div>
-</nav>
+	</nav>
 </header>
 
-        <div class="container wrapper">
-            <h1><a href="https://cmdln.org/2019/05/31/custom-services-in-cfengine-3/">Custom services in CFEngine 3</a></h1>
-            <span class="post-date">May 31, 2019 </span>
-            <div class="post-content">
-                <p>
+        <div class="flex-wrapper">
+            <div class="container wrapper">
+                <h1><a href="https://cmdln.org/2019/05/31/custom-services-in-cfengine-3/">Custom services in CFEngine 3</a></h1>
+                <span class="post-date">2019-05-31 </span>
+                <div class="post-content">
+                    <p>
 CFEngine provides the <a href="https://docs.cfengine.com/docs/3.12/reference-promise-types-services.html"><code class="verbatim">services</code> promise type</a> to manage the state of a given service. By default, <code class="verbatim">bundle agent standard_services</code> is used for the <code class="verbatim">service_method</code>. The <code class="verbatim">standard_services</code> bundle uses the <code class="verbatim">status</code> command and interprets the return codes according to the <a href="http://refspecs.linuxbase.org/LSB_3.0.0/LSB-PDA/LSB-PDA/iniscrptact.html">Linux Standard Base init script actions</a>. Unfortunately some init scripts do not follow the standards. On sysvinit (non-systemd) hosts, if the status command returns zero when a service is <strong>not</strong> running, cfengine will issue the commands necessary to stop the service every time the agent is run. Similarly, if the status command returns zero when the service is <strong>not</strong> running, cfengine will never issue the commands necessary to start a service.</p>
 <blockquote>
 <p>How can I handle a service status that does not comport with the standard?</p>
@@ -100,13 +104,13 @@ First, for testing, create a mock init script that matches the behavior seen in 
 <div class="src src-sh">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">  <span class="nb">echo</span> McAfee agent service is not running.
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">  <span class="nb">echo</span> McAfee agent service is not running.
   <span class="nb">echo</span> McAfee common services is not running.
   <span class="nb">echo</span> McAfee compat service is not running.
   <span class="k">return</span> 0<span class="p">;</span> <span class="c1"># Return zero means service OK/Running per the LSB</span></code></pre></td></tr></table>
@@ -123,7 +127,7 @@ Next you can write a custom bundle to implement services based on the McAfee beh
 <div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -177,7 +181,7 @@ Next you can write a custom bundle to implement services based on the McAfee beh
 </span><span class="lnt">52
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">mcafee_services_handler</span><span class="p">(</span> <span class="nv">service_name</span><span class="p">,</span> <span class="nv">desired_state</span> <span class="p">)</span>
+<pre tabindex="0" class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">mcafee_services_handler</span><span class="p">(</span> <span class="nv">service_name</span><span class="p">,</span> <span class="nv">desired_state</span> <span class="p">)</span>
   <span class="c"># @brief Works around init script not exiting with the appropriate return code for status
 </span><span class="c"></span>  <span class="c"># (per Linux Standard Base init script actions)
 </span><span class="c"></span>  <span class="p">{</span>
@@ -242,7 +246,7 @@ Then you can expose it as a <code class="verbatim">service_method</code> attribu
 <div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -252,7 +256,7 @@ Then you can expose it as a <code class="verbatim">service_method</code> attribu
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="k">body</span> <span class="k">service_method</span> <span class="nf">macafee</span>
+<pre tabindex="0" class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="k">body</span> <span class="k">service_method</span> <span class="nf">macafee</span>
   <span class="p">{</span>
       <span class="nc">linux</span><span class="p">::</span>
           <span class="kr">service_bundle</span> <span class="o">=&gt;</span> <span class="nf">mcafee_services_handler</span><span class="p">(</span>
@@ -273,7 +277,7 @@ And then you could specify use the services promise</p>
 <div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -295,7 +299,7 @@ And then you could specify use the services promise</p>
 </span><span class="lnt">20
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">example_custom_services</span>
+<pre tabindex="0" class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">example_custom_services</span>
   <span class="p">{</span>
       <span class="kd">services</span><span class="p">:</span>
         <span class="s">&#34;ma&#34;</span>
@@ -328,10 +332,10 @@ Execute the policy to see it in action:</p>
 <div class="src src-sh">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">  ./example_custom_services.cf -KI</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">  ./example_custom_services.cf -KI</code></pre></td></tr></table>
 </div>
 </div>
 </div>
@@ -375,15 +379,14 @@ Running the policy
 <p>
 <a href="../../../../example_custom_services.cf">Download the full policy</a></p>
 
-            </div>
-            
-            <div class="post-comments">
+                </div>
+                
+                <div class="post-comments">
+                    
+                </div>
                 
             </div>
-            
-            <div class="push"></div>
-        </div>
-        <footer class="footer text-center">
+            <footer class="footer text-center">
 <p>Copyright &copy; 2022 Nick Anderson -
 <span class="credit">
 	Powered by
@@ -394,4 +397,5 @@ Running the policy
 </p>
 </footer>
 
+        </div>
     </body>

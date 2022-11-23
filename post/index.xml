@@ -5,12 +5,6 @@
     <link>https://cmdln.org/post/</link>
     <description>Recent content in Posts on </description>
     <generator>Hugo -- gohugo.io</generator>
-<<<<<<< HEAD
-    <lastBuildDate>Wed, 14 Aug 2019 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://cmdln.org/post/index.xml" rel="self" type="application/rss+xml" />
-    
-=======
     <lastBuildDate>Wed, 14 Aug 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://cmdln.org/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Reversing key values of a JSON dict in CFEngine with jq</title>
@@ -22,16 +16,6 @@
  I have a map of IPv4 addresses to environments and I would like to have a map of environments to IPv4s.
  1 2 3 4 5 6 7  { &amp;#34;192.0.2.131&amp;#34; : &amp;#34;TEST-NET-1&amp;#34;, &amp;#34;198.51.100.151&amp;#34; : &amp;#34;TEST-NET-2&amp;#34;, &amp;#34;198.51.100.146&amp;#34; : &amp;#34;TEST-NET-2&amp;#34;, &amp;#34;203.0.113.146&amp;#34; : &amp;#34;TEST-NET-3&amp;#34;, &amp;#34;203.0.113.21&amp;#34; : &amp;#34;TEST-NET-3&amp;#34; }     Would become:
  1 2 3 4 5 6 7 8 9 10 11 12 13  { &amp;#34;TEST-NET-1&amp;#34;: [ &amp;#34;192.</description>
-    </item>
->>>>>>> a7d29a8a28a02281741be1a86cca3627b7cdd579
-    
-    <item>
-      <title>Reversing key values of a JSON dict in CFEngine with jq</title>
-      <link>https://cmdln.org/2019/08/14/reversing-key-values-of-a-json-dict-in-cfengine-with-jq/</link>
-      <pubDate>Wed, 14 Aug 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://cmdln.org/2019/08/14/reversing-key-values-of-a-json-dict-in-cfengine-with-jq/</guid>
-      <description>Do you have any tips on reversing a json dictionary?  I have a map of IPv4 addresses to environments and I would like to have a map of environments to IPv4s.  1 2 3 4 5 6 7  { &amp;#34;192.0.2.131&amp;#34; : &amp;#34;TEST-NET-1&amp;#34;, &amp;#34;198.51.100.151&amp;#34; : &amp;#34;TEST-NET-2&amp;#34;, &amp;#34;198.51.100.146&amp;#34; : &amp;#34;TEST-NET-2&amp;#34;, &amp;#34;203.0.113.146&amp;#34; : &amp;#34;TEST-NET-3&amp;#34;, &amp;#34;203.0.113.21&amp;#34; : &amp;#34;TEST-NET-3&amp;#34; }      Would become:  1 2 3 4 5 6 7 8 9 10 11 12 13  { &amp;#34;TEST-NET-1&amp;#34;: [ &amp;#34;192.</description>
     </item>
     
     <item>
@@ -337,8 +321,7 @@ Read the documentation on Normal Order   There is a wealth of information on doc
       <description>If I have a promise with a copy_from promise where the body specifies that permissions should be preserved and I also have a perms body on the same promise what is expected to happen?
   The files type promises documentation describes the normal order of files promise attributes during promise actuation.
  The documentation notes:
-  file presence ( create | copy | link )
-  permissions</description>
+ file presence ( create | copy | link ) permissions file content  So the explicitly specified permissions should win in the end.</description>
     </item>
     
     <item>
@@ -466,7 +449,7 @@ Read the documentation on Normal Order   There is a wealth of information on doc
     <item>
       <title>Goodbye Wordpress, Go Hugo!</title>
       <link>https://cmdln.org/2017/03/01/goodbye-wordpress-go-hugo/</link>
-      <pubDate>Wed, 01 Mar 2017 00:00:00 -0600</pubDate>
+      <pubDate>Wed, 01 Mar 2017 00:00:00 +0000</pubDate>
       
       <guid>https://cmdln.org/2017/03/01/goodbye-wordpress-go-hugo/</guid>
       <description>Finally leaving behind the bloated wordpress in favor of hugo which can use org source files!</description>

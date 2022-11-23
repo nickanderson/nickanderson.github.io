@@ -5,30 +5,31 @@
         <title> XenServer License Check &amp;#8211; Nagios NRPE Plugin &middot;  </title>
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<<<<<<< HEAD
-<meta name="generator" content="Hugo 0.57.0" />
-=======
-<meta name="generator" content="Hugo 0.80.0" />
->>>>>>> a7d29a8a28a02281741be1a86cca3627b7cdd579
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.92.2" />
 
 
-<script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
 
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
 
 
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
 
 <link rel="stylesheet" href="https://cmdln.org/css/nix.css">
-<link rel="stylesheet" href="https://cmdln.org/css/syntax.css">
 
 
-<link href="https://fonts.googleapis.com/css?family=Inconsolata|Open+Sans|Roboto|Montserrat|Concert+One" rel="stylesheet">
+
+
+
+<link href="https://fonts.googleapis.com/css?family=Inconsolata%7COpen+Sans%7CConcert+One" rel="stylesheet">
+
+
 
 
 
@@ -37,55 +38,57 @@
 
     <body>
         <header>
-<nav class="navbar navbar-default navbar-fixed-top navbar-inverse font-header">
-	<div class="container-fluid">
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
-				<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
+	<nav class="navbar navbar-dark bg-dark fixed-top navbar-expand-lg font-header">
+		<div class="container-fluid">
+			<a class="navbar-brand" id="green-terminal" href='https://cmdln.org/'>
+				nick@cmdln.org ~ $
+			</a>
+			<button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse-1" 
+					aria-controls="navbar-collapse-1" aria-expanded="false">
+				<span class="visually-hidden">Toggle navigation</span>
+				<span class="navbar-toggler-icon"></span>
 			</button>
-			<a class="navbar-brand" id="green-terminal" href=https://cmdln.org>nick@cmdln.org ~ $</a>
+	
+			
+			<div class="collapse navbar-collapse" id="navbar-collapse-1">
+				<ul class="nav navbar-nav ms-auto">
+					<li class="nav-item">
+						<a class="nav-link" href='https://cmdln.org/'>
+							/home/nick</a>
+					</li>
+					
+					
+					
+					<li class="nav-item dropdown">
+						
+						<a class="nav-link" href="https://cmdln.org/post/">~/posts</a>
+						
+					</li>
+					
+				</ul>
+			</div>
 		</div>
-
-		
-		<div class="collapse navbar-collapse" id="navbar-collapse-1">
-			<ul class="nav navbar-nav navbar-right">
-				<li>
-					<a href="https://cmdln.org">/home/nick</a>
-				</li>
-				
-				
-				<li >
-					<a href="/post/">~/posts</a>
-				</li>
-				
-
-			</ul>
-		</div>
-	</div>
-</nav>
+	</nav>
 </header>
 
-        <div class="container wrapper">
-            <h1><a href="https://cmdln.org/2010/03/08/xenserver-license-check-nagios-nrpe-plugin/">XenServer License Check &amp;#8211; Nagios NRPE Plugin</a></h1>
-            <span class="post-date">Mar 8, 2010 </span>
-            <div class="post-content">
-                <p>If you hadn’t already guessed I am a big fan of the Xen hypervisor. Lately I have been using the Citrix XenServer release because it makes it quite palatable for my co-workers. One annoyance that I do have about XenServer is the requirement that you license it (with a free license) every year. If you fail to license it the GUI stops working. Now I hate relying on GUIs but the fact of the matter is others in my team expect to have a working GUI when they need to do something. And I dont know about you but I don’t really log onto the management console very often. Really I only log on to it if I need to provision a new server so its entirely plausible that a license would expire and I wouldn’t know about it until I really needed to do something.</p>
+        <div class="flex-wrapper">
+            <div class="container wrapper">
+                <h1><a href="https://cmdln.org/2010/03/08/xenserver-license-check-nagios-nrpe-plugin/">XenServer License Check &amp;#8211; Nagios NRPE Plugin</a></h1>
+                <span class="post-date">2010-03-08 </span>
+                <div class="post-content">
+                    <p>If you hadn’t already guessed I am a big fan of the Xen hypervisor. Lately I have been using the Citrix XenServer release because it makes it quite palatable for my co-workers. One annoyance that I do have about XenServer is the requirement that you license it (with a free license) every year. If you fail to license it the GUI stops working. Now I hate relying on GUIs but the fact of the matter is others in my team expect to have a working GUI when they need to do something. And I dont know about you but I don’t really log onto the management console very often. Really I only log on to it if I need to provision a new server so its entirely plausible that a license would expire and I wouldn’t know about it until I really needed to do something.</p>
 <p>I ended up writing a little Nagios plugin that checks the license expiration date using XenAPI. I don’t know that it’s 100% compliant with the plugin specification but it does work for me. I actually don’t prefer to use the warn and critical states with the Nagios (I use the performance data with Zenoss and apply thresholds there. I find that to be a bit more flexible.) but I did implement them. The plugin can be executed on the XenServer (you may want to reference <a href="http://www.cmdln.org/2010/03/04/installing-nrpe-on-xenserver/">how to install nrpe on XenServer</a>) or on from your monitoring host as long as the host performing the check has the python XenAPI installed.</p>
 <p>The plugin <a href="https://github.com/nickanderson/nagios-plugins-check_xs-license">check_citrix_xenserver_license can be found on github</a>.</p>
 <p>I hope someone can find it useful.</p>
 
-            </div>
-            
-            <div class="post-comments">
+                </div>
+                
+                <div class="post-comments">
+                    
+                </div>
                 
             </div>
-            
-            <div class="push"></div>
-        </div>
-        <footer class="footer text-center">
+            <footer class="footer text-center">
 <p>Copyright &copy; 2022 Nick Anderson -
 <span class="credit">
 	Powered by
@@ -96,4 +99,5 @@
 </p>
 </footer>
 
+        </div>
     </body>

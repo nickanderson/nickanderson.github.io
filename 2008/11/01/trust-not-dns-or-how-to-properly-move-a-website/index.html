@@ -5,30 +5,31 @@
         <title> Trust not DNS or How to properly move a website &middot;  </title>
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<<<<<<< HEAD
-<meta name="generator" content="Hugo 0.57.0" />
-=======
-<meta name="generator" content="Hugo 0.80.0" />
->>>>>>> a7d29a8a28a02281741be1a86cca3627b7cdd579
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.92.2" />
 
 
-<script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
 
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
 
 
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
 
 <link rel="stylesheet" href="https://cmdln.org/css/nix.css">
-<link rel="stylesheet" href="https://cmdln.org/css/syntax.css">
 
 
-<link href="https://fonts.googleapis.com/css?family=Inconsolata|Open+Sans|Roboto|Montserrat|Concert+One" rel="stylesheet">
+
+
+
+<link href="https://fonts.googleapis.com/css?family=Inconsolata%7COpen+Sans%7CConcert+One" rel="stylesheet">
+
+
 
 
 
@@ -37,42 +38,45 @@
 
     <body>
         <header>
-<nav class="navbar navbar-default navbar-fixed-top navbar-inverse font-header">
-	<div class="container-fluid">
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
-				<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
+	<nav class="navbar navbar-dark bg-dark fixed-top navbar-expand-lg font-header">
+		<div class="container-fluid">
+			<a class="navbar-brand" id="green-terminal" href='https://cmdln.org/'>
+				nick@cmdln.org ~ $
+			</a>
+			<button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse-1" 
+					aria-controls="navbar-collapse-1" aria-expanded="false">
+				<span class="visually-hidden">Toggle navigation</span>
+				<span class="navbar-toggler-icon"></span>
 			</button>
-			<a class="navbar-brand" id="green-terminal" href=https://cmdln.org>nick@cmdln.org ~ $</a>
+	
+			
+			<div class="collapse navbar-collapse" id="navbar-collapse-1">
+				<ul class="nav navbar-nav ms-auto">
+					<li class="nav-item">
+						<a class="nav-link" href='https://cmdln.org/'>
+							/home/nick</a>
+					</li>
+					
+					
+					
+					<li class="nav-item dropdown">
+						
+						<a class="nav-link" href="https://cmdln.org/post/">~/posts</a>
+						
+					</li>
+					
+				</ul>
+			</div>
 		</div>
-
-		
-		<div class="collapse navbar-collapse" id="navbar-collapse-1">
-			<ul class="nav navbar-nav navbar-right">
-				<li>
-					<a href="https://cmdln.org">/home/nick</a>
-				</li>
-				
-				
-				<li >
-					<a href="/post/">~/posts</a>
-				</li>
-				
-
-			</ul>
-		</div>
-	</div>
-</nav>
+	</nav>
 </header>
 
-        <div class="container wrapper">
-            <h1><a href="https://cmdln.org/2008/11/01/trust-not-dns-or-how-to-properly-move-a-website/">Trust not DNS or How to properly move a website</a></h1>
-            <span class="post-date">Nov 2, 2008 </span>
-            <div class="post-content">
-                <p>Recently I had to move a website that gets a fair amount of traffic. I prepared for this by lowering the TTL on the domains associated several weeks in advance to 600 seconds. Originally my plan was to toss up a maintenance page on the old server, change the DNS, and figured that within a few hours max the vast majority of DNS servers would have the update being that TTL had been set at 600 seconds for several weeks and prior to that it was set at 48 hours. This was all planned for the middle of the night on a weekend (very slow traffic time). I was in for a rude awakening the next morning.</p>
+        <div class="flex-wrapper">
+            <div class="container wrapper">
+                <h1><a href="https://cmdln.org/2008/11/01/trust-not-dns-or-how-to-properly-move-a-website/">Trust not DNS or How to properly move a website</a></h1>
+                <span class="post-date">2008-11-02 </span>
+                <div class="post-content">
+                    <p>Recently I had to move a website that gets a fair amount of traffic. I prepared for this by lowering the TTL on the domains associated several weeks in advance to 600 seconds. Originally my plan was to toss up a maintenance page on the old server, change the DNS, and figured that within a few hours max the vast majority of DNS servers would have the update being that TTL had been set at 600 seconds for several weeks and prior to that it was set at 48 hours. This was all planned for the middle of the night on a weekend (very slow traffic time). I was in for a rude awakening the next morning.</p>
 <p>The next morning I got a call that someone was still seeing the maintenance page. I checked, and from the DNS provided by my ISP everything acted as expected. No maintenance page, just the normal site. I checked DNS against a few other servers and all appeared normal. The DNS of the callers ISP however did not seem to have the proper update. A quick dig showed that while it even reported the TTL correctly at 600 seconds it was not obtaining an updated recored, or its upstream DNS was not.</p>
 <p>I logged into the old server to check the apache logs and found that approximately 1/3 of traffic was still hitting the old server! Luckily this was a Sunday morning and another slow day. Now to find a solution. Obviously I cannot call all of the ISPs and complain about their mis configured DNS servers. Even if I could no one would be able to fix anything on a Sunday morning.</p>
 <p><strong>The Solution</strong>: Apache’s wonderful mod_proxy (any reverse proxy will do).</p>
@@ -85,15 +89,14 @@
 <p>So for people with fubar dns that hit oldserver when accessing domain.tld apache answers the requests with a proxy to domain.tld as resolved from the old server. So to make sure that happens correctly either an entry in /etc/hosts or a change of nameservers in /etc/resolv.conf might be required. After that I just kept an eye on apachetop (which is a cool tool btw) to see when the requests dropped off. It ended up taking a little over 48 hours before all of the dns updated properly. Just so I don’t get a “dns propagation typically takes 48 hours” comment. Remember I was NOT changing DNS servers I only changed the DNS records to point to a new ip, and the TTL had been at 600 seconds for weeks ahead of time in preparation.</p>
 <p>I had no idea how many DNS servers did not properly obey TTL. I’ve learned my lesson. Any future migrations will have a proxy from the get go.</p>
 <p>If anyone cares to chime in and blow off steam on why DNS is in such a sad state feel free.</p>
-            </div>
-            
-            <div class="post-comments">
+                </div>
+                
+                <div class="post-comments">
+                    
+                </div>
                 
             </div>
-            
-            <div class="push"></div>
-        </div>
-        <footer class="footer text-center">
+            <footer class="footer text-center">
 <p>Copyright &copy; 2022 Nick Anderson -
 <span class="credit">
 	Powered by
@@ -104,4 +107,5 @@
 </p>
 </footer>
 
+        </div>
     </body>

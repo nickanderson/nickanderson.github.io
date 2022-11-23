@@ -5,30 +5,31 @@
         <title> Restricting SSH commands &middot;  </title>
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<<<<<<< HEAD
-<meta name="generator" content="Hugo 0.57.0" />
-=======
-<meta name="generator" content="Hugo 0.80.0" />
->>>>>>> a7d29a8a28a02281741be1a86cca3627b7cdd579
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.92.2" />
 
 
-<script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
 
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
 
 
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
 
 <link rel="stylesheet" href="https://cmdln.org/css/nix.css">
-<link rel="stylesheet" href="https://cmdln.org/css/syntax.css">
 
 
-<link href="https://fonts.googleapis.com/css?family=Inconsolata|Open+Sans|Roboto|Montserrat|Concert+One" rel="stylesheet">
+
+
+
+<link href="https://fonts.googleapis.com/css?family=Inconsolata%7COpen+Sans%7CConcert+One" rel="stylesheet">
+
+
 
 
 
@@ -37,42 +38,45 @@
 
     <body>
         <header>
-<nav class="navbar navbar-default navbar-fixed-top navbar-inverse font-header">
-	<div class="container-fluid">
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
-				<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
+	<nav class="navbar navbar-dark bg-dark fixed-top navbar-expand-lg font-header">
+		<div class="container-fluid">
+			<a class="navbar-brand" id="green-terminal" href='https://cmdln.org/'>
+				nick@cmdln.org ~ $
+			</a>
+			<button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse-1" 
+					aria-controls="navbar-collapse-1" aria-expanded="false">
+				<span class="visually-hidden">Toggle navigation</span>
+				<span class="navbar-toggler-icon"></span>
 			</button>
-			<a class="navbar-brand" id="green-terminal" href=https://cmdln.org>nick@cmdln.org ~ $</a>
+	
+			
+			<div class="collapse navbar-collapse" id="navbar-collapse-1">
+				<ul class="nav navbar-nav ms-auto">
+					<li class="nav-item">
+						<a class="nav-link" href='https://cmdln.org/'>
+							/home/nick</a>
+					</li>
+					
+					
+					
+					<li class="nav-item dropdown">
+						
+						<a class="nav-link" href="https://cmdln.org/post/">~/posts</a>
+						
+					</li>
+					
+				</ul>
+			</div>
 		</div>
-
-		
-		<div class="collapse navbar-collapse" id="navbar-collapse-1">
-			<ul class="nav navbar-nav navbar-right">
-				<li>
-					<a href="https://cmdln.org">/home/nick</a>
-				</li>
-				
-				
-				<li >
-					<a href="/post/">~/posts</a>
-				</li>
-				
-
-			</ul>
-		</div>
-	</div>
-</nav>
+	</nav>
 </header>
 
-        <div class="container wrapper">
-            <h1><a href="https://cmdln.org/2008/02/11/restricting-ssh-commands/">Restricting SSH commands</a></h1>
-            <span class="post-date">Feb 11, 2008 </span>
-            <div class="post-content">
-                <p>SSH is a powerful tool. When combined with ssh keys, it becomes easy to automate remote procedures like backups. However leaving key access wide open can be a bad idea. It is possible to use restrict ssh keys to specific commands, even coming from specific hosts. There is this nice little perl script called <!-- raw HTML omitted -->Authprogs<!-- raw HTML omitted --> that makes this somewhat easier. Ill show you how to use authprogs for an automated rsync over ssh.</p>
+        <div class="flex-wrapper">
+            <div class="container wrapper">
+                <h1><a href="https://cmdln.org/2008/02/11/restricting-ssh-commands/">Restricting SSH commands</a></h1>
+                <span class="post-date">2008-02-11 </span>
+                <div class="post-content">
+                    <p>SSH is a powerful tool. When combined with ssh keys, it becomes easy to automate remote procedures like backups. However leaving key access wide open can be a bad idea. It is possible to use restrict ssh keys to specific commands, even coming from specific hosts. There is this nice little perl script called <!-- raw HTML omitted -->Authprogs<!-- raw HTML omitted --> that makes this somewhat easier. Ill show you how to use authprogs for an automated rsync over ssh.</p>
 <p>First you need to generate your ssh key using ssh-keygen</p>
 <p>`SSH is a powerful tool. When combined with ssh keys, it becomes easy to automate remote procedures like backups. However leaving key access wide open can be a bad idea. It is possible to use restrict ssh keys to specific commands, even coming from specific hosts. There is this nice little perl script called <!-- raw HTML omitted -->Authprogs<!-- raw HTML omitted --> that makes this somewhat easier. Ill show you how to use authprogs for an automated rsync over ssh.<!-- raw HTML omitted --></p>
 <p>First you need to generate your ssh key using ssh-keygen</p>
@@ -89,7 +93,7 @@
 <p>``</p>
 <p>Your backup_user can be whatever user will have rights to access the data you want to rsync.</p>
 <p>Go ahead and ssh into the remote server using the key to test it, and while we are there lets setup authprogs. If your going to use your root user here please consider using the ssh directive “PermitRootLogin forced-commands-only” in your /etc/ssh/sshd_config</p>
-<pre><code class="language-SSH" data-lang="SSH">
+<pre tabindex="0"><code class="language-SSH" data-lang="SSH">
 
   
 First you need to generate your ssh key using ssh-keygen
@@ -131,7 +135,7 @@ Your backup_user can be whatever user will have rights to access the data you wa
 Go ahead and ssh into the remote server using the key to test it, and while we are there lets setup authprogs. If your going to use your root user here please consider using the ssh directive &amp;#8220;PermitRootLogin forced-commands-only&amp;#8221; in your /etc/ssh/sshd_config
   
 </code></pre><p>Now you should have a line in your authorized keys that ends in “Backup Key”, its the key we created and installed with ssh-copy-id. We want to add no-port-forwarding,no-X11-forwarding,no-agent-forwarding,no-pty,command=”/home/backup_user/bin/authprogs”. Your file should look similar to this.</p>
-<pre><code class="language-SSH" data-lang="SSH">
+<pre tabindex="0"><code class="language-SSH" data-lang="SSH">
 
   
 First you need to generate your ssh key using ssh-keygen
@@ -219,7 +223,7 @@ Go ahead and ssh into the remote server using the key to test it, and while we a
 Now you should have a line in your authorized keys that ends in &amp;#8220;Backup Key&amp;#8221;, its the key we created and installed with ssh-copy-id. We want to add no-port-forwarding,no-X11-forwarding,no-agent-forwarding,no-pty,command=&amp;#8221;/home/backup_user/bin/authprogs&amp;#8221;. Your file should look similar to this.
   
 </code></pre><p>It should be all one long line! We did turn off some additional SSH features that the key does not need access too. Go ahead and run the rsync command from your client machine.</p>
-<pre><code class="language-SSH" data-lang="SSH">
+<pre tabindex="0"><code class="language-SSH" data-lang="SSH">
 
   
 First you need to generate your ssh key using ssh-keygen
@@ -399,7 +403,7 @@ Now you should have a line in your authorized keys that ends in &amp;#8220;Backu
 It should be all one long line! We did turn off some additional SSH features that the key does not need access too. Go ahead and run the rsync command from your client machine.
   
 </code></pre><p>You should get an error something like You’re not allowed to run ‘rsync –server –sender -logtpr . /var/backup/’ Thats becasue we have yet to setup the authprogs.conf file. You can see the same information on the remote server /home/backup_user/authprogs.log file. We just need to add our authprogs.conf so put the following on the remote server in /home/backup_user/.ssh/authprogs.conf</p>
-<pre><code class="language-SSH" data-lang="SSH">
+<pre tabindex="0"><code class="language-SSH" data-lang="SSH">
 
   
 First you need to generate your ssh key using ssh-keygen
@@ -763,15 +767,14 @@ It should be all one long line! We did turn off some additional SSH features tha
 You should get an error something like You&amp;#8217;re not allowed to run &amp;#8216;rsync &amp;#8211;server &amp;#8211;sender -logtpr . /var/backup/&amp;#8217; Thats becasue we have yet to setup the authprogs.conf file. You can see the same information on the remote server /home/backup\_user/authprogs.log file. We just need to add our authprogs.conf so put the following on the remote server in /home/backup\_user/.ssh/authprogs.conf
   
 `````` &lt;/code&gt;&lt;/code&gt;</code></pre>
-            </div>
-            
-            <div class="post-comments">
+                </div>
+                
+                <div class="post-comments">
+                    
+                </div>
                 
             </div>
-            
-            <div class="push"></div>
-        </div>
-        <footer class="footer text-center">
+            <footer class="footer text-center">
 <p>Copyright &copy; 2022 Nick Anderson -
 <span class="credit">
 	Powered by
@@ -782,4 +785,5 @@ You should get an error something like You&amp;#8217;re not allowed to run &amp;
 </p>
 </footer>
 
+        </div>
     </body>

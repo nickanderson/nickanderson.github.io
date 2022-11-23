@@ -5,30 +5,31 @@
         <title> Disabling desktop search (trackerd) with cfengine 3 &middot;  </title>
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<<<<<<< HEAD
-<meta name="generator" content="Hugo 0.57.0" />
-=======
-<meta name="generator" content="Hugo 0.80.0" />
->>>>>>> a7d29a8a28a02281741be1a86cca3627b7cdd579
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.92.2" />
 
 
-<script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
 
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
 
 
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
 
 <link rel="stylesheet" href="https://cmdln.org/css/nix.css">
-<link rel="stylesheet" href="https://cmdln.org/css/syntax.css">
 
 
-<link href="https://fonts.googleapis.com/css?family=Inconsolata|Open+Sans|Roboto|Montserrat|Concert+One" rel="stylesheet">
+
+
+
+<link href="https://fonts.googleapis.com/css?family=Inconsolata%7COpen+Sans%7CConcert+One" rel="stylesheet">
+
+
 
 
 
@@ -37,42 +38,45 @@
 
     <body>
         <header>
-<nav class="navbar navbar-default navbar-fixed-top navbar-inverse font-header">
-	<div class="container-fluid">
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
-				<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
+	<nav class="navbar navbar-dark bg-dark fixed-top navbar-expand-lg font-header">
+		<div class="container-fluid">
+			<a class="navbar-brand" id="green-terminal" href='https://cmdln.org/'>
+				nick@cmdln.org ~ $
+			</a>
+			<button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse-1" 
+					aria-controls="navbar-collapse-1" aria-expanded="false">
+				<span class="visually-hidden">Toggle navigation</span>
+				<span class="navbar-toggler-icon"></span>
 			</button>
-			<a class="navbar-brand" id="green-terminal" href=https://cmdln.org>nick@cmdln.org ~ $</a>
+	
+			
+			<div class="collapse navbar-collapse" id="navbar-collapse-1">
+				<ul class="nav navbar-nav ms-auto">
+					<li class="nav-item">
+						<a class="nav-link" href='https://cmdln.org/'>
+							/home/nick</a>
+					</li>
+					
+					
+					
+					<li class="nav-item dropdown">
+						
+						<a class="nav-link" href="https://cmdln.org/post/">~/posts</a>
+						
+					</li>
+					
+				</ul>
+			</div>
 		</div>
-
-		
-		<div class="collapse navbar-collapse" id="navbar-collapse-1">
-			<ul class="nav navbar-nav navbar-right">
-				<li>
-					<a href="https://cmdln.org">/home/nick</a>
-				</li>
-				
-				
-				<li >
-					<a href="/post/">~/posts</a>
-				</li>
-				
-
-			</ul>
-		</div>
-	</div>
-</nav>
+	</nav>
 </header>
 
-        <div class="container wrapper">
-            <h1><a href="https://cmdln.org/2018/08/08/disabling-desktop-search-trackerd-with-cfengine-3/">Disabling desktop search (trackerd) with cfengine 3</a></h1>
-            <span class="post-date">Aug 8, 2018 </span>
-            <div class="post-content">
-                <p>
+        <div class="flex-wrapper">
+            <div class="container wrapper">
+                <h1><a href="https://cmdln.org/2018/08/08/disabling-desktop-search-trackerd-with-cfengine-3/">Disabling desktop search (trackerd) with cfengine 3</a></h1>
+                <span class="post-date">2018-08-08 </span>
+                <div class="post-content">
+                    <p>
 Recently I noticed that my CPU was pretty busy with the desktop search indexing,
 it brought me to the question:</p>
 <blockquote>
@@ -86,7 +90,7 @@ This policy disables known trackerd related XDG files when they are found.</p>
 <div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -136,7 +140,7 @@ This policy disables known trackerd related XDG files when they are found.</p>
 </span><span class="lnt">48
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="k">body</span> <span class="k">file</span> <span class="k">control</span>
+<pre tabindex="0" class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="k">body</span> <span class="k">file</span> <span class="k">control</span>
   <span class="p">{</span>
           <span class="kr">inputs</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="s">&#34;</span><span class="si">$(sys.libdir)</span><span class="s">/stdlib.cf&#34;</span> <span class="p">};</span>
   <span class="p">}</span>
@@ -196,13 +200,13 @@ leverage bundles and bodies from the standard library (e.g. <code class="verbati
 <div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="k">body</span> <span class="k">file</span> <span class="k">control</span>
+<pre tabindex="0" class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="k">body</span> <span class="k">file</span> <span class="k">control</span>
   <span class="p">{</span>
           <span class="kr">inputs</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="s">&#34;</span><span class="si">$(sys.libdir)</span><span class="s">/stdlib.cf&#34;</span> <span class="p">};</span>
   <span class="p">}</span></code></pre></td></tr></table>
@@ -215,7 +219,7 @@ can be easily used with the MPF autorun functionality.</p>
 <div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -224,7 +228,7 @@ can be easily used with the MPF autorun functionality.</p>
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">disable_desktop_search</span>
+<pre tabindex="0" class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">disable_desktop_search</span>
   <span class="c"># Disables trackerd used by ubuntu desktop search
 </span><span class="c"></span>  <span class="c"># https://askubuntu.com/questions/346211/tracker-store-and-tracker-miner-fs-eating-up-my-cpu-on-every-startup
 </span><span class="c"></span>  <span class="c"># https://gist.github.com/Prezto/75d612cebc9300f83bc74830df3a6410
@@ -239,7 +243,7 @@ The list of known trackerd related XDG files is enumerated.</p>
 <div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -251,7 +255,7 @@ The list of known trackerd related XDG files is enumerated.</p>
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3">    <span class="kd">vars</span><span class="p">:</span>
+<pre tabindex="0" class="chroma"><code class="language-cfengine3" data-lang="cfengine3">    <span class="kd">vars</span><span class="p">:</span>
         <span class="p">&#34;</span><span class="nv">desktop_files</span><span class="p">&#34;</span>
           <span class="kt">slist</span> <span class="o">=&gt;</span> <span class="p">{</span>
                      <span class="s">&#34;trackerd.desktop&#34;</span><span class="p">,</span>
@@ -269,10 +273,10 @@ The desired configuration is specified in the classic array <code class="verbati
 <div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3">        <span class="p">&#34;</span><span class="nv">conf[Hidden]</span><span class="p">&#34;</span> <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;true&#34;</span><span class="p">;</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-cfengine3" data-lang="cfengine3">        <span class="p">&#34;</span><span class="nv">conf[Hidden]</span><span class="p">&#34;</span> <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;true&#34;</span><span class="p">;</span></code></pre></td></tr></table>
 </div>
 </div>
 </div>
@@ -282,7 +286,7 @@ line entries and the files are repaired if necessary.</p>
 <div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -297,7 +301,7 @@ line entries and the files are repaired if necessary.</p>
 </span><span class="lnt">13
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3">    <span class="kd">files</span><span class="p">:</span>
+<pre tabindex="0" class="chroma"><code class="language-cfengine3" data-lang="cfengine3">    <span class="kd">files</span><span class="p">:</span>
 
         <span class="c"># If any known trackerd desktop file exists, make sure that that it
 </span><span class="c"></span>        <span class="c"># contains the option to disable the service.
@@ -320,7 +324,7 @@ executable library support from the special bundle <code class="verbatim">__main
 <div class="src src-cfengine3">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -330,7 +334,7 @@ executable library support from the special bundle <code class="verbatim">__main
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="err">@</span><span class="nf">if</span> <span class="nf">minimum_version</span><span class="p">(</span><span class="mf">3.12</span><span class="p">)</span>
+<pre tabindex="0" class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="err">@</span><span class="nf">if</span> <span class="nf">minimum_version</span><span class="p">(</span><span class="mf">3.12</span><span class="p">)</span>
   <span class="c"># If this policy file is used as the entry, run the policy
 </span><span class="c"></span>  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">__main__</span>
   <span class="p">{</span>
@@ -342,15 +346,14 @@ executable library support from the special bundle <code class="verbatim">__main
 </div>
 </div>
 
-            </div>
-            
-            <div class="post-comments">
+                </div>
+                
+                <div class="post-comments">
+                    
+                </div>
                 
             </div>
-            
-            <div class="push"></div>
-        </div>
-        <footer class="footer text-center">
+            <footer class="footer text-center">
 <p>Copyright &copy; 2022 Nick Anderson -
 <span class="credit">
 	Powered by
@@ -361,4 +364,5 @@ executable library support from the special bundle <code class="verbatim">__main
 </p>
 </footer>
 
+        </div>
     </body>
