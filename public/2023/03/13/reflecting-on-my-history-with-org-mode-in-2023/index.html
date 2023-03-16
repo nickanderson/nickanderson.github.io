@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title> Reflecting on my history with org-mode in 2023 &middot;  </title>
+
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.92.2" />
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://cmdln.org/css/nix.css">
+
+
+
+
+
+<link href="https://fonts.googleapis.com/css?family=Inconsolata%7COpen+Sans%7CConcert+One" rel="stylesheet">
+
+
+
+
+
+
+    </head>
+
+    <body>
+        <header>
+	<nav class="navbar navbar-dark bg-dark fixed-top navbar-expand-lg font-header">
+		<div class="container-fluid">
+			<a class="navbar-brand" id="green-terminal" href='https://cmdln.org/'>
+				nick@cmdln.org ~ $
+			</a>
+			<button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse-1" 
+					aria-controls="navbar-collapse-1" aria-expanded="false">
+				<span class="visually-hidden">Toggle navigation</span>
+				<span class="navbar-toggler-icon"></span>
+			</button>
+	
+			
+			<div class="collapse navbar-collapse" id="navbar-collapse-1">
+				<ul class="nav navbar-nav ms-auto">
+					<li class="nav-item">
+						<a class="nav-link" href='https://cmdln.org/'>
+							/home/nick</a>
+					</li>
+					
+					
+					
+					<li class="nav-item dropdown">
+						
+						<a class="nav-link" href="https://cmdln.org/post/">~/posts</a>
+						
+					</li>
+					
+				</ul>
+			</div>
+		</div>
+	</nav>
+</header>
+
+        <div class="flex-wrapper">
+            <div class="container wrapper">
+                <h1><a href="https://cmdln.org/2023/03/13/reflecting-on-my-history-with-org-mode-in-2023/">Reflecting on my history with org-mode in 2023</a></h1>
+                <span class="post-date">2023-03-13 </span>
+                <div class="post-content">
+                    <p>I think I started getting interested in org-mode in 2007<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>. I definitely was making serious attempts to integrate it into my workflow by 2010. By 2016 it became my primary tool. By primary tool, I mean that most of my daily work is either done from within or at least I&rsquo;ve probably written down something about what I&rsquo;ve done in org-mode.</p>
+<p>Early on, maybe 2009 I found Bernt Hansens <a href="http://doc.norang.ca/org-mode.html">Organize you life in plain text!</a> guide, it was, and still is an amazing document. I found the title so inspiring. At the time I was heavily focused on GTD and I recall setting up Emacs specifically for managing tasks using org agenda. Unfortunately, being treated like a standalone app, I couldn&rsquo;t make it stick in my workflow. I was uncomfortable without modal editing and vi keybindings. Constantly pasting and editing org files in the background with vim just wasn&rsquo;t efficient. I drifted into some scripts to manage todos from the command line<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> and then to the opposite end of the spectrum with Evernote<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>.</p>
+<p>In 2013 I was traveling a lot, meeting many different people and taking copious notes about challenges people were facing and what they wanted to achieve.  The service was great, but I hated the thought that my precious notes were in someone else&rsquo;s locker. So, when I&rsquo;m running on Linux in some place with low or no Internet, power etc &hellip;. And wanting to work on my notes what am I to do? Well, Nixnote<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup> was ok. But it would crash and get slow, and when things blew up I was short of stranded until I got it fixed. I longed for the simplicity of plain text, where I could just use vim when things were burning around me.</p>
+<p>Orgmode remained in the back of my mind and around 2015 I made an effort to migrate my notes into org-mode. I got evil mode working pretty well and managed to transition from Evernote.</p>
+<p>By 2016 I found Spacemacs. This was a huge accelerator. Evil mode worked out of the box, plus cfengine-mode in emacs was significantly better than <code>vim_cf3</code>. Not only did it provide highlighting, it also provided function prototypes as I typed via eldoc, syntax checking via fly check, and projectile made it easy to test a full policy set. Things quickly progressed from there as I kept finding more ways to avoid leaving org-mode (ok, yeah, it&rsquo;s Emacs, but in my head org-mode is the focus) making it easier to wrangle text and weave things into my notes.</p>
+<p>I started making presentations in org-mode, with the help of org-reveal exporting to reveal.js.</p>
+<p>Next I added email via mu4e. Which really facilitated authoring email responses in org-mode. It became easy to email notes to colleagues and construct highly technical responses. I could see the potential for not organizing my life in plain text, but living my work life in plain text.</p>
+<p>I started making more use of org-babel and cobbled together ob-cfengine3 which let me author and run snippets of CFEngine policy directly in my notes. Along this path I found Howard Abrahams post about literate DevOps<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup> which was very similar to what I was doing. He echos many of my values in his post.</p>
+<p>So, I could get an email with a question, select three interesting part of the email that I wanted to respond to and trigger a capture bringing that text with a link that I could follow back to that email right into org-mode. I could author and run code blocks illustrating something and respond without ever breaking stride.</p>
+<p>It was easy to create detailed logs investing something with a trail of src blocks with output along the way. I could easily take that text and export it to the bespoke markup for a ticketing system (Jira, with ox-jira before it transitioned to markdown, and Markdown after). I was even using org-jira to directly interface with the ticketing system, posting comments directly from the comfort of org-mode.</p>
+<p>By 2021 I had run into various performance issues that really centered around large files. Large files that have high churn (eg. As the result of large results from src blocks that are sometimes rerun many times) made my environment slow and sent me in search of new strategies which is when I came across org-roam.</p>
+<p>Org-roam uses the zettelkasten method of organization. It provides some functions that facilitate a methodology built around many smaller interlinked files. I started making heavy use of <code>org-roam-dailies-capture</code> which brings me to how I org in 2023.</p>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>Seems right, Linux Journal had an article about org-mode in 2007. <a href="https://www.linuxjournal.com/article/9116">https://www.linuxjournal.com/article/9116</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p>I had written my own todo manager based off of Tom Limoncellies Cycle from Time Management for Systems Administrators and I had been trying out todo.txt (which is still around and has a nice little Android app) <a href="http://todotxt.org/">http://todotxt.org/</a>.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3" role="doc-endnote">
+<p>I loved the Evernote motto, remember everything</p>
+<p>At least in 2023 Evernote&rsquo;s motto seems to be &ldquo;Tame your work, organize your life Remember everything and tackle any project with your notes, tasks, and schedule all in one place.&rdquo; <a href="https://evernote.com/">https://evernote.com/</a>&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4" role="doc-endnote">
+<p>Nixnote is a desktop client for Evernote that runs on Linux and Windows <a href="http://www.nixnote.org/">http://www.nixnote.org/</a>&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:5" role="doc-endnote">
+<p>I really dislike the term DevOps but I found Howard&rsquo;s post reached in the direction I was headed. It&rsquo;s a great resource. <a href="https://howardism.org/Technical/Emacs/literate-devops.html">https://howardism.org/Technical/Emacs/literate-devops.html</a>&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+
+                </div>
+                
+                <div class="post-comments">
+                    
+                </div>
+                
+            </div>
+            <footer class="footer text-center">
+<p>Copyright &copy; 2023 Nick Anderson -
+<span class="credit">
+	Powered by
+	<a target="_blank" href="https://gohugo.io">Hugo</a>
+	and
+	<a target="_blank" href="https://github.com/LordMathis/hugo-theme-nix/">Nix</a> theme.
+</span>
+</p>
+</footer>
+
+        </div>
+    </body>
