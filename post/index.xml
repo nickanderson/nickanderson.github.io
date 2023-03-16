@@ -5,7 +5,17 @@
     <link>https://cmdln.org/post/</link>
     <description>Recent content in Posts on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 14 Aug 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://cmdln.org/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 13 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://cmdln.org/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Reflecting on my history with org-mode in 2023</title>
+      <link>https://cmdln.org/2023/03/13/reflecting-on-my-history-with-org-mode-in-2023/</link>
+      <pubDate>Mon, 13 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://cmdln.org/2023/03/13/reflecting-on-my-history-with-org-mode-in-2023/</guid>
+      <description>I think I started getting interested in org-mode in 20071. I definitely was making serious attempts to integrate it into my workflow by 2010. By 2016 it became my primary tool. By primary tool, I mean that most of my daily work is either done from within or at least I&amp;rsquo;ve probably written down something about what I&amp;rsquo;ve done in org-mode.
+Early on, maybe 2009 I found Bernt Hansens Organize you life in plain text!</description>
+    </item>
+    
     <item>
       <title>Reversing key values of a JSON dict in CFEngine with jq</title>
       <link>https://cmdln.org/2019/08/14/reversing-key-values-of-a-json-dict-in-cfengine-with-jq/</link>

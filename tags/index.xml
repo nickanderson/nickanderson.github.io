@@ -5,7 +5,16 @@
     <link>https://cmdln.org/tags/</link>
     <description>Recent content in Tags on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 14 Aug 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://cmdln.org/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 13 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://cmdln.org/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>org-mode</title>
+      <link>https://cmdln.org/tags/org-mode/</link>
+      <pubDate>Mon, 13 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://cmdln.org/tags/org-mode/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>cfengine3</title>
       <link>https://cmdln.org/tags/cfengine3/</link>
@@ -39,15 +48,6 @@
       <pubDate>Fri, 05 Jan 2018 13:35:04 -0600</pubDate>
       
       <guid>https://cmdln.org/tags/linux/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>org-mode</title>
-      <link>https://cmdln.org/tags/org-mode/</link>
-      <pubDate>Fri, 01 Dec 2017 21:41:21 -0600</pubDate>
-      
-      <guid>https://cmdln.org/tags/org-mode/</guid>
       <description></description>
     </item>
     
