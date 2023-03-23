@@ -24,7 +24,7 @@ I started making more use of `org-babel` and cobbled together `ob-cfengine3`[^fn
 
 So, I could get an email with a question, select the interesting part of the email that I wanted to respond to and trigger a capture bringing that text with a link that I could follow back to that email right into `org-mode`. I could author and run code blocks illustrating something and respond without ever breaking stride.
 
-It was easy to create detailed logs investing something with a trail of src blocks with output along the way. I could easily take that text and export it to the bespoke markup for a ticketing system (Jira, with `ox-jira`&nbsp;[^fn:11]before it transitioned to markdown, and Markdown after). I was even using `org-jira`&nbsp;[^fn:12] to directly interface with the ticketing system, posting comments directly from the comfort of `org-mode`.
+It was easy to create detailed logs investigating something with a trail of src blocks with output along the way. I could easily take that text and export it to the bespoke markup for a ticketing system (Jira, with `ox-jira`&nbsp;[^fn:11]before it transitioned to markdown, and Markdown after). I was even using `org-jira`&nbsp;[^fn:12] to directly interface with the ticketing system, posting comments directly from the comfort of `org-mode`.
 
 By 2021 I had run into various performance issues that really centered around large files. Large files that have high churn (eg. As the result of large results from src blocks that are sometimes rerun many times) made my environment slow and sent me in search of new strategies which is when I came across org-roam[^fn:13].
 
