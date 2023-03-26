@@ -28,7 +28,7 @@ It was easy to create detailed logs investigating something with a trail of src 
 
 By 2021 I had run into various performance issues that really centered around large files. Large files that have high churn (eg. As the result of large results from src blocks that are sometimes rerun many times) made my environment slow and sent me in search of new strategies which is when I came across org-roam[^fn:13].
 
-Org-roam uses the zettelkasten method of organization. It provides some functions that facilitate a methodology built around many smaller interlinked files. I started making heavy use of `org-roam-dailies-capture` which brings me to how I org in 2023.
+Org-roam uses the zettelkasten method of organization. It provides some functions that facilitate a methodology built around many smaller interlinked files. I started making heavy use of `org-roam-dailies-capture` which brings me to [how I org in 2023](https://cmdln.org/2023/03/25/how-i-org-in-2023/).
 
 [^fn:1]: Seems right, Linux Journal had an article about `org-mode` in 2007. <https://www.linuxjournal.com/article/9116>
 [^fn:2]: I had written my own todo manager based off of Tom Limoncellies Cycle from Time Management for Systems Administrators and I had been trying out todo.txt (which is still around and has a nice little Android app) <http://todotxt.org/>.
