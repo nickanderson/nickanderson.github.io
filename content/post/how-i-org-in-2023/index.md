@@ -180,6 +180,15 @@ literate-calc-mode
 org-similarity
 : org-similarity is a package to help Emacs org-mode users discover similar or related files. Under the hood, it uses Python and scikit-learn for text feature extraction, and nltk for text pre-processing. More specifically, this package provides a function to recursively scan a given directory for org files, clean their content by stripping the front matter and some undesired characters, tokenize them, replace each token with its respective linguistic stem, generate a TF-IDF sparse matrix, and calculate the cosine similarity between these documents and the buffer you are currently working on. <https://github.com/brunoarine/org-similarity>
 
+focused
+: A package that dims surrounding text. It works with any theme and can be configured to focus in on different regions like sentences, paragraphs or code-blocks. <https://github.com/larstvei/Focus>
+
+aggressive-indent-mode
+: A minor mode that keeps your code always indented. It reindents after every change, making it more reliable than electric-indent-mode. <https://github.com/Malabarba/aggressive-indent-mode>
+
+crux
+: A Collection of Ridiculously Useful eXtensions for Emacs. crux bundles many useful interactive commands to enhance your overall Emacs experience. <https://github.com/bbatsov/crux>
+
 [^fn:1]: Checkout the post reflecting on my history with org-mode in 2023. <https://cmdln.org/2023/03/13/reflecting-on-my-history-with-org-mode-in-2023/>
 [^fn:2]: According to the [introduction in the manual](https://www.orgroam.com/manual.html#Introduction) Org-roam is a tool for networked thought. It reproduces some of [Roam Research’](https://roamresearch.com/)s key features within Org-mode. Org-roam allows for effortless non-hierarchical note-taking: with Org-roam, notes flow naturally, making note-taking fun and easy.
 [^fn:3]: Maggie Appleton has a nice post about [Daily notes as a frictionless default input for personal knowledge management systems](https://maggieappleton.com/daily-notes).
