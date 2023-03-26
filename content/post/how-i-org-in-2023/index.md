@@ -34,6 +34,8 @@ Let's go through a contrived example.
 
 While checking my email in `mu4e`[^fn:11] and see a message from the CFEngine help list asking how to define a _class_ from a _variable_. The author shared what they had tried but it wasn't working. I want to respond to it so I run `org-roam-dailies-capture` and key in `e` (email) `r` (response). This creates a new node in today's work log with the headline `Responded to cfengineer@some.org Re: How do I define a class from a variable?` and a link back to the message in `mu4e` (that information was automatically pulled directly from the email I was reading when I initiated the capture).
 
+This is the capture template I use for email responses. It populates the necessary property for proper threading (message-id).
+
 ```emacs-lisp
 ("er" "Response" entry
  "* Respond to %:from: %:subject :email:\n:properties:\n:mail_from: Nick Anderson <nick.anderson@northern.tech>\n:mail_to: %:fromaddress\n:MAIL_IN_REPLY_TO: <%:message-id>\n:end:\n%a\n#+begin_quote\n   %i\n#+end_quote\n\n%?"
@@ -43,12 +45,8 @@ While checking my email in `mu4e`[^fn:11] and see a message from the CFEngine he
  :clock-resume t
  )
 ```
-<div class="src-block-caption">
-  <span class="src-block-number">Code Snippet 1:</span>
-  This is the capture template I use for email responses. It populates the necessary property for proper threading (message-id).
-</div>
 
-I start typing my response and use `org-roam-find-node`  to search for pre-existing examples leveraging any functions I want to use linking. I use YAsnippet[^fn:12] to insert a cfengine src block. I re-use or write a new example running the block as I go to make sure it does what I expected until I am satisfied. Once finished I run `org-mime-org-subtree-htmlize` which exports the `org-mode` formatted text to a multipart plain text (ascii) and html message. Then I `C-c` to send it off and again to complete my capture. At this point I will probably run `org-roam-capture` type the name of the example, e.g. `class defined from variable` and key in `c` (CFEngine) `e` (Example). In the example I use `org-roam-node-insert` to create links to each function that is used in the example. This helps future me find all the examples that use a specific function from that functions note.
+I start typing my response and use `org-roam-node-find`  to search for pre-existing examples leveraging any functions I want to use linking. I use YAsnippet[^fn:12] to insert a cfengine src block. I re-use or write a new example running the block as I go to make sure it does what I expected until I am satisfied. Once finished I run `org-mime-org-subtree-htmlize` which exports the `org-mode` formatted text to a multipart plain text (ascii) and html message. Then I `C-c` to send it off and again to complete my capture. At this point I will probably run `org-roam-capture` type the name of the example, e.g. `class defined from variable` and key in `c` (CFEngine) `e` (Example). In the example I use `org-roam-node-insert` to create links to each function that is used in the example. This helps future me find all the examples that use a specific function from that functions note.
 
 Next I decide that documentation should to be updated, so I run `org-jira-create-issue`, fill out the necessary minimal information and once the ticket has been created I run `org-jira-progress-issue` to set it in progress and I initiate a new work log capture. I run `projectile-switch-project` and switch to the documentation repository. I find the documentation I want to update and yank it. Then I head back to my work log run `org-rich-yank`[^fn:13] to paste the copied text with a link back to where I got it and type something about how it sucks. As I explain why it sucks I visit other repositories yanking other snippets of code for reference to backup my assertion. `ol-git-link` provides some nice capabilities for linking to git forges which is very helpful for others as well as future me doing archaeology.
 
