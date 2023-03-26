@@ -83,6 +83,19 @@
 	<li>
 		<div class="post-list-item">
 			<div class="post-header">
+				<h4 class="post-link"><a href="https://cmdln.org/2009/01/21/remote-kernel-logging-with-netconsole-for-fun-and-profit/">Remote kernel logging with netconsole for fun and profit</a></h4>
+				<h4 class="post-date">2009-01-21</h4>
+			</div>
+			<div class="post-summary"><p><p>Have you ever experienced hard lockups and seen no trace of the cause in your log files? Those situations can be even more of a pain if you do not have physical access to the machine since you will not be able to look for kernel oops on the console. You could buy a serial console or an ip kvm but if you don’t have the need for remote control, but would really like to be able to debug without being physically present you need to check out netconsole. Netconsole sends printk messages over UDP.</p></p></div>
+			<div class="post-list-footer text-center">
+				<a href="https://cmdln.org/2009/01/21/remote-kernel-logging-with-netconsole-for-fun-and-profit/">Read More</a>
+			</div>
+		</div>
+	</li>
+	
+	<li>
+		<div class="post-list-item">
+			<div class="post-header">
 				<h4 class="post-link"><a href="https://cmdln.org/2009/01/18/howto-reset-root-password-on-debian/">Howto reset root password on Debian</a></h4>
 				<h4 class="post-date">2009-01-18</h4>
 			</div>
@@ -195,19 +208,6 @@ That would cause any ssh connection matching node* to use the user staffuser and
 			<div class="post-summary"><p><p>I have a pretty good memory when it comes to juggling multiple tasks but I am (and have been for some time) trying to break my self of using my brain to store everything. One area a worklog benefits is when you want to look back over time and see what your were working on several months ago (this can be helpful for reviews). At any rate there are many tools to do similar things. At any rate I wrote a simple tool to try and help with this. Feel free to take it modify it or comment on the horrible code.</p></p></div>
 			<div class="post-list-footer text-center">
 				<a href="https://cmdln.org/2008/12/08/simple-worklog-script/">Read More</a>
-			</div>
-		</div>
-	</li>
-	
-	<li>
-		<div class="post-list-item">
-			<div class="post-header">
-				<h4 class="post-link"><a href="https://cmdln.org/2008/12/06/notify-someone-with-hook-when-you-update-a-git-working-copy/">Notify someone with hook when you update a git working copy</a></h4>
-				<h4 class="post-date">2008-12-07</h4>
-			</div>
-			<div class="post-summary"><p>Some projects have production code that runs off of a git cloned repository. There may be a case in which you want to notify others when that clone pulls. It is a pretty easy feat with gits post-merge hook. The post-merge hook will run after a merge (think git pull). All you have to do it create a project/.git/hooks/post-merge shell script and chmod +x it. Next time you pull successfully that script will run.</p></div>
-			<div class="post-list-footer text-center">
-				<a href="https://cmdln.org/2008/12/06/notify-someone-with-hook-when-you-update-a-git-working-copy/">Read More</a>
 			</div>
 		</div>
 	</li>
