@@ -79,31 +79,90 @@
                     <p>I&rsquo;ve been pretty much living in <code>org-mode</code> for 6 or 7 years now<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>. The features and tools I use as well as how I organize my files has changed quite a bit over this period of time and I thought it would be nice give myself (and anyone else who cares) a reference of what it was like in 2023 so here it is.</p>
 <p>As of Saturday, March 25, 2023
 I have <code>3551</code> org files in my ~/org directory. Most of these files <code>2534</code> are <em>time-series</em> or <em>daily</em> files. My personal journal (under <code>~/org/journal</code>), my daily work logs, and recurring meetings (under <code>~/org/roam/daily</code>). Not all of those files actually live there, I symlink some directories in to place. I don&rsquo;t often do this sort of setup, and it&rsquo;s a bit of a mess. I hope I wrangle it into something more easily reproducible some day.</p>
-<p>I have <code>13</code> org-roam-capture-templates and <code>64</code> org-roam-dailies-capture-templates.</p>
-<p>As you may have been able to tell <code>org-roam</code><sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> is my primary capture interface and I <em>really</em> like the daily capabilities. Each day I capture notes about everything I am working on into my work log while clocking time. This gives me a nice place to think and process what I am working on<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup> as well as a place to get my bearings and see what I have been working on if I get side-tracked<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup>. Having a new file each day gives me a fresh start and it helps me to avoid performance issues I have previously experienced with large (multi-megabyte) files. I still have a lot of org files not under my roam directory which I have yet (and may never fully) to migrate.</p>
+<p>I have <code>14</code> org-roam-capture-templates and <code>64</code> org-roam-dailies-capture-templates.</p>
+<p>As you may have been able to tell <code>org-roam</code><sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> is my primary capture interface and I <em>really</em> like the daily capabilities. Each day I capture notes about everything I am working on into my work log while clocking time. This gives me a nice place to think and process what I am working on<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup> as well as a place to get my bearings and see what I have been working on when I get side-tracked<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup>. Having a new file each day gives me a fresh start and it helps me to avoid performance issues I have previously experienced with large (multi-megabyte) files. I still have a lot of org files not under my roam directory which I have yet (and may never fully) to migrate.</p>
 <p>Beyond my time-series notes I have other collections of related notes in sub directories. For example, I have many notes about CFEngine (the best configuration management tool)<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup>. I keep my CFEngine related notes in <code>~/org/roam/CFEngine</code> with sub directories for different things ( blogs, examples, notes, opportunities, releases, release-testing
 ).</p>
 <p>So, how does a day in my org life flow?</p>
-<p>Usually my day starts with meetings. I like to take notes and email them to a distribution list afterwords<sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup>. For example, a few minutes before my CFEngine stand-up I run <code>org-roam-dailies-capture</code> and key in <code>w</code> (work) <code>m</code> (meeting) <code>c</code> (CFEngine) <code>d</code> (daily stand-up). Immediately after activating this capture I trigger another capture for my work log keying in <code>w</code> (work) <code>l</code> (log)<sup id="fnref:7"><a href="#fn:7" class="footnote-ref" role="doc-noteref">7</a></sup> which clocks time. The work log capture template includes a backlink to the stand-up note for the day, so I follow that link and start going through my template filling it out. The template has a headline for each person with a property that links to a node for the individual<sup id="fnref:8"><a href="#fn:8" class="footnote-ref" role="doc-noteref">8</a></sup>. My own section contains a clock table which quickly produces a nice list of the entries with clocked time from the previous day (on Mondays or days when I have missed prior N days I tweak the clock table to pull for the right number of previous days). I review the table  to see how good I was about clocking the previous day back-filling anything that I neglected to record then delete time columns. At the end of the meeting I use <code>org-mime</code><sup id="fnref:9"><a href="#fn:9" class="footnote-ref" role="doc-noteref">9</a></sup> and send a nicely formatted multipart ASCII &amp; HTML email. I then switch back to my work log capture and complete it. All of my regularly scheduled meetings follow the same process; I capture for the meeting template, then I capture to my work log clocking time with an automatic backlink back to the specific meeting note. It&rsquo;s easy to capture notes for yesterday, tomorrow or an arbitrary date in the future using <code>org-roam-dailies-capture-yesterday</code>, <code>org-roam-dailies-capture-tomorrow</code>, and <code>org-roam-dailies-capture-date</code>.</p>
+<p>Usually my day starts with meetings. I like to take notes and email them to a distribution list afterwords<sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup>. For example, a few minutes before my CFEngine stand-up I run <code>org-roam-dailies-capture</code> and key in <code>w</code> (work) <code>m</code> (meeting) <code>c</code> (CFEngine) <code>d</code> (daily stand-up). Immediately after activating this capture I trigger another capture for my work log keying in <code>w</code> (work) <code>l</code> (log)<sup id="fnref:7"><a href="#fn:7" class="footnote-ref" role="doc-noteref">7</a></sup> which clocks time. The work log capture template includes a backlink to the stand-up note for the day, so I follow that link and start going through my template filling it out. The template has a headline for each person with a property that links to a node for the individual<sup id="fnref:8"><a href="#fn:8" class="footnote-ref" role="doc-noteref">8</a></sup>. My own section contains a clock table which quickly produces a nice list of the entries with clocked time from the previous day (on Mondays or days when I have missed prior N days I tweak the clock table to pull for the right number of previous days). I review the table  to see how good I was about clocking the previous day back-filling anything that I neglected to record then delete time columns. At the end of the meeting I use <code>org-mime</code><sup id="fnref:9"><a href="#fn:9" class="footnote-ref" role="doc-noteref">9</a></sup> to prepare a nicely formatted multipart ASCII &amp; HTML email. After sending the mail I switch back to my work log capture and complete it. All of my regularly scheduled meetings follow the same process; I capture for the meeting template, then I capture to my work log clocking time with an automatic backlink back to the specific meeting note. It&rsquo;s easy to capture notes for yesterday, tomorrow or an arbitrary date in the future using <code>org-roam-dailies-capture-yesterday</code>, <code>org-roam-dailies-capture-tomorrow</code>, and <code>org-roam-dailies-capture-date</code>.</p>
 <p>Org-roam provides useful functions for accessing time-series notes. <code>org-roam-dailies-goto-today</code> will take you to today&rsquo;s note for the selected template and if the file does not exist it is initialized. Similarly <code>org-roam-dailies-goto-yesterday</code>, <code>org-roam-dailies-goto-tomorrow</code>, and <code>org-roam-dailies-goto-date</code> take you to the note for yesterday, tomorrow, or the specified date, creating the file if necessary. <code>org-roam-dailies-goto-previous</code> and <code>org-roam-dailies-goto-next</code> go to the previous and next note in the series based on the file you are currently visiting making for easy navigation through the time series.</p>
-<p>If I am working on something that has some regular pattern but is not a recurring time series I follow a similar pattern, but instead of <code>org-roam-dailies-capture</code> I run <code>org-roam-capture</code>. Unlike <code>org-roam-dailies-capture</code> <code>org-roam-capture</code> first prompts for a node title and you select a template afterwords. For example, if I am working on an issue from Jira I will run <code>org-roam-capture</code>, enter the issue number and then key in <code>w</code> (work) <code>j</code> (Jira). I am taken to a new node in the file for that Jira issue where I immediately trigger <code>org-roam-dailies-capture</code> for my work log which starts clocking time and I follow the link back to the node to continue my work.</p>
+<p>If I am working on something that has some regular pattern but is not a recurring time series I follow a similar pattern, but instead of <code>org-roam-dailies-capture</code> I run <code>org-roam-capture</code>. Unlike <code>org-roam-dailies-capture</code> <code>org-roam-capture</code> first prompts for a node title and you select a template afterwords. For example, if I am working on support case I will run <code>org-roam-capture</code>, enter the issue number and then key in <code>w</code> (work) <code>s</code> (support). I am taken to a new node in the file for that support case where I immediately trigger <code>org-roam-dailies-capture</code> for my work log which starts clocking time and I follow the link back to the node to continue my work.</p>
 <p>For other activities that are typically fast or aren&rsquo;t of a common type spanning multiple days I simply run <code>org-roam-dailies-capture</code> and keep notes directly in my work log.</p>
 <p>I author pretty much everything in <code>org-mode</code>. I am often able to stay in inside <code>org-mode</code> and keep a very thorough record of my exact activities. When I need to run commands I typically use <code>org-babel</code> so that commands their output and my thoughts about it form a nice log of my work as I proceed. This log is often directly transferable to communicate with others for which I leverage the copious export back ends available<sup id="fnref:10"><a href="#fn:10" class="footnote-ref" role="doc-noteref">10</a></sup>.</p>
 <p>Let&rsquo;s go through a contrived example.</p>
-<p>While checking my email in <code>mu4e</code><sup id="fnref:11"><a href="#fn:11" class="footnote-ref" role="doc-noteref">11</a></sup> and see a message from the CFEngine help list asking how to define a <em>class</em> from a <em>variable</em>. The author shared what they had tried but it wasn&rsquo;t working. I want to respond to it so I run <code>org-roam-dailies-capture</code> and key in <code>e</code> (email) <code>r</code> (response). This creates a new node in today&rsquo;s work log with the headline <code>Responded to cfengineer@some.org Re: How do I define a class from a variable?</code> and a link back to the message in <code>mu4e</code> (that information was automatically pulled directly from the email I was reading when I initiated the capture). I start typing my response using YAsnippet<sup id="fnref:12"><a href="#fn:12" class="footnote-ref" role="doc-noteref">12</a></sup> to insert a cfengine src block. I write a quick example running the block as I go to make sure it does what I expected until I am satisfied. Once finished I run <code>org-mime-org-subtree-htmlize</code> which exports the <code>org-mode</code> formatted text to a multipart plain text (ascii) and html message. Then I <code>C-c</code> to send it off and again to complete my capture.</p>
-<p>Next I decide that documentation should to be updated, so I run <code>org-jira-create-issue</code>, fill out the necessary minimal information and once the ticket has been created I run <code>org-jira-progress-issue</code> to set it in progress and I initiate a new work log capture. I run <code>projectile-switch-project</code> and switch to the documentation repository. I find the documentation I want to update and yank it. Then I head back to my work log run <code>org-rich-yank</code><sup id="fnref:13"><a href="#fn:13" class="footnote-ref" role="doc-noteref">13</a></sup> to paste the copied text with a link back to where I got it and type something about how it sucks. As I explain why it sucks I visit other repositories yanking other snippets of code for reference to backup my assertion.</p>
-<p>When updating the Jira ticket I export the notes I took to jira wiki syntax with <code>ox-jira</code> <sup id="fnref:14"><a href="#fn:14" class="footnote-ref" role="doc-noteref">14</a></sup>. I copy that exported text, and then add it to the Jira ticket using <code>org-jira-add-comment</code>. Before I start updating the documentation I create a new branch with <code>magit-branch-create</code><sup id="fnref:15"><a href="#fn:15" class="footnote-ref" role="doc-noteref">15</a></sup>. I make the changes I want, commit and push. Forge<sup id="fnref:16"><a href="#fn:16" class="footnote-ref" role="doc-noteref">16</a></sup> let&rsquo;s me proceed to open a pull request, request reviewers, make comments and easily grab the URL of the Pull Request which gets added to my work log which ultimately becomes a well styled comment in the associated Jira issue. Once the PR is approved I merge the pull request with <code>forge-merge</code> close the issue with <code>org-jira-progress-issue</code>, notice that I never left Emacs and my work log functioned as my home base where the notes I took became part of the work I produced in the form of a well styled Jira comment.</p>
-<p>Speaking of links between notes, <code>org-roam-ui</code> provides a really fun interactive 2 or 3d graph showing the links between nodes.
-This is what my #+nodes across #+files looks like.</p>
+<p>While checking my email in <code>mu4e</code><sup id="fnref:11"><a href="#fn:11" class="footnote-ref" role="doc-noteref">11</a></sup> and see a message from the CFEngine help list asking how to define a <em>class</em> from a <em>variable</em>. The author shared what they had tried but it wasn&rsquo;t working. I want to respond to it so I run <code>org-roam-dailies-capture</code> and key in <code>e</code> (email) <code>r</code> (response). This creates a new node in today&rsquo;s work log with the headline <code>Responded to cfengineer@some.org Re: How do I define a class from a variable?</code> and a link back to the message in <code>mu4e</code> (that information was automatically pulled directly from the email I was reading when I initiated the capture).</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="p">(</span><span class="s">&#34;er&#34;</span> <span class="s">&#34;Response&#34;</span> <span class="nv">entry</span>
+ <span class="s">&#34;* Respond to %:from: %:subject :email:\n:properties:\n:mail_from: Nick Anderson &lt;nick.anderson@northern.tech&gt;\n:mail_to: %:fromaddress\n:MAIL_IN_REPLY_TO: &lt;%:message-id&gt;\n:end:\n%a\n#+begin_quote\n   %i\n#+end_quote\n\n%?&#34;</span>
+ <span class="nb">:if-new</span> <span class="p">(</span><span class="nv">file+head</span> <span class="o">,</span><span class="p">(</span><span class="nf">expand-file-name</span> <span class="s">&#34;work/%&lt;%Y-%m-%d&gt;.org&#34;</span> <span class="nv">org-roam-dailies-directory</span><span class="p">)</span>
+                    <span class="s">&#34;#+title: Work log for %&lt;%Y-%m-%d&gt;&#34;</span><span class="p">)</span>
+ <span class="nb">:clock-in</span> <span class="no">t</span>
+ <span class="nb">:clock-resume</span> <span class="no">t</span>
+ <span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
+<p>I start typing my response and use <code>org-roam-find-node</code>  to search for pre-existing examples leveraging any functions I want to use linking. I use YAsnippet<sup id="fnref:12"><a href="#fn:12" class="footnote-ref" role="doc-noteref">12</a></sup> to insert a cfengine src block. I re-use or write a new example running the block as I go to make sure it does what I expected until I am satisfied. Once finished I run <code>org-mime-org-subtree-htmlize</code> which exports the <code>org-mode</code> formatted text to a multipart plain text (ascii) and html message. Then I <code>C-c</code> to send it off and again to complete my capture. At this point I will probably run <code>org-roam-capture</code> type the name of the example, e.g. <code>class defined from variable</code> and key in <code>c</code> (CFEngine) <code>e</code> (Example). In the example I use <code>org-roam-node-insert</code> to create links to each function that is used in the example. This helps future me find all the examples that use a specific function from that functions note.</p>
+<p>Next I decide that documentation should to be updated, so I run <code>org-jira-create-issue</code>, fill out the necessary minimal information and once the ticket has been created I run <code>org-jira-progress-issue</code> to set it in progress and I initiate a new work log capture. I run <code>projectile-switch-project</code> and switch to the documentation repository. I find the documentation I want to update and yank it. Then I head back to my work log run <code>org-rich-yank</code><sup id="fnref:13"><a href="#fn:13" class="footnote-ref" role="doc-noteref">13</a></sup> to paste the copied text with a link back to where I got it and type something about how it sucks. As I explain why it sucks I visit other repositories yanking other snippets of code for reference to backup my assertion. <code>ol-git-link</code> provides some nice capabilities for linking to git forges which is very helpful for others as well as future me doing archaeology.</p>
+<p>When updating the Jira ticket I export the notes I took to Jira wiki syntax with <code>ox-jira</code> <sup id="fnref:14"><a href="#fn:14" class="footnote-ref" role="doc-noteref">14</a></sup>. I copy that exported text, and then add it to the Jira ticket using <code>org-jira-add-comment</code>. Before I start updating the documentation I create a new branch with <code>magit-branch-create</code><sup id="fnref:15"><a href="#fn:15" class="footnote-ref" role="doc-noteref">15</a></sup>. I make the changes I want, commit and push. Forge<sup id="fnref:16"><a href="#fn:16" class="footnote-ref" role="doc-noteref">16</a></sup> let&rsquo;s me proceed to open a pull request, request reviewers, make comments and easily grab the URL of the Pull Request which gets added to my work log which ultimately becomes a well styled comment in the associated Jira issue. Once the PR is approved I merge the pull request with <code>forge-merge</code> and close the issue with <code>org-jira-progress-issue</code>. Notice that I never left Emacs and my work log functioned as my home base where the notes I took became part of the work I produced in the form of a well styled Jira comment.</p>
+<p>Speaking of links between notes, <code>org-roam-ui</code> provides a really fun interactive 2 or 3d graph showing the links between nodes. This is what my <code>11649</code> nodes across <code>3361</code> files looks like.</p>
 <p><a href="https://fosstodon.org/@nickanderson/110085158963970383">https://fosstodon.org/@nickanderson/110085158963970383</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text">Speaking of links between notes, =org-roam-ui= provides a really fun interactive 2 or 3d graph showing the links between nodes. This is what my src_bash{echo -n $(sqlite3 $HOME/.emacs.d/org-roam.db &#34;select count(*) from nodes&#34;)} nodes across src_bash{echo -n $(sqlite3 $HOME/.emacs.d/org-roam.db &#34;select count(*) from files&#34;)} files looks like.
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
 <p>I make presentations in org mode, for example <a href="https://htmlpreview.github.io/?https%3A%2F%2Fgithub.com%2Fnickanderson%2FOrg-mode-all-the-thingz%2Fblob%2Fmaster%2Fpresentation.html">Org-mode all the thingz!</a> which <a href="https://www.youtube.com/watch?v=PE4eGkIQycc">I gave at Kansas Linux Fest in 2019</a><sup id="fnref:17"><a href="#fn:17" class="footnote-ref" role="doc-noteref">17</a></sup>.</p>
 <p>As you can probably see I make heavy use of org-mode&rsquo;s exporting capabilities. In addition to the above mentioned use cases I also export to ODT, PDF, mediawiki, Slack, Hugo and various other flavors of Markdown.</p>
 <p>I (very infrequently) make diagrams with PlantUML<sup id="fnref:18"><a href="#fn:18" class="footnote-ref" role="doc-noteref">18</a></sup>. I might try Mermaid<sup id="fnref:19"><a href="#fn:19" class="footnote-ref" role="doc-noteref">19</a></sup> next time.</p>
 <p>I keep secrets in org-mode. The contents of headings that have the crypt tag are automatically GPG encrypted to my GPG key on save.</p>
 <p>While I started my journey with org-mode using agenda for GTD and managing tasks, I have yet to master it or really even manage to get it to stick in my workflow but I keep trying. I recently got agenda feeding from a list of files based on <code>org-roam-db-query</code> <sup id="fnref:20"><a href="#fn:20" class="footnote-ref" role="doc-noteref">20</a></sup>  This way I can have TODOs all over the place but I can keep agenda fast by keeping the number of files it considers relatively small.</p>
 <p>I keep notes on people. My x-files or rolodex consists of one note per person<sup id="fnref:21"><a href="#fn:21" class="footnote-ref" role="doc-noteref">21</a></sup>.</p>
-<p>Going mobile with org-mode I use a variety of applications to help. I use Syncthing to syncrhonize files across devices. I only synchronize a subset of my org files to mobile devices. I don&rsquo;t really need the ability to access my whole exocortex on the go.</p>
-<p>Orgzly is what I use most often. I really like the home screen widget it provides that allows me to build a query showing recent notes. It makes it easy for managing trips to the store. But the editing experience is lacking, and I am in great wish of an improved capture capabilities. It can&rsquo;t deal with a deep directory structure of files and while that isn&rsquo;t much of an issue for me, it would be a great capability and I do miss it. I had some issues with sync conflicts that lead me to introduce a Tasker automation to synchronize the Orgzly db on screen wake. I haven&rsquo;t had many sync conflicts since doing that.</p>
+<p>I use <code>org-web-tools</code> to archive pull copies of web pages into notes so that I have references even when the internet breaks. I take a lot of screenshots while doing things and I pull them into my documents with org-download<sup id="fnref:22"><a href="#fn:22" class="footnote-ref" role="doc-noteref">22</a></sup>.</p>
+<p>When working on long documents I sometimes turn on <code>olivetti-mode</code><sup id="fnref:23"><a href="#fn:23" class="footnote-ref" role="doc-noteref">23</a></sup>.</p>
+<p>I use various things for searching across my org files. When searching for text I use <code>ripgrep</code> <sup id="fnref:24"><a href="#fn:24" class="footnote-ref" role="doc-noteref">24</a></sup> , in Spacemacs it&rsquo;s bound to <code>SPC /</code> and you are prompted to choose a top level directory to start your search from. Several years back I used Deft<sup id="fnref:25"><a href="#fn:25" class="footnote-ref" role="doc-noteref">25</a></sup> for a while but found that it really didn&rsquo;t suite me well and it simply doesn&rsquo;t perform well<sup id="fnref:26"><a href="#fn:26" class="footnote-ref" role="doc-noteref">26</a></sup> for my volume of files. I still have a bunch of files in my deft directory that should probably just move into my roam.</p>
+<p>The default display when using <code>org-roam-node-find</code> shows only node names, I find a hierarchy much more useful. I adjusted it to show the node hierarchy using the example shown in the User contributed tricks<sup id="fnref:27"><a href="#fn:27" class="footnote-ref" role="doc-noteref">27</a></sup>. E.g. File title -&gt; heading 1 -&gt; Heading 2 -&gt; &hellip;</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="p">(</span><span class="nv">cl-defmethod</span> <span class="nv">org-roam-node-hierarchy</span> <span class="p">((</span><span class="nv">node</span> <span class="nv">org-roam-node</span><span class="p">))</span>
+  <span class="p">(</span><span class="nb">let</span> <span class="p">((</span><span class="nv">level</span> <span class="p">(</span><span class="nv">org-roam-node-level</span> <span class="nv">node</span><span class="p">)))</span>
+    <span class="p">(</span><span class="nf">concat</span>
+     <span class="p">(</span><span class="nb">when</span> <span class="p">(</span><span class="nf">&gt;</span> <span class="nv">level</span> <span class="mi">0</span><span class="p">)</span> <span class="p">(</span><span class="nf">concat</span> <span class="p">(</span><span class="nv">org-roam-node-file-title</span> <span class="nv">node</span><span class="p">)</span> <span class="s">&#34; &gt; &#34;</span><span class="p">))</span>
+     <span class="p">(</span><span class="nb">when</span> <span class="p">(</span><span class="nf">&gt;</span> <span class="nv">level</span> <span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="nf">concat</span> <span class="p">(</span><span class="nv">string-join</span> <span class="p">(</span><span class="nv">org-roam-node-olp</span> <span class="nv">node</span><span class="p">)</span> <span class="s">&#34; &gt; &#34;</span><span class="p">)</span> <span class="s">&#34; &gt; &#34;</span><span class="p">))</span>
+     <span class="p">(</span><span class="nv">org-roam-node-title</span> <span class="nv">node</span><span class="p">))))</span>
+
+  <span class="p">(</span><span class="nb">setq</span> <span class="nv">org-roam-node-display-template</span> <span class="s">&#34;${hierarchy:200} ${tags:20}&#34;</span><span class="p">)</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><p>Going mobile with <code>org-mode</code> I use a variety of applications to help. I use Syncthing to syncrhonize files across devices. I only synchronize a subset of my org files to mobile devices. I don&rsquo;t really need the ability to access my whole exocortex on the go.</p>
+<p>Orgzly is what I use most often. I really like the home screen widget it provides that allows me to build a query showing recent notes. It makes it easy for managing trips to the store. But the editing experience is lacking, and I am in great wish of an improved capture capabilities. It can&rsquo;t deal with a deep directory structure of files and while that isn&rsquo;t much of an issue for me, it would be a great capability and I do miss it. I had some issues with sync conflicts that lead me to introduce a Tasker automation to synchronize the Orgzly db on screen wake. I also make a practice of having one capture file per mobile device. I haven&rsquo;t had many sync conflicts since implementing those things. I re-file my Orgzly captures to my main system way less often than I should. They usually go to my personal journal, someday I hope to have some function to refile to a specific org-roam-dailies-capture template for date at point<sup id="fnref:28"><a href="#fn:28" class="footnote-ref" role="doc-noteref">28</a></sup>.</p>
 <p>Other applications that I use on mobile that deserve mention:</p>
 <dl>
 <dt>Logseq</dt>
@@ -113,75 +172,38 @@ This is what my #+nodes across #+files looks like.</p>
 <dt>Orgro</dt>
 <dd>It&rsquo;s read only, so it&rsquo;s of limited use given my current sync patterns but it&rsquo;s good for that.</dd>
 </dl>
-<p>I use <code>org-web-tools</code> to archive pull copies of web pages into notes so that I have references even when the internet breaks. I take a lot of screenshots while doing things and I pull them into my documents with org-download. <a href="https://github.com/abo-abo/org-download">https://github.com/abo-abo/org-download</a></p>
-<p>I don&rsquo;t think about myself being an Emacs user, I feel like an org-mode user Emacs is just a delivery system. I&rsquo;ve been playing with many things that have yet to gel into my workflow:</p>
+<p>I don&rsquo;t think about myself being an Emacs user, I feel like an <code>org-mode</code> user Emacs is just a delivery system. I&rsquo;ve been playing with many things that have yet to gel into my workflow:</p>
 <ul>
-<li>
-<p>ob-translate</p>
-</li>
-<li>
-<p>md4rd <a href="https://github.com/ahungry/md4rd">https://github.com/ahungry/md4rd</a></p>
-</li>
-<li>
-<p>org-transclusion <a href="https://github.com/nobiot/org-transclusion">https://github.com/nobiot/org-transclusion</a></p>
-</li>
-<li>
-<p>elfeed</p>
-</li>
-<li>
-<p>mastadon.el <a href="https://codeberg.org/martianh/mastodon.el">https://codeberg.org/martianh/mastodon.el</a></p>
-</li>
-<li>
-<p>Org-chef <a href="https://github.com/Chobbes/org-chef">https://github.com/Chobbes/org-chef</a></p>
-</li>
-<li>
-<p>org-drill</p>
-</li>
-<li>
-<p>org-roam-ql</p>
-</li>
-<li>
-<p>org-ql</p>
-</li>
-<li>
-<p>org-edna</p>
-</li>
-<li>
-<p><a href="https://github.com/unhammer/org-mru-clock">https://github.com/unhammer/org-mru-clock</a>.</p>
-</li>
-<li>
-<p>org-noter</p>
-</li>
-<li>
-<p>org-cv</p>
-</li>
-<li>
-<p>org-awesomecv</p>
-</li>
-<li>
-<p>ox-leanpub</p>
-</li>
-<li>
-<p>olivette</p>
-</li>
-<li>
-<p>orgit</p>
-<p><a href="https://github.com/alphapapa/org-super-agenda">https://github.com/alphapapa/org-super-agenda</a></p>
-<p><a href="https://github.com/alphapapa/helm-org-rifle">https://github.com/alphapapa/helm-org-rifle</a></p>
-<p><a href="https://github.com/alphapapa/org-recent-headings">https://github.com/alphapapa/org-recent-headings</a></p>
-<p><a href="https://github.com/alphapapa/org-sticky-header">https://github.com/alphapapa/org-sticky-header</a></p>
-</li>
+<li>ob-translate</li>
+<li>md4rd <a href="https://github.com/ahungry/md4rd">https://github.com/ahungry/md4rd</a></li>
+<li>org-transclusion <a href="https://github.com/nobiot/org-transclusion">https://github.com/nobiot/org-transclusion</a></li>
+<li>elfeed</li>
+<li>mastadon.el <a href="https://codeberg.org/martianh/mastodon.el">https://codeberg.org/martianh/mastodon.el</a></li>
+<li>org-chef <a href="https://github.com/Chobbes/org-chef">https://github.com/Chobbes/org-chef</a></li>
+<li>org-drill</li>
+<li>org-roam-ql</li>
+<li>org-ql</li>
+<li>org-edna</li>
+<li>org-mru-clock <a href="https://github.com/unhammer/org-mru-clock">https://github.com/unhammer/org-mru-clock</a>.</li>
+<li>org-noter</li>
+<li>org-cv</li>
+<li>org-awesomecv</li>
+<li>ox-leanpub</li>
+<li>org-super-agenda <a href="https://github.com/alphapapa/org-super-agenda">https://github.com/alphapapa/org-super-agenda</a></li>
+<li><a href="https://github.com/alphapapa/org-recent-headings">https://github.com/alphapapa/org-recent-headings</a></li>
+<li>org-sidebar</li>
+<li>org-protocol-capture-html <a href="https://github.com/alphapapa/org-protocol-capture-html">https://github.com/alphapapa/org-protocol-capture-html</a></li>
+<li>emacs-slack  <a href="https://github.com/yuya373/emacs-slack/">https://github.com/yuya373/emacs-slack/</a></li>
+<li>literate-calc-mode <a href="https://github.com/sulami/literate-calc-mode.el">https://github.com/sulami/literate-calc-mode.el</a></li>
 </ul>
-<p><a href="https://github.com/alphapapa/org-bookmark-heading">https://github.com/alphapapa/org-bookmark-heading</a></p>
-<p><a href="https://github.com/alphapapa/org-protocol-capture-html">https://github.com/alphapapa/org-protocol-capture-html</a>`</p>
 <section class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
 <li id="fn:1" role="doc-endnote">
-<p>Checkout my reflections on my history with org-mode in 2023.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Checkout the post reflecting on my history with org-mode in 2023. <a href="https://cmdln.org/2023/03/13/reflecting-on-my-history-with-org-mode-in-2023/">https://cmdln.org/2023/03/13/reflecting-on-my-history-with-org-mode-in-2023/</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:2" role="doc-endnote">
-<p>According to the<a href="https://www.orgroam.com/manual.html#Introduction">introduction in the manual</a> Org-roam is a tool for networked thought. It reproduces some of <a href="https://roamresearch.com/">Roam Research’</a>s key features within Org-mode. Org-roam allows for effortless non-hierarchical note-taking: with Org-roam, notes flow naturally, making note-taking fun and easy.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>According to the <a href="https://www.orgroam.com/manual.html#Introduction">introduction in the manual</a> Org-roam is a tool for networked thought. It reproduces some of <a href="https://roamresearch.com/">Roam Research’</a>s key features within Org-mode. Org-roam allows for effortless non-hierarchical note-taking: with Org-roam, notes flow naturally, making note-taking fun and easy.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:3" role="doc-endnote">
 <p>Maggie Appleton has a nice post about <a href="https://maggieappleton.com/daily-notes">Daily notes as a frictionless default input for personal knowledge management systems</a>.&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
@@ -214,16 +236,16 @@ This is what my #+nodes across #+files looks like.</p>
 <p><a href="https://github.com/joaotavora/yasnippet">YASnippet</a> is a template system for Emacs. It allows you to type an abbreviation and automatically expand it into function templates. The snippet syntax is inspired from <a href="https://macromates.com/manual/en/snippets">TextMate'</a>s syntax, you can even import most TextMate templates to YASnippet.&#160;<a href="#fnref:12" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:13" role="doc-endnote">
-<p>org-rich-yank  <a href="https://github.com/unhammer/org-rich-yank">https://github.com/unhammer/org-rich-yank</a>&#160;<a href="#fnref:13" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>org-rich-yank pastes the last copied text and automatically surrounds the snippet in blocks, marked with the major mode of where the code came from, and adds a link to the source file after the block. I do wish that it would provide an option for the link being <a href="https://github.com/unhammer/org-rich-yank">https://github.com/unhammer/org-rich-yank</a>&#160;<a href="#fnref:13" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:14" role="doc-endnote">
-<p>ox-jira <a href="https://github.com/stig/ox-jira.el">https://github.com/stig/ox-jira.el</a>&#160;<a href="#fnref:14" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>ox-jira exports to Jira wiki markup. It&rsquo;s very nice to author fairly pretty comments with so little effort. <a href="https://github.com/stig/ox-jira.el">https://github.com/stig/ox-jira.el</a>&#160;<a href="#fnref:14" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:15" role="doc-endnote">
-<p>magit <a href="https://magit.vc/">https://magit.vc/</a>&#160;<a href="#fnref:15" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Magit is an amazing front end for git. <a href="https://magit.vc/">https://magit.vc/</a>&#160;<a href="#fnref:15" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:16" role="doc-endnote">
-<p>forge a <a href="https://github.com/magit/forge">https://github.com/magit/forge</a>&#160;<a href="#fnref:16" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Forge provides git forge integration (pull requests, issues, etc ..) for GitLab, GitHub and probably others. <a href="https://github.com/magit/forge">https://github.com/magit/forge</a>&#160;<a href="#fnref:16" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:17" role="doc-endnote">
 <p>Org source for the Org-mode all the thingz! presentation is available <a href="https://github.com/nickanderson/Org-mode-all-the-thingz/blob/master/presentation.org">here</a>.&#160;<a href="#fnref:17" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
@@ -239,6 +261,27 @@ This is what my #+nodes across #+files looks like.</p>
 </li>
 <li id="fn:21" role="doc-endnote">
 <p>Darly Wakatara has a nice post about how his workflow has evolved  <a href="https://daryl.wakatara.com/emacs-gtd-flow-evolved/">https://daryl.wakatara.com/emacs-gtd-flow-evolved/</a>. I noted that his contact management workflow is similar to mine. Sometime it would be nice to figure out how this could be leveraged for address completion in <code>mu4e</code>. There is <a href="https://orgmode.org/worg/org-contrib/org-contacts.html">org-contacts</a> but it&rsquo;s not clear to me if I can use it with a file per person strategy.&#160;<a href="#fnref:21" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:22" role="doc-endnote">
+<p><code>org-download</code> makes it easy to insert images into a document, it provides functions for taking and inserting screenshots, downloading images, renaming images as well as dragging and dropping images into your document. <a href="https://github.com/abo-abo/org-download">https://github.com/abo-abo/org-download</a>&#160;<a href="#fnref:22" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:23" role="doc-endnote">
+<p>Olivetti provides nice styling for writing. <a href="https://github.com/rnkn/olivetti">https://github.com/rnkn/olivetti</a>&#160;<a href="#fnref:23" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:24" role="doc-endnote">
+<p>ripgrep is a line-oriented search tool that recursively searches the current directory for a regex pattern. It&rsquo;s <em>very</em> fast and can even has some support for searching compressed files, multiline search. <a href="https://github.com/BurntSushi/ripgrep">https://github.com/BurntSushi/ripgrep</a>&#160;<a href="#fnref:24" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:25" role="doc-endnote">
+<p>Deft takes inspiration from Notational Velocity. I still think it&rsquo;s a neat package and something I would recommend to new org-mode users. <a href="https://notational.net/">https://notational.net/</a>&#160;<a href="#fnref:25" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:26" role="doc-endnote">
+<p>notDeft it features a Xapian database for providing fast full text search for very large volumes of notes. I haven&rsquo;t tried it but I haven&rsquo;t found myself needing something more from ripgrep for full text search much. <a href="https://github.com/hasu/notdeft">https://github.com/hasu/notdeft</a>&#160;<a href="#fnref:26" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:27" role="doc-endnote">
+<p>Lot&rsquo;s of good tips in the org-roam wiki user contributed tricks. My favorite so far is for showing the node hierarchy. <a href="https://github.com/org-roam/org-roam/wiki/User-contributed-Tricks#showing-node-hierarchy">https://github.com/org-roam/org-roam/wiki/User-contributed-Tricks#showing-node-hierarchy</a>&#160;<a href="#fnref:27" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:28" role="doc-endnote">
+<p>I am super slow working towards this, so if you want to offer up some elisp for me to use I would be most grateful.&#160;<a href="#fnref:28" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </section>
