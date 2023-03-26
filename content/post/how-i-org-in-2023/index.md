@@ -114,27 +114,71 @@ Orgro
 
 I don't think about myself being an Emacs user, I feel like an `org-mode` user Emacs is just a delivery system. I've been playing with many things that have yet to gel into my workflow:
 
--   ob-translate
--   md4rd <https://github.com/ahungry/md4rd>
--   org-transclusion <https://github.com/nobiot/org-transclusion>
--   elfeed
--   mastadon.el <https://codeberg.org/martianh/mastodon.el>
--   org-chef <https://github.com/Chobbes/org-chef>
--   org-drill
--   org-roam-ql
--   org-ql
--   org-edna
--   org-mru-clock <https://github.com/unhammer/org-mru-clock>.
--   org-noter
--   org-cv
--   org-awesomecv
--   ox-leanpub
--   org-super-agenda <https://github.com/alphapapa/org-super-agenda>
--   <https://github.com/alphapapa/org-recent-headings>
--   org-sidebar
--   org-protocol-capture-html <https://github.com/alphapapa/org-protocol-capture-html>
--   emacs-slack  <https://github.com/yuya373/emacs-slack/>
--   literate-calc-mode <https://github.com/sulami/literate-calc-mode.el>
+ob-translate
+: Translate text in Emacs’ org-mode blocks. <https://github.com/krisajenkins/ob-translate>
+
+md4rd
+: Read Reddit interactively from within Emacs. <https://github.com/ahungry/md4rd>
+
+org-transclusion
+: Org-transclusion lets you insert a copy of text content via a file link or ID link within an Org file. It lets you have the same content present in different buffers at the same time without copy-and-pasting it. Edit the source of the content, and you can refresh the transcluded copies to the up-to-date state. <https://github.com/nobiot/org-transclusion>
+
+Ement.el
+: Ement.el is a Matrix client for Emacs. It aims to be simple, fast, featureful, and reliable. <https://github.com/alphapapa/ement.el>
+
+elfeed
+: Elfeed is an extensible web feed reader for Emacs, supporting both Atom and RSS. <https://github.com/skeeto/elfeed>
+
+mastadon.el
+: Emacs client for Mastodon and other compatible fediverse servers. <https://codeberg.org/martianh/mastodon.el>
+
+org-chef
+: org-chef is a package for managing recipes in org-mode. One of the main features is that it can automatically extract recipes from websites like allrecipes.com <https://github.com/Chobbes/org-chef>
+
+org-drill
+: Org-Drill is an extension for Org mode. Org-Drill uses a spaced repetition algorithm to conduct interactive "drill sessions", using org files as sources of facts to be memorised. Each topic is treated as a "flash card". <https://orgmode.org/worg/org-contrib/org-drill.html>
+
+org-roam-search
+: org-ql like search for org-roam. <https://github.com/natask/org-roam-search>
+
+org-ql
+: This package provides a query language for Org files. It offers two syntax styles: Lisp-like sexps and search engine-like keywords. <https://github.com/alphapapa/org-ql>
+
+org-edna
+: Extensible Dependencies ’N’ Actions (EDNA) for Org Mode tasks. Edna provides an extensible means of specifying conditions which must be fulfilled before a task can be completed and actions to take once it is. <https://www.nongnu.org/org-edna-el/>
+
+org-mru-clock
+: Do you often clock in to many different little tasks? Are you annoyed that you can’t just clock in to one of your most recent tasks after restarting Emacs? <https://github.com/unhammer/org-mru-clock>.
+
+org-noter
+: Org-noter’s purpose is to let you create notes that are kept in sync when you scroll through the document, but that are external to it - the notes themselves live in an Org-mode file. <https://github.com/weirdNox/org-noter>
+
+org-cv
+: This project exports an org-mode file with reasonably structured items into a latex file, which compiles into a nice CV. <https://titan-c.gitlab.io/org-cv/>
+
+ox-leanpub
+: Ox-leanpub includes Org Mode export backends to publish books and courses with Leanpub. ox-leanpub allows you to write your material entirely in Org mode, and manages the production of the files and directories needed for Leanpub to render your book. <https://github.com/zzamboni/ox-leanpub>
+
+org-super-agenda
+: This package lets you “supercharge” your Org daily/weekly agenda. The idea is to group items into sections, rather than having them all in one big list. <https://github.com/alphapapa/org-super-agenda>
+
+org-recent-headings
+: This package lets you quickly jump to recently used Org headings using Helm, Ivy, or plain-ol’ completing-read. <https://github.com/alphapapa/org-recent-headings>
+
+org-sidebar
+: This package presents helpful sidebars for Org buffers. Sidebars are customizable using org-ql queries and org-super-agenda grouping. <https://github.com/alphapapa/org-sidebar>
+
+org-protocol-capture-html
+: You can select text in the page when you capture by clicking a bookmarklet it will be copied into the template, or you can just capture the page title and URL. A selection-grabbing function is used to capture the selection. <https://github.com/alphapapa/org-protocol-capture-html>
+
+emacs-slack
+: Slack from inside Emacs. <https://github.com/yuya373/emacs-slack/>
+
+literate-calc-mode
+: Literate programming for M-x calc. Displays inline results for calculations, supports variables and updates as you type (if you want). <https://github.com/sulami/literate-calc-mode.el>
+
+org-similarity
+: org-similarity is a package to help Emacs org-mode users discover similar or related files. Under the hood, it uses Python and scikit-learn for text feature extraction, and nltk for text pre-processing. More specifically, this package provides a function to recursively scan a given directory for org files, clean their content by stripping the front matter and some undesired characters, tokenize them, replace each token with its respective linguistic stem, generate a TF-IDF sparse matrix, and calculate the cosine similarity between these documents and the buffer you are currently working on. <https://github.com/brunoarine/org-similarity>
 
 [^fn:1]: Checkout the post reflecting on my history with org-mode in 2023. <https://cmdln.org/2023/03/13/reflecting-on-my-history-with-org-mode-in-2023/>
 [^fn:2]: According to the [introduction in the manual](https://www.orgroam.com/manual.html#Introduction) Org-roam is a tool for networked thought. It reproduces some of [Roam Research’](https://roamresearch.com/)s key features within Org-mode. Org-roam allows for effortless non-hierarchical note-taking: with Org-roam, notes flow naturally, making note-taking fun and easy.
