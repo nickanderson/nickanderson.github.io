@@ -1,12 +1,12 @@
 +++
 title = "How I org in 2023"
 date = 2023-03-25
-tags = ["org-mode"]
+tags = ["org-mode", "org-roam", "pkm"]
 draft = false
 author = "Nick Anderson"
 +++
 
-I've been pretty much living in `org-mode` for 6 or 7 years now[^fn:1]. The features and tools I use as well as how I organize my files has changed quite a bit over this period of time and I thought it would be nice give myself (and anyone else who cares) a reference of what it was like in 2023 so here it is.
+I've been pretty much living in `org-mode` for 6 or 7 years now[^fn:1]. It's my exocortex, second brain, and personal knowledge management system. The features and tools I use as well as how I organize my files has changed quite a bit over this period of time and I thought it would be nice give myself (and anyone else who cares) a reference of what it was like in 2023 so here it is.
 
 As of Sunday, March 26, 2023
  I have `3551` org files in my ~/org directory. Most of these (`2534`) are _time-series_ or _daily_ files. My personal journal (under `~/org/journal`), my daily work logs, and recurring meetings (under `~/org/roam/daily`). Not all of those files actually live there, I symlink some directories in to place. I don't often do this sort of setup, and it's a bit of a mess. I hope I wrangle it into something more easily reproducible some day.
