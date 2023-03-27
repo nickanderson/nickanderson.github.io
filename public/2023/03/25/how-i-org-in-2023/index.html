@@ -143,6 +143,8 @@ $HOME/.emacs.d/org-roam.db &#34;select count(*) from files&#34;)} files in org-r
 </span><span class="lnt">14
 </span><span class="lnt">15
 </span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="p">(</span><span class="s">&#34;er&#34;</span> <span class="s">&#34;Response&#34;</span> <span class="nv">entry</span>
@@ -156,7 +158,9 @@ $HOME/.emacs.d/org-roam.db &#34;select count(*) from files&#34;)} files in org-r
 </span><span class="s">#+begin_quote
 </span><span class="s">   %i
 </span><span class="s">#+end_quote\n\n%?&#34;</span>
- <span class="nb">:if-new</span> <span class="p">(</span><span class="nv">file+head</span> <span class="o">,</span><span class="p">(</span><span class="nf">expand-file-name</span> <span class="s">&#34;work/%&lt;%Y-%m-%d&gt;.org&#34;</span> <span class="nv">org-roam-dailies-directory</span><span class="p">)</span>
+ <span class="nb">:if-new</span> <span class="p">(</span><span class="nv">file+head</span> <span class="o">,</span><span class="p">(</span><span class="nf">expand-file-name</span>
+                      <span class="s">&#34;work/%&lt;%Y-%m-%d&gt;.org&#34;</span>
+                      <span class="nv">org-roam-dailies-directory</span><span class="p">)</span>
                     <span class="s">&#34;#+title: Work log for %&lt;%Y-%m-%d&gt;&#34;</span><span class="p">)</span>
  <span class="nb">:clock-in</span> <span class="no">t</span>
  <span class="nb">:clock-resume</span> <span class="no">t</span>
