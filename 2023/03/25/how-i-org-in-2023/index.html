@@ -87,11 +87,20 @@ I have <code>3551</code> org files in my ~/org directory. Most of these (<code>2
 <p>Usually my day starts with meetings. I like to take notes and email them to a distribution list afterwords<sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup>. For example, a few minutes before my CFEngine stand-up I run <code>org-roam-dailies-capture</code> and key in <code>w</code> (work) <code>m</code> (meeting) <code>c</code> (CFEngine) <code>d</code> (daily stand-up). Immediately after activating this capture I trigger another capture for my work log keying in <code>w</code> (work) <code>l</code> (log)<sup id="fnref:7"><a href="#fn:7" class="footnote-ref" role="doc-noteref">7</a></sup> which clocks time. The work log capture template includes a backlink to the stand-up note for the day, so I follow that link and start going through my template filling it out. The template has a headline for each person with a property that links to a node for the individual<sup id="fnref:8"><a href="#fn:8" class="footnote-ref" role="doc-noteref">8</a></sup>. My own section contains a clock table which quickly produces a nice list of the entries with clocked time from the previous day (on Mondays or days when I have missed prior N days I tweak the clock table to pull for the right number of previous days). I review the table  to see how good I was about clocking the previous day back-filling anything that I neglected to record then delete time columns. At the end of the meeting I use <code>org-mime</code><sup id="fnref:9"><a href="#fn:9" class="footnote-ref" role="doc-noteref">9</a></sup> to prepare a nicely formatted multipart ASCII &amp; HTML email. After sending the mail I switch back to my work log capture and complete it. All of my regularly scheduled meetings follow the same process; I capture for the meeting template, then I capture to my work log clocking time with an automatic backlink back to the specific meeting note. It&rsquo;s easy to capture notes for yesterday, tomorrow or an arbitrary date in the future using <code>org-roam-dailies-capture-yesterday</code>, <code>org-roam-dailies-capture-tomorrow</code>, and <code>org-roam-dailies-capture-date</code>.</p>
 <p>Org-roam provides useful functions for accessing time-series notes. <code>org-roam-dailies-goto-today</code> will take you to today&rsquo;s note for the selected template and if the file does not exist it is initialized. Similarly <code>org-roam-dailies-goto-yesterday</code>, <code>org-roam-dailies-goto-tomorrow</code>, and <code>org-roam-dailies-goto-date</code> take you to the note for yesterday, tomorrow, or the specified date, creating the file if necessary. <code>org-roam-dailies-goto-previous</code> and <code>org-roam-dailies-goto-next</code> go to the previous and next note in the series based on the file you are currently visiting making for easy navigation through the time series.</p>
 <p>If I am working on something that has some regular pattern but is not a recurring time series I follow a similar pattern, but instead of <code>org-roam-dailies-capture</code> I run <code>org-roam-capture</code>. Unlike <code>org-roam-dailies-capture</code> <code>org-roam-capture</code> first prompts for a node title and you select a template afterwords. For example, if I am working on support case I will run <code>org-roam-capture</code>, enter the issue number and then key in <code>w</code> (work) <code>s</code> (support). I am taken to a new node in the file for that support case where I immediately trigger <code>org-roam-dailies-capture</code> for my work log which starts clocking time and I follow the link back to the node to continue my work.</p>
-<p>For other activities that are typically fast or aren&rsquo;t of a common type spanning multiple days I simply run <code>org-roam-dailies-capture</code> and keep notes directly in my work log.</p>
-<p>I author pretty much everything in <code>org-mode</code>. I am often able to stay in inside <code>org-mode</code> and keep a very thorough record of my exact activities. When I need to run commands I typically use <code>org-babel</code> so that commands their output and my thoughts about it form a nice log of my work as I proceed. This log is often directly transferable to communicate with others for which I leverage the copious export back ends available<sup id="fnref:10"><a href="#fn:10" class="footnote-ref" role="doc-noteref">10</a></sup>.</p>
-<p>Let&rsquo;s go through a contrived example.</p>
-<p>While checking my email in <code>mu4e</code><sup id="fnref:11"><a href="#fn:11" class="footnote-ref" role="doc-noteref">11</a></sup> and see a message from the CFEngine help list asking how to define a <em>class</em> from a <em>variable</em>. The author shared what they had tried but it wasn&rsquo;t working. I want to respond to it so I run <code>org-roam-dailies-capture</code> and key in <code>e</code> (email) <code>r</code> (response). This creates a new node in today&rsquo;s work log with the headline <code>Responded to cfengineer@some.org Re: How do I define a class from a variable?</code> and a link back to the message in <code>mu4e</code> (that information was automatically pulled directly from the email I was reading when I initiated the capture).</p>
-<p>This is the capture template I use for email responses. It populates the necessary property for proper threading (message-id).</p>
+<p>Speaking of links between notes, <code>org-roam-ui</code> provides a really fun interactive 2 or 3d graph showing the links between nodes.</p>
+<figure><img src="org-roam-ui-with-dailies-2023-03-26.png"
+         alt="Figure 1: org-roam-ui visualization with dailies as of 2023-03-26"/><figcaption>
+            <p><!-- raw HTML omitted -->Figure 1: <!-- raw HTML omitted -->org-roam-ui visualization with dailies as of 2023-03-26</p>
+        </figcaption>
+</figure>
+
+<figure><img src="org-roam-ui-without-dailies-2023-03-26.png"
+         alt="Figure 2: org-roam-ui visualization without dailies as of 2023-03-26"/><figcaption>
+            <p><!-- raw HTML omitted -->Figure 2: <!-- raw HTML omitted -->org-roam-ui visualization without dailies as of 2023-03-26</p>
+        </figcaption>
+</figure>
+
+<p>I use inline code blocks while authoring this post to get current numbers on export. The above text looks like this in my org-mode file for the post which I export with <code>ox-hugo</code>.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -99,12 +108,52 @@ I have <code>3551</code> org files in my ~/org directory. Most of these (<code>2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text">Speaking of links between notes, =org-roam-ui= provides a really fun interactive
+2 or 3d graph showing the links between nodes. This is what my src_bash{echo -n
+$(sqlite3 $HOME/.emacs.d/org-roam.db &#34;select count(*) from nodes&#34;)} nodes across
+src_bash{echo -n $(sqlite3 $HOME/.emacs.d/org-roam.db &#34;select count(*) from
+files&#34;)} files looks like.
+</code></pre></td></tr></table>
+</div>
+</div><p>For other activities that are typically fast or aren&rsquo;t of a common type spanning multiple days I simply run <code>org-roam-dailies-capture</code> and keep notes directly in my work log.</p>
+<p>I author pretty much everything in <code>org-mode</code>. I am often able to stay in inside <code>org-mode</code> and keep a very thorough record of my exact activities. When I need to run commands I typically use <code>org-babel</code> so that commands their output and my thoughts about it form a nice log of my work as I proceed. This log is often directly transferable to communicate with others for which I leverage the copious export back ends available<sup id="fnref:10"><a href="#fn:10" class="footnote-ref" role="doc-noteref">10</a></sup>.</p>
+<p>I currently have  <code>11649</code> nodes across <code>3361</code> in org-roam.</p>
+<p>Let&rsquo;s go through a contrived example.</p>
+<p>While checking my email in <code>mu4e</code><sup id="fnref:11"><a href="#fn:11" class="footnote-ref" role="doc-noteref">11</a></sup> and see a message from the CFEngine help list asking how to define a <em>class</em> from a <em>variable</em>. The author shared what they had tried but it wasn&rsquo;t working. I want to respond to it so I run <code>org-roam-dailies-capture</code> and key in <code>e</code> (email) <code>r</code> (response). This creates a new node in today&rsquo;s work log with the headline <code>Responded to cfengineer@some.org Re: How do I define a class from a variable?</code> and a link back to the message in <code>mu4e</code> (that information was automatically pulled directly from the email I was reading when I initiated the capture).</p>
+<p>This is the capture template I use for email responses. It populates the necessary property for proper threading (message-id).</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="p">(</span><span class="s">&#34;er&#34;</span> <span class="s">&#34;Response&#34;</span> <span class="nv">entry</span>
- <span class="s">&#34;* Respond to %:from: %:subject :email:\n:properties:\n:mail_from: Nick Anderson &lt;nick.anderson@northern.tech&gt;\n:mail_to: %:fromaddress\n:MAIL_IN_REPLY_TO: &lt;%:message-id&gt;\n:end:\n%a\n#+begin_quote\n   %i\n#+end_quote\n\n%?&#34;</span>
+ <span class="s">&#34;* Respond to %:from: %:subject :email:
+</span><span class="s">:properties:
+</span><span class="s">:mail_from: Nick Anderson &lt;nick.anderson@northern.tech&gt;
+</span><span class="s">:mail_to: %:fromaddress
+</span><span class="s">:MAIL_IN_REPLY_TO: &lt;%:message-id&gt;
+</span><span class="s">:end:
+</span><span class="s">%a
+</span><span class="s">#+begin_quote
+</span><span class="s">   %i
+</span><span class="s">#+end_quote\n\n%?&#34;</span>
  <span class="nb">:if-new</span> <span class="p">(</span><span class="nv">file+head</span> <span class="o">,</span><span class="p">(</span><span class="nf">expand-file-name</span> <span class="s">&#34;work/%&lt;%Y-%m-%d&gt;.org&#34;</span> <span class="nv">org-roam-dailies-directory</span><span class="p">)</span>
                     <span class="s">&#34;#+title: Work log for %&lt;%Y-%m-%d&gt;&#34;</span><span class="p">)</span>
  <span class="nb">:clock-in</span> <span class="no">t</span>
@@ -115,17 +164,6 @@ I have <code>3551</code> org files in my ~/org directory. Most of these (<code>2
 </div><p>I start typing my response and use <code>org-roam-node-find</code>  to search for pre-existing examples leveraging any functions I want to use linking to them from my note. I use YAsnippet<sup id="fnref:12"><a href="#fn:12" class="footnote-ref" role="doc-noteref">12</a></sup> to insert a cfengine src block. I re-use or write a new example running the block as I go to make sure it does what I expected until I am satisfied. Once finished I run <code>org-mime-org-subtree-htmlize</code> which exports the <code>org-mode</code> formatted text to a multipart plain text (ascii) and html message. Then I <code>C-c</code> to send it off and again to complete my capture. At this point I will probably run <code>org-roam-capture</code> type the name of the example, e.g. <code>class defined from variable</code> and key in <code>c</code> (CFEngine) <code>e</code> (Example). In the example I use <code>org-roam-node-insert</code> to create links to each function that is used in the example. This helps future me find all the examples that use a specific function from that functions note.</p>
 <p>Next I decide that documentation should to be updated, so I run <code>org-jira-create-issue</code>, fill out the necessary minimal information and once the ticket has been created I run <code>org-jira-progress-issue</code> to set it in progress and I initiate a new work log capture. I run <code>projectile-switch-project</code> and switch to the documentation repository. I find the documentation I want to update and yank it. Then I head back to my work log run <code>org-rich-yank</code><sup id="fnref:13"><a href="#fn:13" class="footnote-ref" role="doc-noteref">13</a></sup> to paste the copied text with a link back to where I got it and type something about how it sucks. As I explain why it sucks I visit other repositories yanking other snippets of code for reference to backup my assertion. <code>ol-git-link</code> provides some nice capabilities for linking to git forges which is very helpful for others as well as future me doing archaeology.</p>
 <p>When updating the Jira ticket I export the notes I took to Jira wiki syntax with <code>ox-jira</code> <sup id="fnref:14"><a href="#fn:14" class="footnote-ref" role="doc-noteref">14</a></sup>. I copy that exported text, and then add it to the Jira ticket using <code>org-jira-add-comment</code>. Before I start updating the documentation I create a new branch with <code>magit-branch-create</code><sup id="fnref:15"><a href="#fn:15" class="footnote-ref" role="doc-noteref">15</a></sup>. I make the changes I want, commit and push. Forge<sup id="fnref:16"><a href="#fn:16" class="footnote-ref" role="doc-noteref">16</a></sup> let&rsquo;s me proceed to open a pull request, request reviewers, make comments and easily grab the URL of the Pull Request which gets added to my work log which ultimately becomes a well styled comment in the associated Jira issue. Once the PR is approved I merge the pull request with <code>forge-merge</code> and close the issue with <code>org-jira-progress-issue</code>. Notice that I never left Emacs and my work log functioned as my home base where the notes I took became part of the work I produced in the form of a well styled Jira comment.</p>
-<p>Speaking of links between notes, <code>org-roam-ui</code> provides a really fun interactive 2 or 3d graph showing the links between nodes. This is what my <code>11649</code> nodes across <code>3361</code> files looks like.</p>
-<p><a href="https://fosstodon.org/@nickanderson/110085158963970383">https://fosstodon.org/@nickanderson/110085158963970383</a></p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text">Speaking of links between notes, =org-roam-ui= provides a really fun interactive 2 or 3d graph showing the links between nodes. This is what my src_bash{echo -n $(sqlite3 $HOME/.emacs.d/org-roam.db &#34;select count(*) from nodes&#34;)} nodes across src_bash{echo -n $(sqlite3 $HOME/.emacs.d/org-roam.db &#34;select count(*) from files&#34;)} files looks like.
-</code></pre></td></tr></table>
-</div>
-</div><!-- raw HTML omitted -->
 <p>I make presentations in org mode, for example <a href="https://htmlpreview.github.io/?https%3A%2F%2Fgithub.com%2Fnickanderson%2FOrg-mode-all-the-thingz%2Fblob%2Fmaster%2Fpresentation.html">Org-mode all the thingz!</a> which <a href="https://www.youtube.com/watch?v=PE4eGkIQycc">I gave at Kansas Linux Fest in 2019</a><sup id="fnref:17"><a href="#fn:17" class="footnote-ref" role="doc-noteref">17</a></sup>.</p>
 <p>As you can probably see I make heavy use of org-mode&rsquo;s exporting capabilities. In addition to the above mentioned use cases I also export to ODT, PDF, mediawiki, Slack, Hugo and various other flavors of Markdown.</p>
 <p>I (very infrequently) make diagrams with PlantUML<sup id="fnref:18"><a href="#fn:18" class="footnote-ref" role="doc-noteref">18</a></sup>. I might try Mermaid<sup id="fnref:19"><a href="#fn:19" class="footnote-ref" role="doc-noteref">19</a></sup> next time.</p>
