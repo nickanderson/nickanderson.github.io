@@ -26,6 +26,8 @@ Usually my day starts with meetings. I like to take notes and email them to a di
 
 Org-roam provides useful functions for accessing time-series notes. `org-roam-dailies-goto-today` will take you to today's note for the selected template and if the file does not exist it is initialized. Similarly `org-roam-dailies-goto-yesterday`, `org-roam-dailies-goto-tomorrow`, and `org-roam-dailies-goto-date` take you to the note for yesterday, tomorrow, or the specified date, creating the file if necessary. `org-roam-dailies-goto-previous` and `org-roam-dailies-goto-next` go to the previous and next note in the series based on the file you are currently visiting making for easy navigation through the time series.
 
+`org-roam-node-random` is fun, as it says, it takes you to a random node. It's nice for serendipitous stumbles.
+
 If I am working on something that has some regular pattern but is not a recurring time series I follow a similar pattern, but instead of `org-roam-dailies-capture` I run `org-roam-capture`. Unlike `org-roam-dailies-capture` `org-roam-capture` first prompts for a node title and you select a template afterwords. For example, if I am working on support case I will run `org-roam-capture`, enter the issue number and then key in `w` (work) `s` (support). I am taken to a new node in the file for that support case where I immediately trigger `org-roam-dailies-capture` for my work log which starts clocking time and I follow the link back to the node to continue my work.
 
 Speaking of links between notes, `org-roam-ui` provides a really fun interactive 2 or 3d graph showing the links between nodes.
@@ -38,14 +40,16 @@ For other activities that are typically fast or aren't of a common type spanning
 
 I author pretty much everything in `org-mode`. I am often able to stay in inside `org-mode` and keep a very thorough record of my exact activities. When I need to run commands I typically use `org-babel` so that commands their output and my thoughts about it form a nice log of my work as I proceed. This log is often directly transferable to communicate with others for which I leverage the copious export back ends available[^fn:10].
 
-I currently have  `11649` nodes across `3361` in org-roam.
+As of Sunday, March 26, 2023
+ I currently have  `11649` nodes across `3361` in org-roam.
 
 I use inline code blocks while authoring this post to get current numbers on export. The above text looks like this in my org-mode file for the post which I export with `ox-hugo`.
 
 ```text
-I currently have src_bash{echo -n $(sqlite3 $HOME/.emacs.d/org-roam.db "select
-count(*) from nodes")} nodes across src_bash{echo -n $(sqlite3
-$HOME/.emacs.d/org-roam.db "select count(*) from files")} files in org-roam.
+As of src_sh[:results raw]{date +"%A, %B %e, %Y"} I currently have src_bash{echo
+-n $(sqlite3 $HOME/.emacs.d/org-roam.db "select count(*) from nodes")} nodes
+across src_bash{echo -n $(sqlite3 $HOME/.emacs.d/org-roam.db "select count(*)
+from files")} files in org-roam.
 ```
 
 Let's go through a contrived example.
