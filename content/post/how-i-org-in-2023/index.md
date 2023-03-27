@@ -26,9 +26,27 @@ Org-roam provides useful functions for accessing time-series notes. `org-roam-da
 
 If I am working on something that has some regular pattern but is not a recurring time series I follow a similar pattern, but instead of `org-roam-dailies-capture` I run `org-roam-capture`. Unlike `org-roam-dailies-capture` `org-roam-capture` first prompts for a node title and you select a template afterwords. For example, if I am working on support case I will run `org-roam-capture`, enter the issue number and then key in `w` (work) `s` (support). I am taken to a new node in the file for that support case where I immediately trigger `org-roam-dailies-capture` for my work log which starts clocking time and I follow the link back to the node to continue my work.
 
+Speaking of links between notes, `org-roam-ui` provides a really fun interactive 2 or 3d graph showing the links between nodes.
+
+{{< figure src="org-roam-ui-with-dailies-2023-03-26.png" caption="<span class=\"figure-number\">Figure 1: </span>org-roam-ui visualization with dailies as of 2023-03-26" >}}
+
+{{< figure src="org-roam-ui-without-dailies-2023-03-26.png" caption="<span class=\"figure-number\">Figure 2: </span>org-roam-ui visualization without dailies as of 2023-03-26" >}}
+
+I use inline code blocks while authoring this post to get current numbers on export. The above text looks like this in my org-mode file for the post which I export with `ox-hugo`.
+
+```text
+Speaking of links between notes, =org-roam-ui= provides a really fun interactive
+2 or 3d graph showing the links between nodes. This is what my src_bash{echo -n
+$(sqlite3 $HOME/.emacs.d/org-roam.db "select count(*) from nodes")} nodes across
+src_bash{echo -n $(sqlite3 $HOME/.emacs.d/org-roam.db "select count(*) from
+files")} files looks like.
+```
+
 For other activities that are typically fast or aren't of a common type spanning multiple days I simply run `org-roam-dailies-capture` and keep notes directly in my work log.
 
 I author pretty much everything in `org-mode`. I am often able to stay in inside `org-mode` and keep a very thorough record of my exact activities. When I need to run commands I typically use `org-babel` so that commands their output and my thoughts about it form a nice log of my work as I proceed. This log is often directly transferable to communicate with others for which I leverage the copious export back ends available[^fn:10].
+
+I currently have  `11649` nodes across `3361` in org-roam.
 
 Let's go through a contrived example.
 
@@ -38,7 +56,16 @@ This is the capture template I use for email responses. It populates the necessa
 
 ```emacs-lisp
 ("er" "Response" entry
- "* Respond to %:from: %:subject :email:\n:properties:\n:mail_from: Nick Anderson <nick.anderson@northern.tech>\n:mail_to: %:fromaddress\n:MAIL_IN_REPLY_TO: <%:message-id>\n:end:\n%a\n#+begin_quote\n   %i\n#+end_quote\n\n%?"
+ "* Respond to %:from: %:subject :email:
+:properties:
+:mail_from: Nick Anderson <nick.anderson@northern.tech>
+:mail_to: %:fromaddress
+:MAIL_IN_REPLY_TO: <%:message-id>
+:end:
+%a
+#+begin_quote
+   %i
+#+end_quote\n\n%?"
  :if-new (file+head ,(expand-file-name "work/%<%Y-%m-%d>.org" org-roam-dailies-directory)
                     "#+title: Work log for %<%Y-%m-%d>")
  :clock-in t
@@ -51,18 +78,6 @@ I start typing my response and use `org-roam-node-find`  to search for pre-exist
 Next I decide that documentation should to be updated, so I run `org-jira-create-issue`, fill out the necessary minimal information and once the ticket has been created I run `org-jira-progress-issue` to set it in progress and I initiate a new work log capture. I run `projectile-switch-project` and switch to the documentation repository. I find the documentation I want to update and yank it. Then I head back to my work log run `org-rich-yank`[^fn:13] to paste the copied text with a link back to where I got it and type something about how it sucks. As I explain why it sucks I visit other repositories yanking other snippets of code for reference to backup my assertion. `ol-git-link` provides some nice capabilities for linking to git forges which is very helpful for others as well as future me doing archaeology.
 
 When updating the Jira ticket I export the notes I took to Jira wiki syntax with `ox-jira`&nbsp;[^fn:14]. I copy that exported text, and then add it to the Jira ticket using `org-jira-add-comment`. Before I start updating the documentation I create a new branch with `magit-branch-create`[^fn:15]. I make the changes I want, commit and push. Forge[^fn:16] let's me proceed to open a pull request, request reviewers, make comments and easily grab the URL of the Pull Request which gets added to my work log which ultimately becomes a well styled comment in the associated Jira issue. Once the PR is approved I merge the pull request with `forge-merge` and close the issue with `org-jira-progress-issue`. Notice that I never left Emacs and my work log functioned as my home base where the notes I took became part of the work I produced in the form of a well styled Jira comment.
-
-Speaking of links between notes, `org-roam-ui` provides a really fun interactive 2 or 3d graph showing the links between nodes. This is what my `11649` nodes across `3361` files looks like.
-
-<https://fosstodon.org/@nickanderson/110085158963970383>
-
-```text
-Speaking of links between notes, =org-roam-ui= provides a really fun interactive 2 or 3d graph showing the links between nodes. This is what my src_bash{echo -n $(sqlite3 $HOME/.emacs.d/org-roam.db "select count(*) from nodes")} nodes across src_bash{echo -n $(sqlite3 $HOME/.emacs.d/org-roam.db "select count(*) from files")} files looks like.
-```
-<div class="src-block-caption">
-  <span class="src-block-number">Code Snippet 1:</span>
-  I use inline code blocks while authoring this post to get current numbers on export. The above text looks like this in my org-mode file for the post which I export with ox-hugo.
-</div>
 
 I make presentations in org mode, for example [Org-mode all the thingz!](https://htmlpreview.github.io/?https%3A%2F%2Fgithub.com%2Fnickanderson%2FOrg-mode-all-the-thingz%2Fblob%2Fmaster%2Fpresentation.html) which [I gave at Kansas Linux Fest in 2019](https://www.youtube.com/watch?v=PE4eGkIQycc)[^fn:17].
 
