@@ -66,7 +66,9 @@ This is the capture template I use for email responses. It populates the necessa
 #+begin_quote
    %i
 #+end_quote\n\n%?"
- :if-new (file+head ,(expand-file-name "work/%<%Y-%m-%d>.org" org-roam-dailies-directory)
+ :if-new (file+head ,(expand-file-name
+                      "work/%<%Y-%m-%d>.org"
+                      org-roam-dailies-directory)
                     "#+title: Work log for %<%Y-%m-%d>")
  :clock-in t
  :clock-resume t
