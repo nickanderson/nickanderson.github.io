@@ -41,7 +41,7 @@ For other activities that are typically fast or aren't of a common type spanning
 I author pretty much everything in `org-mode`. I am often able to stay in inside `org-mode` and keep a very thorough record of my exact activities. When I need to run commands I typically use `org-babel` so that commands their output and my thoughts about it form a nice log of my work as I proceed. This log is often directly transferable to communicate with others for which I leverage the copious export back ends available[^fn:9].
 
 As of Sunday, March 26, 2023
- I currently have  `11649` nodes across `3361` in org-roam.
+ I currently have  `11649` nodes across `3361` files in org-roam.
 
 I use inline code blocks while authoring this post to get current numbers on export. The above text looks like this in my org-mode file for the post which I export with `ox-hugo`.
 
