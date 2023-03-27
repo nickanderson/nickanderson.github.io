@@ -8,7 +8,7 @@ author = "Nick Anderson"
 
 I've been pretty much living in `org-mode` for 6 or 7 years now[^fn:1]. It's my exocortex, second brain, and personal knowledge management system. The features and tools I use as well as how I organize my files has changed quite a bit over this period of time and I thought it would be nice give myself (and anyone else who cares) a reference of what it was like in 2023 so here it is.
 
-{{< figure src="org-mode-this-is-the-way.jpg" >}}
+{{< figure src="org-mode-this-is-the-way.jpg" caption="<span class=\"figure-number\">Figure 1: </span>It is the way, at least for me" width="50%" >}}
 
 As of Sunday, March 26, 2023
  I have `3551` org files in my ~/org directory. Most of these (`2534`) are _time-series_ or _daily_ files. My personal journal (under `~/org/journal`), my daily work logs, and recurring meetings (under `~/org/roam/daily`). Not all of those files actually live there, I symlink some directories in to place. I don't often do this sort of setup, and it's a bit of a mess. I hope I wrangle it into something more easily reproducible some day.
@@ -30,25 +30,23 @@ If I am working on something that has some regular pattern but is not a recurrin
 
 Speaking of links between notes, `org-roam-ui` provides a really fun interactive 2 or 3d graph showing the links between nodes.
 
-{{< figure src="org-roam-ui-with-dailies-2023-03-26.png" caption="<span class=\"figure-number\">Figure 1: </span>org-roam-ui visualization with dailies as of 2023-03-26" >}}
+{{< figure src="org-roam-ui-with-dailies-2023-03-26.png" caption="<span class=\"figure-number\">Figure 2: </span>org-roam-ui visualization with dailies as of 2023-03-26" >}}
 
-{{< figure src="org-roam-ui-without-dailies-2023-03-26.png" caption="<span class=\"figure-number\">Figure 2: </span>org-roam-ui visualization without dailies as of 2023-03-26" >}}
-
-I use inline code blocks while authoring this post to get current numbers on export. The above text looks like this in my org-mode file for the post which I export with `ox-hugo`.
-
-```text
-Speaking of links between notes, =org-roam-ui= provides a really fun interactive
-2 or 3d graph showing the links between nodes. This is what my src_bash{echo -n
-$(sqlite3 $HOME/.emacs.d/org-roam.db "select count(*) from nodes")} nodes across
-src_bash{echo -n $(sqlite3 $HOME/.emacs.d/org-roam.db "select count(*) from
-files")} files looks like.
-```
+{{< figure src="org-roam-ui-without-dailies-2023-03-26.png" caption="<span class=\"figure-number\">Figure 3: </span>org-roam-ui visualization without dailies as of 2023-03-26" >}}
 
 For other activities that are typically fast or aren't of a common type spanning multiple days I simply run `org-roam-dailies-capture` and keep notes directly in my work log.
 
 I author pretty much everything in `org-mode`. I am often able to stay in inside `org-mode` and keep a very thorough record of my exact activities. When I need to run commands I typically use `org-babel` so that commands their output and my thoughts about it form a nice log of my work as I proceed. This log is often directly transferable to communicate with others for which I leverage the copious export back ends available[^fn:10].
 
 I currently have  `11649` nodes across `3361` in org-roam.
+
+I use inline code blocks while authoring this post to get current numbers on export. The above text looks like this in my org-mode file for the post which I export with `ox-hugo`.
+
+```text
+I currently have src_bash{echo -n $(sqlite3 $HOME/.emacs.d/org-roam.db "select
+count(*) from nodes")} nodes across src_bash{echo -n $(sqlite3
+$HOME/.emacs.d/org-roam.db "select count(*) from files")} files in org-roam.
+```
 
 Let's go through a contrived example.
 
@@ -81,7 +79,7 @@ Next I decide that documentation should to be updated, so I run `org-jira-create
 
 When updating the Jira ticket I export the notes I took to Jira wiki syntax with `ox-jira`&nbsp;[^fn:14]. I copy that exported text, and then add it to the Jira ticket using `org-jira-add-comment`. Before I start updating the documentation I create a new branch with `magit-branch-create`[^fn:15]. I make the changes I want, commit and push. Forge[^fn:16] let's me proceed to open a pull request, request reviewers, make comments and easily grab the URL of the Pull Request which gets added to my work log which ultimately becomes a well styled comment in the associated Jira issue. Once the PR is approved I merge the pull request with `forge-merge` and close the issue with `org-jira-progress-issue`. Notice that I never left Emacs and my work log functioned as my home base where the notes I took became part of the work I produced in the form of a well styled Jira comment.
 
-{{< figure src="angel-of-memory.png" caption="<span class=\"figure-number\">Figure 3: </span>FHTAGN &amp; TENTACLES — ZACHRIEL - ANGEL OF MEMORY by Peter Mohrbacher posted as a representation of org-mode in response to <https://pkm.social/@markmcelroy/110061567208552787>" >}}
+{{< figure src="angel-of-memory.png" caption="<span class=\"figure-number\">Figure 4: </span>FHTAGN &amp; TENTACLES — ZACHRIEL - ANGEL OF MEMORY by Peter Mohrbacher posted as a representation of org-mode in response to <https://pkm.social/@markmcelroy/110061567208552787>" >}}
 
 I make presentations in org mode, for example [Org-mode all the thingz!](https://htmlpreview.github.io/?https%3A%2F%2Fgithub.com%2Fnickanderson%2FOrg-mode-all-the-thingz%2Fblob%2Fmaster%2Fpresentation.html) which [I gave at Kansas Linux Fest in 2019](https://www.youtube.com/watch?v=PE4eGkIQycc)[^fn:17].
 
