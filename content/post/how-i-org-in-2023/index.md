@@ -10,10 +10,10 @@ I've been pretty much living in `org-mode` for 6 or 7 years now[^fn:1]. It's my 
 
 {{< figure src="org-mode-this-is-the-way.jpg" caption="<span class=\"figure-number\">Figure 1: </span>It is the way, at least for me" width="50%" >}}
 
-As of Sunday, March 26, 2023
- I have `3551` org files in my ~/org directory. Most of these (`2534`) are _time-series_ or _daily_ files. My personal journal (under `~/org/journal`), my daily work logs, and recurring meetings (under `~/org/roam/daily`). Not all of those files actually live there, I symlink some directories in to place. I don't often do this sort of setup, and it's a bit of a mess. I hope I wrangle it into something more easily reproducible some day.
+As of Friday, March 31, 2023
+ I have `3627` org files in my ~/org directory. Most of these (`2596`) are _time-series_ or _daily_ files. My personal journal (under `~/org/journal`), my daily work logs, and recurring meetings (under `~/org/roam/daily`). Not all of those files actually live there, I symlink some directories in to place. I don't often do this sort of setup, and it's a bit of a mess. I hope I wrangle it into something more easily reproducible some day.
 
-I have `14` org-roam-capture-templates and `64` org-roam-dailies-capture-templates.
+I have `14` org-roam-capture-templates and `68` org-roam-dailies-capture-templates.
 
 As you may have been able to tell `org-roam`[^fn:2] is my primary capture interface and I _really_ like the daily capabilities. Each day I capture notes about everything I am working on into my work log while clocking time. This gives me a nice place to think and process what I am working on[^fn:3] as well as a place to get my bearings and see what I have been working on when I get side-tracked[^fn:4]. Having a new file each day gives me a fresh start and it helps me to avoid performance issues I have previously experienced with large (multi-megabyte) files. I still have a lot of org files not under my roam directory which I have yet (and may never fully) to migrate.
 
@@ -40,8 +40,8 @@ For other activities that are typically fast or aren't of a common type spanning
 
 I author pretty much everything in `org-mode`. I am often able to stay in inside `org-mode` and keep a very thorough record of my exact activities. When I need to run commands I typically use `org-babel` so that commands their output and my thoughts about it form a nice log of my work as I proceed. This log is often directly transferable to communicate with others for which I leverage the copious export back ends available[^fn:9].
 
-As of Sunday, March 26, 2023
- I currently have  `11649` nodes across `3361` files in org-roam.
+As of Friday, March 31, 2023
+ I currently have  `11788` nodes across `3436` files in org-roam.
 
 I use inline code blocks while authoring this post to get current numbers on export. The above text looks like this in my org-mode file for the post which I export with `ox-hugo`.
 
@@ -59,17 +59,21 @@ While checking my email in `mu4e`[^fn:10] and see a message from the CFEngine he
 This is the capture template I use for email responses. It populates the necessary property for proper threading (message-id).
 
 ```emacs-lisp
+("e" "Email")
 ("er" "Response" entry
  "* Respond to %:from: %:subject :email:
 :properties:
 :mail_from: Nick Anderson <nick.anderson@northern.tech>
 :mail_to: %:fromaddress
 :MAIL_IN_REPLY_TO: <%:message-id>
+:MAIL_SUBJECT: %:subject
+:REF: %a
 :end:
-%a
 #+begin_quote
    %i
-#+end_quote\n\n%?"
+#+end_quote
+
+%?"
  :if-new (file+head ,(expand-file-name
                       "work/%<%Y-%m-%d>.org"
                       org-roam-dailies-directory)
@@ -214,6 +218,27 @@ crux
 
 osm
 : Osm.el is a tile-based map viewer, with a responsive movable and zoomable display. You can bookmark your favorite locations using regular Emacs bookmarks or create links from Org files to locations.  <https://github.com/minad/osm>
+
+org-ref
+: org-ref makes it easy to insert citations, cross-references, indexes and glossaries as hyper-functional links into org files. <https://github.com/jkitchin/org-ref>
+
+org-cite
+: <https://orgmode.org/manual/Citations.html>
+
+org-bibtex
+: Org-bibtex is responsible for handling bibtex citation in orgmode. <http://gewhere.github.io/org-bibtex>
+
+orgmdb
+: Tools for managing your watchlist in org-mode and some functions for interacting with OMDb API. <https://github.com/isamert/orgmdb.el>
+
+org-roam-review
+: Provides commands to categorise and review org-roam nodes for Evergreen note-taking. Notes are surfaced using the spaced-repetition algorithm from org-drill. <https://github.com/chrisbarrett/nursery/blob/main/lisp/org-roam-review.el>
+
+org-pretty-table
+: Draw pretty unicode tables in org-mode and orgtbl-mode. <https://github.com/Fuco1/org-pretty-table>
+
+org-roam-timestamps
+: Small package to keep track of the modification and creation time of individual nodes. <https://github.com/tefkah/org-roam-timestamps>
 
 [^fn:1]: Checkout the post reflecting on my history with org-mode in 2023. <https://cmdln.org/2023/03/13/reflecting-on-my-history-with-org-mode-in-2023/>
 [^fn:2]: According to the [introduction in the manual](https://www.orgroam.com/manual.html#Introduction) Org-roam is a tool for networked thought. It reproduces some of [Roam Research’](https://roamresearch.com/)s key features within Org-mode. Org-roam allows for effortless non-hierarchical note-taking: with Org-roam, notes flow naturally, making note-taking fun and easy.
