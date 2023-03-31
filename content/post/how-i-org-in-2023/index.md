@@ -240,6 +240,9 @@ org-pretty-table
 org-roam-timestamps
 : Small package to keep track of the modification and creation time of individual nodes. <https://github.com/tefkah/org-roam-timestamps>
 
+camcorder.el
+: Record screencasts directly from emacs. <https://github.com/Malabarba/camcorder.el>
+
 [^fn:1]: Checkout the post reflecting on my history with org-mode in 2023. <https://cmdln.org/2023/03/13/reflecting-on-my-history-with-org-mode-in-2023/>
 [^fn:2]: According to the [introduction in the manual](https://www.orgroam.com/manual.html#Introduction) Org-roam is a tool for networked thought. It reproduces some of [Roam Research’](https://roamresearch.com/)s key features within Org-mode. Org-roam allows for effortless non-hierarchical note-taking: with Org-roam, notes flow naturally, making note-taking fun and easy.
 [^fn:3]: Maggie Appleton has a nice post about [Daily notes as a frictionless default input for personal knowledge management systems](https://maggieappleton.com/daily-notes).
