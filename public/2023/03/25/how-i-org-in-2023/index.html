@@ -83,9 +83,9 @@
         </figcaption>
 </figure>
 
-<p>As of Sunday, March 26, 2023
-I have <code>3551</code> org files in my ~/org directory. Most of these (<code>2534</code>) are <em>time-series</em> or <em>daily</em> files. My personal journal (under <code>~/org/journal</code>), my daily work logs, and recurring meetings (under <code>~/org/roam/daily</code>). Not all of those files actually live there, I symlink some directories in to place. I don&rsquo;t often do this sort of setup, and it&rsquo;s a bit of a mess. I hope I wrangle it into something more easily reproducible some day.</p>
-<p>I have <code>14</code> org-roam-capture-templates and <code>64</code> org-roam-dailies-capture-templates.</p>
+<p>As of Friday, March 31, 2023
+I have <code>3627</code> org files in my ~/org directory. Most of these (<code>2596</code>) are <em>time-series</em> or <em>daily</em> files. My personal journal (under <code>~/org/journal</code>), my daily work logs, and recurring meetings (under <code>~/org/roam/daily</code>). Not all of those files actually live there, I symlink some directories in to place. I don&rsquo;t often do this sort of setup, and it&rsquo;s a bit of a mess. I hope I wrangle it into something more easily reproducible some day.</p>
+<p>I have <code>14</code> org-roam-capture-templates and <code>68</code> org-roam-dailies-capture-templates.</p>
 <p>As you may have been able to tell <code>org-roam</code><sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> is my primary capture interface and I <em>really</em> like the daily capabilities. Each day I capture notes about everything I am working on into my work log while clocking time. This gives me a nice place to think and process what I am working on<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup> as well as a place to get my bearings and see what I have been working on when I get side-tracked<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup>. Having a new file each day gives me a fresh start and it helps me to avoid performance issues I have previously experienced with large (multi-megabyte) files. I still have a lot of org files not under my roam directory which I have yet (and may never fully) to migrate.</p>
 <p>Beyond my time-series notes I have other collections of related notes in sub directories. For example, I have many notes about CFEngine (the best configuration management tool)<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup>. I keep my CFEngine related notes in <code>~/org/roam/CFEngine</code> with sub directories for different things ( blogs, examples, notes, opportunities, releases, release-testing
 ).</p>
@@ -109,8 +109,8 @@ I have <code>3551</code> org files in my ~/org directory. Most of these (<code>2
 
 <p>For other activities that are typically fast or aren&rsquo;t of a common type spanning multiple days I simply run <code>org-roam-dailies-capture</code> and keep notes directly in my work log.</p>
 <p>I author pretty much everything in <code>org-mode</code>. I am often able to stay in inside <code>org-mode</code> and keep a very thorough record of my exact activities. When I need to run commands I typically use <code>org-babel</code> so that commands their output and my thoughts about it form a nice log of my work as I proceed. This log is often directly transferable to communicate with others for which I leverage the copious export back ends available<sup id="fnref:9"><a href="#fn:9" class="footnote-ref" role="doc-noteref">9</a></sup>.</p>
-<p>As of Sunday, March 26, 2023
-I currently have  <code>11649</code> nodes across <code>3361</code> files in org-roam.</p>
+<p>As of Friday, March 31, 2023
+I currently have  <code>11788</code> nodes across <code>3436</code> files in org-roam.</p>
 <p>I use inline code blocks while authoring this post to get current numbers on export. The above text looks like this in my org-mode file for the post which I export with <code>ox-hugo</code>.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -149,19 +149,27 @@ from files&#34;)} files in org-roam.
 </span><span class="lnt">16
 </span><span class="lnt">17
 </span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="p">(</span><span class="s">&#34;er&#34;</span> <span class="s">&#34;Response&#34;</span> <span class="nv">entry</span>
+<pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="p">(</span><span class="s">&#34;e&#34;</span> <span class="s">&#34;Email&#34;</span><span class="p">)</span>
+<span class="p">(</span><span class="s">&#34;er&#34;</span> <span class="s">&#34;Response&#34;</span> <span class="nv">entry</span>
  <span class="s">&#34;* Respond to %:from: %:subject :email:
 </span><span class="s">:properties:
 </span><span class="s">:mail_from: Nick Anderson &lt;nick.anderson@northern.tech&gt;
 </span><span class="s">:mail_to: %:fromaddress
 </span><span class="s">:MAIL_IN_REPLY_TO: &lt;%:message-id&gt;
+</span><span class="s">:MAIL_SUBJECT: %:subject
+</span><span class="s">:REF: %a
 </span><span class="s">:end:
-</span><span class="s">%a
 </span><span class="s">#+begin_quote
 </span><span class="s">   %i
-</span><span class="s">#+end_quote\n\n%?&#34;</span>
+</span><span class="s">#+end_quote
+</span><span class="s">
+</span><span class="s">%?&#34;</span>
  <span class="nb">:if-new</span> <span class="p">(</span><span class="nv">file+head</span> <span class="o">,</span><span class="p">(</span><span class="nf">expand-file-name</span>
                       <span class="s">&#34;work/%&lt;%Y-%m-%d&gt;.org&#34;</span>
                       <span class="nv">org-roam-dailies-directory</span><span class="p">)</span>
@@ -280,6 +288,20 @@ from files&#34;)} files in org-roam.
 <dd>A Collection of Ridiculously Useful eXtensions for Emacs. crux bundles many useful interactive commands to enhance your overall Emacs experience. <a href="https://github.com/bbatsov/crux">https://github.com/bbatsov/crux</a></dd>
 <dt>osm</dt>
 <dd>Osm.el is a tile-based map viewer, with a responsive movable and zoomable display. You can bookmark your favorite locations using regular Emacs bookmarks or create links from Org files to locations.  <a href="https://github.com/minad/osm">https://github.com/minad/osm</a></dd>
+<dt>org-ref</dt>
+<dd>org-ref makes it easy to insert citations, cross-references, indexes and glossaries as hyper-functional links into org files. <a href="https://github.com/jkitchin/org-ref">https://github.com/jkitchin/org-ref</a></dd>
+<dt>org-cite</dt>
+<dd><a href="https://orgmode.org/manual/Citations.html">https://orgmode.org/manual/Citations.html</a></dd>
+<dt>org-bibtex</dt>
+<dd>Org-bibtex is responsible for handling bibtex citation in orgmode. <a href="http://gewhere.github.io/org-bibtex">http://gewhere.github.io/org-bibtex</a></dd>
+<dt>orgmdb</dt>
+<dd>Tools for managing your watchlist in org-mode and some functions for interacting with OMDb API. <a href="https://github.com/isamert/orgmdb.el">https://github.com/isamert/orgmdb.el</a></dd>
+<dt>org-roam-review</dt>
+<dd>Provides commands to categorise and review org-roam nodes for Evergreen note-taking. Notes are surfaced using the spaced-repetition algorithm from org-drill. <a href="https://github.com/chrisbarrett/nursery/blob/main/lisp/org-roam-review.el">https://github.com/chrisbarrett/nursery/blob/main/lisp/org-roam-review.el</a></dd>
+<dt>org-pretty-table</dt>
+<dd>Draw pretty unicode tables in org-mode and orgtbl-mode. <a href="https://github.com/Fuco1/org-pretty-table">https://github.com/Fuco1/org-pretty-table</a></dd>
+<dt>org-roam-timestamps</dt>
+<dd>Small package to keep track of the modification and creation time of individual nodes. <a href="https://github.com/tefkah/org-roam-timestamps">https://github.com/tefkah/org-roam-timestamps</a></dd>
 </dl>
 <section class="footnotes" role="doc-endnotes">
 <hr>
