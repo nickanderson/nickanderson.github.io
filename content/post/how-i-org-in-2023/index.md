@@ -10,8 +10,8 @@ I've been pretty much living in `org-mode` for 6 or 7 years now[^fn:1]. It's my 
 
 {{< figure src="org-mode-this-is-the-way.jpg" caption="<span class=\"figure-number\">Figure 1: </span>It is the way, at least for me" width="50%" >}}
 
-As of Friday, March 31, 2023
- I have `3627` org files in my ~/org directory. Most of these (`2596`) are _time-series_ or _daily_ files. My personal journal (under `~/org/journal`), my daily work logs, and recurring meetings (under `~/org/roam/daily`). Not all of those files actually live there, I symlink some directories in to place. I don't often do this sort of setup, and it's a bit of a mess. I hope I wrangle it into something more easily reproducible some day.
+As of Saturday, April  1, 2023
+ I have `3629` org files in my ~/org directory. Most of these (`2598`) are _time-series_ or _daily_ files. My personal journal (under `~/org/journal`), my daily work logs, and recurring meetings (under `~/org/roam/daily`). Not all of those files actually live there, I symlink some directories in to place. I don't often do this sort of setup, and it's a bit of a mess. I hope I wrangle it into something more easily reproducible some day.
 
 I have `14` org-roam-capture-templates and `68` org-roam-dailies-capture-templates.
 
@@ -22,7 +22,10 @@ Beyond my time-series notes I have other collections of related notes in sub dir
 
 So, how does a day in my org life flow?
 
-Usually my day starts with meetings. I like to take notes and email them to a distribution list afterwords[^fn:6]. For example, a few minutes before my CFEngine stand-up I run `org-roam-dailies-capture` and key in `w` (work) `m` (meeting) `c` (CFEngine) `d` (daily stand-up). Immediately after activating this capture I trigger another capture for my work log keying in `w` (work) `l` (log)[^fn:7] which clocks time. The work log capture template includes a backlink to the stand-up note for the day, so I follow that link and start going through my template filling it out. The template has a headline for each person with a property that links to a node for the individual. My own section contains a clock table which quickly produces a nice list of the entries with clocked time from the previous day (on Mondays or days when I have missed prior N days I tweak the clock table to pull for the right number of previous days). I review the table  to see how good I was about clocking the previous day back-filling anything that I neglected to record then delete time columns. At the end of the meeting I use `org-mime`[^fn:8] to prepare a nicely formatted multipart ASCII &amp; HTML email. After sending the mail I switch back to my work log capture and complete it. All of my regularly scheduled meetings follow the same process; I capture for the meeting template, then I capture to my work log clocking time with an automatic backlink back to the specific meeting note. It's easy to capture notes for yesterday, tomorrow or an arbitrary date in the future using `org-roam-dailies-capture-yesterday`, `org-roam-dailies-capture-tomorrow`, and `org-roam-dailies-capture-date`.
+Usually my day starts with meetings. I like to take notes and email them to a distribution list afterwords[^fn:6]. For example, a few minutes before my CFEngine stand-up I run `org-roam-dailies-capture-today` and key in `w` (work) `m` (meeting) `c` (CFEngine) `d` (daily stand-up). Immediately after activating this capture I trigger another capture for my work log keying in `w` (work) `l` (log)[^fn:7] which clocks time.
+![](standup-worklog.gif)
+
+The work log capture template includes a backlink to the stand-up note for the day, so I follow that link and start going through my template filling it out. The template has a headline for each person with a property that links to a node for the individual. My own section contains a clock table which quickly produces a nice list of the entries with clocked time from the previous day (on Mondays or days when I have missed prior N days I tweak the clock table to pull for the right number of previous days). I review the table  to see how good I was about clocking the previous day back-filling anything that I neglected to record then delete time columns. At the end of the meeting I use `org-mime`[^fn:8] to prepare a nicely formatted multipart ASCII &amp; HTML email. After sending the mail I switch back to my work log capture and complete it. All of my regularly scheduled meetings follow the same process; I capture for the meeting template, then I capture to my work log clocking time with an automatic backlink back to the specific meeting note. It's easy to capture notes for yesterday, tomorrow or an arbitrary date in the future using `org-roam-dailies-capture-yesterday`, `org-roam-dailies-capture-tomorrow`, and `org-roam-dailies-capture-date`.
 
 Org-roam provides useful functions for accessing time-series notes. `org-roam-dailies-goto-today` will take you to today's note for the selected template and if the file does not exist it is initialized. Similarly `org-roam-dailies-goto-yesterday`, `org-roam-dailies-goto-tomorrow`, and `org-roam-dailies-goto-date` take you to the note for yesterday, tomorrow, or the specified date, creating the file if necessary. `org-roam-dailies-goto-previous` and `org-roam-dailies-goto-next` go to the previous and next note in the series based on the file you are currently visiting making for easy navigation through the time series.
 
@@ -40,7 +43,7 @@ For other activities that are typically fast or aren't of a common type spanning
 
 I author pretty much everything in `org-mode`. I am often able to stay in inside `org-mode` and keep a very thorough record of my exact activities. When I need to run commands I typically use `org-babel` so that commands their output and my thoughts about it form a nice log of my work as I proceed. This log is often directly transferable to communicate with others for which I leverage the copious export back ends available[^fn:9].
 
-As of Friday, March 31, 2023
+As of Saturday, April  1, 2023
  I currently have  `11788` nodes across `3436` files in org-roam.
 
 I use inline code blocks while authoring this post to get current numbers on export. The above text looks like this in my org-mode file for the post which I export with `ox-hugo`.
