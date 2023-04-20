@@ -10,8 +10,8 @@ I've been pretty much living in `org-mode` for 6 or 7 years now[^fn:1]. It's my 
 
 {{< figure src="org-mode-this-is-the-way.jpg" caption="<span class=\"figure-number\">Figure 1: </span>It is the way, at least for me" width="50%" >}}
 
-As of Saturday, April  1, 2023
- I have `3628` org files in my ~/org directory. Most of these (`2597`) are _time-series_ or _daily_ files. My personal journal (under `~/org/journal`), my daily work logs, and recurring meetings (under `~/org/roam/daily`). Not all of those files actually live there, I symlink some directories in to place. I don't often do this sort of setup, and it's a bit of a mess. I hope I wrangle it into something more easily reproducible some day.
+As of Thursday, April 20, 2023
+ I have `3688` org files in my ~/org directory. Most of these (`2631`) are _time-series_ or _daily_ files. My personal journal (under `~/org/journal`), my daily work logs, and recurring meetings (under `~/org/roam/daily`). Not all of those files actually live there, I symlink some directories in to place. I don't often do this sort of setup, and it's a bit of a mess. I hope I wrangle it into something more easily reproducible some day.
 
 I have `14` org-roam-capture-templates and `68` org-roam-dailies-capture-templates.
 
@@ -24,9 +24,13 @@ So, how does a day in my org life flow?
 
 Usually my day starts with meetings. I like to take notes and email them to a distribution list afterwords[^fn:6]. For example, a few minutes before my CFEngine stand-up I run `org-roam-dailies-capture-today` and key in `w` (work) `m` (meeting) `c` (CFEngine) `d` (daily stand-up). Immediately after activating this capture I trigger another capture for my work log keying in `w` (work) `l` (log)[^fn:7] which clocks time.
 
-{{< figure src="standup-worklog.gif" caption="<span class=\"figure-number\">Figure 2: </span>Animation showing standup and worklog capture" width="75%" >}}
+{{< figure src="standup-worklog.gif" caption="<span class=\"figure-number\">Figure 2: </span>Animation showing standup and worklog capture" width="100%" >}}
 
-The work log capture template includes a backlink to the stand-up note for the day, so I follow that link and start going through my template filling it out. The template has a headline for each person with a property that links to a node for the individual. My own section contains a clock table which quickly produces a nice list of the entries with clocked time from the previous day (on Mondays or days when I have missed prior N days I tweak the clock table to pull for the right number of previous days). I review the table  to see how good I was about clocking the previous day back-filling anything that I neglected to record then delete time columns. At the end of the meeting I use `org-mime`[^fn:8] to prepare a nicely formatted multipart ASCII &amp; HTML email. After sending the mail I switch back to my work log capture and complete it. All of my regularly scheduled meetings follow the same process; I capture for the meeting template, then I capture to my work log clocking time with an automatic backlink back to the specific meeting note. It's easy to capture notes for yesterday, tomorrow or an arbitrary date in the future using `org-roam-dailies-capture-yesterday`, `org-roam-dailies-capture-tomorrow`, and `org-roam-dailies-capture-date`.
+The work log capture template includes a backlink to the stand-up note for the day, so I follow that link and start going through my template filling it out. The template has a headline for each person with a property that links to a node for the individual. My own section contains a clock table which quickly produces a nice list of the entries with clocked time from the previous day (on Mondays or days when I have missed prior N days I tweak the clock table to pull for the right number of previous days). I review the table to see how good I was about clocking the previous day back-filling anything that I neglected to record then delete time columns.
+
+[[./attachments/how-i-org-in-2023/standup-my-clocktable.gif
+
+At the end of the meeting I use `org-mime`[^fn:8] to prepare a nicely formatted multipart ASCII &amp; HTML email. After sending the mail I switch back to my work log capture and complete it. All of my regularly scheduled meetings follow the same process; I capture for the meeting template, then I capture to my work log clocking time with an automatic backlink back to the specific meeting note. It's easy to capture notes for yesterday, tomorrow or an arbitrary date in the future using `org-roam-dailies-capture-yesterday`, `org-roam-dailies-capture-tomorrow`, and `org-roam-dailies-capture-date`.
 
 Org-roam provides useful functions for accessing time-series notes. `org-roam-dailies-goto-today` will take you to today's note for the selected template and if the file does not exist it is initialized. Similarly `org-roam-dailies-goto-yesterday`, `org-roam-dailies-goto-tomorrow`, and `org-roam-dailies-goto-date` take you to the note for yesterday, tomorrow, or the specified date, creating the file if necessary. `org-roam-dailies-goto-previous` and `org-roam-dailies-goto-next` go to the previous and next note in the series based on the file you are currently visiting making for easy navigation through the time series.
 
@@ -44,8 +48,8 @@ For other activities that are typically fast or aren't of a common type spanning
 
 I author pretty much everything in `org-mode`. I am often able to stay in inside `org-mode` and keep a very thorough record of my exact activities. When I need to run commands I typically use `org-babel` so that commands their output and my thoughts about it form a nice log of my work as I proceed. This log is often directly transferable to communicate with others for which I leverage the copious export back ends available[^fn:9].
 
-As of Saturday, April  1, 2023
- I currently have  `11788` nodes across `3436` files in org-roam.
+As of Thursday, April 20, 2023
+ I currently have  `11860` nodes across `3506` files in org-roam.
 
 I use inline code blocks while authoring this post to get current numbers on export. The above text looks like this in my org-mode file for the post which I export with `ox-hugo`.
 
@@ -130,7 +134,7 @@ The default display when using `org-roam-node-find` shows only node names, I fin
 
 Going mobile with `org-mode` I use a variety of applications to help. I use Syncthing to syncrhonize files across devices. I only synchronize a subset of my org files to mobile devices. I don't really need the ability to access my whole exocortex on the go.
 
-Orgzly is what I use most often. I really like the home screen widget it provides that allows me to build a query showing recent notes. It makes it easy for managing trips to the store. But the editing experience is lacking, and I am in great wish of an improved capture capabilities. It can't deal with a deep directory structure of files and while that isn't much of an issue for me, it would be a great capability and I do miss it. I had some issues with sync conflicts that lead me to introduce a Tasker automation to synchronize the Orgzly db on screen wake. I also make a practice of having one capture file per mobile device. I haven't had many sync conflicts since implementing those things. I re-file my Orgzly captures to my main system way less often than I should. They usually go to my personal journal, someday I hope to have some function to refile to a specific org-roam-dailies-capture template for date at point[^fn:28].
+Orgzly is what I use most often. I really like the home screen widget it provides that allows me to build a query showing recent notes. It makes it easy for managing trips to the store. But the editing experience is lacking, and I am in great wish of an improved capture capabilities. It can't deal with a deep directory structure of files and while that isn't much of an issue for me, it would be a great capability and I do miss it. I had some issues with sync conflicts that lead me to introduce a Tasker automation to synchronize the Orgzly db on screen wake[^fn:28]. I also make a practice of having one capture file per mobile device. I haven't had many sync conflicts since implementing those things. I re-file my Orgzly captures to my main system way less often than I should. They usually go to my personal journal, someday I hope to have some function to refile to a specific org-roam-dailies-capture template for date at point[^fn:29].
 
 Other applications that I use on mobile that deserve mention:
 
@@ -247,6 +251,39 @@ org-roam-timestamps
 camcorder.el
 : Record screencasts directly from emacs. <https://github.com/Malabarba/camcorder.el>
 
+org-msg
+: Use org-mode for authoring email. Seems to be centered around mail client use vs org-mime which seems more around emailing from org-mode. <https://github.com/jeremy-compostella/org-msg>
+
+org-ai
+: One of the many ai related things I want to look into some day. <https://github.com/rksm/org-ai>
+
+gptel
+: One of the many ai related things I want to look into some day. <https://github.com/karthink/gptel>
+
+gptai
+: One of the many ai related things I want to look into some day. <https://github.com/antonhibl/gptai>
+
+chatgpt
+: One of the many ai related things I want to look into some day. <https://github.com/emacs-openai/chatgpt>
+
+codegpt
+: One of the many ai related things I want to look into some day. <https://github.com/emacs-openai/codegpt>
+
+ChatGPT.el
+: One of the many ai related things I want to look into some day. <https://github.com/joshcho/ChatGPT.el>
+
+gpt.el
+: One of the many ai related things I want to look into some day. <https://github.com/stuhlmueller/gpt.el>
+
+chatgpt-arcana.el
+: One of the many ai related things I want to look into some day. <https://github.com/CarlQLange/chatgpt-arcana.el>
+
+openai-api.el
+: One of the many ai related things I want to look into some day. <https://github.com/benjamin-asdf/openai-api.el>
+
+chatgpt emacs shell
+: One of the many ai related things I want to look into some day. <https://xenodium.com/a-chatgpt-emacs-shell/>
+
 [^fn:1]: Checkout the post reflecting on my history with org-mode in 2023. <https://cmdln.org/2023/03/13/reflecting-on-my-history-with-org-mode-in-2023/>
 [^fn:2]: According to the [introduction in the manual](https://www.orgroam.com/manual.html#Introduction) Org-roam is a tool for networked thought. It reproduces some of [Roam Research’](https://roamresearch.com/)s key features within Org-mode. Org-roam allows for effortless non-hierarchical note-taking: with Org-roam, notes flow naturally, making note-taking fun and easy.
 [^fn:3]: Maggie Appleton has a nice post about [Daily notes as a frictionless default input for personal knowledge management systems](https://maggieappleton.com/daily-notes).
@@ -274,4 +311,5 @@ camcorder.el
 [^fn:25]: Deft takes inspiration from Notational Velocity. I still think it's a neat package and something I would recommend to new org-mode users. <https://notational.net/>
 [^fn:26]: notDeft it features a Xapian database for providing fast full text search for very large volumes of notes. I haven't tried it but I haven't found myself needing something more from ripgrep for full text search much. <https://github.com/hasu/notdeft>
 [^fn:27]: Lot's of good tips in the org-roam wiki user contributed tricks. My favorite so far is for showing the node hierarchy. <https://github.com/org-roam/org-roam/wiki/User-contributed-Tricks#showing-node-hierarchy>
-[^fn:28]: I am super slow working towards this, so if you want to offer up some elisp for me to use I would be most grateful.
+[^fn:28]: I have an `Orgzly` profile with an _event_ for `Display On` that triggers a `Sync Orgzly` _task_ which is an _Action_ `com.orgzly.intent.action.SYNC_START`  for _Package_ `com.orgzly` _Class_ `com.orgzly.android.sync.SyncService` _Target_ `Service`.
+[^fn:29]: I am super slow working towards this, so if you want to offer up some elisp for me to use I would be most grateful.
