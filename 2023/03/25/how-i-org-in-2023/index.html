@@ -83,8 +83,8 @@
         </figcaption>
 </figure>
 
-<p>As of Saturday, April  1, 2023
-I have <code>3628</code> org files in my ~/org directory. Most of these (<code>2597</code>) are <em>time-series</em> or <em>daily</em> files. My personal journal (under <code>~/org/journal</code>), my daily work logs, and recurring meetings (under <code>~/org/roam/daily</code>). Not all of those files actually live there, I symlink some directories in to place. I don&rsquo;t often do this sort of setup, and it&rsquo;s a bit of a mess. I hope I wrangle it into something more easily reproducible some day.</p>
+<p>As of Thursday, April 20, 2023
+I have <code>3688</code> org files in my ~/org directory. Most of these (<code>2631</code>) are <em>time-series</em> or <em>daily</em> files. My personal journal (under <code>~/org/journal</code>), my daily work logs, and recurring meetings (under <code>~/org/roam/daily</code>). Not all of those files actually live there, I symlink some directories in to place. I don&rsquo;t often do this sort of setup, and it&rsquo;s a bit of a mess. I hope I wrangle it into something more easily reproducible some day.</p>
 <p>I have <code>14</code> org-roam-capture-templates and <code>68</code> org-roam-dailies-capture-templates.</p>
 <p>As you may have been able to tell <code>org-roam</code><sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> is my primary capture interface and I <em>really</em> like the daily capabilities. Each day I capture notes about everything I am working on into my work log while clocking time. This gives me a nice place to think and process what I am working on<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup> as well as a place to get my bearings and see what I have been working on when I get side-tracked<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup>. Having a new file each day gives me a fresh start and it helps me to avoid performance issues I have previously experienced with large (multi-megabyte) files. I still have a lot of org files not under my roam directory which I have yet (and may never fully) to migrate.</p>
 <p>Beyond my time-series notes I have other collections of related notes in sub directories. For example, I have many notes about CFEngine (the best configuration management tool)<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup>. I keep my CFEngine related notes in <code>~/org/roam/CFEngine</code> with sub directories for different things ( blogs, examples, notes, opportunities, releases, release-testing
@@ -92,12 +92,14 @@ I have <code>3628</code> org files in my ~/org directory. Most of these (<code>2
 <p>So, how does a day in my org life flow?</p>
 <p>Usually my day starts with meetings. I like to take notes and email them to a distribution list afterwords<sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup>. For example, a few minutes before my CFEngine stand-up I run <code>org-roam-dailies-capture-today</code> and key in <code>w</code> (work) <code>m</code> (meeting) <code>c</code> (CFEngine) <code>d</code> (daily stand-up). Immediately after activating this capture I trigger another capture for my work log keying in <code>w</code> (work) <code>l</code> (log)<sup id="fnref:7"><a href="#fn:7" class="footnote-ref" role="doc-noteref">7</a></sup> which clocks time.</p>
 <figure><img src="standup-worklog.gif"
-         alt="Figure 2: Animation showing standup and worklog capture" width="75%"/><figcaption>
+         alt="Figure 2: Animation showing standup and worklog capture" width="100%"/><figcaption>
             <p><!-- raw HTML omitted -->Figure 2: <!-- raw HTML omitted -->Animation showing standup and worklog capture</p>
         </figcaption>
 </figure>
 
-<p>The work log capture template includes a backlink to the stand-up note for the day, so I follow that link and start going through my template filling it out. The template has a headline for each person with a property that links to a node for the individual. My own section contains a clock table which quickly produces a nice list of the entries with clocked time from the previous day (on Mondays or days when I have missed prior N days I tweak the clock table to pull for the right number of previous days). I review the table  to see how good I was about clocking the previous day back-filling anything that I neglected to record then delete time columns. At the end of the meeting I use <code>org-mime</code><sup id="fnref:8"><a href="#fn:8" class="footnote-ref" role="doc-noteref">8</a></sup> to prepare a nicely formatted multipart ASCII &amp; HTML email. After sending the mail I switch back to my work log capture and complete it. All of my regularly scheduled meetings follow the same process; I capture for the meeting template, then I capture to my work log clocking time with an automatic backlink back to the specific meeting note. It&rsquo;s easy to capture notes for yesterday, tomorrow or an arbitrary date in the future using <code>org-roam-dailies-capture-yesterday</code>, <code>org-roam-dailies-capture-tomorrow</code>, and <code>org-roam-dailies-capture-date</code>.</p>
+<p>The work log capture template includes a backlink to the stand-up note for the day, so I follow that link and start going through my template filling it out. The template has a headline for each person with a property that links to a node for the individual. My own section contains a clock table which quickly produces a nice list of the entries with clocked time from the previous day (on Mondays or days when I have missed prior N days I tweak the clock table to pull for the right number of previous days). I review the table to see how good I was about clocking the previous day back-filling anything that I neglected to record then delete time columns.</p>
+<p>[[./attachments/how-i-org-in-2023/standup-my-clocktable.gif</p>
+<p>At the end of the meeting I use <code>org-mime</code><sup id="fnref:8"><a href="#fn:8" class="footnote-ref" role="doc-noteref">8</a></sup> to prepare a nicely formatted multipart ASCII &amp; HTML email. After sending the mail I switch back to my work log capture and complete it. All of my regularly scheduled meetings follow the same process; I capture for the meeting template, then I capture to my work log clocking time with an automatic backlink back to the specific meeting note. It&rsquo;s easy to capture notes for yesterday, tomorrow or an arbitrary date in the future using <code>org-roam-dailies-capture-yesterday</code>, <code>org-roam-dailies-capture-tomorrow</code>, and <code>org-roam-dailies-capture-date</code>.</p>
 <p>Org-roam provides useful functions for accessing time-series notes. <code>org-roam-dailies-goto-today</code> will take you to today&rsquo;s note for the selected template and if the file does not exist it is initialized. Similarly <code>org-roam-dailies-goto-yesterday</code>, <code>org-roam-dailies-goto-tomorrow</code>, and <code>org-roam-dailies-goto-date</code> take you to the note for yesterday, tomorrow, or the specified date, creating the file if necessary. <code>org-roam-dailies-goto-previous</code> and <code>org-roam-dailies-goto-next</code> go to the previous and next note in the series based on the file you are currently visiting making for easy navigation through the time series.</p>
 <p><code>org-roam-node-random</code> is fun, as it says, it takes you to a random node. It&rsquo;s nice for serendipitous stumbles.</p>
 <p>If I am working on something that has some regular pattern but is not a recurring time series I follow a similar pattern, but instead of <code>org-roam-dailies-capture</code> I run <code>org-roam-capture</code>. Unlike <code>org-roam-dailies-capture</code> <code>org-roam-capture</code> first prompts for a node title and you select a template afterwords. For example, if I am working on support case I will run <code>org-roam-capture</code>, enter the issue number and then key in <code>w</code> (work) <code>s</code> (support). I am taken to a new node in the file for that support case where I immediately trigger <code>org-roam-dailies-capture</code> for my work log which starts clocking time and I follow the link back to the node to continue my work.</p>
@@ -116,8 +118,8 @@ I have <code>3628</code> org files in my ~/org directory. Most of these (<code>2
 
 <p>For other activities that are typically fast or aren&rsquo;t of a common type spanning multiple days I simply run <code>org-roam-dailies-capture</code> and keep notes directly in my work log.</p>
 <p>I author pretty much everything in <code>org-mode</code>. I am often able to stay in inside <code>org-mode</code> and keep a very thorough record of my exact activities. When I need to run commands I typically use <code>org-babel</code> so that commands their output and my thoughts about it form a nice log of my work as I proceed. This log is often directly transferable to communicate with others for which I leverage the copious export back ends available<sup id="fnref:9"><a href="#fn:9" class="footnote-ref" role="doc-noteref">9</a></sup>.</p>
-<p>As of Saturday, April  1, 2023
-I currently have  <code>11788</code> nodes across <code>3436</code> files in org-roam.</p>
+<p>As of Thursday, April 20, 2023
+I currently have  <code>11860</code> nodes across <code>3506</code> files in org-roam.</p>
 <p>I use inline code blocks while authoring this post to get current numbers on export. The above text looks like this in my org-mode file for the post which I export with <code>ox-hugo</code>.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -231,7 +233,7 @@ from files&#34;)} files in org-roam.
 </code></pre></td></tr></table>
 </div>
 </div><p>Going mobile with <code>org-mode</code> I use a variety of applications to help. I use Syncthing to syncrhonize files across devices. I only synchronize a subset of my org files to mobile devices. I don&rsquo;t really need the ability to access my whole exocortex on the go.</p>
-<p>Orgzly is what I use most often. I really like the home screen widget it provides that allows me to build a query showing recent notes. It makes it easy for managing trips to the store. But the editing experience is lacking, and I am in great wish of an improved capture capabilities. It can&rsquo;t deal with a deep directory structure of files and while that isn&rsquo;t much of an issue for me, it would be a great capability and I do miss it. I had some issues with sync conflicts that lead me to introduce a Tasker automation to synchronize the Orgzly db on screen wake. I also make a practice of having one capture file per mobile device. I haven&rsquo;t had many sync conflicts since implementing those things. I re-file my Orgzly captures to my main system way less often than I should. They usually go to my personal journal, someday I hope to have some function to refile to a specific org-roam-dailies-capture template for date at point<sup id="fnref:28"><a href="#fn:28" class="footnote-ref" role="doc-noteref">28</a></sup>.</p>
+<p>Orgzly is what I use most often. I really like the home screen widget it provides that allows me to build a query showing recent notes. It makes it easy for managing trips to the store. But the editing experience is lacking, and I am in great wish of an improved capture capabilities. It can&rsquo;t deal with a deep directory structure of files and while that isn&rsquo;t much of an issue for me, it would be a great capability and I do miss it. I had some issues with sync conflicts that lead me to introduce a Tasker automation to synchronize the Orgzly db on screen wake<sup id="fnref:28"><a href="#fn:28" class="footnote-ref" role="doc-noteref">28</a></sup>. I also make a practice of having one capture file per mobile device. I haven&rsquo;t had many sync conflicts since implementing those things. I re-file my Orgzly captures to my main system way less often than I should. They usually go to my personal journal, someday I hope to have some function to refile to a specific org-roam-dailies-capture template for date at point<sup id="fnref:29"><a href="#fn:29" class="footnote-ref" role="doc-noteref">29</a></sup>.</p>
 <p>Other applications that I use on mobile that deserve mention:</p>
 <dl>
 <dt>Logseq</dt>
@@ -311,6 +313,28 @@ from files&#34;)} files in org-roam.
 <dd>Small package to keep track of the modification and creation time of individual nodes. <a href="https://github.com/tefkah/org-roam-timestamps">https://github.com/tefkah/org-roam-timestamps</a></dd>
 <dt>camcorder.el</dt>
 <dd>Record screencasts directly from emacs. <a href="https://github.com/Malabarba/camcorder.el">https://github.com/Malabarba/camcorder.el</a></dd>
+<dt>org-msg</dt>
+<dd>Use org-mode for authoring email. Seems to be centered around mail client use vs org-mime which seems more around emailing from org-mode. <a href="https://github.com/jeremy-compostella/org-msg">https://github.com/jeremy-compostella/org-msg</a></dd>
+<dt>org-ai</dt>
+<dd>One of the many ai related things I want to look into some day. <a href="https://github.com/rksm/org-ai">https://github.com/rksm/org-ai</a></dd>
+<dt>gptel</dt>
+<dd>One of the many ai related things I want to look into some day. <a href="https://github.com/karthink/gptel">https://github.com/karthink/gptel</a></dd>
+<dt>gptai</dt>
+<dd>One of the many ai related things I want to look into some day. <a href="https://github.com/antonhibl/gptai">https://github.com/antonhibl/gptai</a></dd>
+<dt>chatgpt</dt>
+<dd>One of the many ai related things I want to look into some day. <a href="https://github.com/emacs-openai/chatgpt">https://github.com/emacs-openai/chatgpt</a></dd>
+<dt>codegpt</dt>
+<dd>One of the many ai related things I want to look into some day. <a href="https://github.com/emacs-openai/codegpt">https://github.com/emacs-openai/codegpt</a></dd>
+<dt>ChatGPT.el</dt>
+<dd>One of the many ai related things I want to look into some day. <a href="https://github.com/joshcho/ChatGPT.el">https://github.com/joshcho/ChatGPT.el</a></dd>
+<dt>gpt.el</dt>
+<dd>One of the many ai related things I want to look into some day. <a href="https://github.com/stuhlmueller/gpt.el">https://github.com/stuhlmueller/gpt.el</a></dd>
+<dt>chatgpt-arcana.el</dt>
+<dd>One of the many ai related things I want to look into some day. <a href="https://github.com/CarlQLange/chatgpt-arcana.el">https://github.com/CarlQLange/chatgpt-arcana.el</a></dd>
+<dt>openai-api.el</dt>
+<dd>One of the many ai related things I want to look into some day. <a href="https://github.com/benjamin-asdf/openai-api.el">https://github.com/benjamin-asdf/openai-api.el</a></dd>
+<dt>chatgpt emacs shell</dt>
+<dd>One of the many ai related things I want to look into some day. <a href="https://xenodium.com/a-chatgpt-emacs-shell/">https://xenodium.com/a-chatgpt-emacs-shell/</a></dd>
 </dl>
 <section class="footnotes" role="doc-endnotes">
 <hr>
@@ -397,7 +421,10 @@ from files&#34;)} files in org-roam.
 <p>Lot&rsquo;s of good tips in the org-roam wiki user contributed tricks. My favorite so far is for showing the node hierarchy. <a href="https://github.com/org-roam/org-roam/wiki/User-contributed-Tricks#showing-node-hierarchy">https://github.com/org-roam/org-roam/wiki/User-contributed-Tricks#showing-node-hierarchy</a>&#160;<a href="#fnref:27" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:28" role="doc-endnote">
-<p>I am super slow working towards this, so if you want to offer up some elisp for me to use I would be most grateful.&#160;<a href="#fnref:28" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>I have an <code>Orgzly</code> profile with an <em>event</em> for <code>Display On</code> that triggers a <code>Sync Orgzly</code> <em>task</em> which is an <em>Action</em> <code>com.orgzly.intent.action.SYNC_START</code>  for <em>Package</em> <code>com.orgzly</code> <em>Class</em> <code>com.orgzly.android.sync.SyncService</code> <em>Target</em> <code>Service</code>.&#160;<a href="#fnref:28" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:29" role="doc-endnote">
+<p>I am super slow working towards this, so if you want to offer up some elisp for me to use I would be most grateful.&#160;<a href="#fnref:29" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </section>
