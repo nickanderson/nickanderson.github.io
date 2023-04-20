@@ -28,7 +28,7 @@ Usually my day starts with meetings. I like to take notes and email them to a di
 
 The work log capture template includes a backlink to the stand-up note for the day, so I follow that link and start going through my template filling it out. The template has a headline for each person with a property that links to a node for the individual. My own section contains a clock table which quickly produces a nice list of the entries with clocked time from the previous day (on Mondays or days when I have missed prior N days I tweak the clock table to pull for the right number of previous days). I review the table to see how good I was about clocking the previous day back-filling anything that I neglected to record then delete time columns.
 
-[[./attachments/how-i-org-in-2023/standup-my-clocktable.gif
+\#+comment Animation of standup clock table in action ![](./attachments/how-i-org-in-2023/standup-my-clocktable.gif)
 
 At the end of the meeting I use `org-mime`[^fn:8] to prepare a nicely formatted multipart ASCII &amp; HTML email. After sending the mail I switch back to my work log capture and complete it. All of my regularly scheduled meetings follow the same process; I capture for the meeting template, then I capture to my work log clocking time with an automatic backlink back to the specific meeting note. It's easy to capture notes for yesterday, tomorrow or an arbitrary date in the future using `org-roam-dailies-capture-yesterday`, `org-roam-dailies-capture-tomorrow`, and `org-roam-dailies-capture-date`.
 
@@ -295,7 +295,7 @@ chatgpt emacs shell
 [^fn:9]: There are so many, org-mime is probably my most often used exporter followed by some flavor of Markdown (ox-hugo like this blog post, ox-gfm, ox-slack).
 [^fn:10]: With mu4e I have offline mail reading and search and I run a local Postfix relay giving me offline sending capability.
 [^fn:11]: [YASnippet](https://github.com/joaotavora/yasnippet) is a template system for Emacs. It allows you to type an abbreviation and automatically expand it into function templates. The snippet syntax is inspired from [TextMate'](https://macromates.com/manual/en/snippets)s syntax, you can even import most TextMate templates to YASnippet.
-[^fn:12]: org-rich-yank pastes the last copied text and automatically surrounds the snippet in blocks, marked with the major mode of where the code came from, and adds a link to the source file after the block. I do wish that it would provide an option for the link being <https://github.com/unhammer/org-rich-yank>
+[^fn:12]: `org-rich-yank` pastes the last copied text and automatically surrounds the snippet in blocks, marked with the major mode of where the code came from, and adds a link to the source file after the block. I recommend customizing `org-rich-yank-format-paste` and making the link to the source a comment as described in the README. <https://github.com/unhammer/org-rich-yank>
 [^fn:13]: ox-jira exports to Jira wiki markup. It's very nice to author fairly pretty comments with so little effort. <https://github.com/stig/ox-jira.el>
 [^fn:14]: Magit is an amazing front end for git. <https://magit.vc/>
 [^fn:15]: Forge provides git forge integration (pull requests, issues, etc ..) for GitLab, GitHub and probably others. <https://github.com/magit/forge>
