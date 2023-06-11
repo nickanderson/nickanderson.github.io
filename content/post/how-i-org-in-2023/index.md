@@ -11,6 +11,11 @@ I've been pretty much living in `org-mode` for 6 or 7 years now[^fn:1]. It's my 
 {{< figure src="org-mode-this-is-the-way.jpg" caption="<span class=\"figure-number\">Figure 1: </span>It is the way, at least for me" width="50%" >}}
 
 
+## Goal {#goal}
+
+Unrealistically I want total recall, to remember everything in plain text. I want to improve my knowledge and capabilities and I want to be able to share with others.
+
+
 ## High level statistics {#high-level-statistics}
 
 As of Sunday, June 11, 2023
