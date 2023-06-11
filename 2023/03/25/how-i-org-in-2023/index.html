@@ -92,6 +92,12 @@ I have <code>48M</code> of <code>.org</code> files in <code>~/org</code>. That&r
 <h2 id="capture">Capture</h2>
 <p>Capturing is an important concept. Fundamentally it&rsquo;s grabbing new content and putting it somewhere. It facilitates consistency and automates some tedium. It&rsquo;s something that should be fast and not interrupt my flow.</p>
 <p>As you may have been able to tell <code>org-roam</code><sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup> is my primary capture interface and I <em>really</em> like the daily capabilities. Each day I capture notes about everything I am working on into my work log while clocking time. This gives me a nice place to think and process what I am working on<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup> as well as a place to get my bearings and see what I have been working on when I get side-tracked<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup>. Having a new file each day gives me a fresh start and it helps me to avoid performance issues I have previously experienced with large (multi-megabyte) files. I still have a lot of org files not under my roam directory which I have yet (and may never fully) to migrate.</p>
+<figure><img src="angel-of-memory.png"
+         alt="Figure 2: FHTAGN &amp;amp; TENTACLES — ZACHRIEL - ANGEL OF MEMORY by Peter Mohrbacher posted as a representation of org-mode in response to https://pkm.social/@markmcelroy/110061567208552787" width="50%"/><figcaption>
+            <p><!-- raw HTML omitted -->Figure 2: <!-- raw HTML omitted -->FHTAGN &amp; TENTACLES — ZACHRIEL - ANGEL OF MEMORY by Peter Mohrbacher posted as a representation of org-mode in response to <a href="https://pkm.social/@markmcelroy/110061567208552787">https://pkm.social/@markmcelroy/110061567208552787</a></p>
+        </figcaption>
+</figure>
+
 <p>Beyond my time-series notes I have other collections of related notes in sub directories. For example, I have many notes about CFEngine (the best configuration management tool)<sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup>. I keep my CFEngine related notes in <code>~/org/roam/CFEngine</code> with sub directories for different things ( blogs, examples, index.org, northern.tech-customers, notes, opportunities,
 ).</p>
 <h2 id="retrieval">Retrieval</h2>
@@ -101,14 +107,14 @@ I have <code>48M</code> of <code>.org</code> files in <code>~/org</code>. That&r
 <p>If I have found a note I can see what other notes link to it with <code>org-roam-buffer</code>. There is even support for finding <em>unlinked</em> back references, which I am not using for performance reasons.</p>
 <p><code>org-roam-ui</code> provides a really fun interactive 2 or 3d graph showing the links between nodes.</p>
 <figure><img src="org-roam-ui-with-dailies-2023-03-26.png"
-         alt="Figure 2: org-roam-ui visualization with dailies as of 2023-03-26" width="50%"/><figcaption>
-            <p><!-- raw HTML omitted -->Figure 2: <!-- raw HTML omitted -->org-roam-ui visualization with dailies as of 2023-03-26</p>
+         alt="Figure 3: org-roam-ui visualization with dailies as of 2023-03-26" width="50%"/><figcaption>
+            <p><!-- raw HTML omitted -->Figure 3: <!-- raw HTML omitted -->org-roam-ui visualization with dailies as of 2023-03-26</p>
         </figcaption>
 </figure>
 
 <figure><img src="org-roam-ui-without-dailies-2023-03-26.png"
-         alt="Figure 3: org-roam-ui visualization without dailies as of 2023-03-26" width="50%"/><figcaption>
-            <p><!-- raw HTML omitted -->Figure 3: <!-- raw HTML omitted -->org-roam-ui visualization without dailies as of 2023-03-26</p>
+         alt="Figure 4: org-roam-ui visualization without dailies as of 2023-03-26" width="50%"/><figcaption>
+            <p><!-- raw HTML omitted -->Figure 4: <!-- raw HTML omitted -->org-roam-ui visualization without dailies as of 2023-03-26</p>
         </figcaption>
 </figure>
 
@@ -127,8 +133,8 @@ I have <code>48M</code> of <code>.org</code> files in <code>~/org</code>. That&r
 <p>So, how does a day in my org life flow?</p>
 <p>Usually my day starts with meetings. I like to take notes and email them to a distribution list afterwords<sup id="fnref:8"><a href="#fn:8" class="footnote-ref" role="doc-noteref">8</a></sup>. For example, a few minutes before my CFEngine stand-up I run <code>org-roam-dailies-capture-today</code> and key in <code>w</code> (work) <code>m</code> (meeting) <code>c</code> (CFEngine) <code>d</code> (daily stand-up). Immediately after activating this capture I trigger another capture for my work log keying in <code>w</code> (work) <code>l</code> (log)<sup id="fnref:9"><a href="#fn:9" class="footnote-ref" role="doc-noteref">9</a></sup> which clocks time.</p>
 <figure><img src="standup-worklog.gif"
-         alt="Figure 4: Animation showing standup and worklog capture" width="100%"/><figcaption>
-            <p><!-- raw HTML omitted -->Figure 4: <!-- raw HTML omitted -->Animation showing standup and worklog capture</p>
+         alt="Figure 5: Animation showing standup and worklog capture" width="100%"/><figcaption>
+            <p><!-- raw HTML omitted -->Figure 5: <!-- raw HTML omitted -->Animation showing standup and worklog capture</p>
         </figcaption>
 </figure>
 
@@ -213,14 +219,8 @@ from files&#34;)} files in org-roam.
 </div>
 </div><p>I start typing my response and use <code>org-roam-node-find</code>  to search for pre-existing examples leveraging any functions I want to use linking to them from my note. I use YAsnippet<sup id="fnref:13"><a href="#fn:13" class="footnote-ref" role="doc-noteref">13</a></sup> to insert a cfengine src block. I re-use or write a new example running the block as I go to make sure it does what I expected until I am satisfied. Once finished I run <code>org-mime-org-subtree-htmlize</code> which exports the <code>org-mode</code> formatted text to a multipart plain text (ascii) and html message. Then I <code>C-c</code> to send it off and again to complete my capture. At this point I will probably run <code>org-roam-capture</code> type the name of the example, e.g. <code>class defined from variable</code> and key in <code>c</code> (CFEngine) <code>e</code> (Example). In the example I use <code>org-roam-node-insert</code> to create links to each function that is used in the example. This helps future me find all the examples that use a specific function from that functions note.</p>
 <p>Next I decide that documentation should to be updated, so I run <code>org-jira-create-issue</code>, fill out the necessary minimal information and once the ticket has been created I run <code>org-jira-progress-issue</code> to set it in progress and I initiate a new work log capture. I run <code>projectile-switch-project</code> and switch to the documentation repository. I find the documentation I want to update and yank it. Then I head back to my work log run <code>org-rich-yank</code><sup id="fnref:14"><a href="#fn:14" class="footnote-ref" role="doc-noteref">14</a></sup> to paste the copied text with a link back to where I got it and type something about how it sucks. As I explain why it sucks I visit other repositories yanking other snippets of code for reference to backup my assertion. <code>ol-git-link</code> provides some nice capabilities for linking to git forges which is very helpful for others as well as future me doing archaeology.</p>
-<p>When updating the Jira ticket I export the notes I took to Jira wiki syntax with <code>ox-jira</code> <sup id="fnref:15"><a href="#fn:15" class="footnote-ref" role="doc-noteref">15</a></sup>. I copy that exported text, and then add it to the Jira ticket using <code>org-jira-add-comment</code>. Before I start updating the documentation I create a new branch with <code>magit-branch-create</code><sup id="fnref:16"><a href="#fn:16" class="footnote-ref" role="doc-noteref">16</a></sup>. I make the changes I want, commit and push. Forge<sup id="fnref:17"><a href="#fn:17" class="footnote-ref" role="doc-noteref">17</a></sup> let&rsquo;s me proceed to open a pull request, request reviewers, make comments and easily grab the URL of the Pull Request which gets added to my work log which ultimately becomes a well styled comment in the associated Jira issue. Once the PR is approved I merge the pull request with <code>forge-merge</code> and close the issue with <code>org-jira-progress-issue</code>. Notice that I never left Emacs and my work log functioned as my home base where the notes I took became part of the work I produced in the form of a well styled Jira comment.</p>
-<figure><img src="angel-of-memory.png"
-         alt="Figure 5: FHTAGN &amp;amp; TENTACLES — ZACHRIEL - ANGEL OF MEMORY by Peter Mohrbacher posted as a representation of org-mode in response to https://pkm.social/@markmcelroy/110061567208552787" width="50%"/><figcaption>
-            <p><!-- raw HTML omitted -->Figure 5: <!-- raw HTML omitted -->FHTAGN &amp; TENTACLES — ZACHRIEL - ANGEL OF MEMORY by Peter Mohrbacher posted as a representation of org-mode in response to <a href="https://pkm.social/@markmcelroy/110061567208552787">https://pkm.social/@markmcelroy/110061567208552787</a></p>
-        </figcaption>
-</figure>
-
-<p>I make presentations in org mode, for example <a href="https://htmlpreview.github.io/?https%3A%2F%2Fgithub.com%2Fnickanderson%2FOrg-mode-all-the-thingz%2Fblob%2Fmaster%2Fpresentation.html">Org-mode all the thingz!</a> which <a href="https://www.youtube.com/watch?v=PE4eGkIQycc">I gave at Kansas Linux Fest in 2019</a><sup id="fnref:18"><a href="#fn:18" class="footnote-ref" role="doc-noteref">18</a></sup>.</p>
+<p>When updating the Jira ticket I export the notes I took to Jira wiki syntax with <code>ox-jira</code> <sup id="fnref:15"><a href="#fn:15" class="footnote-ref" role="doc-noteref">15</a></sup>. I copy that exported text, and then add it to the Jira ticket using <code>org-jira-add-comment</code>. Before I start updating the documentation I create a new branch with <code>magit-branch-create</code><sup id="fnref:16"><a href="#fn:16" class="footnote-ref" role="doc-noteref">16</a></sup>. I make the changes I want, commit and push. Forge<sup id="fnref:17"><a href="#fn:17" class="footnote-ref" role="doc-noteref">17</a></sup> let&rsquo;s me proceed to open a pull request, request reviewers, make comments and easily grab the URL of the Pull Request which gets added to my work log which ultimately becomes a well styled comment in the associated Jira issue. Once the PR is approved I merge the pull request with <code>forge-merge</code> and close the issue with <code>org-jira-progress-issue</code>. Notice that I never left Emacs and my work log functioned as my home base where the notes I took became part of the work I produced in the form of a well styled Jira comment.
+I make presentations in org mode, for example <a href="https://htmlpreview.github.io/?https%3A%2F%2Fgithub.com%2Fnickanderson%2FOrg-mode-all-the-thingz%2Fblob%2Fmaster%2Fpresentation.html">Org-mode all the thingz!</a> which <a href="https://www.youtube.com/watch?v=PE4eGkIQycc">I gave at Kansas Linux Fest in 2019</a><sup id="fnref:18"><a href="#fn:18" class="footnote-ref" role="doc-noteref">18</a></sup>.</p>
 <p>As you can probably see I make heavy use of org-mode&rsquo;s exporting capabilities. In addition to the above mentioned use cases I also export to ODT, PDF, mediawiki, Slack, Hugo and various other flavors of Markdown.</p>
 <p>I (very infrequently) make diagrams with PlantUML<sup id="fnref:19"><a href="#fn:19" class="footnote-ref" role="doc-noteref">19</a></sup>. I might try Mermaid<sup id="fnref:20"><a href="#fn:20" class="footnote-ref" role="doc-noteref">20</a></sup> next time.</p>
 <p>I keep secrets in org-mode. The contents of headings that have the crypt tag are automatically GPG encrypted to my GPG key on save.</p>
