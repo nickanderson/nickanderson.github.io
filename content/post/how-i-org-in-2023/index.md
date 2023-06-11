@@ -34,6 +34,10 @@ As you may have been able to tell `org-roam`[^fn:3] is my primary capture interf
 Beyond my time-series notes I have other collections of related notes in sub directories. For example, I have many notes about CFEngine (the best configuration management tool)[^fn:6]. I keep my CFEngine related notes in `~/org/roam/CFEngine` with sub directories for different things ( blogs, examples, index.org, northern.tech-customers, notes, opportunities,
 ).
 
+I use org-web-tools to pull web pages into org. Either as a buffer to read, or as a subtree to store.
+
+org-rich-yank let's me copy text and paste it with context allowing it to be syntax highlighted as well as providing a link back to the source.
+
 
 ## Retrieval {#retrieval}
 
