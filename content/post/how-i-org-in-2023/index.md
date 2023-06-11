@@ -13,22 +13,35 @@ I've been pretty much living in `org-mode` for 6 or 7 years now[^fn:1]. It's my 
 
 ## High level statistics {#high-level-statistics}
 
-As of Saturday, June 10, 2023
- I have `48M` of `.org` files in `~/org`. That's  `4178` files, the largest single file is `1.3M` and the longest lined file has `21639` lines.
+As of Sunday, June 11, 2023
+ I have `48M` of `.org` files in `~/org`. That's  `4177` files, the largest single file is `1.3M` and the longest lined file has `21639` lines.
 
 `4000` of these files are inside org-roam, the majority of them (`2058`) are "dailies" or time-series files.[^fn:2]
 
 I have `24` org-capture-templates,  `16` org-roam-capture-templates and `68` org-roam-dailies-capture-templates.
 
+```html
+<iframe width="560" height="315" src="https://www.youtube.com/embed/8A52ZXPhJFk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+```
+
 
 ## Capture {#capture}
 
-Capturing is an important concept. Fundamentally it's grabbing new content and putting it somewhere. It facilitates consistency and automates some tedium.
+Capturing is an important concept. Fundamentally it's grabbing new content and putting it somewhere. It facilitates consistency and automates some tedium. It's something that should be fast and not interrupt my flow.
 
 As you may have been able to tell `org-roam`[^fn:3] is my primary capture interface and I _really_ like the daily capabilities. Each day I capture notes about everything I am working on into my work log while clocking time. This gives me a nice place to think and process what I am working on[^fn:4] as well as a place to get my bearings and see what I have been working on when I get side-tracked[^fn:5]. Having a new file each day gives me a fresh start and it helps me to avoid performance issues I have previously experienced with large (multi-megabyte) files. I still have a lot of org files not under my roam directory which I have yet (and may never fully) to migrate.
 
 Beyond my time-series notes I have other collections of related notes in sub directories. For example, I have many notes about CFEngine (the best configuration management tool)[^fn:6]. I keep my CFEngine related notes in `~/org/roam/CFEngine` with sub directories for different things ( blogs, examples, index.org, northern.tech-customers, notes, opportunities,
 ).
+
+
+## Retrieval {#retrieval}
+
+When I am retrieving information from my system I am usually searching for a note by name or searching to what notes I have about something.
+
+When searching for a note by name, Ill use `org-roam-node-find`
+
+-
 
 
 ## Workflow {#workflow}
@@ -61,7 +74,7 @@ For other activities that are typically fast or aren't of a common type spanning
 
 I author pretty much everything in `org-mode`. I am often able to stay in inside `org-mode` and keep a very thorough record of my exact activities. When I need to run commands I typically use `org-babel` so that commands their output and my thoughts about it form a nice log of my work as I proceed. This log is often directly transferable to communicate with others for which I leverage the copious export back ends available[^fn:10].
 
-As of Saturday, June 10, 2023
+As of Sunday, June 11, 2023
  I currently have  `13108` nodes across `4000` files in org-roam.
 
 I use inline code blocks while authoring this post to get current numbers on export. The above text looks like this in my org-mode file for the post which I export with `ox-hugo`.
