@@ -20,9 +20,7 @@ As of Sunday, June 11, 2023
 
 I have `24` org-capture-templates,  `16` org-roam-capture-templates and `68` org-roam-dailies-capture-templates.
 
-```html
 <iframe width="560" height="315" src="https://www.youtube.com/embed/8A52ZXPhJFk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-```
 
 
 ## Capture {#capture}
