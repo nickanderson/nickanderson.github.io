@@ -14,7 +14,7 @@ I've been pretty much living in `org-mode` for 6 or 7 years now[^fn:1]. It's my 
 ## High level statistics {#high-level-statistics}
 
 As of Saturday, June 10, 2023
- I have `48M` of `.org` files in `~/org`. That's  `4177` files, the largest single file is `1.3M` and the longest lined file has `21639` lines.
+ I have `48M` of `.org` files in `~/org`. That's  `4178` files, the largest single file is `1.3M` and the longest lined file has `21639` lines.
 
 `4000` of these files are inside org-roam, the majority of them (`2058`) are "dailies" or time-series files.[^fn:2]
 
@@ -125,15 +125,15 @@ I keep secrets in org-mode. The contents of headings that have the crypt tag are
 
 While I started my journey with org-mode using agenda for GTD and managing tasks, I have yet to master it or really even manage to get it to stick in my workflow but I keep trying. I recently got agenda feeding from a list of files based on `org-roam-db-query`&nbsp;[^fn:20]  This way I can have TODOs all over the place but I can keep agenda fast by keeping the number of files it considers relatively small.
 
-I keep notes on people. My x-files or rolodex consists of one note per person[^fn:21].
+I keep notes on people. My x-files or rolodex consists of one note per person[^fn:21]<sup>, </sup>[^fn:22].
 
-I use `org-web-tools` to archive pull copies of web pages into notes so that I have references even when the internet breaks. I take a lot of screenshots while doing things and I pull them into my documents with org-download[^fn:22].
+I use `org-web-tools` to archive pull copies of web pages into notes so that I have references even when the internet breaks. I take a lot of screenshots while doing things and I pull them into my documents with org-download[^fn:23].
 
-When working on long documents I sometimes turn on `olivetti-mode`[^fn:23]. And I am starting to like org-sticky-header[^fn:24].
+When working on long documents I sometimes turn on `olivetti-mode`[^fn:24]. And I am starting to like org-sticky-header[^fn:25].
 
-I use various things for searching across my org files. When searching for text I use `ripgrep`&nbsp;[^fn:25] , in Spacemacs it's bound to `SPC /` and you are prompted to choose a top level directory to start your search from. Several years back I used Deft[^fn:26] for a while but found that it really didn't suite me well and it simply doesn't perform well[^fn:27] for my volume of files. I still have a bunch of files in my deft directory that should probably just move into my roam.
+I use various things for searching across my org files. When searching for text I use `ripgrep`&nbsp;[^fn:26] , in Spacemacs it's bound to `SPC /` and you are prompted to choose a top level directory to start your search from. Several years back I used Deft[^fn:27] for a while but found that it really didn't suite me well and it simply doesn't perform well[^fn:28] for my volume of files. I still have a bunch of files in my deft directory that should probably just move into my roam.
 
-The default display when using `org-roam-node-find` shows only node names, I find a hierarchy much more useful. I adjusted it to show the node hierarchy using the example shown in the User contributed tricks[^fn:28]. E.g. File title -&gt; heading 1 -&gt; Heading 2 -&gt; ...
+The default display when using `org-roam-node-find` shows only node names, I find a hierarchy much more useful. I adjusted it to show the node hierarchy using the example shown in the User contributed tricks[^fn:29]. E.g. File title -&gt; heading 1 -&gt; Heading 2 -&gt; ...
 
 <a id="code-snippet--org-roam-node-display-template"></a>
 ```emacs-lisp
@@ -150,7 +150,7 @@ The default display when using `org-roam-node-find` shows only node names, I fin
 
 Going mobile with `org-mode` I use a variety of applications to help. I use Syncthing to syncrhonize files across devices. I only synchronize a subset of my org files to mobile devices. I don't really need the ability to access my whole exocortex on the go.
 
-Orgzly is what I use most often. I really like the home screen widget it provides that allows me to build a query showing recent notes. It makes it easy for managing trips to the store. But the editing experience is lacking, and I am in great wish of an improved capture capabilities. It can't deal with a deep directory structure of files and while that isn't much of an issue for me, it would be a great capability and I do miss it. I had some issues with sync conflicts that lead me to introduce a Tasker automation to synchronize the Orgzly db on screen wake[^fn:29]. I also make a practice of having one capture file per mobile device. I haven't had many sync conflicts since implementing those things. I re-file my Orgzly captures to my main system way less often than I should. They usually go to my personal journal, someday I hope to have some function to refile to a specific org-roam-dailies-capture template for date at point[^fn:30].
+Orgzly is what I use most often. I really like the home screen widget it provides that allows me to build a query showing recent notes. It makes it easy for managing trips to the store. But the editing experience is lacking, and I am in great wish of an improved capture capabilities. It can't deal with a deep directory structure of files and while that isn't much of an issue for me, it would be a great capability and I do miss it. I had some issues with sync conflicts that lead me to introduce a Tasker automation to synchronize the Orgzly db on screen wake[^fn:30]. I also make a practice of having one capture file per mobile device. I haven't had many sync conflicts since implementing those things. I re-file my Orgzly captures to my main system way less often than I should. They usually go to my personal journal, someday I hope to have some function to refile to a specific org-roam-dailies-capture template for date at point[^fn:31].
 
 Other applications that I use on mobile that deserve mention:
 
@@ -339,12 +339,13 @@ zettledeft
 [^fn:19]: Mermaid is a JavaScript based diagramming and charting tool that renders Markdown-inspired text definitions and you can use [ob-mermaid](https://github.com/arnm/ob-mermaid) to generate them from within org-mode.
 [^fn:20]: Here is my post on Matson showing the elisp for using `org-roam-db-query` to set agenda files for a custom agenda command <https://fosstodon.org/@nickanderson/109979927683467557>
 [^fn:21]: Darly Wakatara has a nice post about how his workflow has evolved  <https://daryl.wakatara.com/emacs-gtd-flow-evolved/>. I noted that his contact management workflow is similar to mine. Sometime it would be nice to figure out how this could be leveraged for address completion in `mu4e`. There is [org-contacts](https://orgmode.org/worg/org-contrib/org-contacts.html) but it's not clear to me if I can use it with a file per person strategy.
-[^fn:22]: `org-download` makes it easy to insert images into a document, it provides functions for taking and inserting screenshots, downloading images, renaming images as well as dragging and dropping images into your document. <https://github.com/abo-abo/org-download>
-[^fn:23]: Olivetti provides nice styling for writing. <https://github.com/rnkn/olivetti>
-[^fn:24]: org-sticky-heading displays in the header-line the Org heading for the node that’s at the top of the window. This way, if the heading for the text at the top of the window is beyond the top of the window, you don’t forget which heading the text belongs to. The display can be customized to show just the heading, the full outline path, or the full outline path in reverse. <https://github.com/alphapapa/org-sticky-header>
-[^fn:25]: ripgrep is a line-oriented search tool that recursively searches the current directory for a regex pattern. It's _very_ fast and can even has some support for searching compressed files, multiline search. <https://github.com/BurntSushi/ripgrep>
-[^fn:26]: Deft takes inspiration from Notational Velocity. I still think it's a neat package and something I would recommend to new org-mode users. <https://notational.net/>
-[^fn:27]: notDeft it features a Xapian database for providing fast full text search for very large volumes of notes. I haven't tried it but I haven't found myself needing something more from ripgrep for full text search much. <https://github.com/hasu/notdeft>
-[^fn:28]: Lot's of good tips in the org-roam wiki user contributed tricks. My favorite so far is for showing the node hierarchy. <https://github.com/org-roam/org-roam/wiki/User-contributed-Tricks#showing-node-hierarchy>
-[^fn:29]: I have an `Orgzly` profile with an _event_ for `Display On` that triggers a `Sync Orgzly` _task_ which is an _Action_ `com.orgzly.intent.action.SYNC_START`  for _Package_ `com.orgzly` _Class_ `com.orgzly.android.sync.SyncService` _Target_ `Service`.
-[^fn:30]: I am super slow working towards this, so if you want to offer up some elisp for me to use I would be most grateful.
+[^fn:22]: Will Vaughn makes a claim that "At any time, I can go to the Org-roam page for my CEO (or anyone else) to see the details of any conversation or meeting I have had with him, ever.", a claim I aspire to. <https://willvaughn.org/articles/vp-of-emacs-a-personal-wiki-in-plain-text/>
+[^fn:23]: `org-download` makes it easy to insert images into a document, it provides functions for taking and inserting screenshots, downloading images, renaming images as well as dragging and dropping images into your document. <https://github.com/abo-abo/org-download>
+[^fn:24]: Olivetti provides nice styling for writing. <https://github.com/rnkn/olivetti>
+[^fn:25]: org-sticky-heading displays in the header-line the Org heading for the node that’s at the top of the window. This way, if the heading for the text at the top of the window is beyond the top of the window, you don’t forget which heading the text belongs to. The display can be customized to show just the heading, the full outline path, or the full outline path in reverse. <https://github.com/alphapapa/org-sticky-header>
+[^fn:26]: ripgrep is a line-oriented search tool that recursively searches the current directory for a regex pattern. It's _very_ fast and can even has some support for searching compressed files, multiline search. <https://github.com/BurntSushi/ripgrep>
+[^fn:27]: Deft takes inspiration from Notational Velocity. I still think it's a neat package and something I would recommend to new org-mode users. <https://notational.net/>
+[^fn:28]: notDeft it features a Xapian database for providing fast full text search for very large volumes of notes. I haven't tried it but I haven't found myself needing something more from ripgrep for full text search much. <https://github.com/hasu/notdeft>
+[^fn:29]: Lot's of good tips in the org-roam wiki user contributed tricks. My favorite so far is for showing the node hierarchy. <https://github.com/org-roam/org-roam/wiki/User-contributed-Tricks#showing-node-hierarchy>
+[^fn:30]: I have an `Orgzly` profile with an _event_ for `Display On` that triggers a `Sync Orgzly` _task_ which is an _Action_ `com.orgzly.intent.action.SYNC_START`  for _Package_ `com.orgzly` _Class_ `com.orgzly.android.sync.SyncService` _Target_ `Service`.
+[^fn:31]: I am super slow working towards this, so if you want to offer up some elisp for me to use I would be most grateful.
