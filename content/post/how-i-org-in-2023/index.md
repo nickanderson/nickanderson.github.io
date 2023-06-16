@@ -13,15 +13,15 @@ I've been pretty much living in `org-mode` for 6 or 7 years now[^fn:1]. It's my 
 
 ## Goal {#goal}
 
-Unrealistically I want total recall, to remember everything in durable plain text. I want to have control of my data. I want to improve my knowledge and capabilities and I want to be able to share with others.
+Unrealistically I want total recall, to remember everything in durable plain text. I want to have control of my data. I want to do my work and interact efficiently. I want to improve my knowledge and capabilities and I want to be able to share with others.
 
 
 ## High level statistics {#high-level-statistics}
 
-As of Sunday, June 11, 2023
- I have `48M` of `.org` files in `~/org`. That's  `4178` files, the largest single file is `1.3M` and the longest lined file has `21639` lines.
+As of Friday, June 16, 2023
+ I have `49M` of `.org` files in `~/org`. That's  `4190` files, the largest single file is `1.3M` and the longest lined file has `21639` lines.
 
-`4001` of these files are inside org-roam, the majority of them (`3028`) are "dailies" or time-series files.[^fn:2]
+`4019` of these files are inside org-roam, the majority of them (`3034`) are "dailies" or time-series files.[^fn:2]
 
 I have `24` org-capture-templates,  `16` org-roam-capture-templates and `68` org-roam-dailies-capture-templates.
 
@@ -94,8 +94,6 @@ Usually my day starts with meetings. I like to take notes and email them to a di
 
 The work log capture template includes a backlink to the stand-up note for the day, so I follow that link and start going through my template filling it out. The template has a headline for each person with a property that links to a node for the individual. My own section contains a clock table which quickly produces a nice list of the entries with clocked time from the previous day (on Mondays or days when I have missed prior N days I tweak the clock table to pull for the right number of previous days). I review the table to see how good I was about clocking the previous day back-filling anything that I neglected to record then delete time columns.
 
-\#+comment Animation of standup clock table in action ![](./attachments/how-i-org-in-2023/standup-my-clocktable.gif)
-
 At the end of the meeting I use `org-mime`[^fn:10] to prepare a nicely formatted multipart ASCII &amp; HTML email. After sending the mail I switch back to my work log capture and complete it. All of my regularly scheduled meetings follow the same process; I capture for the meeting template, then I capture to my work log clocking time with an automatic backlink back to the specific meeting note. It's easy to capture notes for yesterday, tomorrow or an arbitrary date in the future using `org-roam-dailies-capture-yesterday`, `org-roam-dailies-capture-tomorrow`, and `org-roam-dailies-capture-date`.
 
 Org-roam provides useful functions for accessing time-series notes. `org-roam-dailies-goto-today` will take you to today's note for the selected template and if the file does not exist it is initialized. Similarly `org-roam-dailies-goto-yesterday`, `org-roam-dailies-goto-tomorrow`, and `org-roam-dailies-goto-date` take you to the note for yesterday, tomorrow, or the specified date, creating the file if necessary. `org-roam-dailies-goto-previous` and `org-roam-dailies-goto-next` go to the previous and next note in the series based on the file you are currently visiting making for easy navigation through the time series.
@@ -108,8 +106,8 @@ For other activities that are typically fast or aren't of a common type spanning
 
 I author pretty much everything in `org-mode`. I am often able to stay in inside `org-mode` and keep a very thorough record of my exact activities. When I need to run commands I typically use `org-babel` so that commands their output and my thoughts about it form a nice log of my work as I proceed. This log is often directly transferable to communicate with others for which I leverage the copious export back ends available[^fn:11].
 
-As of Sunday, June 11, 2023
- I currently have  `13130` nodes across `4001` files in org-roam.
+As of Friday, June 16, 2023
+ I currently have  `13202` nodes across `4019` files in org-roam.
 
 I use inline code blocks while authoring this post to get current numbers on export. The above text looks like this in my org-mode file for the post which I export with `ox-hugo`.
 
