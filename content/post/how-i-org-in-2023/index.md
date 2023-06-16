@@ -19,7 +19,7 @@ Unrealistically I want total recall, to remember everything in durable plain tex
 ## High level statistics {#high-level-statistics}
 
 As of Friday, June 16, 2023
- I have `49M` of `.org` files in `~/org`. That's  `4190` files, the largest single file is `1.3M` and the longest lined file has `21639` lines.
+ I have `49M` of `.org` files in `~/org`. That's  `4190` files and `999457` lines of text, the largest single file is `1.3M` and the longest lined file has `21639` lines.
 
 `4019` of these files are inside org-roam, the majority of them (`3034`) are "dailies" or time-series files.[^fn:2]
 
