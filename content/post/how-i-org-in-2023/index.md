@@ -18,11 +18,13 @@ Unrealistically I want total recall, to remember everything in durable plain tex
 
 ## High level statistics {#high-level-statistics}
 
-As of `Friday, July 21, 2023` I have `51M` of `.org` files in `~/org`. That's  `4436` files and `1081186` lines of text, the largest single file is `1.3M` and the longest lined file has `26370` lines.
+As of `Friday, July 21, 2023` I have `51M` of `.org` files in `~/org`. That's  `4436` files and `1081234` lines of text, the largest single file is `1.3M` and the longest lined file has `26370` lines.
 
 `4265` of these files are inside org-roam, the majority of them (`3202`) are "dailies" or time-series files.[^fn:2]
 
 I have `24` org-capture-templates,  `16` org-roam-capture-templates and `69` org-roam-dailies-capture-templates.
+
+I have some `27M` other older `.org` files outside `~/org` that aren't even included in those stats. The largest of those files is `5.6M`, and the longest lined file has `81921` lines. At couple centuries ago glacial speed (I guess they are moving pretty quickly these days) I refile things from there into my current `~/org` structure. Not to mention `~/Syncthing/Orgzly` with `7.4M` worth of `.org` files that I sync around to a few devices and the largest `.org` file is `677K` with the most lined file has `49670` lines.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/8A52ZXPhJFk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
