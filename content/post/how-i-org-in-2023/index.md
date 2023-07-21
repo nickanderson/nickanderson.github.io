@@ -18,12 +18,11 @@ Unrealistically I want total recall, to remember everything in durable plain tex
 
 ## High level statistics {#high-level-statistics}
 
-As of Friday, June 16, 2023
- I have `49M` of `.org` files in `~/org`. That's  `4190` files and `999457` lines of text, the largest single file is `1.3M` and the longest lined file has `21639` lines.
+As of `Friday, July 21, 2023` I have `51M` of `.org` files in `~/org`. That's  `4436` files and `1081186` lines of text, the largest single file is `1.3M` and the longest lined file has `26370` lines.
 
-`4019` of these files are inside org-roam, the majority of them (`3034`) are "dailies" or time-series files.[^fn:2]
+`4265` of these files are inside org-roam, the majority of them (`3202`) are "dailies" or time-series files.[^fn:2]
 
-I have `24` org-capture-templates,  `16` org-roam-capture-templates and `68` org-roam-dailies-capture-templates.
+I have `24` org-capture-templates,  `16` org-roam-capture-templates and `69` org-roam-dailies-capture-templates.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/8A52ZXPhJFk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
@@ -106,8 +105,8 @@ For other activities that are typically fast or aren't of a common type spanning
 
 I author pretty much everything in `org-mode`. I am often able to stay in inside `org-mode` and keep a very thorough record of my exact activities. When I need to run commands I typically use `org-babel` so that commands their output and my thoughts about it form a nice log of my work as I proceed. This log is often directly transferable to communicate with others for which I leverage the copious export back ends available[^fn:11].
 
-As of Friday, June 16, 2023
- I currently have  `13202` nodes across `4019` files in org-roam.
+As of Friday, July 21, 2023
+ I currently have  `13880` nodes across `4265` files in org-roam.
 
 I use inline code blocks while authoring this post to get current numbers on export. The above text looks like this in my org-mode file for the post which I export with `ox-hugo`.
 
@@ -190,9 +189,16 @@ The default display when using `org-roam-node-find` shows only node names, I fin
 
 ```
 
-Going mobile with `org-mode` I use a variety of applications to help. I use Syncthing to syncrhonize files across devices. I only synchronize a subset of my org files to mobile devices. I don't really need the ability to access my whole exocortex on the go.
 
-Orgzly is what I use most often. I really like the home screen widget it provides that allows me to build a query showing recent notes. It makes it easy for managing trips to the store. But the editing experience is lacking, and I am in great wish of an improved capture capabilities. It can't deal with a deep directory structure of files and while that isn't much of an issue for me, it would be a great capability and I do miss it. I had some issues with sync conflicts that lead me to introduce a Tasker automation to synchronize the Orgzly db on screen wake[^fn:31]. I also make a practice of having one capture file per mobile device. I haven't had many sync conflicts since implementing those things. I re-file my Orgzly captures to my main system way less often than I should. They usually go to my personal journal, someday I hope to have some function to refile to a specific org-roam-dailies-capture template for date at point[^fn:32].
+### Mobile {#mobile}
+
+Going mobile with `org-mode` I use several different applications to help.
+
+I use Syncthing to syncrhonize files across devices. I only synchronize a subset of my org files to mobile devices. I don't really need the ability to access my whole exocortex on the go.
+
+Orgzly is my primary capture tool on mobile. My `Orgzly` directory is synchronized across all of my mobile devices. Each device that I use Orgzly on has a device specific file that is configured as the `Default notebook`.  I really like the home screen widget, I typically have it showing a query showing notes from the device specific file created in the last 3 days. If I want to take a note I use the `+` button on the home screen widget, there is also an option for a new note in the notifications drop-down drawer but I tend not to use that. It's pretty serviceable for short notes about something, e.g. "Saw Brian at the store, he broke his foot. We should get together and grill." or lists for the store e.g. "TODO Milk :@store:", "TODO Black Beans :@store:".
+
+It makes it easy for managing trips to the store. But the editing experience is lacking, and I am in great wish of an improved capture capabilities. It can't deal with a deep directory structure of files and while that isn't much of an issue for me, it would be a great capability and I do miss it. I had some issues with sync conflicts that lead me to introduce a Tasker automation to synchronize the Orgzly db on screen wake[^fn:31]. I also make a practice of having one capture file per mobile device. I haven't had many sync conflicts since implementing those things. I re-file my Orgzly captures to my main system way less often than I should. They usually go to my personal journal, someday I hope to have some function to refile to a specific org-roam-dailies-capture template for date at point[^fn:32].
 
 Other applications that I use on mobile that deserve mention:
 
@@ -204,6 +210,57 @@ Metanote
 
 Orgro
 : It's read only, so it's of limited use given my current sync patterns but it's good for that.
+
+
+### LLMs {#llms}
+
+I used org-ai[^fn:33] for a bit but it required emacs 28.2 which I don't run regularly and additionally the way it used blocks felt a bit un-natural.
+
+Since July 5th 2023 I began using chatpt-shell[^fn:34] for dall-e and chatgpt. Most often I use babel src blocks but I seem to lose context history with that so I tend to re-feed my entire query. I've used it to help me re-word text, brainstorm creative ideas, and generate shell one-liners, all from the comfort of my Emacs org-mode buffer.
+
+```text
+#+name: chatgpt-prompt
+#+begin_src chatgpt-shell
+  You are a devotee to the church of emacs and the way of org-mode. Write a short creed in the style of the Mandalorian.
+#+end_src
+```
+
+> This is the Way of the Church of Emacs, sworn to the reverence of org-mode.
+>
+> I am a devout disciple, bound to the path of sublime productivity, guided by the spirit of the Mandalorian.
+>
+> In the sacred realm of Emacs, I embrace the true Force, with org-mode as my ally and ally of my thoughts.
+>
+> I reclaim the scattered chaos and forge a majestic union between my mind and the machine, as the Mandalorian molds armor from Beskar.
+>
+> With fervent keystrokes, I document my purpose, my tasks, and my dreams, for org-mode is my sacred codex, unyielding in its power.
+>
+> I wield the formidable swords of agenda and timeline, slicing through the veils of confusion, illuminating the path towards mastery.
+>
+> My inbox is an abyss, but I, the chosen one, embrace it fearlessly. I tame it with Org Capture, capturing ideas like a bounty hunter snatches fugitives.
+>
+> My rituals are sacred: I nest headings, cultivate hierarchies, and summon clarity amidst the chaos. I create tables, agendas, and outlines, as the Mandalorian carefully constructs his battlesuit.
+>
+> I heed the whispers of tags and properties, for they are the sigils that unlock the arcane powers of organization and navigation within my realm.
+>
+> In the Church of Emacs, I am conscious of the present, for the Clock ticks onwards, tracking the flow of time, ensuring that I honor its value.
+>
+> I traverse the vast landscapes of my org-files, maneuvering swiftly between them, indexing my solemn pursuits, as the Mandalorian voyages across galaxies.
+>
+> Not bound by mere text, the Church of Emacs embraces diversity; I integrate spreadsheets, embed images, and attach files, uniting all knowledge beneath org-mode's banner.
+>
+> Though others may falter amidst the allure of flashy tools, I, like the Mandalorian, hold steadfast loyalty to simplicity, cherishing org-mode's humility.
+>
+> My brethren, fellow pilgrims of pure productivity, unite with me. Together, we cultivate the principles of steadfastness, focus, and intelligent automation.
+>
+> I pledge allegiance to the Church of Emacs, the Way of org-mode, for in its embrace lies boundless power and the secrets of imperial efficiency.
+>
+> This is our Creed. This is the Way.
+
+Looking forward to some package that will support bard or claude 2[^fn:35] but really I am mostly waiting to have easy access to a local LLM.
+
+
+### Other things I use, play with or intend to play with {#other-things-i-use-play-with-or-intend-to-play-with}
 
 I don't think about myself being an Emacs user, I feel like an `org-mode` user Emacs is just a delivery system. I've been playing with many things that have yet to gel into my workflow:
 
@@ -312,9 +369,6 @@ camcorder.el
 org-msg
 : Use org-mode for authoring email. Seems to be centered around mail client use vs org-mime which seems more around emailing from org-mode. <https://github.com/jeremy-compostella/org-msg>
 
-org-ai
-: One of the many ai related things I want to look into some day. <https://github.com/rksm/org-ai>
-
 gptel
 : One of the many ai related things I want to look into some day. <https://github.com/karthink/gptel>
 
@@ -392,3 +446,6 @@ zettledeft
 [^fn:30]: Lot's of good tips in the org-roam wiki user contributed tricks. My favorite so far is for showing the node hierarchy. <https://github.com/org-roam/org-roam/wiki/User-contributed-Tricks#showing-node-hierarchy>
 [^fn:31]: I have an `Orgzly` profile with an _event_ for `Display On` that triggers a `Sync Orgzly` _task_ which is an _Action_ `com.orgzly.intent.action.SYNC_START`  for _Package_ `com.orgzly` _Class_ `com.orgzly.android.sync.SyncService` _Target_ `Service`.
 [^fn:32]: I am super slow working towards this, so if you want to offer up some elisp for me to use I would be most grateful.
+[^fn:33]: org-ai is one of the LLM packages that I experimented with for a short time prior to July 2023 <https://github.com/rksm/org-ai>
+[^fn:34]: chatgpt-shell has been my package of choice for interacting with large language models from July 5th 2023 <https://github.com/xenodium/chatgpt-shell>
+[^fn:35]: Claude 2 is yet another large language model. <https://www.anthropic.com/index/claude-2> It beat ChatGPT 4 in some tests as of July 2023. <https://decrypt.co/148147/anthropic-claude-2-ai-chatbot-comparison-openai-chatgpt-google-bard>
