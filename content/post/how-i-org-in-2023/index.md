@@ -18,7 +18,7 @@ Unrealistically I want total recall, to remember everything in durable plain tex
 
 ## High level statistics {#high-level-statistics}
 
-As of `Friday, July 28, 2023` I have `51M` of `.org` files in `~/org`. That's  `4438` files and `1084681` lines of text, the largest single file is `1.3M` and the longest lined file has `26370` lines.
+As of `Friday, July 28, 2023` I have `51M` of `.org` files in `~/org`. That's  `4438` files and `1084690` lines of text, the largest single file is `1.3M` and the longest lined file has `26370` lines.
 
 `4267` of these files are inside org-roam, the majority of them (`3213`) are "dailies" or time-series files.[^fn:3]
 
@@ -39,9 +39,9 @@ I capture as much as I reasonably can. When I see enough of the same type of thi
 
 {{< figure src="robot-pnumatic-tubes-piles-of-notes-1.png" caption="<span class=\"figure-number\">Figure 3: </span>A system of pneumatic tuebes coming out from a male robotic individual sucking up documents and blowing them out into piles. Use a realistic future sci-fi style." width="50%" >}}
 
-I started tracking much of my various collections of piles in version control and  you can see a gource generated visualization here.
+I started tracking much of my various collections of piles in version control and  you can watch a [gource generated visualization here](https://www.youtube.com/watch?v=b7y0y6sWb2I).
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/b7y0y6sWb2I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+{{< figure src="gource-screenshot.png" caption="<span class=\"figure-number\">Figure 4: </span>Frame from gource visualization" width="50%" >}}
 
 
 ## Capture {#capture}
@@ -52,7 +52,7 @@ Capturing is an important concept. Fundamentally it's grabbing new content and p
 
 I have `24` org-capture-templates,  `16` org-roam-capture-templates and `69` org-roam-dailies-capture-templates.
 
-{{< figure src="angel-of-memory.png" caption="<span class=\"figure-number\">Figure 4: </span>FHTAGN &amp; TENTACLES — ZACHRIEL - ANGEL OF MEMORY by Peter Mohrbacher posted as a representation of org-mode in response to <https://pkm.social/@markmcelroy/110061567208552787>" width="50%" >}}
+{{< figure src="angel-of-memory.png" caption="<span class=\"figure-number\">Figure 5: </span>FHTAGN &amp; TENTACLES — ZACHRIEL - ANGEL OF MEMORY by Peter Mohrbacher posted as a representation of org-mode in response to <https://pkm.social/@markmcelroy/110061567208552787>" width="50%" >}}
 
 Beyond my time-series notes I have other collections of related notes in sub directories. For example, I have many notes about CFEngine (the best configuration management tool)[^fn:7]. I keep my CFEngine related notes in `~/org/roam/CFEngine` with sub directories for different things ( blogs, examples, index.org, northern.tech-customers, notes, opportunities,
 ).
@@ -76,9 +76,9 @@ If I have found a note I can see what other notes link to it with `org-roam-buff
 
 `org-roam-ui` provides a really fun interactive 2 or 3d graph showing the links between nodes.
 
-{{< figure src="org-roam-ui-with-dailies-2023-03-26.png" caption="<span class=\"figure-number\">Figure 5: </span>org-roam-ui visualization with dailies as of 2023-03-26" width="50%" >}}
+{{< figure src="org-roam-ui-with-dailies-2023-03-26.png" caption="<span class=\"figure-number\">Figure 6: </span>org-roam-ui visualization with dailies as of 2023-03-26" width="50%" >}}
 
-{{< figure src="org-roam-ui-without-dailies-2023-03-26.png" caption="<span class=\"figure-number\">Figure 6: </span>org-roam-ui visualization without dailies as of 2023-03-26" width="50%" >}}
+{{< figure src="org-roam-ui-without-dailies-2023-03-26.png" caption="<span class=\"figure-number\">Figure 7: </span>org-roam-ui visualization without dailies as of 2023-03-26" width="50%" >}}
 
 `org-roam-random-note` can be fun to stumble around completely random nodes. There exists a video on YouTube but I'm currently unable to find the reference where someone customizes their startup to display a random note.
 
@@ -110,7 +110,7 @@ So, how does a day in my org life flow?
 
 Usually my day starts with meetings. I like to take notes and email them to a distribution list afterwords[^fn:11]. For example, a few minutes before my CFEngine stand-up I run `org-roam-dailies-capture-today` and key in `w` (work) `m` (meeting) `c` (CFEngine) `d` (daily stand-up). Immediately after activating this capture I trigger another capture for my work log keying in `w` (work) `l` (log)[^fn:12] which clocks time.
 
-{{< figure src="standup-worklog.gif" caption="<span class=\"figure-number\">Figure 7: </span>Animation showing standup and worklog capture" width="100%" >}}
+{{< figure src="standup-worklog.gif" caption="<span class=\"figure-number\">Figure 8: </span>Animation showing standup and worklog capture" width="100%" >}}
 
 The work log capture template includes a backlink to the stand-up note for the day, so I follow that link and start going through my template filling it out. The template has a headline for each person with a property that links to a node for the individual. My own section contains a clock table which quickly produces a nice list of the entries with clocked time from the previous day (on Mondays or days when I have missed prior N days I tweak the clock table to pull for the right number of previous days). I review the table to see how good I was about clocking the previous day back-filling anything that I neglected to record then delete time columns.
 
