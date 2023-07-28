@@ -86,7 +86,7 @@
 <h2 id="goal">Goal</h2>
 <p>Unrealistically I want total recall, to remember everything in durable plain text. I want to have control of my data. I want to do my work and interact efficiently. I want to improve my knowledge and capabilities and I want to be able to share with others.</p>
 <h2 id="high-level-statistics">High level statistics</h2>
-<p>As of <code>Friday, July 28, 2023</code> I have <code>51M</code> of <code>.org</code> files in <code>~/org</code>. That&rsquo;s  <code>4438</code> files and <code>1084690</code> lines of text, the largest single file is <code>1.3M</code> and the longest lined file has <code>26370</code> lines.</p>
+<p>As of <code>Friday, July 28, 2023</code> I have <code>51M</code> of <code>.org</code> files in <code>~/org</code>. That&rsquo;s  <code>4438</code> files and <code>1084916</code> lines of text, the largest single file is <code>1.3M</code> and the longest lined file has <code>26370</code> lines.</p>
 <p><code>4267</code> of these files are inside org-roam, the majority of them (<code>3213</code>) are &ldquo;dailies&rdquo; or time-series files.<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></p>
 <p>I have some <code>27M</code> other older <code>.org</code> files outside <code>~/org</code> that aren&rsquo;t even included in those stats. The largest of those files is <code>5.6M</code>, and the longest lined file has <code>81921</code> lines. At couple centuries ago glacial speed (I guess they are moving pretty quickly these days) I refile things from there into my current <code>~/org</code> structure. Not to mention <code>~/Syncthing/Orgzly</code> with <code>7.5M</code> worth of <code>.org</code> files that I sync around to a few devices and the largest <code>.org</code> file is <code>677K</code> with the most lined file has <code>49670</code> lines.</p>
 <!-- raw HTML omitted -->
@@ -176,7 +176,7 @@
 <p>For other activities that are typically fast or aren&rsquo;t of a common type spanning multiple days I simply run <code>org-roam-dailies-capture</code> and keep notes directly in my work log.</p>
 <p>I author pretty much everything in <code>org-mode</code>. I am often able to stay in inside <code>org-mode</code> and keep a very thorough record of my exact activities. When I need to run commands I typically use <code>org-babel</code> so that commands their output and my thoughts about it form a nice log of my work as I proceed. This log is often directly transferable to communicate with others for which I leverage the copious export back ends available<sup id="fnref:14"><a href="#fn:14" class="footnote-ref" role="doc-noteref">14</a></sup>.</p>
 <p>As of Friday, July 28, 2023
-I currently have  <code>13926</code> nodes across <code>4267</code> files in org-roam.</p>
+I currently have  <code>13928</code> nodes across <code>4267</code> files in org-roam.</p>
 <p>I use inline code blocks while authoring this post to get current numbers on export. The above text looks like this in my org-mode file for the post which I export with <code>ox-hugo</code>.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -299,8 +299,16 @@ I make presentations in org mode, for example <a href="https://htmlpreview.githu
 <dd>It&rsquo;s read only, so it&rsquo;s of limited use given my current sync patterns but it&rsquo;s good for that.</dd>
 </dl>
 <h3 id="llms">LLMs</h3>
-<p>I used org-ai<sup id="fnref:35"><a href="#fn:35" class="footnote-ref" role="doc-noteref">35</a></sup> for a bit but it required emacs 28.2 which I don&rsquo;t run regularly and additionally the way it used blocks felt a bit un-natural.</p>
-<p>Since July 5th 2023 I began using chatpt-shell<sup id="fnref:36"><a href="#fn:36" class="footnote-ref" role="doc-noteref">36</a></sup> for dall-e and chatgpt. Most often I use babel src blocks but I seem to lose context history with that so I tend to re-feed my entire query. I&rsquo;ve used it to help me re-word text, brainstorm creative ideas, and generate shell one-liners, all from the comfort of my Emacs org-mode buffer.</p>
+<p>I used <code>org-ai</code><sup id="fnref:35"><a href="#fn:35" class="footnote-ref" role="doc-noteref">35</a></sup> for a bit but it required emacs 28.2 which I don&rsquo;t run regularly and additionally the way it used blocks felt a bit un-natural.</p>
+<p>Since July 5th 2023 I began using <code>chatpt-shell</code><sup id="fnref:36"><a href="#fn:36" class="footnote-ref" role="doc-noteref">36</a></sup> for dall-e and chatgpt.</p>
+<p>You can use the shell conversationally with chatgpt or dall-e.</p>
+<figure><img src="asking-dall-e-to-make-image-in-dall-e-shell.png"
+         alt="Figure 9: Asking Dall-e to make an image using the interactive dall-e-shell" width="50%"/><figcaption>
+            <p><!-- raw HTML omitted -->Figure 9: <!-- raw HTML omitted -->Asking Dall-e to make an image using the interactive dall-e-shell</p>
+        </figcaption>
+</figure>
+
+<p>Most often I use babel src blocks but I seem to lose context history with that so I tend to re-feed my entire query. I&rsquo;ve used it to help me re-word text, brainstorm creative ideas, and generate shell one-liners, all from the comfort of my Emacs org-mode buffer.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -333,7 +341,13 @@ I make presentations in org mode, for example <a href="https://htmlpreview.githu
 <p>I pledge allegiance to the Church of Emacs, the Way of org-mode, for in its embrace lies boundless power and the secrets of imperial efficiency.</p>
 <p>This is our Creed. This is the Way.</p>
 </blockquote>
-<p>Looking forward to some package that will support bard or claude 2<sup id="fnref:37"><a href="#fn:37" class="footnote-ref" role="doc-noteref">37</a></sup> but really I am mostly waiting to have easy access to a local LLM.</p>
+<p>Looking forward to some package that will support bard or claude 2<sup id="fnref:37"><a href="#fn:37" class="footnote-ref" role="doc-noteref">37</a></sup> but really I am mostly waiting to have easy access to a local LLM that I can train on my <code>~/org</code>.. With <code>llm</code><sup id="fnref:38"><a href="#fn:38" class="footnote-ref" role="doc-noteref">38</a></sup> I have access to local llms, but I haven&rsquo;t figured out how I could train on my notes yet.</p>
+<figure><img src="ask-local-llm-write-ode-and-dall-e-picture-it.png"
+         alt="Figure 10: Asking a local llm to write an ode to org-mode and dall-e to make a picture of a futuristic robot singing said ode using src blocks." width="50%"/><figcaption>
+            <p><!-- raw HTML omitted -->Figure 10: <!-- raw HTML omitted -->Asking a local llm to write an ode to org-mode and dall-e to make a picture of a futuristic robot singing said ode using src blocks.</p>
+        </figcaption>
+</figure>
+
 <h3 id="other-things-i-use-play-with-or-intend-to-play-with">Other things I use, play with or intend to play with</h3>
 <p>I don&rsquo;t think about myself being an Emacs user, I feel like an <code>org-mode</code> user Emacs is just a delivery system. I&rsquo;ve been playing with many things that have yet to gel into my workflow:</p>
 <dl>
@@ -549,6 +563,9 @@ I make presentations in org mode, for example <a href="https://htmlpreview.githu
 </li>
 <li id="fn:37" role="doc-endnote">
 <p>Claude 2 is yet another large language model. <a href="https://www.anthropic.com/index/claude-2">https://www.anthropic.com/index/claude-2</a> It beat ChatGPT 4 in some tests as of July 2023. <a href="https://decrypt.co/148147/anthropic-claude-2-ai-chatbot-comparison-openai-chatgpt-google-bard">https://decrypt.co/148147/anthropic-claude-2-ai-chatbot-comparison-openai-chatgpt-google-bard</a>&#160;<a href="#fnref:37" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:38" role="doc-endnote">
+<p><code>llm</code> is a CLI utility and Python library for integrating with Large Language Models, including OpenAI, PaLM and even local models on your own machine. <a href="https://llm.datasette.io/en/stable/">https://llm.datasette.io/en/stable/</a>&#160;<a href="#fnref:38" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </section>
