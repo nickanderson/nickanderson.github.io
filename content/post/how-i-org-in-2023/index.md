@@ -18,54 +18,71 @@ Unrealistically I want total recall, to remember everything in durable plain tex
 
 ## High level statistics {#high-level-statistics}
 
-As of `Friday, July 28, 2023` I have `51M` of `.org` files in `~/org`. That's  `4438` files and `1084668` lines of text, the largest single file is `1.3M` and the longest lined file has `26370` lines.
+As of `Friday, July 28, 2023` I have `51M` of `.org` files in `~/org`. That's  `4438` files and `1084681` lines of text, the largest single file is `1.3M` and the longest lined file has `26370` lines.
 
 `4267` of these files are inside org-roam, the majority of them (`3213`) are "dailies" or time-series files.[^fn:3]
-
-I have `24` org-capture-templates,  `16` org-roam-capture-templates and `69` org-roam-dailies-capture-templates.
 
 I have some `27M` other older `.org` files outside `~/org` that aren't even included in those stats. The largest of those files is `5.6M`, and the longest lined file has `81921` lines. At couple centuries ago glacial speed (I guess they are moving pretty quickly these days) I refile things from there into my current `~/org` structure. Not to mention `~/Syncthing/Orgzly` with `7.5M` worth of `.org` files that I sync around to a few devices and the largest `.org` file is `677K` with the most lined file has `49670` lines.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/8A52ZXPhJFk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 
+## System {#system}
+
+I don't really use any existing workflow or organization methodology like PARA, CODE, ACCESS, Johnny Decimal, etc ... I don't know that I am organized (or disciplined?) enough to follow some thing like that. I appreciate them and pick up ideas reading about methodologies that work for others.
+
+I use the Nick Anderson S.H.I.T. (Stuff here 'n there) methodology.
+
+{{< figure src="nick-anderson-shit-method.png" caption="<span class=\"figure-number\">Figure 2: </span>Martti Bergström (@masi@fosstodon.org) uses the Nick Anderson SHIT meethod. <https://fosstodon.org/@masi/110266696809445948>" width="50%" >}}
+
+I capture as much as I reasonably can. When I see enough of the same type of things I try to pile them near each other and build some kind of pneumatic tube to automatically funnel similar things into the right pile automatically.
+
+{{< figure src="robot-pnumatic-tubes-piles-of-notes-1.png" caption="<span class=\"figure-number\">Figure 3: </span>A system of pneumatic tuebes coming out from a male robotic individual sucking up documents and blowing them out into piles. Use a realistic future sci-fi style." width="50%" >}}
+
+I started tracking much of my various collections of piles in version control and  you can see a gource generated visualization here.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/b7y0y6sWb2I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+
 ## Capture {#capture}
 
 Capturing is an important concept. Fundamentally it's grabbing new content and putting it somewhere. It facilitates consistency and automates some tedium. It's something that should be fast and not interrupt my flow.
 
-As you may have been able to tell `org-roam`[^fn:4] is my primary capture interface and I _really_ like the daily capabilities. Each day I capture notes about everything I am working on into my work log while clocking time. This gives me a nice place to think and process what I am working on[^fn:5] as well as a place to get my bearings and see what I have been working on when I get side-tracked[^fn:6]. Having a new file each day gives me a fresh start and it helps me to avoid performance issues I have previously experienced with large (multi-megabyte) files. I still have a lot of org files not under my roam directory which I have yet (and may never fully) to migrate.
+`org-roam`[^fn:4] is my primary capture interface and I _really_ like the daily capabilities. Each day I capture notes about everything I am working on into my work log while clocking time. This gives me a nice place to think and process what I am working on[^fn:5] as well as a place to get my bearings and see what I have been working on when I get side-tracked[^fn:6]. Having a new file each day gives me a fresh start and it helps me to avoid performance issues I have previously experienced with large (multi-megabyte) files. I still have a lot of org files not under my roam directory which I have yet (and may never fully) to migrate.
 
-{{< figure src="angel-of-memory.png" caption="<span class=\"figure-number\">Figure 2: </span>FHTAGN &amp; TENTACLES — ZACHRIEL - ANGEL OF MEMORY by Peter Mohrbacher posted as a representation of org-mode in response to <https://pkm.social/@markmcelroy/110061567208552787>" width="50%" >}}
+I have `24` org-capture-templates,  `16` org-roam-capture-templates and `69` org-roam-dailies-capture-templates.
+
+{{< figure src="angel-of-memory.png" caption="<span class=\"figure-number\">Figure 4: </span>FHTAGN &amp; TENTACLES — ZACHRIEL - ANGEL OF MEMORY by Peter Mohrbacher posted as a representation of org-mode in response to <https://pkm.social/@markmcelroy/110061567208552787>" width="50%" >}}
 
 Beyond my time-series notes I have other collections of related notes in sub directories. For example, I have many notes about CFEngine (the best configuration management tool)[^fn:7]. I keep my CFEngine related notes in `~/org/roam/CFEngine` with sub directories for different things ( blogs, examples, index.org, northern.tech-customers, notes, opportunities,
 ).
 
 I use org-web-tools to pull web pages into org. Either as a buffer to read, or as a subtree to store.
 
-org-rich-yank let's me copy text and paste it with context allowing it to be syntax highlighted as well as providing a link back to the source.
+`org-rich-yank`[^fn:8] let's me copy text and paste it with context allowing it to be syntax highlighted as well as providing a link back to the source.
 
 
 ## Retrieval {#retrieval}
 
 When I am retrieving information from my system I am usually searching for a note by name or searching to what notes I have about something.
 
-When searching for a note by name, Ill use `org-roam-node-find`.
+When searching for a note by name, I'll use `org-roam-node-find`.
 
-When I am searching wide ill use `ripgrep` via `consult-ripgrep` which is bound to `SPC /` and searches `~/org` by default.
+When I am searching wide I use `ripgrep` via `consult-ripgrep` which is bound to `SPC /` and searches `~/org` by default.
 
 If I have found a note I can see what other notes link to it with `org-roam-buffer`. There is even support for finding _unlinked_ back references, which I am not using for performance reasons.
 
-{{< figure src="2023-07-28_12-22-56_Screenshot_2023-07-28_122207.png" >}}
+{{< figure src="org-roam-buffer.png" >}}
 
 `org-roam-ui` provides a really fun interactive 2 or 3d graph showing the links between nodes.
 
-{{< figure src="org-roam-ui-with-dailies-2023-03-26.png" caption="<span class=\"figure-number\">Figure 3: </span>org-roam-ui visualization with dailies as of 2023-03-26" width="50%" >}}
+{{< figure src="org-roam-ui-with-dailies-2023-03-26.png" caption="<span class=\"figure-number\">Figure 5: </span>org-roam-ui visualization with dailies as of 2023-03-26" width="50%" >}}
 
-{{< figure src="org-roam-ui-without-dailies-2023-03-26.png" caption="<span class=\"figure-number\">Figure 4: </span>org-roam-ui visualization without dailies as of 2023-03-26" width="50%" >}}
+{{< figure src="org-roam-ui-without-dailies-2023-03-26.png" caption="<span class=\"figure-number\">Figure 6: </span>org-roam-ui visualization without dailies as of 2023-03-26" width="50%" >}}
 
-org-roam-random-note
+`org-roam-random-note` can be fun to stumble around completely random nodes. There exists a video on YouTube but I'm currently unable to find the reference where someone customizes their startup to display a random note.
 
-agenda can be fed by org-roam-db-query, helping to solve the issue of figuring out which files should be included by agenda.
+`org-agenda` can be fed by `org-roam-db-query`, helping to solve the issue of figuring out which files should be included by agenda. I have done this, but I still don't really make use of `org-agenda`, I want to, but it hasn't clicked for me yet so I just keep poking at it a few times a year.
 
 
 ## Output {#output}
@@ -74,32 +91,30 @@ Output is an important aspect of my system. It's important to me that I can easi
 
 With so many export backends available I don't usually have to spend time mucking around with some bespoke syntax. I can author in org-mode and quickly export it to another format. It's nice to have relatively good formatting in many formats with relatively little effort.
 
-I have begun to make more consistent use of org-transclusion[^fn:8] while authoring content. Instead of duplicating content copying to the new place I want to use it I will distill what I want to use into an atomic chunk and then reference it. I find this is helpful in several ways. It reduces unnecessary growth to the volume of text that I have, reduces the number of duplicate hits for things when I am searching for something, increases the interlinking of my org-mode files providing a more rich experience with `org-roam-buffer` showing things that used the content as well as interconnected in the `org-roam-ui` graph visualization.
+I have begun to make more consistent use of `org-transclusion`[^fn:9] while authoring content. Instead of duplicating content copying to the new place I want to use it I will distill what I want to use into an atomic chunk and then reference it. I find this is helpful in several ways. It reduces unnecessary growth to the volume of text that I have, reduces the number of duplicate hits for things when I am searching for something, increases the interlinking of my org-mode files providing a more rich experience with `org-roam-buffer` showing things that used the content as well as interconnected in the `org-roam-ui` graph visualization.
 
-I use ox-jira and org-jira to manage issues in Jira Cloud.
+I use `ox-jira` and `org-jira` to manage issues in Jira Cloud.
 
-I make presentations using org-reveal.
+I make presentations using `org-reveal` and `org-re-reveal`.
 
-I write reports that I export to odt for copying and pasting into google drive[^fn:9] and pdf for emailing to clients.
+I write reports that I export to odt for copying and pasting into google drive[^fn:10] and pdf for emailing to clients.
 
-I write blog posts exporting with ox-hugo to multiple websites using different hugo configurations.
+I write blog posts exporting with `ox-hugo` to multiple websites using different hugo configurations.
 
 I author emails in org-mode.
-
-I re-use existing content interleaving it without duplication.
 
 
 ## Workflow {#workflow}
 
 So, how does a day in my org life flow?
 
-Usually my day starts with meetings. I like to take notes and email them to a distribution list afterwords[^fn:10]. For example, a few minutes before my CFEngine stand-up I run `org-roam-dailies-capture-today` and key in `w` (work) `m` (meeting) `c` (CFEngine) `d` (daily stand-up). Immediately after activating this capture I trigger another capture for my work log keying in `w` (work) `l` (log)[^fn:11] which clocks time.
+Usually my day starts with meetings. I like to take notes and email them to a distribution list afterwords[^fn:11]. For example, a few minutes before my CFEngine stand-up I run `org-roam-dailies-capture-today` and key in `w` (work) `m` (meeting) `c` (CFEngine) `d` (daily stand-up). Immediately after activating this capture I trigger another capture for my work log keying in `w` (work) `l` (log)[^fn:12] which clocks time.
 
-{{< figure src="standup-worklog.gif" caption="<span class=\"figure-number\">Figure 5: </span>Animation showing standup and worklog capture" width="100%" >}}
+{{< figure src="standup-worklog.gif" caption="<span class=\"figure-number\">Figure 7: </span>Animation showing standup and worklog capture" width="100%" >}}
 
 The work log capture template includes a backlink to the stand-up note for the day, so I follow that link and start going through my template filling it out. The template has a headline for each person with a property that links to a node for the individual. My own section contains a clock table which quickly produces a nice list of the entries with clocked time from the previous day (on Mondays or days when I have missed prior N days I tweak the clock table to pull for the right number of previous days). I review the table to see how good I was about clocking the previous day back-filling anything that I neglected to record then delete time columns.
 
-At the end of the meeting I use `org-mime`[^fn:12] to prepare a nicely formatted multipart ASCII &amp; HTML email. After sending the mail I switch back to my work log capture and complete it. All of my regularly scheduled meetings follow the same process; I capture for the meeting template, then I capture to my work log clocking time with an automatic backlink back to the specific meeting note. It's easy to capture notes for yesterday, tomorrow or an arbitrary date in the future using `org-roam-dailies-capture-yesterday`, `org-roam-dailies-capture-tomorrow`, and `org-roam-dailies-capture-date`.
+At the end of the meeting I use `org-mime`[^fn:13] to prepare a nicely formatted multipart ASCII &amp; HTML email. After sending the mail I switch back to my work log capture and complete it. All of my regularly scheduled meetings follow the same process; I capture for the meeting template, then I capture to my work log clocking time with an automatic backlink back to the specific meeting note. It's easy to capture notes for yesterday, tomorrow or an arbitrary date in the future using `org-roam-dailies-capture-yesterday`, `org-roam-dailies-capture-tomorrow`, and `org-roam-dailies-capture-date`.
 
 Org-roam provides useful functions for accessing time-series notes. `org-roam-dailies-goto-today` will take you to today's note for the selected template and if the file does not exist it is initialized. Similarly `org-roam-dailies-goto-yesterday`, `org-roam-dailies-goto-tomorrow`, and `org-roam-dailies-goto-date` take you to the note for yesterday, tomorrow, or the specified date, creating the file if necessary. `org-roam-dailies-goto-previous` and `org-roam-dailies-goto-next` go to the previous and next note in the series based on the file you are currently visiting making for easy navigation through the time series.
 
@@ -109,7 +124,7 @@ If I am working on something that has some regular pattern but is not a recurrin
 
 For other activities that are typically fast or aren't of a common type spanning multiple days I simply run `org-roam-dailies-capture` and keep notes directly in my work log.
 
-I author pretty much everything in `org-mode`. I am often able to stay in inside `org-mode` and keep a very thorough record of my exact activities. When I need to run commands I typically use `org-babel` so that commands their output and my thoughts about it form a nice log of my work as I proceed. This log is often directly transferable to communicate with others for which I leverage the copious export back ends available[^fn:13].
+I author pretty much everything in `org-mode`. I am often able to stay in inside `org-mode` and keep a very thorough record of my exact activities. When I need to run commands I typically use `org-babel` so that commands their output and my thoughts about it form a nice log of my work as I proceed. This log is often directly transferable to communicate with others for which I leverage the copious export back ends available[^fn:14].
 
 As of Friday, July 28, 2023
  I currently have  `13926` nodes across `4267` files in org-roam.
@@ -128,7 +143,7 @@ from files")} files in org-roam.
 
 Let's go through a contrived example.
 
-While checking my email in `mu4e`[^fn:14] and see a message from the CFEngine help list asking how to define a _class_ from a _variable_. The author shared what they had tried but it wasn't working. I want to respond to it so I run `org-roam-dailies-capture` and key in `e` (email) `r` (response). This creates a new node in today's work log with the headline `Responded to cfengineer@some.org Re: How do I define a class from a variable?` and a link back to the message in `mu4e` (that information was automatically pulled directly from the email I was reading when I initiated the capture).
+While checking my email in `mu4e`[^fn:15] and see a message from the CFEngine help list asking how to define a _class_ from a _variable_. The author shared what they had tried but it wasn't working. I want to respond to it so I run `org-roam-dailies-capture` and key in `e` (email) `r` (response). This creates a new node in today's work log with the headline `Responded to cfengineer@some.org Re: How do I define a class from a variable?` and a link back to the message in `mu4e` (that information was automatically pulled directly from the email I was reading when I initiated the capture).
 
 This is the capture template I use for email responses. It populates the necessary property for proper threading (message-id).
 
@@ -157,9 +172,9 @@ This is the capture template I use for email responses. It populates the necessa
  )
 ```
 
-I start typing my response and use `org-roam-node-find`  to search for pre-existing examples leveraging any functions I want to use linking to them from my note. I use YAsnippet[^fn:15] to insert a cfengine src block. I re-use or write a new example running the block as I go to make sure it does what I expected until I am satisfied. Once finished I run `org-mime-org-subtree-htmlize` which exports the `org-mode` formatted text to a multipart plain text (ascii) and html message. Then I `C-c` to send it off and again to complete my capture. At this point I will probably run `org-roam-capture` type the name of the example, e.g. `class defined from variable` and key in `c` (CFEngine) `e` (Example). In the example I use `org-roam-node-insert` to create links to each function that is used in the example. This helps future me find all the examples that use a specific function from that functions note.
+I start typing my response and use `org-roam-node-find`  to search for pre-existing examples leveraging any functions I want to use linking to them from my note. I use YAsnippet[^fn:16] to insert a cfengine src block. I re-use or write a new example running the block as I go to make sure it does what I expected until I am satisfied. Once finished I run `org-mime-org-subtree-htmlize` which exports the `org-mode` formatted text to a multipart plain text (ascii) and html message. Then I `C-c` to send it off and again to complete my capture. At this point I will probably run `org-roam-capture` type the name of the example, e.g. `class defined from variable` and key in `c` (CFEngine) `e` (Example). In the example I use `org-roam-node-insert` to create links to each function that is used in the example. This helps future me find all the examples that use a specific function from that functions note.
 
-Next I decide that documentation should to be updated, so I run `org-jira-create-issue`, fill out the necessary minimal information and once the ticket has been created I run `org-jira-progress-issue` to set it in progress and I initiate a new work log capture. I run `projectile-switch-project` and switch to the documentation repository. I find the documentation I want to update and yank it. Then I head back to my work log run `org-rich-yank`[^fn:16] to paste the copied text with a link back to where I got it and type something about how it sucks. As I explain why it sucks I visit other repositories yanking other snippets of code for reference to backup my assertion. `ol-git-link` provides some nice capabilities for linking to git forges which is very helpful for others as well as future me doing archaeology.
+Next I decide that documentation should to be updated, so I run `org-jira-create-issue`, fill out the necessary minimal information and once the ticket has been created I run `org-jira-progress-issue` to set it in progress and I initiate a new work log capture. I run `projectile-switch-project` and switch to the documentation repository. I find the documentation I want to update and yank it. Then I head back to my work log run `org-rich-yank` to paste the copied text with a link back to where I got it and type something about how it sucks. As I explain why it sucks I visit other repositories yanking other snippets of code for reference to backup my assertion. `ol-git-link` provides some nice capabilities for linking to git forges which is very helpful for others as well as future me doing archaeology.
 
 When updating the Jira ticket I export the notes I took to Jira wiki syntax with `ox-jira`&nbsp;[^fn:17]. I copy that exported text, and then add it to the Jira ticket using `org-jira-add-comment`. Before I start updating the documentation I create a new branch with `magit-branch-create`[^fn:18]. I make the changes I want, commit and push. Forge[^fn:19] let's me proceed to open a pull request, request reviewers, make comments and easily grab the URL of the Pull Request which gets added to my work log which ultimately becomes a well styled comment in the associated Jira issue. Once the PR is approved I merge the pull request with `forge-merge` and close the issue with `org-jira-progress-issue`. Notice that I never left Emacs and my work log functioned as my home base where the notes I took became part of the work I produced in the form of a well styled Jira comment.
 I make presentations in org mode, for example [Org-mode all the thingz!](https://htmlpreview.github.io/?https%3A%2F%2Fgithub.com%2Fnickanderson%2FOrg-mode-all-the-thingz%2Fblob%2Fmaster%2Fpresentation.html) which [I gave at Kansas Linux Fest in 2019](https://www.youtube.com/watch?v=PE4eGkIQycc)[^fn:20].
@@ -424,15 +439,15 @@ zettledeft
 [^fn:5]: Maggie Appleton has a nice post about [Daily notes as a frictionless default input for personal knowledge management systems](https://maggieappleton.com/daily-notes).
 [^fn:6]: ADHD is a real thing. I am also not perfect in remembering to capture each thing but I don't need to be perfect to be effective.
 [^fn:7]: If you like org-mode, you might also like CFEngine. It really is a knowledge management tool for infrastructure and it's very flexible and open ended much like the numerous ways of using org-mode, there are many different ways of using CFEngine. It's a tool that has few prescriptions.
-[^fn:8]: Org-transclusion lets you insert a copy of text content via a file link or ID link within an Org file. It lets you have the same content present in different buffers at the same time without copy-and-pasting it. Edit the source of the content, and you can refresh the transcluded copies to the up-to-date state. <https://github.com/nobiot/org-transclusion>
-[^fn:9]: I wonder if html would work for a copy source pasting into a google doc as well or better.
-[^fn:10]: I've been told multiple times by colleagues that they search out my meeting notes to help themselves complete periodic reviews. I hate doing periodic reviews, so knowing that my effort helps others in this regard is a strong motivator.
-[^fn:11]: (maybe someone can suggest how that tho step process could be consolidated)
-[^fn:12]: (org-mime-htmlize-subtree in this case) as this is one of the few daily capture templates where I capture each day to a heading in a file for the month (it's easier for people that have access to a git repo containing these files to use for periodic reviews).
-[^fn:13]: There are so many, org-mime is probably my most often used exporter followed by some flavor of Markdown (ox-hugo like this blog post, ox-gfm, ox-slack).
-[^fn:14]: With mu4e I have offline mail reading and search and I run a local Postfix relay giving me offline sending capability.
-[^fn:15]: [YASnippet](https://github.com/joaotavora/yasnippet) is a template system for Emacs. It allows you to type an abbreviation and automatically expand it into function templates. The snippet syntax is inspired from [TextMate'](https://macromates.com/manual/en/snippets)s syntax, you can even import most TextMate templates to YASnippet.
-[^fn:16]: `org-rich-yank` pastes the last copied text and automatically surrounds the snippet in blocks, marked with the major mode of where the code came from, and adds a link to the source file after the block. I recommend customizing `org-rich-yank-format-paste` and making the link to the source a comment as described in the README. <https://github.com/unhammer/org-rich-yank>
+[^fn:8]: `org-rich-yank` pastes the last copied text and automatically surrounds the snippet in blocks, marked with the major mode of where the code came from, and adds a link to the source file after the block. I recommend customizing `org-rich-yank-format-paste` and making the link to the source a comment as described in the README. <https://github.com/unhammer/org-rich-yank>
+[^fn:9]: Org-transclusion lets you insert a copy of text content via a file link or ID link within an Org file. It lets you have the same content present in different buffers at the same time without copy-and-pasting it. Edit the source of the content, and you can refresh the transcluded copies to the up-to-date state. <https://github.com/nobiot/org-transclusion>
+[^fn:10]: I wonder if html would work for a copy source pasting into a google doc as well or better.
+[^fn:11]: I've been told multiple times by colleagues that they search out my meeting notes to help themselves complete periodic reviews. I hate doing periodic reviews, so knowing that my effort helps others in this regard is a strong motivator.
+[^fn:12]: (maybe someone can suggest how that tho step process could be consolidated)
+[^fn:13]: (org-mime-htmlize-subtree in this case) as this is one of the few daily capture templates where I capture each day to a heading in a file for the month (it's easier for people that have access to a git repo containing these files to use for periodic reviews).
+[^fn:14]: There are so many, org-mime is probably my most often used exporter followed by some flavor of Markdown (ox-hugo like this blog post, ox-gfm, ox-slack).
+[^fn:15]: With mu4e I have offline mail reading and search and I run a local Postfix relay giving me offline sending capability.
+[^fn:16]: [YASnippet](https://github.com/joaotavora/yasnippet) is a template system for Emacs. It allows you to type an abbreviation and automatically expand it into function templates. The snippet syntax is inspired from [TextMate'](https://macromates.com/manual/en/snippets)s syntax, you can even import most TextMate templates to YASnippet.
 [^fn:17]: ox-jira exports to Jira wiki markup. It's very nice to author fairly pretty comments with so little effort. <https://github.com/stig/ox-jira.el>
 [^fn:18]: Magit is an amazing front end for git. <https://magit.vc/>
 [^fn:19]: Forge provides git forge integration (pull requests, issues, etc ..) for GitLab, GitHub and probably others. <https://github.com/magit/forge>
