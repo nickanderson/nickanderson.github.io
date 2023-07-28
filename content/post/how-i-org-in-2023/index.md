@@ -18,7 +18,7 @@ Unrealistically I want total recall, to remember everything in durable plain tex
 
 ## High level statistics {#high-level-statistics}
 
-As of `Friday, July 28, 2023` I have `51M` of `.org` files in `~/org`. That's  `4438` files and `1084690` lines of text, the largest single file is `1.3M` and the longest lined file has `26370` lines.
+As of `Friday, July 28, 2023` I have `51M` of `.org` files in `~/org`. That's  `4438` files and `1084916` lines of text, the largest single file is `1.3M` and the longest lined file has `26370` lines.
 
 `4267` of these files are inside org-roam, the majority of them (`3213`) are "dailies" or time-series files.[^fn:3]
 
@@ -127,7 +127,7 @@ For other activities that are typically fast or aren't of a common type spanning
 I author pretty much everything in `org-mode`. I am often able to stay in inside `org-mode` and keep a very thorough record of my exact activities. When I need to run commands I typically use `org-babel` so that commands their output and my thoughts about it form a nice log of my work as I proceed. This log is often directly transferable to communicate with others for which I leverage the copious export back ends available[^fn:14].
 
 As of Friday, July 28, 2023
- I currently have  `13926` nodes across `4267` files in org-roam.
+ I currently have  `13928` nodes across `4267` files in org-roam.
 
 I use inline code blocks while authoring this post to get current numbers on export. The above text looks like this in my org-mode file for the post which I export with `ox-hugo`.
 
@@ -235,9 +235,15 @@ Orgro
 
 ### LLMs {#llms}
 
-I used org-ai[^fn:35] for a bit but it required emacs 28.2 which I don't run regularly and additionally the way it used blocks felt a bit un-natural.
+I used `org-ai`[^fn:35] for a bit but it required emacs 28.2 which I don't run regularly and additionally the way it used blocks felt a bit un-natural.
 
-Since July 5th 2023 I began using chatpt-shell[^fn:36] for dall-e and chatgpt. Most often I use babel src blocks but I seem to lose context history with that so I tend to re-feed my entire query. I've used it to help me re-word text, brainstorm creative ideas, and generate shell one-liners, all from the comfort of my Emacs org-mode buffer.
+Since July 5th 2023 I began using `chatpt-shell`[^fn:36] for dall-e and chatgpt.
+
+You can use the shell conversationally with chatgpt or dall-e.
+
+{{< figure src="asking-dall-e-to-make-image-in-dall-e-shell.png" caption="<span class=\"figure-number\">Figure 9: </span>Asking Dall-e to make an image using the interactive dall-e-shell" width="50%" >}}
+
+Most often I use babel src blocks but I seem to lose context history with that so I tend to re-feed my entire query. I've used it to help me re-word text, brainstorm creative ideas, and generate shell one-liners, all from the comfort of my Emacs org-mode buffer.
 
 ```text
 #+name: chatgpt-prompt
@@ -278,7 +284,9 @@ Since July 5th 2023 I began using chatpt-shell[^fn:36] for dall-e and chatgpt. M
 >
 > This is our Creed. This is the Way.
 
-Looking forward to some package that will support bard or claude 2[^fn:37] but really I am mostly waiting to have easy access to a local LLM.
+Looking forward to some package that will support bard or claude 2[^fn:37] but really I am mostly waiting to have easy access to a local LLM that I can train on my `~/org`.. With `llm`[^fn:38] I have access to local llms, but I haven't figured out how I could train on my notes yet.
+
+{{< figure src="ask-local-llm-write-ode-and-dall-e-picture-it.png" caption="<span class=\"figure-number\">Figure 10: </span>Asking a local llm to write an ode to org-mode and dall-e to make a picture of a futuristic robot singing said ode using src blocks." width="50%" >}}
 
 
 ### Other things I use, play with or intend to play with {#other-things-i-use-play-with-or-intend-to-play-with}
@@ -469,3 +477,4 @@ zettledeft
 [^fn:35]: org-ai is one of the LLM packages that I experimented with for a short time prior to July 2023 <https://github.com/rksm/org-ai>
 [^fn:36]: chatgpt-shell has been my package of choice for interacting with large language models from July 5th 2023 <https://github.com/xenodium/chatgpt-shell>
 [^fn:37]: Claude 2 is yet another large language model. <https://www.anthropic.com/index/claude-2> It beat ChatGPT 4 in some tests as of July 2023. <https://decrypt.co/148147/anthropic-claude-2-ai-chatbot-comparison-openai-chatgpt-google-bard>
+[^fn:38]: `llm` is a CLI utility and Python library for integrating with Large Language Models, including OpenAI, PaLM and even local models on your own machine. <https://llm.datasette.io/en/stable/>
