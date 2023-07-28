@@ -45,7 +45,7 @@ I use org-web-tools to pull web pages into org. Either as a buffer to read, or a
 org-rich-yank let's me copy text and paste it with context allowing it to be syntax highlighted as well as providing a link back to the source.
 
 
-## Retrieval <span class="tag"><span class="ATTACH">ATTACH</span></span> {#retrieval}
+## Retrieval {#retrieval}
 
 When I am retrieving information from my system I am usually searching for a note by name or searching to what notes I have about something.
 
