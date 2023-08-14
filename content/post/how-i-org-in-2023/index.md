@@ -18,9 +18,9 @@ Unrealistically I want total recall, to remember everything in durable plain tex
 
 ## High level statistics {#high-level-statistics}
 
-As of `Friday, July 28, 2023` I have `51M` of `.org` files in `~/org`. That's  `4438` files and `1084916` lines of text, the largest single file is `1.3M` and the longest lined file has `26370` lines.
+As of `Monday, August 14, 2023` I have `52M` of `.org` files in `~/org`. That's  `4529` files and `1088274` lines of text, the largest single file is `1.3M` and the longest lined file has `26370` lines.
 
-`4267` of these files are inside org-roam, the majority of them (`3213`) are "dailies" or time-series files.[^fn:3]
+`4358` of these files are inside org-roam, the majority of them (`3304`) are "dailies" or time-series files.[^fn:3]
 
 I have some `27M` other older `.org` files outside `~/org` that aren't even included in those stats. The largest of those files is `5.6M`, and the longest lined file has `81921` lines. At couple centuries ago glacial speed (I guess they are moving pretty quickly these days) I refile things from there into my current `~/org` structure. Not to mention `~/Syncthing/Orgzly` with `7.5M` worth of `.org` files that I sync around to a few devices and the largest `.org` file is `677K` with the most lined file has `49670` lines.
 
@@ -50,7 +50,7 @@ Capturing is an important concept. Fundamentally it's grabbing new content and p
 
 `org-roam`[^fn:4] is my primary capture interface and I _really_ like the daily capabilities. Each day I capture notes about everything I am working on into my work log while clocking time. This gives me a nice place to think and process what I am working on[^fn:5] as well as a place to get my bearings and see what I have been working on when I get side-tracked[^fn:6]. Having a new file each day gives me a fresh start and it helps me to avoid performance issues I have previously experienced with large (multi-megabyte) files. I still have a lot of org files not under my roam directory which I have yet (and may never fully) to migrate.
 
-I have `24` org-capture-templates,  `16` org-roam-capture-templates and `69` org-roam-dailies-capture-templates.
+I have `24` org-capture-templates,  `16` org-roam-capture-templates and `71` org-roam-dailies-capture-templates.
 
 {{< figure src="angel-of-memory.png" caption="<span class=\"figure-number\">Figure 5: </span>FHTAGN &amp; TENTACLES — ZACHRIEL - ANGEL OF MEMORY by Peter Mohrbacher posted as a representation of org-mode in response to <https://pkm.social/@markmcelroy/110061567208552787>" width="50%" >}}
 
@@ -64,7 +64,7 @@ I use org-web-tools to pull web pages into org. Either as a buffer to read, or a
 
 ## Retrieval {#retrieval}
 
-When I am retrieving information from my system I am usually searching for a note by name or searching to what notes I have about something.
+When I am retrieving information from my system I am usually searching for a note by name or searching for what notes I have about something.
 
 When searching for a note by name, I'll use `org-roam-node-find`.
 
@@ -74,47 +74,56 @@ If I have found a note I can see what other notes link to it with `org-roam-buff
 
 {{< figure src="org-roam-buffer.png" >}}
 
-`org-roam-ui` provides a really fun interactive 2 or 3d graph showing the links between nodes.
+`org-roam-ui` provides a really fun interactive 2 or 3d graph showing the links between nodes allowing you to explore your notes visually.
 
-{{< figure src="org-roam-ui-with-dailies-2023-03-26.png" caption="<span class=\"figure-number\">Figure 6: </span>org-roam-ui visualization with dailies as of 2023-03-26" width="50%" >}}
+{{< figure src="org-roam-ui-browse-notes.png" caption="<span class=\"figure-number\">Figure 6: </span>Browsing this node in org-roam-ui" width="50%" >}}
 
-{{< figure src="org-roam-ui-without-dailies-2023-03-26.png" caption="<span class=\"figure-number\">Figure 7: </span>org-roam-ui visualization without dailies as of 2023-03-26" width="50%" >}}
+{{< figure src="org-roam-ui-with-dailies-2023-03-26.png" caption="<span class=\"figure-number\">Figure 7: </span>org-roam-ui visualization with dailies as of 2023-03-26" width="50%" >}}
+
+{{< figure src="org-roam-ui-without-dailies-2023-03-26.png" caption="<span class=\"figure-number\">Figure 8: </span>org-roam-ui visualization without dailies as of 2023-03-26" width="50%" >}}
 
 `org-roam-random-note` can be fun to stumble around completely random nodes. There exists a video on YouTube but I'm currently unable to find the reference where someone customizes their startup to display a random note.
 
 `org-agenda` can be fed by `org-roam-db-query`, helping to solve the issue of figuring out which files should be included by agenda. I have done this, but I still don't really make use of `org-agenda`, I want to, but it hasn't clicked for me yet so I just keep poking at it a few times a year.
+
+org-roam-dynamic-blocks is neat for maintaining a list of notes matching some criteria from org-roam though I don't make use of this near as much as I would like yet.
 
 
 ## Output {#output}
 
 Output is an important aspect of my system. It's important to me that I can easily share my knowledge with others.
 
-With so many export backends available I don't usually have to spend time mucking around with some bespoke syntax. I can author in org-mode and quickly export it to another format. It's nice to have relatively good formatting in many formats with relatively little effort.
+I use org-babel frequently. It's very convenient and efficient to be able to execute code directly in my documents.
+Copying and pasting between a console and what I am writing introduces much chance for error. Having code blocks and in-line execution improve the accuracy of my notes and anything else that I am producing.
+
+For example, the Statistics section of this post uses inline code blocks and the data is freshly generated each time I export an updated version. Named blocks let me inject dynamic content in a sentence and provides easy access for on-demand execution, not to mention the ability to leverage as input to other blocks.
 
 I have begun to make more consistent use of `org-transclusion`[^fn:9] while authoring content. Instead of duplicating content copying to the new place I want to use it I will distill what I want to use into an atomic chunk and then reference it. I find this is helpful in several ways. It reduces unnecessary growth to the volume of text that I have, reduces the number of duplicate hits for things when I am searching for something, increases the interlinking of my org-mode files providing a more rich experience with `org-roam-buffer` showing things that used the content as well as interconnected in the `org-roam-ui` graph visualization.
 
-I use `ox-jira` and `org-jira` to manage issues in Jira Cloud.
+With so many export backends available I don't usually have to spend time mucking around with some bespoke syntax. I can author in org-mode and quickly export it to another format. It's nice to have relatively good formatting in many formats with relatively little effort.
 
-I make presentations using `org-reveal` and `org-re-reveal`.
+I export using `ox-jira` and use `org-jira` to manage issues in Jira Cloud. Again, everyone benefits from well styled comments and ticket descriptions and no real extra effort is required from me.
 
-I write reports that I export to odt for copying and pasting into google drive[^fn:10] and pdf for emailing to clients.
+I make presentations using `org-reveal` and `org-re-reveal` with nice features like speaker notes. These presentations can also be printed to PDF.
+
+I write reports that I export to ODT for copying and pasting into google drive[^fn:10] and PDF for emailing to clients.
 
 I write blog posts exporting with `ox-hugo` to multiple websites using different hugo configurations.
 
-I author emails in org-mode.
+I author emails in org-mode exported with `org-mime`[^fn:11] as a multi-part ASCII &amp; HTML message.
 
 
 ## Workflow {#workflow}
 
 So, how does a day in my org life flow?
 
-Usually my day starts with meetings. I like to take notes and email them to a distribution list afterwords[^fn:11]. For example, a few minutes before my CFEngine stand-up I run `org-roam-dailies-capture-today` and key in `w` (work) `m` (meeting) `c` (CFEngine) `d` (daily stand-up). Immediately after activating this capture I trigger another capture for my work log keying in `w` (work) `l` (log)[^fn:12] which clocks time.
+Usually my day starts with meetings. I like to take notes and email them to a distribution list afterwords[^fn:12]. For example, a few minutes before my CFEngine stand-up I run `org-roam-dailies-capture-today` and key in `w` (work) `m` (meeting) `c` (CFEngine) `d` (daily stand-up). Immediately after activating this capture I trigger another capture for my work log keying in `w` (work) `l` (log)[^fn:13] which clocks time.
 
-{{< figure src="standup-worklog.gif" caption="<span class=\"figure-number\">Figure 8: </span>Animation showing standup and worklog capture" width="100%" >}}
+{{< figure src="standup-worklog.gif" caption="<span class=\"figure-number\">Figure 9: </span>Animation showing standup and worklog capture" width="100%" >}}
 
 The work log capture template includes a backlink to the stand-up note for the day, so I follow that link and start going through my template filling it out. The template has a headline for each person with a property that links to a node for the individual. My own section contains a clock table which quickly produces a nice list of the entries with clocked time from the previous day (on Mondays or days when I have missed prior N days I tweak the clock table to pull for the right number of previous days). I review the table to see how good I was about clocking the previous day back-filling anything that I neglected to record then delete time columns.
 
-At the end of the meeting I use `org-mime`[^fn:13] to prepare a nicely formatted multipart ASCII &amp; HTML email. After sending the mail I switch back to my work log capture and complete it. All of my regularly scheduled meetings follow the same process; I capture for the meeting template, then I capture to my work log clocking time with an automatic backlink back to the specific meeting note. It's easy to capture notes for yesterday, tomorrow or an arbitrary date in the future using `org-roam-dailies-capture-yesterday`, `org-roam-dailies-capture-tomorrow`, and `org-roam-dailies-capture-date`.
+At the end of the meeting I use `org-mime`[^fn:11] to prepare a nicely formatted multipart ASCII &amp; HTML email. After sending the mail I switch back to my work log capture and complete it. All of my regularly scheduled meetings follow the same process; I capture for the meeting template, then I capture to my work log clocking time with an automatic backlink back to the specific meeting note. It's easy to capture notes for yesterday, tomorrow or an arbitrary date in the future using `org-roam-dailies-capture-yesterday`, `org-roam-dailies-capture-tomorrow`, and `org-roam-dailies-capture-date`.
 
 Org-roam provides useful functions for accessing time-series notes. `org-roam-dailies-goto-today` will take you to today's note for the selected template and if the file does not exist it is initialized. Similarly `org-roam-dailies-goto-yesterday`, `org-roam-dailies-goto-tomorrow`, and `org-roam-dailies-goto-date` take you to the note for yesterday, tomorrow, or the specified date, creating the file if necessary. `org-roam-dailies-goto-previous` and `org-roam-dailies-goto-next` go to the previous and next note in the series based on the file you are currently visiting making for easy navigation through the time series.
 
@@ -126,17 +135,8 @@ For other activities that are typically fast or aren't of a common type spanning
 
 I author pretty much everything in `org-mode`. I am often able to stay in inside `org-mode` and keep a very thorough record of my exact activities. When I need to run commands I typically use `org-babel` so that commands their output and my thoughts about it form a nice log of my work as I proceed. This log is often directly transferable to communicate with others for which I leverage the copious export back ends available[^fn:14].
 
-As of Friday, July 28, 2023
- I currently have  `13928` nodes across `4267` files in org-roam.
-
-I use inline code blocks while authoring this post to get current numbers on export. The above text looks like this in my org-mode file for the post which I export with `ox-hugo`.
-
-```text
-As of src_sh[:results raw]{date +"%A, %B %e, %Y"} I currently have src_bash{echo
--n $(sqlite3 $HOME/.emacs.d/org-roam.db "select count(*) from nodes")} nodes
-across src_bash{echo -n $(sqlite3 $HOME/.emacs.d/org-roam.db "select count(*)
-from files")} files in org-roam.
-```
+As of Monday, August 14, 2023
+ I currently have  `14033` nodes across `4358` files in org-roam.
 
 
 ### Contrived example {#contrived-example}
@@ -241,7 +241,7 @@ Since July 5th 2023 I began using `chatpt-shell`[^fn:36] for dall-e and chatgpt.
 
 You can use the shell conversationally with chatgpt or dall-e.
 
-{{< figure src="asking-dall-e-to-make-image-in-dall-e-shell.png" caption="<span class=\"figure-number\">Figure 9: </span>Asking Dall-e to make an image using the interactive dall-e-shell" width="50%" >}}
+{{< figure src="asking-dall-e-to-make-image-in-dall-e-shell.png" caption="<span class=\"figure-number\">Figure 10: </span>Asking Dall-e to make an image using the interactive dall-e-shell" width="50%" >}}
 
 Most often I use babel src blocks but I seem to lose context history with that so I tend to re-feed my entire query. I've used it to help me re-word text, brainstorm creative ideas, and generate shell one-liners, all from the comfort of my Emacs org-mode buffer.
 
@@ -284,9 +284,68 @@ Most often I use babel src blocks but I seem to lose context history with that s
 >
 > This is our Creed. This is the Way.
 
-Looking forward to some package that will support bard or claude 2[^fn:37] but really I am mostly waiting to have easy access to a local LLM that I can train on my `~/org`.. With `llm`[^fn:38] I have access to local llms, but I haven't figured out how I could train on my notes yet.
+Looking forward to some package that will support bard or claude 2[^fn:37] but really I am mostly waiting to have easy access to a local LLM that I can train on my `~/org`. And, as of <span class="timestamp-wrapper"><span class="timestamp">[2023-08-13 Sun] </span></span> I have started to play with Khoj[^fn:38]. It's neat, but terribly slow with the local model.
 
-{{< figure src="ask-local-llm-write-ode-and-dall-e-picture-it.png" caption="<span class=\"figure-number\">Figure 10: </span>Asking a local llm to write an ode to org-mode and dall-e to make a picture of a futuristic robot singing said ode using src blocks." width="50%" >}}
+```org
+** 🤔 *You*: Summarize how I org in 2023.
+   :PROPERTIES:
+   :RECEIVED: [2023-08-13 23:54:33]
+   :END:
+
+*** 🏮 *Khoj*:   Based on the provided text, here is a summary of how you organize your work in 2023:
+   :PROPERTIES:
+   :RECEIVED: [2023-08-14 00:01:41]
+   :END:
+You have been using org-mode for 6 or 7 years now and it has become your "exocortex," "second brain," and "personal knowledge management system." You use various tools and features within org-mode to manage your files, including capturing information through templates, organizing them into different categories, and using tags to label important items.
+You have over 48 million .org files in your main org directory, with the majority of them being "dailies" or time-series files. You also use a combination of capture templates (24 for org-mode, 16 for org-roam-capture-templates, and 68 for org-roam-dailies-capture-templates) to help you quickly capture information and organize it within your system.
+Your goal is to have total recall of all the information in your system, as well as control over your data, improved knowledge and capabilities, and the ability to share with others. You also keep track of high-level statistics for your org files, including the size of each file and the number of lines in the longest file.
+Overall, you have a complex and detailed system for managing your work and personal information using org-mode, which allows you to stay organized, efficient, and productive.^{ [fn:14]}^{ [fn:15]}^{ [fn:16]}
+**** References
+:PROPERTIES:
+:VISIBILITY: folded
+:END:
+[fn:14] ** [[https://cmdln.org/2023/03/25/how-i-org-in-2023/][How I org in 2023 ·]].
+ CREATED: [2023-06-12 Mon 12:01]
+[ME]: In the following I will show you a question and then a text. I want you to answer that question based on the text. Use the text as primary source but also add any external information you think is relevant.
+Here is the question:
+ Summarize this text.
+Here is the text:
+ I’ve been pretty much living in org-mode for 6 or 7 years now1. It’s my
+ exocortex, second brain, and personal knowledge management
+ system. The features and tools I use as well as how I organize my files
+ has changed quite a bit over this period of time and I thought it would
+ be nice give myself (and anyone else who cares) a reference of what it
+ was like in 2023 so here it is.
+ Figure 1: It is the way, at least for me
+ Figure 1: It is the way, at least for me
+ Goal
+ Unrealistically I want total recall, to remember everything in durable
+ plain text. I want to have control of my data. I want to improve my
+ knowledge and capabilities and I want to be able to share with others.
+ High level statistics
+ As of Sunday, June 11, 2023 I have 48M of .org files in ~/org. That’s 4178
+ files, the largest single file is 1.3M and the longest lined file has 21639
+ lines.
+ 4001 of these files are inside org-roam, the majority of them (3028) are
+ “dailies” or time-series files.2
+ I have 24 org-capture-templates, 16 org-roam-capture-templates and 68
+ org-roam-dailies-capture-templates.
+ Capture
+ Capturing
+[fn:15] ** /home/nickanderson/org/roam/cmdln.org/20230317222611-how_i_org_in_2023.org.
+ I've been pretty much living in =org-mode= for 6 or 7 years now[fn:1]. It's my exocortex, second brain, second mind, mind palace, pensive, and personal knowledge management system[fn:2]. The features and tools I use as well as how I organize my files has changed quite a bit over this period of time and I thought it would be nice give myself (and anyone else who cares) a reference of what it was like in 2023 so here it is.
+[[./attachments/how-i-org-in-2023/org-mode-this-is-the-way.jpg]]
+
+[fn:16] ** Expanding on [[id:2f60c4c8-2c4b-488c-b1f0-17f2b4821519][How I org in 2023]].
+
+Adding in notes about [[id:4d53e175-3ec7-4bb5-ae4a-37add1f0aee7][org-transclusion]].
+more adjectives to describe what my org-mode is (second mind, mind palace, pensive
+
+```
+
+With `llm`[^fn:39] I have access to local llms, but I haven't figured out how I could train on my notes yet.
+
+{{< figure src="ask-local-llm-write-ode-and-dall-e-picture-it.png" caption="<span class=\"figure-number\">Figure 11: </span>Asking a local llm to write an ode to org-mode and dall-e to make a picture of a futuristic robot singing said ode using src blocks." width="50%" >}}
 
 
 ### Other things I use, play with or intend to play with {#other-things-i-use-play-with-or-intend-to-play-with}
@@ -450,9 +509,9 @@ zettledeft
 [^fn:8]: `org-rich-yank` pastes the last copied text and automatically surrounds the snippet in blocks, marked with the major mode of where the code came from, and adds a link to the source file after the block. I recommend customizing `org-rich-yank-format-paste` and making the link to the source a comment as described in the README. <https://github.com/unhammer/org-rich-yank>
 [^fn:9]: Org-transclusion lets you insert a copy of text content via a file link or ID link within an Org file. It lets you have the same content present in different buffers at the same time without copy-and-pasting it. Edit the source of the content, and you can refresh the transcluded copies to the up-to-date state. <https://github.com/nobiot/org-transclusion>
 [^fn:10]: I wonder if html would work for a copy source pasting into a google doc as well or better.
-[^fn:11]: I've been told multiple times by colleagues that they search out my meeting notes to help themselves complete periodic reviews. I hate doing periodic reviews, so knowing that my effort helps others in this regard is a strong motivator.
-[^fn:12]: (maybe someone can suggest how that tho step process could be consolidated)
-[^fn:13]: (org-mime-htmlize-subtree in this case) as this is one of the few daily capture templates where I capture each day to a heading in a file for the month (it's easier for people that have access to a git repo containing these files to use for periodic reviews).
+[^fn:11]: (org-mime-htmlize-subtree in this case) as this is one of the few daily capture templates where I capture each day to a heading in a file for the month (it's easier for people that have access to a git repo containing these files to use for periodic reviews).
+[^fn:12]: I've been told multiple times by colleagues that they search out my meeting notes to help themselves complete periodic reviews. I hate doing periodic reviews, so knowing that my effort helps others in this regard is a strong motivator.
+[^fn:13]: (maybe someone can suggest how that tho step process could be consolidated)
 [^fn:14]: There are so many, org-mime is probably my most often used exporter followed by some flavor of Markdown (ox-hugo like this blog post, ox-gfm, ox-slack).
 [^fn:15]: With mu4e I have offline mail reading and search and I run a local Postfix relay giving me offline sending capability.
 [^fn:16]: [YASnippet](https://github.com/joaotavora/yasnippet) is a template system for Emacs. It allows you to type an abbreviation and automatically expand it into function templates. The snippet syntax is inspired from [TextMate'](https://macromates.com/manual/en/snippets)s syntax, you can even import most TextMate templates to YASnippet.
@@ -477,4 +536,5 @@ zettledeft
 [^fn:35]: org-ai is one of the LLM packages that I experimented with for a short time prior to July 2023 <https://github.com/rksm/org-ai>
 [^fn:36]: chatgpt-shell has been my package of choice for interacting with large language models from July 5th 2023 <https://github.com/xenodium/chatgpt-shell>
 [^fn:37]: Claude 2 is yet another large language model. <https://www.anthropic.com/index/claude-2> It beat ChatGPT 4 in some tests as of July 2023. <https://decrypt.co/148147/anthropic-claude-2-ai-chatbot-comparison-openai-chatgpt-google-bard>
-[^fn:38]: `llm` is a CLI utility and Python library for integrating with Large Language Models, including OpenAI, PaLM and even local models on your own machine. <https://llm.datasette.io/en/stable/>
+[^fn:38]: Khoj is a desktop application to search and chat with your notes, documents and images. It is an offline-first, open source AI personal assistant accessible from your Emacs, Obsidian or Web browser. It works with jpeg, markdown, notion org-mode, pdf files and github repositories. <https://khoj.dev/>
+[^fn:39]: `llm` is a CLI utility and Python library for integrating with Large Language Models, including OpenAI, PaLM and even local models on your own machine. <https://llm.datasette.io/en/stable/>
