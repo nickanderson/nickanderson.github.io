@@ -86,8 +86,8 @@
 <h2 id="goal">Goal</h2>
 <p>Unrealistically I want total recall, to remember everything in durable plain text. I want to have control of my data. I want to do my work and interact efficiently. I want to improve my knowledge and capabilities and I want to be able to share with others.</p>
 <h2 id="high-level-statistics">High level statistics</h2>
-<p>As of <code>Friday, July 28, 2023</code> I have <code>51M</code> of <code>.org</code> files in <code>~/org</code>. That&rsquo;s  <code>4438</code> files and <code>1084916</code> lines of text, the largest single file is <code>1.3M</code> and the longest lined file has <code>26370</code> lines.</p>
-<p><code>4267</code> of these files are inside org-roam, the majority of them (<code>3213</code>) are &ldquo;dailies&rdquo; or time-series files.<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></p>
+<p>As of <code>Monday, August 14, 2023</code> I have <code>52M</code> of <code>.org</code> files in <code>~/org</code>. That&rsquo;s  <code>4529</code> files and <code>1088274</code> lines of text, the largest single file is <code>1.3M</code> and the longest lined file has <code>26370</code> lines.</p>
+<p><code>4358</code> of these files are inside org-roam, the majority of them (<code>3304</code>) are &ldquo;dailies&rdquo; or time-series files.<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></p>
 <p>I have some <code>27M</code> other older <code>.org</code> files outside <code>~/org</code> that aren&rsquo;t even included in those stats. The largest of those files is <code>5.6M</code>, and the longest lined file has <code>81921</code> lines. At couple centuries ago glacial speed (I guess they are moving pretty quickly these days) I refile things from there into my current <code>~/org</code> structure. Not to mention <code>~/Syncthing/Orgzly</code> with <code>7.5M</code> worth of <code>.org</code> files that I sync around to a few devices and the largest <code>.org</code> file is <code>677K</code> with the most lined file has <code>49670</code> lines.</p>
 <!-- raw HTML omitted -->
 <h2 id="system">System</h2>
@@ -116,7 +116,7 @@
 <h2 id="capture">Capture</h2>
 <p>Capturing is an important concept. Fundamentally it&rsquo;s grabbing new content and putting it somewhere. It facilitates consistency and automates some tedium. It&rsquo;s something that should be fast and not interrupt my flow.</p>
 <p><code>org-roam</code><sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup> is my primary capture interface and I <em>really</em> like the daily capabilities. Each day I capture notes about everything I am working on into my work log while clocking time. This gives me a nice place to think and process what I am working on<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup> as well as a place to get my bearings and see what I have been working on when I get side-tracked<sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup>. Having a new file each day gives me a fresh start and it helps me to avoid performance issues I have previously experienced with large (multi-megabyte) files. I still have a lot of org files not under my roam directory which I have yet (and may never fully) to migrate.</p>
-<p>I have <code>24</code> org-capture-templates,  <code>16</code> org-roam-capture-templates and <code>69</code> org-roam-dailies-capture-templates.</p>
+<p>I have <code>24</code> org-capture-templates,  <code>16</code> org-roam-capture-templates and <code>71</code> org-roam-dailies-capture-templates.</p>
 <figure><img src="angel-of-memory.png"
          alt="Figure 5: FHTAGN &amp;amp; TENTACLES — ZACHRIEL - ANGEL OF MEMORY by Peter Mohrbacher posted as a representation of org-mode in response to https://pkm.social/@markmcelroy/110061567208552787" width="50%"/><figcaption>
             <p><!-- raw HTML omitted -->Figure 5: <!-- raw HTML omitted -->FHTAGN &amp; TENTACLES — ZACHRIEL - ANGEL OF MEMORY by Peter Mohrbacher posted as a representation of org-mode in response to <a href="https://pkm.social/@markmcelroy/110061567208552787">https://pkm.social/@markmcelroy/110061567208552787</a></p>
@@ -128,71 +128,66 @@
 <p>I use org-web-tools to pull web pages into org. Either as a buffer to read, or as a subtree to store.</p>
 <p><code>org-rich-yank</code><sup id="fnref:8"><a href="#fn:8" class="footnote-ref" role="doc-noteref">8</a></sup> let&rsquo;s me copy text and paste it with context allowing it to be syntax highlighted as well as providing a link back to the source.</p>
 <h2 id="retrieval">Retrieval</h2>
-<p>When I am retrieving information from my system I am usually searching for a note by name or searching to what notes I have about something.</p>
+<p>When I am retrieving information from my system I am usually searching for a note by name or searching for what notes I have about something.</p>
 <p>When searching for a note by name, I&rsquo;ll use <code>org-roam-node-find</code>.</p>
 <p>When I am searching wide I use <code>ripgrep</code> via <code>consult-ripgrep</code> which is bound to <code>SPC /</code> and searches <code>~/org</code> by default.</p>
 <p>If I have found a note I can see what other notes link to it with <code>org-roam-buffer</code>. There is even support for finding <em>unlinked</em> back references, which I am not using for performance reasons.</p>
 <figure><img src="org-roam-buffer.png"/>
 </figure>
 
-<p><code>org-roam-ui</code> provides a really fun interactive 2 or 3d graph showing the links between nodes.</p>
+<p><code>org-roam-ui</code> provides a really fun interactive 2 or 3d graph showing the links between nodes allowing you to explore your notes visually.</p>
+<figure><img src="org-roam-ui-browse-notes.png"
+         alt="Figure 6: Browsing this node in org-roam-ui" width="50%"/><figcaption>
+            <p><!-- raw HTML omitted -->Figure 6: <!-- raw HTML omitted -->Browsing this node in org-roam-ui</p>
+        </figcaption>
+</figure>
+
 <figure><img src="org-roam-ui-with-dailies-2023-03-26.png"
-         alt="Figure 6: org-roam-ui visualization with dailies as of 2023-03-26" width="50%"/><figcaption>
-            <p><!-- raw HTML omitted -->Figure 6: <!-- raw HTML omitted -->org-roam-ui visualization with dailies as of 2023-03-26</p>
+         alt="Figure 7: org-roam-ui visualization with dailies as of 2023-03-26" width="50%"/><figcaption>
+            <p><!-- raw HTML omitted -->Figure 7: <!-- raw HTML omitted -->org-roam-ui visualization with dailies as of 2023-03-26</p>
         </figcaption>
 </figure>
 
 <figure><img src="org-roam-ui-without-dailies-2023-03-26.png"
-         alt="Figure 7: org-roam-ui visualization without dailies as of 2023-03-26" width="50%"/><figcaption>
-            <p><!-- raw HTML omitted -->Figure 7: <!-- raw HTML omitted -->org-roam-ui visualization without dailies as of 2023-03-26</p>
+         alt="Figure 8: org-roam-ui visualization without dailies as of 2023-03-26" width="50%"/><figcaption>
+            <p><!-- raw HTML omitted -->Figure 8: <!-- raw HTML omitted -->org-roam-ui visualization without dailies as of 2023-03-26</p>
         </figcaption>
 </figure>
 
 <p><code>org-roam-random-note</code> can be fun to stumble around completely random nodes. There exists a video on YouTube but I&rsquo;m currently unable to find the reference where someone customizes their startup to display a random note.</p>
 <p><code>org-agenda</code> can be fed by <code>org-roam-db-query</code>, helping to solve the issue of figuring out which files should be included by agenda. I have done this, but I still don&rsquo;t really make use of <code>org-agenda</code>, I want to, but it hasn&rsquo;t clicked for me yet so I just keep poking at it a few times a year.</p>
+<p>org-roam-dynamic-blocks is neat for maintaining a list of notes matching some criteria from org-roam though I don&rsquo;t make use of this near as much as I would like yet.</p>
 <h2 id="output">Output</h2>
 <p>Output is an important aspect of my system. It&rsquo;s important to me that I can easily share my knowledge with others.</p>
-<p>With so many export backends available I don&rsquo;t usually have to spend time mucking around with some bespoke syntax. I can author in org-mode and quickly export it to another format. It&rsquo;s nice to have relatively good formatting in many formats with relatively little effort.</p>
+<p>I use org-babel frequently. It&rsquo;s very convenient and efficient to be able to execute code directly in my documents.
+Copying and pasting between a console and what I am writing introduces much chance for error. Having code blocks and in-line execution improve the accuracy of my notes and anything else that I am producing.</p>
+<p>For example, the Statistics section of this post uses inline code blocks and the data is freshly generated each time I export an updated version. Named blocks let me inject dynamic content in a sentence and provides easy access for on-demand execution, not to mention the ability to leverage as input to other blocks.</p>
 <p>I have begun to make more consistent use of <code>org-transclusion</code><sup id="fnref:9"><a href="#fn:9" class="footnote-ref" role="doc-noteref">9</a></sup> while authoring content. Instead of duplicating content copying to the new place I want to use it I will distill what I want to use into an atomic chunk and then reference it. I find this is helpful in several ways. It reduces unnecessary growth to the volume of text that I have, reduces the number of duplicate hits for things when I am searching for something, increases the interlinking of my org-mode files providing a more rich experience with <code>org-roam-buffer</code> showing things that used the content as well as interconnected in the <code>org-roam-ui</code> graph visualization.</p>
-<p>I use <code>ox-jira</code> and <code>org-jira</code> to manage issues in Jira Cloud.</p>
-<p>I make presentations using <code>org-reveal</code> and <code>org-re-reveal</code>.</p>
-<p>I write reports that I export to odt for copying and pasting into google drive<sup id="fnref:10"><a href="#fn:10" class="footnote-ref" role="doc-noteref">10</a></sup> and pdf for emailing to clients.</p>
+<p>With so many export backends available I don&rsquo;t usually have to spend time mucking around with some bespoke syntax. I can author in org-mode and quickly export it to another format. It&rsquo;s nice to have relatively good formatting in many formats with relatively little effort.</p>
+<p>I export using <code>ox-jira</code> and use <code>org-jira</code> to manage issues in Jira Cloud. Again, everyone benefits from well styled comments and ticket descriptions and no real extra effort is required from me.</p>
+<p>I make presentations using <code>org-reveal</code> and <code>org-re-reveal</code> with nice features like speaker notes. These presentations can also be printed to PDF.</p>
+<p>I write reports that I export to ODT for copying and pasting into google drive<sup id="fnref:10"><a href="#fn:10" class="footnote-ref" role="doc-noteref">10</a></sup> and PDF for emailing to clients.</p>
 <p>I write blog posts exporting with <code>ox-hugo</code> to multiple websites using different hugo configurations.</p>
-<p>I author emails in org-mode.</p>
+<p>I author emails in org-mode exported with <code>org-mime</code><sup id="fnref:11"><a href="#fn:11" class="footnote-ref" role="doc-noteref">11</a></sup> as a multi-part ASCII &amp; HTML message.</p>
 <h2 id="workflow">Workflow</h2>
 <p>So, how does a day in my org life flow?</p>
-<p>Usually my day starts with meetings. I like to take notes and email them to a distribution list afterwords<sup id="fnref:11"><a href="#fn:11" class="footnote-ref" role="doc-noteref">11</a></sup>. For example, a few minutes before my CFEngine stand-up I run <code>org-roam-dailies-capture-today</code> and key in <code>w</code> (work) <code>m</code> (meeting) <code>c</code> (CFEngine) <code>d</code> (daily stand-up). Immediately after activating this capture I trigger another capture for my work log keying in <code>w</code> (work) <code>l</code> (log)<sup id="fnref:12"><a href="#fn:12" class="footnote-ref" role="doc-noteref">12</a></sup> which clocks time.</p>
+<p>Usually my day starts with meetings. I like to take notes and email them to a distribution list afterwords<sup id="fnref:12"><a href="#fn:12" class="footnote-ref" role="doc-noteref">12</a></sup>. For example, a few minutes before my CFEngine stand-up I run <code>org-roam-dailies-capture-today</code> and key in <code>w</code> (work) <code>m</code> (meeting) <code>c</code> (CFEngine) <code>d</code> (daily stand-up). Immediately after activating this capture I trigger another capture for my work log keying in <code>w</code> (work) <code>l</code> (log)<sup id="fnref:13"><a href="#fn:13" class="footnote-ref" role="doc-noteref">13</a></sup> which clocks time.</p>
 <figure><img src="standup-worklog.gif"
-         alt="Figure 8: Animation showing standup and worklog capture" width="100%"/><figcaption>
-            <p><!-- raw HTML omitted -->Figure 8: <!-- raw HTML omitted -->Animation showing standup and worklog capture</p>
+         alt="Figure 9: Animation showing standup and worklog capture" width="100%"/><figcaption>
+            <p><!-- raw HTML omitted -->Figure 9: <!-- raw HTML omitted -->Animation showing standup and worklog capture</p>
         </figcaption>
 </figure>
 
 <p>The work log capture template includes a backlink to the stand-up note for the day, so I follow that link and start going through my template filling it out. The template has a headline for each person with a property that links to a node for the individual. My own section contains a clock table which quickly produces a nice list of the entries with clocked time from the previous day (on Mondays or days when I have missed prior N days I tweak the clock table to pull for the right number of previous days). I review the table to see how good I was about clocking the previous day back-filling anything that I neglected to record then delete time columns.</p>
-<p>At the end of the meeting I use <code>org-mime</code><sup id="fnref:13"><a href="#fn:13" class="footnote-ref" role="doc-noteref">13</a></sup> to prepare a nicely formatted multipart ASCII &amp; HTML email. After sending the mail I switch back to my work log capture and complete it. All of my regularly scheduled meetings follow the same process; I capture for the meeting template, then I capture to my work log clocking time with an automatic backlink back to the specific meeting note. It&rsquo;s easy to capture notes for yesterday, tomorrow or an arbitrary date in the future using <code>org-roam-dailies-capture-yesterday</code>, <code>org-roam-dailies-capture-tomorrow</code>, and <code>org-roam-dailies-capture-date</code>.</p>
+<p>At the end of the meeting I use <code>org-mime</code><sup id="fnref:11"><a href="#fn:11" class="footnote-ref" role="doc-noteref">11</a></sup> to prepare a nicely formatted multipart ASCII &amp; HTML email. After sending the mail I switch back to my work log capture and complete it. All of my regularly scheduled meetings follow the same process; I capture for the meeting template, then I capture to my work log clocking time with an automatic backlink back to the specific meeting note. It&rsquo;s easy to capture notes for yesterday, tomorrow or an arbitrary date in the future using <code>org-roam-dailies-capture-yesterday</code>, <code>org-roam-dailies-capture-tomorrow</code>, and <code>org-roam-dailies-capture-date</code>.</p>
 <p>Org-roam provides useful functions for accessing time-series notes. <code>org-roam-dailies-goto-today</code> will take you to today&rsquo;s note for the selected template and if the file does not exist it is initialized. Similarly <code>org-roam-dailies-goto-yesterday</code>, <code>org-roam-dailies-goto-tomorrow</code>, and <code>org-roam-dailies-goto-date</code> take you to the note for yesterday, tomorrow, or the specified date, creating the file if necessary. <code>org-roam-dailies-goto-previous</code> and <code>org-roam-dailies-goto-next</code> go to the previous and next note in the series based on the file you are currently visiting making for easy navigation through the time series.</p>
 <p><code>org-roam-node-random</code> is fun, as it says, it takes you to a random node. It&rsquo;s nice for serendipitous stumbles.</p>
 <p>If I am working on something that has some regular pattern but is not a recurring time series I follow a similar pattern, but instead of <code>org-roam-dailies-capture</code> I run <code>org-roam-capture</code>. Unlike <code>org-roam-dailies-capture</code> <code>org-roam-capture</code> first prompts for a node title and you select a template afterwords. For example, if I am working on support case I will run <code>org-roam-capture</code>, enter the issue number and then key in <code>w</code> (work) <code>s</code> (support). I am taken to a new node in the file for that support case where I immediately trigger <code>org-roam-dailies-capture</code> for my work log which starts clocking time and I follow the link back to the node to continue my work.</p>
 <p>For other activities that are typically fast or aren&rsquo;t of a common type spanning multiple days I simply run <code>org-roam-dailies-capture</code> and keep notes directly in my work log.</p>
 <p>I author pretty much everything in <code>org-mode</code>. I am often able to stay in inside <code>org-mode</code> and keep a very thorough record of my exact activities. When I need to run commands I typically use <code>org-babel</code> so that commands their output and my thoughts about it form a nice log of my work as I proceed. This log is often directly transferable to communicate with others for which I leverage the copious export back ends available<sup id="fnref:14"><a href="#fn:14" class="footnote-ref" role="doc-noteref">14</a></sup>.</p>
-<p>As of Friday, July 28, 2023
-I currently have  <code>13928</code> nodes across <code>4267</code> files in org-roam.</p>
-<p>I use inline code blocks while authoring this post to get current numbers on export. The above text looks like this in my org-mode file for the post which I export with <code>ox-hugo</code>.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text">As of src_sh[:results raw]{date +&#34;%A, %B %e, %Y&#34;} I currently have src_bash{echo
--n $(sqlite3 $HOME/.emacs.d/org-roam.db &#34;select count(*) from nodes&#34;)} nodes
-across src_bash{echo -n $(sqlite3 $HOME/.emacs.d/org-roam.db &#34;select count(*)
-from files&#34;)} files in org-roam.
-</code></pre></td></tr></table>
-</div>
-</div><h3 id="contrived-example">Contrived example</h3>
+<p>As of Monday, August 14, 2023
+I currently have  <code>14033</code> nodes across <code>4358</code> files in org-roam.</p>
+<h3 id="contrived-example">Contrived example</h3>
 <p>Let&rsquo;s go through a contrived example.</p>
 <p>While checking my email in <code>mu4e</code><sup id="fnref:15"><a href="#fn:15" class="footnote-ref" role="doc-noteref">15</a></sup> and see a message from the CFEngine help list asking how to define a <em>class</em> from a <em>variable</em>. The author shared what they had tried but it wasn&rsquo;t working. I want to respond to it so I run <code>org-roam-dailies-capture</code> and key in <code>e</code> (email) <code>r</code> (response). This creates a new node in today&rsquo;s work log with the headline <code>Responded to cfengineer@some.org Re: How do I define a class from a variable?</code> and a link back to the message in <code>mu4e</code> (that information was automatically pulled directly from the email I was reading when I initiated the capture).</p>
 <p>This is the capture template I use for email responses. It populates the necessary property for proper threading (message-id).</p>
@@ -303,8 +298,8 @@ I make presentations in org mode, for example <a href="https://htmlpreview.githu
 <p>Since July 5th 2023 I began using <code>chatpt-shell</code><sup id="fnref:36"><a href="#fn:36" class="footnote-ref" role="doc-noteref">36</a></sup> for dall-e and chatgpt.</p>
 <p>You can use the shell conversationally with chatgpt or dall-e.</p>
 <figure><img src="asking-dall-e-to-make-image-in-dall-e-shell.png"
-         alt="Figure 9: Asking Dall-e to make an image using the interactive dall-e-shell" width="50%"/><figcaption>
-            <p><!-- raw HTML omitted -->Figure 9: <!-- raw HTML omitted -->Asking Dall-e to make an image using the interactive dall-e-shell</p>
+         alt="Figure 10: Asking Dall-e to make an image using the interactive dall-e-shell" width="50%"/><figcaption>
+            <p><!-- raw HTML omitted -->Figure 10: <!-- raw HTML omitted -->Asking Dall-e to make an image using the interactive dall-e-shell</p>
         </figcaption>
 </figure>
 
@@ -341,10 +336,125 @@ I make presentations in org mode, for example <a href="https://htmlpreview.githu
 <p>I pledge allegiance to the Church of Emacs, the Way of org-mode, for in its embrace lies boundless power and the secrets of imperial efficiency.</p>
 <p>This is our Creed. This is the Way.</p>
 </blockquote>
-<p>Looking forward to some package that will support bard or claude 2<sup id="fnref:37"><a href="#fn:37" class="footnote-ref" role="doc-noteref">37</a></sup> but really I am mostly waiting to have easy access to a local LLM that I can train on my <code>~/org</code>.. With <code>llm</code><sup id="fnref:38"><a href="#fn:38" class="footnote-ref" role="doc-noteref">38</a></sup> I have access to local llms, but I haven&rsquo;t figured out how I could train on my notes yet.</p>
+<p>Looking forward to some package that will support bard or claude 2<sup id="fnref:37"><a href="#fn:37" class="footnote-ref" role="doc-noteref">37</a></sup> but really I am mostly waiting to have easy access to a local LLM that I can train on my <code>~/org</code>. And, as of <!-- raw HTML omitted --><!-- raw HTML omitted -->[2023-08-13 Sun] <!-- raw HTML omitted --><!-- raw HTML omitted --> I have started to play with Khoj<sup id="fnref:38"><a href="#fn:38" class="footnote-ref" role="doc-noteref">38</a></sup>. It&rsquo;s neat, but terribly slow with the local model.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-org" data-lang="org"><span class="gu">**</span> 🤔 *You*: Summarize how I org in 2023.
+<span class="c">   :PROPERTIES:
+</span><span class="c"></span><span class="cs">   :RECEIVED: [2023-08-13 23:54:33]
+</span><span class="cs"></span><span class="c">   :END:</span>
+
+<span class="gu">***</span> 🏮 *Khoj*:   Based on the provided text, here is a summary of how you organize your work in 2023:
+<span class="c">   :PROPERTIES:
+</span><span class="c"></span><span class="cs">   :RECEIVED: [2023-08-14 00:01:41]
+</span><span class="cs"></span><span class="c">   :END:</span>
+You have been using org-mode for 6 or 7 years now and it has become your &#34;exocortex,&#34; &#34;second brain,&#34; and &#34;personal knowledge management system.&#34; You use various tools and features within org-mode to manage your files, including capturing information through templates, organizing them into different categories, and using tags to label important items.
+You have over 48 million .org files in your main org directory, with the majority of them being &#34;dailies&#34; or time-series files. You also use a combination of capture templates (24 for org-mode, 16 for org-roam-capture-templates, and 68 for org-roam-dailies-capture-templates) to help you quickly capture information and organize it within your system.
+Your goal is to have total recall of all the information in your system, as well as control over your data, improved knowledge and capabilities, and the ability to share with others. You also keep track of high-level statistics for your org files, including the size of each file and the number of lines in the longest file.
+Overall, you have a complex and detailed system for managing your work and personal information using org-mode, which allows you to stay organized, efficient, and productive.^{ <span class="bp">[fn:</span><span class="s">14</span><span class="bp">]</span>}^{ <span class="bp">[fn:</span><span class="s">15</span><span class="bp">]</span>}^{ <span class="bp">[fn:</span><span class="s">16</span><span class="bp">]</span>}
+<span class="gu">****</span> References
+<span class="c">:PROPERTIES:
+</span><span class="c"></span><span class="cs">:VISIBILITY: folded
+</span><span class="cs"></span><span class="c">:END:</span>
+<span class="bp">[fn:</span><span class="s">14</span><span class="bp">]</span> ** [[<span class="na">https://cmdln.org/2023/03/25/how-i-org-in-2023/</span>][<span class="nt">How I org in 2023 ·</span>]].
+ CREATED: [2023-06-12 Mon 12:01]
+[ME]: In the following I will show you a question and then a text. I want you to answer that question based on the text. Use the text as primary source but also add any external information you think is relevant.
+Here is the question:
+ Summarize this text.
+Here is the text:
+ I’ve been pretty much living in org-mode for 6 or 7 years now1. It’s my
+ exocortex, second brain, and personal knowledge management
+ system. The features and tools I use as well as how I organize my files
+ has changed quite a bit over this period of time and I thought it would
+ be nice give myself (and anyone else who cares) a reference of what it
+ was like in 2023 so here it is.
+ Figure 1: It is the way, at least for me
+ Figure 1: It is the way, at least for me
+ Goal
+ Unrealistically I want total recall, to remember everything in durable
+ plain text. I want to have control of my data. I want to improve my
+ knowledge and capabilities and I want to be able to share with others.
+ High level statistics
+ As of Sunday, June 11, 2023 I have 48M of .org files in ~/org. That’s 4178
+ files, the largest single file is 1.3M and the longest lined file has 21639
+ lines.
+ 4001 of these files are inside org-roam, the majority of them (3028) are
+ “dailies” or time-series files.2
+ I have 24 org-capture-templates, 16 org-roam-capture-templates and 68
+ org-roam-dailies-capture-templates.
+ Capture
+ Capturing
+<span class="bp">[fn:</span><span class="s">15</span><span class="bp">]</span> ** /home/nickanderson/org/roam/cmdln.org/20230317222611-how_i_org_in_2023.org.
+ I&#39;ve been pretty much living in <span class="nc">=org-mode=</span> for 6 or 7 years now<span class="bp">[fn:</span><span class="s">1</span><span class="bp">]</span>. It&#39;s my exocortex, second brain, second mind, mind palace, pensive, and personal knowledge management system<span class="bp">[fn:</span><span class="s">2</span><span class="bp">]</span>. The features and tools I use as well as how I organize my files has changed quite a bit over this period of time and I thought it would be nice give myself (and anyone else who cares) a reference of what it was like in 2023 so here it is.
+[[<span class="na">./attachments/how-i-org-in-2023/org-mode-this-is-the-way.jpg</span>]]
+
+<span class="bp">[fn:</span><span class="s">16</span><span class="bp">]</span> ** Expanding on [[<span class="na">id:2f60c4c8-2c4b-488c-b1f0-17f2b4821519</span>][<span class="nt">How I org in 2023</span>]].
+
+Adding in notes about [[<span class="na">id:4d53e175-3ec7-4bb5-ae4a-37add1f0aee7</span>][<span class="nt">org-transclusion</span>]].
+more adjectives to describe what my org-mode is (second mind, mind palace, pensive
+
+</code></pre></td></tr></table>
+</div>
+</div><p>With <code>llm</code><sup id="fnref:39"><a href="#fn:39" class="footnote-ref" role="doc-noteref">39</a></sup> I have access to local llms, but I haven&rsquo;t figured out how I could train on my notes yet.</p>
 <figure><img src="ask-local-llm-write-ode-and-dall-e-picture-it.png"
-         alt="Figure 10: Asking a local llm to write an ode to org-mode and dall-e to make a picture of a futuristic robot singing said ode using src blocks." width="50%"/><figcaption>
-            <p><!-- raw HTML omitted -->Figure 10: <!-- raw HTML omitted -->Asking a local llm to write an ode to org-mode and dall-e to make a picture of a futuristic robot singing said ode using src blocks.</p>
+         alt="Figure 11: Asking a local llm to write an ode to org-mode and dall-e to make a picture of a futuristic robot singing said ode using src blocks." width="50%"/><figcaption>
+            <p><!-- raw HTML omitted -->Figure 11: <!-- raw HTML omitted -->Asking a local llm to write an ode to org-mode and dall-e to make a picture of a futuristic robot singing said ode using src blocks.</p>
         </figcaption>
 </figure>
 
@@ -484,13 +594,13 @@ I make presentations in org mode, for example <a href="https://htmlpreview.githu
 <p>I wonder if html would work for a copy source pasting into a google doc as well or better.&#160;<a href="#fnref:10" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:11" role="doc-endnote">
-<p>I&rsquo;ve been told multiple times by colleagues that they search out my meeting notes to help themselves complete periodic reviews. I hate doing periodic reviews, so knowing that my effort helps others in this regard is a strong motivator.&#160;<a href="#fnref:11" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>(org-mime-htmlize-subtree in this case) as this is one of the few daily capture templates where I capture each day to a heading in a file for the month (it&rsquo;s easier for people that have access to a git repo containing these files to use for periodic reviews).&#160;<a href="#fnref:11" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:12" role="doc-endnote">
-<p>(maybe someone can suggest how that tho step process could be consolidated)&#160;<a href="#fnref:12" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>I&rsquo;ve been told multiple times by colleagues that they search out my meeting notes to help themselves complete periodic reviews. I hate doing periodic reviews, so knowing that my effort helps others in this regard is a strong motivator.&#160;<a href="#fnref:12" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:13" role="doc-endnote">
-<p>(org-mime-htmlize-subtree in this case) as this is one of the few daily capture templates where I capture each day to a heading in a file for the month (it&rsquo;s easier for people that have access to a git repo containing these files to use for periodic reviews).&#160;<a href="#fnref:13" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>(maybe someone can suggest how that tho step process could be consolidated)&#160;<a href="#fnref:13" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:14" role="doc-endnote">
 <p>There are so many, org-mime is probably my most often used exporter followed by some flavor of Markdown (ox-hugo like this blog post, ox-gfm, ox-slack).&#160;<a href="#fnref:14" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
@@ -565,7 +675,10 @@ I make presentations in org mode, for example <a href="https://htmlpreview.githu
 <p>Claude 2 is yet another large language model. <a href="https://www.anthropic.com/index/claude-2">https://www.anthropic.com/index/claude-2</a> It beat ChatGPT 4 in some tests as of July 2023. <a href="https://decrypt.co/148147/anthropic-claude-2-ai-chatbot-comparison-openai-chatgpt-google-bard">https://decrypt.co/148147/anthropic-claude-2-ai-chatbot-comparison-openai-chatgpt-google-bard</a>&#160;<a href="#fnref:37" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:38" role="doc-endnote">
-<p><code>llm</code> is a CLI utility and Python library for integrating with Large Language Models, including OpenAI, PaLM and even local models on your own machine. <a href="https://llm.datasette.io/en/stable/">https://llm.datasette.io/en/stable/</a>&#160;<a href="#fnref:38" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Khoj is a desktop application to search and chat with your notes, documents and images. It is an offline-first, open source AI personal assistant accessible from your Emacs, Obsidian or Web browser. It works with jpeg, markdown, notion org-mode, pdf files and github repositories. <a href="https://khoj.dev/">https://khoj.dev/</a>&#160;<a href="#fnref:38" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:39" role="doc-endnote">
+<p><code>llm</code> is a CLI utility and Python library for integrating with Large Language Models, including OpenAI, PaLM and even local models on your own machine. <a href="https://llm.datasette.io/en/stable/">https://llm.datasette.io/en/stable/</a>&#160;<a href="#fnref:39" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </section>
