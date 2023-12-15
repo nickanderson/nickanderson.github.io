@@ -18,11 +18,11 @@ Unrealistically I want total recall, to remember everything in durable plain tex
 
 ## High level statistics {#high-level-statistics}
 
-As of `Monday, August 14, 2023` I have `52M` of `.org` files in `~/org`. That's  `4529` files and `1088274` lines of text, the largest single file is `1.3M` and the longest lined file has `26370` lines.
+As of `Friday, December 15, 2023` I had `56M` of `.org` files in `~/org`. That's  `4889` files and `1186734` lines of text, the largest single file was `1.3M` and the longest lined file was `26370` lines.
 
-`4358` of these files are inside org-roam, the majority of them (`3304`) are "dailies" or time-series files.[^fn:3]
+`4716` of these files were inside org-roam, the majority of them (`3558`) were "dailies" or time-series files.[^fn:3]
 
-I have some `27M` other older `.org` files outside `~/org` that aren't even included in those stats. The largest of those files is `5.6M`, and the longest lined file has `81921` lines. At couple centuries ago glacial speed (I guess they are moving pretty quickly these days) I refile things from there into my current `~/org` structure. Not to mention `~/Syncthing/Orgzly` with `7.5M` worth of `.org` files that I sync around to a few devices and the largest `.org` file is `677K` with the most lined file has `49670` lines.
+I had some `27M` other older `.org` files outside `~/org` that aren't even included in those stats. The largest of those files  was `5.6M`, and the longest lined file had `81921` lines. At couple centuries ago glacial speed (I guess they are moving pretty quickly these days) I refiled things from there into `~/org`. Not to mention `~/Syncthing/Orgzly` with `7.9M` worth of `.org` files that I synced around to a few devices and the largest `.org` file was `677K` with the most lined file having `49670` lines.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/8A52ZXPhJFk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
@@ -48,18 +48,18 @@ I started tracking much of my various collections of piles in version control an
 
 Capturing is an important concept. Fundamentally it's grabbing new content and putting it somewhere. It facilitates consistency and automates some tedium. It's something that should be fast and not interrupt my flow.
 
-`org-roam`[^fn:4] is my primary capture interface and I _really_ like the daily capabilities. Each day I capture notes about everything I am working on into my work log while clocking time. This gives me a nice place to think and process what I am working on[^fn:5] as well as a place to get my bearings and see what I have been working on when I get side-tracked[^fn:6]. Having a new file each day gives me a fresh start and it helps me to avoid performance issues I have previously experienced with large (multi-megabyte) files. I still have a lot of org files not under my roam directory which I have yet (and may never fully) to migrate.
+`org-roam`[^fn:4] is my primary capture interface and I _really_ like the daily capabilities. Each day I capture notes about everything I am working on into my work log while clocking time. This gives me a nice place to think and process what I am working on[^fn:5] as well as a place to get my bearings and see what I had been working on when I got side-tracked[^fn:6]. Having a new file each day gave me a fresh start and it helped me to avoid performance issues I had previously experienced with large (multi-megabyte) files. I still had a lot of org files not under my roam directory which I had yet to (and may never fully) migrate.
 
-I have `24` org-capture-templates,  `16` org-roam-capture-templates and `71` org-roam-dailies-capture-templates.
+I had `24` org-capture-templates,  `16` org-roam-capture-templates and `75` org-roam-dailies-capture-templates.
 
 {{< figure src="angel-of-memory.png" caption="<span class=\"figure-number\">Figure 5: </span>FHTAGN &amp; TENTACLES — ZACHRIEL - ANGEL OF MEMORY by Peter Mohrbacher posted as a representation of org-mode in response to <https://pkm.social/@markmcelroy/110061567208552787>" width="50%" >}}
 
-Beyond my time-series notes I have other collections of related notes in sub directories. For example, I have many notes about CFEngine (the best configuration management tool)[^fn:7]. I keep my CFEngine related notes in `~/org/roam/CFEngine` with sub directories for different things ( blogs, examples, index.org, northern.tech-customers, notes, opportunities,
+Beyond my time-series notes I had other collections of related notes in sub directories. For example, I had many notes about CFEngine (the best configuration management tool)[^fn:7]. I kept my CFEngine related notes in `~/org/roam/CFEngine` with sub directories for different things ( blogs, examples, index.org, northern.tech-customers, notes, opportunities,
 ).
 
-I use org-web-tools to pull web pages into org. Either as a buffer to read, or as a subtree to store.
+I used `org-web-tools` to pull web pages into org. Either as a buffer to read, or as a subtree to store.
 
-`org-rich-yank`[^fn:8] let's me copy text and paste it with context allowing it to be syntax highlighted as well as providing a link back to the source.
+`org-rich-yank`[^fn:8] let me copy text and paste it with context allowing it to be syntax highlighted as well as providing a link back to the source.
 
 
 ## Retrieval {#retrieval}
@@ -112,6 +112,8 @@ I write blog posts exporting with `ox-hugo` to multiple websites using different
 
 I author emails in org-mode exported with `org-mime`[^fn:11] as a multi-part ASCII &amp; HTML message.
 
+`abbrev-mode` is amazing at auto correcting my most common typos. `writegood-mode` and `olivette` are both nice for writing.
+
 
 ## Workflow {#workflow}
 
@@ -135,8 +137,8 @@ For other activities that are typically fast or aren't of a common type spanning
 
 I author pretty much everything in `org-mode`. I am often able to stay in inside `org-mode` and keep a very thorough record of my exact activities. When I need to run commands I typically use `org-babel` so that commands their output and my thoughts about it form a nice log of my work as I proceed. This log is often directly transferable to communicate with others for which I leverage the copious export back ends available[^fn:14].
 
-As of Monday, August 14, 2023
- I currently have  `14033` nodes across `4358` files in org-roam.
+As of Friday, December 15, 2023
+ I currently have  `15189` nodes across `4716` files in org-roam.
 
 
 ### Contrived example {#contrived-example}
@@ -235,9 +237,17 @@ Orgro
 
 ### LLMs {#llms}
 
-I used `org-ai`[^fn:35] for a bit but it required emacs 28.2 which I don't run regularly and additionally the way it used blocks felt a bit un-natural.
+2023 was a banner year for generative AI and like many others I dabbled to see how my workflow could benefit from the use of large language models. While OpenAI was all the rage, I was mostly interested in local LLMs.
 
-Since July 5th 2023 I began using `chatpt-shell`[^fn:36] for dall-e and chatgpt.
+
+#### org-ai {#org-ai}
+
+In June I started to use `org-ai`[^fn:35] for a bit but it required emacs 28.2 which I don't run regularly and additionally the way it used blocks felt a bit un-natural.
+
+
+#### chatgpt-shell {#chatgpt-shell}
+
+In July 5th 2023 I began using `chatpt-shell`[^fn:36] for dall-e and chatgpt. But given my aversion to using hosted services I didn't use it often.
 
 You can use the shell conversationally with chatgpt or dall-e.
 
@@ -252,39 +262,54 @@ Most often I use babel src blocks but I seem to lose context history with that s
 #+end_src
 ```
 
-> This is the Way of the Church of Emacs, sworn to the reverence of org-mode.
->
-> I am a devout disciple, bound to the path of sublime productivity, guided by the spirit of the Mandalorian.
->
-> In the sacred realm of Emacs, I embrace the true Force, with org-mode as my ally and ally of my thoughts.
->
-> I reclaim the scattered chaos and forge a majestic union between my mind and the machine, as the Mandalorian molds armor from Beskar.
->
-> With fervent keystrokes, I document my purpose, my tasks, and my dreams, for org-mode is my sacred codex, unyielding in its power.
->
-> I wield the formidable swords of agenda and timeline, slicing through the veils of confusion, illuminating the path towards mastery.
->
-> My inbox is an abyss, but I, the chosen one, embrace it fearlessly. I tame it with Org Capture, capturing ideas like a bounty hunter snatches fugitives.
->
-> My rituals are sacred: I nest headings, cultivate hierarchies, and summon clarity amidst the chaos. I create tables, agendas, and outlines, as the Mandalorian carefully constructs his battlesuit.
->
-> I heed the whispers of tags and properties, for they are the sigils that unlock the arcane powers of organization and navigation within my realm.
->
-> In the Church of Emacs, I am conscious of the present, for the Clock ticks onwards, tracking the flow of time, ensuring that I honor its value.
->
-> I traverse the vast landscapes of my org-files, maneuvering swiftly between them, indexing my solemn pursuits, as the Mandalorian voyages across galaxies.
->
-> Not bound by mere text, the Church of Emacs embraces diversity; I integrate spreadsheets, embed images, and attach files, uniting all knowledge beneath org-mode's banner.
->
-> Though others may falter amidst the allure of flashy tools, I, like the Mandalorian, hold steadfast loyalty to simplicity, cherishing org-mode's humility.
->
-> My brethren, fellow pilgrims of pure productivity, unite with me. Together, we cultivate the principles of steadfastness, focus, and intelligent automation.
->
-> I pledge allegiance to the Church of Emacs, the Way of org-mode, for in its embrace lies boundless power and the secrets of imperial efficiency.
->
-> This is our Creed. This is the Way.
+```text
+This is the Way of the Church of Emacs, sworn to the reverence of org-mode.
 
-Looking forward to some package that will support bard or claude 2[^fn:37] but really I am mostly waiting to have easy access to a local LLM that I can train on my `~/org`. And, as of <span class="timestamp-wrapper"><span class="timestamp">[2023-08-13 Sun] </span></span> I have started to play with Khoj[^fn:38]. It's neat, but terribly slow with the local model.
+I am a devout disciple, bound to the path of sublime productivity, guided by the spirit of the Mandalorian.
+
+In the sacred realm of Emacs, I embrace the true Force, with org-mode as my ally and ally of my thoughts.
+
+I reclaim the scattered chaos and forge a majestic union between my mind and the machine, as the Mandalorian molds armor from Beskar.
+
+With fervent keystrokes, I document my purpose, my tasks, and my dreams, for org-mode is my sacred codex, unyielding in its power.
+
+I wield the formidable swords of agenda and timeline, slicing through the veils of confusion, illuminating the path towards mastery.
+
+My inbox is an abyss, but I, the chosen one, embrace it fearlessly. I tame it with Org Capture, capturing ideas like a bounty hunter snatches fugitives.
+
+My rituals are sacred: I nest headings, cultivate hierarchies, and summon clarity amidst the chaos. I create tables, agendas, and outlines, as the Mandalorian carefully constructs his battlesuit.
+
+I heed the whispers of tags and properties, for they are the sigils that unlock the arcane powers of organization and navigation within my realm.
+
+In the Church of Emacs, I am conscious of the present, for the Clock ticks onwards, tracking the flow of time, ensuring that I honor its value.
+
+I traverse the vast landscapes of my org-files, maneuvering swiftly between them, indexing my solemn pursuits, as the Mandalorian voyages across galaxies.
+
+Not bound by mere text, the Church of Emacs embraces diversity; I integrate spreadsheets, embed images, and attach files, uniting all knowledge beneath org-mode's banner.
+
+Though others may falter amidst the allure of flashy tools, I, like the Mandalorian, hold steadfast loyalty to simplicity, cherishing org-mode's humility.
+
+My brethren, fellow pilgrims of pure productivity, unite with me. Together, we cultivate the principles of steadfastness, focus, and intelligent automation.
+
+I pledge allegiance to the Church of Emacs, the Way of org-mode, for in its embrace lies boundless power and the secrets of imperial efficiency.
+
+This is our Creed. This is the Way.
+
+```
+
+Looking forward to some package that will support bard or claude 2[^fn:37] but really I am mostly waiting to have easy access to a local LLM that I can train on my `~/org`.
+
+
+#### llm {#llm}
+
+With `llm`[^fn:38] I have access to local llms, but I haven't figured out how I could train on my notes yet.
+
+{{< figure src="ask-local-llm-write-ode-and-dall-e-picture-it.png" caption="<span class=\"figure-number\">Figure 11: </span>Asking a local llm to write an ode to org-mode and dall-e to make a picture of a futuristic robot singing said ode using src blocks." width="50%" >}}
+
+
+#### Khoj {#khoj}
+
+By August 13th I had started to play with Khoj[^fn:39]. It's neat, but was terribly slow with the local model. By October 17th Khoj had added support for GPU offload and the speed of the local LLM responses improved greatly. Around this time the developers got quite busy with larger re-architectures and running Khoj locally was not working well and sadly my use decreased. It's really nice that the developers actually use org-mode themselves and there is support from within Emacs.
 
 ```org
 ** 🤔 *You*: Summarize how I org in 2023.
@@ -343,9 +368,25 @@ more adjectives to describe what my org-mode is (second mind, mind palace, pensi
 
 ```
 
-With `llm`[^fn:39] I have access to local llms, but I haven't figured out how I could train on my notes yet.
+Looking forward to 2024 where I hope to see the self hosting and general usability improve.
 
-{{< figure src="ask-local-llm-write-ode-and-dall-e-picture-it.png" caption="<span class=\"figure-number\">Figure 11: </span>Asking a local llm to write an ode to org-mode and dall-e to make a picture of a futuristic robot singing said ode using src blocks." width="50%" >}}
+Specifically I hope to see:
+
+-   Improvements to the Emacs client so that it does not block Emacs waiting on llm inference (search has been lightning fast).
+-   Easy self hosting out of the box with GPU offload support.
+-   Improved RAG, leveraging my notes is amazing, but my notes mish-mash of structuring don't seem to work well.
+-   Easier swapping of local models. Maybe even via Ollma
+
+
+#### gptel {#gptel}
+
+By the end of October I started using `gptel`&nbsp;[^fn:40]. Initially I used it with GPT4All Desktop but quickly found ollma which made it very easy to try different models as well as running queries from the CLI. gptel has such a light weight interface, it became my primary llm interface. Wherever I am, I can easily select some text and ship it off to the llm of my choice with a prompt.
+
+It would be really neat if support for Khoj was added so that I could easily ask questions about my notes. `gptel` doesn't block waiting for LLMs to respond like the Khoj package did.
+
+The author is quite responsive, great package, 10/10 recommend.
+
+<https://github.com/karthink/gptel>
 
 
 ### Other things I use, play with or intend to play with {#other-things-i-use-play-with-or-intend-to-play-with}
@@ -454,9 +495,6 @@ camcorder.el
 org-msg
 : Use org-mode for authoring email. Seems to be centered around mail client use vs org-mime which seems more around emailing from org-mode. <https://github.com/jeremy-compostella/org-msg>
 
-gptel
-: One of the many ai related things I want to look into some day. <https://github.com/karthink/gptel>
-
 gptai
 : One of the many ai related things I want to look into some day. <https://github.com/antonhibl/gptai>
 
@@ -499,6 +537,17 @@ zk
 zettledeft
 : Extends Deft into a basic zettelkasten. As of 2023 the author has ceased maintenance and is moving to denote. <https://github.com/localauthor/zk>
 
+
+## Look and Feel {#look-and-feel}
+
+Typically I am a function over form kind of person, but I do use a few thing that improve the look of my Emacs for `org-mode`.
+
+I think `org-modern` makes things look a bit nicer. With `org-modern` and `org-indent` enabled the fringe around src blocks is disabled. I used `org-modern-indent` to fix that up.
+
+{{< figure src="org-modern-without-org-modern-indent.png" caption="<span class=\"figure-number\">Figure 12: </span>org-modern without org-modern-indent" width="100%" >}}
+
+{{< figure src="org-modern-with-org-modern-indent.png" caption="<span class=\"figure-number\">Figure 13: </span>org-modern with org-modern-indent" width="100%" >}}
+
 [^fn:1]: Checkout the post reflecting on my history with org-mode in 2023. <https://cmdln.org/2023/03/13/reflecting-on-my-history-with-org-mode-in-2023/>
 [^fn:2]: It's so many things for me as you will hopefully understand if you read through this whole thing.
 [^fn:3]: My personal journal, daily work logs, and recurring meetings.
@@ -506,7 +555,7 @@ zettledeft
 [^fn:5]: Maggie Appleton has a nice post about [Daily notes as a frictionless default input for personal knowledge management systems](https://maggieappleton.com/daily-notes).
 [^fn:6]: ADHD is a real thing. I am also not perfect in remembering to capture each thing but I don't need to be perfect to be effective.
 [^fn:7]: If you like org-mode, you might also like CFEngine. It really is a knowledge management tool for infrastructure and it's very flexible and open ended much like the numerous ways of using org-mode, there are many different ways of using CFEngine. It's a tool that has few prescriptions.
-[^fn:8]: `org-rich-yank` pastes the last copied text and automatically surrounds the snippet in blocks, marked with the major mode of where the code came from, and adds a link to the source file after the block. I recommend customizing `org-rich-yank-format-paste` and making the link to the source a comment as described in the README. <https://github.com/unhammer/org-rich-yank>
+[^fn:8]: `org-rich-yank` doesn't get enough publicity, I used it many times a day. It pastes the last copied text and automatically surrounds the snippet in blocks, marked with the major mode of where the code came from, and adds a link to the source file after the block. I recommend customizing `org-rich-yank-format-paste` and making the link to the source a comment as described in the README. <https://github.com/unhammer/org-rich-yank>
 [^fn:9]: Org-transclusion lets you insert a copy of text content via a file link or ID link within an Org file. It lets you have the same content present in different buffers at the same time without copy-and-pasting it. Edit the source of the content, and you can refresh the transcluded copies to the up-to-date state. <https://github.com/nobiot/org-transclusion>
 [^fn:10]: I wonder if html would work for a copy source pasting into a google doc as well or better.
 [^fn:11]: (org-mime-htmlize-subtree in this case) as this is one of the few daily capture templates where I capture each day to a heading in a file for the month (it's easier for people that have access to a git repo containing these files to use for periodic reviews).
@@ -536,5 +585,6 @@ zettledeft
 [^fn:35]: org-ai is one of the LLM packages that I experimented with for a short time prior to July 2023 <https://github.com/rksm/org-ai>
 [^fn:36]: chatgpt-shell has been my package of choice for interacting with large language models from July 5th 2023 <https://github.com/xenodium/chatgpt-shell>
 [^fn:37]: Claude 2 is yet another large language model. <https://www.anthropic.com/index/claude-2> It beat ChatGPT 4 in some tests as of July 2023. <https://decrypt.co/148147/anthropic-claude-2-ai-chatbot-comparison-openai-chatgpt-google-bard>
-[^fn:38]: Khoj is a desktop application to search and chat with your notes, documents and images. It is an offline-first, open source AI personal assistant accessible from your Emacs, Obsidian or Web browser. It works with jpeg, markdown, notion org-mode, pdf files and github repositories. <https://khoj.dev/>
-[^fn:39]: `llm` is a CLI utility and Python library for integrating with Large Language Models, including OpenAI, PaLM and even local models on your own machine. <https://llm.datasette.io/en/stable/>
+[^fn:38]: `llm` is a CLI utility and Python library for integrating with Large Language Models, including OpenAI, PaLM and even local models on your own machine. <https://llm.datasette.io/en/stable/>
+[^fn:39]: Khoj is a desktop application to search and chat with your notes, documents and images. It is an offline-first, open source AI personal assistant accessible from your Emacs, Obsidian or Web browser. It works with jpeg, markdown, notion org-mode, pdf files and github repositories. <https://khoj.dev/>
+[^fn:40]: `gptel` :: A light llm client. Provides an unobtrusive way to send text to various LLMs from anywhere in Emacs. <https://github.com/karthink/gptel>
