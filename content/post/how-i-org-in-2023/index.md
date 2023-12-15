@@ -18,11 +18,11 @@ Unrealistically I want total recall, to remember everything in durable plain tex
 
 ## High level statistics {#high-level-statistics}
 
-As of `Friday, December 15, 2023` I had `56M` of `.org` files in `~/org`. That's  `4889` files and `1186734` lines of text, the largest single file was `1.3M` and the longest lined file was `26370` lines.
+As of `Friday, December 15, 2023` I had `56MB` of `.org` files in `~/org`. That's  `4889` files and `1186734` lines of text, the largest single file was `1.3M` and the longest lined file was `26370` lines.
 
 `4716` of these files were inside org-roam, the majority of them (`3558`) were "dailies" or time-series files.[^fn:3]
 
-I had some `27M` other older `.org` files outside `~/org` that aren't even included in those stats. The largest of those files  was `5.6M`, and the longest lined file had `81921` lines. At couple centuries ago glacial speed (I guess they are moving pretty quickly these days) I refiled things from there into `~/org`. Not to mention `~/Syncthing/Orgzly` with `7.9M` worth of `.org` files that I synced around to a few devices and the largest `.org` file was `677K` with the most lined file having `49670` lines.
+I had some `27MB` other older `.org` files outside `~/org` that aren't even included in those stats. The largest of those files  was `5.6M`, and the longest lined file had `81921` lines. At couple centuries ago glacial speed (I guess they are moving pretty quickly these days) I refiled things from there into `~/org`. Not to mention `~/Syncthing/Orgzly` with `7.9MB` worth of `.org` files that I synced around to a few devices and the largest `.org` file was `677K` with the most lined file having `49670` lines.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/8A52ZXPhJFk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
