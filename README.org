@@ -1,2 +1,5 @@
+:PROPERTIES:
+:ID:       08fad3d8-d9e9-43ee-b0b5-9160286b1d01
+:END:
 #+Title: cmdln.org
 #+Subtitle: A sysadmin blog
