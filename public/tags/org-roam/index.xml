@@ -5,7 +5,17 @@
     <link>https://cmdln.org/tags/org-roam/</link>
     <description>Recent content in org-roam on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 25 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://cmdln.org/tags/org-roam/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 05 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://cmdln.org/tags/org-roam/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How I org in 2024</title>
+      <link>https://cmdln.org/2024/01/05/how-i-org-in-2024/</link>
+      <pubDate>Fri, 05 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://cmdln.org/2024/01/05/how-i-org-in-2024/</guid>
+      <description>Org-mode is my exocortex, second brain, second mind, mind palace, pensive, and personal knowledge management system. It&amp;rsquo;s very flexible and the features I use as well as how I organize my files continues to change so I collected things here to document how I do things in 2024, I did this in 2023 as well1.
+Goal Unrealistically or not, I want total recall, to remember everything in durable plain text. I want to have control of my data.</description>
+    </item>
+    
     <item>
       <title>How I org in 2023</title>
       <link>https://cmdln.org/2023/03/25/how-i-org-in-2023/</link>
@@ -13,16 +23,6 @@
       
       <guid>https://cmdln.org/2023/03/25/how-i-org-in-2023/</guid>
       <description>I&amp;rsquo;ve been pretty much living in org-mode for 6 or 7 years now1. It&amp;rsquo;s my exocortex, second brain, second mind, mind palace, pensive, and personal knowledge management system2. The features and tools I use as well as how I organize my files has changed quite a bit over this period of time and I thought it would be nice give myself (and anyone else who cares) a reference of what it was like in 2023 so here it is.</description>
-    </item>
-    
-    <item>
-      <title>How I org in 2024</title>
-      <link>https://cmdln.org/2023/01/05/how-i-org-in-2024/</link>
-      <pubDate>Thu, 05 Jan 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://cmdln.org/2023/01/05/how-i-org-in-2024/</guid>
-      <description>Org-mode is my exocortex, second brain, second mind, mind palace, pensive, and personal knowledge management system. It&amp;rsquo;s very flexible and the features I use as well as how I organize my files continues to change so I collected things here to document how I do things in 2024, I did this in 2023 as well1.
-Goal Unrealistically or not, I want total recall, to remember everything in durable plain text. I want to have control of my data.</description>
     </item>
     
   </channel>
