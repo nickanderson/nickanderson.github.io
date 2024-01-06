@@ -83,6 +83,20 @@
 	<li>
 		<div class="post-list-item">
 			<div class="post-header">
+				<h4 class="post-link"><a href="https://cmdln.org/2018/05/22/manage-memory_limit-in-php.ini-with-cfengine-3/">Manage memory_limit in php.ini with CFEngine 3</a></h4>
+				<h4 class="post-date">2018-05-22</h4>
+			</div>
+			<div class="post-summary"><p>This policy ensures that memory_limit in php.ini is configured properly but the pattern is generically useful for any INI style config.
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20  bundle agent php_customiztions { meta: (policy_server|am_policy_hub).enterprise_edition:: &#34;tags&#34; slist =&gt; { &#34;autorun&#34; }; &#34;description&#34; string =&gt; &#34;Tune php fo 60k hosts in Mission Portal&#34;; vars: &#34;php_ini[PHP][memory_limit]&#34; string =&gt; &#34;256M&#34;; files: policy_server.</p></div>
+			<div class="post-list-footer text-center">
+				<a href="https://cmdln.org/2018/05/22/manage-memory_limit-in-php.ini-with-cfengine-3/">Read More</a>
+			</div>
+		</div>
+	</li>
+	
+	<li>
+		<div class="post-list-item">
+			<div class="post-header">
 				<h4 class="post-link"><a href="https://cmdln.org/2018/05/21/inventorying-mac-by-interface/">Inventorying MAC by Interface</a></h4>
 				<h4 class="post-date">2018-05-21</h4>
 			</div>
@@ -216,21 +230,6 @@
 		</div>
 	</li>
 	
-	<li>
-		<div class="post-list-item">
-			<div class="post-header">
-				<h4 class="post-link"><a href="https://cmdln.org/2017/12/22/check-if-a-file-contains-a-multi-line-regex/">Check if a file contains a multi-line regex</a></h4>
-				<h4 class="post-date">2017-12-22</h4>
-			</div>
-			<div class="post-summary"><p>Is there any way to do a multiline regex check for a file in CFEngine?
-  There is no function for searching a file for content. The grep() function operates on lists, not files. However using readfile() and regcmp() I was sill able to search for a multi-line string using only native functionaity
- In the example below we first create a file with content that spans multiple lines.</p></div>
-			<div class="post-list-footer text-center">
-				<a href="https://cmdln.org/2017/12/22/check-if-a-file-contains-a-multi-line-regex/">Read More</a>
-			</div>
-		</div>
-	</li>
-	
 </ul>
 
 				
@@ -341,7 +340,7 @@
 
 			</div>
 			<footer class="footer text-center">
-<p>Copyright &copy; 2023 Nick Anderson -
+<p>Copyright &copy; 2024 Nick Anderson -
 <span class="credit">
 	Powered by
 	<a target="_blank" href="https://gohugo.io">Hugo</a>
