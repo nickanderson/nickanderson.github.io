@@ -1,6 +1,6 @@
 +++
 title = "How I org in 2024"
-date = 2023-01-05
+date = 2024-01-05
 tags = ["org-mode", "org-roam", "pkm"]
 draft = false
 author = "Nick Anderson"
@@ -25,14 +25,14 @@ As of Friday, January  5, 2024
 
 Additionally, `~/Syncthing/Orgzly` had `7.9MB` worth of `.org` files that I synced around to a few devices and the largest `.org` file was `677K` with the most lined file having `49670` lines.
 
-{{< figure src="2024-01-05_18-00-36_exocortex-statistics.jpeg" >}}
+{{< figure src="2024-01-05_18-00-36_exocortex-statistics.jpeg" caption="<span class=\"figure-number\">Figure 1: </span>Statistics and a brain" >}}
 
 
 ## System {#system}
 
 There was no real formal system in use here. Pretty much the Nick Anderson S.H.I.T. (Stuff here 'n there) methodology.
 
-{{< figure src="attachments/how-i-org-in-2023/nick-anderson-shit-method.png" caption="<span class=\"figure-number\">Figure 1: </span>Martti Bergström (@masi@fosstodon.org) uses the Nick Anderson SHIT meethod. <https://fosstodon.org/@masi/110266696809445948>" width="50%" >}}
+{{< figure src="attachments/how-i-org-in-2023/nick-anderson-shit-method.png" caption="<span class=\"figure-number\">Figure 2: </span>Martti Bergström (@masi@fosstodon.org) uses the Nick Anderson SHIT meethod. <https://fosstodon.org/@masi/110266696809445948>" width="50%" >}}
 
 I appreciated reading about various workflows and methodologies like PARA, CODE, ACCESS, Johnny Decimal, etc ... but I like to do what works for me, and that's an ever-changing target.
 
