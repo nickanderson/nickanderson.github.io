@@ -19,24 +19,22 @@ On the best of days I never leave Emacs and I have a record of everything I did 
 ## Statistics {#statistics}
 
 As of Monday, January  8, 2024
- I had `57MB` of `.org` files in `~/org`. `4943` files and `1195008` lines of text, the largest single file was `1.3MB` and the longest lined file had `26370` lines.
+ I had `57MB` of `.org` files in `~/org`. `4943` files and `1195007` lines of text, the largest single file was `1.3MB` and the longest lined file had `26370` lines.
 
 `4769` of these files were inside Org-roam[^fn:2], the majority of them (`3606`) were "dailies"[^fn:3].
 
-{{< figure src="2024-01-07_19-10-45_Screenshot_2024-01-07_191023.png" >}}
-
-{{< figure src="2024-01-07_19-11-11_Screenshot_2024-01-07_190725.png" >}}
+{{< figure src="2024-01-08_12-16-26_org-roam-ui-with-and-without-dailies-2024-01-05.png" caption="<span class=\"figure-number\">Figure 1: </span>org-roam-ui visualization of notes. Left - without dailies, Right with dailies." >}}
 
 Additionally, `~/Syncthing/Orgzly` had `7.9MB` worth of `.org` files that I synced around to a few devices and the largest `.org` file was `677K` with the most lined file having `49670` lines.
 
-{{< figure src="2024-01-05_18-00-36_exocortex-statistics.jpeg" caption="<span class=\"figure-number\">Figure 1: </span>Statistics and a brain" >}}
+{{< figure src="2024-01-05_18-00-36_exocortex-statistics.jpeg" caption="<span class=\"figure-number\">Figure 2: </span>Statistics and a brain" >}}
 
 
 ## System {#system}
 
 There was no real formal system in use here. Pretty much the Nick Anderson S.H.I.T. (Stuff here 'n there) methodology.
 
-{{< figure src="attachments/how-i-org-in-2023/nick-anderson-shit-method.png" caption="<span class=\"figure-number\">Figure 2: </span>Martti Bergström (@masi@fosstodon.org) uses the Nick Anderson SHIT meethod. <https://fosstodon.org/@masi/110266696809445948>" width="50%" >}}
+{{< figure src="attachments/how-i-org-in-2023/nick-anderson-shit-method.png" caption="<span class=\"figure-number\">Figure 3: </span>Martti Bergström (@masi@fosstodon.org) uses the Nick Anderson SHIT meethod. <https://fosstodon.org/@masi/110266696809445948>" width="50%" >}}
 
 I appreciated reading about various workflows and methodologies like PARA, CODE, ACCESS, Johnny Decimal, etc ... but I liked to do what works for me, and that has been an ever-changing target. I would say that my process was perhaps most closely aligned with CODE (Capture, Organize, Distill, Express).
 
