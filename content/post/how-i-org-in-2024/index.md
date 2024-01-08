@@ -19,13 +19,13 @@ On the best of days I never leave Emacs and I have a record of everything I did 
 ## Statistics {#statistics}
 
 As of Monday, January  8, 2024
- I had `57MB` of `.org` files in `~/org`. `4943` files and `1195085` lines of text, the largest single file was `1.3MB` and the longest lined file had `26370` lines.
+ I had `57MB` of `.org` files in `~/org`. `4943` files and `1195089` lines of text, the largest single file was `1.3MB` and the longest lined file had `26370` lines.
 
 `4769` of these files were inside Org-roam[^fn:2], the majority of them (`3606`) were "dailies"[^fn:3].
 
 Additionally, `~/Syncthing/Orgzly` had `7.9MB` worth of `.org` files that I synced around to a few devices and the largest `.org` file was `677K` with the most lined file having `49670` lines.
 
-{{< figure src="2024-01-08_12-16-26_org-roam-ui-with-and-without-dailies-2024-01-05.png" caption="<span class=\"figure-number\">Figure 1: </span>org-roam-ui visualization of notes as of January 5th, 2024. Left - without dailies, Right with dailies." width="50%" >}}
+{{< figure src="2024-01-08_12-16-26_org-roam-ui-with-and-without-dailies-2024-01-05.png" caption="<span class=\"figure-number\">Figure 1: </span>org-roam-ui visualization of notes as of January 5th, 2024. Left - without dailies, Right with dailies." width="75%" >}}
 
 
 ## System {#system}
@@ -70,6 +70,8 @@ I used `org-web-tools`[^fn:6] to pull web pages into org. Either as a buffer to 
 I used `org-jira`[^fn:9] to pull issues from Atlassian Cloud Jira into org-mode.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/8A52ZXPhJFk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<div class="org-youtube"><iframe src="https://www.youtube-nocookie.com/embed/8A52ZXPhJFk" allowfullscreen title="YouTube Video"></iframe></div>
 
 [^fn:1]: How I org in 2023 <https://cmdln.org/2023/03/25/how-i-org-in-2023/>
 [^fn:2]: Org-roam is a plain-text personal knowledge management system. According to the [introduction in the manual](https://www.orgroam.com/manual.html#Introduction) Org-roam is a tool for networked thought. It reproduces some of [Roam Research’](https://roamresearch.com/)s key features within Org-mode. Org-roam allows for effortless non-hierarchical note-taking: with Org-roam, notes flow naturally, making note-taking fun and easy. Really, it facilitates capturing information by extending Org-mode's existing capture system, maintains a sqlite database of nodes (headings) with IDs and other metadata and provides the ability to surface and navigate back links (which nodes link to the current node). <https://www.orgroam.com/>
