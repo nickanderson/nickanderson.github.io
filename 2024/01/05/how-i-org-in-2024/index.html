@@ -82,26 +82,20 @@
 <p>On the best of days I never leave Emacs and I have a record of everything I did as well as how much time I spent on each thing.</p>
 <h2 id="statistics">Statistics</h2>
 <p>As of Monday, January  8, 2024
-I had <code>57MB</code> of <code>.org</code> files in <code>~/org</code>. <code>4943</code> files and <code>1195007</code> lines of text, the largest single file was <code>1.3MB</code> and the longest lined file had <code>26370</code> lines.</p>
+I had <code>57MB</code> of <code>.org</code> files in <code>~/org</code>. <code>4943</code> files and <code>1195086</code> lines of text, the largest single file was <code>1.3MB</code> and the longest lined file had <code>26370</code> lines.</p>
 <p><code>4769</code> of these files were inside Org-roam<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>, the majority of them (<code>3606</code>) were &ldquo;dailies&rdquo;<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>.</p>
-<figure><img src="2024-01-08_12-16-26_org-roam-ui-with-and-without-dailies-2024-01-05.png"
-         alt="Figure 1: org-roam-ui visualization of notes. Left - without dailies, Right with dailies."/><figcaption>
-            <p><!-- raw HTML omitted -->Figure 1: <!-- raw HTML omitted -->org-roam-ui visualization of notes. Left - without dailies, Right with dailies.</p>
-        </figcaption>
-</figure>
-
 <p>Additionally, <code>~/Syncthing/Orgzly</code> had <code>7.9MB</code> worth of <code>.org</code> files that I synced around to a few devices and the largest <code>.org</code> file was <code>677K</code> with the most lined file having <code>49670</code> lines.</p>
-<figure><img src="2024-01-05_18-00-36_exocortex-statistics.jpeg"
-         alt="Figure 2: Statistics and a brain"/><figcaption>
-            <p><!-- raw HTML omitted -->Figure 2: <!-- raw HTML omitted -->Statistics and a brain</p>
+<figure><img src="2024-01-08_12-16-26_org-roam-ui-with-and-without-dailies-2024-01-05.png"
+         alt="Figure 1: org-roam-ui visualization of notes as of January 5th, 2024. Left - without dailies, Right with dailies." width="50%"/><figcaption>
+            <p><!-- raw HTML omitted -->Figure 1: <!-- raw HTML omitted -->org-roam-ui visualization of notes as of January 5th, 2024. Left - without dailies, Right with dailies.</p>
         </figcaption>
 </figure>
 
 <h2 id="system">System</h2>
 <p>There was no real formal system in use here. Pretty much the Nick Anderson S.H.I.T. (Stuff here &lsquo;n there) methodology.</p>
 <figure><img src="attachments/how-i-org-in-2023/nick-anderson-shit-method.png"
-         alt="Figure 3: Martti Bergström (@masi@fosstodon.org) uses the Nick Anderson SHIT meethod. https://fosstodon.org/@masi/110266696809445948" width="50%"/><figcaption>
-            <p><!-- raw HTML omitted -->Figure 3: <!-- raw HTML omitted -->Martti Bergström (@masi@fosstodon.org) uses the Nick Anderson SHIT meethod. <a href="https://fosstodon.org/@masi/110266696809445948">https://fosstodon.org/@masi/110266696809445948</a></p>
+         alt="Figure 2: Martti Bergström (@masi@fosstodon.org) uses the Nick Anderson SHIT meethod. https://fosstodon.org/@masi/110266696809445948" width="50%"/><figcaption>
+            <p><!-- raw HTML omitted -->Figure 2: <!-- raw HTML omitted -->Martti Bergström (@masi@fosstodon.org) uses the Nick Anderson SHIT meethod. <a href="https://fosstodon.org/@masi/110266696809445948">https://fosstodon.org/@masi/110266696809445948</a></p>
         </figcaption>
 </figure>
 
@@ -113,26 +107,26 @@ I had <code>57MB</code> of <code>.org</code> files in <code>~/org</code>. <code>
 <h3 id="capture-templates-helped-me">Capture templates helped me</h3>
 <ul>
 <li>
-<p>Remember relationships between notes. Many included <code>%a</code> to create a link to the node where I was when the capture was initiated with my configuration automatically creating an ID in the source node if necessary. I preferred ID links as they don&rsquo;t break as I move files around.</p>
+<p><strong>Remember relationships between notes.</strong> Many included <code>%a</code> to create a link to the node where I was when the capture was initiated with my configuration automatically creating an ID in the source node if necessary. I preferred ID links as they don&rsquo;t break as I move files around.</p>
 </li>
 <li>
-<p>Automatically organize captured content to a sane place.</p>
+<p><strong>Automatically organize captured content.</strong> I capture to my work log the most, but as I identify recurring similar content I create templates to ensure like content is stored together.</p>
 </li>
 <li>
-<p>Clock time. Only my work log capture template clocks time. Work log entries might contain the details of the work I was doing, or if it&rsquo;s related to work being done over multiple days might link to another node where those details are stored. If I am working on a specific project where time tracking is needed I will manually clock time in the project related files. At times I feel a desire for concurrent clocking but I hadn&rsquo;t made any efforts to see how to implement such capability. Org-mode already provided capabilities to help avoid clocking multiple things concurrently and I hadn&rsquo;t convinced myself that concurrent clocking was really needed.</p>
+<p><strong>Track time spent.</strong> Only my work log capture template clocks time. Work log entries might contain the details of the work I was doing, or if it&rsquo;s related to work being done over multiple days might link to another node where those details are stored. If I am working on a specific project where time tracking is needed I will manually clock time in the project related files. At times I feel a desire for concurrent clocking but I hadn&rsquo;t made any efforts to see how to implement such capability. Org-mode already provided capabilities to help avoid clocking multiple things concurrently and I hadn&rsquo;t convinced myself that concurrent clocking was really needed.</p>
 </li>
 <li>
-<p>Initialize new files.</p>
+<p><strong>Initialize new files.</strong> Org-mode can create new files and the outline path to the captured node, but alone it has no capability to initialize content outside the capture target. Org-roam&rsquo;s capture templates have the ability to initialize the reset of the file if target file does not already exist.</p>
 </li>
 <li>
-<p>Setup nodes for export.</p>
+<p><strong>Setup nodes for export.</strong> For many of my recurring meetings I like to send out my notes to my team. My capture templates initialize the mail related properties so that I can easily export and sent my note via email.</p>
 </li>
 </ul>
 <h3 id="other-tools-used-for-capture">Other tools used for capture</h3>
 <p>Some of the features that I used to get content into Org-mode were not part of org-capture.</p>
-<p>I used <code>org-web-tools</code><sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup> to pull web pages into org. Either as a buffer to read, or as a subtree to store.</p>
-<p><code>org-rich-yank</code><sup id="fnref:7"><a href="#fn:7" class="footnote-ref" role="doc-noteref">7</a></sup> let me copy text and paste it with context allowing it to be syntax highlighted as well as providing a link back to the source.</p>
-<p>I used <code>org-jira</code><sup id="fnref:8"><a href="#fn:8" class="footnote-ref" role="doc-noteref">8</a></sup> to pull issues from Atlassian Cloud Jira into org-mode</p>
+<p>I used <code>org-web-tools</code><sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup> to pull web pages into org. Either as a buffer to read, or as a subtree to store. When I wanted to clip a bit of text from a web page I used <code>org-protocol</code><sup id="fnref:7"><a href="#fn:7" class="footnote-ref" role="doc-noteref">7</a></sup> bookmarklets to get the content into Emacs.</p>
+<p><code>org-rich-yank</code><sup id="fnref:8"><a href="#fn:8" class="footnote-ref" role="doc-noteref">8</a></sup> let me copy text and paste it with context allowing it to be syntax highlighted as well as providing a link back to the source.</p>
+<p>I used <code>org-jira</code><sup id="fnref:9"><a href="#fn:9" class="footnote-ref" role="doc-noteref">9</a></sup> to pull issues from Atlassian Cloud Jira into org-mode</p>
 <!-- raw HTML omitted -->
 <section class="footnotes" role="doc-endnotes">
 <hr>
@@ -150,16 +144,19 @@ I had <code>57MB</code> of <code>.org</code> files in <code>~/org</code>. <code>
 <p>Maggie Appleton has a nice post about <a href="https://maggieappleton.com/daily-notes">Daily notes as a frictionless default input for personal knowledge management systems</a>.&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:5" role="doc-endnote">
-<p>ADHD is a real thing. I am also not perfect in remembering to capture each thing but I don&rsquo;t need to be perfect to be effective.&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>I am not perfect in remembering to capture each thing but I don&rsquo;t need to be perfect to be effective.&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:6" role="doc-endnote">
 <p>org-web-tools contains library functions and commands useful for retrieving web page content and processing it into Org-mode content. <a href="https://github.com/alphapapa/org-web-tools">https://github.com/alphapapa/org-web-tools</a>&#160;<a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:7" role="doc-endnote">
-<p><code>org-rich-yank</code> doesn&rsquo;t get enough publicity, I used it many times a day. It pastes the last copied text and automatically surrounds the snippet in blocks, marked with the major mode of where the code came from, and adds a link to the source file after the block. I recommend customizing <code>org-rich-yank-format-paste</code> and making the link to the source a comment as described in the README. <a href="https://github.com/unhammer/org-rich-yank">https://github.com/unhammer/org-rich-yank</a>&#160;<a href="#fnref:7" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>org-protocol  intercepts calls from emacsclient to trigger custom actions without external dependencies. Only one protocol has to be configured with your external applications or the operating system, to trigger an arbitrary number of custom actions. <a href="https://orgmode.org/worg/org-contrib/org-protocol.html">https://orgmode.org/worg/org-contrib/org-protocol.html</a>&#160;<a href="#fnref:7" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:8" role="doc-endnote">
-<p>org-jira facilitates getting content from Jira into org-mode and managing Jira issues from org-mode. <a href="https://github.com/ahungry/org-jira">https://github.com/ahungry/org-jira</a>&#160;<a href="#fnref:8" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p><code>org-rich-yank</code> doesn&rsquo;t get enough publicity, I used it many times a day. It pastes the last copied text and automatically surrounds the snippet in blocks, marked with the major mode of where the code came from, and adds a link to the source file after the block. I recommend customizing <code>org-rich-yank-format-paste</code> and making the link to the source a comment as described in the README. <a href="https://github.com/unhammer/org-rich-yank">https://github.com/unhammer/org-rich-yank</a>&#160;<a href="#fnref:8" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:9" role="doc-endnote">
+<p>org-jira facilitates getting content from Jira into org-mode and managing Jira issues from org-mode. <a href="https://github.com/ahungry/org-jira">https://github.com/ahungry/org-jira</a>&#160;<a href="#fnref:9" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </section>
