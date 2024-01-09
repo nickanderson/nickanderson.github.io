@@ -50,3 +50,7 @@ post = "/:year/:month/:day/:slug/"
     weight = 0
     url = "/post/"
 
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
