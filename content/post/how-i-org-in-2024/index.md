@@ -15,13 +15,13 @@ Unrealistically or not, I want total recall, to remember everything in durable p
 
 On the best of days I never leave Emacs and I have a record of everything I did as well as how much time I spent on each thing.
 
-{{< figure src="2024-01-09_10-10-32_OIG (2).jpeg" alt="An image depectinig the essence of the statement: "Unrealistically or not, I want total recall, to remember everything in durable plain text. I want to have control of my data. I want to do my work and interact efficiently. I want to improve my knowledge and capabilities, and I want to be able to share with others. -- Dall-e 3 via Bing chat"" width="75%" >}}
+{{< figure src="2024-01-09_10-10-32_OIG (2).jpeg" alt="An image depectinig the essence of the statement Unrealistically or not, I want total recall, to remember everything in durable plain text. I want to have control of my data. I want to do my work and interact efficiently. I want to improve my knowledge and capabilities, and I want to be able to share with others. -- Dall-e 3 via Bing chat" width="75%" >}}
 
 
 ## Statistics {#statistics}
 
 As of Tuesday, January  9, 2024
- I had `57MB` of `.org` files in `~/org`. `4945` files and `1195396` lines of text, the largest single file was `1.3MB` and the longest lined file had `26370` lines.
+ I had `57MB` of `.org` files in `~/org`. `4945` files and `1195451` lines of text, the largest single file was `1.3MB` and the longest lined file had `26370` lines.
 
 `4775` of these files were inside Org-roam[^fn:2], the majority of them (`3608`) were "dailies"[^fn:3].
 
