@@ -77,8 +77,8 @@
                 <span class="post-date">2008-04-08 </span>
                 <div class="post-content">
                     <p>I have a few of those directories that files tend to pile up in. I don’t need the files but I also don’t take the time to delete them. Pruning these old files is a good thing to keep your used disk space under control as well as your sanity. Find is a great tool to do this, its extremely flexible I recommend you read the man page next time your bored.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<!--adsense-->
+<pre class="brush: bash; title: ; notranslate" title="">find /directory/with/old/files -mtime +120 -exec rm {} \;</pre>
 <p>Here we use find to find files that are older than 120 days. The “older” here being the key word. So they might actually be older than 120 days but we are using mtime and mtime is the time when the actual contents of a file was last modified.</p>
                 </div>
                 

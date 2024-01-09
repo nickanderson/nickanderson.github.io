@@ -42,7 +42,7 @@ Here are my picks for the minute.
       <pubDate>Mon, 27 Feb 2012 20:19:39 +0000</pubDate>
       
       <guid>https://cmdln.org/2012/02/27/setup-encfs-on-dropbox-for-boxcryptor-with-cfengine/</guid>
-      <description>Here is an easy way to configure encfswith dropboxthat is compatible with boxcryptor. Boxcryptormakes Windows, Mac Android, and IOS applications to assist you in accessing data that you have stored in encfs. They do require that you create your encfs with some specific options: Cipher algorithm: AES, Plaintext or Stream encrypted filenames, No filename initialization vector chaining, No per-file initialization vectors, No external IV chaining, No block MAC headers, No per-block random bytes.</description>
+      <description>Here is an easy way to configure encfs with dropbox that is compatible with boxcryptor. Boxcryptor makes Windows, Mac Android, and IOS applications to assist you in accessing data that you have stored in encfs. They do require that you create your encfs with some specific options: Cipher algorithm: AES, Plaintext or Stream encrypted filenames, No filename initialization vector chaining, No per-file initialization vectors, No external IV chaining, No block MAC headers, No per-block random bytes.</description>
     </item>
     
     <item>
@@ -71,7 +71,7 @@ Second major improvement is the direct use of ip route del/add to update current
       <pubDate>Thu, 16 Feb 2012 07:05:53 +0000</pubDate>
       
       <guid>https://cmdln.org/2012/02/16/bundles-of-bundles-with-cfengine-3/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;http://www.cmdln.org/images/wp-content/uploads/2012/02/Extrusion-Bundles2.jpg&#34;&gt;&lt;!-- raw HTML omitted --&gt;&lt;/a&gt;I’ve been working more and more with CFEngine lately and I have been slowly building a &lt;a href=&#34;http://www.laurand.net/images/Extrusion%20Bundles2.jpg&#34;&gt;tiny library&lt;/a&gt;. These are all pretty much redhat specific but I welcome patches and comments. Most of the bundles have comments that show usage, if there is interest I may post some example usage later.&lt;/p&gt;
+      <description>&lt;p&gt;&lt;a href=&#34;http://www.cmdln.org/images/wp-content/uploads/2012/02/Extrusion-Bundles2.jpg&#34;&gt;&lt;img class=&#34;alignleft size-thumbnail wp-image-936&#34; title=&#34;Bundles of Bundles&#34; src=&#34;http://www.cmdln.org/images/wp-content/uploads/2012/02/Extrusion-Bundles2-150x150.jpg&#34; alt=&#34;&#34; width=&#34;150&#34; height=&#34;150&#34; /&gt;&lt;/a&gt;I’ve been working more and more with CFEngine lately and I have been slowly building a &lt;a href=&#34;http://www.laurand.net/images/Extrusion%20Bundles2.jpg&#34;&gt;tiny library&lt;/a&gt;. These are all pretty much redhat specific but I welcome patches and comments. Most of the bundles have comments that show usage, if there is interest I may post some example usage later.&lt;/p&gt;
 &lt;p&gt; &lt;/p&gt;
 &lt;p&gt; &lt;/p&gt;
 &lt;p&gt; &lt;/p&gt;</description>
@@ -215,9 +215,9 @@ First you need to set ﻿﻿gecko.handlerService.allowRegisterFromDifferentHost 
       
       <guid>https://cmdln.org/2010/08/02/bind-stats-in-centosrhel5/</guid>
       <description>Just a little tip, if your looking for bind stats and your chrooted
-will give you
-All you have to do is
-Now after you run rndc stats your named.stats fill will be populated with information.</description>
+rndc stats will give you
+rndc: &#39;stats&#39; failed: permission denied All you have to do is
+touch /var/named/chroot/var/named/named.statschown named:named /var/named/chroot/var/named/named.stats Now after you run rndc stats your named.stats fill will be populated with information.</description>
     </item>
     
     <item>
@@ -227,7 +227,7 @@ Now after you run rndc stats your named.stats fill will be populated with inform
       
       <guid>https://cmdln.org/2010/08/01/clear-dns-cache-in-linux/</guid>
       <description>Had a slightly vexing issue the other day. During a migration the destination host ended up caching some stale DNS entries. I tried a quick restart of nscd to no avail, rebooted the VM, again no joy. Even overriding the host in /etc/hosts wasn’t working. Took a few minutes of digging but what did work was
-. Just something to remember if you ever seem to have a stubborn caching issue, rebooting/restarting wont always solve the issue.</description>
+nscd -i hosts . Just something to remember if you ever seem to have a stubborn caching issue, rebooting/restarting wont always solve the issue.</description>
     </item>
     
     <item>
@@ -267,7 +267,8 @@ The other day I threw together a Zenpack to make it easier to setup monitoring o
       
       <guid>https://cmdln.org/2010/06/29/autofs-error-logging-fail/</guid>
       <description>Why do applications have such horrible error messages. Non-specific errors are really not any more helpful than not logging at all.
-I was recently setting up autofs for mounting home directories from an nfs server. The little buggers refused to work right. All I was seeing in the logfile was a notice that an attempt was made, and failed.</description>
+I was recently setting up autofs for mounting home directories from an nfs server. The little buggers refused to work right. All I was seeing in the logfile was a notice that an attempt was made, and failed.
+attempting to mount entry /home/nandersofailed to mount /home/nanderso  How helpful is that?</description>
     </item>
     
     <item>
@@ -277,8 +278,7 @@ I was recently setting up autofs for mounting home directories from an nfs serve
       
       <guid>https://cmdln.org/2010/05/24/notes-on-zenoss-zenpacks/</guid>
       <description>Recently I was building a ZenPack for Zenoss. The ZenPack included an Event Command which executed a custom script. I wanted to store the custom script in the ZenPack and I didn’t want to do anything other than have proper script dependencies in place for it to work.
-Custom scripts can be placed in $ZENHOME/ZenPacks/ZenPacks.CompanyName.Package/Zenpacks/CompanyName/Package/lib but if you want them to be executable place them in libexec.
-Thanks to Matt Ray for telling me how to properly path the Event Command and the note about scripts in libexec getting the executable bit set, the docs I found only specified the lib directory.</description>
+${here/ZenPackManager/packs/ZenPacks.community.YOURZENPACK/path}/libexec/yourscript.sh ${dev/manageIp} Custom scripts can be placed in $ZENHOME/ZenPacks/ZenPacks.CompanyName.Package/Zenpacks/CompanyName/Package/lib but if you want them to be executable place them in libexec.</description>
     </item>
     
     <item>
@@ -298,8 +298,8 @@ Instead of blowing away your entire current buffer with history -c you can redir
       
       <guid>https://cmdln.org/2010/05/19/archive-creation-fail/</guid>
       <description>I just downloaded EMC Networker client for a 32bit linux box. The file I downloaded was nw74sp5_linux_x86.tar.gz. Of course when I go to extract it ….
-Umm not in gzip format ….
-🙂</description>
+# tar zxvf ../nw74sp5_linux_x86.tar.gzgzip: stdin: not in gzip formattar: Child returned status 1tar: Error exit delayed from previous errors Umm not in gzip format ….
+# tar xvf ../nw74sp5_linux_x86.tar.gzlinux_x86/linux_x86/lgtoclnt-7.4.5-1.i686.rpmlinux_x86/lgtolicm-7.4.5-1.i686.rpmlinux_x86/lgtoman-7.4.5-1.i686.rpm... 🙂</description>
     </item>
     
     <item>
@@ -327,7 +327,7 @@ Umm not in gzip format ….
       
       <guid>https://cmdln.org/2010/05/05/very-funny-good-troubleshooting/</guid>
       <description>This deserved a repost. Originally sourced from http://www.csua.berkeley.edu/~ranga/humor/500_mile_email.txt
-  Subject: The case of the 500-mile email. Date: Tue, 26 Nov 2002 14:57:40 -0800
+ To: 0xdeadbeef@petting-zoo.net Subject: The case of the 500-mile email. Date: Tue, 26 Nov 2002 14:57:40 -0800
 Here&amp;rsquo;s a problem that sounded impossible&amp;hellip; I almost regret posting the story to a wide audience, because it makes a great tale over drinks at a conference. :-) The story is slightly altered in order to protect the guilty, elide over irrelevant and boring details, and generally make the whole thing more entertaining.</description>
     </item>
     
@@ -455,7 +455,8 @@ Remote kernel logging with netconsole for fun and profit</description>
       
       <guid>https://cmdln.org/2010/03/04/installing-nrpe-on-xenserver/</guid>
       <description>I like to have as little run in dom0 as possible. However some things you really need checked from dom0, like the status of your raid perhaps. Just some quick instructions on getting Nagios NRPE running in XenServer.
-  Install EPEL repository and disable it by default (remember we don’t want to accidentally install unnecessary packages) wget http://download.fedora.redhat.com/pub/epel/5/$(uname -i)/epel-release-5-3.noarch.rpm rpm -hiv epel-release*.rpm sed -i &amp;rsquo;s/enabled=1/enabled=0/g&#39; /etc/yum.repos.d/epel.repo   Install nrpe and configure it to start on boot yum install &amp;ndash;enablerepo=epel nrpe chkconfig nrpe on   Modify the firewall to allow NRPE connections.</description>
+  Install EPEL repository and disable it by default (remember we don’t want to accidentally install unnecessary packages) wget http://download.fedora.redhat.com/pub/epel/5/$(uname -i)/epel-release-5-3.noarch.rpm rpm -hiv epel-release*.rpm sed -i &amp;rsquo;s/enabled=1/enabled=0/g&#39; /etc/yum.repos.d/epel.repo 
+  Install nrpe and configure it to start on boot yum install &amp;ndash;enablerepo=epel nrpe chkconfig nrpe on</description>
     </item>
     
     <item>

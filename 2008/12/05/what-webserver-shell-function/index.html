@@ -78,8 +78,8 @@
                 <div class="post-content">
                     <p>This is lifted from <a href="http://bashcurescancer.com/shell-function-which-webserver-does-that-site-run.html">http://bashcurescancer.com/shell-function-which-webserver-does-that-site-run.html</a>.</p>
 <p>Handy shell function you can put in your .bashrc. Quickly find out what server a host is running.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<pre class="brush: bash; title: ; notranslate" title="">what-http-server() { curl -s -I $(for h in "$@"; do printf "http://%s " "$h"; done) | awk -F': ' '/^Server:/ {print $2}'; }
+</pre>
 <p>Now try what-http-server kernel.org google.com hotmail.com.</p>
 
                 </div>

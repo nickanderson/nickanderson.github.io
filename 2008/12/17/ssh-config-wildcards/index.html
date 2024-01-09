@@ -77,11 +77,14 @@
                 <span class="post-date">2008-12-17 </span>
                 <div class="post-content">
                     <p>I just wanted to make sure no one forgets that wildcards can be used in your .ssh/config. This can be extremely helpful. For example say you have 100 nodes that have a simple nameing scheme of nodexxxx. You can add the following into your ssh config and pre-poplulate settings.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<pre class="brush: bash; title: ; notranslate" title="">Host node*
+    User staffuser
+    IdentityFile ~/.ssh/staff_key
+</pre>
 <p>That would cause any ssh connection matching node* to use the user staffuser and .ssh/staff_key as the ssh key. By the same token you could do this.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<pre class="brush: bash; title: ; notranslate" title="">Host *.locallan.domin.com
+    User me
+</pre>
 <p>This could be useful if you have networks of machines that hook into different authentication systems. Nothing groundbreaking by any means but its useful so dont forget about it.</p>
 
                 </div>

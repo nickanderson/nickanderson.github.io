@@ -501,7 +501,7 @@ Read the documentation on Normal Order   There is a wealth of information on doc
       <pubDate>Fri, 21 Aug 2015 04:51:59 +0000</pubDate>
       
       <guid>https://cmdln.org/2015/08/20/cfengine-fixin-my-freenas/</guid>
-      <description>I recently built a new file server and I based it on the well renowned FreeNASby iXsystems. It’s been pretty solid over the past few weeks but today I ran into an issue. The web ui stopped responding. Actually it turned out that the django service had stopped. Well, that was the perfect opportunity to use CFEngine to make sure I never have the issue again.
+      <description>I recently built a new file server and I based it on the well renowned FreeNAS by iXsystems. It’s been pretty solid over the past few weeks but today I ran into an issue. The web ui stopped responding. Actually it turned out that the django service had stopped. Well, that was the perfect opportunity to use CFEngine to make sure I never have the issue again.
 I grabbed the cfengine community 3.</description>
     </item>
     
@@ -541,8 +541,8 @@ I think the mentorship program is one of the best things that LOPSA offers. You 
       
       <guid>https://cmdln.org/2013/03/29/canonifying-a-list-with-cfengine-3/</guid>
       <description>John Sanders shared a pattern for canonifying lists in #CFEngine on irc.freenode.net yesterday. It’s a useful reference so I thought I would replicate it here.
- &amp;lt;td class=&amp;quot;line-data&amp;quot;&amp;gt; &amp;lt;pre class=&amp;quot;line-pre&amp;quot;&amp;gt;&amp;lt;div class=&amp;quot;line&amp;quot; id=&amp;quot;file-output-LC1&amp;quot;&amp;gt;  % cf-agent -KIf ./example_canonify_list.cf
- &amp;lt;div class=&amp;quot;gist-meta&amp;quot;&amp;gt; &amp;lt;a href=&amp;quot;https://gist.github.com/nickanderson/5271023/raw/d57a43831308cf31f0a5fe237b3d3436ed3d3049/Output&amp;quot; style=&amp;quot;float:right&amp;quot;&amp;gt;view raw&amp;lt;/a&amp;gt; &amp;lt;a href=&amp;quot;https://gist.github.com/nickanderson/5271023#file-output&amp;quot; style=&amp;quot;float:right; margin-right:10px; color:#666;&amp;quot;&amp;gt;Output&amp;lt;/a&amp;gt; &amp;lt;a href=&amp;quot;https://gist.github.com/nickanderson/5271023&amp;quot;&amp;gt;This Gist&amp;lt;/a&amp;gt; is brought to you using &amp;lt;a href=&amp;quot;http://en.bainternet.info/2011/simple-gist-embed&amp;quot;&amp;gt;&amp;lt;small&amp;gt;Simple Gist Embed&amp;lt;/small&amp;gt;&amp;lt;/a&amp;gt;. &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div class=&amp;quot;gist-file&amp;quot;&amp;gt; &amp;lt;div class=&amp;quot;gist-data gist-syntax&amp;quot;&amp;gt; &amp;lt;div class=&amp;quot;file-data&amp;quot;&amp;gt; &amp;lt;table cellpadding=&amp;quot;0&amp;quot; cellspacing=&amp;quot;0&amp;quot; class=&amp;quot;lines highlight&amp;quot;&amp;gt; &amp;lt;tr&amp;gt; &amp;lt;td class=&amp;quot;line-numbers&amp;quot;&amp;gt; &amp;lt;span class=&amp;quot;line-number&amp;quot; id=&amp;quot;file-example_canonify_list-cf-L1&amp;quot; rel=&amp;quot;file-example_canonify_list-cf-L1&amp;quot;&amp;gt;1&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;line-number&amp;quot; id=&amp;quot;file-example_canonify_list-cf-L2&amp;quot; rel=&amp;quot;file-example_canonify_list-cf-L2&amp;quot;&amp;gt;2&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;line-number&amp;quot; id=&amp;quot;file-example_canonify_list-cf-L3&amp;quot; rel=&amp;quot;file-example_canonify_list-cf-L3&amp;quot;&amp;gt;3&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;line-number&amp;quot; id=&amp;quot;file-example_canonify_list-cf-L4&amp;quot; rel=&amp;quot;file-example_canonify_list-cf-L4&amp;quot;&amp;gt;4&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;line-number&amp;quot; id=&amp;quot;file-example_canonify_list-cf-L5&amp;quot; rel=&amp;quot;file-example_canonify_list-cf-L5&amp;quot;&amp;gt;5&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;line-number&amp;quot; id=&amp;quot;file-example_canonify_list-cf-L6&amp;quot; rel=&amp;quot;file-example_canonify_list-cf-L6&amp;quot;&amp;gt;6&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;line-number&amp;quot; id=&amp;quot;file-example_canonify_list-cf-L7&amp;quot; rel=&amp;quot;file-example_canonify_list-cf-L7&amp;quot;&amp;gt;7&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;line-number&amp;quot; id=&amp;quot;file-example_canonify_list-cf-L8&amp;quot; rel=&amp;quot;file-example_canonify_list-cf-L8&amp;quot;&amp;gt;8&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;line-number&amp;quot; id=&amp;quot;file-example_canonify_list-cf-L9&amp;quot; rel=&amp;quot;file-example_canonify_list-cf-L9&amp;quot;&amp;gt;9&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;line-number&amp;quot; id=&amp;quot;file-example_canonify_list-cf-L10&amp;quot; rel=&amp;quot;file-example_canonify_list-cf-L10&amp;quot;&amp;gt;10&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;line-number&amp;quot; id=&amp;quot;file-example_canonify_list-cf-L11&amp;quot; rel=&amp;quot;file-example_canonify_list-cf-L11&amp;quot;&amp;gt;11&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;line-number&amp;quot; id=&amp;quot;file-example_canonify_list-cf-L12&amp;quot; rel=&amp;quot;file-example_canonify_list-cf-L12&amp;quot;&amp;gt;12&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;line-number&amp;quot; id=&amp;quot;file-example_canonify_list-cf-L13&amp;quot; rel=&amp;quot;file-example_canonify_list-cf-L13&amp;quot;&amp;gt;13&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;line-number&amp;quot; id=&amp;quot;file-example_canonify_list-cf-L14&amp;quot; rel=&amp;quot;file-example_canonify_list-cf-L14&amp;quot;&amp;gt;14&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;line-number&amp;quot; id=&amp;quot;file-example_canonify_list-cf-L15&amp;quot; rel=&amp;quot;file-example_canonify_list-cf-L15&amp;quot;&amp;gt;15&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;line-number&amp;quot; id=&amp;quot;file-example_canonify_list-cf-L16&amp;quot; rel=&amp;quot;file-example_canonify_list-cf-L16&amp;quot;&amp;gt;16&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;line-number&amp;quot; id=&amp;quot;file-example_canonify_list-cf-L17&amp;quot; rel=&amp;quot;file-example_canonify_list-cf-L17&amp;quot;&amp;gt;17&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;line-number&amp;quot; id=&amp;quot;file-example_canonify_list-cf-L18&amp;quot; rel=&amp;quot;file-example_canonify_list-cf-L18&amp;quot;&amp;gt;18&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;line-number&amp;quot; id=&amp;quot;file-example_canonify_list-cf-L19&amp;quot; rel=&amp;quot;file-example_canonify_list-cf-L19&amp;quot;&amp;gt;19&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;line-number&amp;quot; id=&amp;quot;file-example_canonify_list-cf-L20&amp;quot; rel=&amp;quot;file-example_canonify_list-cf-L20&amp;quot;&amp;gt;20&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;line-number&amp;quot; id=&amp;quot;file-example_canonify_list-cf-L21&amp;quot; rel=&amp;quot;file-example_canonify_list-cf-L21&amp;quot;&amp;gt;21&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;line-number&amp;quot; id=&amp;quot;file-example_canonify_list-cf-L22&amp;quot; rel=&amp;quot;file-example_canonify_list-cf-L22&amp;quot;&amp;gt;22&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;line-number&amp;quot; id=&amp;quot;file-example_canonify_list-cf-L23&amp;quot; rel=&amp;quot;file-example_canonify_list-cf-L23&amp;quot;&amp;gt;23&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;line-number&amp;quot; id=&amp;quot;file-example_canonify_list-cf-L24&amp;quot; rel=&amp;quot;file-example_canonify_list-cf-L24&amp;quot;&amp;gt;24&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;line-number&amp;quot; id=&amp;quot;file-example_canonify_list-cf-L25&amp;quot; rel=&amp;quot;file-example_canonify_list-cf-L25&amp;quot;&amp;gt;25&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;line-number&amp;quot; id=&amp;quot;file-example_canonify_list-cf-L26&amp;quot; rel=&amp;quot;file-example_canonify_list-cf-L26&amp;quot;&amp;gt;26&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;line-number&amp;quot; id=&amp;quot;file-example_canonify_list-cf-L27&amp;quot; rel=&amp;quot;file-example_canonify_list-cf-L27&amp;quot;&amp;gt;27&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;line-number&amp;quot; id=&amp;quot;file-example_canonify_list-cf-L28&amp;quot; rel=&amp;quot;file-example_canonify_list-cf-L28&amp;quot;&amp;gt;28&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;line-number&amp;quot; id=&amp;quot;file-example_canonify_list-cf-L29&amp;quot; rel=&amp;quot;file-example_canonify_list-cf-L29&amp;quot;&amp;gt;29&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;line-number&amp;quot; id=&amp;quot;file-example_canonify_list-cf-L30&amp;quot; rel=&amp;quot;file-example_canonify_list-cf-L30&amp;quot;&amp;gt;30&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;line-number&amp;quot; id=&amp;quot;file-example_canonify_list-cf-L31&amp;quot; rel=&amp;quot;file-example_canonify_list-cf-L31&amp;quot;&amp;gt;31&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;line-number&amp;quot; id=&amp;quot;file-example_canonify_list-cf-L32&amp;quot; rel=&amp;quot;file-example_canonify_list-cf-L32&amp;quot;&amp;gt;32&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;line-number&amp;quot; id=&amp;quot;file-example_canonify_list-cf-L33&amp;quot; rel=&amp;quot;file-example_canonify_list-cf-L33&amp;quot;&amp;gt;33&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;line-number&amp;quot; id=&amp;quot;file-example_canonify_list-cf-L34&amp;quot; rel=&amp;quot;file-example_canonify_list-cf-L34&amp;quot;&amp;gt;34&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;line-number&amp;quot; id=&amp;quot;file-example_canonify_list-cf-L35&amp;quot; rel=&amp;quot;file-example_canonify_list-cf-L35&amp;quot;&amp;gt;35&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;line-number&amp;quot; id=&amp;quot;file-example_canonify_list-cf-L36&amp;quot; rel=&amp;quot;file-example_canonify_list-cf-L36&amp;quot;&amp;gt;36&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;line-number&amp;quot; id=&amp;quot;file-example_canonify_list-cf-L37&amp;quot; rel=&amp;quot;file-example_canonify_list-cf-L37&amp;quot;&amp;gt;37&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;line-number&amp;quot; id=&amp;quot;file-example_canonify_list-cf-L38&amp;quot; rel=&amp;quot;file-example_canonify_list-cf-L38&amp;quot;&amp;gt;38&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;line-number&amp;quot; id=&amp;quot;file-example_canonify_list-cf-L39&amp;quot; rel=&amp;quot;file-example_canonify_list-cf-L39&amp;quot;&amp;gt;39&amp;lt;/span&amp;gt; &amp;lt;/td&amp;gt; &amp;lt;td class=&amp;quot;line-data&amp;quot;&amp;gt; &amp;lt;pre class=&amp;quot;line-pre&amp;quot;&amp;gt;&amp;lt;div class=&amp;quot;line&amp;quot; id=&amp;quot;file-example_canonify_list-cf-LC1&amp;quot;&amp;gt;  body common control</description>
+ 1 2 3 4 5 6   &amp;lt;td class=&amp;quot;line-data&amp;quot;&amp;gt; &amp;lt;pre class=&amp;quot;line-pre&amp;quot;&amp;gt;&amp;lt;div class=&amp;quot;line&amp;quot; id=&amp;quot;file-output-LC1&amp;quot;&amp;gt;  % cf-agent -KIf ./example_canonify_list.cf
+ R: canonified site: www_example_com  R: canonified site: www_example2_com  R: alternate canonified site: www_example_com  R: alternate canonified site: www_example2_com  !! Method invoked repairs        &amp;lt;div class=&amp;quot;gist-meta&amp;quot;&amp;gt; &amp;lt;a href=&amp;quot;https://gist.</description>
     </item>
     
     <item>
@@ -551,7 +551,7 @@ I think the mentorship program is one of the best things that LOPSA offers. You 
       <pubDate>Wed, 13 Mar 2013 17:44:58 +0000</pubDate>
       
       <guid>https://cmdln.org/2013/03/13/working-around-getindices-with-dynamically-generated-arrays-in-cfengine-3/</guid>
-      <description>There is a known bugwhere getindicesis unable to get the index of a dynamically generated array until the next pass. This comes up from time to time so I thought I would post an example using a pattern shared on the CFEngine help mailing list. The policy below shows 3 working examples. They are mostly similar, example0 shows the simplest workaround, example1 and example2 in addition show ways to suppress the “Duplicate selection of value for variable” messages.</description>
+      <description>There is a known bug where getindices is unable to get the index of a dynamically generated array until the next pass. This comes up from time to time so I thought I would post an example using a pattern shared on the CFEngine help mailing list. The policy below shows 3 working examples. They are mostly similar, example0 shows the simplest workaround, example1 and example2 in addition show ways to suppress the “Duplicate selection of value for variable” messages.</description>
     </item>
     
     <item>
@@ -560,7 +560,7 @@ I think the mentorship program is one of the best things that LOPSA offers. You 
       <pubDate>Sat, 09 Mar 2013 19:23:10 +0000</pubDate>
       
       <guid>https://cmdln.org/2013/03/09/deep-thoughts/</guid>
-      <description>  </description>
+      <description>bundle common knowledge(status){vars:&#34;software&#34; string =&amp;gt; &#34;$(status)&#34;, policy =&amp;gt; &#34;free&#34;;!isUsable::&#34;software&#34; string =&amp;gt; &#34;usable&#34;, policy =&amp;gt; &#34;free&#34;;isUsable::&#34;software&#34; string =&amp;gt; &#34;reusable&#34;, policy =&amp;gt; &#34;free&#34;;classes:&#34;isUsable&#34; expression =&amp;gt; regcmp(&#34;$(software)&#34;, &#34;usable&#34;);&#34;reUsable&#34; expression =&amp;gt; regcmp(&#34;$(software)&#34;, &#34;resuable&#34;);reports:Morning|Afternoon|Evening|Night::&#34;Before software can be reusable it first has to be useable.&#34;,comment =&amp;gt; &#34;Ralph Johnson&#34;;}  </description>
     </item>
     
     <item>
@@ -569,7 +569,7 @@ I think the mentorship program is one of the best things that LOPSA offers. You 
       <pubDate>Fri, 11 Jan 2013 14:44:58 +0000</pubDate>
       
       <guid>https://cmdln.org/2013/01/11/cfengine-3-4-2-changelog-for-breakfast/</guid>
-      <description>Changelogs are just as important as the most important meal of the day. OK so I don’t always eat breakfast, but I do make an effort to read changelogs. CFEngine 3.4.2was released today.
+      <description>Changelogs are just as important as the most important meal of the day. OK so I don’t always eat breakfast, but I do make an effort to read changelogs. CFEngine 3.4.2 was released today.
 What I found interesting was that the default masterfiles policy has been updated. body executor control now calls $(sys.workdir)/inputs/update.cf instead of failsafe.cf. And $(sys.workdir)/failsafe/failsafe.cf (which was new as of 3.4.0) is gone. I think its a good change.</description>
     </item>
     
@@ -588,8 +588,8 @@ What I found interesting was that the default masterfiles policy has been update
       <pubDate>Thu, 25 Oct 2012 02:07:09 +0000</pubDate>
       
       <guid>https://cmdln.org/2012/10/24/cfengine-3-policy-update-or-how-cf_promises_validated-works/</guid>
-      <description>Over the past several months2 years (since 3.1.2 release, wow time flys when your having fun. I checked and 3.1.2 was releasedon Dec 9th 2010.) I have seenafewquestionsregarding how the default CFEngine policy update works, and more specifically how cf_promises_validated plays into the update process. This is my stab at describing the history and behaviour. I welcome any corrections.
-The default failsafe.cf update policy is simple in nature. (We could probably debate what is simpleor complex, but I am comfortable with the label in this case.</description>
+      <description>Over the past several months 2 years (since 3.1.2 release, wow time flys when your having fun. I checked and 3.1.2 was released on Dec 9th 2010.) I have seen a few questions regarding how the default CFEngine policy update works, and more specifically how cf_promises_validated plays into the update process. This is my stab at describing the history and behaviour. I welcome any corrections.
+The default failsafe.cf update policy is simple in nature.</description>
     </item>
     
     <item>
@@ -600,7 +600,7 @@ The default failsafe.cf update policy is simple in nature. (We could probably de
       <guid>https://cmdln.org/2012/10/18/cfengine-3-tip-find-out-what-classes-are-being-defined/</guid>
       <description>CFEngine defines a classes for decision making during runs. Many of these hard classes you can see by running cf-promises -v. That wont show you all the other classes that are raised during a policy run.
 You could run something like this to see what classes are raised during execution.
-But that isn’t really a clear picture under normal operation. You can use the allclassesreport in body agent control to write out a list of classes defined during execution in /var/cfengine/state/allclasses.</description>
+cf-agent -KIv | grep &#34;cf3&amp;gt;\s*+&#34; | grep -v : But that isn’t really a clear picture under normal operation. You can use the allclassesreport in body agent control to write out a list of classes defined during execution in /var/cfengine/state/allclasses.</description>
     </item>
     
     <item>
@@ -611,7 +611,7 @@ But that isn’t really a clear picture under normal operation. You can use the 
       <guid>https://cmdln.org/2012/10/16/dynamic-method-calls-in-cfengine/</guid>
       <description>Methods type promises are powerful abstraction tools in CFEngine 3. Methods allow you to activate bundles (optionally parametrized) from other bundles. This allows encapsulation of knowledge and lends itself to re-usability.
 I just want to share an example of calling bundles dynamically. It’s a contrived example, but I thought it was neat so here it is.
- &amp;lt;div class=&amp;quot;gist-meta&amp;quot;&amp;gt; &amp;lt;a href=&amp;quot;https://gist.github.com/raw/3901453/0b683269921c056b4e821dd2c63ca6b622122e26/output&amp;quot; style=&amp;quot;float:right;&amp;quot;&amp;gt;view raw&amp;lt;/a&amp;gt; &amp;lt;a href=&amp;quot;https://gist.github.com/3901453#file_output&amp;quot; style=&amp;quot;float:right;margin-right:10px;color:#666&amp;quot;&amp;gt;output&amp;lt;/a&amp;gt; &amp;lt;a href=&amp;quot;https://gist.github.com/3901453&amp;quot;&amp;gt;This Gist&amp;lt;/a&amp;gt; is brought to you using &amp;lt;a href=&amp;quot;http://en.</description>
+R: in bundle agent handler1: I got value1  R: in bundle agent handler1: I got value2  &amp;nbsp;!</description>
     </item>
     
     <item>
@@ -692,7 +692,7 @@ Just over a week ago I noticed it had been bought by Corel and its been re-brand
       <pubDate>Mon, 27 Feb 2012 20:19:39 +0000</pubDate>
       
       <guid>https://cmdln.org/2012/02/27/setup-encfs-on-dropbox-for-boxcryptor-with-cfengine/</guid>
-      <description>Here is an easy way to configure encfswith dropboxthat is compatible with boxcryptor. Boxcryptormakes Windows, Mac Android, and IOS applications to assist you in accessing data that you have stored in encfs. They do require that you create your encfs with some specific options: Cipher algorithm: AES, Plaintext or Stream encrypted filenames, No filename initialization vector chaining, No per-file initialization vectors, No external IV chaining, No block MAC headers, No per-block random bytes.</description>
+      <description>Here is an easy way to configure encfs with dropbox that is compatible with boxcryptor. Boxcryptor makes Windows, Mac Android, and IOS applications to assist you in accessing data that you have stored in encfs. They do require that you create your encfs with some specific options: Cipher algorithm: AES, Plaintext or Stream encrypted filenames, No filename initialization vector chaining, No per-file initialization vectors, No external IV chaining, No block MAC headers, No per-block random bytes.</description>
     </item>
     
     <item>
@@ -721,7 +721,7 @@ Second major improvement is the direct use of ip route del/add to update current
       <pubDate>Thu, 16 Feb 2012 07:05:53 +0000</pubDate>
       
       <guid>https://cmdln.org/2012/02/16/bundles-of-bundles-with-cfengine-3/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;http://www.cmdln.org/images/wp-content/uploads/2012/02/Extrusion-Bundles2.jpg&#34;&gt;&lt;!-- raw HTML omitted --&gt;&lt;/a&gt;I’ve been working more and more with CFEngine lately and I have been slowly building a &lt;a href=&#34;http://www.laurand.net/images/Extrusion%20Bundles2.jpg&#34;&gt;tiny library&lt;/a&gt;. These are all pretty much redhat specific but I welcome patches and comments. Most of the bundles have comments that show usage, if there is interest I may post some example usage later.&lt;/p&gt;
+      <description>&lt;p&gt;&lt;a href=&#34;http://www.cmdln.org/images/wp-content/uploads/2012/02/Extrusion-Bundles2.jpg&#34;&gt;&lt;img class=&#34;alignleft size-thumbnail wp-image-936&#34; title=&#34;Bundles of Bundles&#34; src=&#34;http://www.cmdln.org/images/wp-content/uploads/2012/02/Extrusion-Bundles2-150x150.jpg&#34; alt=&#34;&#34; width=&#34;150&#34; height=&#34;150&#34; /&gt;&lt;/a&gt;I’ve been working more and more with CFEngine lately and I have been slowly building a &lt;a href=&#34;http://www.laurand.net/images/Extrusion%20Bundles2.jpg&#34;&gt;tiny library&lt;/a&gt;. These are all pretty much redhat specific but I welcome patches and comments. Most of the bundles have comments that show usage, if there is interest I may post some example usage later.&lt;/p&gt;
 &lt;p&gt; &lt;/p&gt;
 &lt;p&gt; &lt;/p&gt;
 &lt;p&gt; &lt;/p&gt;</description>
@@ -775,7 +775,7 @@ If you’re going to LISA in Boston this year consider registering for Xen Day�
       <pubDate>Sun, 11 Sep 2011 05:55:28 +0000</pubDate>
       
       <guid>https://cmdln.org/2011/09/10/im-grumpy/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;http://www.cmdln.org/images/wp-content/uploads/2011/09/grumpy1.jpg&#34;&gt;&lt;!-- raw HTML omitted --&gt;&lt;/a&gt;“I’m Grumpy.”&lt;/p&gt;
+      <description>&lt;p&gt;&lt;a href=&#34;http://www.cmdln.org/images/wp-content/uploads/2011/09/grumpy1.jpg&#34;&gt;&lt;img class=&#34;alignleft size-medium wp-image-893&#34; title=&#34;grumpy&#34; src=&#34;http://www.cmdln.org/images/wp-content/uploads/2011/09/grumpy1-300x300.jpg&#34; alt=&#34;&#34; width=&#34;150&#34; height=&#34;150&#34; srcset=&#34;http://www.cmdln.org/images/wp-content/uploads/2011/09/grumpy1-300x300.jpg 300w, http://www.cmdln.org/images/wp-content/uploads/2011/09/grumpy1-150x150.jpg 150w, http://www.cmdln.org/images/wp-content/uploads/2011/09/grumpy1.jpg 400w&#34; sizes=&#34;(max-width: 150px) 100vw, 150px&#34; /&gt;&lt;/a&gt;“I’m Grumpy.”&lt;/p&gt;
 &lt;p&gt;Beyond the piles of peanuts and change, dishes and glassware,&lt;/p&gt;
 &lt;p&gt;beneath the splashed on Polo Crest, Sean Jean clothing, and Bill Blass underwear,&lt;/p&gt;
 &lt;p&gt;He was quiet and mysterious, a man of few words that loved his work.&lt;/p&gt;</description>
@@ -787,7 +787,8 @@ If you’re going to LISA in Boston this year consider registering for Xen Day�
       <pubDate>Thu, 11 Aug 2011 15:06:06 +0000</pubDate>
       
       <guid>https://cmdln.org/2011/08/11/google-music-beta-invites/</guid>
-      <description>I have a few invitations, if you want one drop me a line.For those of you that don’t know what google music beta is http://music.google.com</description>
+      <description>I have a few invitations, if you want one drop me a line.
+For those of you that don’t know what google music beta is http://music.google.com</description>
     </item>
     
     <item>
@@ -934,9 +935,7 @@ These are clips from the pilot show:
       
       <guid>https://cmdln.org/2010/10/17/email-a-top-posting-odyssey/</guid>
       <description>﻿An odyssey of a typical email thread using the top posting style that most email clients default to these days.
-What was it that I was supposed to have an idea on? Obviously there are several things from this fictitious email that are bothersome.
- long signatures with superfluous information credentials sent in email reply all on personal notes  just to name a few.
-Things can get even more frustrating as threads diverge (when multiple people reply to the same email and people reply to those emails).</description>
+Subject: Provide Satan VPN accessTo: Frank, Jane, Bill, Zoe, John, MattI&#39;m not sure. Nick, do you have any ideas?-FrankyOn Fri, Oct 15, 2010 at 2:20 PM, Jane wrote:&amp;gt;&amp;gt; Great idea!.&amp;gt;&amp;gt; - Jane&amp;gt; &#34;Jannies got a gun&#34;&amp;gt;&amp;gt; On Fri, Oct 15, 2010 at 2:15 PM, Frank wrote:&amp;gt;&amp;gt;&amp;gt;&amp;gt; Oh, I dont know.</description>
     </item>
     
     <item>
@@ -965,9 +964,9 @@ First you need to set ﻿﻿gecko.handlerService.allowRegisterFromDifferentHost 
       
       <guid>https://cmdln.org/2010/08/02/bind-stats-in-centosrhel5/</guid>
       <description>Just a little tip, if your looking for bind stats and your chrooted
-will give you
-All you have to do is
-Now after you run rndc stats your named.stats fill will be populated with information.</description>
+rndc stats will give you
+rndc: &#39;stats&#39; failed: permission denied All you have to do is
+touch /var/named/chroot/var/named/named.statschown named:named /var/named/chroot/var/named/named.stats Now after you run rndc stats your named.stats fill will be populated with information.</description>
     </item>
     
     <item>
@@ -977,7 +976,7 @@ Now after you run rndc stats your named.stats fill will be populated with inform
       
       <guid>https://cmdln.org/2010/08/01/clear-dns-cache-in-linux/</guid>
       <description>Had a slightly vexing issue the other day. During a migration the destination host ended up caching some stale DNS entries. I tried a quick restart of nscd to no avail, rebooted the VM, again no joy. Even overriding the host in /etc/hosts wasn’t working. Took a few minutes of digging but what did work was
-. Just something to remember if you ever seem to have a stubborn caching issue, rebooting/restarting wont always solve the issue.</description>
+nscd -i hosts . Just something to remember if you ever seem to have a stubborn caching issue, rebooting/restarting wont always solve the issue.</description>
     </item>
     
     <item>
@@ -1017,7 +1016,8 @@ The other day I threw together a Zenpack to make it easier to setup monitoring o
       
       <guid>https://cmdln.org/2010/06/29/autofs-error-logging-fail/</guid>
       <description>Why do applications have such horrible error messages. Non-specific errors are really not any more helpful than not logging at all.
-I was recently setting up autofs for mounting home directories from an nfs server. The little buggers refused to work right. All I was seeing in the logfile was a notice that an attempt was made, and failed.</description>
+I was recently setting up autofs for mounting home directories from an nfs server. The little buggers refused to work right. All I was seeing in the logfile was a notice that an attempt was made, and failed.
+attempting to mount entry /home/nandersofailed to mount /home/nanderso  How helpful is that?</description>
     </item>
     
     <item>
@@ -1055,8 +1055,7 @@ Monitoring A/B power is not as easy as monitoring the individual PDUs. Some serv
       
       <guid>https://cmdln.org/2010/05/24/notes-on-zenoss-zenpacks/</guid>
       <description>Recently I was building a ZenPack for Zenoss. The ZenPack included an Event Command which executed a custom script. I wanted to store the custom script in the ZenPack and I didn’t want to do anything other than have proper script dependencies in place for it to work.
-Custom scripts can be placed in $ZENHOME/ZenPacks/ZenPacks.CompanyName.Package/Zenpacks/CompanyName/Package/lib but if you want them to be executable place them in libexec.
-Thanks to Matt Ray for telling me how to properly path the Event Command and the note about scripts in libexec getting the executable bit set, the docs I found only specified the lib directory.</description>
+${here/ZenPackManager/packs/ZenPacks.community.YOURZENPACK/path}/libexec/yourscript.sh ${dev/manageIp} Custom scripts can be placed in $ZENHOME/ZenPacks/ZenPacks.CompanyName.Package/Zenpacks/CompanyName/Package/lib but if you want them to be executable place them in libexec.</description>
     </item>
     
     <item>
@@ -1076,8 +1075,8 @@ Instead of blowing away your entire current buffer with history -c you can redir
       
       <guid>https://cmdln.org/2010/05/19/archive-creation-fail/</guid>
       <description>I just downloaded EMC Networker client for a 32bit linux box. The file I downloaded was nw74sp5_linux_x86.tar.gz. Of course when I go to extract it ….
-Umm not in gzip format ….
-🙂</description>
+# tar zxvf ../nw74sp5_linux_x86.tar.gzgzip: stdin: not in gzip formattar: Child returned status 1tar: Error exit delayed from previous errors Umm not in gzip format ….
+# tar xvf ../nw74sp5_linux_x86.tar.gzlinux_x86/linux_x86/lgtoclnt-7.4.5-1.i686.rpmlinux_x86/lgtolicm-7.4.5-1.i686.rpmlinux_x86/lgtoman-7.4.5-1.i686.rpm... 🙂</description>
     </item>
     
     <item>
@@ -1124,7 +1123,7 @@ Well, luckily you can get a browser extension for Firefox or Chrome that makes i
       
       <guid>https://cmdln.org/2010/05/05/very-funny-good-troubleshooting/</guid>
       <description>This deserved a repost. Originally sourced from http://www.csua.berkeley.edu/~ranga/humor/500_mile_email.txt
-  Subject: The case of the 500-mile email. Date: Tue, 26 Nov 2002 14:57:40 -0800
+ To: 0xdeadbeef@petting-zoo.net Subject: The case of the 500-mile email. Date: Tue, 26 Nov 2002 14:57:40 -0800
 Here&amp;rsquo;s a problem that sounded impossible&amp;hellip; I almost regret posting the story to a wide audience, because it makes a great tale over drinks at a conference. :-) The story is slightly altered in order to protect the guilty, elide over irrelevant and boring details, and generally make the whole thing more entertaining.</description>
     </item>
     
@@ -1294,7 +1293,8 @@ Remote kernel logging with netconsole for fun and profit</description>
       
       <guid>https://cmdln.org/2010/03/04/installing-nrpe-on-xenserver/</guid>
       <description>I like to have as little run in dom0 as possible. However some things you really need checked from dom0, like the status of your raid perhaps. Just some quick instructions on getting Nagios NRPE running in XenServer.
-  Install EPEL repository and disable it by default (remember we don’t want to accidentally install unnecessary packages) wget http://download.fedora.redhat.com/pub/epel/5/$(uname -i)/epel-release-5-3.noarch.rpm rpm -hiv epel-release*.rpm sed -i &amp;rsquo;s/enabled=1/enabled=0/g&#39; /etc/yum.repos.d/epel.repo   Install nrpe and configure it to start on boot yum install &amp;ndash;enablerepo=epel nrpe chkconfig nrpe on   Modify the firewall to allow NRPE connections.</description>
+  Install EPEL repository and disable it by default (remember we don’t want to accidentally install unnecessary packages) wget http://download.fedora.redhat.com/pub/epel/5/$(uname -i)/epel-release-5-3.noarch.rpm rpm -hiv epel-release*.rpm sed -i &amp;rsquo;s/enabled=1/enabled=0/g&#39; /etc/yum.repos.d/epel.repo 
+  Install nrpe and configure it to start on boot yum install &amp;ndash;enablerepo=epel nrpe chkconfig nrpe on</description>
     </item>
     
     <item>
@@ -1426,7 +1426,13 @@ Check your backup policies, make sure that you aren’t backing up 15 rotating d
       <description>Ha! I caught you. I bet you think this post is about HA or some way to keep your servers running.
 Nope, just an observation.
 1,2,3) Today is 9/9/9
-4) there are 9 letters in September5) there are 9 letters in Wednesday6) it is the 252 day of the year, 2+5+2=9,7) I was born 9/9/81, 8) 9×9=81, 9) 8+1=9.Wow and to think it was such a problematic day at work! I thought I had everything going for me today.</description>
+4) there are 9 letters in September
+5) there are 9 letters in Wednesday
+6) it is the 252 day of the year, 2+5+2=9,
+7) I was born 9/9/81, 
+8) 9×9=81, 
+9) 8+1=9.
+Wow and to think it was such a problematic day at work!</description>
     </item>
     
     <item>
@@ -1461,7 +1467,8 @@ I am aware of several options.</description>
       <guid>https://cmdln.org/2009/08/27/nec-aspire-default-passwords/</guid>
       <description>It took me a long time to hunt these down and I think default passwords should be freely available.
 Aspire webpro (default ip is 172.16.0.10):
-UltraMail (default ip is 192.168.1.250):</description>
+Administrator Username: ASPIRE Administrator Password: 12345678 Extension Username: extension number Extension Password: 1111 UltraMail (default ip is 192.168.1.250):
+Service Number: 2000 System Password: CTL  I also found a manual for UltraMail, and a UserPro manual for programming the handsets with the web interface.  Hopefully none of you are stuck with one of these systems.</description>
     </item>
     
     <item>
@@ -1471,7 +1478,7 @@ UltraMail (default ip is 192.168.1.250):</description>
       
       <guid>https://cmdln.org/2009/08/26/secure-hard-drive-wipe/</guid>
       <description>I’ve been wiping a lot of hard drives recently. I use shred to do the job.
-What do you do to your drives before disposing of them?</description>
+shred -n6 -z -v /dev/sdx What do you do to your drives before disposing of them?</description>
     </item>
     
     <item>
@@ -1495,7 +1502,7 @@ Inspired by Ben Rockwoods comment today about the IBM Songbook</description>
       
       <guid>https://cmdln.org/2009/08/24/support-fail/</guid>
       <description>I am a big fan of chat support. I don’t have to drain my battery waiting on hold until its my turn in the queue. Plus when dealing with error messages its infinitely more helpful to be able to copy/paste to the agent. Sadly finding competent help is still an issue. Here is an excerpt from a recent chat support experience.
- (8:39:41 PM) Sheldon He:The SSL will need to be re-issued, since they are IP specific.</description>
+ (8:39:41 PM)  Sheldon He: The SSL will need to be re-issued, since they are IP specific.</description>
     </item>
     
     <item>
@@ -1536,7 +1543,8 @@ Why is phog a better description? The phog has no defined shape, you can’t see
       <guid>https://cmdln.org/2009/08/05/its-a-boy/</guid>
       <description>Bryan William Anderson
 8.2 lbs, 20.5 inches
-1:25pm 8.5.209</description>
+1:25pm 8.5.209
+Just a few hours old  </description>
     </item>
     
     <item>
@@ -1712,17 +1720,14 @@ When I was hired to run the IT department of a major company my predecessor left
       <guid>https://cmdln.org/2009/04/28/nice-console-regex-helper/</guid>
       <description>Last week I stumbled on a nice console regex helper. It’s not that I’m bad at regex but switching between sed, vim, python, perl regex trips me up a bit sometimes.
 Go ahead and check it out for yourself
-&amp;lt;br /&amp;gt; [.]quit [0]reset [*]color [/]programs ^txt2regex$
+sudo aptitude install txt2regex &amp;lt;br /&amp;gt; [.]quit [0]reset [*]color [/]programs ^txt2regex$
 !! not supported
 RegEx perl :
 RegEx php :
 RegEx postgres:
 RegEx python :
 RegEx sed :
-RegEx vim :
-.oO()()
-[1-2]:
-start to match:</description>
+RegEx vim :</description>
     </item>
     
     <item>
@@ -1743,7 +1748,8 @@ Add this line to your nginx init script right after the text -x $DAEMON line to 
       
       <guid>https://cmdln.org/2009/04/16/testing-mail-servers-with-swaks/</guid>
       <description>I hadn’t seen this tool before so I figured I would share. Swaks is the swiss army knife SMTP according to the homepage.
-I’ve covered testing email from the command line before but this tool sure makes it easier.</description>
+I’ve covered testing email from the command line before but this tool sure makes it easier.
+swaks --to nick@tld --from nick@tld*** MX Routing not available: requires Net::DNS. Using localhost as mail server=== Trying localhost:25...=== Connected to localhost.&amp;lt;- 220 cmdln-laptop ESMTP Exim 4.69 Thu, 16 Apr 2009 12:23:24 -0500-&amp;gt; EHLO cmdln-laptop&amp;lt;- 250-cmdln-laptop Hello localhost [127.</description>
     </item>
     
     <item>
@@ -1799,8 +1805,8 @@ This is not a scaled down, limited version of the hypervisor. From the end of Ma
       <guid>https://cmdln.org/2009/02/23/howto-remove-pdf-passwords-and-encryption/</guid>
       <description>Have you ever gotten a pdf with one of those annoying passwords? A while back I bought an e-book and it came with a password. Its really annoying especially if I want to read it on a mobile device. Anyway if you are annoyed as much as I am fear no more.
 Install qpdf
-Decrypt your pdf
-  </description>
+aptitude install qpdf Decrypt your pdf
+qpdf --password=password --decrypt input.pdf output.pdf  </description>
     </item>
     
     <item>
@@ -1846,7 +1852,7 @@ Do you keep track of configuration changes? You should. Maybe your using an adva
       <pubDate>Fri, 30 Jan 2009 03:34:39 +0000</pubDate>
       
       <guid>https://cmdln.org/2009/01/29/baseline-analysis-is-important-cpu-performance-analysis-in-linux-revisited/</guid>
-      <description>&lt;p&gt;Yesterday I wrote about &lt;!-- raw HTML omitted --&gt;CPU Performance Analysis in Linux&lt;!-- raw HTML omitted --&gt;. I explained how to tell if you are experiencing a CPU bottleneck. This is just a quick followup to show the effect of adding more cpu power.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Yesterday I wrote about &lt;a href=http://www.cmdln.org/2009/01/28/cpu-performance-analysis-in-linux/&gt;CPU Performance Analysis in Linux&lt;/a&gt;. I explained how to tell if you are experiencing a CPU bottleneck. This is just a quick followup to show the effect of adding more cpu power.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1855,7 +1861,7 @@ Do you keep track of configuration changes? You should. Maybe your using an adva
       <pubDate>Wed, 28 Jan 2009 06:03:17 +0000</pubDate>
       
       <guid>https://cmdln.org/2009/01/28/cpu-performance-analysis-in-linux/</guid>
-      <description>&lt;p&gt;A while back I wrote a post &lt;!-- raw HTML omitted --&gt;Analyzing Linux System Performance and Finding Bottlenecks&lt;!-- raw HTML omitted --&gt;. I did’t really give a good explanation of determining if you are CPU bound or not so I am writing this post to clear that up.&lt;/p&gt;</description>
+      <description>&lt;p&gt;A while back I wrote a post &lt;a href=http://www.cmdln.org/2008/04/13/analyzing-linux-system-performance-and-finding-bottle-necks/&gt;Analyzing Linux System Performance and Finding Bottlenecks&lt;/a&gt;. I did’t really give a good explanation of determining if you are CPU bound or not so I am writing this post to clear that up.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1920,7 +1926,7 @@ If you find yourself at a shell and need to work with files that have a leading 
       
       <guid>https://cmdln.org/2008/12/17/ssh-config-wildcards/</guid>
       <description>I just wanted to make sure no one forgets that wildcards can be used in your .ssh/config. This can be extremely helpful. For example say you have 100 nodes that have a simple nameing scheme of nodexxxx. You can add the following into your ssh config and pre-poplulate settings.
-That would cause any ssh connection matching node* to use the user staffuser and .ssh/staff_key as the ssh key. By the same token you could do this.</description>
+Host node*User staffuserIdentityFile ~/.ssh/staff_key That would cause any ssh connection matching node* to use the user staffuser and .</description>
     </item>
     
     <item>
@@ -1965,7 +1971,7 @@ That would cause any ssh connection matching node* to use the user staffuser and
       <pubDate>Sat, 06 Dec 2008 07:57:12 +0000</pubDate>
       
       <guid>https://cmdln.org/2008/12/06/top-for-mysql-with-mytop/</guid>
-      <description>I see Samuel Huckinsjust had a post about apachetop http://dancingpenguinsoflight.com/2008/12/top-for-apache-activity/ which I have been meaning to mention for a while, but being that there is a fresh post about it I will mention Mytop instead.
+      <description>I see Samuel Huckins just had a post about apachetop http://dancingpenguinsoflight.com/2008/12/top-for-apache-activity/ which I have been meaning to mention for a while, but being that there is a fresh post about it I will mention Mytop instead.
 Mytop is top for mysql. It can be used for monitoring the threads and overall performance of a MySQL.
 Its an easy install in debain with a quick aptitude install mytop.
 Here is some example output (sorry my mysql server isnt very busy atm).</description>
@@ -1988,7 +1994,7 @@ Here is some example output (sorry my mysql server isnt very busy atm).</descrip
       <guid>https://cmdln.org/2008/12/05/what-webserver-shell-function/</guid>
       <description>This is lifted from http://bashcurescancer.com/shell-function-which-webserver-does-that-site-run.html.
 Handy shell function you can put in your .bashrc. Quickly find out what server a host is running.
-Now try what-http-server kernel.org google.com hotmail.com.</description>
+what-http-server() { curl -s -I $(for h in &#34;$@&#34;; do printf &#34;http://%s &#34; &#34;$h&#34;; done) | awk -F&#39;: &#39; &#39;/^Server:/ {print $2}&#39;; }  Now try what-http-server kernel.org google.com hotmail.com.</description>
     </item>
     
     <item>
@@ -1998,7 +2004,7 @@ Now try what-http-server kernel.org google.com hotmail.com.</description>
       
       <guid>https://cmdln.org/2008/12/04/google-like-unit-conversion-on-the-console/</guid>
       <description>For those of you who are horrid at math like I am googles unit conversion is a great help. Want to know how many GB 1Mbps is in a month? Simple just ask google. Well I like to have the ability even when I am not online and I found units. Its in the debian repository and oh so easy to use.
-  </description>
+units -t &#39;1Mbps&#39; &#39;GB/month&#39;328.71798units -t &#39;1hour&#39; &#39;seconds&#39;3600  </description>
     </item>
     
     <item>
@@ -2008,7 +2014,7 @@ Now try what-http-server kernel.org google.com hotmail.com.</description>
       
       <guid>https://cmdln.org/2008/11/19/debian-etccrond-gotcha/</guid>
       <description>I typically use /etc/cron.d to store all of my system crontabs. I recently ran into an issue that I had either not run into before, or fixed and paid no attention to. Files stored in /etc/cron.d/ or any /etc/cron.* directory need to adhear to the run-parts Debian cron script namespace which consists is
-for the regex impared this does not include the dot character. If you have a file in /etc/cron.</description>
+(^[a-z0-9][a-z0-9-]*$) for the regex impared this does not include the dot character. If you have a file in /etc/cron.</description>
     </item>
     
     <item>
@@ -2055,7 +2061,8 @@ for the regex impared this does not include the dot character. If you have a fil
       <pubDate>Wed, 29 Oct 2008 03:43:49 +0000</pubDate>
       
       <guid>https://cmdln.org/2008/10/28/why-you-should-give-your-sysadmin-a-day-off/</guid>
-      <description>We will eventually go crazy without some rest. Looks like solaris cluster may have saved the day. Us Linux admins unfortunately do not have ZFS.</description>
+      <description>We will eventually go crazy without some rest. Looks like solaris cluster may have saved the day. Us Linux admins unfortunately do not have ZFS.
+Share and Enjoy:                                </description>
     </item>
     
     <item>
@@ -2075,10 +2082,8 @@ for the regex impared this does not include the dot character. If you have a fil
       <guid>https://cmdln.org/2008/10/25/secure-git-hosting-with-gitosis/</guid>
       <description>I hope you are already using ssh keys, but just in case your not go ahead and generate one with ssh-keygen -t rsa (you should do this on your local box)
 You may as well go ahead and copy your publick key to your git server now as well.
-Log into your gitosis server
- Make sure setuptools is installed  sudo aptitude install python-setuptools
-git clone git://eagain.net/gitosis.git
-cd gitosis</description>
+scp ~/.ssh/id_rsa.pub gitserver:/tmp/  Log into your gitosis server
+ssh gitserver   Make sure setuptools is installed  sudo aptitude install python-setuptools</description>
     </item>
     
     <item>
@@ -2384,7 +2389,7 @@ cd gitosis</description>
       <pubDate>Mon, 11 Feb 2008 06:01:54 +0000</pubDate>
       
       <guid>https://cmdln.org/2008/02/11/restricting-ssh-commands/</guid>
-      <description>&lt;p&gt;SSH is a powerful tool. When combined with ssh keys, it becomes easy to automate remote procedures like backups. However leaving key access wide open can be a bad idea. It is possible to use restrict ssh keys to specific commands, even coming from specific hosts. There is this nice little perl script called &lt;!-- raw HTML omitted --&gt;Authprogs&lt;!-- raw HTML omitted --&gt; that makes this somewhat easier. Ill show you how to use authprogs for an automated rsync over ssh.&lt;/p&gt;</description>
+      <description>&lt;p&gt;SSH is a powerful tool. When combined with ssh keys, it becomes easy to automate remote procedures like backups. However leaving key access wide open can be a bad idea. It is possible to use restrict ssh keys to specific commands, even coming from specific hosts. There is this nice little perl script called &lt;a HREF=&#34;http://www.hackinglinuxexposed.com/tools/authprogs&#34;&gt;Authprogs&lt;/a&gt; that makes this somewhat easier. Ill show you how to use authprogs for an automated rsync over ssh.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -2420,7 +2425,8 @@ cd gitosis</description>
       <pubDate>Fri, 08 Feb 2008 14:04:26 +0000</pubDate>
       
       <guid>https://cmdln.org/2008/02/08/a-nice-screenrc/</guid>
-      <description>Hopefully you already know about screen, its one of the best command line utilites I use. Here is a purty screenrc for you.</description>
+      <description>Hopefully you already know about screen, its one of the best command line utilites I use. Here is a purty screenrc for you.
+.screenrc</description>
     </item>
     
     <item>
@@ -2429,7 +2435,7 @@ cd gitosis</description>
       <pubDate>Fri, 08 Feb 2008 03:26:56 +0000</pubDate>
       
       <guid>https://cmdln.org/2008/02/07/who-have-you-delivered-mail-to/</guid>
-      <description>&lt;p&gt;The company I work for (&lt;!-- raw HTML omitted --&gt;Absorbent Ink&lt;!-- raw HTML omitted --&gt;) that makes &lt;!-- raw HTML omitted --&gt;corporate gifts&lt;!-- raw HTML omitted --&gt; and other &amp;lt;a href=&amp;ldquo;&lt;a href=&#34;http://www.absorbentprinting.com/unique&#34;&gt;http://www.absorbentprinting.com/unique&lt;/a&gt;_products.php&amp;rdquo; mce_href=&amp;ldquo;&lt;a href=&#34;http://www.absorbentprinting.com/unique_products.php%22%3Epersonalized&#34;&gt;http://www.absorbentprinting.com/unique_products.php&amp;quot;&amp;gt;personalized&lt;/a&gt; products&lt;!-- raw HTML omitted --&gt;. has started sending out a &lt;!-- raw HTML omitted --&gt;newsletter&lt;!-- raw HTML omitted --&gt;. Part of this newsletter process for me has been tuning one of our &lt;!-- raw HTML omitted --&gt;exim&lt;!-- raw HTML omitted --&gt; based mail servers.&lt;/p&gt;</description>
+      <description>&lt;p&gt;The company I work for (&lt;a href=&#34;http://www.absorbentprinting.com&#34; mce_href=&#34;http://www.absorbentprinting.com&#34;&gt;Absorbent Ink&lt;/a&gt;) that makes &lt;a href=&#34;http://www.absorbentprinting.com/corporate-gifts&#34; mce_href=&#34;http://www.absorbentprinting.com/corporate-gifts&#34;&gt;corporate gifts&lt;/a&gt; and other &amp;lt;a href=&amp;ldquo;&lt;a href=&#34;http://www.absorbentprinting.com/unique&#34;&gt;http://www.absorbentprinting.com/unique&lt;/a&gt;_products.php&amp;rdquo; mce_href=&amp;ldquo;&lt;a href=&#34;http://www.absorbentprinting.com/unique_products.php%22%3Epersonalized&#34;&gt;http://www.absorbentprinting.com/unique_products.php&amp;quot;&amp;gt;personalized&lt;/a&gt; products&lt;/a&gt;. has started sending out a &lt;a href=&#34;http://www.absorbentprinting.com/scoop.php&#34; mce_href=&#34;http://www.absorbentprinting.com/scoop.php&#34;&gt;newsletter&lt;/a&gt;. Part of this newsletter process for me has been tuning one of our &lt;a href=&#34;http://www.exim.org&#34; mce_href=&#34;http://www.exim.org&#34;&gt;exim&lt;/a&gt; based mail servers.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -2438,7 +2444,7 @@ cd gitosis</description>
       <pubDate>Fri, 08 Feb 2008 03:25:06 +0000</pubDate>
       
       <guid>https://cmdln.org/2008/02/07/print-to-pdf-with-cups/</guid>
-      <description>&lt;p&gt;Printing is a pain. I hate printers, I hate paper, but I also hate a bagillion book marks to places and things that may change over time. Its handy to have PDFs around as they are easily searchable, they preserve original layout and they print correctly when you want to print something. So for most of my printing I am printing to PDF and if I need a paper copy later I can always print out that PDF. True many applications can print or export to pdf currently. However using cups-pdf allows you to print to pdf anywhere you can print. Its great when combined with RDP too. For example at one point a &lt;!-- raw HTML omitted --&gt;freind&lt;!-- raw HTML omitted --&gt; of mine had to use GreatPlains for parts and order accounting in a production enviornment. GreatPlains allows you to print to screen in only some windows. However with cups-pdf he could print any screen he wished to pdf and view it on his screen.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Printing is a pain. I hate printers, I hate paper, but I also hate a bagillion book marks to places and things that may change over time. Its handy to have PDFs around as they are easily searchable, they preserve original layout and they print correctly when you want to print something. So for most of my printing I am printing to PDF and if I need a paper copy later I can always print out that PDF. True many applications can print or export to pdf currently. However using cups-pdf allows you to print to pdf anywhere you can print. Its great when combined with RDP too. For example at one point a &lt;a href=&#34;http://jgarrett.org&#34; mce_href=&#34;http://jgarrett.org&#34;&gt;freind&lt;/a&gt; of mine had to use GreatPlains for parts and order accounting in a production enviornment. GreatPlains allows you to print to screen in only some windows. However with cups-pdf he could print any screen he wished to pdf and view it on his screen.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -2492,7 +2498,7 @@ cd gitosis</description>
       <pubDate>Tue, 31 Jul 2007 17:52:56 +0000</pubDate>
       
       <guid>https://cmdln.org/2007/07/31/fix-terminal-scrolling-when-inside-gnu-screen/</guid>
-      <description>&lt;p&gt;My post on &lt;!-- raw HTML omitted --&gt; Automatic session logging and monitoring with GNU screen&lt;!-- raw HTML omitted --&gt; seems to have been well received. I have had more hits by far on that post today than ever before. I noticed a nagging issue with screen and a friend of mine Travis Cline pointed me to the fix.&lt;/p&gt;</description>
+      <description>&lt;p&gt;My post on &lt;a href=&#34;http://www.cmdln.org/2007/07/20/automatic-session-logging-and-monitoring-with-gnu-screen-for-the-paranoid/&#34; mce_href=&#34;http://www.cmdln.org/2007/07/20/automatic-session-logging-and-monitoring-with-gnu-screen-for-the-paranoid/&#34;&gt; Automatic session logging and monitoring with GNU screen&lt;/a&gt; seems to have been well received. I have had more hits by far on that post today than ever before. I noticed a nagging issue with screen and a friend of mine Travis Cline pointed me to the fix.&lt;/p&gt;</description>
     </item>
     
     <item>

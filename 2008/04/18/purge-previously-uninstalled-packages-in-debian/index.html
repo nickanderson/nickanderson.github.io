@@ -77,11 +77,10 @@
                 <span class="post-date">2008-04-19 </span>
                 <div class="post-content">
                     <p>Recently I ordered a server with Debian etch. Unfortunately during testing I noticed that startx was on the system, along with a whole slew of other junk that I don’t generally want on a fresh server. I wanted to remove all of the cruft but I didn’t have the exact package list.</p>
-<!-- raw HTML omitted -->
+<!--adsense-->
 <p>The solution was to run tasksel. I then saw that Desktop, Mail, and Print server were all selected. I deselected all of them but then I still had all the crufty config files lying around. Whats the best way to remove all those config files from packages you don’t exactly know were on there?</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<blockquote>
+<pre class="brush: bash; title: ; notranslate" title="">aptitude purge ~c
+</pre><blockquote>
 </blockquote>
                 </div>
                 

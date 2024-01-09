@@ -77,12 +77,12 @@
                 <span class="post-date">2010-08-02 </span>
                 <div class="post-content">
                     <p>Just a little tip, if your looking for bind stats and your chrooted</p>
-<!-- raw HTML omitted -->
+<pre class="brush: plain; title: ; notranslate" title="">rndc stats</pre>
 <p>will give you</p>
-<!-- raw HTML omitted -->
+<pre class="brush: plain; title: ; notranslate" title="">rndc: 'stats' failed: permission denied</pre>
 <p>All you have to do is</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<pre class="brush: plain; title: ; notranslate" title="">touch /var/named/chroot/var/named/named.stats
+chown named:named /var/named/chroot/var/named/named.stats</pre>
 <p>Now after you run rndc stats your named.stats fill will be populated with information.</p>
 
                 </div>

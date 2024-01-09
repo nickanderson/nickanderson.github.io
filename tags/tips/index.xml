@@ -12,7 +12,7 @@
       <pubDate>Wed, 13 Mar 2013 17:44:58 +0000</pubDate>
       
       <guid>https://cmdln.org/2013/03/13/working-around-getindices-with-dynamically-generated-arrays-in-cfengine-3/</guid>
-      <description>There is a known bugwhere getindicesis unable to get the index of a dynamically generated array until the next pass. This comes up from time to time so I thought I would post an example using a pattern shared on the CFEngine help mailing list. The policy below shows 3 working examples. They are mostly similar, example0 shows the simplest workaround, example1 and example2 in addition show ways to suppress the “Duplicate selection of value for variable” messages.</description>
+      <description>There is a known bug where getindices is unable to get the index of a dynamically generated array until the next pass. This comes up from time to time so I thought I would post an example using a pattern shared on the CFEngine help mailing list. The policy below shows 3 working examples. They are mostly similar, example0 shows the simplest workaround, example1 and example2 in addition show ways to suppress the “Duplicate selection of value for variable” messages.</description>
     </item>
     
     <item>

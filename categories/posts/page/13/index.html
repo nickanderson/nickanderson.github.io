@@ -101,17 +101,14 @@
 			</div>
 			<div class="post-summary"><p>Last week I stumbled on a nice console regex helper. It’s not that I’m bad at regex but switching between sed, vim, python, perl regex trips me up a bit sometimes.
 Go ahead and check it out for yourself
-&lt;br /&gt; [.]quit [0]reset [*]color [/]programs ^txt2regex$
+sudo aptitude install txt2regex &lt;br /&gt; [.]quit [0]reset [*]color [/]programs ^txt2regex$
 !! not supported
 RegEx perl :
 RegEx php :
 RegEx postgres:
 RegEx python :
 RegEx sed :
-RegEx vim :
-.oO()()
-[1-2]:
-start to match:</p></div>
+RegEx vim :</p></div>
 			<div class="post-list-footer text-center">
 				<a href="https://cmdln.org/2009/04/28/nice-console-regex-helper/">Read More</a>
 			</div>
@@ -140,7 +137,8 @@ Add this line to your nginx init script right after the text -x $DAEMON line to 
 				<h4 class="post-date">2009-04-16</h4>
 			</div>
 			<div class="post-summary"><p>I hadn’t seen this tool before so I figured I would share. Swaks is the swiss army knife SMTP according to the homepage.
-I’ve covered testing email from the command line before but this tool sure makes it easier.</p></div>
+I’ve covered testing email from the command line before but this tool sure makes it easier.
+swaks --to nick@tld --from nick@tld*** MX Routing not available: requires Net::DNS. Using localhost as mail server=== Trying localhost:25...=== Connected to localhost.&lt;- 220 cmdln-laptop ESMTP Exim 4.69 Thu, 16 Apr 2009 12:23:24 -0500-&gt; EHLO cmdln-laptop&lt;- 250-cmdln-laptop Hello localhost [127.</p></div>
 			<div class="post-list-footer text-center">
 				<a href="https://cmdln.org/2009/04/16/testing-mail-servers-with-swaks/">Read More</a>
 			</div>
@@ -216,8 +214,8 @@ This is not a scaled down, limited version of the hypervisor. From the end of Ma
 			</div>
 			<div class="post-summary"><p>Have you ever gotten a pdf with one of those annoying passwords? A while back I bought an e-book and it came with a password. Its really annoying especially if I want to read it on a mobile device. Anyway if you are annoyed as much as I am fear no more.
 Install qpdf
-Decrypt your pdf
-  </p></div>
+aptitude install qpdf Decrypt your pdf
+qpdf --password=password --decrypt input.pdf output.pdf  </p></div>
 			<div class="post-list-footer text-center">
 				<a href="https://cmdln.org/2009/02/23/howto-remove-pdf-passwords-and-encryption/">Read More</a>
 			</div>

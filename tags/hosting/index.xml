@@ -14,10 +14,8 @@
       <guid>https://cmdln.org/2008/10/25/secure-git-hosting-with-gitosis/</guid>
       <description>I hope you are already using ssh keys, but just in case your not go ahead and generate one with ssh-keygen -t rsa (you should do this on your local box)
 You may as well go ahead and copy your publick key to your git server now as well.
-Log into your gitosis server
- Make sure setuptools is installed  sudo aptitude install python-setuptools
-git clone git://eagain.net/gitosis.git
-cd gitosis</description>
+scp ~/.ssh/id_rsa.pub gitserver:/tmp/  Log into your gitosis server
+ssh gitserver   Make sure setuptools is installed  sudo aptitude install python-setuptools</description>
     </item>
     
   </channel>

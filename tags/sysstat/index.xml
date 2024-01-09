@@ -22,7 +22,7 @@ I use this plugin with Zenoss and I set any performance thresholds there, more i
       <pubDate>Fri, 30 Jan 2009 03:34:39 +0000</pubDate>
       
       <guid>https://cmdln.org/2009/01/29/baseline-analysis-is-important-cpu-performance-analysis-in-linux-revisited/</guid>
-      <description>&lt;p&gt;Yesterday I wrote about &lt;!-- raw HTML omitted --&gt;CPU Performance Analysis in Linux&lt;!-- raw HTML omitted --&gt;. I explained how to tell if you are experiencing a CPU bottleneck. This is just a quick followup to show the effect of adding more cpu power.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Yesterday I wrote about &lt;a href=http://www.cmdln.org/2009/01/28/cpu-performance-analysis-in-linux/&gt;CPU Performance Analysis in Linux&lt;/a&gt;. I explained how to tell if you are experiencing a CPU bottleneck. This is just a quick followup to show the effect of adding more cpu power.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -31,7 +31,7 @@ I use this plugin with Zenoss and I set any performance thresholds there, more i
       <pubDate>Wed, 28 Jan 2009 06:03:17 +0000</pubDate>
       
       <guid>https://cmdln.org/2009/01/28/cpu-performance-analysis-in-linux/</guid>
-      <description>&lt;p&gt;A while back I wrote a post &lt;!-- raw HTML omitted --&gt;Analyzing Linux System Performance and Finding Bottlenecks&lt;!-- raw HTML omitted --&gt;. I did’t really give a good explanation of determining if you are CPU bound or not so I am writing this post to clear that up.&lt;/p&gt;</description>
+      <description>&lt;p&gt;A while back I wrote a post &lt;a href=http://www.cmdln.org/2008/04/13/analyzing-linux-system-performance-and-finding-bottle-necks/&gt;Analyzing Linux System Performance and Finding Bottlenecks&lt;/a&gt;. I did’t really give a good explanation of determining if you are CPU bound or not so I am writing this post to clear that up.&lt;/p&gt;</description>
     </item>
     
     <item>

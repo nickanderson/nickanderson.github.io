@@ -12,8 +12,8 @@
       <pubDate>Thu, 25 Oct 2012 02:07:09 +0000</pubDate>
       
       <guid>https://cmdln.org/2012/10/24/cfengine-3-policy-update-or-how-cf_promises_validated-works/</guid>
-      <description>Over the past several months2 years (since 3.1.2 release, wow time flys when your having fun. I checked and 3.1.2 was releasedon Dec 9th 2010.) I have seenafewquestionsregarding how the default CFEngine policy update works, and more specifically how cf_promises_validated plays into the update process. This is my stab at describing the history and behaviour. I welcome any corrections.
-The default failsafe.cf update policy is simple in nature. (We could probably debate what is simpleor complex, but I am comfortable with the label in this case.</description>
+      <description>Over the past several months 2 years (since 3.1.2 release, wow time flys when your having fun. I checked and 3.1.2 was released on Dec 9th 2010.) I have seen a few questions regarding how the default CFEngine policy update works, and more specifically how cf_promises_validated plays into the update process. This is my stab at describing the history and behaviour. I welcome any corrections.
+The default failsafe.cf update policy is simple in nature.</description>
     </item>
     
   </channel>

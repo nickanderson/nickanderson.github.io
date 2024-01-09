@@ -80,11 +80,12 @@
 <p>Do you keep track of configuration changes? You should. Maybe your using an advanced configuration management system like puppet. Even if you are you should keep your puppet configs versioned.</p>
 <p>At any rate etckeeper is a great tool to version your configuration files stored in /etc. etckeeper hooks into your package manager and updates the repo each time changes are detected.</p>
 <p>Its super easy to setup. In a debian based system just install via apt.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<pre class="brush: bash; title: ; notranslate" title="">sudo aptitude install etckeeper
+</pre>
 <p>Once etckeeper is installed you need to initialize the git repository and do the initial check in.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<pre class="brush: bash; title: ; notranslate" title="">sudo etckeeper init
+sudo etckeeper commit
+</pre>
 
                 </div>
                 

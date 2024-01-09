@@ -77,9 +77,13 @@
                 <span class="post-date">2008-12-07 </span>
                 <div class="post-content">
                     <p>Some projects have production code that runs off of a git cloned repository. There may be a case in which you want to notify others when that clone pulls. It is a pretty easy feat with gits post-merge hook. The post-merge hook will run after a merge (think git pull). All you have to do it create a project/.git/hooks/post-merge shell script and chmod +x it. Next time you pull successfully that script will run. Here is an example.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<blockquote>
+<pre class="brush: bash; title: ; notranslate" title="">#!/bin/bash
+TEMPLOG=$(mktemp)
+echo "Sending email notification of update"
+git log --reverse --no-merges --stat @{1}.. &gt; $TEMPLOG
+sendEmail -u "Production code update notification" -t recipient@domain.com &lt; $TEMPLOG
+rm $TEMPLOG
+</pre><blockquote>
 </blockquote>
 
                 </div>

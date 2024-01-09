@@ -142,8 +142,7 @@ Monitoring A/B power is not as easy as monitoring the individual PDUs. Some serv
 				<h4 class="post-date">2010-05-24</h4>
 			</div>
 			<div class="post-summary"><p>Recently I was building a ZenPack for Zenoss. The ZenPack included an Event Command which executed a custom script. I wanted to store the custom script in the ZenPack and I didn’t want to do anything other than have proper script dependencies in place for it to work.
-Custom scripts can be placed in $ZENHOME/ZenPacks/ZenPacks.CompanyName.Package/Zenpacks/CompanyName/Package/lib but if you want them to be executable place them in libexec.
-Thanks to Matt Ray for telling me how to properly path the Event Command and the note about scripts in libexec getting the executable bit set, the docs I found only specified the lib directory.</p></div>
+${here/ZenPackManager/packs/ZenPacks.community.YOURZENPACK/path}/libexec/yourscript.sh ${dev/manageIp} Custom scripts can be placed in $ZENHOME/ZenPacks/ZenPacks.CompanyName.Package/Zenpacks/CompanyName/Package/lib but if you want them to be executable place them in libexec.</p></div>
 			<div class="post-list-footer text-center">
 				<a href="https://cmdln.org/2010/05/24/notes-on-zenoss-zenpacks/">Read More</a>
 			</div>

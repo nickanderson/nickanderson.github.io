@@ -79,17 +79,41 @@
                     <p>Over the last couple days I’ve briefly talked about <a href="http://www.cmdln.org/2009/02/19/version-your-etc/">revisioning configs</a> and <a href="http://www.cmdln.org/2009/02/18/movin-in-movin-out/">making your home directory portable</a>. It seems to have stirred up a bit of discussion over at <a href="http://standalone-sysadmin.blogspot.com/2009/02/ideas-on-maintaining-customized-shelll.html">Matt Simmons Standalone Sysadmin</a>, and <a href="http://saintaardvarkthecarpeted.com/blog/2009-02/mercurial_for_dotfiles.html">Hugh Browns mentioned he uses mercurial</a> for this task.. As I noted in the post about <a href="http://www.cmdln.org/2009/02/19/version-your-etc/">managing /etc with version control</a> I do revision my home directory, or at least pieces of it.</p>
 <p>I consider this to be a different problem than <a href="http://www.cmdln.org/2009/02/18/movin-in-movin-out/">making my environment portable</a>. For example I want my configs to have a full revision history, even things like my ssh config or my private keys. I want that history as a backup, I do not want to distribute all of that information to other machines. <a href="http://eigenclass.org/hiki/gibak-backup-system-introduction">gibak</a> is a great wrapper for git to help with this.</p>
 <p>Installation is not hard but you will need to install a few dependencies.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<pre class="brush: bash; title: ; notranslate" title="">aptitude install ocaml omake git-core
+git clone http://eigenclass.org/repos/git/gibak/.git/
+cd gibak
+omake
+cp find-git-files ~/bin
+cp find-git-repos ~/bin
+cp gibak ~/bin
+cp ometastore ~/bin
+</pre>
 <p>Now that its installed you just need to initialize your git repo, make adjustments to your .gitignore (you probably don’t want _everything_ in your repo).</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<pre class="brush: bash; title: ; notranslate" title="">gibak init
+vim ~/.gitignore
+gibak commit
+</pre>
 <p>I don’t have everything in my home directory revisioned. Mainly I revision configuration files and my Documents. Here is what my .gitignore looks like.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<pre class="brush: bash; title: ; notranslate" title=""># I am selective about what I want to revision, you may not want this.
+/*
+# You probably want to ignore all the "dot" files in your home
+# directory, since they mostly contain local application state data.
+/.*
+# but... some dot files you probably do *not* want ignored are
+# listed here:
+!/.bash*
+!/.gnupg
+!/.ssh
+!/.vimrc
+!/.mutt
+/.mutt/profile.d/*/cache
+!/.gitignore
+!/.todocycle
+!/Documents
+</pre>
 <p>Now depending on what files you want in your repo and if they change frequently or not you may want to have a cron job to automatically commit changes to your repo. I would suggest an entry similar to this.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<pre class="brush: bash; title: ; notranslate" title="">0 0 * * * gibak commit  "Automatic Commit - $(date +%m.%d.%Y)"
+</pre>
 <p>To manually commit changes just run gibak commit after making changes.</p>
 <p>Now you can deal with your revisioned files just like any other git repo. You can clone it to a remote location to back it up, revert commits or whatever else suits your fancy.</p>
                 </div>

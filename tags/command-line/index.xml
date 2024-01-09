@@ -24,7 +24,8 @@ It will take your current line and stuff it into the your default editor (export
       
       <guid>https://cmdln.org/2009/04/16/testing-mail-servers-with-swaks/</guid>
       <description>I hadn’t seen this tool before so I figured I would share. Swaks is the swiss army knife SMTP according to the homepage.
-I’ve covered testing email from the command line before but this tool sure makes it easier.</description>
+I’ve covered testing email from the command line before but this tool sure makes it easier.
+swaks --to nick@tld --from nick@tld*** MX Routing not available: requires Net::DNS. Using localhost as mail server=== Trying localhost:25...=== Connected to localhost.&amp;lt;- 220 cmdln-laptop ESMTP Exim 4.69 Thu, 16 Apr 2009 12:23:24 -0500-&amp;gt; EHLO cmdln-laptop&amp;lt;- 250-cmdln-laptop Hello localhost [127.</description>
     </item>
     
     <item>

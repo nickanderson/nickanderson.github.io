@@ -13,7 +13,7 @@
       
       <guid>https://cmdln.org/2008/12/17/ssh-config-wildcards/</guid>
       <description>I just wanted to make sure no one forgets that wildcards can be used in your .ssh/config. This can be extremely helpful. For example say you have 100 nodes that have a simple nameing scheme of nodexxxx. You can add the following into your ssh config and pre-poplulate settings.
-That would cause any ssh connection matching node* to use the user staffuser and .ssh/staff_key as the ssh key. By the same token you could do this.</description>
+Host node*User staffuserIdentityFile ~/.ssh/staff_key That would cause any ssh connection matching node* to use the user staffuser and .</description>
     </item>
     
     <item>
@@ -31,7 +31,7 @@ That would cause any ssh connection matching node* to use the user staffuser and
       <pubDate>Mon, 11 Feb 2008 06:01:54 +0000</pubDate>
       
       <guid>https://cmdln.org/2008/02/11/restricting-ssh-commands/</guid>
-      <description>&lt;p&gt;SSH is a powerful tool. When combined with ssh keys, it becomes easy to automate remote procedures like backups. However leaving key access wide open can be a bad idea. It is possible to use restrict ssh keys to specific commands, even coming from specific hosts. There is this nice little perl script called &lt;!-- raw HTML omitted --&gt;Authprogs&lt;!-- raw HTML omitted --&gt; that makes this somewhat easier. Ill show you how to use authprogs for an automated rsync over ssh.&lt;/p&gt;</description>
+      <description>&lt;p&gt;SSH is a powerful tool. When combined with ssh keys, it becomes easy to automate remote procedures like backups. However leaving key access wide open can be a bad idea. It is possible to use restrict ssh keys to specific commands, even coming from specific hosts. There is this nice little perl script called &lt;a HREF=&#34;http://www.hackinglinuxexposed.com/tools/authprogs&#34;&gt;Authprogs&lt;/a&gt; that makes this somewhat easier. Ill show you how to use authprogs for an automated rsync over ssh.&lt;/p&gt;</description>
     </item>
     
   </channel>

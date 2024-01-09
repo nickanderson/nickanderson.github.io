@@ -13,7 +13,7 @@
       
       <guid>https://cmdln.org/2008/12/04/google-like-unit-conversion-on-the-console/</guid>
       <description>For those of you who are horrid at math like I am googles unit conversion is a great help. Want to know how many GB 1Mbps is in a month? Simple just ask google. Well I like to have the ability even when I am not online and I found units. Its in the debian repository and oh so easy to use.
-  </description>
+units -t &#39;1Mbps&#39; &#39;GB/month&#39;328.71798units -t &#39;1hour&#39; &#39;seconds&#39;3600  </description>
     </item>
     
     <item>

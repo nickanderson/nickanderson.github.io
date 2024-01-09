@@ -13,9 +13,9 @@
       
       <guid>https://cmdln.org/2010/08/02/bind-stats-in-centosrhel5/</guid>
       <description>Just a little tip, if your looking for bind stats and your chrooted
-will give you
-All you have to do is
-Now after you run rndc stats your named.stats fill will be populated with information.</description>
+rndc stats will give you
+rndc: &#39;stats&#39; failed: permission denied All you have to do is
+touch /var/named/chroot/var/named/named.statschown named:named /var/named/chroot/var/named/named.stats Now after you run rndc stats your named.stats fill will be populated with information.</description>
     </item>
     
   </channel>

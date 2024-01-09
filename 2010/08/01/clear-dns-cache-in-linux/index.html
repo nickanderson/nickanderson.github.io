@@ -77,7 +77,7 @@
                 <span class="post-date">2010-08-01 </span>
                 <div class="post-content">
                     <p>Had a slightly vexing issue the other day. During a migration the destination host ended up caching some stale DNS entries. I tried a quick restart of nscd to no avail, rebooted the VM, again no joy. Even overriding the host in /etc/hosts wasn’t working. Took a few minutes of digging but what did work was</p>
-<!-- raw HTML omitted -->
+<pre class="brush: plain; title: ; notranslate" title="">nscd -i hosts</pre>
 <p>. Just something to remember if you ever seem to have a stubborn caching issue, rebooting/restarting wont always solve the issue.</p>
 <p>Also happy late sysadmin day! Unfortunately I missed the festivities being stuck in the hospital. Oh well, there is always next year.</p>
 

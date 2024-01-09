@@ -78,8 +78,9 @@
                 <div class="post-content">
                     <p>I don’t know how many of you know that I am a recovering gentoo user. One of the staples of my desktop used to be <a href="http://www.gentoo.org/proj/en/keychain/">keychain</a>. Keychain is a simple wrapper for ssh-agent and gpg-agent. It eases the use of a single long running agent per system instead of per login session. For some reason this tool had fallen out of my basket when I switched to debian several years ago. I’m glad to have it back.</p>
 <p>It’s easy to install in debian based systems, simply</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<pre class="brush: bash; title: ; notranslate" title="">aptitude install keychain
+echo "keychain ~/.ssh/id_rsa" &gt;&gt; ~/.bashrc
+</pre>
 
                 </div>
                 

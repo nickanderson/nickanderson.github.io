@@ -78,8 +78,36 @@
                 <div class="post-content">
                     <p>I hadn’t seen this tool before so I figured I would share. <a href="http://www.jetmore.org/john/code/#swaks">Swaks is the swiss army knife SMTP</a> according to the homepage.</p>
 <p>I’ve covered <a href="http://www.cmdln.org/2008/04/06/testing-email-manually-with-telnet-spoofing-email/">testing email from the command line</a> before but this tool sure makes it easier.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<pre class="brush: php; title: ; notranslate" title="">swaks --to nick@tld --from nick@tld
+*** MX Routing not available: requires Net::DNS.  Using localhost as mail server
+=== Trying localhost:25...
+=== Connected to localhost.
+&lt;-  220 cmdln-laptop ESMTP Exim 4.69 Thu, 16 Apr 2009 12:23:24 -0500
+ -&gt; EHLO cmdln-laptop
+&lt;-  250-cmdln-laptop Hello localhost [127.0.0.1]
+&lt;-  250-SIZE 52428800
+&lt;-  250-PIPELINING
+&lt;-  250 HELP
+ -&gt; MAIL FROM:&lt;nick@tld&gt;
+&lt;-  250 OK
+ -&gt; RCPT TO:&lt;nick@tld&gt;
+&lt;-  250 Accepted
+ -&gt; DATA
+&lt;-  354 Enter message, ending with &quot;.&quot; on a line by itself
+ -&gt; Date: Thu, 16 Apr 2009 12:23:24 -0500
+ -&gt; To: nick@tld
+ -&gt; From: nick@tld
+ -&gt; Subject: test Thu, 16 Apr 2009 12:23:24 -0500
+ -&gt; X-Mailer: swaks v20061116.0 jetmore.org/john/code/#swaks
+ -&gt; 
+ -&gt; This is a test mailing
+ -&gt; 
+ -&gt; .
+&lt;-  250 OK id=1LuVJ6-0007ge-Jf
+ -&gt; QUIT
+&lt;-  221 cmdln-laptop closing connection
+=== Connection closed with remote host.
+</pre>
 
                 </div>
                 

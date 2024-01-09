@@ -84,8 +84,13 @@
 <li>service xinetd start</li>
 </ol>
 <p>Unfortunately for me this was not working. Every time I tried to telnet to the host after enabling it I would get an error message.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<pre class="brush: bash; title: ; notranslate" title="">telnet host
+Trying 203.0.113.10...
+Connected to host (203.0.113.10).
+Escape character is '^]'.
+getaddrinfo: localhost Name or service not known
+Connection closed by foreign host.
+</pre>
 <p>I tried everything I could think of, selinux disabled, ensure localhost in /etc/hosts, connect to ip instead of hostname. Nothing was working. All of my searching was just turning up the obligatory “Don’t use telnet, use ssh”.</p>
 <p>While that is generally good advice, in the event you are restricted to using telnet it’s not very helpful. Obviously is something related to name resolution. From both sides the fqdn was resolvable. Then it dawned on me. This environment also has the standard of not using the fqdn as the hostname as set in /etc/sysconfig/network. I had not ensured that the shorthand hostname was resolvable. I resolved the error by adding the hostname in /etc/hosts, but adding a default search domain in /etc/resolv.conf would work just as well.</p>
 <p>This leads me back to the error message. Really it had nothing to do with “localhost” or “127.0.0.1”. Had it said “host” Name or service not known I would have chased down the issue much sooner.</p>
