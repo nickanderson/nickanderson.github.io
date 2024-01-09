@@ -19,7 +19,7 @@ On the best of days I never leave Emacs and I have a record of everything I did 
 ## Statistics {#statistics}
 
 As of Tuesday, January  9, 2024
- I had `57MB` of `.org` files in `~/org`. `4946` files and `1195265` lines of text, the largest single file was `1.3MB` and the longest lined file had `26370` lines.
+ I had `57MB` of `.org` files in `~/org`. `4945` files and `1195265` lines of text, the largest single file was `1.3MB` and the longest lined file had `26370` lines.
 
 `4769` of these files were inside Org-roam[^fn:2], the majority of them (`3608`) were "dailies"[^fn:3].
 
@@ -45,7 +45,7 @@ Org-roam was my primary capture interface and I _really_ liked the daily capabil
 
 I had `24` org-capture-templates,  `16` org-roam-capture-templates and `75` org-roam-dailies-capture-templates.
 
-<div class="org-youtube"><iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/v_jDFgS2AqE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="YouTube Video"></iframe></div>
+<div class="org-youtube"><iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/8A52ZXPhJFk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="YouTube Video"></iframe></div>
 
 
 ### Capture templates helped me {#capture-templates-helped-me}
