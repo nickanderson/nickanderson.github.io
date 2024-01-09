@@ -8,6 +8,8 @@ author = "Nick Anderson"
 
 Org-mode is my exocortex, second brain, second mind, mind palace, pensive, and personal knowledge management system. It's very flexible and the features I use as well as how I organize my files continues to change so I collected things here to document how I do things in 2024, I did this in 2023 as well[^fn:1].
 
+{{< figure src="OIG (5).jpeg" alt="An image depectinig the essence of the statement Org-mode is my exocortex, second brain, second mind, mind palace, pensive, and personal knowledge management system. It's very flexible. Feature the org-roam unicorn. -- Dall-e 3 via Bing chat" width="75%" >}}
+
 
 ## Goal {#goal}
 
@@ -21,7 +23,7 @@ On the best of days I never leave Emacs and I have a record of everything I did 
 ## Statistics {#statistics}
 
 As of Tuesday, January  9, 2024
- I had `57MB` of `.org` files in `~/org`. `4945` files and `1195451` lines of text, the largest single file was `1.3MB` and the longest lined file had `26370` lines.
+ I had `57MB` of `.org` files in `~/org`. `4945` files and `1195464` lines of text, the largest single file was `1.3MB` and the longest lined file had `26370` lines.
 
 `4775` of these files were inside Org-roam[^fn:2], the majority of them (`3608`) were "dailies"[^fn:3].
 
