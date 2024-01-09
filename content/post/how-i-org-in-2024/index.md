@@ -19,7 +19,7 @@ On the best of days I never leave Emacs and I have a record of everything I did 
 ## Statistics {#statistics}
 
 As of Tuesday, January  9, 2024
- I had `57MB` of `.org` files in `~/org`. `4945` files and `1195274` lines of text, the largest single file was `1.3MB` and the longest lined file had `26370` lines.
+ I had `57MB` of `.org` files in `~/org`. `4946` files and `1195265` lines of text, the largest single file was `1.3MB` and the longest lined file had `26370` lines.
 
 `4769` of these files were inside Org-roam[^fn:2], the majority of them (`3608`) were "dailies"[^fn:3].
 
@@ -45,6 +45,8 @@ Org-roam was my primary capture interface and I _really_ liked the daily capabil
 
 I had `24` org-capture-templates,  `16` org-roam-capture-templates and `75` org-roam-dailies-capture-templates.
 
+<div class="org-youtube"><iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/v_jDFgS2AqE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="YouTube Video"></iframe></div>
+
 
 ### Capture templates helped me {#capture-templates-helped-me}
 
@@ -68,13 +70,6 @@ I used `org-web-tools`[^fn:6] to pull web pages into org. Either as a buffer to 
 `org-rich-yank`[^fn:8] let me copy text and paste it with context allowing it to be syntax highlighted as well as providing a link back to the source.
 
 I used `org-jira`[^fn:9] to pull issues from Atlassian Cloud Jira into org-mode.
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/8A52ZXPhJFk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/mjWjYxQk_sI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-via macro
-<div class="org-youtube"><iframe src="https://www.youtube-nocookie.com/embed/v_jDFgS2AqE" allowfullscreen title="YouTube Video"></iframe></div>
 
 [^fn:1]: How I org in 2023 <https://cmdln.org/2023/03/25/how-i-org-in-2023/>
 [^fn:2]: Org-roam is a plain-text personal knowledge management system. According to the [introduction in the manual](https://www.orgroam.com/manual.html#Introduction) Org-roam is a tool for networked thought. It reproduces some of [Roam Research’](https://roamresearch.com/)s key features within Org-mode. Org-roam allows for effortless non-hierarchical note-taking: with Org-roam, notes flow naturally, making note-taking fun and easy. Really, it facilitates capturing information by extending Org-mode's existing capture system, maintains a sqlite database of nodes (headings) with IDs and other metadata and provides the ability to surface and navigate back links (which nodes link to the current node). <https://www.orgroam.com/>
