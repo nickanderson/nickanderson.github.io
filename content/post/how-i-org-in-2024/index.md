@@ -8,13 +8,6 @@ author = "Nick Anderson"
 
 Org-mode is my exocortex, second brain, second mind, mind palace, pensive, and personal knowledge management system. It's very flexible and the features I use as well as how I organize my files continues to change so I collected things here to document how I do things in 2024, I did this in 2023 as well[^fn:1].
 
-<div align="center">
-
-<img src="OIG (5).jpeg" alt="An image depectinig the essence of the statement: &quot;Org-mode is my exocortex, second brain, second mind, mind palace, pensive, and personal knowledge management system. It's very flexible. Feature the org-roam unicorn. -- Dall-e 3 via Bing chat&quot;" width="75%" align="center" />
-<img src="OIG (5).jpeg" alt="An image depectinig the essence of the statement: &quot;Org-mode is my exocortex, second brain, second mind, mind palace, pensive, and personal knowledge management system. It's very flexible. Feature the org-roam unicorn. -- Dall-e 3 via Bing chat&quot;" width="75%" align="center" />
-
-</div>
-
 
 ## Goal {#goal}
 
@@ -28,7 +21,7 @@ On the best of days I never leave Emacs and I have a record of everything I did 
 ## Statistics {#statistics}
 
 As of Tuesday, January  9, 2024
- I had `57MB` of `.org` files in `~/org`. `4945` files and `1195317` lines of text, the largest single file was `1.3MB` and the longest lined file had `26370` lines.
+ I had `57MB` of `.org` files in `~/org`. `4945` files and `1195396` lines of text, the largest single file was `1.3MB` and the longest lined file had `26370` lines.
 
 `4775` of these files were inside Org-roam[^fn:2], the majority of them (`3608`) were "dailies"[^fn:3].
 
@@ -85,7 +78,7 @@ I used `org-jira`[^fn:9] to pull issues from Atlassian Cloud Jira into org-mode.
 [^fn:3]: Org-roam dailies are files organized by date. I use them for my journal, work log, and recurring meetings.
 [^fn:4]: Maggie Appleton has a nice post about [Daily notes as a frictionless default input for personal knowledge management systems](https://maggieappleton.com/daily-notes).
 [^fn:5]: I am not perfect in remembering to capture each thing but I don't need to be perfect to be effective.
-[^fn:6]: org-web-tools contains library functions and commands useful for retrieving web page content and processing it into Org-mode content. <https://github.com/alphapapa/org-web-tools>
-[^fn:7]: org-protocol  intercepts calls from emacsclient to trigger custom actions without external dependencies. Only one protocol has to be configured with your external applications or the operating system, to trigger an arbitrary number of custom actions. <https://orgmode.org/worg/org-contrib/org-protocol.html>
+[^fn:6]: `org-web-tools` contains library functions and commands useful for retrieving web page content and processing it into Org-mode content. <https://github.com/alphapapa/org-web-tools>
+[^fn:7]: `org-protocol` intercepts calls from emacsclient to trigger custom actions without external dependencies. Only one protocol has to be configured with your external applications or the operating system, to trigger an arbitrary number of custom actions. <https://orgmode.org/worg/org-contrib/org-protocol.html>
 [^fn:8]: `org-rich-yank` doesn't get enough publicity, I used it many times a day. It pastes the last copied text and automatically surrounds the snippet in blocks, marked with the major mode of where the code came from, and adds a link to the source file after the block. I recommend customizing `org-rich-yank-format-paste` and making the link to the source a comment as described in the README. <https://github.com/unhammer/org-rich-yank>
-[^fn:9]: org-jira facilitates getting content from Jira into org-mode and managing Jira issues from org-mode. <https://github.com/ahungry/org-jira>
+[^fn:9]: `org-jira` facilitates getting content from Jira into org-mode and managing Jira issues from org-mode. <https://github.com/ahungry/org-jira>
