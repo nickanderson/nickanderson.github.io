@@ -77,27 +77,55 @@
                 <span class="post-date">2007-07-20 </span>
                 <div class="post-content">
                     <p>Yes its been a while since I have checked in. Sorry I’ve just been too busy. But I have a great tip this time. Recently I had the need to do automatic session logging. A 3rd party was going to be logging into one of my servers to check out some software glitches that were happening. I love using GNU Screen for many shell tasks so using it for monitoring was logical. Screen is great for several reasons. First you can detach from it so you can leave the office, go home and re-attach and not have lost your place. Second, you can share another screen. It can be shared input or you can just watch what someone else is doing. Finally screen can do native logging. I wanted to automattically launch a screen session when somone logged in so if I happened to be on the server I could monitor them in real time. I also wanted a log of the session in case I wanted to look over it later or if I was not able to monitor the session live.</p>
-<!-- raw HTML omitted -->
+<!--adsense-->
 <p>I ended up adding the following to my .bashrc</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<pre># -- if $STARTED_SCREEN is set, don't try it again, to avoid looping
+# if screen fails for some reason.
+if [[ "$PS1" &&; "${STARTED_SCREEN:-No}" = No && "${SSH_TTY:-No}" != No ]]; then
+STARTED_SCREEN=1 ; export STARTED_SCREEN
+if [ -d $HOME/log/screen-logs ]; then
+sleep 1
+screen -RR && exit 0
+echo "Screen failed! continuing with normal bash startup"
+else
+mkdir -p $HOME/log/screen-logs
+fi
+# [end of auto-screen snippet]</pre>
 <p>Lets go through that …..</p>
-<!-- raw HTML omitted -->
+<pre>if [[ "$PS1" && "${STARTED_SCREEN:-No}" = No && "${SSH_TTY:-No}" != No ]]</pre>
 <p>If I have some title at my terminal and if STARTED_SCREEN is set and non-null, (expands to $STARTED_SCREEN. Otherwise, expands to No.) and if SSH_TTY is set and not null, then we can attempt to create the screen.</p>
 <p>$SSH_TTY is set when you ssh in, it should not be tripped by scp or sftp logins either.</p>
-<p><!-- raw HTML omitted -->&lt;br /&gt;
+<p><code lang="bash">&lt;br /&gt;
 then&lt;br /&gt;
 STARTED_SCREEN=1 ; export STARTED_SCREEN&lt;br /&gt;
-<!-- raw HTML omitted --></p>
+</code></p>
 <p>Here STARTED_SCREEN is set so that we dont loop on login creating a ton of screens.</p>
-<!-- raw HTML omitted -->
+<pre>if [ -d $HOME/log/screen-logs ]; then</pre>
 <p>if the directory is present</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<pre>#sleep 1
+screen -RR && exit 0
+# normally, execution of this rc script ends here...
+echo "Screen failed! continuing with normal bash startup"</pre>
 <p>Attempt to reattach any unattached screens. If there are no screens to be attached then make one and attach to it.</p>
 <p>And I added the following to my .screenrc</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<pre># support color X terminals
+termcap xterm 'XT:AF=\E[3%dm:AB=\E[4%dm:AX'
+terminfo xterm 'XT:AF=\E[3%p1%dm:AB=\E[4%p1%dm:AX'
+termcapinfo xterm 'XT:AF=\E[3%p1%dm:AB=\E[4%p1%dm:AX:hs:ts=\E]2;:fs=\007:ds=\E]2;screen\007'
+termcap xtermc 'XT:AF=\E[3%dm:AB=\E[4%dm:AX'
+terminfo xtermc 'XT:AF=\E[3%p1%dm:AB=\E[4%p1%dm:AX'
+termcapinfo xtermc 'XT:AF=\E[3%p1%dm:AB=\E[4%p1%dm:AX:hs:ts=\E]2;:fs=\007:ds=\E]2;screen\007'
+
+# detach on hangup
+autodetach on
+# no startup msg
+startup_message off
+# always use a login shell
+shell -$SHELL
+
+# auto-log
+logfile $HOME/log/screen-logs/%Y%m%d-%n.log
+deflog on</pre>
 <p>Most of this is self explanatory the log file for auto logging and deflog on are what give you your fun logs to look over later.</p>
 <p>You might also want to do some logrotate on the logs or some script to expire logs that are x days old. If you forget about them over time they may try to eat your file system.</p>
 <p>Note: I picked this up somewhere else a while back i just don’t remember exactly where. I modified it slightly to make it more readable but the credit goes to the original author. I think it was <a href="http://taint.org/wk/RemoteLoginAutoScreen">http://taint.org/wk/RemoteLoginAutoScreen</a>.</p>

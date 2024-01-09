@@ -79,22 +79,26 @@
                     <p>This comes up from time to time for me. Either myself or someone else needs to see what address are either in use or not in use (at least as far as ping is concerned). So here are a few oneliners to hopefully make your day brighter.</p>
 <p>Assuming your network is 192.168.1.0/24 (thats 192.168.1.0-255 255.255.255.0).</p>
 <h4 id="use-nmap-to-ping-scan-your-network">Use nmap to ping scan your network</h4>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<pre class="brush: bash; title: ; notranslate" title="">nmap -v -sP 192.168.1.0/24
+
+</pre>
 <h4 id="use-nmap-and-grep-to-scan-your-network-and-filter-for-hosts-that-are-8220up8221">Use nmap and grep to scan your network and filter for hosts that are “up”</h4>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<pre class="brush: bash; title: ; notranslate" title="">nmap -v -sP 192.168.1.0/24 | grep up
+
+</pre>
 <h4 id="use-nmap-and-grep-to-scan-your-network-and-filter-for-ips-that-are-unused-or-non-responsive">Use nmap and grep to scan your network and filter for ips that are unused or non-responsive</h4>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<pre class="brush: bash; title: ; notranslate" title="">nmap -v -sP 192.168.1.0/24 | grep down
+
+</pre>
 <p>Many times you just want the list of addresses because you are going to do some other processing on them.</p>
 <h4 id="use-nmap-and-awk-to-get-only-the-list-of-ips-that-are-unresponsive">Use nmap,  and awk to get only the list of ips that are unresponsive</h4>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<pre class="brush: bash; title: ; notranslate" title="">nmap -v -sP 192.168.1.0/24 | awk '/down/ {print $2}'
+
+</pre>
 <p>Of course you can add some file redirection here if you need to save the output.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<blockquote>
+<pre class="brush: bash; title: ; notranslate" title="">nmap -v -sP 192.168.1.0/24 | awk '/down' {print $2}' &gt; iplist.txt
+
+</pre><blockquote>
 </blockquote>
                 </div>
                 

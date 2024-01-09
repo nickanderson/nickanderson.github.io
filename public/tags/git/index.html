@@ -168,10 +168,8 @@ Do you keep track of configuration changes? You should. Maybe your using an adva
 			</div>
 			<div class="post-summary"><p>I hope you are already using ssh keys, but just in case your not go ahead and generate one with ssh-keygen -t rsa (you should do this on your local box)
 You may as well go ahead and copy your publick key to your git server now as well.
-Log into your gitosis server
- Make sure setuptools is installed  sudo aptitude install python-setuptools
-git clone git://eagain.net/gitosis.git
-cd gitosis</p></div>
+scp ~/.ssh/id_rsa.pub gitserver:/tmp/  Log into your gitosis server
+ssh gitserver   Make sure setuptools is installed  sudo aptitude install python-setuptools</p></div>
 			<div class="post-list-footer text-center">
 				<a href="https://cmdln.org/2008/10/25/secure-git-hosting-with-gitosis/">Read More</a>
 			</div>

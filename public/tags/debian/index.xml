@@ -32,7 +32,7 @@ Looks as if Debian has decided time based freeze schedules will help them better
       
       <guid>https://cmdln.org/2008/11/19/debian-etccrond-gotcha/</guid>
       <description>I typically use /etc/cron.d to store all of my system crontabs. I recently ran into an issue that I had either not run into before, or fixed and paid no attention to. Files stored in /etc/cron.d/ or any /etc/cron.* directory need to adhear to the run-parts Debian cron script namespace which consists is
-for the regex impared this does not include the dot character. If you have a file in /etc/cron.</description>
+(^[a-z0-9][a-z0-9-]*$) for the regex impared this does not include the dot character. If you have a file in /etc/cron.</description>
     </item>
     
     <item>

@@ -78,13 +78,18 @@
                 <div class="post-content">
                     <p>Well I gave unity the <a href="http://www.urbandictionary.com/define.php?term=old%20college%20try">old college try</a> in ubuntu 11.04. But last night I just couldn’t take it any more. There were some small rendering issues occasionally plus some tray programs like <a href="http://www.workrave.org/">workrave</a> had no place to go, at least that I could find anyway and I really need workrave to remind me to change from sitting to standing positions every so often.</p>
 <p>At any rate I decided to try gnome3 and gnome-shell. Its pretty easy to install</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<pre class="brush: bash; title: ; notranslate" title="">sudo add-apt-repository ppa:gnome3-team/gnome3
+sudo apt-get update
+sudo apt-get dist-upgrade
+sudo apt-get install gnome-shell
+sudo apt-get install gnome-tweak-tool
+</pre>
 <p>Then I dont know what process needed killed but just restarting X didnt seem to work for me, I rebooted and selected “Gnome” from the session selection bar.</p>
 <p>My first impressions so far … much better. I think its a cleaner look. I use <a href="http://mhr3.blogspot.com/2010/11/introducing-synapse-acetylcholine.html">synapse</a> a gnome-do like launcher any time i want to launch a program so for me an application dock is mostly a waste of time. Its clear that unity and gnome-shell have many ideas in common, I just think gnome-shell looks better and stays out of my way more out of the box.</p>
 <p>And if you want to remove gnome-shell try the following</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<pre class="brush: bash; title: ; notranslate" title="">sudo apt-get install ppa-purge
+sudo ppa-purge ppa:gnome3-team/gnome3
+</pre>
 
                 </div>
                 

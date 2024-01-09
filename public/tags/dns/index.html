@@ -87,7 +87,7 @@
 				<h4 class="post-date">2010-08-01</h4>
 			</div>
 			<div class="post-summary"><p>Had a slightly vexing issue the other day. During a migration the destination host ended up caching some stale DNS entries. I tried a quick restart of nscd to no avail, rebooted the VM, again no joy. Even overriding the host in /etc/hosts wasn’t working. Took a few minutes of digging but what did work was
-. Just something to remember if you ever seem to have a stubborn caching issue, rebooting/restarting wont always solve the issue.</p></div>
+nscd -i hosts . Just something to remember if you ever seem to have a stubborn caching issue, rebooting/restarting wont always solve the issue.</p></div>
 			<div class="post-list-footer text-center">
 				<a href="https://cmdln.org/2010/08/01/clear-dns-cache-in-linux/">Read More</a>
 			</div>

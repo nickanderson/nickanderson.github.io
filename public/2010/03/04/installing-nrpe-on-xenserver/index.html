@@ -79,24 +79,24 @@
                     <p>I like to have as little run in dom0 as possible. However some things you really need checked from dom0, like the status of your raid perhaps. Just some quick instructions on getting Nagios NRPE running in XenServer.</p>
 <ol>
 <li>
-<p>Install EPEL repository and disable it by default (remember we don’t want to accidentally install unnecessary packages) <!-- raw HTML omitted -->wget <a href="http://download.fedora.redhat.com/pub/epel/5/$(uname">http://download.fedora.redhat.com/pub/epel/5/$(uname</a> -i)/epel-release-5-3.noarch.rpm
+<p>Install EPEL repository and disable it by default (remember we don’t want to accidentally install unnecessary packages) <pre class="brush: bash; title: ; notranslate" title="">wget <a href="http://download.fedora.redhat.com/pub/epel/5/$(uname">http://download.fedora.redhat.com/pub/epel/5/$(uname</a> -i)/epel-release-5-3.noarch.rpm
 rpm -hiv epel-release*.rpm
 sed -i &rsquo;s/enabled=1/enabled=0/g' /etc/yum.repos.d/epel.repo
-<!-- raw HTML omitted --></p>
+</pre></p>
 </li>
 <li>
-<p>Install nrpe and configure it to start on boot <!-- raw HTML omitted -->yum install &ndash;enablerepo=epel nrpe
+<p>Install nrpe and configure it to start on boot <pre class="brush: bash; title: ; notranslate" title="">yum install &ndash;enablerepo=epel nrpe
 chkconfig nrpe on
-<!-- raw HTML omitted --></p>
+</pre></p>
 </li>
 <li>
-<p>Modify the firewall to allow NRPE connections. Add the following before the REJECT line in /etc/sysconfig/iptables <!-- raw HTML omitted -->-A RH-Firewall-1-INPUT -m state &ndash;state NEW -m tcp -p tcp &ndash;dport 5666 -j ACCEPT
-<!-- raw HTML omitted --></p>
+<p>Modify the firewall to allow NRPE connections. Add the following before the REJECT line in /etc/sysconfig/iptables <pre class="brush: bash; title: ; notranslate" title="">-A RH-Firewall-1-INPUT -m state &ndash;state NEW -m tcp -p tcp &ndash;dport 5666 -j ACCEPT
+</pre></p>
 </li>
 <li>
-<p>Restart your firewall and start nrpe <!-- raw HTML omitted -->restart your firewall , and start nrpe
+<p>Restart your firewall and start nrpe <pre class="brush: bash; title: ; notranslate" title="">restart your firewall , and start nrpe
 /etc/init.d/iptables restart &amp;&amp; /etc/init.d/nrpe start
-<!-- raw HTML omitted --></p>
+</pre></p>
 </li>
 <li>
 <p>Configure nrpe like normal and have fun</p>

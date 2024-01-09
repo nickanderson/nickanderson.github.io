@@ -12,7 +12,7 @@
       <pubDate>Sat, 06 Dec 2008 07:57:12 +0000</pubDate>
       
       <guid>https://cmdln.org/2008/12/06/top-for-mysql-with-mytop/</guid>
-      <description>I see Samuel Huckinsjust had a post about apachetop http://dancingpenguinsoflight.com/2008/12/top-for-apache-activity/ which I have been meaning to mention for a while, but being that there is a fresh post about it I will mention Mytop instead.
+      <description>I see Samuel Huckins just had a post about apachetop http://dancingpenguinsoflight.com/2008/12/top-for-apache-activity/ which I have been meaning to mention for a while, but being that there is a fresh post about it I will mention Mytop instead.
 Mytop is top for mysql. It can be used for monitoring the threads and overall performance of a MySQL.
 Its an easy install in debain with a quick aptitude install mytop.
 Here is some example output (sorry my mysql server isnt very busy atm).</description>

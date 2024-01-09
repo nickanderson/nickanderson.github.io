@@ -114,9 +114,9 @@ First you need to set ﻿﻿gecko.handlerService.allowRegisterFromDifferentHost 
 				<h4 class="post-date">2010-08-02</h4>
 			</div>
 			<div class="post-summary"><p>Just a little tip, if your looking for bind stats and your chrooted
-will give you
-All you have to do is
-Now after you run rndc stats your named.stats fill will be populated with information.</p></div>
+rndc stats will give you
+rndc: 'stats' failed: permission denied All you have to do is
+touch /var/named/chroot/var/named/named.statschown named:named /var/named/chroot/var/named/named.stats Now after you run rndc stats your named.stats fill will be populated with information.</p></div>
 			<div class="post-list-footer text-center">
 				<a href="https://cmdln.org/2010/08/02/bind-stats-in-centosrhel5/">Read More</a>
 			</div>
@@ -130,7 +130,7 @@ Now after you run rndc stats your named.stats fill will be populated with inform
 				<h4 class="post-date">2010-08-01</h4>
 			</div>
 			<div class="post-summary"><p>Had a slightly vexing issue the other day. During a migration the destination host ended up caching some stale DNS entries. I tried a quick restart of nscd to no avail, rebooted the VM, again no joy. Even overriding the host in /etc/hosts wasn’t working. Took a few minutes of digging but what did work was
-. Just something to remember if you ever seem to have a stubborn caching issue, rebooting/restarting wont always solve the issue.</p></div>
+nscd -i hosts . Just something to remember if you ever seem to have a stubborn caching issue, rebooting/restarting wont always solve the issue.</p></div>
 			<div class="post-list-footer text-center">
 				<a href="https://cmdln.org/2010/08/01/clear-dns-cache-in-linux/">Read More</a>
 			</div>
@@ -186,7 +186,8 @@ The other day I threw together a Zenpack to make it easier to setup monitoring o
 				<h4 class="post-date">2010-06-30</h4>
 			</div>
 			<div class="post-summary"><p>Why do applications have such horrible error messages. Non-specific errors are really not any more helpful than not logging at all.
-I was recently setting up autofs for mounting home directories from an nfs server. The little buggers refused to work right. All I was seeing in the logfile was a notice that an attempt was made, and failed.</p></div>
+I was recently setting up autofs for mounting home directories from an nfs server. The little buggers refused to work right. All I was seeing in the logfile was a notice that an attempt was made, and failed.
+attempting to mount entry /home/nandersofailed to mount /home/nanderso  How helpful is that?</p></div>
 			<div class="post-list-footer text-center">
 				<a href="https://cmdln.org/2010/06/29/autofs-error-logging-fail/">Read More</a>
 			</div>

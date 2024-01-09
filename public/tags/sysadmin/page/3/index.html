@@ -87,9 +87,9 @@
 				<h4 class="post-date">2010-08-02</h4>
 			</div>
 			<div class="post-summary"><p>Just a little tip, if your looking for bind stats and your chrooted
-will give you
-All you have to do is
-Now after you run rndc stats your named.stats fill will be populated with information.</p></div>
+rndc stats will give you
+rndc: 'stats' failed: permission denied All you have to do is
+touch /var/named/chroot/var/named/named.statschown named:named /var/named/chroot/var/named/named.stats Now after you run rndc stats your named.stats fill will be populated with information.</p></div>
 			<div class="post-list-footer text-center">
 				<a href="https://cmdln.org/2010/08/02/bind-stats-in-centosrhel5/">Read More</a>
 			</div>
@@ -103,7 +103,7 @@ Now after you run rndc stats your named.stats fill will be populated with inform
 				<h4 class="post-date">2010-08-01</h4>
 			</div>
 			<div class="post-summary"><p>Had a slightly vexing issue the other day. During a migration the destination host ended up caching some stale DNS entries. I tried a quick restart of nscd to no avail, rebooted the VM, again no joy. Even overriding the host in /etc/hosts wasn’t working. Took a few minutes of digging but what did work was
-. Just something to remember if you ever seem to have a stubborn caching issue, rebooting/restarting wont always solve the issue.</p></div>
+nscd -i hosts . Just something to remember if you ever seem to have a stubborn caching issue, rebooting/restarting wont always solve the issue.</p></div>
 			<div class="post-list-footer text-center">
 				<a href="https://cmdln.org/2010/08/01/clear-dns-cache-in-linux/">Read More</a>
 			</div>
@@ -159,7 +159,8 @@ The other day I threw together a Zenpack to make it easier to setup monitoring o
 				<h4 class="post-date">2010-06-30</h4>
 			</div>
 			<div class="post-summary"><p>Why do applications have such horrible error messages. Non-specific errors are really not any more helpful than not logging at all.
-I was recently setting up autofs for mounting home directories from an nfs server. The little buggers refused to work right. All I was seeing in the logfile was a notice that an attempt was made, and failed.</p></div>
+I was recently setting up autofs for mounting home directories from an nfs server. The little buggers refused to work right. All I was seeing in the logfile was a notice that an attempt was made, and failed.
+attempting to mount entry /home/nandersofailed to mount /home/nanderso  How helpful is that?</p></div>
 			<div class="post-list-footer text-center">
 				<a href="https://cmdln.org/2010/06/29/autofs-error-logging-fail/">Read More</a>
 			</div>
@@ -173,8 +174,7 @@ I was recently setting up autofs for mounting home directories from an nfs serve
 				<h4 class="post-date">2010-05-24</h4>
 			</div>
 			<div class="post-summary"><p>Recently I was building a ZenPack for Zenoss. The ZenPack included an Event Command which executed a custom script. I wanted to store the custom script in the ZenPack and I didn’t want to do anything other than have proper script dependencies in place for it to work.
-Custom scripts can be placed in $ZENHOME/ZenPacks/ZenPacks.CompanyName.Package/Zenpacks/CompanyName/Package/lib but if you want them to be executable place them in libexec.
-Thanks to Matt Ray for telling me how to properly path the Event Command and the note about scripts in libexec getting the executable bit set, the docs I found only specified the lib directory.</p></div>
+${here/ZenPackManager/packs/ZenPacks.community.YOURZENPACK/path}/libexec/yourscript.sh ${dev/manageIp} Custom scripts can be placed in $ZENHOME/ZenPacks/ZenPacks.CompanyName.Package/Zenpacks/CompanyName/Package/lib but if you want them to be executable place them in libexec.</p></div>
 			<div class="post-list-footer text-center">
 				<a href="https://cmdln.org/2010/05/24/notes-on-zenoss-zenpacks/">Read More</a>
 			</div>
@@ -202,8 +202,8 @@ Instead of blowing away your entire current buffer with history -c you can redir
 				<h4 class="post-date">2010-05-19</h4>
 			</div>
 			<div class="post-summary"><p>I just downloaded EMC Networker client for a 32bit linux box. The file I downloaded was nw74sp5_linux_x86.tar.gz. Of course when I go to extract it ….
-Umm not in gzip format ….
-🙂</p></div>
+# tar zxvf ../nw74sp5_linux_x86.tar.gzgzip: stdin: not in gzip formattar: Child returned status 1tar: Error exit delayed from previous errors Umm not in gzip format ….
+# tar xvf ../nw74sp5_linux_x86.tar.gzlinux_x86/linux_x86/lgtoclnt-7.4.5-1.i686.rpmlinux_x86/lgtolicm-7.4.5-1.i686.rpmlinux_x86/lgtoman-7.4.5-1.i686.rpm... 🙂</p></div>
 			<div class="post-list-footer text-center">
 				<a href="https://cmdln.org/2010/05/19/archive-creation-fail/">Read More</a>
 			</div>

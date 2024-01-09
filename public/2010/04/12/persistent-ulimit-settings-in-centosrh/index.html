@@ -78,17 +78,51 @@
                 <div class="post-content">
                     <p>Recently a developer came to me and said they are starting to see failed builds apparently due to open file handle limitations on the build server. In case your not aware, by default there are limitations on users to ensure they don’t hog the entire resources of a system. Sometimes these limitations need to be adjusted.</p>
 <p>In my case the “bamboo” user needed more than 1024 open files on occasion. I determined my system had a maximum number of open files of 1572928.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<pre class="brush: bash; title: ; notranslate" title="">$ cat /proc/sys/fs/file-max
+1572928
+</pre>
 <p>And my bamboo user has a limit of 1024 based on the output of the ulimit -a command run as the bamboo user.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<pre class="brush: bash; title: ; notranslate" title="">$ ulimit -a
+core file size          (blocks, -c) 0
+data seg size           (kbytes, -d) unlimited
+scheduling priority             (-e) 0
+file size               (blocks, -f) unlimited
+pending signals                 (-i) 139264
+max locked memory       (kbytes, -l) 32
+max memory size         (kbytes, -m) unlimited
+open files                      (-n) 1024
+pipe size            (512 bytes, -p) 8
+POSIX message queues     (bytes, -q) 819200
+real-time priority              (-r) 0
+stack size              (kbytes, -s) 10240
+cpu time               (seconds, -t) unlimited
+max user processes              (-u) 139264
+virtual memory          (kbytes, -v) unlimited
+file locks                      (-x) unlimited
+</pre>
 <p>It seems to be an intermittent problem so I’m pretty sure just doubling the number of open files the bamboo user can have will resolve the issue. To make the change you just need to edit /etc/security/limits.conf I added new hard and soft limits by adding these lines.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<pre class="brush: bash; title: ; notranslate" title="">bamboo        hard    nofile    2048
+bamboo        soft    nofile    2048
+</pre>
 <p>Now lets just make sure the new limits are in place. No need to reboot just log in as the bamboo user again and run “ulimit -a”.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<pre class="brush: bash; title: ; notranslate" title="">$ ulimit -a
+core file size          (blocks, -c) 0
+data seg size           (kbytes, -d) unlimited
+scheduling priority             (-e) 0
+file size               (blocks, -f) unlimited
+pending signals                 (-i) 139264
+max locked memory       (kbytes, -l) 32
+max memory size         (kbytes, -m) unlimited
+open files                      (-n) 2048
+pipe size            (512 bytes, -p) 8
+POSIX message queues     (bytes, -q) 819200
+real-time priority              (-r) 0
+stack size              (kbytes, -s) 10240
+cpu time               (seconds, -t) unlimited
+max user processes              (-u) 139264
+virtual memory          (kbytes, -v) unlimited
+file locks                      (-x) unlimited
+</pre>
 <p>As you can see open files is now 2048.</p>
 
                 </div>

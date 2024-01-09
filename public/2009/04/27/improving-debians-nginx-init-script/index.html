@@ -79,8 +79,12 @@
                     <p>nginx is a high performance HTTP and mail proxy server written by <a href="http://http://sysoev.ru/en/">Igor Sysoev</a>.</p>
 <p>I’m not sure what the init scripts do for other distros but it seems a bit of an oversight to leave out checking the config file when running the init script.</p>
 <p>Add this line to your nginx init script right after the text -x $DAEMON line to make it check the config before proceeding to start stop or restart the service.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<pre class="brush: php; title: ; notranslate" title="">$DAEMON -t &gt; /dev/null 2&gt;&1 
+if [ $? -ne 0 ]; then
+        echo "Configuration file has errors, try $DAEMON -t"
+        exit 0
+fi
+</pre>
 
                 </div>
                 

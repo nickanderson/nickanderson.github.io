@@ -14,17 +14,14 @@
       <guid>https://cmdln.org/2009/04/28/nice-console-regex-helper/</guid>
       <description>Last week I stumbled on a nice console regex helper. It’s not that I’m bad at regex but switching between sed, vim, python, perl regex trips me up a bit sometimes.
 Go ahead and check it out for yourself
-&amp;lt;br /&amp;gt; [.]quit [0]reset [*]color [/]programs ^txt2regex$
+sudo aptitude install txt2regex &amp;lt;br /&amp;gt; [.]quit [0]reset [*]color [/]programs ^txt2regex$
 !! not supported
 RegEx perl :
 RegEx php :
 RegEx postgres:
 RegEx python :
 RegEx sed :
-RegEx vim :
-.oO()()
-[1-2]:
-start to match:</description>
+RegEx vim :</description>
     </item>
     
     <item>
@@ -42,7 +39,7 @@ start to match:</description>
       <pubDate>Tue, 31 Jul 2007 17:52:56 +0000</pubDate>
       
       <guid>https://cmdln.org/2007/07/31/fix-terminal-scrolling-when-inside-gnu-screen/</guid>
-      <description>&lt;p&gt;My post on &lt;!-- raw HTML omitted --&gt; Automatic session logging and monitoring with GNU screen&lt;!-- raw HTML omitted --&gt; seems to have been well received. I have had more hits by far on that post today than ever before. I noticed a nagging issue with screen and a friend of mine Travis Cline pointed me to the fix.&lt;/p&gt;</description>
+      <description>&lt;p&gt;My post on &lt;a href=&#34;http://www.cmdln.org/2007/07/20/automatic-session-logging-and-monitoring-with-gnu-screen-for-the-paranoid/&#34; mce_href=&#34;http://www.cmdln.org/2007/07/20/automatic-session-logging-and-monitoring-with-gnu-screen-for-the-paranoid/&#34;&gt; Automatic session logging and monitoring with GNU screen&lt;/a&gt; seems to have been well received. I have had more hits by far on that post today than ever before. I noticed a nagging issue with screen and a friend of mine Travis Cline pointed me to the fix.&lt;/p&gt;</description>
     </item>
     
   </channel>

@@ -80,17 +80,21 @@
 <p>It is not sufficient to just replace your index with a maintenance page for multiple reasons. First what about sub pages? Without a redirect on those people will be able to access other areas of your site which may of may not be desireble.</p>
 <p>Using mod_rewrite you can be friendly to search engines, and your users.</p>
 <p>Try this in your .htaccess</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<pre class="brush: bash; title: ; notranslate" title="">ErrorDocument 404 /maint.html
+RewriteEngine on
+RewriteCond %{REQUEST_URI} !/maint.html$
+RewriteCond %{REQUEST_URI} !/maint.jpg$
+RewriteRule $/maint.html$ [R=302,L]
+</pre>
 <p>This will give a 302 (Moved Temporarily) msg to clients and serve</p>
 <p>maint.html. maint.html can have content similar to this.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<pre class="brush: bash; title: ; notranslate" title="">&lt;img src="/maint.jpg" alt="We are currently undergoing maintenance. We will be back shortly"&gt;'
+</pre>
 <p>The leading slash on the image is important as it will serve the image even if someone accesses http://yourdomain/somethig/somethingelse.</p>
 <p>Its also important to set your 404 as your maint.html so anyone accessing pages that do not exist get the same maintenance content.</p>
 <p>You might want to add a condition like the following if you want to be able to browse your website normally while in maintenance mode.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<pre class="brush: bash; title: ; notranslate" title="">RewriteCond %{REMOTE_HOST} !^123\.123\.123\.123
+</pre>
 <p>Be sure to replace 123.123.123.123 with your ip address. This will cause apache to not apply the rule to the specifed ip.</p>
 <p>Hope someone finds this useful. I know I have used it several times in the past.</p>
                 </div>

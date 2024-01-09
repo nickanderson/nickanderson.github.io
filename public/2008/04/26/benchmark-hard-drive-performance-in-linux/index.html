@@ -78,8 +78,8 @@
                 <div class="post-content">
                     <p>Bonnie is a great tool to use to benchmark your file system. Just a quick tip on using bonnie.</p>
 <p>You need to give bonnie how much ram you have have in your system, and when you run bonnie you should run with a size 2x as big as your ram. So using this command will help you speed up that calculation.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<pre class="brush: bash; title: ; notranslate" title="">bonnie++ -r  $(free -m | awk '/^Mem/{print $2}') -s $(echo $(free -m | awk '/^Mem/{print $2}')*2| bc)
+</pre>
 <p>We use subcommands to expand and automattically use the right parameters for bonnie. Would be easy enough to stick that into a shell script to make a small wrapper and pass along any other arguments to bonnie like user and directory.</p>
                 </div>
                 

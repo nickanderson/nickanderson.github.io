@@ -78,11 +78,11 @@
                 <div class="post-content">
                     <p>I hope you are already using ssh keys, but just in case your not go ahead and generate one with ssh-keygen -t rsa (you should do this on your local box)</p>
 <p>You may as well go ahead and copy your publick key to your git server now as well.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<pre class="brush: bash; title: ; notranslate" title="">scp ~/.ssh/id_rsa.pub gitserver:/tmp/
+</pre>
 <p>Log into your gitosis server</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<pre class="brush: bash; title: ; notranslate" title="">ssh gitserver
+</pre>
 <ul>
 <li>Make sure setuptools is installed</li>
 </ul>

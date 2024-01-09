@@ -83,12 +83,13 @@
 <p>That brings us to the main course or as I look at all the text above perhaps it should be desert.</p>
 <p>I converted the maildir to mbox for the customer in the hopes the new guy can figure out how to load the mbox into a mail client and upload the mail to the new server for the customer. Perhaps I am being a bit petty making him do it. I don’t feel too bad I have already gone way past normal customer service with this customer, and even gave them several months of hosting for free (I forgot to bill them and told them not to worry about it). Not to mention the time I have spent going to their office to troubleshoot a workstation because “the internet was broken” which I also did not charge for. So maybe I am just inflicting a bit of pain on the new guy, but I hope he learns from the experience.</p>
 <p>So how did I convert the maildir to mbox? I used formail which is provided by procmail.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<pre class="brush: php; title: ; notranslate" title="">for i in maildir/cur/*;do formail -I "Status: RO" &lt;"$i" &gt;&gt;mbox;done
+for i in maildir/new/*;do formail -I Status: &lt;"$i" &gt;&gt;mbox;done
+</pre>
 <p>You will want to do that for each maildir (don’t forget the .Subfolder directories). And remember each “folder” or maildir would be a different mbox file. So if you wanted to save sent mail as well …</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<blockquote>
+<pre class="brush: php; title: ; notranslate" title="">for i in maildir/.Sent/cur*;do formail -I "Status: RO" &lt;"$i" &gt;&gt;sent;done
+for i in maildir/.Sent/new/*;do formail -I Status: &lt;"$i" &gt;&gt;sent;done
+</pre><blockquote>
 </blockquote>
                 </div>
                 

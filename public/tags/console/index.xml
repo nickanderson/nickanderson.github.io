@@ -25,17 +25,14 @@ It will take your current line and stuff it into the your default editor (export
       <guid>https://cmdln.org/2009/04/28/nice-console-regex-helper/</guid>
       <description>Last week I stumbled on a nice console regex helper. It’s not that I’m bad at regex but switching between sed, vim, python, perl regex trips me up a bit sometimes.
 Go ahead and check it out for yourself
-&amp;lt;br /&amp;gt; [.]quit [0]reset [*]color [/]programs ^txt2regex$
+sudo aptitude install txt2regex &amp;lt;br /&amp;gt; [.]quit [0]reset [*]color [/]programs ^txt2regex$
 !! not supported
 RegEx perl :
 RegEx php :
 RegEx postgres:
 RegEx python :
 RegEx sed :
-RegEx vim :
-.oO()()
-[1-2]:
-start to match:</description>
+RegEx vim :</description>
     </item>
     
     <item>

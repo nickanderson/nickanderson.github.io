@@ -77,20 +77,66 @@
                 <span class="post-date">2008-04-11 </span>
                 <div class="post-content">
                     <p>As I have said before life at the terminal is a joy. I constantly struggle with keeping myself organized. I actually work pretty well keeping most things in my head. But one of these days I’m going to fall down and hit my head and forget everything. So try and try again to keep myself organized and documented do I. I was recently pointed to <a href="http://github.com/schacon/ticgit/tree/master">TicGit</a> its a ticketing system that is meant to integrate right into your repository. Well I’m not a developer but I can see the benefit for a terminal todo list and general ticketing for myself as well as my little script repository that is actually maintained in git. Well ok maybe maintained is a bit strong of a word. Anyway on to the good stuff.</p>
-<!-- raw HTML omitted -->
+<!--adsense-->
 <p>This is how I got ticgit installed and working for mysef.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<pre class="brush: bash; title: ; notranslate" title="">sudo aptitude install git-core rubygems rake
+sudo gem update --system
+sudo gem install git
+git clone git://github.com/schacon/ticgit.git ticgit.git
+cd ticgit.git
+rake
+sudo gem install pkg/ticgit-0.2.0.gem
+cd
+</pre>
 <p>Not to bad eh? Well we are not quite done. ticgit needs a git repository so if your going to use this for a simple todo list you need to go ahead and get a git repo setup for it.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<pre class="brush: bash; title: ; notranslate" title="">mkdir ticgit
+cd ticgit
+git init
+echo 'please use ti command to view the todos' | tee  readme.txt
+git add readme.txt
+git commit -m 'initial commit'
+</pre>
 <p>Now you can use ticgit in this directroy. You should like the ti command to something in your path.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<pre class="brush: bash; title: ; notranslate" title="">sudo ln -s  /var/lib/gems/1.8/bin/ti /usr/local/bin/ti
+</pre>
 <p>Now you can use the ti commands list, show, new, checkout, state,. comment, and tag to update your simple ticketing system.</p>
 <p>What? …. Yeah so I remember most thing but remembering those options isn’t one of them. Plus I don’t like to type any more that I have to. So I wrote a bash_completion stub for ti. All you have to do is drop it in your /etc/bash_completion.d/ as ti_completion</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<pre class="brush: bash; title: ; notranslate" title=""># Author: Nick Anderson
+# http://www.cmdln.org
+# Description: Simple Bash Completion for ticgit
+
+_ti()
+{
+local cur prev opts
+COMPREPLY=()
+cur="${COMP_WORDS[COMP_CWORD]}"
+prev="${COMP_WORDS[COMP_CWORD-1]}"
+opts="list show new checkout state comment tag"
+
+case "${prev}" in
+list)
+local list_opts="--order --tag --state --assigned --saveas --list"
+COMPREPLY=( $(compgen -W "${list_opts}" -- ${cur}) )
+return 0
+;;
+ti)
+COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )
+return 0
+;;
+state)
+local state_opts="open resolved invalid hold"
+COMPREPLY=( $(compgen -W "${state_opts}" ${cur}) )
+return 0
+;;
+*)
+return 0
+;;
+esac
+
+}
+complete -F _ti ti
+
+</pre>
 <p>I also made up a quick screencast of ticgit so you can see it in all of its glory. Watch the <a href="http://www.cmdln.org/images/wp-content/uploads/2008/04/ticgit_howto1.ogg" title="Ticgit Screencast">TicGit Screencast</a>.</p>
                 </div>
                 

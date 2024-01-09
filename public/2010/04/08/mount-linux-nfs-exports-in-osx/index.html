@@ -78,11 +78,14 @@
                 <div class="post-content">
                     <p>I’m not a fan of OSX and I try to avoid it with the same veracity that I avoid Windows. But I recently needed to have a Linux NFS export mounted on an OSX server. A simple mount server:/export /mymountpoint didn’t work and returned “Operation not permitted”. After a bit of digging I found the solution.</p>
 <p>I needed to instruct the client to use a privledged port by adding the “-P” option.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<pre class="brush: bash; title: ; notranslate" title="">mount -o -P nfssrv:/export /mymount
+</pre>
 <p>Now to make it persistent of course its not as simple as shoving it in /etc/fstab and running “mount -a”. No OSX has to be difficult. It turned out lookupd got in the way.  To fix it I did the following after configuring my fstab.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<pre class="brush: bash; title: ; notranslate" title="">mkdir /etc/lookupd
+echo "LookupOrder Cache NI FF" &gt;&gt; /etc/lookupd/mounts
+kill -HUP `cat /var/run/lookupd.pid`
+mount -a
+</pre>
 <p>Yay that should have mounted your NFS mount and have it be persistent.</p>
 
                 </div>

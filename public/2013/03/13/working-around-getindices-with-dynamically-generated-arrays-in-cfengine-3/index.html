@@ -76,26 +76,66 @@
                 <h1><a href="https://cmdln.org/2013/03/13/working-around-getindices-with-dynamically-generated-arrays-in-cfengine-3/">Working around getindices with dynamically generated arrays in CFEngine 3</a></h1>
                 <span class="post-date">2013-03-13 </span>
                 <div class="post-content">
-                    <p>There is a <!-- raw HTML omitted -->known bug<!-- raw HTML omitted --> where <!-- raw HTML omitted -->getindices<!-- raw HTML omitted --> is unable to get the index <!-- raw HTML omitted -->of a dynamically generated array until the next pass. This comes up from time to time so I thought I would post an example using a pattern shared on the <!-- raw HTML omitted -->CFEngine help mailing list<!-- raw HTML omitted -->. The policy below shows 3 working examples. They are mostly similar, example0 shows the simplest workaround, example1 and example2 in addition show ways to suppress the “Duplicate selection of value for variable” messages.</p>
-<!-- raw HTML omitted -->
+                    <p>There is a <a href="https://cfengine.com/dev/issues/2088" target="_blank">known bug</a> where <a href="https://cfengine.com/manuals/cf3-Reference#Function-getindices" target="_blank">getindices</a> is unable to get the index <img class="alignright size-medium wp-image-1150" alt="Workaround" src="http://www.cmdln.org/images/wp-content/uploads/2013/03/work-around-300x223.jpg" width="300" height="223" srcset="http://www.cmdln.org/images/wp-content/uploads/2013/03/work-around-300x223.jpg 300w, http://www.cmdln.org/images/wp-content/uploads/2013/03/work-around.jpg 550w" sizes="(max-width: 300px) 100vw, 300px" />of a dynamically generated array until the next pass. This comes up from time to time so I thought I would post an example using a pattern shared on the <a href="http://groups.google.com/group/help-cfengine?hl=en" target="_blank">CFEngine help mailing list</a>. The policy below shows 3 working examples. They are mostly similar, example0 shows the simplest workaround, example1 and example2 in addition show ways to suppress the “Duplicate selection of value for variable” messages.</p>
+<div class="gistem">
+  <div id="gist5154392" class="gist">
+    <div class="gist-file">
+      <div class="gist-data gist-syntax">
+        <div class="file-data">
+          <table cellpadding="0" cellspacing="0" class="lines highlight">
+            <tr>
+              <td class="line-numbers">
+                <span class="line-number" id="file-output-txt-L1" rel="file-output-txt-L1">1</span> <span class="line-number" id="file-output-txt-L2" rel="file-output-txt-L2">2</span> <span class="line-number" id="file-output-txt-L3" rel="file-output-txt-L3">3</span> <span class="line-number" id="file-output-txt-L4" rel="file-output-txt-L4">4</span> <span class="line-number" id="file-output-txt-L5" rel="file-output-txt-L5">5</span> <span class="line-number" id="file-output-txt-L6" rel="file-output-txt-L6">6</span> <span class="line-number" id="file-output-txt-L7" rel="file-output-txt-L7">7</span> <span class="line-number" id="file-output-txt-L8" rel="file-output-txt-L8">8</span> <span class="line-number" id="file-output-txt-L9" rel="file-output-txt-L9">9</span> <span class="line-number" id="file-output-txt-L10" rel="file-output-txt-L10">10</span> <span class="line-number" id="file-output-txt-L11" rel="file-output-txt-L11">11</span> <span class="line-number" id="file-output-txt-L12" rel="file-output-txt-L12">12</span> <span class="line-number" id="file-output-txt-L13" rel="file-output-txt-L13">13</span> <span class="line-number" id="file-output-txt-L14" rel="file-output-txt-L14">14</span>
+              </td>
 <pre><code>          &lt;td class=&quot;line-data&quot;&gt;
             &lt;pre class=&quot;line-pre&quot;&gt;&lt;div class=&quot;line&quot; id=&quot;file-output-txt-LC1&quot;&gt;
 </code></pre>
 <p>cf-agent -KIf ./test_getindices_dynamic_array.cf</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+</div>
+<div class="line" id="file-output-txt-LC2">
+  !! Duplicate selection of value for variable "idx" in scope example0
+</div>
+<div class="line" id="file-output-txt-LC3">
+  !! Rule from ./test_getindices_dynamic_array.cf at/before line 28
+</div>
+<div class="line" id="file-output-txt-LC4">
+  !! Duplicate selection of value for variable "idx" in scope example0
+</div>
+<div class="line" id="file-output-txt-LC5">
+  !! Rule from ./test_getindices_dynamic_array.cf at/before line 28
+</div>
+<div class="line" id="file-output-txt-LC6">
+  R: example0 item1
+</div>
+<div class="line" id="file-output-txt-LC7">
+  R: example0 item2
+</div>
+<div class="line" id="file-output-txt-LC8">
+  R: example0 item3
+</div>
+<div class="line" id="file-output-txt-LC9">
+  R: example1 item1
+</div>
+<div class="line" id="file-output-txt-LC10">
+  R: example1 item2
+</div>
+<div class="line" id="file-output-txt-LC11">
+  R: example1 item3
+</div>
+<div class="line" id="file-output-txt-LC12">
+  R: example2 item1
+</div>
+<div class="line" id="file-output-txt-LC13">
+  R: example2 item2
+</div>
+<div class="line" id="file-output-txt-LC14">
+  R: example2 item3
+</div></pre>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
 <pre><code>  &lt;div class=&quot;gist-meta&quot;&gt;
     &lt;a href=&quot;https://gist.github.com/nickanderson/5154392/raw/0173ced1600e7bb221dafb5661ff516f14e6929b/output.txt&quot; style=&quot;float:right&quot;&gt;view raw&lt;/a&gt; &lt;a href=&quot;https://gist.github.com/nickanderson/5154392#file-output-txt&quot; style=&quot;float:right; margin-right:10px; color:#666;&quot;&gt;output.txt&lt;/a&gt; &lt;a href=&quot;https://gist.github.com/nickanderson/5154392&quot;&gt;This Gist&lt;/a&gt; is brought to you using &lt;a href=&quot;http://en.bainternet.info/2011/simple-gist-embed&quot;&gt;&lt;small&gt;Simple Gist Embed&lt;/small&gt;&lt;/a&gt;.
   &lt;/div&gt;
@@ -114,115 +154,325 @@
             &lt;pre class=&quot;line-pre&quot;&gt;&lt;div class=&quot;line&quot; id=&quot;file-test_getindices_dynamic_array-cf-LC1&quot;&gt;
 </code></pre>
 <p>body common control</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC2">
+  {
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC3">
+  &nbsp;
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC4">
+  bundlesequence =&gt; {
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC5">
+  "example0",
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC6">
+  "example1",
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC7">
+  "example2",
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC8">
+  };
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC9">
+  }
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC10">
+  &nbsp;
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC11">
+  bundle agent example0
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC12">
+  # This pattern was shared on the CFEngine help mailing list by cyril
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC13">
+  # Thanks!
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC14">
+  {
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC15">
+  vars:
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC16">
+  "list" slist =&gt; { "1", "2", "3" };
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC17">
+  &nbsp;
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC18">
+  # Autogenerate an array instead of typing it out
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC19">
+  # "array[item1]" string =&gt; "value1";
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC20">
+  # "array[item2]" string =&gt; "value2";
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC21">
+  # "array[item3]" string =&gt; "value3";
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC22">
+  "array[item$(list)]" string =&gt; "value$(list)";
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC23">
+  &nbsp;
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC24">
+  !idx_defined::
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC25">
+  "idx"
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC26">
+  slist =&gt; { getindices("array") },
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC27">
+  handle =&gt; "$(this.bundle)_get_array_index";
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC28">
+  &nbsp;
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC29">
+  classes:
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC30">
+  "idx_defined" expression =&gt; isvariable("idx");
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC31">
+  &nbsp;
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC32">
+  reports:
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC33">
+  cfengine::
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC34">
+  # should report 3 times itemx where x is a list value
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC35">
+  "$(this.bundle) $(idx)";
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC36">
+  &nbsp;
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC37">
+  }
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC38">
+  &nbsp;
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC39">
+  &nbsp;
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC40">
+  bundle agent example1
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC41">
+  # This pattern was shared on the CFEngine help mailing list by cyril
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC42">
+  # Thanks!
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC43">
+  {
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC44">
+  vars:
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC45">
+  "list" slist =&gt; { "1", "2", "3" };
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC46">
+  &nbsp;
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC47">
+  # Autogenerate an array instead of typing it out
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC48">
+  # "array[item1]" string =&gt; "value1";
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC49">
+  # "array[item2]" string =&gt; "value2";
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC50">
+  # "array[item3]" string =&gt; "value3";
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC51">
+  "array[item$(list)]" string =&gt; "value$(list)";
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC52">
+  &nbsp;
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC53">
+  list_defined.!idx_defined::
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC54">
+  "idx"
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC55">
+  slist =&gt; { getindices("array") },
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC56">
+  handle =&gt; "$(this.bundle)_get_array_index";
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC57">
+  &nbsp;
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC58">
+  classes:
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC59">
+  "list_defined"
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC60">
+  expression =&gt; isvariable("list"),
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC61">
+  comment    =&gt; "This is one way to work around &#39;Duplicate selection of
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC62">
+  value for variable&#39; messages. Your forcing get_array_index
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC63">
+  to not be evaluated until the next pass";
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC64">
+  &nbsp;
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC65">
+  "idx_defined" expression =&gt; isvariable("idx");
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC66">
+  &nbsp;
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC67">
+  reports:
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC68">
+  cfengine::
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC69">
+  # should report 3 times itemx where x is a list value
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC70">
+  "$(this.bundle) $(idx)";
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC71">
+  &nbsp;
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC72">
+  }
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC73">
+  &nbsp;
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC74">
+  bundle agent example2
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC75">
+  # This pattern was shared on the CFEngine help mailing list by cyril
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC76">
+  # Thanks!
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC77">
+  {
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC78">
+  vars:
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC79">
+  "list" slist =&gt; { "1", "2", "3" };
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC80">
+  &nbsp;
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC81">
+  # Autogenerate an array instead of typing it out
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC82">
+  # "array[item1]" string =&gt; "value1";
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC83">
+  # "array[item2]" string =&gt; "value2";
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC84">
+  # "array[item3]" string =&gt; "value3";
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC85">
+  "array[item$(list)]" string =&gt; "value$(list)";
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC86">
+  &nbsp;
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC87">
+  !idx_defined::
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC88">
+  "idx"
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC89">
+  slist   =&gt; { getindices("array") },
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC90">
+  policy  =&gt; "free",
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC91">
+  handle  =&gt; "$(this.bundle)_get_array_index",
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC92">
+  comment =&gt; "Setting policy free is another way to suppress &#39;Duplicate
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC93">
+  selection of value for variable&#39; messages.";
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC94">
+  &nbsp;
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC95">
+  classes:
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC96">
+  "idx_defined" expression =&gt; isvariable("idx");
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC97">
+  &nbsp;
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC98">
+  reports:
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC99">
+  cfengine::
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC100">
+  # should report 3 times itemx where x is a list value
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC101">
+  "$(this.bundle) $(idx)";
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC102">
+  &nbsp;
+</div>
+<div class="line" id="file-test_getindices_dynamic_array-cf-LC103">
+  }
+</div></pre>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
 <pre><code>  &lt;div class=&quot;gist-meta&quot;&gt;
     &lt;a href=&quot;https://gist.github.com/nickanderson/5154392/raw/d1b746f381b08a8e466820e0152676ab1fbf585a/test_getindices_dynamic_array.cf&quot; style=&quot;float:right&quot;&gt;view raw&lt;/a&gt; &lt;a href=&quot;https://gist.github.com/nickanderson/5154392#file-test_getindices_dynamic_array-cf&quot; style=&quot;float:right; margin-right:10px; color:#666;&quot;&gt;test_getindices_dynamic_array.cf&lt;/a&gt; &lt;a href=&quot;https://gist.github.com/nickanderson/5154392&quot;&gt;This Gist&lt;/a&gt; is brought to you using &lt;a href=&quot;http://en.bainternet.info/2011/simple-gist-embed&quot;&gt;&lt;small&gt;Simple Gist Embed&lt;/small&gt;&lt;/a&gt;.
   &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
-<!-- raw HTML omitted -->
+  </div>
+</div>
 <p> </p>
 <p> </p>
 

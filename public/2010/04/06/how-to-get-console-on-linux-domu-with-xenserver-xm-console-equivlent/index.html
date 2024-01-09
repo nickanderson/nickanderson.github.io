@@ -88,14 +88,33 @@
 <p>xen01 = dom0</p>
 <p>knox = linuxpv domU</p>
 <p>Say I want to connect to knox (a linux domU)</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<pre class="brush: bash; title: ; notranslate" title="">[root@xen01 ~]# xe vm-list
+uuid ( RO)           : 8258a6d4-23f6-003d-30d7-65bd13086863
+name-label ( RW): knox
+power-state ( RO): running
+
+uuid ( RO)           : 1a191475-a99d-7a77-6550-b30a0038fd92
+name-label ( RW): Windows Server 2008 SP2 x86
+power-state ( RO): halted
+
+uuid ( RO)           : ffd95724-d818-4f15-b4b4-159b7ff41df4
+name-label ( RW): Control domain on host: xen01
+power-state ( RO): running
+</pre>
 <p>Now get domain ids</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<pre class="brush: bash; title: ; notranslate" title="">[root@xen01 ~]# list_domains
+id |                                 uuid |  state
+0 | ffd95724-d818-4f15-b4b4-159b7ff41df4 |     R
+1 | bc150966-8c21-7ad9-c329-839d5823041d |    B H
+7 | baa3699b-95dd-eea0-ccc4-51e8972857f5 |    B
+11 | 8258a6d4-23f6-003d-30d7-65bd13086863 |    B
+</pre>
 <p>You can see the domain ID that matches the UUID of knox is 11. So we use xenconsole.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<pre class="brush: bash; title: ; notranslate" title="">[root@xen01 ~]# /usr/lib/xen/bin/xenconsole 11
+(press enter)
+You have new mail in /var/spool/mail/root
+[root@knox ~]#
+</pre>
 <p>`Besides the gui/vnc consoles you can still use the equivlent of xm console in Citrix XenServer.</p>
 <p>On the host console:</p>
 <ul>
@@ -108,14 +127,33 @@
 <p>xen01 = dom0</p>
 <p>knox = linuxpv domU</p>
 <p>Say I want to connect to knox (a linux domU)</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<pre class="brush: bash; title: ; notranslate" title="">[root@xen01 ~]# xe vm-list
+uuid ( RO)           : 8258a6d4-23f6-003d-30d7-65bd13086863
+name-label ( RW): knox
+power-state ( RO): running
+
+uuid ( RO)           : 1a191475-a99d-7a77-6550-b30a0038fd92
+name-label ( RW): Windows Server 2008 SP2 x86
+power-state ( RO): halted
+
+uuid ( RO)           : ffd95724-d818-4f15-b4b4-159b7ff41df4
+name-label ( RW): Control domain on host: xen01
+power-state ( RO): running
+</pre>
 <p>Now get domain ids</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<pre class="brush: bash; title: ; notranslate" title="">[root@xen01 ~]# list_domains
+id |                                 uuid |  state
+0 | ffd95724-d818-4f15-b4b4-159b7ff41df4 |     R
+1 | bc150966-8c21-7ad9-c329-839d5823041d |    B H
+7 | baa3699b-95dd-eea0-ccc4-51e8972857f5 |    B
+11 | 8258a6d4-23f6-003d-30d7-65bd13086863 |    B
+</pre>
 <p>You can see the domain ID that matches the UUID of knox is 11. So we use xenconsole.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<pre class="brush: bash; title: ; notranslate" title="">[root@xen01 ~]# /usr/lib/xen/bin/xenconsole 11
+(press enter)
+You have new mail in /var/spool/mail/root
+[root@knox ~]#
+</pre>
 <p>`</p>
 
                 </div>

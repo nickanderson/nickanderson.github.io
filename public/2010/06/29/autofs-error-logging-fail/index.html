@@ -78,10 +78,12 @@
                 <div class="post-content">
                     <p>Why do applications have such horrible error messages. Non-specific errors are really not any more helpful than not logging at all.</p>
 <p>I was recently setting up autofs for mounting home directories from an nfs server. The little buggers refused to work right. All I was seeing in the logfile was a notice that an attempt was made, and failed.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-
+<pre class="brush: bash; title: ; notranslate" title="">attempting to mount entry /home/nanderso
+failed to mount /home/nanderso
+</pre>
+<div>
+  How helpful is that? Not very, I can tell you that for sure. I already knew it wasn&#8217;t working. Next time you setup autofs make sure to chmod 0644 /etc/auto.*
+</div>
                 </div>
                 
                 <div class="post-comments">
