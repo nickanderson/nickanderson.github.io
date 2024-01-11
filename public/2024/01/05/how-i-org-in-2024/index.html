@@ -77,22 +77,23 @@
                 <span class="post-date">2024-01-05 </span>
                 <div class="post-content">
                     <p>Org-mode is my exocortex, second brain, second mind, mind palace, pensive, and personal knowledge management system. It&rsquo;s very flexible and the features I use as well as how I organize my files continues to change so I collected things here to document how I do things in 2024, I did this in 2023 as well<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>.</p>
+<p>No, my Emacs org-mode configuration is not published. However, if you have some question, just reach out.</p>
 <figure><img src="OIG%20%285%29.jpeg"
-         alt="An image depectinig the essence of the statement Org-mode is my exocortex, second brain, second mind, mind palace, pensive, and personal knowledge management system. It&#39;s very flexible. Feature the org-roam unicorn. -- Dall-e 3 via Bing chat" width="75%"/>
+         alt="An image depectinig the essence of the statement Org-mode is my exocortex, second brain, second mind, mind palace, pensive, and personal knowledge management system. It&#39;s very flexible. Feature the org-roam unicorn. -- Dall-e 3 via Bing chat" width="50%"/>
 </figure>
 
 <h2 id="goal">Goal</h2>
 <p>Unrealistically or not, I want total recall, to remember everything in durable plain text. I want to have control of my data. I want to do my work and interact efficiently. I want to improve my knowledge and capabilities, and I want to be able to share with others.</p>
 <p>On the best of days I never leave Emacs and I have a record of everything I did as well as how much time I spent on each thing.</p>
 <figure><img src="2024-01-09_10-10-32_OIG%20%282%29.jpeg"
-         alt="An image depectinig the essence of the statement Unrealistically or not, I want total recall, to remember everything in durable plain text. I want to have control of my data. I want to do my work and interact efficiently. I want to improve my knowledge and capabilities, and I want to be able to share with others. -- Dall-e 3 via Bing chat" width="75%"/>
+         alt="An image depectinig the essence of the statement Unrealistically or not, I want total recall, to remember everything in durable plain text. I want to have control of my data. I want to do my work and interact efficiently. I want to improve my knowledge and capabilities, and I want to be able to share with others. -- Dall-e 3 via Bing chat" width="50%"/>
 </figure>
 
 <h2 id="statistics">Statistics</h2>
-<p>As of Tuesday, January  9, 2024
-I had <code>57MB</code> of <code>.org</code> files in <code>~/org</code>. <code>4945</code> files and <code>1195464</code> lines of text, the largest single file was <code>1.3MB</code> and the longest lined file had <code>26370</code> lines.</p>
-<p><code>4775</code> of these files were inside Org-roam<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>, the majority of them (<code>3608</code>) were &ldquo;dailies&rdquo;<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>.</p>
-<p>Additionally, <code>~/Syncthing/Orgzly</code> had <code>7.9MB</code> worth of <code>.org</code> files that I synced around to a few devices and the largest <code>.org</code> file was <code>677K</code> with the most lined file having <code>49670</code> lines.</p>
+<p>As of Thursday, January 11, 2024
+I had <code>57MB</code> of <code>.org</code> files in <code>~/org</code>. <code>4958</code> files and <code>1197372</code> lines of text, the largest single file was <code>1.3MB</code> and the longest lined file had <code>26370</code> lines.</p>
+<p><code>4788</code> of these files were inside Org-roam<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>, the majority of them (<code>3618</code>) were &ldquo;dailies&rdquo;<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>.</p>
+<p>Additionally, <code>~/Syncthing/Orgzly</code> had <code>8.0MB</code> worth of <code>.org</code> files that I synced around to a few devices and the largest <code>.org</code> file was <code>677K</code> with the most lined file having <code>49670</code> lines.</p>
 <figure><img src="2024-01-08_12-16-26_org-roam-ui-with-and-without-dailies-2024-01-05.png"
          alt="Figure 1: org-roam-ui visualization of notes as of January 5th, 2024. Left - without dailies, Right with dailies." width="75%"/><figcaption>
             <p><span class="figure-number">Figure 1: </span>org-roam-ui visualization of notes as of January 5th, 2024. Left - without dailies, Right with dailies.</p>
@@ -116,7 +117,7 @@ I had <code>57MB</code> of <code>.org</code> files in <code>~/org</code>. <code>
 <h3 id="capture-templates-helped-me">Capture templates helped me</h3>
 <ul>
 <li>
-<p><strong>Remember relationships between notes.</strong> Many included <code>%a</code> to create a link to the node where I was when the capture was initiated with my configuration automatically creating an ID in the source node if necessary. I preferred ID links as they don&rsquo;t break as I move files around.</p>
+<p><strong>Remember relationships between notes.</strong> Many included <code>%a</code> <sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup> to create a link to the node where I was when the capture was initiated with my configuration automatically creating an ID in the source node if necessary. I preferred ID links as they don&rsquo;t break as I move files around.</p>
 </li>
 <li>
 <p><strong>Automatically organize captured content.</strong> I capture to my work log the most, but as I identify recurring similar content I create templates to ensure like content is stored together.</p>
@@ -133,9 +134,18 @@ I had <code>57MB</code> of <code>.org</code> files in <code>~/org</code>. <code>
 </ul>
 <h3 id="other-tools-used-for-capture">Other tools used for capture</h3>
 <p>Some of the features that I used to get content into Org-mode were not part of org-capture.</p>
-<p>I used <code>org-web-tools</code><sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup> to pull web pages into org. Either as a buffer to read, or as a subtree to store. When I wanted to clip a bit of text from a web page I used <code>org-protocol</code><sup id="fnref:7"><a href="#fn:7" class="footnote-ref" role="doc-noteref">7</a></sup> bookmarklets to get the content into Emacs.</p>
-<p><code>org-rich-yank</code><sup id="fnref:8"><a href="#fn:8" class="footnote-ref" role="doc-noteref">8</a></sup> let me copy text and paste it with context allowing it to be syntax highlighted as well as providing a link back to the source.</p>
-<p>I used <code>org-jira</code><sup id="fnref:9"><a href="#fn:9" class="footnote-ref" role="doc-noteref">9</a></sup> to pull issues from Atlassian Cloud Jira into org-mode.</p>
+<p>I used <code>org-web-tools</code><sup id="fnref:7"><a href="#fn:7" class="footnote-ref" role="doc-noteref">7</a></sup> to pull web pages into org. Either as a buffer to read, or as a subtree to store. When I wanted to clip a bit of text from a web page I used <code>org-protocol</code><sup id="fnref:8"><a href="#fn:8" class="footnote-ref" role="doc-noteref">8</a></sup> bookmarklets to get the content into Emacs.</p>
+<p><code>org-rich-yank</code><sup id="fnref:9"><a href="#fn:9" class="footnote-ref" role="doc-noteref">9</a></sup> let me copy text and paste it with context allowing it to be syntax highlighted as well as providing a link back to the source.</p>
+<p>I used <code>org-jira</code><sup id="fnref:10"><a href="#fn:10" class="footnote-ref" role="doc-noteref">10</a></sup> to pull issues from Atlassian Cloud Jira into org-mode.</p>
+<h2 id="retrieval">Retrieval</h2>
+<p>I retrieved content from my org in a myriad of ways.</p>
+<p>Frequently I would find notes by name using <code>org-roam-node-find</code>. This worked well for finding notes with a regular naming pattern, e.g. I took notes on the work I did while releasing new software versions. The capture template for that type of note created files titled <code>Release work for X</code>, so it was quick and easy to <code>org-roam-node-find</code>, type <code>Release work for 3.18.7</code>, and jump to that note. Similarly, I kept notes on individual people, those notes were titled with the persons name, so it was quick to <code>org-roam-node-find</code> and start typing the persons name to find their note.</p>
+<p>I frequently found notes via link. <code>org-roam-node-insert</code> made it easy to simply insert a link to another note (found by name as noted above). Many of my capture templates also contain links, some to well known related notes and some using <code>%a</code> <sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup> to provide a link to the location I was when I decided to initiate the capture. That annotation link (<code>%a</code>) can result in links to unrelated things, but I had found the ability to track back and be aware of unrelated things that were happening around that time to be useful during some archaeology sessions.</p>
+<p>Sometimes I would use <code>org-roam-buffer</code> to get a view on which notes link to my current note.</p>
+<p>Searching by name is not always effective, sometimes I needed to search widely and dive deep searching for specific strings. For that, most often I used <code>org-ripgrep-consult</code>.</p>
+<p>For serendipitous stumbles, I occasionally used <code>org-roam-random-note</code> to surface some random note.</p>
+<p>I long desired to make effective use of <code>org-agenda</code> and I had played around with using <code>org-roam-db-query</code> to identify which files contained TODO keywords to keep the files loaded by <code>org-agenda</code> to a minimum, but I had yet to really make agenda part of my routine.</p>
+<p><code>org-roam-dynamic-blocks</code> <sup id="fnref:11"><a href="#fn:11" class="footnote-ref" role="doc-noteref">11</a></sup> stayed on my radar, but I had yet to really make it an active part of my workflow.</p>
 <section class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
@@ -155,16 +165,22 @@ I had <code>57MB</code> of <code>.org</code> files in <code>~/org</code>. <code>
 <p>I am not perfect in remembering to capture each thing but I don&rsquo;t need to be perfect to be effective.&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:6" role="doc-endnote">
-<p><code>org-web-tools</code> contains library functions and commands useful for retrieving web page content and processing it into Org-mode content. <a href="https://github.com/alphapapa/org-web-tools">https://github.com/alphapapa/org-web-tools</a>&#160;<a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p><code>%a</code> - Annotation, normally the link created with <code>org-store-link</code>.&#160;<a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:7" role="doc-endnote">
-<p><code>org-protocol</code> intercepts calls from emacsclient to trigger custom actions without external dependencies. Only one protocol has to be configured with your external applications or the operating system, to trigger an arbitrary number of custom actions. <a href="https://orgmode.org/worg/org-contrib/org-protocol.html">https://orgmode.org/worg/org-contrib/org-protocol.html</a>&#160;<a href="#fnref:7" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p><code>org-web-tools</code> contains library functions and commands useful for retrieving web page content and processing it into Org-mode content. <a href="https://github.com/alphapapa/org-web-tools">https://github.com/alphapapa/org-web-tools</a>&#160;<a href="#fnref:7" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:8" role="doc-endnote">
-<p><code>org-rich-yank</code> doesn&rsquo;t get enough publicity, I used it many times a day. It pastes the last copied text and automatically surrounds the snippet in blocks, marked with the major mode of where the code came from, and adds a link to the source file after the block. I recommend customizing <code>org-rich-yank-format-paste</code> and making the link to the source a comment as described in the README. <a href="https://github.com/unhammer/org-rich-yank">https://github.com/unhammer/org-rich-yank</a>&#160;<a href="#fnref:8" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p><code>org-protocol</code> intercepts calls from emacsclient to trigger custom actions without external dependencies. Only one protocol has to be configured with your external applications or the operating system, to trigger an arbitrary number of custom actions. <a href="https://orgmode.org/worg/org-contrib/org-protocol.html">https://orgmode.org/worg/org-contrib/org-protocol.html</a>&#160;<a href="#fnref:8" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:9" role="doc-endnote">
-<p><code>org-jira</code> facilitates getting content from Jira into org-mode and managing Jira issues from org-mode. <a href="https://github.com/ahungry/org-jira">https://github.com/ahungry/org-jira</a>&#160;<a href="#fnref:9" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p><code>org-rich-yank</code> doesn&rsquo;t get enough publicity, I used it many times a day. It pastes the last copied text and automatically surrounds the snippet in blocks, marked with the major mode of where the code came from, and adds a link to the source file after the block. I recommend customizing <code>org-rich-yank-format-paste</code> and making the link to the source a comment as described in the README. <a href="https://github.com/unhammer/org-rich-yank">https://github.com/unhammer/org-rich-yank</a>&#160;<a href="#fnref:9" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:10" role="doc-endnote">
+<p><code>org-jira</code> facilitates getting content from Jira into org-mode and managing Jira issues from org-mode. <a href="https://github.com/ahungry/org-jira">https://github.com/ahungry/org-jira</a>&#160;<a href="#fnref:10" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:11" role="doc-endnote">
+<p><code>org-roam-dynamic-blocks</code> is not yet packaged, but you can find it here <a href="https://github.com/chrisbarrett/nursery/blob/main/lisp/org-roam-dblocks.el">https://github.com/chrisbarrett/nursery/blob/main/lisp/org-roam-dblocks.el</a>. Perhaps someday it will become part of Org-roam <a href="https://github.com/org-roam/org-roam/issues/2251">https://github.com/org-roam/org-roam/issues/2251</a>&#160;<a href="#fnref:11" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </section>
