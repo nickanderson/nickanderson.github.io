@@ -91,7 +91,7 @@
 
 <h2 id="statistics">Statistics</h2>
 <p>As of Friday, January 12, 2024
-I had <code>57MB</code> of <code>.org</code> files in <code>~/org</code>. <code>4961</code> files and <code>1198125</code> lines of text, the largest single file was <code>1.3MB</code> and the longest lined file had <code>26370</code> lines.</p>
+I had <code>57MB</code> of <code>.org</code> files in <code>~/org</code>. <code>4961</code> files and <code>1198208</code> lines of text, the largest single file was <code>1.3MB</code> and the longest lined file had <code>26370</code> lines.</p>
 <p><code>4791</code> of these files were inside Org-roam<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>, the majority of them (<code>3621</code>) were &ldquo;dailies&rdquo;<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>.</p>
 <p>Additionally, <code>~/Syncthing/Orgzly</code> had <code>8.0MB</code> worth of <code>.org</code> files that I synced around to a few devices and the largest <code>.org</code> file was <code>677K</code> with the most lined file having <code>49670</code> lines.</p>
 <figure><img src="2024-01-08_12-16-26_org-roam-ui-with-and-without-dailies-2024-01-05.png"
@@ -142,9 +142,12 @@ I had <code>57MB</code> of <code>.org</code> files in <code>~/org</code>. <code>
 <p>Frequently I would find notes by name using <code>org-roam-node-find</code>. This worked well for finding notes with a regular naming pattern, e.g. I took notes on the work I did while releasing new software versions. The capture template for that type of note created files titled <code>Release work for X</code>, so it was quick and easy to <code>org-roam-node-find</code>, type <code>Release work for 3.18.7</code>, and jump to that note. Similarly, I kept notes on individual people, those notes were titled with the persons name, so it was quick to <code>org-roam-node-find</code> and start typing the persons name to find their note.</p>
 <p>I frequently found notes via link. <code>org-roam-node-insert</code> made it easy to simply insert a link to another note (found by name as noted above). Many of my capture templates also contain links, some to well known related notes and some using <code>%a</code> <sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup> to provide a link to the location I was when I decided to initiate the capture. That annotation link (<code>%a</code>) can result in links to unrelated things, but I had found the ability to track back and be aware of unrelated things that were happening around that time to be useful during some archaeology sessions.</p>
 <p>Sometimes I would use <code>org-roam-buffer</code> to get a view on which notes link to my current note.</p>
-<div align="center">
-<p><a href="2024-01-12_12-52-45_Screenshot_2024-01-12_125217.png">attachment:2024-01-12<sub>12</sub>-52-45<sub>Screenshot</sub><sub>2024</sub>-01-12<sub>125217.png</sub></a></p>
-</div>
+<figure><img src="2024-01-12_12-52-45_Screenshot_2024-01-12_125217.png"
+         alt="Figure 3: Screenshot showing the org-mode source for this section on the left and org-roam-buffer listing links to this section on the right" width="100%"/><figcaption>
+            <p><span class="figure-number">Figure 3: </span>Screenshot showing the org-mode source for this section on the left and org-roam-buffer listing links to this section on the right</p>
+        </figcaption>
+</figure>
+
 <p>Searching by name is not always effective, sometimes I needed to search widely and dive deep searching for specific strings. For that, most often I used <code>org-ripgrep-consult</code>.</p>
 <p>For serendipitous stumbles, I occasionally used <code>org-roam-random-note</code> to surface some random note.</p>
 <p>I long desired to make effective use of <code>org-agenda</code> and I had played around with using <code>org-roam-db-query</code> to identify which files contained TODO keywords to keep the files loaded by <code>org-agenda</code> to a minimum, but I had yet to really make agenda part of my routine.</p>
