@@ -25,7 +25,7 @@ On the best of days I never leave Emacs and I have a record of everything I did 
 ## Statistics {#statistics}
 
 As of Friday, January 12, 2024
- I had `57MB` of `.org` files in `~/org`. `4961` files and `1198125` lines of text, the largest single file was `1.3MB` and the longest lined file had `26370` lines.
+ I had `57MB` of `.org` files in `~/org`. `4961` files and `1198208` lines of text, the largest single file was `1.3MB` and the longest lined file had `26370` lines.
 
 `4791` of these files were inside Org-roam[^fn:2], the majority of them (`3621`) were "dailies"[^fn:3].
 
