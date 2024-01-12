@@ -221,8 +221,8 @@
 				<h4 class="post-link"><a href="https://cmdln.org/2017/12/26/vars-cant-use-ifelapsed/">vars can&#39;t use ifelapsed</a></h4>
 				<h4 class="post-date">2017-12-26</h4>
 			</div>
-			<div class="post-summary"><p>#+BEGIN_QUOTE Why doesn&#39;t body action if_elapsed work with vars type promises? #+END_Q
- Let&#39;s start with the details of body action if_elapsed.
+			<div class="post-summary"><p>Why doesn&#39;t body action if_elapsed work with vars type promises?
+  Let&#39;s start with the details of body action if_elapsed.
  1 2 3 4 5 6 7  body action if_elapsed(x) # @brief Evaluate the promise every `x` minutes  # @param x The time in minutes between promise evaluations  { ifelapsed =&gt; &#34;$(x)&#34;; expireafter =&gt; &#34;$(x)&#34;; }     body action if_elapsed from the standard library    The ifelapsed action body attribute is the number of minutes before next allowed assessment of a promise.</p></div>
 			<div class="post-list-footer text-center">
 				<a href="https://cmdln.org/2017/12/26/vars-cant-use-ifelapsed/">Read More</a>
