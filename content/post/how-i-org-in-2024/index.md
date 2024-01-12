@@ -88,11 +88,7 @@ I frequently found notes via link. `org-roam-node-insert` made it easy to simply
 
 Sometimes I would use `org-roam-buffer` to get a view on which notes link to my current note.
 
-<div align="center">
-
-[attachment:2024-01-12<sub>12</sub>-52-45<sub>Screenshot</sub><sub>2024</sub>-01-12<sub>125217.png</sub>](2024-01-12_12-52-45_Screenshot_2024-01-12_125217.png)
-
-</div>
+{{< figure src="2024-01-12_12-52-45_Screenshot_2024-01-12_125217.png" caption="<span class=\"figure-number\">Figure 3: </span>Screenshot showing the org-mode source for this section on the left and org-roam-buffer listing links to this section on the right" width="100%" >}}
 
 Searching by name is not always effective, sometimes I needed to search widely and dive deep searching for specific strings. For that, most often I used `org-ripgrep-consult`.
 
