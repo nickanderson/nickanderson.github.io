@@ -75,7 +75,7 @@ I used `org-web-tools`[^fn:7] to pull web pages into org. Either as a buffer to 
 
 `org-rich-yank`[^fn:9] let me copy text and paste it with context allowing it to be syntax highlighted as well as providing a link back to the source.
 
-{{< figure src="./how-i-org-in-2024/2024-01-12_16-37-07_output-2024-01-12-16:34:50.gif" >}}
+{{< figure src="2024-01-12_16-37-07_output-2024-01-12-16:34:50.gif" >}}
 
 I used `org-jira`[^fn:10] to pull issues from Atlassian Cloud Jira into org-mode.
 
