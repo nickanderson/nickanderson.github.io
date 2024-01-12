@@ -25,7 +25,7 @@ On the best of days I never leave Emacs and I have a record of everything I did 
 ## Statistics {#statistics}
 
 As of Friday, January 12, 2024
- I had `57MB` of `.org` files in `~/org`. `4961` files and `1198208` lines of text, the largest single file was `1.3MB` and the longest lined file had `26370` lines.
+ I had `57MB` of `.org` files in `~/org`. `4962` files and `1198226` lines of text, the largest single file was `1.3MB` and the longest lined file had `26370` lines.
 
 `4791` of these files were inside Org-roam[^fn:2], the majority of them (`3621`) were "dailies"[^fn:3].
 
@@ -74,6 +74,8 @@ Some of the features that I used to get content into Org-mode were not part of o
 I used `org-web-tools`[^fn:7] to pull web pages into org. Either as a buffer to read, or as a subtree to store. When I wanted to clip a bit of text from a web page I used `org-protocol`[^fn:8] bookmarklets to get the content into Emacs.
 
 `org-rich-yank`[^fn:9] let me copy text and paste it with context allowing it to be syntax highlighted as well as providing a link back to the source.
+
+{{< figure src="2024-01-12_16-37-07_output-2024-01-12-16:34:50.gif" >}}
 
 I used `org-jira`[^fn:10] to pull issues from Atlassian Cloud Jira into org-mode.
 
