@@ -25,7 +25,7 @@ On the best of days I never leave Emacs and I have a record of everything I did 
 ## Statistics {#statistics}
 
 As of Friday, January 12, 2024
- I had `57MB` of `.org` files in `~/org`. `4961` files and `1198019` lines of text, the largest single file was `1.3MB` and the longest lined file had `26370` lines.
+ I had `57MB` of `.org` files in `~/org`. `4962` files and `1198018` lines of text, the largest single file was `1.3MB` and the longest lined file had `26370` lines.
 
 `4791` of these files were inside Org-roam[^fn:2], the majority of them (`3621`) were "dailies"[^fn:3].
 
@@ -88,7 +88,7 @@ I frequently found notes via link. `org-roam-node-insert` made it easy to simply
 
 Sometimes I would use `org-roam-buffer` to get a view on which notes link to my current note.
 
-{{< figure src="2024-01-12_12-52-45_Screenshot_2024-01-12_125217.png" caption="<span class=\"figure-number\">Figure 3: </span>Screenshot showing org-roam-buffer listing links to this section" width="50%" >}}
+{{< figure src="2024-01-12_12-52-45_Screenshot_2024-01-12_125217.png" caption="<span class=\"figure-number\">Figure 3: </span>Screenshot showing the org-mode source for this section on the left and org-roam-buffer listing links to this section on the right" width="100%" >}}
 
 Searching by name is not always effective, sometimes I needed to search widely and dive deep searching for specific strings. For that, most often I used `org-ripgrep-consult`.
 
