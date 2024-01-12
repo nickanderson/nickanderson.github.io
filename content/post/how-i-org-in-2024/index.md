@@ -24,10 +24,10 @@ On the best of days I never leave Emacs and I have a record of everything I did 
 
 ## Statistics {#statistics}
 
-As of Thursday, January 11, 2024
- I had `57MB` of `.org` files in `~/org`. `4958` files and `1197372` lines of text, the largest single file was `1.3MB` and the longest lined file had `26370` lines.
+As of Friday, January 12, 2024
+ I had `57MB` of `.org` files in `~/org`. `4961` files and `1198019` lines of text, the largest single file was `1.3MB` and the longest lined file had `26370` lines.
 
-`4788` of these files were inside Org-roam[^fn:2], the majority of them (`3618`) were "dailies"[^fn:3].
+`4791` of these files were inside Org-roam[^fn:2], the majority of them (`3621`) were "dailies"[^fn:3].
 
 Additionally, `~/Syncthing/Orgzly` had `8.0MB` worth of `.org` files that I synced around to a few devices and the largest `.org` file was `677K` with the most lined file having `49670` lines.
 
@@ -49,7 +49,7 @@ Capturing was an important concept in my workflow. Fundamentally it's grabbing n
 
 Org-roam was my primary capture interface and I _really_ liked the daily capabilities. Each day I captured notes about everything I was working on into my work log while clocking time. This gave me a nice place to think and process what I was working on[^fn:4] as well as a place to get my bearings and see what I had been working on when I got side-tracked[^fn:5]. Having a new file each day gave me a fresh start and it helped me to avoid performance issues I had previously experienced with large (multi-megabyte) files.
 
-I had `24` org-capture-templates,  `16` org-roam-capture-templates and `75` org-roam-dailies-capture-templates.
+I had `24` org-capture-templates,  `13` org-roam-capture-templates and `2` org-roam-dailies-capture-templates.
 
 <div class="org-youtube"><iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/8A52ZXPhJFk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="YouTube Video"></iframe></div>
 
@@ -87,6 +87,8 @@ Frequently I would find notes by name using `org-roam-node-find`. This worked we
 I frequently found notes via link. `org-roam-node-insert` made it easy to simply insert a link to another note (found by name as noted above). Many of my capture templates also contain links, some to well known related notes and some using `%a`&nbsp;[^fn:6] to provide a link to the location I was when I decided to initiate the capture. That annotation link (`%a`) can result in links to unrelated things, but I had found the ability to track back and be aware of unrelated things that were happening around that time to be useful during some archaeology sessions.
 
 Sometimes I would use `org-roam-buffer` to get a view on which notes link to my current note.
+
+{{< figure src="2024-01-12_12-52-45_Screenshot_2024-01-12_125217.png" caption="<span class=\"figure-number\">Figure 3: </span>Screenshot showing org-roam-buffer listing links to this section" width="50%" >}}
 
 Searching by name is not always effective, sometimes I needed to search widely and dive deep searching for specific strings. For that, most often I used `org-ripgrep-consult`.
 
