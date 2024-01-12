@@ -325,8 +325,8 @@ Read the documentation on Normal Order   There is a wealth of information on doc
       <pubDate>Tue, 26 Dec 2017 00:00:00 +0000</pubDate>
       
       <guid>https://cmdln.org/2017/12/26/vars-cant-use-ifelapsed/</guid>
-      <description>#+BEGIN_QUOTE Why doesn&amp;#39;t body action if_elapsed work with vars type promises? #+END_Q
- Let&amp;#39;s start with the details of body action if_elapsed.
+      <description>Why doesn&amp;#39;t body action if_elapsed work with vars type promises?
+  Let&amp;#39;s start with the details of body action if_elapsed.
  1 2 3 4 5 6 7  body action if_elapsed(x) # @brief Evaluate the promise every `x` minutes  # @param x The time in minutes between promise evaluations  { ifelapsed =&amp;gt; &amp;#34;$(x)&amp;#34;; expireafter =&amp;gt; &amp;#34;$(x)&amp;#34;; }     body action if_elapsed from the standard library    The ifelapsed action body attribute is the number of minutes before next allowed assessment of a promise.</description>
     </item>
     
