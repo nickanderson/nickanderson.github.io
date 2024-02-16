@@ -10,7 +10,7 @@ Org-mode is my exocortex, second brain, second mind, mind palace, pensive, and p
 
 No, my Emacs org-mode configuration is not published. However, if you have some question, just reach out.
 
-{{< figure src="OIG (5).jpeg" alt="An image depectinig the essence of the statement Org-mode is my exocortex, second brain, second mind, mind palace, pensive, and personal knowledge management system. It's very flexible. Feature the org-roam unicorn. -- Dall-e 3 via Bing chat" width="50%" >}}
+{{< figure src="/home/nickanderson/org/roam/cmdln_org/attachments/how-i-org-in-2024/OIG (5).jpeg" alt="An image depectinig the essence of the statement Org-mode is my exocortex, second brain, second mind, mind palace, pensive, and personal knowledge management system. It's very flexible. Feature the org-roam unicorn. -- Dall-e 3 via Bing chat" width="50%" >}}
 
 
 ## Goal {#goal}
@@ -24,12 +24,12 @@ On the best of days I never leave Emacs and I have a record of everything I did 
 
 ## Statistics {#statistics}
 
-As of Friday, January 12, 2024
- I had `57MB` of `.org` files in `~/org`. `4962` files and `1198227` lines of text, the largest single file was `1.3MB` and the longest lined file had `26370` lines.
+As of Friday, February 16, 2024
+ I had `58MB` of `.org` files in `~/org`. `5067` files and `1220329` lines of text, the largest single file was `1.3MB` and the longest lined file had `26370` lines.
 
-`4791` of these files were inside Org-roam[^fn:2], the majority of them (`3621`) were "dailies"[^fn:3].
+`4897` of these files were inside Org-roam[^fn:2], the majority of them (`3688`) were "dailies"[^fn:3].
 
-Additionally, `~/Syncthing/Orgzly` had `8.0MB` worth of `.org` files that I synced around to a few devices and the largest `.org` file was `677K` with the most lined file having `49670` lines.
+Additionally, `~/Syncthing/Orgzly` had `9.2MB` worth of `.org` files that I synced around to a few devices and the largest `.org` file was `677K` with the most lined file having `49670` lines.
 
 {{< figure src="2024-01-08_12-16-26_org-roam-ui-with-and-without-dailies-2024-01-05.png" caption="<span class=\"figure-number\">Figure 1: </span>org-roam-ui visualization of notes as of January 5th, 2024. Left - without dailies, Right with dailies." width="75%" >}}
 
@@ -49,7 +49,7 @@ Capturing was an important concept in my workflow. Fundamentally it's grabbing n
 
 Org-roam was my primary capture interface and I _really_ liked the daily capabilities. Each day I captured notes about everything I was working on into my work log while clocking time. This gave me a nice place to think and process what I was working on[^fn:4] as well as a place to get my bearings and see what I had been working on when I got side-tracked[^fn:5]. Having a new file each day gave me a fresh start and it helped me to avoid performance issues I had previously experienced with large (multi-megabyte) files.
 
-I had `24` org-capture-templates,  `13` org-roam-capture-templates and `2` org-roam-dailies-capture-templates.
+I had `24` org-capture-templates,  `16` org-roam-capture-templates and `75` org-roam-dailies-capture-templates.
 
 <div class="org-youtube"><iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/8A52ZXPhJFk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="YouTube Video"></iframe></div>
 
@@ -71,13 +71,19 @@ I had `24` org-capture-templates,  `13` org-roam-capture-templates and `2` org-r
 
 Some of the features that I used to get content into Org-mode were not part of org-capture.
 
-I used `org-web-tools`[^fn:7] to pull web pages into org. Either as a buffer to read, or as a subtree to store. When I wanted to clip a bit of text from a web page I used `org-protocol`[^fn:8] bookmarklets to get the content into Emacs.
-
-`org-rich-yank`[^fn:9] let me copy text and paste it with context allowing it to be syntax highlighted as well as providing a link back to the source.
+I used `org-rich-yank`[^fn:7] often, which let me copy text and paste it with context allowing it to be syntax highlighted as well as providing a link back to the source.
 
 {{< figure src="org-rich-yank.gif" width="100%" >}}
 
+I occasionally used `org-web-tools`[^fn:8] to pull web pages into org. Either as a buffer to read, or as a subtree to store. When I wanted to clip a bit of text from a web page I used `org-protocol`[^fn:9] bookmarklets to get the content into Emacs.
+
+<https://orgmode.org>
+
 I used `org-jira`[^fn:10] to pull issues from Atlassian Cloud Jira into org-mode.
+
+I used `gif-screencast`&nbsp;[^fn:11] to record many of the animations found on this page.
+
+{{< figure src="org-web-tools-read-as-org.gif" >}}
 
 
 ## Retrieval {#retrieval}
@@ -98,7 +104,7 @@ For serendipitous stumbles, I occasionally used `org-roam-random-note` to surfac
 
 I long desired to make effective use of `org-agenda` and I had played around with using `org-roam-db-query` to identify which files contained TODO keywords to keep the files loaded by `org-agenda` to a minimum, but I had yet to really make agenda part of my routine.
 
-`org-roam-dynamic-blocks`&nbsp;[^fn:11] stayed on my radar, but I had yet to really make it an active part of my workflow.
+`org-roam-dynamic-blocks`&nbsp;[^fn:12] stayed on my radar, but I had yet to really make it an active part of my workflow.
 
 [^fn:1]: How I org in 2023 <https://cmdln.org/2023/03/25/how-i-org-in-2023/>
 [^fn:2]: Org-roam is a plain-text personal knowledge management system. According to the [introduction in the manual](https://www.orgroam.com/manual.html#Introduction) Org-roam is a tool for networked thought. It reproduces some of [Roam Research’](https://roamresearch.com/)s key features within Org-mode. Org-roam allows for effortless non-hierarchical note-taking: with Org-roam, notes flow naturally, making note-taking fun and easy. Really, it facilitates capturing information by extending Org-mode's existing capture system, maintains a sqlite database of nodes (headings) with IDs and other metadata and provides the ability to surface and navigate back links (which nodes link to the current node). <https://www.orgroam.com/>
@@ -106,8 +112,9 @@ I long desired to make effective use of `org-agenda` and I had played around wit
 [^fn:4]: Maggie Appleton has a nice post about [Daily notes as a frictionless default input for personal knowledge management systems](https://maggieappleton.com/daily-notes).
 [^fn:5]: I am not perfect in remembering to capture each thing but I don't need to be perfect to be effective.
 [^fn:6]: `%a` - Annotation, normally the link created with `org-store-link`.
-[^fn:7]: `org-web-tools` contains library functions and commands useful for retrieving web page content and processing it into Org-mode content. <https://github.com/alphapapa/org-web-tools>
-[^fn:8]: `org-protocol` intercepts calls from emacsclient to trigger custom actions without external dependencies. Only one protocol has to be configured with your external applications or the operating system, to trigger an arbitrary number of custom actions. <https://orgmode.org/worg/org-contrib/org-protocol.html>
-[^fn:9]: `org-rich-yank` doesn't get enough publicity, I used it many times a day. It pastes the last copied text and automatically surrounds the snippet in blocks, marked with the major mode of where the code came from, and adds a link to the source file after the block. I recommend customizing `org-rich-yank-format-paste` and making the link to the source a comment as described in the README. <https://github.com/unhammer/org-rich-yank>
+[^fn:7]: `org-rich-yank` doesn't get enough publicity, I used it many times a day. It pastes the last copied text and automatically surrounds the snippet in blocks, marked with the major mode of where the code came from, and adds a link to the source file after the block. I recommend customizing `org-rich-yank-format-paste` and making the link to the source a comment as described in the README. <https://github.com/unhammer/org-rich-yank>
+[^fn:8]: `org-web-tools` contains library functions and commands useful for retrieving web page content and processing it into Org-mode content. <https://github.com/alphapapa/org-web-tools>
+[^fn:9]: `org-protocol` intercepts calls from emacsclient to trigger custom actions without external dependencies. Only one protocol has to be configured with your external applications or the operating system, to trigger an arbitrary number of custom actions. <https://orgmode.org/worg/org-contrib/org-protocol.html>
 [^fn:10]: `org-jira` facilitates getting content from Jira into org-mode and managing Jira issues from org-mode. <https://github.com/ahungry/org-jira>
-[^fn:11]: `org-roam-dynamic-blocks` is not yet packaged, but you can find it here <https://github.com/chrisbarrett/nursery/blob/main/lisp/org-roam-dblocks.el>. Perhaps someday it will become part of Org-roam <https://github.com/org-roam/org-roam/issues/2251>
+[^fn:11]: `gif-screencast` captures one frame per user action and let's me stay inside Emacs while doing so. The project can be found here: <https://gitlab.com/ambrevar/emacs-gif-screencast>
+[^fn:12]: `org-roam-dynamic-blocks` is not yet packaged, but you can find it here <https://github.com/chrisbarrett/nursery/blob/main/lisp/org-roam-dblocks.el>. Perhaps someday it will become part of Org-roam <https://github.com/org-roam/org-roam/issues/2251>
