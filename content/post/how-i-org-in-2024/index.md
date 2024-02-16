@@ -25,7 +25,7 @@ On the best of days I never leave Emacs and I have a record of everything I did 
 ## Statistics {#statistics}
 
 As of Friday, February 16, 2024
- I had `58MB` of `.org` files in `~/org`. `5067` files and `1220329` lines of text, the largest single file was `1.3MB` and the longest lined file had `26370` lines.
+ I had `58MB` of `.org` files in `~/org`. `5068` files and `1220331` lines of text, the largest single file was `1.3MB` and the longest lined file had `26370` lines.
 
 `4897` of these files were inside Org-roam[^fn:2], the majority of them (`3688`) were "dailies"[^fn:3].
 
@@ -84,6 +84,8 @@ I used `org-jira`[^fn:10] to pull issues from Atlassian Cloud Jira into org-mode
 I used `gif-screencast`&nbsp;[^fn:11] to record many of the animations found on this page.
 
 {{< figure src="org-web-tools-read-as-org.gif" >}}
+
+I used org-download to facilitate dragging things onto my buffer to attach them and downloading files (usually images) as attachments. It provided a screenshot tool but I didn't tend to use it.
 
 
 ## Retrieval {#retrieval}
