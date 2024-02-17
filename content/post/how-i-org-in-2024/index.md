@@ -10,7 +10,7 @@ Org-mode is my exocortex, second brain, second mind, mind palace, pensive, and p
 
 No, my Emacs org-mode configuration is not published. However, if you have some question, just reach out.
 
-{{< figure src="/home/nickanderson/org/roam/cmdln_org/attachments/how-i-org-in-2024/OIG (5).jpeg" alt="An image depectinig the essence of the statement Org-mode is my exocortex, second brain, second mind, mind palace, pensive, and personal knowledge management system. It's very flexible. Feature the org-roam unicorn. -- Dall-e 3 via Bing chat" width="50%" >}}
+{{< figure src="2024-02-16_18-12-05_OIG (5).jpeg" alt="An image depectinig the essence of the statement Org-mode is my exocortex, second brain, second mind, mind palace, pensive, and personal knowledge management system. It's very flexible. Feature the org-roam unicorn. -- Dall-e 3 via Bing chat" width="50%" >}}
 
 
 ## Goal {#goal}
