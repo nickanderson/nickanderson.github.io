@@ -85,16 +85,16 @@
 <h2 id="goal">Goal</h2>
 <p>Unrealistically or not, I want total recall, to remember everything in durable plain text. I want to have control of my data. I want to do my work and interact efficiently. I want to improve my knowledge and capabilities, and I want to be able to share with others.</p>
 <p>On the best of days I never leave Emacs and I have a record of everything I did as well as how much time I spent on each thing.</p>
-<figure><img src="2024-01-09_10-10-32_OIG%20%282%29.jpeg"
+<figure><img src="/home/nickanderson/org/roam/cmdln_org/attachments/how-i-org-in-2024/2024-01-09_10-10-32_OIG%20%282%29.jpeg"
          alt="An image depectinig the essence of the statement Unrealistically or not, I want total recall, to remember everything in durable plain text. I want to have control of my data. I want to do my work and interact efficiently. I want to improve my knowledge and capabilities, and I want to be able to share with others. -- Dall-e 3 via Bing chat" width="50%"/>
 </figure>
 
 <h2 id="statistics">Statistics</h2>
 <p>As of Friday, February 16, 2024
-I had <code>58MB</code> of <code>.org</code> files in <code>~/org</code>. <code>5067</code> files and <code>1220330</code> lines of text, the largest single file was <code>1.3MB</code> and the longest lined file had <code>26370</code> lines.</p>
+I had <code>58MB</code> of <code>.org</code> files in <code>~/org</code>. <code>5067</code> files and <code>1220335</code> lines of text, the largest single file was <code>1.3MB</code> and the longest lined file had <code>26370</code> lines.</p>
 <p><code>4897</code> of these files were inside Org-roam<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>, the majority of them (<code>3688</code>) were &ldquo;dailies&rdquo;<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>.</p>
 <p>Additionally, <code>~/Syncthing/Orgzly</code> had <code>9.2MB</code> worth of <code>.org</code> files that I synced around to a few devices and the largest <code>.org</code> file was <code>677K</code> with the most lined file having <code>49670</code> lines.</p>
-<figure><img src="2024-01-08_12-16-26_org-roam-ui-with-and-without-dailies-2024-01-05.png"
+<figure><img src="/home/nickanderson/org/roam/cmdln_org/attachments/how-i-org-in-2024/2024-01-08_12-16-26_org-roam-ui-with-and-without-dailies-2024-01-05.png"
          alt="Figure 1: org-roam-ui visualization of notes as of January 5th, 2024. Left - without dailies, Right with dailies." width="75%"/><figcaption>
             <p><span class="figure-number">Figure 1: </span>org-roam-ui visualization of notes as of January 5th, 2024. Left - without dailies, Right with dailies.</p>
         </figcaption>
@@ -141,16 +141,17 @@ I had <code>58MB</code> of <code>.org</code> files in <code>~/org</code>. <code>
 <p>I occasionally used <code>org-web-tools</code><sup id="fnref:8"><a href="#fn:8" class="footnote-ref" role="doc-noteref">8</a></sup> to pull web pages into org. Either as a buffer to read, or as a subtree to store. When I wanted to clip a bit of text from a web page I used <code>org-protocol</code><sup id="fnref:9"><a href="#fn:9" class="footnote-ref" role="doc-noteref">9</a></sup> bookmarklets to get the content into Emacs.</p>
 <p>I used <code>org-jira</code><sup id="fnref:10"><a href="#fn:10" class="footnote-ref" role="doc-noteref">10</a></sup> to pull issues from Atlassian Cloud Jira into org-mode.</p>
 <p>I used <code>gif-screencast</code> <sup id="fnref:11"><a href="#fn:11" class="footnote-ref" role="doc-noteref">11</a></sup> to record many of the animations found on this page.</p>
-<figure><img src="org-web-tools-read-as-org.gif"/>
+<figure><img src="./attachments/how-i-org-in-2024/org-web-tools-read-as-org.gif" width="100%"/>
 </figure>
 
-<p>I used org-download to facilitate dragging things onto my buffer to attach them and downloading files (usually images) as attachments. It provided a screenshot tool but I didn&rsquo;t tend to use it.</p>
+<p>I used <code>org-download</code> <sup id="fnref:12"><a href="#fn:12" class="footnote-ref" role="doc-noteref">12</a></sup>to facilitate dragging things onto my buffer to attach them and downloading files (usually images) as attachments. It provided a screenshot tool but I didn&rsquo;t tend to use it.</p>
+<p>I occasionally used some <a href="https://sachachua.com/blog/2021/04/org-mode-insert-youtube-video-with-separate-captions/">elisp from sachachua&rsquo;s</a> <sup id="fnref:13"><a href="#fn:13" class="footnote-ref" role="doc-noteref">13</a></sup>blog to download youtube videos with their transcripts.</p>
 <h2 id="retrieval">Retrieval</h2>
 <p>I retrieved content from my org in a myriad of ways.</p>
 <p>Frequently I would find notes by name using <code>org-roam-node-find</code>. This worked well for finding notes with a regular naming pattern, e.g. I took notes on the work I did while releasing new software versions. The capture template for that type of note created files titled <code>Release work for X</code>, so it was quick and easy to <code>org-roam-node-find</code>, type <code>Release work for 3.18.7</code>, and jump to that note. Similarly, I kept notes on individual people, those notes were titled with the persons name, so it was quick to <code>org-roam-node-find</code> and start typing the persons name to find their note.</p>
 <p>I frequently found notes via link. <code>org-roam-node-insert</code> made it easy to simply insert a link to another note (found by name as noted above). Many of my capture templates also contain links, some to well known related notes and some using <code>%a</code> <sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup> to provide a link to the location I was when I decided to initiate the capture. That annotation link (<code>%a</code>) can result in links to unrelated things, but I had found the ability to track back and be aware of unrelated things that were happening around that time to be useful during some archaeology sessions.</p>
 <p>Sometimes I would use <code>org-roam-buffer</code> to get a view on which notes link to my current note.</p>
-<figure><img src="2024-01-12_12-52-45_Screenshot_2024-01-12_125217.png"
+<figure><img src="./attachments/how-i-org-in-2023/2024-01-12_12-52-45_Screenshot_2024-01-12_125217.png"
          alt="Figure 3: Screenshot showing the org-mode source for this section on the left and org-roam-buffer listing links to this section on the right" width="100%"/><figcaption>
             <p><span class="figure-number">Figure 3: </span>Screenshot showing the org-mode source for this section on the left and org-roam-buffer listing links to this section on the right</p>
         </figcaption>
@@ -159,7 +160,7 @@ I had <code>58MB</code> of <code>.org</code> files in <code>~/org</code>. <code>
 <p>Searching by name is not always effective, sometimes I needed to search widely and dive deep searching for specific strings. For that, most often I used <code>org-ripgrep-consult</code>.</p>
 <p>For serendipitous stumbles, I occasionally used <code>org-roam-random-note</code> to surface some random note.</p>
 <p>I long desired to make effective use of <code>org-agenda</code> and I had played around with using <code>org-roam-db-query</code> to identify which files contained TODO keywords to keep the files loaded by <code>org-agenda</code> to a minimum, but I had yet to really make agenda part of my routine.</p>
-<p><code>org-roam-dynamic-blocks</code> <sup id="fnref:12"><a href="#fn:12" class="footnote-ref" role="doc-noteref">12</a></sup> stayed on my radar, but I had yet to really make it an active part of my workflow.</p>
+<p><code>org-roam-dynamic-blocks</code> <sup id="fnref:14"><a href="#fn:14" class="footnote-ref" role="doc-noteref">14</a></sup> stayed on my radar, but I had yet to really make it an active part of my workflow.</p>
 <section class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
@@ -197,7 +198,13 @@ I had <code>58MB</code> of <code>.org</code> files in <code>~/org</code>. <code>
 <p><code>gif-screencast</code> captures one frame per user action and let&rsquo;s me stay inside Emacs while doing so. The project can be found here: <a href="https://gitlab.com/ambrevar/emacs-gif-screencast">https://gitlab.com/ambrevar/emacs-gif-screencast</a>&#160;<a href="#fnref:11" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:12" role="doc-endnote">
-<p><code>org-roam-dynamic-blocks</code> is not yet packaged, but you can find it here <a href="https://github.com/chrisbarrett/nursery/blob/main/lisp/org-roam-dblocks.el">https://github.com/chrisbarrett/nursery/blob/main/lisp/org-roam-dblocks.el</a>. Perhaps someday it will become part of Org-roam <a href="https://github.com/org-roam/org-roam/issues/2251">https://github.com/org-roam/org-roam/issues/2251</a>&#160;<a href="#fnref:12" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Find org-download here: <a href="https://github.com/abo-abo/org-download">https://github.com/abo-abo/org-download</a>&#160;<a href="#fnref:12" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:13" role="doc-endnote">
+<p>I edited the elisp to switch from <code>youtube-dl</code> to <code>yt-dlp</code>.&#160;<a href="#fnref:13" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:14" role="doc-endnote">
+<p><code>org-roam-dynamic-blocks</code> is not yet packaged, but you can find it here <a href="https://github.com/chrisbarrett/nursery/blob/main/lisp/org-roam-dblocks.el">https://github.com/chrisbarrett/nursery/blob/main/lisp/org-roam-dblocks.el</a>. Perhaps someday it will become part of Org-roam <a href="https://github.com/org-roam/org-roam/issues/2251">https://github.com/org-roam/org-roam/issues/2251</a>&#160;<a href="#fnref:14" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </section>
