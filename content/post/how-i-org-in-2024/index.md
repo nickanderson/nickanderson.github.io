@@ -19,19 +19,19 @@ Unrealistically or not, I want total recall, to remember everything in durable p
 
 On the best of days I never leave Emacs and I have a record of everything I did as well as how much time I spent on each thing.
 
-{{< figure src="2024-01-09_10-10-32_OIG (2).jpeg" alt="An image depectinig the essence of the statement Unrealistically or not, I want total recall, to remember everything in durable plain text. I want to have control of my data. I want to do my work and interact efficiently. I want to improve my knowledge and capabilities, and I want to be able to share with others. -- Dall-e 3 via Bing chat" width="50%" >}}
+{{< figure src="/home/nickanderson/org/roam/cmdln_org/attachments/how-i-org-in-2024/2024-01-09_10-10-32_OIG (2).jpeg" alt="An image depectinig the essence of the statement Unrealistically or not, I want total recall, to remember everything in durable plain text. I want to have control of my data. I want to do my work and interact efficiently. I want to improve my knowledge and capabilities, and I want to be able to share with others. -- Dall-e 3 via Bing chat" width="50%" >}}
 
 
 ## Statistics {#statistics}
 
 As of Friday, February 16, 2024
- I had `58MB` of `.org` files in `~/org`. `5067` files and `1220330` lines of text, the largest single file was `1.3MB` and the longest lined file had `26370` lines.
+ I had `58MB` of `.org` files in `~/org`. `5067` files and `1220334` lines of text, the largest single file was `1.3MB` and the longest lined file had `26370` lines.
 
 `4897` of these files were inside Org-roam[^fn:2], the majority of them (`3688`) were "dailies"[^fn:3].
 
 Additionally, `~/Syncthing/Orgzly` had `9.2MB` worth of `.org` files that I synced around to a few devices and the largest `.org` file was `677K` with the most lined file having `49670` lines.
 
-{{< figure src="2024-01-08_12-16-26_org-roam-ui-with-and-without-dailies-2024-01-05.png" caption="<span class=\"figure-number\">Figure 1: </span>org-roam-ui visualization of notes as of January 5th, 2024. Left - without dailies, Right with dailies." width="75%" >}}
+{{< figure src="/home/nickanderson/org/roam/cmdln_org/attachments/how-i-org-in-2024/2024-01-08_12-16-26_org-roam-ui-with-and-without-dailies-2024-01-05.png" caption="<span class=\"figure-number\">Figure 1: </span>org-roam-ui visualization of notes as of January 5th, 2024. Left - without dailies, Right with dailies." width="75%" >}}
 
 
 ## System {#system}
