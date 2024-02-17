@@ -25,7 +25,7 @@ On the best of days I never leave Emacs and I have a record of everything I did 
 ## Statistics {#statistics}
 
 As of Friday, February 16, 2024
- I had `58MB` of `.org` files in `~/org`. `5067` files and `1220334` lines of text, the largest single file was `1.3MB` and the longest lined file had `26370` lines.
+ I had `58MB` of `.org` files in `~/org`. `5067` files and `1220335` lines of text, the largest single file was `1.3MB` and the longest lined file had `26370` lines.
 
 `4897` of these files were inside Org-roam[^fn:2], the majority of them (`3688`) were "dailies"[^fn:3].
 
@@ -81,9 +81,11 @@ I used `org-jira`[^fn:10] to pull issues from Atlassian Cloud Jira into org-mode
 
 I used `gif-screencast`&nbsp;[^fn:11] to record many of the animations found on this page.
 
-{{< figure src="org-web-tools-read-as-org.gif" >}}
+{{< figure src="./attachments/how-i-org-in-2024/org-web-tools-read-as-org.gif" width="100%" >}}
 
-I used org-download to facilitate dragging things onto my buffer to attach them and downloading files (usually images) as attachments. It provided a screenshot tool but I didn't tend to use it.
+I used `org-download`&nbsp;[^fn:12]to facilitate dragging things onto my buffer to attach them and downloading files (usually images) as attachments. It provided a screenshot tool but I didn't tend to use it.
+
+I occasionally used some [elisp from sachachua's](https://sachachua.com/blog/2021/04/org-mode-insert-youtube-video-with-separate-captions/)&nbsp;[^fn:13]blog to download youtube videos with their transcripts.
 
 
 ## Retrieval {#retrieval}
@@ -96,7 +98,7 @@ I frequently found notes via link. `org-roam-node-insert` made it easy to simply
 
 Sometimes I would use `org-roam-buffer` to get a view on which notes link to my current note.
 
-{{< figure src="2024-01-12_12-52-45_Screenshot_2024-01-12_125217.png" caption="<span class=\"figure-number\">Figure 3: </span>Screenshot showing the org-mode source for this section on the left and org-roam-buffer listing links to this section on the right" width="100%" >}}
+{{< figure src="./attachments/how-i-org-in-2023/2024-01-12_12-52-45_Screenshot_2024-01-12_125217.png" caption="<span class=\"figure-number\">Figure 3: </span>Screenshot showing the org-mode source for this section on the left and org-roam-buffer listing links to this section on the right" width="100%" >}}
 
 Searching by name is not always effective, sometimes I needed to search widely and dive deep searching for specific strings. For that, most often I used `org-ripgrep-consult`.
 
@@ -104,7 +106,7 @@ For serendipitous stumbles, I occasionally used `org-roam-random-note` to surfac
 
 I long desired to make effective use of `org-agenda` and I had played around with using `org-roam-db-query` to identify which files contained TODO keywords to keep the files loaded by `org-agenda` to a minimum, but I had yet to really make agenda part of my routine.
 
-`org-roam-dynamic-blocks`&nbsp;[^fn:12] stayed on my radar, but I had yet to really make it an active part of my workflow.
+`org-roam-dynamic-blocks`&nbsp;[^fn:14] stayed on my radar, but I had yet to really make it an active part of my workflow.
 
 [^fn:1]: How I org in 2023 <https://cmdln.org/2023/03/25/how-i-org-in-2023/>
 [^fn:2]: Org-roam is a plain-text personal knowledge management system. According to the [introduction in the manual](https://www.orgroam.com/manual.html#Introduction) Org-roam is a tool for networked thought. It reproduces some of [Roam Research’](https://roamresearch.com/)s key features within Org-mode. Org-roam allows for effortless non-hierarchical note-taking: with Org-roam, notes flow naturally, making note-taking fun and easy. Really, it facilitates capturing information by extending Org-mode's existing capture system, maintains a sqlite database of nodes (headings) with IDs and other metadata and provides the ability to surface and navigate back links (which nodes link to the current node). <https://www.orgroam.com/>
@@ -117,4 +119,6 @@ I long desired to make effective use of `org-agenda` and I had played around wit
 [^fn:9]: `org-protocol` intercepts calls from emacsclient to trigger custom actions without external dependencies. Only one protocol has to be configured with your external applications or the operating system, to trigger an arbitrary number of custom actions. <https://orgmode.org/worg/org-contrib/org-protocol.html>
 [^fn:10]: `org-jira` facilitates getting content from Jira into org-mode and managing Jira issues from org-mode. <https://github.com/ahungry/org-jira>
 [^fn:11]: `gif-screencast` captures one frame per user action and let's me stay inside Emacs while doing so. The project can be found here: <https://gitlab.com/ambrevar/emacs-gif-screencast>
-[^fn:12]: `org-roam-dynamic-blocks` is not yet packaged, but you can find it here <https://github.com/chrisbarrett/nursery/blob/main/lisp/org-roam-dblocks.el>. Perhaps someday it will become part of Org-roam <https://github.com/org-roam/org-roam/issues/2251>
+[^fn:12]: Find org-download here: <https://github.com/abo-abo/org-download>
+[^fn:13]: I edited the elisp to switch from `youtube-dl` to `yt-dlp`.
+[^fn:14]: `org-roam-dynamic-blocks` is not yet packaged, but you can find it here <https://github.com/chrisbarrett/nursery/blob/main/lisp/org-roam-dblocks.el>. Perhaps someday it will become part of Org-roam <https://github.com/org-roam/org-roam/issues/2251>
