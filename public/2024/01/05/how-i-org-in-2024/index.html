@@ -91,15 +91,15 @@
 
 <h2 id="statistics">Statistics</h2>
 <p>As of Sunday, February 18, 2024
-I had <code>58MB</code> of <code>.org</code> files in <code>~/org</code>. <code>5071</code> files and <code>1222734</code> lines of text, the largest single file was <code>1.3MB</code> and the longest lined file had <code>26370</code> lines.</p>
+I had <code>58MB</code> of <code>.org</code> files in <code>~/org</code>. <code>5071</code> files and <code>1222735</code> lines of text, the largest single file was <code>1.3MB</code> and the longest lined file had <code>26370</code> lines.</p>
 <p><code>5047</code> of these files were inside Org-roam<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>, the majority of them (<code>3688</code>) were &ldquo;dailies&rdquo;<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>. There were <code>15776</code> nodes in total, so about <code>3</code> nodes per file. This seemed accurate since many headlines didn&rsquo;t have IDs. IDs got created automatically when I stored a link (which often happened during capture) or attached a file.</p>
-<p>Additionally, <code>~/Syncthing/Orgzly</code> had <code>11MB</code> worth of <code>.org</code> files that I synced around to a few devices and the largest <code>.org</code> file was <code>677K</code> with the most lined file having <code>49670</code> lines.</p>
 <figure><img src="2024-02-18_12-19-16_Screenshot_2024-02-16_152724.png"
          alt="Figure 1: org-roam-ui visualization of nodes as of January 16th, 2024." width="75%"/><figcaption>
             <p><span class="figure-number">Figure 1: </span>org-roam-ui visualization of nodes as of January 16th, 2024.</p>
         </figcaption>
 </figure>
 
+<p>Additionally, <code>~/Syncthing/Orgzly</code> had <code>11MB</code> worth of <code>.org</code> files that I synced around to a few devices and the largest <code>.org</code> file was <code>677K</code> with the most lined file having <code>49670</code> lines.</p>
 <h2 id="system">System</h2>
 <p>There was no real formal system in use here. Pretty much the Nick Anderson S.H.I.T. (Stuff here &lsquo;n there) methodology.</p>
 <figure><img src="attachments/how-i-org-in-2023/nick-anderson-shit-method.png"
@@ -135,12 +135,9 @@ I had <code>58MB</code> of <code>.org</code> files in <code>~/org</code>. <code>
 <h3 id="other-tools-used-for-capture">Other tools used for capture</h3>
 <p>Some of the features that I used to get content into Org-mode were not part of org-capture.</p>
 <p>I used <code>org-rich-yank</code><sup id="fnref:7"><a href="#fn:7" class="footnote-ref" role="doc-noteref">7</a></sup> often, which let me copy text and paste it with context allowing it to be syntax highlighted as well as providing a link back to the source.</p>
-<figure><img src="org-rich-yank.gif"
-         alt="Figure 3: gif-screencast illustrating use of org-rich-yank." width="100%"/><figcaption>
-            <p><span class="figure-number">Figure 3: </span>gif-screencast illustrating use of org-rich-yank.</p>
-        </figcaption>
-</figure>
-
+<div align="center">
+<p>[./attachments/how-i-org-in-2024/org-rich-yank.gif]]</p>
+</div>
 <p>I read email in <code>mu4e</code>, simply being inside of Emacs that facilitate getting emails into org-mode.</p>
 <p>I occasionally used <code>org-web-tools</code><sup id="fnref:8"><a href="#fn:8" class="footnote-ref" role="doc-noteref">8</a></sup> to pull web pages into org. Either as a buffer to read, or as a subtree to store.</p>
 <figure><img src="#ZgotmplZ"
@@ -161,12 +158,6 @@ I had <code>58MB</code> of <code>.org</code> files in <code>~/org</code>. <code>
 <p>Often I would find notes by name using <code>org-roam-node-find</code>. This worked well for finding notes with a regular naming pattern, e.g. I took notes on the work I did while releasing new software versions. The capture template for that type of note created files titled <code>Release work for X</code>, so it was quick and easy to <code>org-roam-node-find</code>, type <code>Release work for 3.18.7</code>, and jump to that note. Similarly, I kept notes on individual people, those notes were titled with the persons name, so it was quick to <code>org-roam-node-find</code> and start typing the persons name to find their note.</p>
 <p>I frequently found notes via link. <code>org-roam-node-insert</code> made it easy to simply insert a link to another note (found by name as noted above) which I could then jump follow.  Many of my capture templates also contain links, some to well known related notes and some using <code>%a</code> <sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup> to provide a link to the location I was when I decided to initiate the capture. So, when I wanted to find the notes for the ticket I was working on the day prior I would visit the worklog for the day and find the headline where I was clocking time related to the ticket and follow the link to the ticket notes. That annotation link (<code>%a</code>) can result in links to unrelated things, but I had found the ability to track back and be aware of unrelated things that were happening around that time to be useful during some archaeology sessions.</p>
 <p>Sometimes I would use <code>org-roam-buffer</code> to get a view on which notes link to my current note.</p>
-<figure><img src="./attachments/how-i-org-in-2023/2024-01-12_12-52-45_Screenshot_2024-01-12_125217.png"
-         alt="Figure 5: Screenshot showing the org-mode source for this section on the left and org-roam-buffer listing links to this section on the right" width="100%"/><figcaption>
-            <p><span class="figure-number">Figure 5: </span>Screenshot showing the org-mode source for this section on the left and org-roam-buffer listing links to this section on the right</p>
-        </figcaption>
-</figure>
-
 <p>Searching by name is not always effective, sometimes I needed to search widely and dive deep searching for specific strings. For that, most often I used <code>org-ripgrep-consult</code>.</p>
 <p>For serendipitous stumbles, I occasionally used <code>org-roam-random-note</code> to surface some random note.</p>
 <p>I long desired to make effective use of <code>org-agenda</code> and I had played around with using <code>org-roam-db-query</code> to identify which files contained TODO keywords to keep the files loaded by <code>org-agenda</code> to a minimum, but I had yet to really make agenda part of my routine. I also tried using <code>org-idle-agenda</code> to keep bringing it front and center but I struggled to get comfortable.</p>
