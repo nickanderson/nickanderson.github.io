@@ -25,13 +25,13 @@ On the best of days I never leave Emacs and I have a record of everything I did 
 ## Statistics {#statistics}
 
 As of Sunday, February 18, 2024
- I had `58MB` of `.org` files in `~/org`. `5071` files and `1222734` lines of text, the largest single file was `1.3MB` and the longest lined file had `26370` lines.
+ I had `58MB` of `.org` files in `~/org`. `5071` files and `1222735` lines of text, the largest single file was `1.3MB` and the longest lined file had `26370` lines.
 
 `5047` of these files were inside Org-roam[^fn:2], the majority of them (`3688`) were "dailies"[^fn:3]. There were `15776` nodes in total, so about `3` nodes per file. This seemed accurate since many headlines didn't have IDs. IDs got created automatically when I stored a link (which often happened during capture) or attached a file.
 
-Additionally, `~/Syncthing/Orgzly` had `11MB` worth of `.org` files that I synced around to a few devices and the largest `.org` file was `677K` with the most lined file having `49670` lines.
-
 {{< figure src="2024-02-18_12-19-16_Screenshot_2024-02-16_152724.png" caption="<span class=\"figure-number\">Figure 1: </span>org-roam-ui visualization of nodes as of January 16th, 2024." width="75%" >}}
+
+Additionally, `~/Syncthing/Orgzly` had `11MB` worth of `.org` files that I synced around to a few devices and the largest `.org` file was `677K` with the most lined file having `49670` lines.
 
 
 ## System {#system}
@@ -73,7 +73,11 @@ Some of the features that I used to get content into Org-mode were not part of o
 
 I used `org-rich-yank`[^fn:7] often, which let me copy text and paste it with context allowing it to be syntax highlighted as well as providing a link back to the source.
 
-{{< figure src="org-rich-yank.gif" caption="<span class=\"figure-number\">Figure 3: </span>gif-screencast illustrating use of org-rich-yank." width="100%" >}}
+<div align="center">
+
+[./attachments/how-i-org-in-2024/org-rich-yank.gif]]
+
+</div>
 
 I read email in `mu4e`, simply being inside of Emacs that facilitate getting emails into org-mode.
 
@@ -105,8 +109,6 @@ Often I would find notes by name using `org-roam-node-find`. This worked well fo
 I frequently found notes via link. `org-roam-node-insert` made it easy to simply insert a link to another note (found by name as noted above) which I could then jump follow.  Many of my capture templates also contain links, some to well known related notes and some using `%a`&nbsp;[^fn:6] to provide a link to the location I was when I decided to initiate the capture. So, when I wanted to find the notes for the ticket I was working on the day prior I would visit the worklog for the day and find the headline where I was clocking time related to the ticket and follow the link to the ticket notes. That annotation link (`%a`) can result in links to unrelated things, but I had found the ability to track back and be aware of unrelated things that were happening around that time to be useful during some archaeology sessions.
 
 Sometimes I would use `org-roam-buffer` to get a view on which notes link to my current note.
-
-{{< figure src="./attachments/how-i-org-in-2023/2024-01-12_12-52-45_Screenshot_2024-01-12_125217.png" caption="<span class=\"figure-number\">Figure 5: </span>Screenshot showing the org-mode source for this section on the left and org-roam-buffer listing links to this section on the right" width="100%" >}}
 
 Searching by name is not always effective, sometimes I needed to search widely and dive deep searching for specific strings. For that, most often I used `org-ripgrep-consult`.
 
