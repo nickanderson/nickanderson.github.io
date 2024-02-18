@@ -25,7 +25,7 @@ On the best of days I never leave Emacs and I have a record of everything I did 
 ## Statistics {#statistics}
 
 As of Sunday, February 18, 2024
- I had `58MB` of `.org` files in `~/org`. `5071` files and `1222731` lines of text, the largest single file was `1.3MB` and the longest lined file had `26370` lines.
+ I had `58MB` of `.org` files in `~/org`. `5071` files and `1222734` lines of text, the largest single file was `1.3MB` and the longest lined file had `26370` lines.
 
 `4897` of these files were inside Org-roam[^fn:2], the majority of them (`3688`) were "dailies"[^fn:3]. There were `15703` nodes in total, so about `3` nodes per file. This seemed accurate since many headlines didn't have IDs. IDs got created automatically when I stored a link (which often happened during capture) or attached a file.
 
@@ -73,17 +73,19 @@ Some of the features that I used to get content into Org-mode were not part of o
 
 I used `org-rich-yank`[^fn:7] often, which let me copy text and paste it with context allowing it to be syntax highlighted as well as providing a link back to the source.
 
-{{< figure src="org-rich-yank.gif" caption="<span class=\"figure-number\">Figure 3: </span>git-screencast illustrating use of org-rich-yank." width="100%" >}}
+{{< figure src="org-rich-yank.gif" caption="<span class=\"figure-number\">Figure 3: </span>gif-screencast illustrating use of org-rich-yank." width="100%" >}}
 
 I read email in `mu4e`, simply being inside of Emacs that facilitate getting emails into org-mode.
 
-I occasionally used `org-web-tools`[^fn:8] to pull web pages into org. Either as a buffer to read, or as a subtree to store. When I wanted to clip a bit of text from a web page I used `org-protocol`[^fn:9] bookmarklets to get the content into Emacs.
+I occasionally used `org-web-tools`[^fn:8] to pull web pages into org. Either as a buffer to read, or as a subtree to store.
+
+{{< figure src="2024-02-18_12-32-33_output-2024-02-16-17:29:51.gif" caption="<span class=\"figure-number\">Figure 4: </span>gif-screencast illustrating use of org-web-tools-read-as-org." width="100%" >}}
+
+When I wanted to clip a bit of text from a web page I used `org-protocol`[^fn:9] bookmarklets to get the content into Emacs.
 
 I used `org-jira`[^fn:10] to pull issues from Atlassian Cloud Jira into org-mode.
 
 I used `gif-screencast`&nbsp;[^fn:11] to record many of the animations found on this page.
-
-{{< figure src="./attachments/how-i-org-in-2024/org-web-tools-read-as-org.gif" caption="<span class=\"figure-number\">Figure 4: </span>gif-screencast illustrating org-web-tools-read-url-as-org" width="100%" >}}
 
 I used `org-download`&nbsp;[^fn:12]to facilitate dragging things onto my buffer to attach them and downloading files (usually images) as attachments. It provided a screenshot tool but I didn't tend to use it.
 
