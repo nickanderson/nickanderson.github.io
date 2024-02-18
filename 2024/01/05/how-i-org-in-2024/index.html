@@ -90,10 +90,10 @@
 </figure>
 
 <h2 id="statistics">Statistics</h2>
-<p>As of Friday, February 16, 2024
-I had <code>58MB</code> of <code>.org</code> files in <code>~/org</code>. <code>5067</code> files and <code>1220336</code> lines of text, the largest single file was <code>1.3MB</code> and the longest lined file had <code>26370</code> lines.</p>
-<p><code>4897</code> of these files were inside Org-roam<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>, the majority of them (<code>3688</code>) were &ldquo;dailies&rdquo;<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>.</p>
-<p>Additionally, <code>~/Syncthing/Orgzly</code> had <code>9.2MB</code> worth of <code>.org</code> files that I synced around to a few devices and the largest <code>.org</code> file was <code>677K</code> with the most lined file having <code>49670</code> lines.</p>
+<p>As of Sunday, February 18, 2024
+I had <code>58MB</code> of <code>.org</code> files in <code>~/org</code>. <code>5071</code> files and <code>1222731</code> lines of text, the largest single file was <code>1.3MB</code> and the longest lined file had <code>26370</code> lines.</p>
+<p><code>4897</code> of these files were inside Org-roam<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>, the majority of them (<code>3688</code>) were &ldquo;dailies&rdquo;<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>. There were <code>15703</code> nodes in total, so about <code>3</code> nodes per file. This seemed accurate since many headlines don&rsquo;t have IDs. IDs got created automatically when I stored a link (which often happened during capture) or attached a file.</p>
+<p>Additionally, <code>~/Syncthing/Orgzly</code> had <code>9.7MB</code> worth of <code>.org</code> files that I synced around to a few devices and the largest <code>.org</code> file was <code>677K</code> with the most lined file having <code>49670</code> lines.</p>
 <figure><img src="/home/nickanderson/org/roam/cmdln_org/attachments/how-i-org-in-2024/2024-01-08_12-16-26_org-roam-ui-with-and-without-dailies-2024-01-05.png"
          alt="Figure 1: org-roam-ui visualization of notes as of January 5th, 2024. Left - without dailies, Right with dailies." width="75%"/><figcaption>
             <p><span class="figure-number">Figure 1: </span>org-roam-ui visualization of notes as of January 5th, 2024. Left - without dailies, Right with dailies.</p>
@@ -135,32 +135,193 @@ I had <code>58MB</code> of <code>.org</code> files in <code>~/org</code>. <code>
 <h3 id="other-tools-used-for-capture">Other tools used for capture</h3>
 <p>Some of the features that I used to get content into Org-mode were not part of org-capture.</p>
 <p>I used <code>org-rich-yank</code><sup id="fnref:7"><a href="#fn:7" class="footnote-ref" role="doc-noteref">7</a></sup> often, which let me copy text and paste it with context allowing it to be syntax highlighted as well as providing a link back to the source.</p>
-<figure><img src="org-rich-yank.gif" width="100%"/>
+<figure><img src="org-rich-yank.gif"
+         alt="Figure 3: git-screencast illustrating use of org-rich-yank." width="100%"/><figcaption>
+            <p><span class="figure-number">Figure 3: </span>git-screencast illustrating use of org-rich-yank.</p>
+        </figcaption>
 </figure>
 
+<p>I read email in <code>mu4e</code>, simply being inside of Emacs that facilitate getting emails into org-mode.</p>
 <p>I occasionally used <code>org-web-tools</code><sup id="fnref:8"><a href="#fn:8" class="footnote-ref" role="doc-noteref">8</a></sup> to pull web pages into org. Either as a buffer to read, or as a subtree to store. When I wanted to clip a bit of text from a web page I used <code>org-protocol</code><sup id="fnref:9"><a href="#fn:9" class="footnote-ref" role="doc-noteref">9</a></sup> bookmarklets to get the content into Emacs.</p>
 <p>I used <code>org-jira</code><sup id="fnref:10"><a href="#fn:10" class="footnote-ref" role="doc-noteref">10</a></sup> to pull issues from Atlassian Cloud Jira into org-mode.</p>
 <p>I used <code>gif-screencast</code> <sup id="fnref:11"><a href="#fn:11" class="footnote-ref" role="doc-noteref">11</a></sup> to record many of the animations found on this page.</p>
-<figure><img src="./attachments/how-i-org-in-2024/org-web-tools-read-as-org.gif" width="100%"/>
+<figure><img src="./attachments/how-i-org-in-2024/org-web-tools-read-as-org.gif"
+         alt="Figure 4: gif-screencast illustrating org-web-tools-read-url-as-org" width="100%"/><figcaption>
+            <p><span class="figure-number">Figure 4: </span>gif-screencast illustrating org-web-tools-read-url-as-org</p>
+        </figcaption>
 </figure>
 
 <p>I used <code>org-download</code> <sup id="fnref:12"><a href="#fn:12" class="footnote-ref" role="doc-noteref">12</a></sup>to facilitate dragging things onto my buffer to attach them and downloading files (usually images) as attachments. It provided a screenshot tool but I didn&rsquo;t tend to use it.</p>
 <p>I occasionally used some <a href="https://sachachua.com/blog/2021/04/org-mode-insert-youtube-video-with-separate-captions/">elisp from sachachua&rsquo;s</a> <sup id="fnref:13"><a href="#fn:13" class="footnote-ref" role="doc-noteref">13</a></sup>blog to download youtube videos with their transcripts.</p>
+<p>I had some memacs jobs running, but no plan for using the data. It felt like getting comfortable with agenda was perhaps a pre-requisite for value.</p>
 <h2 id="retrieval">Retrieval</h2>
 <p>I retrieved content from my org in a myriad of ways.</p>
-<p>Frequently I would find notes by name using <code>org-roam-node-find</code>. This worked well for finding notes with a regular naming pattern, e.g. I took notes on the work I did while releasing new software versions. The capture template for that type of note created files titled <code>Release work for X</code>, so it was quick and easy to <code>org-roam-node-find</code>, type <code>Release work for 3.18.7</code>, and jump to that note. Similarly, I kept notes on individual people, those notes were titled with the persons name, so it was quick to <code>org-roam-node-find</code> and start typing the persons name to find their note.</p>
-<p>I frequently found notes via link. <code>org-roam-node-insert</code> made it easy to simply insert a link to another note (found by name as noted above). Many of my capture templates also contain links, some to well known related notes and some using <code>%a</code> <sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup> to provide a link to the location I was when I decided to initiate the capture. That annotation link (<code>%a</code>) can result in links to unrelated things, but I had found the ability to track back and be aware of unrelated things that were happening around that time to be useful during some archaeology sessions.</p>
+<p>I used <code>org-roam-goto-today</code> usually keying in <code>wll</code> (work log log) frequently to get back to home base.</p>
+<p>Often I would find notes by name using <code>org-roam-node-find</code>. This worked well for finding notes with a regular naming pattern, e.g. I took notes on the work I did while releasing new software versions. The capture template for that type of note created files titled <code>Release work for X</code>, so it was quick and easy to <code>org-roam-node-find</code>, type <code>Release work for 3.18.7</code>, and jump to that note. Similarly, I kept notes on individual people, those notes were titled with the persons name, so it was quick to <code>org-roam-node-find</code> and start typing the persons name to find their note.</p>
+<p>I frequently found notes via link. <code>org-roam-node-insert</code> made it easy to simply insert a link to another note (found by name as noted above) which I could then jump follow.  Many of my capture templates also contain links, some to well known related notes and some using <code>%a</code> <sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup> to provide a link to the location I was when I decided to initiate the capture. So, when I wanted to find the notes for the ticket I was working on the day prior I would visit the worklog for the day and find the headline where I was clocking time related to the ticket and follow the link to the ticket notes. That annotation link (<code>%a</code>) can result in links to unrelated things, but I had found the ability to track back and be aware of unrelated things that were happening around that time to be useful during some archaeology sessions.</p>
 <p>Sometimes I would use <code>org-roam-buffer</code> to get a view on which notes link to my current note.</p>
 <figure><img src="./attachments/how-i-org-in-2023/2024-01-12_12-52-45_Screenshot_2024-01-12_125217.png"
-         alt="Figure 3: Screenshot showing the org-mode source for this section on the left and org-roam-buffer listing links to this section on the right" width="100%"/><figcaption>
-            <p><span class="figure-number">Figure 3: </span>Screenshot showing the org-mode source for this section on the left and org-roam-buffer listing links to this section on the right</p>
+         alt="Figure 5: Screenshot showing the org-mode source for this section on the left and org-roam-buffer listing links to this section on the right" width="100%"/><figcaption>
+            <p><span class="figure-number">Figure 5: </span>Screenshot showing the org-mode source for this section on the left and org-roam-buffer listing links to this section on the right</p>
         </figcaption>
 </figure>
 
 <p>Searching by name is not always effective, sometimes I needed to search widely and dive deep searching for specific strings. For that, most often I used <code>org-ripgrep-consult</code>.</p>
 <p>For serendipitous stumbles, I occasionally used <code>org-roam-random-note</code> to surface some random note.</p>
-<p>I long desired to make effective use of <code>org-agenda</code> and I had played around with using <code>org-roam-db-query</code> to identify which files contained TODO keywords to keep the files loaded by <code>org-agenda</code> to a minimum, but I had yet to really make agenda part of my routine.</p>
+<p>I long desired to make effective use of <code>org-agenda</code> and I had played around with using <code>org-roam-db-query</code> to identify which files contained TODO keywords to keep the files loaded by <code>org-agenda</code> to a minimum, but I had yet to really make agenda part of my routine. I also tried using <code>org-idle-agenda</code> to keep bringing it front and center but I struggled to get comfortable.</p>
+<p>I revisited <code>org-ql</code> in early February and found a patch that enabled specifying multiple files to use as source for the query. I combined this with a poorly written elisp function that returns the last 3 months worth of worklog files (the same function that I use for clocktables). This felt like a less ephermal agenda. I liked the pain textness of it, how I wouldn&rsquo;t need emacs to view yesterdays agenda simply by looking at yesterdays worklog. So it quickly became part of my daily workflow. I added an org-ql dynamic block to my daily worklog template giving me a quick idea of things I should focus on. It did really highlight the cases where I end up with multiple todos for the same item across multiple files so I needed to figure out how I wanted to improve that. I was considering canceling todos from prior days when I chose to pick it up in a new todo, or moving the heading forward, or adding a new todo state for carried over, or expanding the scope of the query to look in other places but knowing where to look is tricky, but I wasn&rsquo;t sure if I even needed to worry about volume of files, it&rsquo;s not agenda after all.</p>
 <p><code>org-roam-dynamic-blocks</code> <sup id="fnref:14"><a href="#fn:14" class="footnote-ref" role="doc-noteref">14</a></sup> stayed on my radar, but I had yet to really make it an active part of my workflow.</p>
+<h2 id="output">Output</h2>
+<p>Output was a very important aspect of my system. It was important to me to be able to easily share my knowledge and experience with others.</p>
+<p>I used <code>org-babel</code> frequently. It was very convenient and efficient to be able to execute code directly in my documents.</p>
+<p>Copying and pasting between a console and what I was writing introduced much chance for error. Having code blocks and in-line execution improve the accuracy of my notes and anything else that I was producing.</p>
+<p>For example, the Statistics section of this post used inline code blocks and the data was freshly generated each time I exported an updated version with ox-hugo. Named blocks let me inject dynamic content in a sentence and provided easy access for on-demand execution, not to mention the ability to leveraged as input for other blocks.</p>
+<p>For some time I had struggled with long running jobs blocking Emacs. I had used ob-async in the past in the prior few years seemed to run into issues with ob-async not working. I also wanted something that would work better for very long running jobs (like 7+ hours). In February I experimented with ob-tmux which was neat, but then I was seeing tmux crash and ended up having better success with ob-screen.</p>
+<p>I continued to make more consistent use of <code>org-transclusion</code><sup id="fnref:15"><a href="#fn:15" class="footnote-ref" role="doc-noteref">15</a></sup> while authoring content. Instead of duplicating content, copying to a new place I distilled what I want to use into an atomic chunk and then referenced it. I found this is helpful in several ways. It reduced unnecessary growth to the volume of text that I had, reduced the number of duplicate hits for things when I was searching for something, increased the interlinking of my org-mode files providing a more rich experience with <code>org-roam-buffer</code> showing things that used the content as well as interconnected in the <code>org-roam-ui</code> graph visualization.</p>
+<p>With so many export backends available I didn&rsquo;t usually have to spend time mucking around with some bespoke syntax. I could author in org-mode and quickly export it to another format. It was nice to have relatively good formatting in many formats with relatively little effort.</p>
+<p>I exported using <code>ox-jira</code> and used <code>org-jira</code> to manage issues in Jira Cloud. Again, everyone benefited from well styled comments and ticket descriptions and no real extra effort was required from me.</p>
+<p>I made presentations using <code>org-reveal</code> and <code>org-re-reveal</code> with nice features like speaker notes. These presentations could also be printed to PDF. I played with org-present and org-tree-slide but not enough to gain a good level of comfort.</p>
+<p>I wrote reports that I exported to ODT for copying and pasting into google drive<sup id="fnref:16"><a href="#fn:16" class="footnote-ref" role="doc-noteref">16</a></sup> and PDF for emailing to clients.</p>
+<p>I wrote blog posts exporting with <code>ox-hugo</code> to multiple websites using different hugo configurations.</p>
+<p>I authored emails in org-mode exported with <code>org-mime</code><sup id="fnref:17"><a href="#fn:17" class="footnote-ref" role="doc-noteref">17</a></sup> as a multi-part ASCII &amp; HTML message.</p>
+<p><code>abbrev-mode</code> was amazing at auto correcting my most common typos. <code>writegood-mode</code> and <code>olivette</code> were both nice for writing when I remembered to enable them.</p>
+<p>gptel was my primary llm interface. I interfaced primarily with local LLMs via Ollama but had Google Gemini and OpenAI configured for use as well. I looked forward to support for image generation (though there was no indication it was coming). I also used chatgpt-shell, org-ai, and ellama from time to time. Sadly Khoj fell by the wayside as I had many issues keeping it functional with their rapid development and architecture changes but I remained hopeful that I would return to it in the future.</p>
+<h2 id="workflow">Workflow</h2>
+<p>So, how did a day in my org life flow?</p>
+<p>Usually my day started with meetings. I liked to take notes and email them to a distribution list afterward<sup id="fnref:18"><a href="#fn:18" class="footnote-ref" role="doc-noteref">18</a></sup>. For example, a few minutes before my CFEngine stand-up I ran <code>org-roam-dailies-capture-today</code> and keyed in <code>w</code> (work) <code>m</code> (meeting) <code>c</code> (CFEngine) <code>d</code> (daily stand-up). Immediately after activating this capture I triggered another capture for my work log keying in <code>w</code> (work) <code>l</code> (log)<sup id="fnref:19"><a href="#fn:19" class="footnote-ref" role="doc-noteref">19</a></sup> which clocked time. With so many templates I used mnemonic key bindings.</p>
+<p>The work log capture template included a link to the stand-up note for the day. I followed that link and started filling out my template. The template featured a headline for each person with a property linking to a node for the individual. My section contained a clock table that promptly generated a list of entries with clocked time from the preceding day (on Mondays or days when I had missed several prior days, I adjusted the clock table to retrieve the appropriate number of previous days). I examined the table to assess my performance in clocking the previous day and filled in any gaps that I had neglected to record, then deleted the time columns.</p>
+<p>At the end of the meeting, I used <code>org-mime</code><sup id="fnref:17"><a href="#fn:17" class="footnote-ref" role="doc-noteref">17</a></sup> to prepare a nicely formatted multipart ASCII &amp; HTML email. After sending the mail, I switched back to my work log capture and completed it. All of my regularly scheduled meetings followed the same process; I captured for the meeting template, then I captured to my work log, clocking time with an automatic backlink back to the specific meeting note. It was easy to capture notes for yesterday, tomorrow, or an arbitrary date in the future using <code>org-roam-dailies-capture-yesterday</code>, <code>org-roam-dailies-capture-tomorrow</code>, and <code>org-roam-dailies-capture-date</code>.</p>
+<p>When initializing a new daily worklog file the template also included an org-ql dynamic block showing TODO, WAITING, and IN<sub>PROGRESS</sub> tasks from the prior 3 months helping to surface things I had been working on (or intended to work on ) recently that needed follow-up. I liked the less ephermal nature of the dynamic block in comparison to agenda which I continued to struggle getting comfortable with.</p>
+<p>Org-roam provided useful functions for accessing time-series notes. <code>org-roam-dailies-goto-today</code> took users to today&rsquo;s note for the selected template. If the file did not exist, it was initialized. Similarly, <code>org-roam-dailies-goto-yesterday</code>, <code>org-roam-dailies-goto-tomorrow</code>, and <code>org-roam-dailies-goto-date</code> took users to the note for yesterday, tomorrow, or the specified date and created the file if necessary. <code>org-roam-dailies-goto-previous</code> and <code>org-roam-dailies-goto-next</code> navigated to the previous and next note in the series based on the file being visited, enabling easy navigation through the time series.</p>
+<p><code>org-roam-node-random</code> was fun, as it says, it takes you to a random node. It was nice for serendipitous stumbles but I barely ever used it.</p>
+<p>If I worked on something with a regular pattern but it was not a recurring time series, I followed a similar pattern. However, instead of <code>org-roam-dailies-capture</code>, I ran <code>org-roam-capture</code>. Unlike <code>org-roam-dailies-capture</code>, <code>org-roam-capture</code> prompted me first for a node title and then allowed me to select a template.</p>
+<p>For instance, if I worked on a support case, I would run <code>org-roam-capture</code>, enter the issue number, and then key in <code>w</code> (work) <code>s</code> (support). I was taken to a new node in the file for that support case where I immediately triggered <code>org-roam-dailies-capture</code> for my work log which started clocking time. I followed the link back to the node to continue my work.</p>
+<p>For other activities that were typically fast or of uncommon type spanning multiple days, I would run <code>org-roam-dailies-capture</code> and keep notes directly in my past work log.</p>
+<p>I authored much of the content in <code>org-mode</code>. I was often able to remain within <code>org-mode</code> and preserved a detailed record of my exact activities. When I needed to execute commands, I typically employed <code>org-babel</code> so that commands, their outputs, and my contemplations formed a substantial log of my work as it progressed. This log was frequently appropriate for direct transmission to others, for which purpose I capitalized on the ample export back ends available<sup id="fnref:20"><a href="#fn:20" class="footnote-ref" role="doc-noteref">20</a></sup>.</p>
+<h3 id="mobile">Mobile</h3>
+<p>Going mobile with <code>org mode</code>, I used several different applications:</p>
+<p>I utilized Syncthing to synchronize files across devices, syncing a subset of my org files to mobile devices. I didn&rsquo;t require access to my entire exocortex on the go.</p>
+<p>Orgzly served as my primary capture tool on mobile. My Orgzly directory was synchronized across all my mobile devices. Each device had a device-specific file configured as the <code>Default notebook.</code></p>
+<p>I enjoyed the home screen widget, which displayed a query showing notes from the device-specific file created in the last few days. For note-taking, I used the <code>+</code> button on the home screen widget. There was also a new note option in the notifications drop-down drawer, but I generally refrained from using it.</p>
+<p>It was serviceable for short notes, such as <code>Saw Brian at the store; he broke his foot. We should get together and grill</code>, or lists for the store, e.g., <code>TODO Milk :store,</code> <code>TODO Black Beans :store.</code></p>
+<p>It simplified managing trips to the store. However, the editing experience was lacking, and I longed for improved capture capabilities. It handled deep directory structures, which wasn&rsquo;t an issue for me but would have been a valuable feature. I missed having this functionality.</p>
+<p>I had not encountered sync conflicts since I introduced a Tasker automation to synchronize the Orgzly database on screen wake<sup id="fnref:21"><a href="#fn:21" class="footnote-ref" role="doc-noteref">21</a></sup> and adopted the practice of having one capture file per mobile device.</p>
+<p>I filed my Orgzly captures to my main system far less often than I should. They were typically transferred to my personal journal. I hoped to eventually implement a function to refile them to a specific org-roam-dailies capture template for the date under point or maybe earliest or latest timestamp.<sup id="fnref:22"><a href="#fn:22" class="footnote-ref" role="doc-noteref">22</a></sup></p>
+<p>Other applications that I used on mobile that deserve mention:</p>
+<dl>
+<dt>Logseq</dt>
+<dd>I really liked how daily files are featured. I missed a capture capability. I disliked how the share to target is not stable. It shared to the insertion point. So if the app was open in the background that share might have gone to some random place I stopped writing. It was convenient at times, but other times very inconvenient. I didn&rsquo;t love the editing interface. Everything was a headline, so it&rsquo;s a bit ugly when I come to the file in Emacs. I mostly used it in experiments to help a colleague get more from their use.</dd>
+<dt>Metanote</dt>
+<dd>I didn&rsquo;t see other people mention this one often. I had found it to be a bit slow but the editing UI was not bad. Also, it had a few capture templates as well as Agenda.</dd>
+<dt>Orgro</dt>
+<dd>No longer a read only tool, but I haven&rsquo;t tried it&rsquo;s edit capabilities.</dd>
+</dl>
+<h3 id="things-i-wanted-to-explore-more">Things I wanted to explore more</h3>
+<p>I had only recently begun to think about myself as being an Emacs user, I have felt like an <code>org-mode</code> user but with my need for vi keybindings, Emacs really didn&rsquo;t rise to the forefront of my mind. Here are a bunch of things that I wanted to explore further as I continued on my journey.</p>
+<dl>
+<dt>ob-translate</dt>
+<dd>Translate text in Emacs’ org-mode blocks. <a href="https://github.com/krisajenkins/ob-translate">https://github.com/krisajenkins/ob-translate</a></dd>
+<dt>md4rd</dt>
+<dd>Read Reddit interactively from within Emacs. <a href="https://github.com/ahungry/md4rd">https://github.com/ahungry/md4rd</a></dd>
+<dt>Ement.el</dt>
+<dd>Ement.el is a Matrix client for Emacs. It aims to be simple, fast, featureful, and reliable. <a href="https://github.com/alphapapa/ement.el">https://github.com/alphapapa/ement.el</a></dd>
+<dt>elfeed</dt>
+<dd>Elfeed is an extensible web feed reader for Emacs, supporting both Atom and RSS. <a href="https://github.com/skeeto/elfeed">https://github.com/skeeto/elfeed</a></dd>
+<dt>mastadon.el</dt>
+<dd>Emacs client for Mastodon and other compatible fediverse servers. <a href="https://codeberg.org/martianh/mastodon.el">https://codeberg.org/martianh/mastodon.el</a></dd>
+<dt>org-chef</dt>
+<dd>org-chef is a package for managing recipes in org-mode. One of the main features is that it can automatically extract recipes from websites like allrecipes.com <a href="https://github.com/Chobbes/org-chef">https://github.com/Chobbes/org-chef</a></dd>
+<dt>org-drill</dt>
+<dd>Org-Drill is an extension for Org mode. Org-Drill uses a spaced repetition algorithm to conduct interactive &ldquo;drill sessions&rdquo;, using org files as sources of facts to be memorised. Each topic is treated as a &ldquo;flash card&rdquo;. <a href="https://orgmode.org/worg/org-contrib/org-drill.html">https://orgmode.org/worg/org-contrib/org-drill.html</a></dd>
+<dt>org-roam-search</dt>
+<dd>org-ql like search for org-roam. <a href="https://github.com/natask/org-roam-search">https://github.com/natask/org-roam-search</a></dd>
+<dt>org-ql</dt>
+<dd>This package provides a query language for Org files. It offers two syntax styles: Lisp-like sexps and search engine-like keywords. <a href="https://github.com/alphapapa/org-ql">https://github.com/alphapapa/org-ql</a></dd>
+<dt>org-edna</dt>
+<dd>Extensible Dependencies ’N’ Actions (EDNA) for Org Mode tasks. Edna provides an extensible means of specifying conditions which must be fulfilled before a task can be completed and actions to take once it is. <a href="https://www.nongnu.org/org-edna-el/">https://www.nongnu.org/org-edna-el/</a></dd>
+<dt>org-mru-clock</dt>
+<dd>Do you often clock in to many different little tasks? Are you annoyed that you can’t just clock in to one of your most recent tasks after restarting Emacs? <a href="https://github.com/unhammer/org-mru-clock">https://github.com/unhammer/org-mru-clock</a>.</dd>
+<dt>org-noter</dt>
+<dd>Org-noter’s purpose is to let you create notes that are kept in sync when you scroll through the document, but that are external to it - the notes themselves live in an Org-mode file. <a href="https://github.com/weirdNox/org-noter">https://github.com/weirdNox/org-noter</a></dd>
+<dt>org-cv</dt>
+<dd>This project exports an org-mode file with reasonably structured items into a latex file, which compiles into a nice CV. <a href="https://titan-c.gitlab.io/org-cv/">https://titan-c.gitlab.io/org-cv/</a></dd>
+<dt>ox-leanpub</dt>
+<dd>Ox-leanpub includes Org Mode export backends to publish books and courses with Leanpub. ox-leanpub allows you to write your material entirely in Org mode, and manages the production of the files and directories needed for Leanpub to render your book. <a href="https://github.com/zzamboni/ox-leanpub">https://github.com/zzamboni/ox-leanpub</a></dd>
+<dt>org-super-agenda</dt>
+<dd>This package lets you “supercharge” your Org daily/weekly agenda. The idea is to group items into sections, rather than having them all in one big list. <a href="https://github.com/alphapapa/org-super-agenda">https://github.com/alphapapa/org-super-agenda</a></dd>
+<dt>org-recent-headings</dt>
+<dd>This package lets you quickly jump to recently used Org headings using Helm, Ivy, or plain-ol’ completing-read. <a href="https://github.com/alphapapa/org-recent-headings">https://github.com/alphapapa/org-recent-headings</a></dd>
+<dt>org-sidebar</dt>
+<dd>This package presents helpful sidebars for Org buffers. Sidebars are customizable using org-ql queries and org-super-agenda grouping. <a href="https://github.com/alphapapa/org-sidebar">https://github.com/alphapapa/org-sidebar</a></dd>
+<dt>org-protocol-capture-html</dt>
+<dd>You can select text in the page when you capture by clicking a bookmarklet it will be copied into the template, or you can just capture the page title and URL. A selection-grabbing function is used to capture the selection. <a href="https://github.com/alphapapa/org-protocol-capture-html">https://github.com/alphapapa/org-protocol-capture-html</a></dd>
+<dt>emacs-slack</dt>
+<dd>Slack from inside Emacs. <a href="https://github.com/yuya373/emacs-slack/">https://github.com/yuya373/emacs-slack/</a></dd>
+<dt>literate-calc-mode</dt>
+<dd>Literate programming for M-x calc. Displays inline results for calculations, supports variables and updates as you type (if you want). <a href="https://github.com/sulami/literate-calc-mode.el">https://github.com/sulami/literate-calc-mode.el</a></dd>
+<dt>org-similarity</dt>
+<dd>org-similarity is a package to help Emacs org-mode users discover similar or related files. Under the hood, it uses Python and scikit-learn for text feature extraction, and nltk for text pre-processing. More specifically, this package provides a function to recursively scan a given directory for org files, clean their content by stripping the front matter and some undesired characters, tokenize them, replace each token with its respective linguistic stem, generate a TF-IDF sparse matrix, and calculate the cosine similarity between these documents and the buffer you are currently working on. <a href="https://github.com/brunoarine/org-similarity">https://github.com/brunoarine/org-similarity</a></dd>
+<dt>focused</dt>
+<dd>A package that dims surrounding text. It works with any theme and can be configured to focus in on different regions like sentences, paragraphs or code-blocks. <a href="https://github.com/larstvei/Focus">https://github.com/larstvei/Focus</a></dd>
+<dt>aggressive-indent-mode</dt>
+<dd>A minor mode that keeps your code always indented. It reindents after every change, making it more reliable than electric-indent-mode. <a href="https://github.com/Malabarba/aggressive-indent-mode">https://github.com/Malabarba/aggressive-indent-mode</a></dd>
+<dt>crux</dt>
+<dd>A Collection of Ridiculously Useful eXtensions for Emacs. crux bundles many useful interactive commands to enhance your overall Emacs experience. <a href="https://github.com/bbatsov/crux">https://github.com/bbatsov/crux</a></dd>
+<dt>osm</dt>
+<dd>Osm.el is a tile-based map viewer, with a responsive movable and zoomable display. You can bookmark your favorite locations using regular Emacs bookmarks or create links from Org files to locations.  <a href="https://github.com/minad/osm">https://github.com/minad/osm</a></dd>
+<dt>org-ref</dt>
+<dd>org-ref makes it easy to insert citations, cross-references, indexes and glossaries as hyper-functional links into org files. <a href="https://github.com/jkitchin/org-ref">https://github.com/jkitchin/org-ref</a></dd>
+<dt>org-cite</dt>
+<dd><a href="https://orgmode.org/manual/Citations.html">https://orgmode.org/manual/Citations.html</a></dd>
+<dt>org-bibtex</dt>
+<dd>Org-bibtex is responsible for handling bibtex citation in orgmode. <a href="http://gewhere.github.io/org-bibtex">http://gewhere.github.io/org-bibtex</a></dd>
+<dt>orgmdb</dt>
+<dd>Tools for managing your watchlist in org-mode and some functions for interacting with OMDb API. <a href="https://github.com/isamert/orgmdb.el">https://github.com/isamert/orgmdb.el</a></dd>
+<dt>org-roam-review</dt>
+<dd>Provides commands to categorise and review org-roam nodes for Evergreen note-taking. Notes are surfaced using the spaced-repetition algorithm from org-drill. <a href="https://github.com/chrisbarrett/nursery/blob/main/lisp/org-roam-review.el">https://github.com/chrisbarrett/nursery/blob/main/lisp/org-roam-review.el</a></dd>
+<dt>org-pretty-table</dt>
+<dd>Draw pretty unicode tables in org-mode and orgtbl-mode. <a href="https://github.com/Fuco1/org-pretty-table">https://github.com/Fuco1/org-pretty-table</a></dd>
+<dt>org-roam-timestamps</dt>
+<dd>Small package to keep track of the modification and creation time of individual nodes. <a href="https://github.com/tefkah/org-roam-timestamps">https://github.com/tefkah/org-roam-timestamps</a></dd>
+<dt>camcorder.el</dt>
+<dd>Record screencasts directly from emacs. <a href="https://github.com/Malabarba/camcorder.el">https://github.com/Malabarba/camcorder.el</a></dd>
+<dt>org-msg</dt>
+<dd>Use org-mode for authoring email. Seems to be centered around mail client use vs org-mime which seems more around emailing from org-mode. <a href="https://github.com/jeremy-compostella/org-msg">https://github.com/jeremy-compostella/org-msg</a></dd>
+<dt>gptai</dt>
+<dd>One of the many ai related things I want to look into some day. <a href="https://github.com/antonhibl/gptai">https://github.com/antonhibl/gptai</a></dd>
+<dt>chatgpt</dt>
+<dd>One of the many ai related things I want to look into some day. <a href="https://github.com/emacs-openai/chatgpt">https://github.com/emacs-openai/chatgpt</a></dd>
+<dt>codegpt</dt>
+<dd>One of the many ai related things I want to look into some day. <a href="https://github.com/emacs-openai/codegpt">https://github.com/emacs-openai/codegpt</a></dd>
+<dt>ChatGPT.el</dt>
+<dd>One of the many ai related things I want to look into some day. <a href="https://github.com/joshcho/ChatGPT.el">https://github.com/joshcho/ChatGPT.el</a></dd>
+<dt>gpt.el</dt>
+<dd>One of the many ai related things I want to look into some day. <a href="https://github.com/stuhlmueller/gpt.el">https://github.com/stuhlmueller/gpt.el</a></dd>
+<dt>chatgpt-arcana.el</dt>
+<dd>One of the many ai related things I want to look into some day. <a href="https://github.com/CarlQLange/chatgpt-arcana.el">https://github.com/CarlQLange/chatgpt-arcana.el</a></dd>
+<dt>openai-api.el</dt>
+<dd>One of the many ai related things I want to look into some day. <a href="https://github.com/benjamin-asdf/openai-api.el">https://github.com/benjamin-asdf/openai-api.el</a></dd>
+<dt>chatgpt emacs shell</dt>
+<dd>One of the many ai related things I want to look into some day. <a href="https://xenodium.com/a-chatgpt-emacs-shell/">https://xenodium.com/a-chatgpt-emacs-shell/</a></dd>
+<dt>pocket-reader.el</dt>
+<dd>Client for Pocket (<a href="https://getpocket.com">getpocket.com</a>) that allows you to manage your reading list (add, remove, delete, tag, view, favorite, etc ..) within Emacs.</dd>
+<dt>orgrr</dt>
+<dd>A replica of org-roam v1 implemented using ripgrep. <a href="https://github.com/rtrppl/orgrr">https://github.com/rtrppl/orgrr</a></dd>
+<dt>gkroam</dt>
+<dd>Another replica of roam research implemented using ripgrep. <a href="https://github.com/Kinneyzhang/gkroam">https://github.com/Kinneyzhang/gkroam</a></dd>
+<dt>denote</dt>
+<dd>Simple note taking tool using predictable and descriptive file-naming scheme. <a href="https://github.com/protesilaos/denote">https://github.com/protesilaos/denote</a></dd>
+<dt>zk</dt>
+<dd>Another simple Zettlekasten implementation for Emacs. <a href="https://github.com/localauthor/zk">https://github.com/localauthor/zk</a></dd>
+<dt>zettledeft</dt>
+<dd>Extends Deft into a basic zettelkasten. As of 2023 the author has ceased maintenance and is moving to denote. <a href="https://github.com/localauthor/zk">https://github.com/localauthor/zk</a></dd>
+</dl>
+<!--listend-->
+<dl>
+<dt>org-media-note</dt>
+<dd>Take notes for video and audio files in org-mode!
+<a href="https://github.com/yuchen-lea/org-media-note">https://github.com/yuchen-lea/org-media-note</a></dd>
+</dl>
 <section class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
@@ -205,6 +366,30 @@ I had <code>58MB</code> of <code>.org</code> files in <code>~/org</code>. <code>
 </li>
 <li id="fn:14" role="doc-endnote">
 <p><code>org-roam-dynamic-blocks</code> is not yet packaged, but you can find it here <a href="https://github.com/chrisbarrett/nursery/blob/main/lisp/org-roam-dblocks.el">https://github.com/chrisbarrett/nursery/blob/main/lisp/org-roam-dblocks.el</a>. Perhaps someday it will become part of Org-roam <a href="https://github.com/org-roam/org-roam/issues/2251">https://github.com/org-roam/org-roam/issues/2251</a>&#160;<a href="#fnref:14" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:15" role="doc-endnote">
+<p>Org-transclusion lets you insert a copy of text content via a file link or ID link within an Org file. It lets you have the same content present in different buffers at the same time without copy-and-pasting it. Edit the source of the content, and you can refresh the transcluded copies to the up-to-date state. <a href="https://github.com/nobiot/org-transclusion">https://github.com/nobiot/org-transclusion</a>&#160;<a href="#fnref:15" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:16" role="doc-endnote">
+<p>I wonder if html would work for a copy source pasting into a google doc as well or better.&#160;<a href="#fnref:16" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:17" role="doc-endnote">
+<p>(org-mime-htmlize-subtree in this case).&#160;<a href="#fnref:17" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:18" role="doc-endnote">
+<p>I&rsquo;ve been told multiple times by colleagues that they search out my meeting notes to help themselves complete periodic reviews. I hate doing periodic reviews, so knowing that my effort helps others in this regard is a strong motivator.&#160;<a href="#fnref:18" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:19" role="doc-endnote">
+<p>(maybe someone can suggest how that tho step process could be consolidated)&#160;<a href="#fnref:19" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:20" role="doc-endnote">
+<p>There are so many, org-mime is probably my most often used exporter followed by some flavor of Markdown (ox-hugo like this blog post, ox-gfm, ox-slack).&#160;<a href="#fnref:20" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:21" role="doc-endnote">
+<p>I have an <code>Orgzly</code> profile with an <em>event</em> for <code>Display On</code> that triggers a <code>Sync Orgzly</code> <em>task</em> which is an <em>Action</em> <code>com.orgzly.intent.action.SYNC_START</code>  for <em>Package</em> <code>com.orgzly</code> <em>Class</em> <code>com.orgzly.android.sync.SyncService</code> <em>Target</em> <code>Service</code>.&#160;<a href="#fnref:21" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:22" role="doc-endnote">
+<p>I am super slow working towards this, so if you want to offer up some elisp for me to use I would be most grateful.&#160;<a href="#fnref:22" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </section>
