@@ -27,11 +27,11 @@ On the best of days I never leave Emacs and I have a record of everything I did 
 As of Sunday, February 18, 2024
  I had `58MB` of `.org` files in `~/org`. `5071` files and `1222731` lines of text, the largest single file was `1.3MB` and the longest lined file had `26370` lines.
 
-`4897` of these files were inside Org-roam[^fn:2], the majority of them (`3688`) were "dailies"[^fn:3]. There were `15703` nodes in total, so about `3` nodes per file. This seemed accurate since many headlines don't have IDs. IDs got created automatically when I stored a link (which often happened during capture) or attached a file.
+`4897` of these files were inside Org-roam[^fn:2], the majority of them (`3688`) were "dailies"[^fn:3]. There were `15703` nodes in total, so about `3` nodes per file. This seemed accurate since many headlines didn't have IDs. IDs got created automatically when I stored a link (which often happened during capture) or attached a file.
 
 Additionally, `~/Syncthing/Orgzly` had `9.7MB` worth of `.org` files that I synced around to a few devices and the largest `.org` file was `677K` with the most lined file having `49670` lines.
 
-{{< figure src="/home/nickanderson/org/roam/cmdln_org/attachments/how-i-org-in-2024/2024-01-08_12-16-26_org-roam-ui-with-and-without-dailies-2024-01-05.png" caption="<span class=\"figure-number\">Figure 1: </span>org-roam-ui visualization of notes as of January 5th, 2024. Left - without dailies, Right with dailies." width="75%" >}}
+{{< figure src="2024-02-18_12-19-16_Screenshot_2024-02-16_152724.png" caption="<span class=\"figure-number\">Figure 1: </span>org-roam-ui visualization of nodes as of January 16th, 2024." width="75%" >}}
 
 
 ## System {#system}
