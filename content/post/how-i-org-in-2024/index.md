@@ -25,9 +25,9 @@ On the best of days I never leave Emacs and I have a record of everything I did 
 ## Statistics {#statistics}
 
 As of Sunday, June  2, 2024
- I had `62MB` of `.org` files in `~/org`. `5441` files and `1289698` lines of text, the largest single file was `1.4MB` and the longest lined file had `26370` lines.
+ I had `62MB` of `.org` files in `~/org`. `5441` files and `1289700` lines of text, the largest single file was `1.4MB` and the longest lined file had `26370` lines.
 
-`5412` of these files were inside Org-roam[^fn:2], the majority of them (`3940`) were "dailies"[^fn:3]. There were `16670` nodes in total, so about `3` nodes per file. This seemed accurate since many headlines (I had `58210` headlines) didn't have IDs. IDs got created automatically when I stored a link (which often happened during capture) or attached a file.
+`5412` of these files were inside Org-roam[^fn:2], the majority of them (`3940`) were "dailies"[^fn:3]. There were `16670` nodes in total, so about `3` nodes per file. This seemed accurate since many headlines (I had `58212` headlines) didn't have IDs. IDs got created automatically when I stored a link (which often happened during capture) or attached a file.
 
 {{< figure src="2024-02-18_12-19-16_Screenshot_2024-02-16_152724.png" caption="<span class=\"figure-number\">Figure 1: </span>org-roam-ui visualization of nodes as of January 16th, 2024." width="75%" >}}
 
@@ -79,7 +79,7 @@ I read email in `mu4e`, simply being inside of Emacs that facilitate getting ema
 
 I occasionally used `org-web-tools`[^fn:8] to pull web pages into org. Either as a buffer to read, or as a subtree to store.
 
-{{< figure src="./attachements/how-i-org-in-2024/2024-02-18_12-32-33_output-2024-0216-17:29:51.gif" caption="<span class=\"figure-number\">Figure 4: </span>gif-screencast illustrating use of org-web-tools-read-as-org." width="100%" >}}
+{{< figure src="./attachments/how-i-org-in-2024/2024-02-18_12-32-33_output-2024-0216-17:29:51.gif" caption="<span class=\"figure-number\">Figure 4: </span>gif-screencast illustrating use of org-web-tools-read-as-org." width="100%" >}}
 
 When I wanted to clip a bit of text from a web page I used `org-protocol`[^fn:9] bookmarklets to get the content into Emacs.
 
@@ -209,6 +209,12 @@ I use these packages quite often and they are pretty well established in my work
 
 
 ### org-roam {#org-roam}
+
+
+### org-mime {#org-mime}
+
+
+### org-rich-yank {#org-rich-yank}
 
 
 ### org-transclusion {#org-transclusion}
