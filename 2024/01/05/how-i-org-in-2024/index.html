@@ -91,8 +91,8 @@
 
 <h2 id="statistics">Statistics</h2>
 <p>As of Sunday, June  2, 2024
-I had <code>62MB</code> of <code>.org</code> files in <code>~/org</code>. <code>5440</code> files and <code>1289665</code> lines of text, the largest single file was <code>1.4MB</code> and the longest lined file had <code>26370</code> lines.</p>
-<p><code>5412</code> of these files were inside Org-roam<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>, the majority of them (<code>3940</code>) were &ldquo;dailies&rdquo;<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>. There were <code>16670</code> nodes in total, so about <code>3</code> nodes per file. This seemed accurate since many headlines (I had <code>58203</code> headlines) didn&rsquo;t have IDs. IDs got created automatically when I stored a link (which often happened during capture) or attached a file.</p>
+I had <code>62MB</code> of <code>.org</code> files in <code>~/org</code>. <code>5441</code> files and <code>1289698</code> lines of text, the largest single file was <code>1.4MB</code> and the longest lined file had <code>26370</code> lines.</p>
+<p><code>5412</code> of these files were inside Org-roam<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>, the majority of them (<code>3940</code>) were &ldquo;dailies&rdquo;<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>. There were <code>16670</code> nodes in total, so about <code>3</code> nodes per file. This seemed accurate since many headlines (I had <code>58210</code> headlines) didn&rsquo;t have IDs. IDs got created automatically when I stored a link (which often happened during capture) or attached a file.</p>
 <figure><img src="2024-02-18_12-19-16_Screenshot_2024-02-16_152724.png"
          alt="Figure 1: org-roam-ui visualization of nodes as of January 16th, 2024." width="75%"/><figcaption>
             <p><span class="figure-number">Figure 1: </span>org-roam-ui visualization of nodes as of January 16th, 2024.</p>
@@ -143,7 +143,7 @@ I had <code>62MB</code> of <code>.org</code> files in <code>~/org</code>. <code>
 
 <p>I read email in <code>mu4e</code>, simply being inside of Emacs that facilitate getting emails into org-mode.</p>
 <p>I occasionally used <code>org-web-tools</code><sup id="fnref:8"><a href="#fn:8" class="footnote-ref" role="doc-noteref">8</a></sup> to pull web pages into org. Either as a buffer to read, or as a subtree to store.</p>
-<figure><img src="#ZgotmplZ"
+<figure><img src="./attachements/how-i-org-in-2024/2024-02-18_12-32-33_output-2024-0216-17:29:51.gif"
          alt="Figure 4: gif-screencast illustrating use of org-web-tools-read-as-org." width="100%"/><figcaption>
             <p><span class="figure-number">Figure 4: </span>gif-screencast illustrating use of org-web-tools-read-as-org.</p>
         </figcaption>
@@ -211,6 +211,17 @@ I had <code>62MB</code> of <code>.org</code> files in <code>~/org</code>. <code>
 <dt>Orgro</dt>
 <dd>No longer a read only tool, but I haven&rsquo;t tried it&rsquo;s edit capabilities.</dd>
 </dl>
+<h2 id="things-i-used-frequently">Things I used frequently</h2>
+<p>I use these packages quite often and they are pretty well established in my workflow.</p>
+<h3 id="org-roam">org-roam</h3>
+<h3 id="org-transclusion">org-transclusion</h3>
+<h3 id="gptel">gptel</h3>
+<h3 id="org-ql">org-ql</h3>
+<p>This package provides a query language for Org files. It offers two syntax styles: Lisp-like sexps and search engine-like keywords. I&rsquo;d started using the dynamic block feature of this with a custom patch to have a table of TODOs at the top of my daily worklog.</p>
+<p><a href="https://github.com/alphapapa/org-ql">https://github.com/alphapapa/org-ql</a></p>
+<h3 id="ox-hugo">ox-hugo</h3>
+<h3 id="ox-slack">ox-slack</h3>
+<h3 id="org-jira">org-jira</h3>
 <h2 id="things-i-wanted-to-explore-more">Things I wanted to explore more</h2>
 <p>I had only recently begun to think about myself as being an Emacs user, I have felt like an <code>org-mode</code> user but with my need for vi keybindings, Emacs really didn&rsquo;t rise to the forefront of my mind. Here are a bunch of things that I wanted to explore further as I continued on my journey.</p>
 <h3 id="ob-translate">ob-translate</h3>
@@ -237,9 +248,6 @@ I had <code>62MB</code> of <code>.org</code> files in <code>~/org</code>. <code>
 <h3 id="org-roam-search">org-roam-search</h3>
 <p>org-ql like search for org-roam.</p>
 <p><a href="https://github.com/natask/org-roam-search">https://github.com/natask/org-roam-search</a></p>
-<h3 id="org-ql">org-ql</h3>
-<p>This package provides a query language for Org files. It offers two syntax styles: Lisp-like sexps and search engine-like keywords. I&rsquo;d started using the dynamic block feature of this with a custom patch to have a table of TODOs at the top of my daily worklog.</p>
-<p><a href="https://github.com/alphapapa/org-ql">https://github.com/alphapapa/org-ql</a></p>
 <h3 id="org-edna">org-edna</h3>
 <p>Extensible Dependencies ’N’ Actions (EDNA) for Org Mode tasks. Edna provides an extensible means of specifying conditions which must be fulfilled before a task can be completed and actions to take once it is.</p>
 <p><a href="https://www.nongnu.org/org-edna-el/">https://www.nongnu.org/org-edna-el/</a></p>
