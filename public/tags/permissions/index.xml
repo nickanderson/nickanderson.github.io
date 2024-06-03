@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>permissions on </title>
+    <title>Permissions on </title>
     <link>https://cmdln.org/tags/permissions/</link>
-    <description>Recent content in permissions on </description>
+    <description>Recent content in Permissions on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 17 Apr 2008 23:34:20 +0000</lastBuildDate><atom:link href="https://cmdln.org/tags/permissions/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Thu, 17 Apr 2008 23:34:20 +0000</lastBuildDate>
+    <atom:link href="https://cmdln.org/tags/permissions/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Fix virtual email address maildir permissions in Cpanel</title>
       <link>https://cmdln.org/2008/04/17/fix-virtual-email-address-maildir-permissions-in-cpanel/</link>
       <pubDate>Thu, 17 Apr 2008 23:34:20 +0000</pubDate>
-      
       <guid>https://cmdln.org/2008/04/17/fix-virtual-email-address-maildir-permissions-in-cpanel/</guid>
       <description>&lt;p&gt;Im not a big fan of cpanel but I do manage a server that runs it. Recently some update was pushed down that caused about 50% of my users to not be able to access mail. It all boiled down to a permission issue that the cpanel scripts /scripts/mailperm did not take care of. Their scripts do not correct the permissions of the virtual user maildirs.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

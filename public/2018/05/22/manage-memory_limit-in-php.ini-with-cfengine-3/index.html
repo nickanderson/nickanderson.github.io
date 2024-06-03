@@ -6,7 +6,7 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.92.2" />
+<meta name="generator" content="Hugo 0.123.7">
 
 
 
@@ -104,26 +104,26 @@ the pattern is generically useful for any INI style config.</p>
 </span><span class="lnt">20
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">php_customiztions</span>
-  <span class="p">{</span>
-    <span class="kd">meta</span><span class="p">:</span>
-
-      <span class="nc">(policy_server|am_policy_hub).enterprise_edition</span><span class="p">::</span>
-        <span class="p">&#34;</span><span class="nv">tags</span><span class="p">&#34;</span> <span class="kt">slist</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="s">&#34;autorun&#34;</span> <span class="p">};</span>
-
-         <span class="p">&#34;</span><span class="nv">description</span><span class="p">&#34;</span> <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;Tune php fo 60k hosts in Mission Portal&#34;</span><span class="p">;</span>
-      
-    <span class="kd">vars</span><span class="p">:</span>
-
-        <span class="p">&#34;</span><span class="nv">php_ini[PHP][memory_limit]</span><span class="p">&#34;</span> <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;256M&#34;</span><span class="p">;</span>
-
-    <span class="kd">files</span><span class="p">:</span>
-
-      <span class="nc">policy_server.enterprise_edition</span><span class="p">::</span>
-
-        <span class="s">&#34;/var/cfengine/httpd/php/lib/php.ini&#34;</span>
-          <span class="kr">edit_line</span> <span class="o">=&gt;</span> <span class="nf">set_variable_values_ini</span><span class="p">(</span> <span class="s">&#34;</span><span class="si">$(this.bundle)</span><span class="s">.php_ini&#34;</span><span class="p">,</span> <span class="s">&#34;PHP&#34;</span> <span class="p">);</span>
-  <span class="p">}</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="line"><span class="cl">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">php_customiztions</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">meta</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      <span class="nc">(policy_server|am_policy_hub).enterprise_edition</span><span class="p">::</span>
+</span></span><span class="line"><span class="cl">        <span class="s">&#34;tags&#34;</span> <span class="kr">slist</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="s">&#34;autorun&#34;</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">         <span class="s">&#34;description&#34;</span> <span class="kr">string</span> <span class="o">=&gt;</span> <span class="s">&#34;Tune php fo 60k hosts in Mission Portal&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      
+</span></span><span class="line"><span class="cl">    <span class="kd">vars</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="s">&#34;php_ini[PHP][memory_limit]&#34;</span> <span class="kr">string</span> <span class="o">=&gt;</span> <span class="s">&#34;256M&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">files</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      <span class="nc">policy_server.enterprise_edition</span><span class="p">::</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="s">&#34;/var/cfengine/httpd/php/lib/php.ini&#34;</span>
+</span></span><span class="line"><span class="cl">          <span class="kr">edit_line</span> <span class="o">=&gt;</span> <span class="nf">set_variable_values_ini</span><span class="p">(</span> <span class="s">&#34;</span><span class="si">$(this.bundle)</span><span class="s">.php_ini&#34;</span><span class="p">,</span> <span class="s">&#34;PHP&#34;</span> <span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span></span></span></code></pre></td></tr></table>
 </div>
 </div>
 </div>

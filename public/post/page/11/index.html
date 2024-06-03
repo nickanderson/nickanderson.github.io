@@ -6,7 +6,7 @@
 
 		<meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.92.2" />
+<meta name="generator" content="Hugo 0.123.7">
 
 
 
@@ -100,7 +100,8 @@
 				<h4 class="post-date">2010-05-24</h4>
 			</div>
 			<div class="post-summary"><p>Recently I was building a ZenPack for Zenoss. The ZenPack included an Event Command which executed a custom script. I wanted to store the custom script in the ZenPack and I didn’t want to do anything other than have proper script dependencies in place for it to work.
-${here/ZenPackManager/packs/ZenPacks.community.YOURZENPACK/path}/libexec/yourscript.sh ${dev/manageIp} Custom scripts can be placed in $ZENHOME/ZenPacks/ZenPacks.CompanyName.Package/Zenpacks/CompanyName/Package/lib but if you want them to be executable place them in libexec.</p></div>
+${here/ZenPackManager/packs/ZenPacks.community.YOURZENPACK/path}/libexec/yourscript.sh ${dev/manageIp}Custom scripts can be placed in $ZENHOME/ZenPacks/ZenPacks.CompanyName.Package/Zenpacks/CompanyName/Package/lib but if you want them to be executable place them in libexec.
+Thanks to Matt Ray for telling me how to properly path the Event Command and the note about scripts in libexec getting the executable bit set, the docs I found only specified the lib directory.</p></div>
 			<div class="post-list-footer text-center">
 				<a href="https://cmdln.org/2010/05/24/notes-on-zenoss-zenpacks/">Read More</a>
 			</div>
@@ -128,7 +129,7 @@ Instead of blowing away your entire current buffer with history -c you can redir
 				<h4 class="post-date">2010-05-19</h4>
 			</div>
 			<div class="post-summary"><p>I just downloaded EMC Networker client for a 32bit linux box. The file I downloaded was nw74sp5_linux_x86.tar.gz. Of course when I go to extract it ….
-# tar zxvf ../nw74sp5_linux_x86.tar.gzgzip: stdin: not in gzip formattar: Child returned status 1tar: Error exit delayed from previous errors Umm not in gzip format ….
+# tar zxvf ../nw74sp5_linux_x86.tar.gzgzip: stdin: not in gzip formattar: Child returned status 1tar: Error exit delayed from previous errorsUmm not in gzip format ….
 # tar xvf ../nw74sp5_linux_x86.tar.gzlinux_x86/linux_x86/lgtoclnt-7.4.5-1.i686.rpmlinux_x86/lgtolicm-7.4.5-1.i686.rpmlinux_x86/lgtoman-7.4.5-1.i686.rpm... 🙂</p></div>
 			<div class="post-list-footer text-center">
 				<a href="https://cmdln.org/2010/05/19/archive-creation-fail/">Read More</a>
@@ -196,7 +197,7 @@ Well, luckily you can get a browser extension for Firefox or Chrome that makes i
 				<h4 class="post-date">2010-05-06</h4>
 			</div>
 			<div class="post-summary"><p>This deserved a repost. Originally sourced from http://www.csua.berkeley.edu/~ranga/humor/500_mile_email.txt
- To: 0xdeadbeef@petting-zoo.net Subject: The case of the 500-mile email. Date: Tue, 26 Nov 2002 14:57:40 -0800
+To: 0xdeadbeef@petting-zoo.netSubject: The case of the 500-mile email. Date: Tue, 26 Nov 2002 14:57:40 -0800
 Here&rsquo;s a problem that sounded impossible&hellip; I almost regret posting the story to a wide audience, because it makes a great tale over drinks at a conference. :-) The story is slightly altered in order to protect the guilty, elide over irrelevant and boring details, and generally make the whole thing more entertaining.</p></div>
 			<div class="post-list-footer text-center">
 				<a href="https://cmdln.org/2010/05/05/very-funny-good-troubleshooting/">Read More</a>
@@ -212,7 +213,6 @@ Here&rsquo;s a problem that sounded impossible&hellip; I almost regret posting t
 			</div>
 			<div class="post-summary"><p>Google is constantly doing experiments to see what its users like best. Today I was slapped with one of their tests, the “Everything Sidebar”. It really screwed with me and was entirely distracting while I was searching. So naturally I looked for a way to reverse it. It’s easy enough, you just need to delete a cookie.
 Here is a screen shot of the results page
-
 At any rate, if you want it gone just delete the PREF cookie from google.</p></div>
 			<div class="post-list-footer text-center">
 				<a href="https://cmdln.org/2010/05/05/remove-google-everything-sidebar/">Read More</a>

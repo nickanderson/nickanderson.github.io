@@ -6,7 +6,7 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.92.2" />
+<meta name="generator" content="Hugo 0.123.7">
 
 
 
@@ -79,9 +79,7 @@
                     <p>So I noticed my places.sqlite has grown to over 80M. Since Firefox 3 thats where things like bookmarks are stored. I guess favicons are stored in that same database. At any rate I am very tab happy. I have to control myself and about once every 2 weeks or so I have to sit down and close out a bunch of tabs. Its not uncommon for me to have 90ish tabs open. Boy firefox gets sluggish. Anyway you can perform a bit of maintenance on your firefox databases. I saw a significant speed improvement when opening firefox as well as opening new tabs after doing this. You have to close all firefox instances that are using the profile and it might be a good idea to just backup your profile before you do this but its pretty safe.</p>
 <p>Note: this command will just do it for every profile you have.</p>
 <pre class="brush: php; title: ; notranslate" title="">for i in ~/.mozilla/firefox/*/*.sqlite; do sqlite3 $i VACUUM;done;
-</pre><blockquote>
-</blockquote>
-
+</pre>
                 </div>
                 
                 <div class="post-comments">

@@ -6,7 +6,7 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.92.2" />
+<meta name="generator" content="Hugo 0.123.7">
 
 
 
@@ -89,8 +89,8 @@ On the console I might execute something like this:</p>
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">  touch /tmp/file-<span class="k">$(</span>date --iso-8601<span class="k">)</span> 
-  ls /tmp/file-*</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">  touch /tmp/file-<span class="k">$(</span>date --iso-8601<span class="k">)</span> 
+</span></span><span class="line"><span class="cl">  ls /tmp/file-*</span></span></code></pre></td></tr></table>
 </div>
 </div>
 </div>
@@ -123,18 +123,18 @@ variable, then use the cfengine variable directly.</p>
 </span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">main</span>
-  <span class="p">{</span>
-    <span class="kd">vars</span><span class="p">:</span>
-        <span class="p">&#34;</span><span class="nv">date</span><span class="p">&#34;</span> <span class="kt">string</span> <span class="o">=&gt;</span> <span class="nf">execresult</span><span class="p">(</span> <span class="s">&#34;date --iso-8601=second&#34;</span><span class="p">,</span> <span class="nf">useshell</span> <span class="p">);</span>
-        <span class="p">&#34;</span><span class="nv">command</span><span class="p">&#34;</span> <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;/usr/bin/touch /tmp/file-</span><span class="si">$(date)</span><span class="s">&#34;</span><span class="p">;</span>
-        <span class="p">&#34;</span><span class="nv">result</span><span class="p">&#34;</span> <span class="kt">string</span> <span class="o">=&gt;</span> <span class="nf">execresult</span><span class="p">(</span> <span class="err">$</span><span class="p">(</span><span class="nf">command</span><span class="p">),</span> <span class="nf">useshell</span> <span class="p">);</span>
-
-    <span class="kd">reports</span><span class="p">:</span>
-        <span class="s">&#34;CFEngine </span><span class="si">$(sys.cf_version)</span><span class="s">&#34;</span><span class="p">;</span>
-        <span class="s">&#34;Executed </span><span class="si">$(command)</span><span class="s">&#34;</span> <span class="kr">if</span> <span class="o">=&gt;</span> <span class="nf">isvariable</span><span class="p">(</span> <span class="nf">result</span> <span class="p">);</span>
-        <span class="s">&#34;Files:</span><span class="si">$(const.n)$(with)</span><span class="s">&#34;</span> <span class="kr">with</span> <span class="o">=&gt;</span> <span class="nf">join</span><span class="p">(</span> <span class="s">&#34;</span><span class="si">$(const.n)</span><span class="s">&#34;</span><span class="p">,</span> <span class="nf">lsdir</span><span class="p">(</span> <span class="s">&#34;/tmp/&#34;</span><span class="p">,</span> <span class="s">&#34;file-.*&#34;</span><span class="p">,</span> <span class="nf">false</span> <span class="p">));</span>
-  <span class="p">}</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="line"><span class="cl">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">main</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">vars</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="s">&#34;date&#34;</span> <span class="kr">string</span> <span class="o">=&gt;</span> <span class="nf">execresult</span><span class="p">(</span> <span class="s">&#34;date --iso-8601=second&#34;</span><span class="p">,</span> <span class="nf">useshell</span> <span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="s">&#34;command&#34;</span> <span class="kr">string</span> <span class="o">=&gt;</span> <span class="s">&#34;/usr/bin/touch /tmp/file-</span><span class="si">$(date)</span><span class="s">&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="s">&#34;result&#34;</span> <span class="kr">string</span> <span class="o">=&gt;</span> <span class="nf">execresult</span><span class="p">(</span> <span class="nv">$(command)</span><span class="p">,</span> <span class="nf">useshell</span> <span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">reports</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="s">&#34;CFEngine </span><span class="si">$(sys.cf_version)</span><span class="s">&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="s">&#34;Executed </span><span class="si">$(command)</span><span class="s">&#34;</span> <span class="kr">if</span> <span class="o">=&gt;</span> <span class="nf">isvariable</span><span class="p">(</span> <span class="nf">result</span> <span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="s">&#34;Files:</span><span class="si">$(const.n)$(with)</span><span class="s">&#34;</span> <span class="kr">with</span> <span class="o">=&gt;</span> <span class="nf">join</span><span class="p">(</span> <span class="s">&#34;</span><span class="si">$(const.n)</span><span class="s">&#34;</span><span class="p">,</span> <span class="nf">lsdir</span><span class="p">(</span> <span class="s">&#34;/tmp/&#34;</span><span class="p">,</span> <span class="s">&#34;file-.*&#34;</span><span class="p">,</span> <span class="nf">false</span> <span class="p">));</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span></span></span></code></pre></td></tr></table>
 </div>
 </div>
 </div>
@@ -170,17 +170,17 @@ But, if you really want to use command substitution you can use backticks direct
 </span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">main</span>
-  <span class="p">{</span>
-    <span class="kd">vars</span><span class="p">:</span>
-        <span class="p">&#34;</span><span class="nv">command</span><span class="p">&#34;</span> <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;/usr/bin/touch /tmp/file2-`date --iso-8601=second`&#34;</span><span class="p">;</span>
-        <span class="p">&#34;</span><span class="nv">result</span><span class="p">&#34;</span> <span class="kt">string</span> <span class="o">=&gt;</span> <span class="nf">execresult</span><span class="p">(</span> <span class="err">$</span><span class="p">(</span><span class="nf">command</span><span class="p">),</span> <span class="nf">useshell</span> <span class="p">);</span>
-
-    <span class="kd">reports</span><span class="p">:</span>
-        <span class="s">&#34;CFEngine </span><span class="si">$(sys.cf_version)</span><span class="s">&#34;</span><span class="p">;</span>
-        <span class="s">&#34;Executed </span><span class="si">$(command)</span><span class="s">&#34;</span> <span class="kr">if</span> <span class="o">=&gt;</span> <span class="nf">isvariable</span><span class="p">(</span> <span class="nf">result</span> <span class="p">);</span>
-        <span class="s">&#34;Files:</span><span class="si">$(const.n)$(with)</span><span class="s">&#34;</span> <span class="kr">with</span> <span class="o">=&gt;</span> <span class="nf">join</span><span class="p">(</span> <span class="s">&#34;</span><span class="si">$(const.n)</span><span class="s">&#34;</span><span class="p">,</span> <span class="nf">lsdir</span><span class="p">(</span> <span class="s">&#34;/tmp/&#34;</span><span class="p">,</span> <span class="s">&#34;file2-.*&#34;</span><span class="p">,</span> <span class="nf">false</span> <span class="p">));</span>
-  <span class="p">}</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="line"><span class="cl">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">main</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">vars</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="s">&#34;command&#34;</span> <span class="kr">string</span> <span class="o">=&gt;</span> <span class="s">&#34;/usr/bin/touch /tmp/file2-`date --iso-8601=second`&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="s">&#34;result&#34;</span> <span class="kr">string</span> <span class="o">=&gt;</span> <span class="nf">execresult</span><span class="p">(</span> <span class="nv">$(command)</span><span class="p">,</span> <span class="nf">useshell</span> <span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">reports</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="s">&#34;CFEngine </span><span class="si">$(sys.cf_version)</span><span class="s">&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="s">&#34;Executed </span><span class="si">$(command)</span><span class="s">&#34;</span> <span class="kr">if</span> <span class="o">=&gt;</span> <span class="nf">isvariable</span><span class="p">(</span> <span class="nf">result</span> <span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="s">&#34;Files:</span><span class="si">$(const.n)$(with)</span><span class="s">&#34;</span> <span class="kr">with</span> <span class="o">=&gt;</span> <span class="nf">join</span><span class="p">(</span> <span class="s">&#34;</span><span class="si">$(const.n)</span><span class="s">&#34;</span><span class="p">,</span> <span class="nf">lsdir</span><span class="p">(</span> <span class="s">&#34;/tmp/&#34;</span><span class="p">,</span> <span class="s">&#34;file2-.*&#34;</span><span class="p">,</span> <span class="nf">false</span> <span class="p">));</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span></span></span></code></pre></td></tr></table>
 </div>
 </div>
 </div>

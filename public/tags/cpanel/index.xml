@@ -1,37 +1,33 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>cpanel on </title>
+    <title>Cpanel on </title>
     <link>https://cmdln.org/tags/cpanel/</link>
-    <description>Recent content in cpanel on </description>
+    <description>Recent content in Cpanel on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 08 May 2010 03:05:12 +0000</lastBuildDate><atom:link href="https://cmdln.org/tags/cpanel/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Sat, 08 May 2010 03:05:12 +0000</lastBuildDate>
+    <atom:link href="https://cmdln.org/tags/cpanel/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Install git on CentOS cpanel server</title>
       <link>https://cmdln.org/2010/05/07/install-git-on-centos-cpanel-server/</link>
       <pubDate>Sat, 08 May 2010 03:05:12 +0000</pubDate>
-      
       <guid>https://cmdln.org/2010/05/07/install-git-on-centos-cpanel-server/</guid>
       <description>I have a love/hate relationship with cpanel. On one hand it makes low end hosting a breeze, on the other its a huge pita if you want to do anything “outside the box”. Perhaps it’s not such a pain if you work with cpanel frequently. But I find cpanel beneficial because it aids in tasks that I don’t do frequently, and can offload many of those tasks to less technical people.</description>
     </item>
-    
     <item>
       <title>Cpanel WHM inside Centos 5.1 domU</title>
       <link>https://cmdln.org/2008/05/01/cpanel-whm-inside-centos-51-domu/</link>
       <pubDate>Fri, 02 May 2008 00:19:53 +0000</pubDate>
-      
       <guid>https://cmdln.org/2008/05/01/cpanel-whm-inside-centos-51-domu/</guid>
       <description>&lt;p&gt;I needed to install cpanel inside of one of my Centos 5.1 domU. The centos install was bootstrapped by the default rinse configuration (see &lt;a href=&#34;http://www.xen-tools.org/software/xen-tools/&#34;&gt;xen-tools&lt;/a&gt; with my &lt;a href=&#34;http://www.cmdln.org/images/wp-content/uploads/2008/04/rinse-centos5.patch&#34;&gt;patch&lt;/a&gt; that you can see from a &lt;a href=&#34;http://www.cmdln.org/2008/04/25/xen-installing-centos-5-domu-inside-debian-etch-dom0-with-xen-tools-and-rinse-the-patch-to-fix-it/&#34;&gt;previous post&lt;/a&gt;). If you follow the &lt;a href=&#34;http://www.cpanel.net/docs/vps/&#34;&gt;install docs&lt;/a&gt; you will have tried to uninstall openldap etc ….&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Fix virtual email address maildir permissions in Cpanel</title>
       <link>https://cmdln.org/2008/04/17/fix-virtual-email-address-maildir-permissions-in-cpanel/</link>
       <pubDate>Thu, 17 Apr 2008 23:34:20 +0000</pubDate>
-      
       <guid>https://cmdln.org/2008/04/17/fix-virtual-email-address-maildir-permissions-in-cpanel/</guid>
       <description>&lt;p&gt;Im not a big fan of cpanel but I do manage a server that runs it. Recently some update was pushed down that caused about 50% of my users to not be able to access mail. It all boiled down to a permission issue that the cpanel scripts /scripts/mailperm did not take care of. Their scripts do not correct the permissions of the virtual user maildirs.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

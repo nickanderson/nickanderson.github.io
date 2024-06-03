@@ -6,7 +6,7 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.92.2" />
+<meta name="generator" content="Hugo 0.123.7">
 
 
 
@@ -103,20 +103,20 @@ making a request through <a href="http://www.delay.me">www.delay.me</a>.</p>
 </span><span class="lnt">14
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">main</span>
-  <span class="p">{</span>
-    <span class="kd">vars</span><span class="p">:</span>
-        <span class="s">&#34;options&#34;</span> <span class="kr">data</span> <span class="o">=&gt;</span> <span class="err">&#39;</span><span class="p">{</span>
-    <span class="s">&#34;url.timeout&#34;</span><span class="err">:</span> <span class="s">&#34;2&#34;</span><span class="p">,</span>
-    <span class="s">&#34;url.verbose&#34;</span><span class="err">:</span> <span class="s">&#34;1&#34;</span>
-  <span class="p">}</span><span class="err">&#39;</span><span class="p">;</span>
-
-      <span class="s">&#34;response&#34;</span> <span class="kr">data</span> <span class="o">=&gt;</span> <span class="nf">url_get</span><span class="p">(</span>  <span class="s">&#34;http://www.deelay.me/29999/google&#34;</span><span class="p">,</span> <span class="nf">options</span> <span class="p">);</span>
-
-    <span class="kd">reports</span><span class="p">:</span>
-        <span class="s">&#34;</span><span class="si">$(with)</span><span class="s">&#34;</span>
-          <span class="kr">with</span> <span class="o">=&gt;</span> <span class="nf">string_mustache</span><span class="p">(</span> <span class="s">&#34;{{$-top-}}&#34;</span><span class="p">,</span> <span class="nf">response</span> <span class="p">);</span>
-  <span class="p">}</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="line"><span class="cl">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">main</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">vars</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="s">&#34;options&#34;</span> <span class="kr">data</span> <span class="o">=&gt;</span> <span class="s">&#39;{
+</span></span></span><span class="line"><span class="cl"><span class="s">    &#34;url.timeout&#34;: &#34;2&#34;,
+</span></span></span><span class="line"><span class="cl"><span class="s">    &#34;url.verbose&#34;: &#34;1&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s">  }&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      <span class="s">&#34;response&#34;</span> <span class="kr">data</span> <span class="o">=&gt;</span> <span class="nf">url_get</span><span class="p">(</span>  <span class="s">&#34;http://www.deelay.me/29999/google&#34;</span><span class="p">,</span> <span class="nf">options</span> <span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">reports</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="s">&#34;</span><span class="si">$(with)</span><span class="s">&#34;</span>
+</span></span><span class="line"><span class="cl">          <span class="kr">with</span> <span class="o">=&gt;</span> <span class="nf">string_mustache</span><span class="p">(</span> <span class="s">&#34;{{$-top-}}&#34;</span><span class="p">,</span> <span class="nf">response</span> <span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span></span></span></code></pre></td></tr></table>
 </div>
 </div>
 </div>

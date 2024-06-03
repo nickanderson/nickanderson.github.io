@@ -1,61 +1,47 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>org-mode on </title>
+    <title>Org-Mode on </title>
     <link>https://cmdln.org/tags/org-mode/</link>
-    <description>Recent content in org-mode on </description>
+    <description>Recent content in Org-Mode on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 05 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://cmdln.org/tags/org-mode/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Fri, 05 Jan 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://cmdln.org/tags/org-mode/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How I org in 2024</title>
       <link>https://cmdln.org/2024/01/05/how-i-org-in-2024/</link>
       <pubDate>Fri, 05 Jan 2024 00:00:00 +0000</pubDate>
-      
       <guid>https://cmdln.org/2024/01/05/how-i-org-in-2024/</guid>
-      <description>Org-mode is my exocortex, second brain, second mind, mind palace, pensive, and personal knowledge management system. It&amp;rsquo;s very flexible and the features I use as well as how I organize my files continues to change so I collected things here to document how I do things in 2024, I did this in 2023 as well1.
-No, my Emacs org-mode configuration is not published. However, if you have some question, just reach out.</description>
+      <description>Org-mode is my exocortex, second brain, second mind, mind palace, pensive, personal knowledge management system, and apocrypha. It&amp;rsquo;s very flexible and the features I use as well as how I organize my files continues to change so I collected things here to document how I do things in 2024, I did this in 2023 as well1.&#xA;No, my Emacs org-mode configuration is not published. However, if you have some question, just reach out.</description>
     </item>
-    
     <item>
       <title>How I org in 2023</title>
       <link>https://cmdln.org/2023/03/25/how-i-org-in-2023/</link>
       <pubDate>Sat, 25 Mar 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://cmdln.org/2023/03/25/how-i-org-in-2023/</guid>
       <description>I&amp;rsquo;ve been pretty much living in org-mode for 6 or 7 years now1. It&amp;rsquo;s my exocortex, second brain, second mind, mind palace, pensive, and personal knowledge management system2. The features and tools I use as well as how I organize my files has changed quite a bit over this period of time and I thought it would be nice give myself (and anyone else who cares) a reference of what it was like in 2023 so here it is.</description>
     </item>
-    
     <item>
       <title>Reflecting on my history with org-mode in 2023</title>
       <link>https://cmdln.org/2023/03/13/reflecting-on-my-history-with-org-mode-in-2023/</link>
       <pubDate>Mon, 13 Mar 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://cmdln.org/2023/03/13/reflecting-on-my-history-with-org-mode-in-2023/</guid>
-      <description>I think I started getting interested in org-mode in 20071. I definitely was making serious attempts to integrate it into my workflow by 2010. By 2016 it became my primary tool. By primary tool, I mean that most of my daily work is either done from within or at least I&amp;rsquo;ve probably written down something about what I&amp;rsquo;ve done in org-mode.
-Early on, maybe 2009 I found Bernt Hansens Organize you life in plain text!</description>
+      <description>I think I started getting interested in org-mode in 20071. I definitely was making serious attempts to integrate it into my workflow by 2010. By 2016 it became my primary tool. By primary tool, I mean that most of my daily work is either done from within or at least I&amp;rsquo;ve probably written down something about what I&amp;rsquo;ve done in org-mode.&#xA;Early on, maybe 2009 I found Bernt Hansens Organize you life in plain text!</description>
     </item>
-    
     <item>
       <title>Keep Table of Contents Up to Date in Org Mode</title>
       <link>https://cmdln.org/2017/12/01/keep-table-of-contents-up-to-date-in-org-mode/</link>
       <pubDate>Fri, 01 Dec 2017 21:41:21 -0600</pubDate>
-      
       <guid>https://cmdln.org/2017/12/01/keep-table-of-contents-up-to-date-in-org-mode/</guid>
-      <description>It&amp;#39;s easy to export an org document to html and get a table of contents, but sometimes it&amp;#39;s nice to have a table of contents inside of an org-mode file. The [[https://github.com/snosov1/toc-org][toc-org]] package makes this automatic.
- Simply tag a headline with :TOC: and the headline will auto fill an index with all following headlines.
- &amp;lt;img src=&amp;#34;&amp;#34; alt=&amp;#34;&amp;#34; width=&amp;#34;100%&amp;#34;/&amp;gt;</description>
+      <description>It&amp;#39;s easy to export an org document to html and get a table of contents, but sometimes it&amp;#39;s nice to have a table of contents inside of an org-mode file. The [[https://github.com/snosov1/toc-org][toc-org]] package makes this automatic.&#xA;Simply tag a headline with :TOC: and the headline will auto fill an index with all following headlines.&#xA;&amp;lt;img src=&amp;#34;&amp;#34; alt=&amp;#34;&amp;#34; width=&amp;#34;100%&amp;#34;/&amp;gt;</description>
     </item>
-    
     <item>
       <title>How I org with spacemacs</title>
       <link>https://cmdln.org/2016/04/26/how-i-org-with-spacemacs/</link>
       <pubDate>Tue, 26 Apr 2016 00:00:00 +0000</pubDate>
-      
       <guid>https://cmdln.org/2016/04/26/how-i-org-with-spacemacs/</guid>
-      <description>This weekend Neil Watson asked if I could share how I use org-mode with Spacemacs.
- @cmdln_ Care to share with an Emacs illiterate how you got Spacemacs and Org-mode to work together? – @neil_h_watson
-  First of all, I spend most of my time in a terminal, and vim is ingrained in my muscle memory any time I need to edit a file. While Vim is my goto editor I consider myself just a novice Vim user.</description>
+      <description>This weekend Neil Watson asked if I could share how I use org-mode with Spacemacs.&#xA;@cmdln_ Care to share with an Emacs illiterate how you got Spacemacs and Org-mode to work together? – @neil_h_watson&#xA;First of all, I spend most of my time in a terminal, and vim is ingrained in my muscle memory any time I need to edit a file. While Vim is my goto editor I consider myself just a novice Vim user.</description>
     </item>
-    
   </channel>
 </rss>

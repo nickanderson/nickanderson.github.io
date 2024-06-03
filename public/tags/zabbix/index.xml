@@ -1,28 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>zabbix on </title>
+    <title>Zabbix on </title>
     <link>https://cmdln.org/tags/zabbix/</link>
-    <description>Recent content in zabbix on </description>
+    <description>Recent content in Zabbix on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 11 Feb 2008 02:00:27 +0000</lastBuildDate><atom:link href="https://cmdln.org/tags/zabbix/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Mon, 11 Feb 2008 02:00:27 +0000</lastBuildDate>
+    <atom:link href="https://cmdln.org/tags/zabbix/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Zabbix 1.4.4 from source on Debian Etch</title>
       <link>https://cmdln.org/2008/02/10/zabbix-144-from-source-on-debian-etch/</link>
       <pubDate>Mon, 11 Feb 2008 02:00:27 +0000</pubDate>
-      
       <guid>https://cmdln.org/2008/02/10/zabbix-144-from-source-on-debian-etch/</guid>
       <description>&lt;p&gt;This guide will walk you through installing Zabbix 1.4.4 from source on debian etch. 1.4.4 has many improvements over what is currently available in apt, and its not hard so you might as well do it this way. *Note: this walkthrough assumes that you will be running the zabbix database on the same machine as the frontend. You dont have to obviously, just do the mysql setup on whatever db server you are using and point the necessary things to it.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Infrastructure monitoring with Zabbix</title>
       <link>https://cmdln.org/2008/02/08/infrastructure-monitoring-with-zabbix/</link>
       <pubDate>Fri, 08 Feb 2008 23:01:17 +0000</pubDate>
-      
       <guid>https://cmdln.org/2008/02/08/infrastructure-monitoring-with-zabbix/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;www.zabbix.com&#34;&gt;Zabbix&lt;/a&gt; is an opensource network monitoring application somewhat akin to &lt;a href=&#34;http://www.nagios.org/&#34;&gt;Nagios&lt;/a&gt; and &lt;a href=&#34;http://www.cacti.net&#34;&gt;Cacti&lt;/a&gt;. I have been using Zabbix for about 8 months, and I am pleased with its results.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

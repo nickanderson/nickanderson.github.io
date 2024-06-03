@@ -1,21 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>allclassesreport on </title>
+    <title>Allclassesreport on </title>
     <link>https://cmdln.org/tags/allclassesreport/</link>
-    <description>Recent content in allclassesreport on </description>
+    <description>Recent content in Allclassesreport on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 18 Oct 2012 21:00:49 +0000</lastBuildDate><atom:link href="https://cmdln.org/tags/allclassesreport/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Thu, 18 Oct 2012 21:00:49 +0000</lastBuildDate>
+    <atom:link href="https://cmdln.org/tags/allclassesreport/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CFEngine 3 Tip: Find out what classes are being defined</title>
       <link>https://cmdln.org/2012/10/18/cfengine-3-tip-find-out-what-classes-are-being-defined/</link>
       <pubDate>Thu, 18 Oct 2012 21:00:49 +0000</pubDate>
-      
       <guid>https://cmdln.org/2012/10/18/cfengine-3-tip-find-out-what-classes-are-being-defined/</guid>
-      <description>CFEngine defines a classes for decision making during runs. Many of these hard classes you can see by running cf-promises -v. That wont show you all the other classes that are raised during a policy run.
-You could run something like this to see what classes are raised during execution.
-cf-agent -KIv | grep &#34;cf3&amp;gt;\s*+&#34; | grep -v : But that isn’t really a clear picture under normal operation. You can use the allclassesreport in body agent control to write out a list of classes defined during execution in /var/cfengine/state/allclasses.</description>
+      <description>CFEngine defines a classes for decision making during runs. Many of these hard classes you can see by running cf-promises -v. That wont show you all the other classes that are raised during a policy run.&#xA;You could run something like this to see what classes are raised during execution.&#xA;cf-agent -KIv | grep &#34;cf3&amp;gt;\s*+&#34; | grep -v : But that isn’t really a clear picture under normal operation. You can use the allclassesreport in body agent control to write out a list of classes defined during execution in /var/cfengine/state/allclasses.</description>
     </item>
-    
   </channel>
 </rss>

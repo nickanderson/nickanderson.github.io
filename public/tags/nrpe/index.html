@@ -2,11 +2,11 @@
 <html lang="en">
 
 	<head>
-		<title> nrpe &middot;  </title>
+		<title> Nrpe &middot;  </title>
 
 		<meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.92.2" />
+<meta name="generator" content="Hugo 0.123.7">
 
 
 
@@ -75,7 +75,7 @@
 			<div class="container wrapper">
 				<div class="row">
 					<div class="col-xs-12 text-center">
-						<h1 id=>nrpe</h1>
+						<h1 id=>Nrpe</h1>
 					</div>
 				</div>
 				<ul id="post-list">
@@ -100,8 +100,7 @@
 				<h4 class="post-date">2010-03-04</h4>
 			</div>
 			<div class="post-summary"><p>I like to have as little run in dom0 as possible. However some things you really need checked from dom0, like the status of your raid perhaps. Just some quick instructions on getting Nagios NRPE running in XenServer.
-  Install EPEL repository and disable it by default (remember we don’t want to accidentally install unnecessary packages) wget http://download.fedora.redhat.com/pub/epel/5/$(uname -i)/epel-release-5-3.noarch.rpm rpm -hiv epel-release*.rpm sed -i &rsquo;s/enabled=1/enabled=0/g' /etc/yum.repos.d/epel.repo 
-  Install nrpe and configure it to start on boot yum install &ndash;enablerepo=epel nrpe chkconfig nrpe on</p></div>
+Install EPEL repository and disable it by default (remember we don’t want to accidentally install unnecessary packages) wget http://download.fedora.redhat.com/pub/epel/5/$(uname -i)/epel-release-5-3.noarch.rpm rpm -hiv epel-release*.rpm sed -i &rsquo;s/enabled=1/enabled=0/g&rsquo; /etc/yum.repos.d/epel.repo Install nrpe and configure it to start on boot yum install &ndash;enablerepo=epel nrpe chkconfig nrpe on Modify the firewall to allow NRPE connections.</p></div>
 			<div class="post-list-footer text-center">
 				<a href="https://cmdln.org/2010/03/04/installing-nrpe-on-xenserver/">Read More</a>
 			</div>

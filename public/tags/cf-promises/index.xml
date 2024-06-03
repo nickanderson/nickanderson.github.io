@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>cf-promises on </title>
+    <title>Cf-Promises on </title>
     <link>https://cmdln.org/tags/cf-promises/</link>
-    <description>Recent content in cf-promises on </description>
+    <description>Recent content in Cf-Promises on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 16 Feb 2012 17:01:38 +0000</lastBuildDate><atom:link href="https://cmdln.org/tags/cf-promises/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Thu, 16 Feb 2012 17:01:38 +0000</lastBuildDate>
+    <atom:link href="https://cmdln.org/tags/cf-promises/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>pre-commit hook for git to check CFEngine syntax</title>
       <link>https://cmdln.org/2012/02/16/pre-commit-hook-for-git-to-check-cfengine-syntax/</link>
       <pubDate>Thu, 16 Feb 2012 17:01:38 +0000</pubDate>
-      
       <guid>https://cmdln.org/2012/02/16/pre-commit-hook-for-git-to-check-cfengine-syntax/</guid>
       <description>Sometimes I am not so disciplined to run cf-promises on my policy before I commit it. I make a small change and I think I’m golden, but inevitably that breaks things. I wrote a simple commit hook to check policy syntax and stop you from shooting yourself in the foot. You can find the pre-commit{#a71b90d9d3bb7e4d1f4be225eb124c42527855a3} script over on my github account. I hope you find it useful.</description>
     </item>
-    
   </channel>
 </rss>

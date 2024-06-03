@@ -1,21 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>networker on </title>
+    <title>Networker on </title>
     <link>https://cmdln.org/tags/networker/</link>
-    <description>Recent content in networker on </description>
+    <description>Recent content in Networker on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 19 May 2010 18:19:27 +0000</lastBuildDate><atom:link href="https://cmdln.org/tags/networker/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Wed, 19 May 2010 18:19:27 +0000</lastBuildDate>
+    <atom:link href="https://cmdln.org/tags/networker/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Archive creation fail</title>
       <link>https://cmdln.org/2010/05/19/archive-creation-fail/</link>
       <pubDate>Wed, 19 May 2010 18:19:27 +0000</pubDate>
-      
       <guid>https://cmdln.org/2010/05/19/archive-creation-fail/</guid>
-      <description>I just downloaded EMC Networker client for a 32bit linux box. The file I downloaded was nw74sp5_linux_x86.tar.gz. Of course when I go to extract it ….
-# tar zxvf ../nw74sp5_linux_x86.tar.gzgzip: stdin: not in gzip formattar: Child returned status 1tar: Error exit delayed from previous errors Umm not in gzip format ….
-# tar xvf ../nw74sp5_linux_x86.tar.gzlinux_x86/linux_x86/lgtoclnt-7.4.5-1.i686.rpmlinux_x86/lgtolicm-7.4.5-1.i686.rpmlinux_x86/lgtoman-7.4.5-1.i686.rpm... 🙂</description>
+      <description>I just downloaded EMC Networker client for a 32bit linux box. The file I downloaded was nw74sp5_linux_x86.tar.gz. Of course when I go to extract it ….&#xA;# tar zxvf ../nw74sp5_linux_x86.tar.gz&#xD;gzip: stdin: not in gzip format&#xD;tar: Child returned status 1&#xD;tar: Error exit delayed from previous errors&#xD;Umm not in gzip format ….&#xA;# tar xvf ../nw74sp5_linux_x86.tar.gz&#xD;linux_x86/&#xD;linux_x86/lgtoclnt-7.4.5-1.i686.rpm&#xD;linux_x86/lgtolicm-7.4.5-1.i686.rpm&#xD;linux_x86/lgtoman-7.4.5-1.i686.rpm&#xD;... 🙂</description>
     </item>
-    
   </channel>
 </rss>

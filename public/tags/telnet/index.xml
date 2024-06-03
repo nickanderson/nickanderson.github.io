@@ -1,29 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>telnet on </title>
+    <title>Telnet on </title>
     <link>https://cmdln.org/tags/telnet/</link>
-    <description>Recent content in telnet on </description>
+    <description>Recent content in Telnet on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 06 Apr 2010 14:46:30 +0000</lastBuildDate><atom:link href="https://cmdln.org/tags/telnet/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Tue, 06 Apr 2010 14:46:30 +0000</lastBuildDate>
+    <atom:link href="https://cmdln.org/tags/telnet/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Error Msg Fail: How to enable telnet on centos/rhel</title>
       <link>https://cmdln.org/2010/04/06/error-msg-fail-how-to-enable-telnet-on-centosrhel/</link>
       <pubDate>Tue, 06 Apr 2010 14:46:30 +0000</pubDate>
-      
       <guid>https://cmdln.org/2010/04/06/error-msg-fail-how-to-enable-telnet-on-centosrhel/</guid>
-      <description>Don’t even start with me about how telnet is horrid. Out side of my control but I recently had issues trying to enable telnet on a server. Typically its pretty straightforward.
- yum install telnet-server chkconfig telnet on chkconfig xinetd on service xinetd start  Unfortunately for me this was not working. Every time I tried to telnet to the host after enabling it I would get an error message.</description>
+      <description>Don’t even start with me about how telnet is horrid. Out side of my control but I recently had issues trying to enable telnet on a server. Typically its pretty straightforward.&#xA;yum install telnet-server chkconfig telnet on chkconfig xinetd on service xinetd start Unfortunately for me this was not working. Every time I tried to telnet to the host after enabling it I would get an error message.&#xA;telnet host&#xD;Trying 203.</description>
     </item>
-    
     <item>
       <title>Testing Email Manually with Telnet (spoofing email)</title>
       <link>https://cmdln.org/2008/04/06/testing-email-manually-with-telnet-spoofing-email/</link>
       <pubDate>Sun, 06 Apr 2008 17:15:35 +0000</pubDate>
-      
       <guid>https://cmdln.org/2008/04/06/testing-email-manually-with-telnet-spoofing-email/</guid>
       <description>&lt;p&gt;Being able to send email manually seems to be a bit of a lost art. It is extremely handy to know how to use telnet to send email for testing procmail filters, and any other part of your mail system. It can also be fun to spoof email to a friend or co-worker. Read on for a quick run down.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

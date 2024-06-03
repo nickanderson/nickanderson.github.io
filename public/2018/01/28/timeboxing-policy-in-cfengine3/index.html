@@ -6,7 +6,7 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.92.2" />
+<meta name="generator" content="Hugo 0.123.7">
 
 
 
@@ -89,7 +89,7 @@ example:</p>
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">  cf-promises --show-classes <span class="p">|</span> grep time</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">  cf-promises --show-classes <span class="p">|</span> grep time</span></span></code></pre></td></tr></table>
 </div>
 </div>
 </div>
@@ -159,34 +159,34 @@ you can use persistent classes.</p>
 </span><span class="lnt">28
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">main</span>
-  <span class="p">{</span>
-    <span class="kd">reports</span><span class="p">:</span>
-        <span class="s">&#34;Hello, its during the 8:00am hour here. Specifically its </span><span class="si">$(sys.date)</span><span class="s">&#34;</span><span class="p">;</span>
-
-      <span class="nc">Hr08</span><span class="p">::</span>
-        <span class="s">&#34;This report will only be emitted once during the 8:00 hour.&#34;</span>
-        <span class="kr">action</span> <span class="o">=&gt;</span> <span class="nf">if_elapsed</span><span class="p">(</span><span class="s">&#34;90&#34;</span><span class="p">);</span>
-        <span class="kr">comment</span> <span class="o">=&gt;</span> <span class="s">&#34;Note: this promise only executes the promise if it has not
-</span><span class="s">                    been kept or repaired in the last 90 minutes. Since the
-</span><span class="s">                    promise is class guarded to Hr08 it will only be evaluated
-</span><span class="s">                    during agent runs that happen between 8 and 9 am local time.
-</span><span class="s">                    Also note action if_elapsed leverages promise locking. So if
-</span><span class="s">                    you run with -K (no locks) this restriction will be skipped.
-</span><span class="s">                    If you need for this action to be very strict and only happen
-</span><span class="s">                    once even if running with -K then you would need to use a
-</span><span class="s">                    persistent class.&#34;</span><span class="p">;</span>
-
-        <span class="nc">Hr08.!report_emitted</span><span class="p">::</span>
-        <span class="s">&#34;This report will only be emitted once during the 8:00 hour. Even if locks are skipped.&#34;</span>
-          <span class="kr">classes</span> <span class="o">=&gt;</span> <span class="nf">results</span><span class="p">(</span><span class="s">&#34;bundle&#34;</span><span class="p">,</span> <span class="s">&#34;my_report&#34;</span><span class="p">);</span>
-
-    <span class="kd">classes</span><span class="p">:</span>
-        <span class="s">&#34;report_emitted&#34;</span>
-          <span class="kr">expression</span> <span class="o">=&gt;</span> <span class="s">&#34;my_report_kept|my_report_repaired&#34;</span><span class="p">,</span>
-          <span class="kr">scope</span> <span class="o">=&gt;</span> <span class="s">&#34;namespace&#34;</span><span class="p">,</span>
-          <span class="kr">persistence</span> <span class="o">=&gt;</span> <span class="s">&#34;90&#34;</span><span class="p">;</span>
-  <span class="p">}</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="line"><span class="cl">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">main</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">reports</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="s">&#34;Hello, its during the 8:00am hour here. Specifically its </span><span class="si">$(sys.date)</span><span class="s">&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      <span class="nc">Hr08</span><span class="p">::</span>
+</span></span><span class="line"><span class="cl">        <span class="s">&#34;This report will only be emitted once during the 8:00 hour.&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="kr">action</span> <span class="o">=&gt;</span> <span class="nf">if_elapsed</span><span class="p">(</span><span class="s">&#34;90&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="kr">comment</span> <span class="o">=&gt;</span> <span class="s">&#34;Note: this promise only executes the promise if it has not
+</span></span></span><span class="line"><span class="cl"><span class="s">                    been kept or repaired in the last 90 minutes. Since the
+</span></span></span><span class="line"><span class="cl"><span class="s">                    promise is class guarded to Hr08 it will only be evaluated
+</span></span></span><span class="line"><span class="cl"><span class="s">                    during agent runs that happen between 8 and 9 am local time.
+</span></span></span><span class="line"><span class="cl"><span class="s">                    Also note action if_elapsed leverages promise locking. So if
+</span></span></span><span class="line"><span class="cl"><span class="s">                    you run with -K (no locks) this restriction will be skipped.
+</span></span></span><span class="line"><span class="cl"><span class="s">                    If you need for this action to be very strict and only happen
+</span></span></span><span class="line"><span class="cl"><span class="s">                    once even if running with -K then you would need to use a
+</span></span></span><span class="line"><span class="cl"><span class="s">                    persistent class.&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="nc">Hr08.!report_emitted</span><span class="p">::</span>
+</span></span><span class="line"><span class="cl">        <span class="s">&#34;This report will only be emitted once during the 8:00 hour. Even if locks are skipped.&#34;</span>
+</span></span><span class="line"><span class="cl">          <span class="kr">classes</span> <span class="o">=&gt;</span> <span class="nf">results</span><span class="p">(</span><span class="s">&#34;bundle&#34;</span><span class="p">,</span> <span class="s">&#34;my_report&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">classes</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="s">&#34;report_emitted&#34;</span>
+</span></span><span class="line"><span class="cl">          <span class="kr">expression</span> <span class="o">=&gt;</span> <span class="s">&#34;my_report_kept|my_report_repaired&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="kr">scope</span> <span class="o">=&gt;</span> <span class="s">&#34;namespace&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="kr">persistence</span> <span class="o">=&gt;</span> <span class="s">&#34;90&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span></span></span></code></pre></td></tr></table>
 </div>
 </div>
 </div>
@@ -254,49 +254,49 @@ think this example will make it more clear:</p>
 </span><span class="lnt">43
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="k">body</span> <span class="k">file</span> <span class="k">control</span>
-  <span class="p">{</span>
-    <span class="kr">inputs</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="s">&#34;</span><span class="si">$(sys.libdir)</span><span class="s">/stdlib.cf&#34;</span> <span class="p">};</span>
-  <span class="p">}</span>
-
-  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">main</span>
-  <span class="p">{</span>
-    <span class="kd">classes</span><span class="p">:</span>
-      <span class="s">&#34;maintanance_window&#34;</span> <span class="kr">expression</span> <span class="o">=&gt;</span> <span class="s">&#34;Hr09&#34;</span><span class="p">;</span>
-
-    <span class="kd">reports</span><span class="p">:</span>
-        <span class="s">&#34;Hello, its </span><span class="si">$(sys.date)</span><span class="s">&#34;</span><span class="p">;</span>
-
-      <span class="nc">maintanance_window</span><span class="p">::</span>
-        <span class="s">&#34;This report will only be emitted once during the maintanaince window unless locks are cleared.&#34;</span>
-          <span class="kr">action</span> <span class="o">=&gt;</span> <span class="nf">if_elapsed</span><span class="p">(</span><span class="s">&#34;90&#34;</span><span class="p">),</span>
-          <span class="kr">comment</span> <span class="o">=&gt;</span> <span class="s">&#34;Note: this promise only executes the promise if it has not
-</span><span class="s">                      been kept or repaired in the last 90 minutes. Since the
-</span><span class="s">                      promise is class guarded to maintanance_windows it will only be evaluated
-</span><span class="s">                      during agent runs that happen when the class
-</span><span class="s">                      maintanance_window is defined (normally this is only
-</span><span class="s">                      between 8 and 9 am locally.  Also note action if_elapsed
-</span><span class="s">                      leverages promise locking. So if you run with -K (no locks)
-</span><span class="s">                      this restriction will be skipped.  If you need for this
-</span><span class="s">                      action to be very strict and only happen once even if
-</span><span class="s">                      running with -K then you would need to use a persistent class.&#34;</span><span class="p">;</span>
-
-        <span class="nc">maintanance_window.!(my_report2_kept|my_report2_repaired)</span><span class="p">::</span>
-        <span class="s">&#34;This report will only be emitted once during the maintanance window. Even if locks are skipped.&#34;</span>
-          <span class="kr">handle</span> <span class="o">=&gt;</span> <span class="s">&#34;2&#34;</span><span class="p">,</span>
-          <span class="kr">classes</span> <span class="o">=&gt;</span> <span class="nf">results_persist</span><span class="p">(</span><span class="s">&#34;my_report2&#34;</span><span class="p">,</span> <span class="s">&#34;90&#34;</span><span class="p">),</span>
-          <span class="kr">comment</span> <span class="o">=&gt;</span> <span class="s">&#34;This promise will define classes for 90 minutes based on
-</span><span class="s">                      the promise result that are prefixed with &#39;my_report&#39;.&#34;</span><span class="p">;</span>
-
-  <span class="p">}</span>
-
-  <span class="k">body</span> <span class="k">classes</span> <span class="nf">results_persist</span><span class="p">(</span><span class="nv">prefix</span><span class="p">,</span> <span class="nv">minutes</span><span class="p">)</span>
-  <span class="p">{</span>
-
-    <span class="kr">inherit_from</span> <span class="o">=&gt;</span> <span class="nf">results</span><span class="p">(</span><span class="s">&#34;namespace&#34;</span><span class="p">,</span> <span class="err">$</span><span class="p">(</span><span class="nf">prefix</span><span class="p">));</span>
-    <span class="kr">persist_time</span> <span class="o">=&gt;</span> <span class="s">&#34;</span><span class="si">$(minutes)</span><span class="s">&#34;</span><span class="p">;</span>
-
-  <span class="p">}</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="line"><span class="cl">  <span class="k">body</span> <span class="k">file</span> <span class="k">control</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">inputs</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="s">&#34;</span><span class="si">$(sys.libdir)</span><span class="s">/stdlib.cf&#34;</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">main</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">classes</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">      <span class="s">&#34;maintanance_window&#34;</span> <span class="kr">expression</span> <span class="o">=&gt;</span> <span class="s">&#34;Hr09&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">reports</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="s">&#34;Hello, its </span><span class="si">$(sys.date)</span><span class="s">&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      <span class="nc">maintanance_window</span><span class="p">::</span>
+</span></span><span class="line"><span class="cl">        <span class="s">&#34;This report will only be emitted once during the maintanaince window unless locks are cleared.&#34;</span>
+</span></span><span class="line"><span class="cl">          <span class="kr">action</span> <span class="o">=&gt;</span> <span class="nf">if_elapsed</span><span class="p">(</span><span class="s">&#34;90&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">          <span class="kr">comment</span> <span class="o">=&gt;</span> <span class="s">&#34;Note: this promise only executes the promise if it has not
+</span></span></span><span class="line"><span class="cl"><span class="s">                      been kept or repaired in the last 90 minutes. Since the
+</span></span></span><span class="line"><span class="cl"><span class="s">                      promise is class guarded to maintanance_windows it will only be evaluated
+</span></span></span><span class="line"><span class="cl"><span class="s">                      during agent runs that happen when the class
+</span></span></span><span class="line"><span class="cl"><span class="s">                      maintanance_window is defined (normally this is only
+</span></span></span><span class="line"><span class="cl"><span class="s">                      between 8 and 9 am locally.  Also note action if_elapsed
+</span></span></span><span class="line"><span class="cl"><span class="s">                      leverages promise locking. So if you run with -K (no locks)
+</span></span></span><span class="line"><span class="cl"><span class="s">                      this restriction will be skipped.  If you need for this
+</span></span></span><span class="line"><span class="cl"><span class="s">                      action to be very strict and only happen once even if
+</span></span></span><span class="line"><span class="cl"><span class="s">                      running with -K then you would need to use a persistent class.&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="nc">maintanance_window.!(my_report2_kept|my_report2_repaired)</span><span class="p">::</span>
+</span></span><span class="line"><span class="cl">        <span class="s">&#34;This report will only be emitted once during the maintanance window. Even if locks are skipped.&#34;</span>
+</span></span><span class="line"><span class="cl">          <span class="kr">handle</span> <span class="o">=&gt;</span> <span class="s">&#34;2&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="kr">classes</span> <span class="o">=&gt;</span> <span class="nf">results_persist</span><span class="p">(</span><span class="s">&#34;my_report2&#34;</span><span class="p">,</span> <span class="s">&#34;90&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">          <span class="kr">comment</span> <span class="o">=&gt;</span> <span class="s">&#34;This promise will define classes for 90 minutes based on
+</span></span></span><span class="line"><span class="cl"><span class="s">                      the promise result that are prefixed with &#39;my_report&#39;.&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">body</span> <span class="k">classes</span> <span class="nf">results_persist</span><span class="p">(</span><span class="nv">prefix</span><span class="p">,</span> <span class="nv">minutes</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kr">inherit_from</span> <span class="o">=&gt;</span> <span class="nf">results</span><span class="p">(</span><span class="s">&#34;namespace&#34;</span><span class="p">,</span> <span class="nv">$(prefix)</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">persist_time</span> <span class="o">=&gt;</span> <span class="s">&#34;</span><span class="si">$(minutes)</span><span class="s">&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="p">}</span></span></span></code></pre></td></tr></table>
 </div>
 </div>
 </div>

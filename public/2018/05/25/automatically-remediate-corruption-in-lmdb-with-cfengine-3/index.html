@@ -6,7 +6,7 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.92.2" />
+<meta name="generator" content="Hugo 0.123.7">
 
 
 
@@ -154,68 +154,68 @@ associated lock files are deleted.</p>
 </span><span class="lnt">62
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">remediate_lmdb_corruption</span>
-  <span class="c">#@ breif Avoid crashing agents due to corruption in embedded databases by purging files detected to have corruption
-</span><span class="c"></span>  <span class="c">#@ description Sometimes corruption in embedded databases can cause the agent to
-</span><span class="c"></span>  <span class="c">#@ crash. This policy tries to detect corruption in embedded databases by probing
-</span><span class="c"></span>  <span class="c">#@ them. If the probe failes the embedded database is deleted so that the agent
-</span><span class="c"></span>  <span class="c">#@ will continue to function as expected. If you would like to retain backups of
-</span><span class="c"></span>  <span class="c">#@ the corrupt databases define def.remediat_lmdb_corruption[keep] with the number
-</span><span class="c"></span>  <span class="c">#@ you would like to retain.
-</span><span class="c"></span>  <span class="c">#@
-</span><span class="c"></span>  <span class="c">#@ **Example augment:**
-</span><span class="c"></span>  <span class="c">#@ ```json
-</span><span class="c"></span>  <span class="c">#@ {
-</span><span class="c"></span>  <span class="c">#@   &#34;vars&#34;: {
-</span><span class="c"></span>  <span class="c">#@     &#34;remediate_lmdb_corruption&#34; {
-</span><span class="c"></span>  <span class="c">#@       &#34;keep&#34;: &#34;3&#34;
-</span><span class="c"></span>  <span class="c">#@     }
-</span><span class="c"></span>  <span class="c">#@   }
-</span><span class="c"></span>  <span class="c">#@ }
-</span><span class="c"></span>  <span class="c">#@ ```
-</span><span class="c"></span>  <span class="p">{</span>
-    <span class="kd">vars</span><span class="p">:</span>
-
-        <span class="p">&#34;</span><span class="nv">keep_remediations</span><span class="p">&#34;</span>
-          <span class="kt">string</span> <span class="o">=&gt;</span> <span class="nf">ifelse</span><span class="p">(</span> <span class="nf">isvariable</span><span class="p">(</span> <span class="s">&#34;def.remediate_lmdb_corruption[keep]&#34;</span><span class="p">),</span> <span class="err">$</span><span class="p">(</span><span class="nf">def</span><span class="err">.</span><span class="nf">remediate_lmdb_corruption</span><span class="err">[</span><span class="nf">keep</span><span class="err">]</span><span class="p">),</span>
-                            <span class="s">&#34;0&#34;</span><span class="p">);</span>
-
-        <span class="p">&#34;</span><span class="nv">lmdbs</span><span class="p">&#34;</span> <span class="kt">slist</span> <span class="o">=&gt;</span> <span class="nf">findfiles</span><span class="p">(</span> <span class="s">&#34;</span><span class="si">$(sys.statedir)</span><span class="s">/**.lmdb&#34;</span> <span class="p">);</span>
-
-        <span class="p">&#34;</span><span class="nv">lmdb[$(lmdbs)]</span><span class="p">&#34;</span>
-          <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;lmdump_failed&#34;</span><span class="p">,</span>
-          <span class="kr">if</span> <span class="o">=&gt;</span> <span class="nf">and</span><span class="p">(</span><span class="nf">fileexists</span><span class="p">(</span> <span class="err">$</span><span class="p">(</span><span class="nf">lmdbs</span><span class="p">)</span> <span class="p">),</span> 
-                    <span class="nf">not</span><span class="p">(</span> <span class="nf">returnszero</span> <span class="p">(</span><span class="s">&#34;</span><span class="si">$(sys.workdir)</span><span class="s">/bin/lmdump -a </span><span class="si">$(lmdbs)</span><span class="s">&#34;</span><span class="p">,</span> <span class="nf">noshell</span><span class="p">)</span> <span class="p">));</span>
-
-        <span class="p">&#34;</span><span class="nv">corrupt</span><span class="p">&#34;</span> <span class="kt">slist</span> <span class="o">=&gt;</span> <span class="nf">getindices</span><span class="p">(</span> <span class="nf">lmdb</span> <span class="p">);</span>
-        <span class="p">&#34;</span><span class="nv">permutations</span><span class="p">&#34;</span> <span class="kt">slist</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="s">&#34;&#34;</span><span class="p">,</span> <span class="s">&#34;-lock&#34;</span><span class="p">,</span> <span class="s">&#34;.lock&#34;</span> <span class="p">};</span>
-
-    <span class="kd">classes</span><span class="p">:</span>
-
-      <span class="s">&#34;remediation_behaviour_keep&#34;</span> <span class="kr">expression</span> <span class="o">=&gt;</span> <span class="nf">isgreaterthan</span><span class="p">(</span> <span class="err">$</span><span class="p">(</span><span class="nf">keep_remediations</span><span class="p">),</span> <span class="mi">0</span> <span class="p">);</span>
-      <span class="s">&#34;remediation_behaviour_purge&#34;</span> <span class="kr">expression</span> <span class="o">=&gt;</span> <span class="nf">not</span><span class="p">(</span> <span class="nf">isgreaterthan</span><span class="p">(</span> <span class="err">$</span><span class="p">(</span><span class="nf">keep_remediations</span><span class="p">),</span> <span class="mi">0</span> <span class="p">));</span>
-
-    <span class="kd">files</span><span class="p">:</span>
-
-      <span class="nc">remediation_behaviour_purge</span><span class="p">::</span>
-
-        <span class="s">&#34;</span><span class="si">$(corrupt)$(permutations)</span><span class="s">&#34;</span>
-          <span class="kr">delete</span> <span class="o">=&gt;</span> <span class="nf">tidy</span><span class="p">,</span>
-          <span class="kr">comment</span> <span class="o">=&gt;</span> <span class="s">&#34;We detected a corrupt lmdb and deleted it to preserve agent functionality.&#34;</span><span class="p">,</span>
-          <span class="kr">classes</span> <span class="o">=&gt;</span> <span class="nf">results</span><span class="p">(</span> <span class="s">&#34;bundle&#34;</span><span class="p">,</span> <span class="s">&#34;lmdb_corruption_purge_remediation_</span><span class="si">$(corrupt)</span><span class="s">&#34;</span><span class="p">);</span>
-
-      <span class="nc">remediation_behaviour_keep</span><span class="p">::</span>
-
-        <span class="s">&#34;</span><span class="si">$(corrupt)$(permutations)</span><span class="s">&#34;</span>
-          <span class="kr">rename</span> <span class="o">=&gt;</span> <span class="nf">rotate</span><span class="p">(</span> <span class="err">$</span><span class="p">(</span><span class="nf">keep_remediations</span><span class="p">)</span> <span class="p">),</span>
-          <span class="kr">comment</span> <span class="o">=&gt;</span> <span class="s">&#34;We detected a corrupt lmdb and deleted it to preserve agent functionality.&#34;</span><span class="p">,</span>
-          <span class="kr">classes</span> <span class="o">=&gt;</span> <span class="nf">results</span><span class="p">(</span> <span class="s">&#34;bundle&#34;</span><span class="p">,</span> <span class="s">&#34;lmdb_corruption_keep_remediation_</span><span class="si">$(corrupt)</span><span class="s">&#34;</span><span class="p">);</span>
-
-    <span class="kd">reports</span><span class="p">:</span>
-      <span class="s">&#34;DEBUG|DEBUG_</span><span class="si">$(this.bundle)</span><span class="s">&#34;</span><span class="err">::</span>
-
-        <span class="s">&#34;</span><span class="si">$(corrupt)</span><span class="s"> failed lmdump probe. Remediation retaining </span><span class="si">$(keep_remediations)</span><span class="s"> backups&#34;</span><span class="p">;</span>
-  <span class="p">}</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="line"><span class="cl">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">remediate_lmdb_corruption</span>
+</span></span><span class="line"><span class="cl">  <span class="c">#@ breif Avoid crashing agents due to corruption in embedded databases by purging files detected to have corruption
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="c">#@ description Sometimes corruption in embedded databases can cause the agent to
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="c">#@ crash. This policy tries to detect corruption in embedded databases by probing
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="c">#@ them. If the probe failes the embedded database is deleted so that the agent
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="c">#@ will continue to function as expected. If you would like to retain backups of
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="c">#@ the corrupt databases define def.remediat_lmdb_corruption[keep] with the number
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="c">#@ you would like to retain.
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="c">#@
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="c">#@ **Example augment:**
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="c">#@ ```json
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="c">#@ {
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="c">#@   &#34;vars&#34;: {
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="c">#@     &#34;remediate_lmdb_corruption&#34; {
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="c">#@       &#34;keep&#34;: &#34;3&#34;
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="c">#@     }
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="c">#@   }
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="c">#@ }
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="c">#@ ```
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">vars</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="s">&#34;keep_remediations&#34;</span>
+</span></span><span class="line"><span class="cl">          <span class="kr">string</span> <span class="o">=&gt;</span> <span class="nf">ifelse</span><span class="p">(</span> <span class="nf">isvariable</span><span class="p">(</span> <span class="s">&#34;def.remediate_lmdb_corruption[keep]&#34;</span><span class="p">),</span> <span class="nv">$(def.remediate_lmdb_corruption[keep])</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                            <span class="s">&#34;0&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="s">&#34;lmdbs&#34;</span> <span class="kr">slist</span> <span class="o">=&gt;</span> <span class="nf">findfiles</span><span class="p">(</span> <span class="s">&#34;</span><span class="si">$(sys.statedir)</span><span class="s">/**.lmdb&#34;</span> <span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="s">&#34;lmdb[</span><span class="si">$(lmdbs)</span><span class="s">]&#34;</span>
+</span></span><span class="line"><span class="cl">          <span class="kr">string</span> <span class="o">=&gt;</span> <span class="s">&#34;lmdump_failed&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="kr">if</span> <span class="o">=&gt;</span> <span class="nf">and</span><span class="p">(</span><span class="nf">fileexists</span><span class="p">(</span> <span class="nv">$(lmdbs)</span> <span class="p">),</span> 
+</span></span><span class="line"><span class="cl">                    <span class="nf">not</span><span class="p">(</span> <span class="nf">returnszero</span> <span class="p">(</span><span class="s">&#34;</span><span class="si">$(sys.workdir)</span><span class="s">/bin/lmdump -a </span><span class="si">$(lmdbs)</span><span class="s">&#34;</span><span class="p">,</span> <span class="nf">noshell</span><span class="p">)</span> <span class="p">));</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="s">&#34;corrupt&#34;</span> <span class="kr">slist</span> <span class="o">=&gt;</span> <span class="nf">getindices</span><span class="p">(</span> <span class="nf">lmdb</span> <span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="s">&#34;permutations&#34;</span> <span class="kr">slist</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="s">&#34;&#34;</span><span class="p">,</span> <span class="s">&#34;-lock&#34;</span><span class="p">,</span> <span class="s">&#34;.lock&#34;</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">classes</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      <span class="s">&#34;remediation_behaviour_keep&#34;</span> <span class="kr">expression</span> <span class="o">=&gt;</span> <span class="nf">isgreaterthan</span><span class="p">(</span> <span class="nv">$(keep_remediations)</span><span class="p">,</span> <span class="mi">0</span> <span class="p">);</span>
+</span></span><span class="line"><span class="cl">      <span class="s">&#34;remediation_behaviour_purge&#34;</span> <span class="kr">expression</span> <span class="o">=&gt;</span> <span class="nf">not</span><span class="p">(</span> <span class="nf">isgreaterthan</span><span class="p">(</span> <span class="nv">$(keep_remediations)</span><span class="p">,</span> <span class="mi">0</span> <span class="p">));</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">files</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      <span class="nc">remediation_behaviour_purge</span><span class="p">::</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="s">&#34;</span><span class="si">$(corrupt)$(permutations)</span><span class="s">&#34;</span>
+</span></span><span class="line"><span class="cl">          <span class="kr">delete</span> <span class="o">=&gt;</span> <span class="nf">tidy</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="kr">comment</span> <span class="o">=&gt;</span> <span class="s">&#34;We detected a corrupt lmdb and deleted it to preserve agent functionality.&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="kr">classes</span> <span class="o">=&gt;</span> <span class="nf">results</span><span class="p">(</span> <span class="s">&#34;bundle&#34;</span><span class="p">,</span> <span class="s">&#34;lmdb_corruption_purge_remediation_</span><span class="si">$(corrupt)</span><span class="s">&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      <span class="nc">remediation_behaviour_keep</span><span class="p">::</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="s">&#34;</span><span class="si">$(corrupt)$(permutations)</span><span class="s">&#34;</span>
+</span></span><span class="line"><span class="cl">          <span class="kr">rename</span> <span class="o">=&gt;</span> <span class="nf">rotate</span><span class="p">(</span> <span class="nv">$(keep_remediations)</span> <span class="p">),</span>
+</span></span><span class="line"><span class="cl">          <span class="kr">comment</span> <span class="o">=&gt;</span> <span class="s">&#34;We detected a corrupt lmdb and deleted it to preserve agent functionality.&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="kr">classes</span> <span class="o">=&gt;</span> <span class="nf">results</span><span class="p">(</span> <span class="s">&#34;bundle&#34;</span><span class="p">,</span> <span class="s">&#34;lmdb_corruption_keep_remediation_</span><span class="si">$(corrupt)</span><span class="s">&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">reports</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">      <span class="nc">&#34;DEBUG|DEBUG_$(this.bundle)&#34;</span><span class="p">::</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="s">&#34;</span><span class="si">$(corrupt)</span><span class="s"> failed lmdump probe. Remediation retaining </span><span class="si">$(keep_remediations)</span><span class="s"> backups&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span></span></span></code></pre></td></tr></table>
 </div>
 </div>
 </div>

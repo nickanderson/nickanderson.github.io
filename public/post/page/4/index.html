@@ -6,7 +6,7 @@
 
 		<meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.92.2" />
+<meta name="generator" content="Hugo 0.123.7">
 
 
 
@@ -87,8 +87,8 @@
 				<h4 class="post-date">2017-12-22</h4>
 			</div>
 			<div class="post-summary"><p>Is there any way to do a multiline regex check for a file in CFEngine?
-  There is no function for searching a file for content. The grep() function operates on lists, not files. However using readfile() and regcmp() I was sill able to search for a multi-line string using only native functionaity
- In the example below we first create a file with content that spans multiple lines.</p></div>
+There is no function for searching a file for content. The grep() function operates on lists, not files. However using readfile() and regcmp() I was sill able to search for a multi-line string using only native functionaity
+In the example below we first create a file with content that spans multiple lines. Then we read that file content into a variable and use a regular expression on the variable content.</p></div>
 			<div class="post-list-footer text-center">
 				<a href="https://cmdln.org/2017/12/22/check-if-a-file-contains-a-multi-line-regex/">Read More</a>
 			</div>
@@ -102,9 +102,9 @@
 				<h4 class="post-date">2017-12-21</h4>
 			</div>
 			<div class="post-summary"><p>If I have a promise with a copy_from promise where the body specifies that permissions should be preserved and I also have a perms body on the same promise what is expected to happen?
-  The files type promises documentation describes the normal order of files promise attributes during promise actuation.
- The documentation notes:
- file presence ( create | copy | link ) permissions file content  So the explicitly specified permissions should win in the end.</p></div>
+The files type promises documentation describes the normal order of files promise attributes during promise actuation.
+The documentation notes:
+file presence ( create | copy | link ) permissions file content So the explicitly specified permissions should win in the end.</p></div>
 			<div class="post-list-footer text-center">
 				<a href="https://cmdln.org/2017/12/21/cfengine-files-preserve-with-explicit-perms/">Read More</a>
 			</div>
@@ -118,8 +118,8 @@
 				<h4 class="post-date">2017-12-04</h4>
 			</div>
 			<div class="post-summary"><p>&gt; How can my hosts self organize into different groups?
- In cfengine 3 select_class can be used for partitioning hosts into separate groups without central coordination. Given the same list of options in the same order each host will always choose the same option.
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41  bundle agent demo_select_class { vars: &#34;options&#34; slist =&gt; { &#34;one&#34;, &#34;two&#34; }, meta =&gt; { &#34;inventory&#34;, &#34;attribute_name=Select Class Options&#34; }; # Prefix the options with &#34;select_class_&#34; as select_class will define  # untagged classes that we will use to define a class tagged for  # inventory.</p></div>
+In cfengine 3 select_class can be used for partitioning hosts into separate groups without central coordination. Given the same list of options in the same order each host will always choose the same option.
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 bundle agent demo_select_class { vars: &#34;options&#34; slist =&gt; { &#34;one&#34;, &#34;two&#34; }, meta =&gt; { &#34;inventory&#34;, &#34;attribute_name=Select Class Options&#34; }; # Prefix the options with &#34;select_class_&#34; as select_class will define # untagged classes that we will use to define a class tagged for # inventory.</p></div>
 			<div class="post-list-footer text-center">
 				<a href="https://cmdln.org/2017/12/04/self-organizing-groups-with-select_class-in-cfengine-3/">Read More</a>
 			</div>
@@ -133,8 +133,8 @@
 				<h4 class="post-date">2017-12-01</h4>
 			</div>
 			<div class="post-summary"><p>It&#39;s easy to export an org document to html and get a table of contents, but sometimes it&#39;s nice to have a table of contents inside of an org-mode file. The [[https://github.com/snosov1/toc-org][toc-org]] package makes this automatic.
- Simply tag a headline with :TOC: and the headline will auto fill an index with all following headlines.
- &lt;img src=&#34;&#34; alt=&#34;&#34; width=&#34;100%&#34;/&gt;</p></div>
+Simply tag a headline with :TOC: and the headline will auto fill an index with all following headlines.
+&lt;img src=&#34;&#34; alt=&#34;&#34; width=&#34;100%&#34;/&gt;</p></div>
 			<div class="post-list-footer text-center">
 				<a href="https://cmdln.org/2017/12/01/keep-table-of-contents-up-to-date-in-org-mode/">Read More</a>
 			</div>
@@ -148,9 +148,9 @@
 				<h4 class="post-date">2017-11-30</h4>
 			</div>
 			<div class="post-summary"><p>What&#39;s the simplest, easiest, no-fuss way to wrap up standalone example?
-  I use ob-cfengine3 with org-mode inside of spacemacs for most of my self contained examples and when I start prototyping new policy.
- When I have a cfengine3 SRC block and I execute it body file control is magically inserted to load the stdlib.
-1 2 3 4 5 6 7  bundle agent main { reports: &#34;$(this.</p></div>
+I use ob-cfengine3 with org-mode inside of spacemacs for most of my self contained examples and when I start prototyping new policy.
+When I have a cfengine3 SRC block and I execute it body file control is magically inserted to load the stdlib.
+1 2 3 4 5 6 7 bundle agent main { reports: &#34;$(this.promise_filename):&#34; printfile =&gt; cat( $(this.</p></div>
 			<div class="post-list-footer text-center">
 				<a href="https://cmdln.org/2017/11/30/easiest-way-to-make-standalone-examples-in-cfengine-3/">Read More</a>
 			</div>
@@ -164,7 +164,7 @@
 				<h4 class="post-date">2017-11-29</h4>
 			</div>
 			<div class="post-summary"><p>How can I use set_line_based to manage a space separated file like /etc/services but include more than one space to make the config a bit easier to read.
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23  bundle agent main { vars: &#34;map[hpss_d_mvr1]&#34; string =&gt; &#34;65501/tcp&#34;; # Include padding in the value itself  &#34;map[hpss_d_mvr2]&#34; string =&gt; &#34; 65503/tcp&#34;; files: &#34;/tmp/services&#34; create =&gt; &#34;true&#34;; # Use more than one space in the second field for the minimum number of  # spaces between columns  &#34;/tmp/services&#34; edit_line =&gt; set_line_based( &#34;$(this.</p></div>
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 bundle agent main { vars: &#34;map[hpss_d_mvr1]&#34; string =&gt; &#34;65501/tcp&#34;; # Include padding in the value itself &#34;map[hpss_d_mvr2]&#34; string =&gt; &#34; 65503/tcp&#34;; files: &#34;/tmp/services&#34; create =&gt; &#34;true&#34;; # Use more than one space in the second field for the minimum number of # spaces between columns &#34;/tmp/services&#34; edit_line =&gt; set_line_based( &#34;$(this.</p></div>
 			<div class="post-list-footer text-center">
 				<a href="https://cmdln.org/2017/11/29/using-set_line_based-with-extra-spaces/">Read More</a>
 			</div>
@@ -178,7 +178,7 @@
 				<h4 class="post-date">2017-11-25</h4>
 			</div>
 			<div class="post-summary"><p>When I first tried using Emacs it was to play with Orgmode. I loved Orgmode but being a staunch vim user I really struggled with the key bindings. Ultimately my first attempt to use Orgmode fell by the wayside.
- When I learned about evil mode I gave it another go. I stumbled my way through just enough to get evil-mode working and Orgmode became much more usable. I still primarily interacted with Orgmode via direct files.</p></div>
+When I learned about evil mode I gave it another go. I stumbled my way through just enough to get evil-mode working and Orgmode became much more usable. I still primarily interacted with Orgmode via direct files.</p></div>
 			<div class="post-list-footer text-center">
 				<a href="https://cmdln.org/2017/11/25/dot-spacemacs/">Read More</a>
 			</div>
@@ -192,7 +192,7 @@
 				<h4 class="post-date">2017-11-24</h4>
 			</div>
 			<div class="post-summary"><p>&gt; How can I make sure a package is always up to date?
-1 2 3 4 5 6 7 8 9 10 11 12  bundle agent main { vars: &#34;latest_pkgs&#34; slist =&gt; { &#34;singularity&#34;, &#34;singularity-devel&#34; }; packages: &#34;$(latest_pkgs)&#34; policy =&gt; &#34;present&#34;, comment =&gt; &#34;Important to automatically track the latest and greatest because ....&#34;, version =&gt; &#34;latest&#34;; }     The packages promise implementation shown above has been available since 3.</p></div>
+1 2 3 4 5 6 7 8 9 10 11 12 bundle agent main { vars: &#34;latest_pkgs&#34; slist =&gt; { &#34;singularity&#34;, &#34;singularity-devel&#34; }; packages: &#34;$(latest_pkgs)&#34; policy =&gt; &#34;present&#34;, comment =&gt; &#34;Important to automatically track the latest and greatest because ....&#34;, version =&gt; &#34;latest&#34;; } The packages promise implementation shown above has been available since 3.7.0.</p></div>
 			<div class="post-list-footer text-center">
 				<a href="https://cmdln.org/2017/11/24/how-to-keep-a-package-up-to-date-in-cfengine-3/">Read More</a>
 			</div>
@@ -219,7 +219,7 @@
 				<h4 class="post-date">2017-11-22</h4>
 			</div>
 			<div class="post-summary"><p>When using the acl_method overwrite you must supply user, group, all ( aka other ), and mask for a complete ACL specification.
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24  bundle agent main { vars: &#34;acl&#34; slist =&gt; { &#34;user:*:rwx&#34;, # System owner should have read write and execute access  &#34;group:*:rw&#34;, # System group should have read and write access but not execute  &#34;all:r&#34;, # All other users should have read access  &#34;mask:rwx&#34;, # The mask should be read write and execute  &#34;user:nickanderson:r&#34;, # The user nickanderson should explicitly have read access  &#34;user:a10042:---&#34;, # The user a10042 should explicitly have no access  }; files: &#34;/tmp/acl/dir&#34; acl =&gt; posix_acl_default_access( &#34;overwrite&#34;, @(acl) ); } body acl posix_acl_default_access( method, rules ) { acl_method =&gt; &#34;$(method)&#34;; acl_type =&gt; &#34;posix&#34;; acl_default =&gt; &#34;access&#34;; aces =&gt; { @(acl) }; }     We can use getfacl to inspect the permissions are as desired.</p></div>
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 bundle agent main { vars: &#34;acl&#34; slist =&gt; { &#34;user:*:rwx&#34;, # System owner should have read write and execute access &#34;group:*:rw&#34;, # System group should have read and write access but not execute &#34;all:r&#34;, # All other users should have read access &#34;mask:rwx&#34;, # The mask should be read write and execute &#34;user:nickanderson:r&#34;, # The user nickanderson should explicitly have read access &#34;user:a10042:---&#34;, # The user a10042 should explicitly have no access }; files: &#34;/tmp/acl/dir&#34; acl =&gt; posix_acl_default_access( &#34;overwrite&#34;, @(acl) ); } body acl posix_acl_default_access( method, rules ) { acl_method =&gt; &#34;$(method)&#34;; acl_type =&gt; &#34;posix&#34;; acl_default =&gt; &#34;access&#34;; aces =&gt; { @(acl) }; } We can use getfacl to inspect the permissions are as desired.</p></div>
 			<div class="post-list-footer text-center">
 				<a href="https://cmdln.org/2017/11/22/in-cfengine-how-do-i-enforce-posix-acls/">Read More</a>
 			</div>

@@ -6,7 +6,7 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.92.2" />
+<meta name="generator" content="Hugo 0.123.7">
 
 
 
@@ -117,28 +117,28 @@ is per the mustache spec to ensure that the rendered value is <strong>not</stron
 </span><span class="lnt">22
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">example</span>
-  <span class="p">{</span>
-    <span class="kd">vars</span><span class="p">:</span>
-
-        <span class="err">&#39;</span><span class="nf">d</span><span class="err">&#39;</span> <span class="kr">data</span> <span class="o">=&gt;</span> <span class="err">&#39;</span><span class="p">{</span>
-    <span class="s">&#34;index-1&#34;</span><span class="err">:</span> <span class="p">{</span>
-      <span class="s">&#34;value&#34;</span><span class="err">:</span> <span class="s">&#34;one&#34;</span>
-    <span class="p">},</span>
-    <span class="s">&#34;index-2&#34;</span><span class="err">:</span> <span class="p">{</span>
-      <span class="s">&#34;value&#34;</span><span class="err">:</span> <span class="s">&#34;two&#34;</span>
-    <span class="p">}</span>
-  <span class="p">}</span><span class="err">&#39;</span><span class="p">;</span>
-
-    <span class="kd">reports</span><span class="p">:</span>
-        <span class="s">&#34;CFEngine </span><span class="si">$(sys.cf_version)</span><span class="s">&#34;</span><span class="p">;</span> 
-        <span class="s">&#34;</span><span class="si">$(with)</span><span class="s">&#34;</span>
-          <span class="kr">with</span> <span class="o">=&gt;</span> <span class="nf">string_mustache</span><span class="p">(</span> <span class="s">&#34;Iterate over -top- and print keys:</span><span class="si">$(const.n)</span><span class="s">{{#-top-}}{{{@}}}</span><span class="si">$(const.n)</span><span class="s">{{/-top-}}&#34;</span><span class="p">,</span> <span class="nf">d</span> <span class="p">);</span>
-  <span class="p">}</span>
-  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">__main__</span>
-  <span class="p">{</span>
-    <span class="kd">methods</span><span class="p">:</span> <span class="s">&#34;example&#34;</span><span class="p">;</span>
-  <span class="p">}</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="line"><span class="cl">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">example</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">vars</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="s">&#39;d&#39;</span> <span class="kr">data</span> <span class="o">=&gt;</span> <span class="s">&#39;{
+</span></span></span><span class="line"><span class="cl"><span class="s">    &#34;index-1&#34;: {
+</span></span></span><span class="line"><span class="cl"><span class="s">      &#34;value&#34;: &#34;one&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s">    },
+</span></span></span><span class="line"><span class="cl"><span class="s">    &#34;index-2&#34;: {
+</span></span></span><span class="line"><span class="cl"><span class="s">      &#34;value&#34;: &#34;two&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s">    }
+</span></span></span><span class="line"><span class="cl"><span class="s">  }&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">reports</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="s">&#34;CFEngine </span><span class="si">$(sys.cf_version)</span><span class="s">&#34;</span><span class="p">;</span> 
+</span></span><span class="line"><span class="cl">        <span class="s">&#34;</span><span class="si">$(with)</span><span class="s">&#34;</span>
+</span></span><span class="line"><span class="cl">          <span class="kr">with</span> <span class="o">=&gt;</span> <span class="nf">string_mustache</span><span class="p">(</span> <span class="s">&#34;Iterate over -top- and print keys:</span><span class="si">$(const.n)</span><span class="s">{{#-top-}}{{{@}}}</span><span class="si">$(const.n)</span><span class="s">{{/-top-}}&#34;</span><span class="p">,</span> <span class="nf">d</span> <span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">__main__</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">methods</span><span class="p">:</span> <span class="s">&#34;example&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span></span></span></code></pre></td></tr></table>
 </div>
 </div>
 </div>

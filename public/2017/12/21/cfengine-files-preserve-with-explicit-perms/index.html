@@ -6,7 +6,7 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.92.2" />
+<meta name="generator" content="Hugo 0.123.7">
 
 
 
@@ -121,28 +121,28 @@ permissions when combined with <code class="verbatim">perms</code> body specifyi
 </span><span class="lnt">22
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">main</span>
-  <span class="p">{</span>
-    <span class="kd">files</span><span class="p">:</span>
-      <span class="s">&#34;</span><span class="si">$(this.promise_filename)</span><span class="s">.copy_preserve_and_perms&#34;</span>    
-        <span class="kr">copy_from</span> <span class="o">=&gt;</span> <span class="nf">perms_dcp</span><span class="p">(</span> <span class="err">$</span><span class="p">(</span><span class="nf">this</span><span class="err">.</span><span class="nf">promise_filename</span><span class="p">)</span> <span class="p">),</span>
-        <span class="kr">perms</span> <span class="o">=&gt;</span> <span class="nf">m</span><span class="p">(</span> <span class="mi">777</span> <span class="p">);</span>
-
-      <span class="s">&#34;</span><span class="si">$(this.promise_filename)</span><span class="s">.copy_preserve&#34;</span>    
-        <span class="kr">copy_from</span> <span class="o">=&gt;</span> <span class="nf">perms_dcp</span><span class="p">(</span> <span class="err">$</span><span class="p">(</span><span class="nf">this</span><span class="err">.</span><span class="nf">promise_filename</span><span class="p">)</span> <span class="p">);</span>
-
-    <span class="kd">reports</span><span class="p">:</span>
-      <span class="s">&#34;CFEngine </span><span class="si">$(sys.cf_version)</span><span class="s">&#34;</span><span class="p">;</span>
-
-      <span class="s">&#34;</span><span class="si">$(this.promise_filename)</span><span class="s"> mode = </span><span class="si">$(with)</span><span class="s">&#34;</span> 
-        <span class="kr">with</span> <span class="o">=&gt;</span> <span class="nf">filestat</span><span class="p">(</span> <span class="err">$</span><span class="p">(</span><span class="nf">this</span><span class="err">.</span><span class="nf">promise_filename</span><span class="p">),</span> <span class="nf">permoct</span> <span class="p">);</span>
-
-      <span class="s">&#34;</span><span class="si">$(this.promise_filename)</span><span class="s">.copy_preserve mode = </span><span class="si">$(with)</span><span class="s">&#34;</span> 
-        <span class="kr">with</span> <span class="o">=&gt;</span> <span class="nf">filestat</span><span class="p">(</span> <span class="s">&#34;</span><span class="si">$(this.promise_filename)</span><span class="s">.copy_preserve&#34;</span><span class="p">,</span> <span class="nf">permoct</span> <span class="p">);</span>
-      
-      <span class="s">&#34;</span><span class="si">$(this.promise_filename)</span><span class="s">.copy_preserve_and_perms mode = </span><span class="si">$(with)</span><span class="s">&#34;</span> 
-        <span class="kr">with</span> <span class="o">=&gt;</span> <span class="nf">filestat</span><span class="p">(</span> <span class="s">&#34;</span><span class="si">$(this.promise_filename)</span><span class="s">.copy_preserve_and_perms&#34;</span><span class="p">,</span> <span class="nf">permoct</span> <span class="p">);</span>
-  <span class="p">}</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="line"><span class="cl">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">main</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">files</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">      <span class="s">&#34;</span><span class="si">$(this.promise_filename)</span><span class="s">.copy_preserve_and_perms&#34;</span>    
+</span></span><span class="line"><span class="cl">        <span class="kr">copy_from</span> <span class="o">=&gt;</span> <span class="nf">perms_dcp</span><span class="p">(</span> <span class="nv">$(this.promise_filename)</span> <span class="p">),</span>
+</span></span><span class="line"><span class="cl">        <span class="kr">perms</span> <span class="o">=&gt;</span> <span class="nf">m</span><span class="p">(</span> <span class="mi">777</span> <span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      <span class="s">&#34;</span><span class="si">$(this.promise_filename)</span><span class="s">.copy_preserve&#34;</span>    
+</span></span><span class="line"><span class="cl">        <span class="kr">copy_from</span> <span class="o">=&gt;</span> <span class="nf">perms_dcp</span><span class="p">(</span> <span class="nv">$(this.promise_filename)</span> <span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">reports</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">      <span class="s">&#34;CFEngine </span><span class="si">$(sys.cf_version)</span><span class="s">&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      <span class="s">&#34;</span><span class="si">$(this.promise_filename)</span><span class="s"> mode = </span><span class="si">$(with)</span><span class="s">&#34;</span> 
+</span></span><span class="line"><span class="cl">        <span class="kr">with</span> <span class="o">=&gt;</span> <span class="nf">filestat</span><span class="p">(</span> <span class="nv">$(this.promise_filename)</span><span class="p">,</span> <span class="nf">permoct</span> <span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      <span class="s">&#34;</span><span class="si">$(this.promise_filename)</span><span class="s">.copy_preserve mode = </span><span class="si">$(with)</span><span class="s">&#34;</span> 
+</span></span><span class="line"><span class="cl">        <span class="kr">with</span> <span class="o">=&gt;</span> <span class="nf">filestat</span><span class="p">(</span> <span class="s">&#34;</span><span class="si">$(this.promise_filename)</span><span class="s">.copy_preserve&#34;</span><span class="p">,</span> <span class="nf">permoct</span> <span class="p">);</span>
+</span></span><span class="line"><span class="cl">      
+</span></span><span class="line"><span class="cl">      <span class="s">&#34;</span><span class="si">$(this.promise_filename)</span><span class="s">.copy_preserve_and_perms mode = </span><span class="si">$(with)</span><span class="s">&#34;</span> 
+</span></span><span class="line"><span class="cl">        <span class="kr">with</span> <span class="o">=&gt;</span> <span class="nf">filestat</span><span class="p">(</span> <span class="s">&#34;</span><span class="si">$(this.promise_filename)</span><span class="s">.copy_preserve_and_perms&#34;</span><span class="p">,</span> <span class="nf">permoct</span> <span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span></span></span></code></pre></td></tr></table>
 </div>
 </div>
 </div>

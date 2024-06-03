@@ -6,7 +6,7 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.92.2" />
+<meta name="generator" content="Hugo 0.123.7">
 
 
 
@@ -98,16 +98,16 @@ package module</a> supports it.</p>
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">main</span>
-  <span class="p">{</span>
-    <span class="kd">packages</span><span class="p">:</span>
-
-        <span class="c"># Purging a package using the --purge option
-</span><span class="c"></span>        <span class="s">&#34;screen&#34;</span>
-          <span class="kr">policy</span> <span class="o">=&gt;</span> <span class="s">&#34;absent&#34;</span><span class="p">,</span>
-          <span class="kr">package_module</span> <span class="o">=&gt;</span> <span class="nf">apt_get</span><span class="p">,</span>
-          <span class="kr">options</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="s">&#34;--remove&#34;</span> <span class="p">};</span>
-  <span class="p">}</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="line"><span class="cl">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">main</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">packages</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c"># Purging a package using the --purge option
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>        <span class="s">&#34;screen&#34;</span>
+</span></span><span class="line"><span class="cl">          <span class="kr">policy</span> <span class="o">=&gt;</span> <span class="s">&#34;absent&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="kr">package_module</span> <span class="o">=&gt;</span> <span class="nf">apt_get</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="kr">options</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="s">&#34;--remove&#34;</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span></span></span></code></pre></td></tr></table>
 </div>
 </div>
 </div>
@@ -126,14 +126,14 @@ Note that you can use any Configuration Item as well:</p>
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">main</span>
-  <span class="p">{</span>
-        <span class="c"># Purging a package using the Configuration Item option
-</span><span class="c"></span>        <span class="s">&#34;screen&#34;</span>
-          <span class="kr">policy</span> <span class="o">=&gt;</span> <span class="s">&#34;absent&#34;</span><span class="p">,</span>
-          <span class="kr">package_module</span> <span class="o">=&gt;</span> <span class="nf">apt_get</span><span class="p">,</span>
-          <span class="kr">options</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="s">&#34;-o&#34;</span><span class="p">,</span> <span class="s">&#34;APT::Get::Purge=true&#34;</span> <span class="p">};</span>
-  <span class="p">}</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="line"><span class="cl">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">main</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c"># Purging a package using the Configuration Item option
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>        <span class="s">&#34;screen&#34;</span>
+</span></span><span class="line"><span class="cl">          <span class="kr">policy</span> <span class="o">=&gt;</span> <span class="s">&#34;absent&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="kr">package_module</span> <span class="o">=&gt;</span> <span class="nf">apt_get</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="kr">options</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="s">&#34;-o&#34;</span><span class="p">,</span> <span class="nc">&#34;APT</span><span class="p">::</span><span class="nc">Get</span><span class="p">::</span><span class="nf">Purge</span><span class="err">=</span><span class="nf">true</span><span class="s">&#34; };
+</span></span></span><span class="line"><span class="cl"><span class="s">  }</span></span></span></code></pre></td></tr></table>
 </div>
 </div>
 </div>

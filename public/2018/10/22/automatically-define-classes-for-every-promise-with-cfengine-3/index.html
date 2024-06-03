@@ -6,7 +6,7 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.92.2" />
+<meta name="generator" content="Hugo 0.123.7">
 
 
 
@@ -98,16 +98,16 @@ scoped classes using the <em>results</em> classes body prefixed with <code class
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">main</span>
-  <span class="p">{</span>
-     <span class="kd">commands</span><span class="p">:</span>
-       <span class="s">&#34;echo Hello World&#34;</span> 
-         <span class="kr">contain</span> <span class="o">=&gt;</span> <span class="nf">in_shell</span><span class="p">,</span>
-         <span class="kr">classes</span> <span class="o">=&gt;</span> <span class="nf">results</span><span class="p">(</span> <span class="s">&#34;bundle&#34;</span><span class="p">,</span> <span class="s">&#34;Hello_World&#34;</span> <span class="p">);</span>
-      
-     <span class="kd">reports</span><span class="p">:</span>  
-      <span class="s">&#34;Defined Classes: </span><span class="si">$(with)</span><span class="s">&#34;</span> <span class="kr">with</span> <span class="o">=&gt;</span> <span class="nf">join</span><span class="p">(</span> <span class="s">&#34;, &#34;</span><span class="p">,</span> <span class="nf">classesmatching</span><span class="p">(</span> <span class="s">&#34;Hello_.*&#34;</span> <span class="p">)</span>  <span class="p">);</span>
-  <span class="p">}</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="line"><span class="cl">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">main</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">     <span class="kd">commands</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">       <span class="s">&#34;echo Hello World&#34;</span> 
+</span></span><span class="line"><span class="cl">         <span class="kr">contain</span> <span class="o">=&gt;</span> <span class="nf">in_shell</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">         <span class="kr">classes</span> <span class="o">=&gt;</span> <span class="nf">results</span><span class="p">(</span> <span class="s">&#34;bundle&#34;</span><span class="p">,</span> <span class="s">&#34;Hello_World&#34;</span> <span class="p">);</span>
+</span></span><span class="line"><span class="cl">      
+</span></span><span class="line"><span class="cl">     <span class="kd">reports</span><span class="p">:</span>  
+</span></span><span class="line"><span class="cl">      <span class="s">&#34;Defined Classes: </span><span class="si">$(with)</span><span class="s">&#34;</span> <span class="kr">with</span> <span class="o">=&gt;</span> <span class="nf">join</span><span class="p">(</span> <span class="s">&#34;, &#34;</span><span class="p">,</span> <span class="nf">classesmatching</span><span class="p">(</span> <span class="s">&#34;Hello_.*&#34;</span> <span class="p">)</span>  <span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span></span></span></code></pre></td></tr></table>
 </div>
 </div>
 </div>
@@ -186,56 +186,56 @@ promise which does not use an explicit classes body.</p>
 </span><span class="lnt">50
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">main</span>
-  <span class="p">{</span>
-
-    <span class="kd">commands</span><span class="p">:</span>
-        <span class="s">&#34;echo Hello&#34;</span>
-          <span class="kr">handle</span> <span class="o">=&gt;</span> <span class="s">&#34;command_echo_hello&#34;</span><span class="p">,</span>
-          <span class="kr">contain</span> <span class="o">=&gt;</span> <span class="nf">in_shell</span><span class="p">;</span>
-
-        <span class="s">&#34;echo GoodBye&#34;</span>
-          <span class="kr">handle</span> <span class="o">=&gt;</span> <span class="s">&#34;command_echo_GoodBye&#34;</span><span class="p">,</span>
-          <span class="kr">contain</span> <span class="o">=&gt;</span> <span class="nf">in_shell</span><span class="p">,</span>
-          <span class="kr">classes</span> <span class="o">=&gt;</span> <span class="nf">results</span><span class="p">(</span> <span class="s">&#34;namespace&#34;</span><span class="p">,</span> <span class="s">&#34;GoodBye&#34;</span> <span class="p">);</span>
- 
-    <span class="kd">vars</span><span class="p">:</span>
-        <span class="p">&#34;</span><span class="nv">c</span><span class="p">&#34;</span> <span class="kt">slist</span> <span class="o">=&gt;</span> <span class="nf">classesmatching</span><span class="p">(</span> <span class="s">&#34;.*_(reached|repaired|kept|not_kept|error)&#34;</span> <span class="p">);</span>
-
-    <span class="kd">reports</span><span class="p">:</span>
-       <span class="s">&#34;</span><span class="si">$(c)</span><span class="s">&#34;</span><span class="p">;</span>
-  <span class="p">}</span>
-
-  <span class="k">body</span> <span class="k">file</span> <span class="k">control</span>
-  <span class="p">{</span>
-          <span class="kr">namespace</span> <span class="o">=&gt;</span> <span class="s">&#34;bodydefault&#34;</span><span class="p">;</span>
-  <span class="p">}</span>
-
-  <span class="k">body</span> <span class="k">classes</span> <span class="nf">commands_classes</span>
-  <span class="p">{</span>
-    <span class="kr">scope</span> <span class="o">=&gt;</span> <span class="s">&#34;namespace&#34;</span><span class="p">;</span>
-
-    <span class="kr">promise_kept</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="s">&#34;</span><span class="si">$(this.handle)</span><span class="s">_reached&#34;</span><span class="p">,</span>
-                      <span class="s">&#34;</span><span class="si">$(this.handle)</span><span class="s">_kept&#34;</span> <span class="p">};</span>
-
-    <span class="kr">promise_repaired</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="s">&#34;</span><span class="si">$(this.handle)</span><span class="s">_reached&#34;</span><span class="p">,</span>
-                          <span class="s">&#34;</span><span class="si">$(this.handle)</span><span class="s">_repaired&#34;</span> <span class="p">};</span>
-
-    <span class="kr">repair_failed</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="s">&#34;</span><span class="si">$(this.handle)</span><span class="s">_reached&#34;</span><span class="p">,</span>
-                       <span class="s">&#34;</span><span class="si">$(this.handle)</span><span class="s">_error&#34;</span><span class="p">,</span>
-                       <span class="s">&#34;</span><span class="si">$(this.handle)</span><span class="s">_not_kept&#34;</span><span class="p">,</span>
-                       <span class="s">&#34;</span><span class="si">$(this.handle)</span><span class="s">_failed&#34;</span> <span class="p">};</span>
-
-    <span class="kr">repair_denied</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="s">&#34;</span><span class="si">$(this.handle)</span><span class="s">_reached&#34;</span><span class="p">,</span>
-                       <span class="s">&#34;</span><span class="si">$(this.handle)</span><span class="s">_error&#34;</span><span class="p">,</span>
-                       <span class="s">&#34;</span><span class="si">$(this.handle)</span><span class="s">_not_kept&#34;</span><span class="p">,</span>
-                       <span class="s">&#34;</span><span class="si">$(this.handle)</span><span class="s">_denied&#34;</span> <span class="p">};</span>
-
-    <span class="kr">repair_timeout</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="s">&#34;</span><span class="si">$(this.handle)</span><span class="s">_reached&#34;</span><span class="p">,</span>
-                        <span class="s">&#34;</span><span class="si">$(this.handle)</span><span class="s">_error&#34;</span><span class="p">,</span>
-                        <span class="s">&#34;</span><span class="si">$(this.handle)</span><span class="s">_not_kept&#34;</span><span class="p">,</span>
-                        <span class="s">&#34;</span><span class="si">$(this.handle)</span><span class="s">_timeout&#34;</span> <span class="p">};</span>
-  <span class="p">}</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="line"><span class="cl">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">main</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">commands</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="s">&#34;echo Hello&#34;</span>
+</span></span><span class="line"><span class="cl">          <span class="kr">handle</span> <span class="o">=&gt;</span> <span class="s">&#34;command_echo_hello&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="kr">contain</span> <span class="o">=&gt;</span> <span class="nf">in_shell</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="s">&#34;echo GoodBye&#34;</span>
+</span></span><span class="line"><span class="cl">          <span class="kr">handle</span> <span class="o">=&gt;</span> <span class="s">&#34;command_echo_GoodBye&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="kr">contain</span> <span class="o">=&gt;</span> <span class="nf">in_shell</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="kr">classes</span> <span class="o">=&gt;</span> <span class="nf">results</span><span class="p">(</span> <span class="s">&#34;namespace&#34;</span><span class="p">,</span> <span class="s">&#34;GoodBye&#34;</span> <span class="p">);</span>
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl">    <span class="kd">vars</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="s">&#34;c&#34;</span> <span class="kr">slist</span> <span class="o">=&gt;</span> <span class="nf">classesmatching</span><span class="p">(</span> <span class="s">&#34;.*_(reached|repaired|kept|not_kept|error)&#34;</span> <span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">reports</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">       <span class="s">&#34;</span><span class="si">$(c)</span><span class="s">&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">body</span> <span class="k">file</span> <span class="k">control</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">          <span class="kr">namespace</span> <span class="o">=&gt;</span> <span class="s">&#34;bodydefault&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">body</span> <span class="k">classes</span> <span class="nf">commands_classes</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">scope</span> <span class="o">=&gt;</span> <span class="s">&#34;namespace&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kr">promise_kept</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="s">&#34;</span><span class="si">$(this.handle)</span><span class="s">_reached&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                      <span class="s">&#34;</span><span class="si">$(this.handle)</span><span class="s">_kept&#34;</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kr">promise_repaired</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="s">&#34;</span><span class="si">$(this.handle)</span><span class="s">_reached&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                          <span class="s">&#34;</span><span class="si">$(this.handle)</span><span class="s">_repaired&#34;</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kr">repair_failed</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="s">&#34;</span><span class="si">$(this.handle)</span><span class="s">_reached&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                       <span class="s">&#34;</span><span class="si">$(this.handle)</span><span class="s">_error&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                       <span class="s">&#34;</span><span class="si">$(this.handle)</span><span class="s">_not_kept&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                       <span class="s">&#34;</span><span class="si">$(this.handle)</span><span class="s">_failed&#34;</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kr">repair_denied</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="s">&#34;</span><span class="si">$(this.handle)</span><span class="s">_reached&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                       <span class="s">&#34;</span><span class="si">$(this.handle)</span><span class="s">_error&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                       <span class="s">&#34;</span><span class="si">$(this.handle)</span><span class="s">_not_kept&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                       <span class="s">&#34;</span><span class="si">$(this.handle)</span><span class="s">_denied&#34;</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kr">repair_timeout</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="s">&#34;</span><span class="si">$(this.handle)</span><span class="s">_reached&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                        <span class="s">&#34;</span><span class="si">$(this.handle)</span><span class="s">_error&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                        <span class="s">&#34;</span><span class="si">$(this.handle)</span><span class="s">_not_kept&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                        <span class="s">&#34;</span><span class="si">$(this.handle)</span><span class="s">_timeout&#34;</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span></span></span></code></pre></td></tr></table>
 </div>
 </div>
 </div>

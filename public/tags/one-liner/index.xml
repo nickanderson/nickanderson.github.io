@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>one liner on </title>
+    <title>One Liner on </title>
     <link>https://cmdln.org/tags/one-liner/</link>
-    <description>Recent content in one liner on </description>
+    <description>Recent content in One Liner on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 18 Feb 2009 16:08:58 +0000</lastBuildDate><atom:link href="https://cmdln.org/tags/one-liner/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Wed, 18 Feb 2009 16:08:58 +0000</lastBuildDate>
+    <atom:link href="https://cmdln.org/tags/one-liner/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Another commandline junkie</title>
       <link>https://cmdln.org/2009/02/18/another-commandline-junkie/</link>
       <pubDate>Wed, 18 Feb 2009 16:08:58 +0000</pubDate>
-      
       <guid>https://cmdln.org/2009/02/18/another-commandline-junkie/</guid>
       <description>Waddya know I’m not the only geek with an affinity for the console. This could be interesting. Repository of useful one liners.</description>
     </item>
-    
   </channel>
 </rss>

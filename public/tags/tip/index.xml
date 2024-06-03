@@ -1,82 +1,61 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>tip on </title>
+    <title>Tip on </title>
     <link>https://cmdln.org/tags/tip/</link>
-    <description>Recent content in tip on </description>
+    <description>Recent content in Tip on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 18 Oct 2012 21:00:49 +0000</lastBuildDate><atom:link href="https://cmdln.org/tags/tip/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Thu, 18 Oct 2012 21:00:49 +0000</lastBuildDate>
+    <atom:link href="https://cmdln.org/tags/tip/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CFEngine 3 Tip: Find out what classes are being defined</title>
       <link>https://cmdln.org/2012/10/18/cfengine-3-tip-find-out-what-classes-are-being-defined/</link>
       <pubDate>Thu, 18 Oct 2012 21:00:49 +0000</pubDate>
-      
       <guid>https://cmdln.org/2012/10/18/cfengine-3-tip-find-out-what-classes-are-being-defined/</guid>
-      <description>CFEngine defines a classes for decision making during runs. Many of these hard classes you can see by running cf-promises -v. That wont show you all the other classes that are raised during a policy run.
-You could run something like this to see what classes are raised during execution.
-cf-agent -KIv | grep &#34;cf3&amp;gt;\s*+&#34; | grep -v : But that isn’t really a clear picture under normal operation. You can use the allclassesreport in body agent control to write out a list of classes defined during execution in /var/cfengine/state/allclasses.</description>
+      <description>CFEngine defines a classes for decision making during runs. Many of these hard classes you can see by running cf-promises -v. That wont show you all the other classes that are raised during a policy run.&#xA;You could run something like this to see what classes are raised during execution.&#xA;cf-agent -KIv | grep &#34;cf3&amp;gt;\s*+&#34; | grep -v : But that isn’t really a clear picture under normal operation. You can use the allclassesreport in body agent control to write out a list of classes defined during execution in /var/cfengine/state/allclasses.</description>
     </item>
-    
     <item>
       <title>Quick Tip: Disable Help (F1) in gnome-terminal</title>
       <link>https://cmdln.org/2010/12/28/quick-tip-disable-help-f1-in-gnome-terminal/</link>
       <pubDate>Wed, 29 Dec 2010 01:36:17 +0000</pubDate>
-      
       <guid>https://cmdln.org/2010/12/28/quick-tip-disable-help-f1-in-gnome-terminal/</guid>
       <description>I know I have been pretty silent for a while, what can I say it has been busy. I did want to drop this little tip though. I use vim and gnome-terminal a LOT, so I hit ESC quite frequently. Being so close to the F1 key can be hazardous as I tend to mash the ESC key several times. I have no idea where I picked up the habbit of hitting ESC multiple times but its something I have done for a long time and I don’t see me retraining myself any time soon.</description>
     </item>
-    
     <item>
       <title>Migrating to Google Apps: changing mailto link</title>
       <link>https://cmdln.org/2010/09/23/migrating-to-google-apps-changing-mailto-link/</link>
       <pubDate>Fri, 24 Sep 2010 03:42:57 +0000</pubDate>
-      
       <guid>https://cmdln.org/2010/09/23/migrating-to-google-apps-changing-mailto-link/</guid>
-      <description>At $work we are in the process of migrating to Google Apps. Of course I am an early adopter to work out bugs and be a resource for others as they make the migration. One of the issues identified is mailto links pointing to google apps. Its not hard to make the change in firefox.
-First you need to set ﻿﻿gecko.handlerService.allowRegisterFromDifferentHost to true in about:config (type about:config into your address bar).</description>
+      <description>At $work we are in the process of migrating to Google Apps. Of course I am an early adopter to work out bugs and be a resource for others as they make the migration. One of the issues identified is mailto links pointing to google apps. Its not hard to make the change in firefox.&#xA;First you need to set ﻿﻿gecko.handlerService.allowRegisterFromDifferentHost to true in about:config (type about:config into your address bar).</description>
     </item>
-    
     <item>
       <title>Remove Google Everything Sidebar &amp;#8212; Again</title>
       <link>https://cmdln.org/2010/05/06/remove-google-everything-sidebar-again/</link>
       <pubDate>Thu, 06 May 2010 13:41:36 +0000</pubDate>
-      
       <guid>https://cmdln.org/2010/05/06/remove-google-everything-sidebar-again/</guid>
-      <description>Yesterday I had a tip on removing yourself from any testing for that google sidebar that your likely seeing in your search results now. I woke up to a nasty surprise. After removing the cookie yesterday, today I had the bar again. So I removed the cookie again, and it came right back. Thats when a friend pointed out that google was rolling it out to everyone. OH NO!
-Well, luckily you can get a browser extension for Firefox or Chrome that makes it disappear from the guys over at seotools.</description>
+      <description>Yesterday I had a tip on removing yourself from any testing for that google sidebar that your likely seeing in your search results now. I woke up to a nasty surprise. After removing the cookie yesterday, today I had the bar again. So I removed the cookie again, and it came right back. Thats when a friend pointed out that google was rolling it out to everyone. OH NO!&#xA;Well, luckily you can get a browser extension for Firefox or Chrome that makes it disappear from the guys over at seotools.</description>
     </item>
-    
     <item>
       <title>One liners: a tip</title>
       <link>https://cmdln.org/2009/08/22/one-liners-a-tip/</link>
       <pubDate>Sat, 22 Aug 2009 19:07:46 +0000</pubDate>
-      
       <guid>https://cmdln.org/2009/08/22/one-liners-a-tip/</guid>
-      <description>Have you ever started writing a one-liner and half way in realized it was a bit more complex than you first thought?
-If your shell is bash, next time that happens try ctrl-x ctrl-e.
-It will take your current line and stuff it into the your default editor (export EDITOR=vim).</description>
+      <description>Have you ever started writing a one-liner and half way in realized it was a bit more complex than you first thought?&#xA;If your shell is bash, next time that happens try ctrl-x ctrl-e.&#xA;It will take your current line and stuff it into the your default editor (export EDITOR=vim).</description>
     </item>
-    
     <item>
       <title>Automatic session logging and monitoring with GNU screen for the paranoid.</title>
       <link>https://cmdln.org/2007/07/20/automatic-session-logging-and-monitoring-with-gnu-screen-for-the-paranoid/</link>
       <pubDate>Fri, 20 Jul 2007 14:07:53 +0000</pubDate>
-      
       <guid>https://cmdln.org/2007/07/20/automatic-session-logging-and-monitoring-with-gnu-screen-for-the-paranoid/</guid>
       <description>&lt;p&gt;Yes its been a while since I have checked in. Sorry I’ve just been too busy. But I have a great tip this time. Recently I had the need to do automatic session logging. A 3rd party was going to be logging into one of my servers to check out some software glitches that were happening. I love using GNU Screen for many shell tasks so using it for monitoring was logical. Screen is great for several reasons. First you can detach from it so you can leave the office, go home and re-attach and not have lost your place. Second, you can share another screen. It can be shared input or you can just watch what someone else is doing. Finally screen can do native logging. I wanted to automattically launch a screen session when somone logged in so if I happened to be on the server I could monitor them in real time. I also wanted a log of the session in case I wanted to look over it later or if I was not able to monitor the session live.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Xen and Gentoo</title>
       <link>https://cmdln.org/2006/09/11/xen-and-gentoo/</link>
       <pubDate>Mon, 11 Sep 2006 14:12:41 +0000</pubDate>
-      
       <guid>https://cmdln.org/2006/09/11/xen-and-gentoo/</guid>
-      <description>I am in the process of setting up Xen on one of my new servers. Just sticking some notes here. Will clean them up later
-`I am in the process of setting up Xen on one of my new servers. Just sticking some notes here. Will clean them up later
-` No need for kernel level ip address in xen config file set ip =”off”;
-DO NOT SET eth0 to start on boot!</description>
+      <description>I am in the process of setting up Xen on one of my new servers. Just sticking some notes here. Will clean them up later&#xA;`I am in the process of setting up Xen on one of my new servers. Just sticking some notes here. Will clean them up later&#xA;` No need for kernel level ip address in xen config file set ip =”off”;&#xA;DO NOT SET eth0 to start on boot!</description>
     </item>
-    
   </channel>
 </rss>

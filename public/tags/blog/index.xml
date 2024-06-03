@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>blog on </title>
+    <title>Blog on </title>
     <link>https://cmdln.org/tags/blog/</link>
-    <description>Recent content in blog on </description>
+    <description>Recent content in Blog on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 26 Oct 2008 15:37:48 +0000</lastBuildDate><atom:link href="https://cmdln.org/tags/blog/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Sun, 26 Oct 2008 15:37:48 +0000</lastBuildDate>
+    <atom:link href="https://cmdln.org/tags/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Vim &#43; wordpress == vimpress, happiness</title>
       <link>https://cmdln.org/2008/10/26/vim-wordpress-vimpress-happiness/</link>
       <pubDate>Sun, 26 Oct 2008 15:37:48 +0000</pubDate>
-      
       <guid>https://cmdln.org/2008/10/26/vim-wordpress-vimpress-happiness/</guid>
       <description>&lt;p&gt;I recently found a vim plug-in for WordPress. &lt;a href=&#34;http://friggeri.net/blog/2007/07/13/vimpress&#34;&gt;Vimpress&lt;/a&gt; allows your to write and edit your blog posts directly from vim. Sure it has its limitations. There does not appear to be support for future data publishing or drafts. But overall its a much better experience to write in vim than the built in editor.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

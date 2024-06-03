@@ -6,7 +6,7 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.92.2" />
+<meta name="generator" content="Hugo 0.123.7">
 
 
 
@@ -207,88 +207,88 @@
 </span><span class="lnt">81
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-Text" data-lang="Text">
-&lt;!--adsense--&gt;
-
-&lt;pre class=&#34;brush: bash; title: ; notranslate&#34; title=&#34;&#34;&gt;awk &#39;/pattern/{print x};{x=$0}&#39;
-&lt;/pre&gt;
-
-You might also wonder why you might want to do that. Well the reason I wanted to do it was to pull the sar output of the last run. Sar output ends in ^Average: but I just wanted the line before that so this is what I came up with.
-
-&lt;pre class=&#34;brush: bash; title: ; notranslate&#34; title=&#34;&#34;&gt;sar | awk &#39;/^Average:/{print x};{x=$0}&#39;
-&lt;/pre&gt;
-
-That just spits out the last recorded sar information like this.
-  
-`Text processing is fun. Well, fun if you like to beat your head against a wall. Most of the time I just string a few things together to get whatever I am doing done. Its much better to find the shortest way to do something, it spawns less processes, is more efficient and generally a good idea. So if you have ever wanted to match a string from some given output and only print the preceding line here you go.&lt;!--more--&gt;
-
-&lt;!--adsense--&gt;
-
-&lt;pre class=&#34;brush: bash; title: ; notranslate&#34; title=&#34;&#34;&gt;awk &#39;/pattern/{print x};{x=$0}&#39;
-&lt;/pre&gt;
-
-You might also wonder why you might want to do that. Well the reason I wanted to do it was to pull the sar output of the last run. Sar output ends in ^Average: but I just wanted the line before that so this is what I came up with.
-
-&lt;pre class=&#34;brush: bash; title: ; notranslate&#34; title=&#34;&#34;&gt;sar | awk &#39;/^Average:/{print x};{x=$0}&#39;
-&lt;/pre&gt;
-
-That just spits out the last recorded sar information like this.
-  
-` 
-  
-Great for using in scripts to collect bits of information you might need.
-
-Oh and for good measure if I wanted to do this before I would have done this.
-
-&lt;pre class=&#34;brush: bash; title: ; notranslate&#34; title=&#34;&#34;&gt;sar | grep -B1 ^Average: | grep -v ^Average
-&lt;/pre&gt;
-
-And look at how much time I saved by not having the extra pipe!
-  
-``Text processing is fun. Well, fun if you like to beat your head against a wall. Most of the time I just string a few things together to get whatever I am doing done. Its much better to find the shortest way to do something, it spawns less processes, is more efficient and generally a good idea. So if you have ever wanted to match a string from some given output and only print the preceding line here you go.&lt;!--more--&gt;
-
-&lt;!--adsense--&gt;
-
-&lt;pre class=&#34;brush: bash; title: ; notranslate&#34; title=&#34;&#34;&gt;awk &#39;/pattern/{print x};{x=$0}&#39;
-&lt;/pre&gt;
-
-You might also wonder why you might want to do that. Well the reason I wanted to do it was to pull the sar output of the last run. Sar output ends in ^Average: but I just wanted the line before that so this is what I came up with.
-
-&lt;pre class=&#34;brush: bash; title: ; notranslate&#34; title=&#34;&#34;&gt;sar | awk &#39;/^Average:/{print x};{x=$0}&#39;
-&lt;/pre&gt;
-
-That just spits out the last recorded sar information like this.
-  
-`Text processing is fun. Well, fun if you like to beat your head against a wall. Most of the time I just string a few things together to get whatever I am doing done. Its much better to find the shortest way to do something, it spawns less processes, is more efficient and generally a good idea. So if you have ever wanted to match a string from some given output and only print the preceding line here you go.&lt;!--more--&gt;
-
-&lt;!--adsense--&gt;
-
-&lt;pre class=&#34;brush: bash; title: ; notranslate&#34; title=&#34;&#34;&gt;awk &#39;/pattern/{print x};{x=$0}&#39;
-&lt;/pre&gt;
-
-You might also wonder why you might want to do that. Well the reason I wanted to do it was to pull the sar output of the last run. Sar output ends in ^Average: but I just wanted the line before that so this is what I came up with.
-
-&lt;pre class=&#34;brush: bash; title: ; notranslate&#34; title=&#34;&#34;&gt;sar | awk &#39;/^Average:/{print x};{x=$0}&#39;
-&lt;/pre&gt;
-
-That just spits out the last recorded sar information like this.
-  
-` 
-  
-Great for using in scripts to collect bits of information you might need.
-
-Oh and for good measure if I wanted to do this before I would have done this.
-
-&lt;pre class=&#34;brush: bash; title: ; notranslate&#34; title=&#34;&#34;&gt;sar | grep -B1 ^Average: | grep -v ^Average
-&lt;/pre&gt;
-
-And look at how much time I saved by not having the extra pipe!
-  
-`` 
-  
-vs
-  
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-Text" data-lang="Text"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;!--adsense--&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;pre class=&#34;brush: bash; title: ; notranslate&#34; title=&#34;&#34;&gt;awk &#39;/pattern/{print x};{x=$0}&#39;
+</span></span><span class="line"><span class="cl">&lt;/pre&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">You might also wonder why you might want to do that. Well the reason I wanted to do it was to pull the sar output of the last run. Sar output ends in ^Average: but I just wanted the line before that so this is what I came up with.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;pre class=&#34;brush: bash; title: ; notranslate&#34; title=&#34;&#34;&gt;sar | awk &#39;/^Average:/{print x};{x=$0}&#39;
+</span></span><span class="line"><span class="cl">&lt;/pre&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">That just spits out the last recorded sar information like this.
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">`Text processing is fun. Well, fun if you like to beat your head against a wall. Most of the time I just string a few things together to get whatever I am doing done. Its much better to find the shortest way to do something, it spawns less processes, is more efficient and generally a good idea. So if you have ever wanted to match a string from some given output and only print the preceding line here you go.&lt;!--more--&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;!--adsense--&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;pre class=&#34;brush: bash; title: ; notranslate&#34; title=&#34;&#34;&gt;awk &#39;/pattern/{print x};{x=$0}&#39;
+</span></span><span class="line"><span class="cl">&lt;/pre&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">You might also wonder why you might want to do that. Well the reason I wanted to do it was to pull the sar output of the last run. Sar output ends in ^Average: but I just wanted the line before that so this is what I came up with.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;pre class=&#34;brush: bash; title: ; notranslate&#34; title=&#34;&#34;&gt;sar | awk &#39;/^Average:/{print x};{x=$0}&#39;
+</span></span><span class="line"><span class="cl">&lt;/pre&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">That just spits out the last recorded sar information like this.
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">` 
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">Great for using in scripts to collect bits of information you might need.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Oh and for good measure if I wanted to do this before I would have done this.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;pre class=&#34;brush: bash; title: ; notranslate&#34; title=&#34;&#34;&gt;sar | grep -B1 ^Average: | grep -v ^Average
+</span></span><span class="line"><span class="cl">&lt;/pre&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">And look at how much time I saved by not having the extra pipe!
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">``Text processing is fun. Well, fun if you like to beat your head against a wall. Most of the time I just string a few things together to get whatever I am doing done. Its much better to find the shortest way to do something, it spawns less processes, is more efficient and generally a good idea. So if you have ever wanted to match a string from some given output and only print the preceding line here you go.&lt;!--more--&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;!--adsense--&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;pre class=&#34;brush: bash; title: ; notranslate&#34; title=&#34;&#34;&gt;awk &#39;/pattern/{print x};{x=$0}&#39;
+</span></span><span class="line"><span class="cl">&lt;/pre&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">You might also wonder why you might want to do that. Well the reason I wanted to do it was to pull the sar output of the last run. Sar output ends in ^Average: but I just wanted the line before that so this is what I came up with.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;pre class=&#34;brush: bash; title: ; notranslate&#34; title=&#34;&#34;&gt;sar | awk &#39;/^Average:/{print x};{x=$0}&#39;
+</span></span><span class="line"><span class="cl">&lt;/pre&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">That just spits out the last recorded sar information like this.
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">`Text processing is fun. Well, fun if you like to beat your head against a wall. Most of the time I just string a few things together to get whatever I am doing done. Its much better to find the shortest way to do something, it spawns less processes, is more efficient and generally a good idea. So if you have ever wanted to match a string from some given output and only print the preceding line here you go.&lt;!--more--&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;!--adsense--&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;pre class=&#34;brush: bash; title: ; notranslate&#34; title=&#34;&#34;&gt;awk &#39;/pattern/{print x};{x=$0}&#39;
+</span></span><span class="line"><span class="cl">&lt;/pre&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">You might also wonder why you might want to do that. Well the reason I wanted to do it was to pull the sar output of the last run. Sar output ends in ^Average: but I just wanted the line before that so this is what I came up with.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;pre class=&#34;brush: bash; title: ; notranslate&#34; title=&#34;&#34;&gt;sar | awk &#39;/^Average:/{print x};{x=$0}&#39;
+</span></span><span class="line"><span class="cl">&lt;/pre&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">That just spits out the last recorded sar information like this.
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">` 
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">Great for using in scripts to collect bits of information you might need.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Oh and for good measure if I wanted to do this before I would have done this.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;pre class=&#34;brush: bash; title: ; notranslate&#34; title=&#34;&#34;&gt;sar | grep -B1 ^Average: | grep -v ^Average
+</span></span><span class="line"><span class="cl">&lt;/pre&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">And look at how much time I saved by not having the extra pipe!
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">`` 
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">vs
+</span></span><span class="line"><span class="cl">  
+</span></span></code></pre></td></tr></table>
 </div>
 </div>
                 </div>

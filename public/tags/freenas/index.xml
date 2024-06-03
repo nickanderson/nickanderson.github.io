@@ -5,16 +5,15 @@
     <link>https://cmdln.org/tags/freenas/</link>
     <description>Recent content in FreeNAS on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 21 Aug 2015 04:51:59 +0000</lastBuildDate><atom:link href="https://cmdln.org/tags/freenas/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Fri, 21 Aug 2015 04:51:59 +0000</lastBuildDate>
+    <atom:link href="https://cmdln.org/tags/freenas/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CFEngine fixin my FreeNAS</title>
       <link>https://cmdln.org/2015/08/20/cfengine-fixin-my-freenas/</link>
       <pubDate>Fri, 21 Aug 2015 04:51:59 +0000</pubDate>
-      
       <guid>https://cmdln.org/2015/08/20/cfengine-fixin-my-freenas/</guid>
-      <description>I recently built a new file server and I based it on the well renowned FreeNAS by iXsystems. It’s been pretty solid over the past few weeks but today I ran into an issue. The web ui stopped responding. Actually it turned out that the django service had stopped. Well, that was the perfect opportunity to use CFEngine to make sure I never have the issue again.
-I grabbed the cfengine community 3.</description>
+      <description>I recently built a new file server and I based it on the well renowned FreeNAS by iXsystems. It’s been pretty solid over the past few weeks but today I ran into an issue. The web ui stopped responding. Actually it turned out that the django service had stopped. Well, that was the perfect opportunity to use CFEngine to make sure I never have the issue again.&#xA;I grabbed the cfengine community 3.</description>
     </item>
-    
   </channel>
 </rss>

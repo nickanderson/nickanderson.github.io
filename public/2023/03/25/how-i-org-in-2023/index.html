@@ -6,7 +6,7 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.92.2" />
+<meta name="generator" content="Hugo 0.123.7">
 
 
 
@@ -92,7 +92,7 @@
 <iframe width="560" height="315" src="https://www.youtube.com/embed/8A52ZXPhJFk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 <h2 id="system">System</h2>
 <p>I don&rsquo;t really use any existing workflow or organization methodology like PARA, CODE, ACCESS, Johnny Decimal, etc &hellip; I don&rsquo;t know that I am organized (or disciplined?) enough to follow some thing like that. I appreciate them and pick up ideas reading about methodologies that work for others.</p>
-<p>I use the Nick Anderson S.H.I.T. (Stuff here &lsquo;n there) methodology.</p>
+<p>I use the Nick Anderson S.H.I.T. (Stuff here &rsquo;n there) methodology.</p>
 <figure><img src="nick-anderson-shit-method.png"
          alt="Figure 2: Martti Bergström (@masi@fosstodon.org) uses the Nick Anderson SHIT meethod. https://fosstodon.org/@masi/110266696809445948" width="50%"/><figcaption>
             <p><span class="figure-number">Figure 2: </span>Martti Bergström (@masi@fosstodon.org) uses the Nick Anderson SHIT meethod. <a href="https://fosstodon.org/@masi/110266696809445948">https://fosstodon.org/@masi/110266696809445948</a></p>
@@ -180,7 +180,7 @@ Copying and pasting between a console and what I am writing introduces much chan
 </figure>
 
 <p>The work log capture template includes a backlink to the stand-up note for the day, so I follow that link and start going through my template filling it out. The template has a headline for each person with a property that links to a node for the individual. My own section contains a clock table which quickly produces a nice list of the entries with clocked time from the previous day (on Mondays or days when I have missed prior N days I tweak the clock table to pull for the right number of previous days). I review the table to see how good I was about clocking the previous day back-filling anything that I neglected to record then delete time columns.</p>
-<p>At the end of the meeting I use <code>org-mime</code><sup id="fnref:11"><a href="#fn:11" class="footnote-ref" role="doc-noteref">11</a></sup> to prepare a nicely formatted multipart ASCII &amp; HTML email. After sending the mail I switch back to my work log capture and complete it. All of my regularly scheduled meetings follow the same process; I capture for the meeting template, then I capture to my work log clocking time with an automatic backlink back to the specific meeting note. It&rsquo;s easy to capture notes for yesterday, tomorrow or an arbitrary date in the future using <code>org-roam-dailies-capture-yesterday</code>, <code>org-roam-dailies-capture-tomorrow</code>, and <code>org-roam-dailies-capture-date</code>.</p>
+<p>At the end of the meeting I use <code>org-mime</code><sup id="fnref1:11"><a href="#fn:11" class="footnote-ref" role="doc-noteref">11</a></sup> to prepare a nicely formatted multipart ASCII &amp; HTML email. After sending the mail I switch back to my work log capture and complete it. All of my regularly scheduled meetings follow the same process; I capture for the meeting template, then I capture to my work log clocking time with an automatic backlink back to the specific meeting note. It&rsquo;s easy to capture notes for yesterday, tomorrow or an arbitrary date in the future using <code>org-roam-dailies-capture-yesterday</code>, <code>org-roam-dailies-capture-tomorrow</code>, and <code>org-roam-dailies-capture-date</code>.</p>
 <p>Org-roam provides useful functions for accessing time-series notes. <code>org-roam-dailies-goto-today</code> will take you to today&rsquo;s note for the selected template and if the file does not exist it is initialized. Similarly <code>org-roam-dailies-goto-yesterday</code>, <code>org-roam-dailies-goto-tomorrow</code>, and <code>org-roam-dailies-goto-date</code> take you to the note for yesterday, tomorrow, or the specified date, creating the file if necessary. <code>org-roam-dailies-goto-previous</code> and <code>org-roam-dailies-goto-next</code> go to the previous and next note in the series based on the file you are currently visiting making for easy navigation through the time series.</p>
 <p><code>org-roam-node-random</code> is fun, as it says, it takes you to a random node. It&rsquo;s nice for serendipitous stumbles.</p>
 <p>If I am working on something that has some regular pattern but is not a recurring time series I follow a similar pattern, but instead of <code>org-roam-dailies-capture</code> I run <code>org-roam-capture</code>. Unlike <code>org-roam-dailies-capture</code> <code>org-roam-capture</code> first prompts for a node title and you select a template afterwords. For example, if I am working on support case I will run <code>org-roam-capture</code>, enter the issue number and then key in <code>w</code> (work) <code>s</code> (support). I am taken to a new node in the file for that support case where I immediately trigger <code>org-roam-dailies-capture</code> for my work log which starts clocking time and I follow the link back to the node to continue my work.</p>
@@ -218,29 +218,29 @@ I currently have  <code>15189</code> nodes across <code>4716</code> files in org
 </span><span class="lnt">22
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="p">(</span><span class="s">&#34;e&#34;</span> <span class="s">&#34;Email&#34;</span><span class="p">)</span>
-<span class="p">(</span><span class="s">&#34;er&#34;</span> <span class="s">&#34;Response&#34;</span> <span class="nv">entry</span>
- <span class="s">&#34;* Respond to %:from: %:subject :email:
-</span><span class="s">:properties:
-</span><span class="s">:mail_from: Nick Anderson &lt;nick.anderson@northern.tech&gt;
-</span><span class="s">:mail_to: %:fromaddress
-</span><span class="s">:MAIL_IN_REPLY_TO: &lt;%:message-id&gt;
-</span><span class="s">:MAIL_SUBJECT: %:subject
-</span><span class="s">:REF: %a
-</span><span class="s">:end:
-</span><span class="s">#+begin_quote
-</span><span class="s">   %i
-</span><span class="s">#+end_quote
-</span><span class="s">
-</span><span class="s">%?&#34;</span>
- <span class="nb">:if-new</span> <span class="p">(</span><span class="nv">file+head</span> <span class="o">,</span><span class="p">(</span><span class="nf">expand-file-name</span>
-                      <span class="s">&#34;work/%&lt;%Y-%m-%d&gt;.org&#34;</span>
-                      <span class="nv">org-roam-dailies-directory</span><span class="p">)</span>
-                    <span class="s">&#34;#+title: Work log for %&lt;%Y-%m-%d&gt;&#34;</span><span class="p">)</span>
- <span class="nb">:clock-in</span> <span class="no">t</span>
- <span class="nb">:clock-resume</span> <span class="no">t</span>
- <span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="s">&#34;e&#34;</span> <span class="s">&#34;Email&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="s">&#34;er&#34;</span> <span class="s">&#34;Response&#34;</span> <span class="nv">entry</span>
+</span></span><span class="line"><span class="cl"> <span class="s">&#34;* Respond to %:from: %:subject :email:
+</span></span></span><span class="line"><span class="cl"><span class="s">:properties:
+</span></span></span><span class="line"><span class="cl"><span class="s">:mail_from: Nick Anderson &lt;nick.anderson@northern.tech&gt;
+</span></span></span><span class="line"><span class="cl"><span class="s">:mail_to: %:fromaddress
+</span></span></span><span class="line"><span class="cl"><span class="s">:MAIL_IN_REPLY_TO: &lt;%:message-id&gt;
+</span></span></span><span class="line"><span class="cl"><span class="s">:MAIL_SUBJECT: %:subject
+</span></span></span><span class="line"><span class="cl"><span class="s">:REF: %a
+</span></span></span><span class="line"><span class="cl"><span class="s">:end:
+</span></span></span><span class="line"><span class="cl"><span class="s">#+begin_quote
+</span></span></span><span class="line"><span class="cl"><span class="s">   %i
+</span></span></span><span class="line"><span class="cl"><span class="s">#+end_quote
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">%?&#34;</span>
+</span></span><span class="line"><span class="cl"> <span class="nb">:if-new</span> <span class="p">(</span><span class="nv">file+head</span> <span class="o">,</span><span class="p">(</span><span class="nf">expand-file-name</span>
+</span></span><span class="line"><span class="cl">                      <span class="s">&#34;work/%&lt;%Y-%m-%d&gt;.org&#34;</span>
+</span></span><span class="line"><span class="cl">                      <span class="nv">org-roam-dailies-directory</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                    <span class="s">&#34;#+title: Work log for %&lt;%Y-%m-%d&gt;&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"> <span class="nb">:clock-in</span> <span class="no">t</span>
+</span></span><span class="line"><span class="cl"> <span class="nb">:clock-resume</span> <span class="no">t</span>
+</span></span><span class="line"><span class="cl"> <span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>I start typing my response and use <code>org-roam-node-find</code>  to search for pre-existing examples leveraging any functions I want to use linking to them from my note. I use YAsnippet<sup id="fnref:16"><a href="#fn:16" class="footnote-ref" role="doc-noteref">16</a></sup> to insert a cfengine src block. I re-use or write a new example running the block as I go to make sure it does what I expected until I am satisfied. Once finished I run <code>org-mime-org-subtree-htmlize</code> which exports the <code>org-mode</code> formatted text to a multipart plain text (ascii) and html message. Then I <code>C-c</code> to send it off and again to complete my capture. At this point I will probably run <code>org-roam-capture</code> type the name of the example, e.g. <code>class defined from variable</code> and key in <code>c</code> (CFEngine) <code>e</code> (Example). In the example I use <code>org-roam-node-insert</code> to create links to each function that is used in the example. This helps future me find all the examples that use a specific function from that functions note.</p>
 <p>Next I decide that documentation should to be updated, so I run <code>org-jira-create-issue</code>, fill out the necessary minimal information and once the ticket has been created I run <code>org-jira-progress-issue</code> to set it in progress and I initiate a new work log capture. I run <code>projectile-switch-project</code> and switch to the documentation repository. I find the documentation I want to update and yank it. Then I head back to my work log run <code>org-rich-yank</code> to paste the copied text with a link back to where I got it and type something about how it sucks. As I explain why it sucks I visit other repositories yanking other snippets of code for reference to backup my assertion. <code>ol-git-link</code> provides some nice capabilities for linking to git forges which is very helpful for others as well as future me doing archaeology.</p>
@@ -266,19 +266,17 @@ I make presentations in org mode, for example <a href="https://htmlpreview.githu
 </span><span class="lnt">6
 </span><span class="lnt">7
 </span><span class="lnt">8
-</span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="p">(</span><span class="nv">cl-defmethod</span> <span class="nv">org-roam-node-hierarchy</span> <span class="p">((</span><span class="nv">node</span> <span class="nv">org-roam-node</span><span class="p">))</span>
-  <span class="p">(</span><span class="nb">let</span> <span class="p">((</span><span class="nv">level</span> <span class="p">(</span><span class="nv">org-roam-node-level</span> <span class="nv">node</span><span class="p">)))</span>
-    <span class="p">(</span><span class="nf">concat</span>
-     <span class="p">(</span><span class="nb">when</span> <span class="p">(</span><span class="nf">&gt;</span> <span class="nv">level</span> <span class="mi">0</span><span class="p">)</span> <span class="p">(</span><span class="nf">concat</span> <span class="p">(</span><span class="nv">org-roam-node-file-title</span> <span class="nv">node</span><span class="p">)</span> <span class="s">&#34; &gt; &#34;</span><span class="p">))</span>
-     <span class="p">(</span><span class="nb">when</span> <span class="p">(</span><span class="nf">&gt;</span> <span class="nv">level</span> <span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="nf">concat</span> <span class="p">(</span><span class="nv">string-join</span> <span class="p">(</span><span class="nv">org-roam-node-olp</span> <span class="nv">node</span><span class="p">)</span> <span class="s">&#34; &gt; &#34;</span><span class="p">)</span> <span class="s">&#34; &gt; &#34;</span><span class="p">))</span>
-     <span class="p">(</span><span class="nv">org-roam-node-title</span> <span class="nv">node</span><span class="p">))))</span>
-
-  <span class="p">(</span><span class="nb">setq</span> <span class="nv">org-roam-node-display-template</span> <span class="s">&#34;${hierarchy:200} ${tags:20}&#34;</span><span class="p">)</span>
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">cl-defmethod</span> <span class="nv">org-roam-node-hierarchy</span> <span class="p">((</span><span class="nv">node</span> <span class="nv">org-roam-node</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">let</span> <span class="p">((</span><span class="nv">level</span> <span class="p">(</span><span class="nv">org-roam-node-level</span> <span class="nv">node</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="nf">concat</span>
+</span></span><span class="line"><span class="cl">     <span class="p">(</span><span class="nb">when</span> <span class="p">(</span><span class="nf">&gt;</span> <span class="nv">level</span> <span class="mi">0</span><span class="p">)</span> <span class="p">(</span><span class="nf">concat</span> <span class="p">(</span><span class="nv">org-roam-node-file-title</span> <span class="nv">node</span><span class="p">)</span> <span class="s">&#34; &gt; &#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">     <span class="p">(</span><span class="nb">when</span> <span class="p">(</span><span class="nf">&gt;</span> <span class="nv">level</span> <span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="nf">concat</span> <span class="p">(</span><span class="nv">string-join</span> <span class="p">(</span><span class="nv">org-roam-node-olp</span> <span class="nv">node</span><span class="p">)</span> <span class="s">&#34; &gt; &#34;</span><span class="p">)</span> <span class="s">&#34; &gt; &#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">     <span class="p">(</span><span class="nv">org-roam-node-title</span> <span class="nv">node</span><span class="p">))))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">setq</span> <span class="nv">org-roam-node-display-template</span> <span class="s">&#34;${hierarchy:200} ${tags:20}&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="mobile">Mobile</h3>
 <p>Going mobile with <code>org-mode</code> I use several different applications to help.</p>
@@ -316,11 +314,11 @@ I make presentations in org mode, for example <a href="https://htmlpreview.githu
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text">#+name: chatgpt-prompt
-#+begin_src chatgpt-shell
-  You are a devotee to the church of emacs and the way of org-mode. Write a short creed in the style of the Mandalorian.
-#+end_src
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">#+name: chatgpt-prompt
+</span></span><span class="line"><span class="cl">#+begin_src chatgpt-shell
+</span></span><span class="line"><span class="cl">  You are a devotee to the church of emacs and the way of org-mode. Write a short creed in the style of the Mandalorian.
+</span></span><span class="line"><span class="cl">#+end_src
+</span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -355,42 +353,40 @@ I make presentations in org mode, for example <a href="https://htmlpreview.githu
 </span><span class="lnt">29
 </span><span class="lnt">30
 </span><span class="lnt">31
-</span><span class="lnt">32
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text">This is the Way of the Church of Emacs, sworn to the reverence of org-mode.
-
-I am a devout disciple, bound to the path of sublime productivity, guided by the spirit of the Mandalorian.
-
-In the sacred realm of Emacs, I embrace the true Force, with org-mode as my ally and ally of my thoughts.
-
-I reclaim the scattered chaos and forge a majestic union between my mind and the machine, as the Mandalorian molds armor from Beskar.
-
-With fervent keystrokes, I document my purpose, my tasks, and my dreams, for org-mode is my sacred codex, unyielding in its power.
-
-I wield the formidable swords of agenda and timeline, slicing through the veils of confusion, illuminating the path towards mastery.
-
-My inbox is an abyss, but I, the chosen one, embrace it fearlessly. I tame it with Org Capture, capturing ideas like a bounty hunter snatches fugitives.
-
-My rituals are sacred: I nest headings, cultivate hierarchies, and summon clarity amidst the chaos. I create tables, agendas, and outlines, as the Mandalorian carefully constructs his battlesuit.
-
-I heed the whispers of tags and properties, for they are the sigils that unlock the arcane powers of organization and navigation within my realm.
-
-In the Church of Emacs, I am conscious of the present, for the Clock ticks onwards, tracking the flow of time, ensuring that I honor its value.
-
-I traverse the vast landscapes of my org-files, maneuvering swiftly between them, indexing my solemn pursuits, as the Mandalorian voyages across galaxies.
-
-Not bound by mere text, the Church of Emacs embraces diversity; I integrate spreadsheets, embed images, and attach files, uniting all knowledge beneath org-mode&#39;s banner.
-
-Though others may falter amidst the allure of flashy tools, I, like the Mandalorian, hold steadfast loyalty to simplicity, cherishing org-mode&#39;s humility.
-
-My brethren, fellow pilgrims of pure productivity, unite with me. Together, we cultivate the principles of steadfastness, focus, and intelligent automation.
-
-I pledge allegiance to the Church of Emacs, the Way of org-mode, for in its embrace lies boundless power and the secrets of imperial efficiency.
-
-This is our Creed. This is the Way.
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">This is the Way of the Church of Emacs, sworn to the reverence of org-mode.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">I am a devout disciple, bound to the path of sublime productivity, guided by the spirit of the Mandalorian.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">In the sacred realm of Emacs, I embrace the true Force, with org-mode as my ally and ally of my thoughts.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">I reclaim the scattered chaos and forge a majestic union between my mind and the machine, as the Mandalorian molds armor from Beskar.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">With fervent keystrokes, I document my purpose, my tasks, and my dreams, for org-mode is my sacred codex, unyielding in its power.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">I wield the formidable swords of agenda and timeline, slicing through the veils of confusion, illuminating the path towards mastery.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">My inbox is an abyss, but I, the chosen one, embrace it fearlessly. I tame it with Org Capture, capturing ideas like a bounty hunter snatches fugitives.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">My rituals are sacred: I nest headings, cultivate hierarchies, and summon clarity amidst the chaos. I create tables, agendas, and outlines, as the Mandalorian carefully constructs his battlesuit.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">I heed the whispers of tags and properties, for they are the sigils that unlock the arcane powers of organization and navigation within my realm.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">In the Church of Emacs, I am conscious of the present, for the Clock ticks onwards, tracking the flow of time, ensuring that I honor its value.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">I traverse the vast landscapes of my org-files, maneuvering swiftly between them, indexing my solemn pursuits, as the Mandalorian voyages across galaxies.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Not bound by mere text, the Church of Emacs embraces diversity; I integrate spreadsheets, embed images, and attach files, uniting all knowledge beneath org-mode&#39;s banner.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Though others may falter amidst the allure of flashy tools, I, like the Mandalorian, hold steadfast loyalty to simplicity, cherishing org-mode&#39;s humility.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">My brethren, fellow pilgrims of pure productivity, unite with me. Together, we cultivate the principles of steadfastness, focus, and intelligent automation.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">I pledge allegiance to the Church of Emacs, the Way of org-mode, for in its embrace lies boundless power and the secrets of imperial efficiency.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">This is our Creed. This is the Way.
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Looking forward to some package that will support bard or claude 2<sup id="fnref:37"><a href="#fn:37" class="footnote-ref" role="doc-noteref">37</a></sup> but really I am mostly waiting to have easy access to a local LLM that I can train on my <code>~/org</code>.</p>
 <h4 id="llm">llm</h4>
@@ -458,64 +454,62 @@ This is our Creed. This is the Way.
 </span><span class="lnt">51
 </span><span class="lnt">52
 </span><span class="lnt">53
-</span><span class="lnt">54
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-org" data-lang="org"><span class="gu">**</span> 🤔 *You*: Summarize how I org in 2023.
-<span class="c">   :PROPERTIES:
-</span><span class="c"></span><span class="cs">   :RECEIVED: [2023-08-13 23:54:33]
-</span><span class="cs"></span><span class="c">   :END:</span>
-
-<span class="gu">***</span> 🏮 *Khoj*:   Based on the provided text, here is a summary of how you organize your work in 2023:
-<span class="c">   :PROPERTIES:
-</span><span class="c"></span><span class="cs">   :RECEIVED: [2023-08-14 00:01:41]
-</span><span class="cs"></span><span class="c">   :END:</span>
-You have been using org-mode for 6 or 7 years now and it has become your &#34;exocortex,&#34; &#34;second brain,&#34; and &#34;personal knowledge management system.&#34; You use various tools and features within org-mode to manage your files, including capturing information through templates, organizing them into different categories, and using tags to label important items.
-You have over 48 million .org files in your main org directory, with the majority of them being &#34;dailies&#34; or time-series files. You also use a combination of capture templates (24 for org-mode, 16 for org-roam-capture-templates, and 68 for org-roam-dailies-capture-templates) to help you quickly capture information and organize it within your system.
-Your goal is to have total recall of all the information in your system, as well as control over your data, improved knowledge and capabilities, and the ability to share with others. You also keep track of high-level statistics for your org files, including the size of each file and the number of lines in the longest file.
-Overall, you have a complex and detailed system for managing your work and personal information using org-mode, which allows you to stay organized, efficient, and productive.^{ <span class="bp">[fn:</span><span class="s">14</span><span class="bp">]</span>}^{ <span class="bp">[fn:</span><span class="s">15</span><span class="bp">]</span>}^{ <span class="bp">[fn:</span><span class="s">16</span><span class="bp">]</span>}
-<span class="gu">****</span> References
-<span class="c">:PROPERTIES:
-</span><span class="c"></span><span class="cs">:VISIBILITY: folded
-</span><span class="cs"></span><span class="c">:END:</span>
-<span class="bp">[fn:</span><span class="s">14</span><span class="bp">]</span> ** [[<span class="na">https://cmdln.org/2023/03/25/how-i-org-in-2023/</span>][<span class="nt">How I org in 2023 ·</span>]].
- CREATED: [2023-06-12 Mon 12:01]
-[ME]: In the following I will show you a question and then a text. I want you to answer that question based on the text. Use the text as primary source but also add any external information you think is relevant.
-Here is the question:
- Summarize this text.
-Here is the text:
- I’ve been pretty much living in org-mode for 6 or 7 years now1. It’s my
- exocortex, second brain, and personal knowledge management
- system. The features and tools I use as well as how I organize my files
- has changed quite a bit over this period of time and I thought it would
- be nice give myself (and anyone else who cares) a reference of what it
- was like in 2023 so here it is.
- Figure 1: It is the way, at least for me
- Figure 1: It is the way, at least for me
- Goal
- Unrealistically I want total recall, to remember everything in durable
- plain text. I want to have control of my data. I want to improve my
- knowledge and capabilities and I want to be able to share with others.
- High level statistics
- As of Sunday, June 11, 2023 I have 48M of .org files in ~/org. That’s 4178
- files, the largest single file is 1.3M and the longest lined file has 21639
- lines.
- 4001 of these files are inside org-roam, the majority of them (3028) are
- “dailies” or time-series files.2
- I have 24 org-capture-templates, 16 org-roam-capture-templates and 68
- org-roam-dailies-capture-templates.
- Capture
- Capturing
-<span class="bp">[fn:</span><span class="s">15</span><span class="bp">]</span> ** /home/nickanderson/org/roam/cmdln.org/20230317222611-how_i_org_in_2023.org.
- I&#39;ve been pretty much living in <span class="nc">=org-mode=</span> for 6 or 7 years now<span class="bp">[fn:</span><span class="s">1</span><span class="bp">]</span>. It&#39;s my exocortex, second brain, second mind, mind palace, pensive, and personal knowledge management system<span class="bp">[fn:</span><span class="s">2</span><span class="bp">]</span>. The features and tools I use as well as how I organize my files has changed quite a bit over this period of time and I thought it would be nice give myself (and anyone else who cares) a reference of what it was like in 2023 so here it is.
-[[<span class="na">./attachments/how-i-org-in-2023/org-mode-this-is-the-way.jpg</span>]]
-
-<span class="bp">[fn:</span><span class="s">16</span><span class="bp">]</span> ** Expanding on [[<span class="na">id:2f60c4c8-2c4b-488c-b1f0-17f2b4821519</span>][<span class="nt">How I org in 2023</span>]].
-
-Adding in notes about [[<span class="na">id:4d53e175-3ec7-4bb5-ae4a-37add1f0aee7</span>][<span class="nt">org-transclusion</span>]].
-more adjectives to describe what my org-mode is (second mind, mind palace, pensive
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-org" data-lang="org"><span class="line"><span class="cl"><span class="gu">**</span> 🤔 *You*: Summarize how I org in 2023.
+</span></span><span class="line"><span class="cl"><span class="c">   :PROPERTIES:
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="cs">   :RECEIVED: [2023-08-13 23:54:33]
+</span></span></span><span class="line"><span class="cl"><span class="cs"></span><span class="c">   :END:</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="gu">***</span> 🏮 *Khoj*:   Based on the provided text, here is a summary of how you organize your work in 2023:
+</span></span><span class="line"><span class="cl"><span class="c">   :PROPERTIES:
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="cs">   :RECEIVED: [2023-08-14 00:01:41]
+</span></span></span><span class="line"><span class="cl"><span class="cs"></span><span class="c">   :END:</span>
+</span></span><span class="line"><span class="cl">You have been using org-mode for 6 or 7 years now and it has become your &#34;exocortex,&#34; &#34;second brain,&#34; and &#34;personal knowledge management system.&#34; You use various tools and features within org-mode to manage your files, including capturing information through templates, organizing them into different categories, and using tags to label important items.
+</span></span><span class="line"><span class="cl">You have over 48 million .org files in your main org directory, with the majority of them being &#34;dailies&#34; or time-series files. You also use a combination of capture templates (24 for org-mode, 16 for org-roam-capture-templates, and 68 for org-roam-dailies-capture-templates) to help you quickly capture information and organize it within your system.
+</span></span><span class="line"><span class="cl">Your goal is to have total recall of all the information in your system, as well as control over your data, improved knowledge and capabilities, and the ability to share with others. You also keep track of high-level statistics for your org files, including the size of each file and the number of lines in the longest file.
+</span></span><span class="line"><span class="cl">Overall, you have a complex and detailed system for managing your work and personal information using org-mode, which allows you to stay organized, efficient, and productive.^{ <span class="bp">[fn:</span><span class="s">14</span><span class="bp">]</span>}^{ <span class="bp">[fn:</span><span class="s">15</span><span class="bp">]</span>}^{ <span class="bp">[fn:</span><span class="s">16</span><span class="bp">]</span>}
+</span></span><span class="line"><span class="cl"><span class="gu">****</span> References
+</span></span><span class="line"><span class="cl"><span class="c">:PROPERTIES:
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="cs">:VISIBILITY: folded
+</span></span></span><span class="line"><span class="cl"><span class="cs"></span><span class="c">:END:</span>
+</span></span><span class="line"><span class="cl"><span class="bp">[fn:</span><span class="s">14</span><span class="bp">]</span> ** [[<span class="na">https://cmdln.org/2023/03/25/how-i-org-in-2023/</span>][<span class="nt">How I org in 2023 ·</span>]].
+</span></span><span class="line"><span class="cl"> CREATED: [2023-06-12 Mon 12:01]
+</span></span><span class="line"><span class="cl">[ME]: In the following I will show you a question and then a text. I want you to answer that question based on the text. Use the text as primary source but also add any external information you think is relevant.
+</span></span><span class="line"><span class="cl">Here is the question:
+</span></span><span class="line"><span class="cl"> Summarize this text.
+</span></span><span class="line"><span class="cl">Here is the text:
+</span></span><span class="line"><span class="cl"> I’ve been pretty much living in org-mode for 6 or 7 years now1. It’s my
+</span></span><span class="line"><span class="cl"> exocortex, second brain, and personal knowledge management
+</span></span><span class="line"><span class="cl"> system. The features and tools I use as well as how I organize my files
+</span></span><span class="line"><span class="cl"> has changed quite a bit over this period of time and I thought it would
+</span></span><span class="line"><span class="cl"> be nice give myself (and anyone else who cares) a reference of what it
+</span></span><span class="line"><span class="cl"> was like in 2023 so here it is.
+</span></span><span class="line"><span class="cl"> Figure 1: It is the way, at least for me
+</span></span><span class="line"><span class="cl"> Figure 1: It is the way, at least for me
+</span></span><span class="line"><span class="cl"> Goal
+</span></span><span class="line"><span class="cl"> Unrealistically I want total recall, to remember everything in durable
+</span></span><span class="line"><span class="cl"> plain text. I want to have control of my data. I want to improve my
+</span></span><span class="line"><span class="cl"> knowledge and capabilities and I want to be able to share with others.
+</span></span><span class="line"><span class="cl"> High level statistics
+</span></span><span class="line"><span class="cl"> As of Sunday, June 11, 2023 I have 48M of .org files in ~/org. That’s 4178
+</span></span><span class="line"><span class="cl"> files, the largest single file is 1.3M and the longest lined file has 21639
+</span></span><span class="line"><span class="cl"> lines.
+</span></span><span class="line"><span class="cl"> 4001 of these files are inside org-roam, the majority of them (3028) are
+</span></span><span class="line"><span class="cl"> “dailies” or time-series files.2
+</span></span><span class="line"><span class="cl"> I have 24 org-capture-templates, 16 org-roam-capture-templates and 68
+</span></span><span class="line"><span class="cl"> org-roam-dailies-capture-templates.
+</span></span><span class="line"><span class="cl"> Capture
+</span></span><span class="line"><span class="cl"> Capturing
+</span></span><span class="line"><span class="cl"><span class="bp">[fn:</span><span class="s">15</span><span class="bp">]</span> ** /home/nickanderson/org/roam/cmdln.org/20230317222611-how_i_org_in_2023.org.
+</span></span><span class="line"><span class="cl"> I&#39;ve been pretty much living in <span class="nc">=org-mode=</span> for 6 or 7 years now<span class="bp">[fn:</span><span class="s">1</span><span class="bp">]</span>. It&#39;s my exocortex, second brain, second mind, mind palace, pensive, and personal knowledge management system<span class="bp">[fn:</span><span class="s">2</span><span class="bp">]</span>. The features and tools I use as well as how I organize my files has changed quite a bit over this period of time and I thought it would be nice give myself (and anyone else who cares) a reference of what it was like in 2023 so here it is.
+</span></span><span class="line"><span class="cl">[[<span class="na">./attachments/how-i-org-in-2023/org-mode-this-is-the-way.jpg</span>]]
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="bp">[fn:</span><span class="s">16</span><span class="bp">]</span> ** Expanding on [[<span class="na">id:2f60c4c8-2c4b-488c-b1f0-17f2b4821519</span>][<span class="nt">How I org in 2023</span>]].
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Adding in notes about [[<span class="na">id:4d53e175-3ec7-4bb5-ae4a-37add1f0aee7</span>][<span class="nt">org-transclusion</span>]].
+</span></span><span class="line"><span class="cl">more adjectives to describe what my org-mode is (second mind, mind palace, pensive
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Looking forward to 2024 where I hope to see the self hosting and general usability improve.</p>
 <p>Specifically I hope to see:</p>
@@ -645,131 +639,131 @@ more adjectives to describe what my org-mode is (second mind, mind palace, pensi
         </figcaption>
 </figure>
 
-<section class="footnotes" role="doc-endnotes">
+<div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn:1" role="doc-endnote">
+<li id="fn:1">
 <p>Checkout the post reflecting on my history with org-mode in 2023. <a href="https://cmdln.org/2023/03/13/reflecting-on-my-history-with-org-mode-in-2023/">https://cmdln.org/2023/03/13/reflecting-on-my-history-with-org-mode-in-2023/</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:2" role="doc-endnote">
+<li id="fn:2">
 <p>It&rsquo;s so many things for me as you will hopefully understand if you read through this whole thing.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:3" role="doc-endnote">
+<li id="fn:3">
 <p>My personal journal, daily work logs, and recurring meetings.&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:4" role="doc-endnote">
+<li id="fn:4">
 <p>According to the <a href="https://www.orgroam.com/manual.html#Introduction">introduction in the manual</a> Org-roam is a tool for networked thought. It reproduces some of <a href="https://roamresearch.com/">Roam Research’</a>s key features within Org-mode. Org-roam allows for effortless non-hierarchical note-taking: with Org-roam, notes flow naturally, making note-taking fun and easy.&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:5" role="doc-endnote">
+<li id="fn:5">
 <p>Maggie Appleton has a nice post about <a href="https://maggieappleton.com/daily-notes">Daily notes as a frictionless default input for personal knowledge management systems</a>.&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:6" role="doc-endnote">
+<li id="fn:6">
 <p>ADHD is a real thing. I am also not perfect in remembering to capture each thing but I don&rsquo;t need to be perfect to be effective.&#160;<a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:7" role="doc-endnote">
+<li id="fn:7">
 <p>If you like org-mode, you might also like CFEngine. It really is a knowledge management tool for infrastructure and it&rsquo;s very flexible and open ended much like the numerous ways of using org-mode, there are many different ways of using CFEngine. It&rsquo;s a tool that has few prescriptions.&#160;<a href="#fnref:7" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:8" role="doc-endnote">
+<li id="fn:8">
 <p><code>org-rich-yank</code> doesn&rsquo;t get enough publicity, I used it many times a day. It pastes the last copied text and automatically surrounds the snippet in blocks, marked with the major mode of where the code came from, and adds a link to the source file after the block. I recommend customizing <code>org-rich-yank-format-paste</code> and making the link to the source a comment as described in the README. <a href="https://github.com/unhammer/org-rich-yank">https://github.com/unhammer/org-rich-yank</a>&#160;<a href="#fnref:8" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:9" role="doc-endnote">
+<li id="fn:9">
 <p>Org-transclusion lets you insert a copy of text content via a file link or ID link within an Org file. It lets you have the same content present in different buffers at the same time without copy-and-pasting it. Edit the source of the content, and you can refresh the transcluded copies to the up-to-date state. <a href="https://github.com/nobiot/org-transclusion">https://github.com/nobiot/org-transclusion</a>&#160;<a href="#fnref:9" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:10" role="doc-endnote">
+<li id="fn:10">
 <p>I wonder if html would work for a copy source pasting into a google doc as well or better.&#160;<a href="#fnref:10" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:11" role="doc-endnote">
-<p>(org-mime-htmlize-subtree in this case) as this is one of the few daily capture templates where I capture each day to a heading in a file for the month (it&rsquo;s easier for people that have access to a git repo containing these files to use for periodic reviews).&#160;<a href="#fnref:11" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:11">
+<p>(org-mime-htmlize-subtree in this case) as this is one of the few daily capture templates where I capture each day to a heading in a file for the month (it&rsquo;s easier for people that have access to a git repo containing these files to use for periodic reviews).&#160;<a href="#fnref:11" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:11" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:12" role="doc-endnote">
+<li id="fn:12">
 <p>I&rsquo;ve been told multiple times by colleagues that they search out my meeting notes to help themselves complete periodic reviews. I hate doing periodic reviews, so knowing that my effort helps others in this regard is a strong motivator.&#160;<a href="#fnref:12" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:13" role="doc-endnote">
+<li id="fn:13">
 <p>(maybe someone can suggest how that tho step process could be consolidated)&#160;<a href="#fnref:13" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:14" role="doc-endnote">
+<li id="fn:14">
 <p>There are so many, org-mime is probably my most often used exporter followed by some flavor of Markdown (ox-hugo like this blog post, ox-gfm, ox-slack).&#160;<a href="#fnref:14" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:15" role="doc-endnote">
+<li id="fn:15">
 <p>With mu4e I have offline mail reading and search and I run a local Postfix relay giving me offline sending capability.&#160;<a href="#fnref:15" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:16" role="doc-endnote">
+<li id="fn:16">
 <p><a href="https://github.com/joaotavora/yasnippet">YASnippet</a> is a template system for Emacs. It allows you to type an abbreviation and automatically expand it into function templates. The snippet syntax is inspired from <a href="https://macromates.com/manual/en/snippets">TextMate&rsquo;</a>s syntax, you can even import most TextMate templates to YASnippet.&#160;<a href="#fnref:16" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:17" role="doc-endnote">
+<li id="fn:17">
 <p>ox-jira exports to Jira wiki markup. It&rsquo;s very nice to author fairly pretty comments with so little effort. <a href="https://github.com/stig/ox-jira.el">https://github.com/stig/ox-jira.el</a>&#160;<a href="#fnref:17" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:18" role="doc-endnote">
+<li id="fn:18">
 <p>Magit is an amazing front end for git. <a href="https://magit.vc/">https://magit.vc/</a>&#160;<a href="#fnref:18" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:19" role="doc-endnote">
+<li id="fn:19">
 <p>Forge provides git forge integration (pull requests, issues, etc ..) for GitLab, GitHub and probably others. <a href="https://github.com/magit/forge">https://github.com/magit/forge</a>&#160;<a href="#fnref:19" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:20" role="doc-endnote">
+<li id="fn:20">
 <p>Org source for the Org-mode all the thingz! presentation is available <a href="https://github.com/nickanderson/Org-mode-all-the-thingz/blob/master/presentation.org">here</a>.&#160;<a href="#fnref:20" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:21" role="doc-endnote">
+<li id="fn:21">
 <p>The org-mode documentation has a nice article about making diagrames with PlanUML. <a href="https://orgmode.org/worg/org-contrib/babel/languages/ob-doc-plantuml.html">https://orgmode.org/worg/org-contrib/babel/languages/ob-doc-plantuml.html</a>&#160;<a href="#fnref:21" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:22" role="doc-endnote">
+<li id="fn:22">
 <p>Mermaid is a JavaScript based diagramming and charting tool that renders Markdown-inspired text definitions and you can use <a href="https://github.com/arnm/ob-mermaid">ob-mermaid</a> to generate them from within org-mode.&#160;<a href="#fnref:22" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:23" role="doc-endnote">
+<li id="fn:23">
 <p>Here is my post on Matson showing the elisp for using <code>org-roam-db-query</code> to set agenda files for a custom agenda command <a href="https://fosstodon.org/@nickanderson/109979927683467557">https://fosstodon.org/@nickanderson/109979927683467557</a>&#160;<a href="#fnref:23" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:24" role="doc-endnote">
+<li id="fn:24">
 <p>Darly Wakatara has a nice post about how his workflow has evolved  <a href="https://daryl.wakatara.com/emacs-gtd-flow-evolved/">https://daryl.wakatara.com/emacs-gtd-flow-evolved/</a>. I noted that his contact management workflow is similar to mine. Sometime it would be nice to figure out how this could be leveraged for address completion in <code>mu4e</code>. There is <a href="https://orgmode.org/worg/org-contrib/org-contacts.html">org-contacts</a> but it&rsquo;s not clear to me if I can use it with a file per person strategy.&#160;<a href="#fnref:24" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:25" role="doc-endnote">
+<li id="fn:25">
 <p>Will Vaughn makes a claim that &ldquo;At any time, I can go to the Org-roam page for my CEO (or anyone else) to see the details of any conversation or meeting I have had with him, ever.&rdquo;, a claim I aspire to. <a href="https://willvaughn.org/articles/vp-of-emacs-a-personal-wiki-in-plain-text/">https://willvaughn.org/articles/vp-of-emacs-a-personal-wiki-in-plain-text/</a>&#160;<a href="#fnref:25" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:26" role="doc-endnote">
+<li id="fn:26">
 <p><code>org-download</code> makes it easy to insert images into a document, it provides functions for taking and inserting screenshots, downloading images, renaming images as well as dragging and dropping images into your document. <a href="https://github.com/abo-abo/org-download">https://github.com/abo-abo/org-download</a>&#160;<a href="#fnref:26" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:27" role="doc-endnote">
+<li id="fn:27">
 <p>Olivetti provides nice styling for writing. <a href="https://github.com/rnkn/olivetti">https://github.com/rnkn/olivetti</a>&#160;<a href="#fnref:27" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:28" role="doc-endnote">
+<li id="fn:28">
 <p>org-sticky-heading displays in the header-line the Org heading for the node that’s at the top of the window. This way, if the heading for the text at the top of the window is beyond the top of the window, you don’t forget which heading the text belongs to. The display can be customized to show just the heading, the full outline path, or the full outline path in reverse. <a href="https://github.com/alphapapa/org-sticky-header">https://github.com/alphapapa/org-sticky-header</a>&#160;<a href="#fnref:28" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:29" role="doc-endnote">
+<li id="fn:29">
 <p>ripgrep is a line-oriented search tool that recursively searches the current directory for a regex pattern. It&rsquo;s <em>very</em> fast and can even has some support for searching compressed files, multiline search. <a href="https://github.com/BurntSushi/ripgrep">https://github.com/BurntSushi/ripgrep</a>&#160;<a href="#fnref:29" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:30" role="doc-endnote">
+<li id="fn:30">
 <p>Deft takes inspiration from Notational Velocity. I still think it&rsquo;s a neat package and something I would recommend to new org-mode users. <a href="https://notational.net/">https://notational.net/</a>&#160;<a href="#fnref:30" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:31" role="doc-endnote">
+<li id="fn:31">
 <p>notDeft it features a Xapian database for providing fast full text search for very large volumes of notes. I haven&rsquo;t tried it but I haven&rsquo;t found myself needing something more from ripgrep for full text search much. <a href="https://github.com/hasu/notdeft">https://github.com/hasu/notdeft</a>&#160;<a href="#fnref:31" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:32" role="doc-endnote">
+<li id="fn:32">
 <p>Lot&rsquo;s of good tips in the org-roam wiki user contributed tricks. My favorite so far is for showing the node hierarchy. <a href="https://github.com/org-roam/org-roam/wiki/User-contributed-Tricks#showing-node-hierarchy">https://github.com/org-roam/org-roam/wiki/User-contributed-Tricks#showing-node-hierarchy</a>&#160;<a href="#fnref:32" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:33" role="doc-endnote">
+<li id="fn:33">
 <p>I have an <code>Orgzly</code> profile with an <em>event</em> for <code>Display On</code> that triggers a <code>Sync Orgzly</code> <em>task</em> which is an <em>Action</em> <code>com.orgzly.intent.action.SYNC_START</code>  for <em>Package</em> <code>com.orgzly</code> <em>Class</em> <code>com.orgzly.android.sync.SyncService</code> <em>Target</em> <code>Service</code>.&#160;<a href="#fnref:33" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:34" role="doc-endnote">
+<li id="fn:34">
 <p>I am super slow working towards this, so if you want to offer up some elisp for me to use I would be most grateful.&#160;<a href="#fnref:34" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:35" role="doc-endnote">
+<li id="fn:35">
 <p>org-ai is one of the LLM packages that I experimented with for a short time prior to July 2023 <a href="https://github.com/rksm/org-ai">https://github.com/rksm/org-ai</a>&#160;<a href="#fnref:35" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:36" role="doc-endnote">
+<li id="fn:36">
 <p>chatgpt-shell has been my package of choice for interacting with large language models from July 5th 2023 <a href="https://github.com/xenodium/chatgpt-shell">https://github.com/xenodium/chatgpt-shell</a>&#160;<a href="#fnref:36" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:37" role="doc-endnote">
+<li id="fn:37">
 <p>Claude 2 is yet another large language model. <a href="https://www.anthropic.com/index/claude-2">https://www.anthropic.com/index/claude-2</a> It beat ChatGPT 4 in some tests as of July 2023. <a href="https://decrypt.co/148147/anthropic-claude-2-ai-chatbot-comparison-openai-chatgpt-google-bard">https://decrypt.co/148147/anthropic-claude-2-ai-chatbot-comparison-openai-chatgpt-google-bard</a>&#160;<a href="#fnref:37" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:38" role="doc-endnote">
+<li id="fn:38">
 <p><code>llm</code> is a CLI utility and Python library for integrating with Large Language Models, including OpenAI, PaLM and even local models on your own machine. <a href="https://llm.datasette.io/en/stable/">https://llm.datasette.io/en/stable/</a>&#160;<a href="#fnref:38" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:39" role="doc-endnote">
+<li id="fn:39">
 <p>Khoj is a desktop application to search and chat with your notes, documents and images. It is an offline-first, open source AI personal assistant accessible from your Emacs, Obsidian or Web browser. It works with jpeg, markdown, notion org-mode, pdf files and github repositories. <a href="https://khoj.dev/">https://khoj.dev/</a>&#160;<a href="#fnref:39" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:40" role="doc-endnote">
+<li id="fn:40">
 <p><code>gptel</code> :: A light llm client. Provides an unobtrusive way to send text to various LLMs from anywhere in Emacs. <a href="https://github.com/karthink/gptel">https://github.com/karthink/gptel</a>&#160;<a href="#fnref:40" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
-</section>
+</div>
 
                 </div>
                 

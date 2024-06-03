@@ -6,7 +6,7 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.92.2" />
+<meta name="generator" content="Hugo 0.123.7">
 
 
 
@@ -88,51 +88,51 @@
 <p>It was easy to create detailed logs investigating something with a trail of src blocks with output along the way. I could easily take that text and export it to the bespoke markup for a ticketing system (Jira, with <code>ox-jira</code> <sup id="fnref:11"><a href="#fn:11" class="footnote-ref" role="doc-noteref">11</a></sup>before it transitioned to markdown, and Markdown after). I was even using <code>org-jira</code> <sup id="fnref:12"><a href="#fn:12" class="footnote-ref" role="doc-noteref">12</a></sup> to directly interface with the ticketing system, posting comments directly from the comfort of <code>org-mode</code>.</p>
 <p>By 2021 I had run into various performance issues that really centered around large files. Large files that have high churn (eg. As the result of large results from src blocks that are sometimes rerun many times) made my environment slow and sent me in search of new strategies which is when I came across org-roam<sup id="fnref:13"><a href="#fn:13" class="footnote-ref" role="doc-noteref">13</a></sup>.</p>
 <p>Org-roam uses the zettelkasten method of organization. It provides some functions that facilitate a methodology built around many smaller interlinked files. I started making heavy use of <code>org-roam-dailies-capture</code> which brings me to <a href="https://cmdln.org/2023/03/25/how-i-org-in-2023/">how I org in 2023</a>.</p>
-<section class="footnotes" role="doc-endnotes">
+<div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn:1" role="doc-endnote">
+<li id="fn:1">
 <p>Seems right, Linux Journal had an article about <code>org-mode</code> in 2007. <a href="https://www.linuxjournal.com/article/9116">https://www.linuxjournal.com/article/9116</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:2" role="doc-endnote">
+<li id="fn:2">
 <p>I had written my own todo manager based off of Tom Limoncellies Cycle from Time Management for Systems Administrators and I had been trying out todo.txt (which is still around and has a nice little Android app) <a href="http://todotxt.org/">http://todotxt.org/</a>.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:3" role="doc-endnote">
+<li id="fn:3">
 <p>I loved the Evernote motto, remember everything</p>
 <p>At least in 2023 Evernote&rsquo;s motto seems to be &ldquo;Tame your work, organize your life Remember everything and tackle any project with your notes, tasks, and schedule all in one place.&rdquo; <a href="https://evernote.com/">https://evernote.com/</a>&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:4" role="doc-endnote">
+<li id="fn:4">
 <p>Nixnote is a desktop client for Evernote that runs on Linux and Windows <a href="http://www.nixnote.org/">http://www.nixnote.org/</a>&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:5" role="doc-endnote">
+<li id="fn:5">
 <p>A community-driven Emacs distribution. The best editor is neither Emacs nor Vim, it&rsquo;s Emacs <em>and</em> Vim! <a href="https://www.spacemacs.org/">https://www.spacemacs.org/</a>&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:6" role="doc-endnote">
+<li id="fn:6">
 <p>Vim support for syntax highlighting, abbreviations, code tidying and templates made by <a href="https://watson-wilson.ca/">Neil Watson</a>. <a href="https://github.com/neilhwatson/vim_cf3">https://github.com/neilhwatson/vim_cf3</a>&#160;<a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:7" role="doc-endnote">
+<li id="fn:7">
 <p>Reveal.js is an html presentation framework. It produces nice looking html slides and has features like speaker-notes and even live code execution. <a href="https://revealjs.com/">https://revealjs.com/</a>&#160;<a href="#fnref:7" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:8" role="doc-endnote">
+<li id="fn:8">
 <p>mu4e is an email client for Emacs built on top of the <code>mu</code> search engine. It&rsquo;s optimized for quickly processing large amounts of email. It operates on mail directories, so you need to sync your email locally with something like <a href="https://isync.sourceforge.io/">isync</a> <a href="https://www.djcbsoftware.nl/code/mu/mu4e/index.html">https://www.djcbsoftware.nl/code/mu/mu4e/index.html</a>&#160;<a href="#fnref:8" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:9" role="doc-endnote">
+<li id="fn:9">
 <p>My first emacs package, I gave it to myself for my 36th birthday. I figure that it saved me at least 36 seconds for every CFEngine example snippet that I write and it&rsquo;s definitely paid for itself. I don&rsquo;t make many changes to it, <a href="https://zzamboni.org/">Diego Zamboni</a> has contributed some nice features.  <a href="https://github.com/nickanderson/ob-cfengine3">https://github.com/nickanderson/ob-cfengine3</a>&#160;<a href="#fnref:9" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:10" role="doc-endnote">
+<li id="fn:10">
 <p>I really dislike the term DevOps but I found Howard&rsquo;s post reached in the direction I was headed. It&rsquo;s a great resource. <a href="https://howardism.org/Technical/Emacs/literate-devops.html">https://howardism.org/Technical/Emacs/literate-devops.html</a>&#160;<a href="#fnref:10" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:11" role="doc-endnote">
+<li id="fn:11">
 <p><code>ox-jira</code> exports to the Jira wiki markup. Plausibly only useful these days if you are running the Data Center edition. Jira Server is dead, and Jira Cloud dropped support for their old wiki markup. Now they support a very small subset of Markdown. I much preferred the old support (but only because I had <code>org-mode</code> to export to it). Now for Jira I just export to markdown and paste into their web form. <a href="https://github.com/stig/ox-jira.el">https://github.com/stig/ox-jira.el</a>&#160;<a href="#fnref:11" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:12" role="doc-endnote">
+<li id="fn:12">
 <p>Interact with Jira issues without leaving <code>org-mode</code> at all! This was pretty darn neat, sadly it stopped working on Jira server at some point and I have yet to try to get it working with Jira cloud. <a href="https://github.com/ahungry/org-jira">https://github.com/ahungry/org-jira</a>&#160;<a href="#fnref:12" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:13" role="doc-endnote">
+<li id="fn:13">
 <p>Org-roam is a tool for networked thought. It reproduces some of <a href="https://roamresearch.com/">Roam Research&rsquo;s</a> key features within Org-mode. <a href="https://www.orgroam.com/">https://www.orgroam.com/</a>&#160;<a href="#fnref:13" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
-</section>
+</div>
 
                 </div>
                 

@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>hosting on </title>
+    <title>Hosting on </title>
     <link>https://cmdln.org/tags/hosting/</link>
-    <description>Recent content in hosting on </description>
+    <description>Recent content in Hosting on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 26 Oct 2008 05:50:59 +0000</lastBuildDate><atom:link href="https://cmdln.org/tags/hosting/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Sun, 26 Oct 2008 05:50:59 +0000</lastBuildDate>
+    <atom:link href="https://cmdln.org/tags/hosting/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Secure git hosting with gitosis</title>
       <link>https://cmdln.org/2008/10/25/secure-git-hosting-with-gitosis/</link>
       <pubDate>Sun, 26 Oct 2008 05:50:59 +0000</pubDate>
-      
       <guid>https://cmdln.org/2008/10/25/secure-git-hosting-with-gitosis/</guid>
-      <description>I hope you are already using ssh keys, but just in case your not go ahead and generate one with ssh-keygen -t rsa (you should do this on your local box)
-You may as well go ahead and copy your publick key to your git server now as well.
-scp ~/.ssh/id_rsa.pub gitserver:/tmp/  Log into your gitosis server
-ssh gitserver   Make sure setuptools is installed  sudo aptitude install python-setuptools</description>
+      <description>I hope you are already using ssh keys, but just in case your not go ahead and generate one with ssh-keygen -t rsa (you should do this on your local box)&#xA;You may as well go ahead and copy your publick key to your git server now as well.&#xA;scp ~/.ssh/id_rsa.pub gitserver:/tmp/ Log into your gitosis server&#xA;ssh gitserver Make sure setuptools is installed sudo aptitude install python-setuptools&#xA;git clone git://eagain.</description>
     </item>
-    
   </channel>
 </rss>

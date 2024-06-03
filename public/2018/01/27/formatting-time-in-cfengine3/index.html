@@ -6,7 +6,7 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.92.2" />
+<meta name="generator" content="Hugo 0.123.7">
 
 
 
@@ -95,13 +95,13 @@ time using the standard strftime templates.</p>
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">main</span>
-  <span class="p">{</span>
-    <span class="kd">reports</span><span class="p">:</span>
-
-        <span class="s">&#34;</span><span class="si">$(with)</span><span class="s">&#34;</span>
-          <span class="kr">with</span> <span class="o">=&gt;</span> <span class="nf">strftime</span><span class="p">(</span> <span class="nf">localtime</span><span class="p">,</span> <span class="s">&#34;%FT%R:%S%Z&#34;</span><span class="p">,</span> <span class="nf">now</span><span class="p">()</span> <span class="p">);</span>
-  <span class="p">}</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="line"><span class="cl">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">main</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">reports</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="s">&#34;</span><span class="si">$(with)</span><span class="s">&#34;</span>
+</span></span><span class="line"><span class="cl">          <span class="kr">with</span> <span class="o">=&gt;</span> <span class="nf">strftime</span><span class="p">(</span> <span class="nf">localtime</span><span class="p">,</span> <span class="s">&#34;%FT%R:%S%Z&#34;</span><span class="p">,</span> <span class="nf">now</span><span class="p">()</span> <span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span></span></span></code></pre></td></tr></table>
 </div>
 </div>
 </div>
@@ -134,19 +134,19 @@ formats. You can however, use an external command.</p>
 </span><span class="lnt">13
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">main</span>
-  <span class="p">{</span>
-    <span class="kd">vars</span><span class="p">:</span> 
-
-        <span class="p">&#34;</span><span class="nv">mock_sys_last_policy_update</span><span class="p">&#34;</span>
-          <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;Sat Jan 27 20:18:37 2018&#34;</span><span class="p">,</span>
-          <span class="kr">comment</span> <span class="o">=&gt;</span> <span class="s">&#34;This is the same format that sys.last_policy_update uses&#34;</span><span class="p">;</span>
-
-    <span class="kd">reports</span><span class="p">:</span>
-
-        <span class="s">&#34;</span><span class="si">$(with)</span><span class="s"> == </span><span class="si">$(mock_sys_last_policy_update)</span><span class="s">&#34;</span>
-          <span class="kr">with</span> <span class="o">=&gt;</span> <span class="nf">execresult</span><span class="p">(</span> <span class="err">&#39;</span><span class="nf">date</span> <span class="err">--</span><span class="nf">date</span><span class="err">=</span><span class="s">&#34;</span><span class="si">$(mock_sys_last_policy_update)</span><span class="s">&#34;</span> <span class="s">&#34;+%s&#34;</span><span class="err">&#39;</span><span class="p">,</span> <span class="nf">useshell</span><span class="p">);</span>
-  <span class="p">}</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="line"><span class="cl">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">main</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">vars</span><span class="p">:</span> 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="s">&#34;mock_sys_last_policy_update&#34;</span>
+</span></span><span class="line"><span class="cl">          <span class="kr">string</span> <span class="o">=&gt;</span> <span class="s">&#34;Sat Jan 27 20:18:37 2018&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="kr">comment</span> <span class="o">=&gt;</span> <span class="s">&#34;This is the same format that sys.last_policy_update uses&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">reports</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="s">&#34;</span><span class="si">$(with)</span><span class="s"> == </span><span class="si">$(mock_sys_last_policy_update)</span><span class="s">&#34;</span>
+</span></span><span class="line"><span class="cl">          <span class="kr">with</span> <span class="o">=&gt;</span> <span class="nf">execresult</span><span class="p">(</span> <span class="s">&#39;date --date=&#34;</span><span class="si">$(mock_sys_last_policy_update)</span><span class="s">&#34; &#34;+%s&#34;&#39;</span><span class="p">,</span> <span class="nf">useshell</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span></span></span></code></pre></td></tr></table>
 </div>
 </div>
 </div>

@@ -6,7 +6,7 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.92.2" />
+<meta name="generator" content="Hugo 0.123.7">
 
 
 
@@ -152,16 +152,16 @@ Here is a small example:</p>
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
-  <span class="nt">&#34;vars&#34;</span><span class="p">:</span>
-  <span class="p">{</span>
-    <span class="nt">&#34;my_var&#34;</span><span class="p">:</span> <span class="s2">&#34;I am RED&#34;</span>
-  <span class="p">},</span>
-  <span class="nt">&#34;augments&#34;</span><span class="p">:</span>
-  <span class="p">[</span>
-    <span class="s2">&#34;$(sys.os_release[CUSTOM_DEVICE_TYPE]).json&#34;</span>
-  <span class="p">]</span>
-<span class="p">}</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;vars&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;my_var&#34;</span><span class="p">:</span> <span class="s2">&#34;I am RED&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;augments&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">  <span class="p">[</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;$(sys.os_release[CUSTOM_DEVICE_TYPE]).json&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table>
 </div>
 </div>
 </div>
@@ -180,12 +180,12 @@ Here is my data file that is used when <code class="verbatim">CUSTOM_DEVICE_TYPE
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
-  <span class="nt">&#34;vars&#34;</span><span class="p">:</span>
-  <span class="p">{</span>
-    <span class="nt">&#34;my_var&#34;</span><span class="p">:</span> <span class="s2">&#34;I am BLUE&#34;</span>
-  <span class="p">}</span>
-<span class="p">}</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;vars&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;my_var&#34;</span><span class="p">:</span> <span class="s2">&#34;I am BLUE&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table>
 </div>
 </div>
 </div>
@@ -205,13 +205,13 @@ Here is the simple policy to illustrate the point.</p>
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">main</span>
-  <span class="p">{</span>
-    <span class="kd">reports</span><span class="p">:</span>
-      <span class="s">&#34;def.my_var is </span><span class="si">$(def.my_var)</span><span class="s">&#34;</span><span class="p">;</span>
-      <span class="s">&#34;My device type is </span><span class="si">$(sys.os_release[CUSTOM_DEVICE_TYPE])</span><span class="s">&#34;</span><span class="p">;</span>
-
-  <span class="p">}</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="line"><span class="cl">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">main</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">reports</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">      <span class="s">&#34;def.my_var is </span><span class="si">$(def.my_var)</span><span class="s">&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="s">&#34;My device type is </span><span class="si">$(sys.os_release[CUSTOM_DEVICE_TYPE])</span><span class="s">&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="p">}</span></span></span></code></pre></td></tr></table>
 </div>
 </div>
 </div>
@@ -253,13 +253,13 @@ This copy_from files promise illustrates what I mean:</p>
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">device_type_data</span>
-  <span class="p">{</span>
-      <span class="kd">files</span><span class="p">:</span>
-        <span class="s">&#34;/var/cfengine/inputs/device.json&#34;</span>
-          <span class="kr">copy_from</span> <span class="o">=&gt;</span> <span class="nf">remote_dcp</span><span class="p">(</span> <span class="s">&#34;/var/cfengine/data/devices/</span><span class="si">$(my_common.device_type)</span><span class="s">.json&#34;</span><span class="p">,</span>
-                                   <span class="err">$</span><span class="p">(</span><span class="nf">sys</span><span class="err">.</span><span class="nf">policy_hub</span><span class="p">)</span> <span class="p">);</span>
-  <span class="p">}</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="line"><span class="cl">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">device_type_data</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="kd">files</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="s">&#34;/var/cfengine/inputs/device.json&#34;</span>
+</span></span><span class="line"><span class="cl">          <span class="kr">copy_from</span> <span class="o">=&gt;</span> <span class="nf">remote_dcp</span><span class="p">(</span> <span class="s">&#34;/var/cfengine/data/devices/</span><span class="si">$(my_common.device_type)</span><span class="s">.json&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                                   <span class="nv">$(sys.policy_hub)</span> <span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span></span></span></code></pre></td></tr></table>
 </div>
 </div>
 </div>
@@ -282,16 +282,16 @@ Then the base augments would look like this:</p>
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
-  <span class="nt">&#34;vars&#34;</span><span class="p">:</span>
-  <span class="p">{</span>
-    <span class="nt">&#34;my_var&#34;</span><span class="p">:</span> <span class="s2">&#34;I am RED&#34;</span>
-  <span class="p">},</span>
-  <span class="nt">&#34;augments&#34;</span><span class="p">:</span>
-  <span class="p">[</span>
-    <span class="s2">&#34;device.json&#34;</span>
-  <span class="p">]</span>
-<span class="p">}</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;vars&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;my_var&#34;</span><span class="p">:</span> <span class="s2">&#34;I am RED&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;augments&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">  <span class="p">[</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;device.json&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table>
 </div>
 </div>
 </div>

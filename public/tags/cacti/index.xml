@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>cacti on </title>
+    <title>Cacti on </title>
     <link>https://cmdln.org/tags/cacti/</link>
-    <description>Recent content in cacti on </description>
+    <description>Recent content in Cacti on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 09 Mar 2010 15:42:06 +0000</lastBuildDate><atom:link href="https://cmdln.org/tags/cacti/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Tue, 09 Mar 2010 15:42:06 +0000</lastBuildDate>
+    <atom:link href="https://cmdln.org/tags/cacti/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Sysstat Sar Performance Metrics Via Nagios Plugin</title>
       <link>https://cmdln.org/2010/03/09/sysstat-sar-performance-metrics-via-nagios-plugin/</link>
       <pubDate>Tue, 09 Mar 2010 15:42:06 +0000</pubDate>
-      
       <guid>https://cmdln.org/2010/03/09/sysstat-sar-performance-metrics-via-nagios-plugin/</guid>
-      <description>I know I’ve mentioned how much I love the sysstat package before. I use sar regularly to help with performance diagnostics (Analyzing Linux System Performance And Finding Bottle Necks, CPU Performance Analysis In Linux, Baseline Analysis Is Important, CPU Performance Analysis In Linux Revisited). I wrote this little Nagios plugin to collect the performance metrics that sar collects.
-I use this plugin with Zenoss and I set any performance thresholds there, more important to me was collecting the information for historical graphing.</description>
+      <description>I know I’ve mentioned how much I love the sysstat package before. I use sar regularly to help with performance diagnostics (Analyzing Linux System Performance And Finding Bottle Necks, CPU Performance Analysis In Linux, Baseline Analysis Is Important, CPU Performance Analysis In Linux Revisited). I wrote this little Nagios plugin to collect the performance metrics that sar collects.&#xA;I use this plugin with Zenoss and I set any performance thresholds there, more important to me was collecting the information for historical graphing.</description>
     </item>
-    
   </channel>
 </rss>

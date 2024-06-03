@@ -1,24 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>cable on </title>
+    <title>Cable on </title>
     <link>https://cmdln.org/tags/cable/</link>
-    <description>Recent content in cable on </description>
+    <description>Recent content in Cable on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 08 Sep 2009 04:47:45 +0000</lastBuildDate><atom:link href="https://cmdln.org/tags/cable/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Tue, 08 Sep 2009 04:47:45 +0000</lastBuildDate>
+    <atom:link href="https://cmdln.org/tags/cable/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Service Providors and Big Brother Wag Each Others Tails Again</title>
       <link>https://cmdln.org/2009/09/07/service-providors-and-big-brother-wag-each-others-tails-again/</link>
       <pubDate>Tue, 08 Sep 2009 04:47:45 +0000</pubDate>
-      
       <guid>https://cmdln.org/2009/09/07/service-providors-and-big-brother-wag-each-others-tails-again/</guid>
-      <description>I love how there is all of this squabbling about what the definition of broadband is.
-“The Commission should continue to look at maximum advertised speed rather than some measure of ‘actual’ speed,”
-and
-consumers have “access to broadband capability” whenever they have the opportunity to
-purchase services and equipment that enable them to access the Internet at any time and use the
-types of applications that are most commonly used today, such as e-mail and web browsing.</description>
+      <description>I love how there is all of this squabbling about what the definition of broadband is.&#xA;“The Commission should continue to look at maximum advertised speed rather than some measure of ‘actual’ speed,”&#xA;and&#xA;consumers have “access to broadband capability” whenever they have the opportunity to&#xA;purchase services and equipment that enable them to access the Internet at any time and use the&#xA;types of applications that are most commonly used today, such as e-mail and web browsing.</description>
     </item>
-    
   </channel>
 </rss>

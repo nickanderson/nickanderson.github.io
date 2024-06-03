@@ -2,11 +2,11 @@
 <html lang="en">
 
 	<head>
-		<title> cfengine3 &middot;  </title>
+		<title> Cfengine3 &middot;  </title>
 
 		<meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.92.2" />
+<meta name="generator" content="Hugo 0.123.7">
 
 
 
@@ -75,7 +75,7 @@
 			<div class="container wrapper">
 				<div class="row">
 					<div class="col-xs-12 text-center">
-						<h1 id=>cfengine3</h1>
+						<h1 id=>Cfengine3</h1>
 					</div>
 				</div>
 				<ul id="post-list">
@@ -87,9 +87,9 @@
 				<h4 class="post-date">2018-10-18</h4>
 			</div>
 			<div class="post-summary"><p>How do I set the timeout with url_get()?
-  As shown in the documentation for url_get(), you set url.timeout in the data container passed for url_get() options.
- This example policy shows how to configure the timeout and demonstrates it by making a request through www.delay.me.
-1 2 3 4 5 6 7 8 9 10 11 12 13 14  bundle agent main { vars: &#34;options&#34; data =&gt; &#39;{ &#34;url.</p></div>
+As shown in the documentation for url_get(), you set url.timeout in the data container passed for url_get() options.
+This example policy shows how to configure the timeout and demonstrates it by making a request through www.delay.me.
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 bundle agent main { vars: &#34;options&#34; data =&gt; &#39;{ &#34;url.timeout&#34;: &#34;2&#34;, &#34;url.</p></div>
 			<div class="post-list-footer text-center">
 				<a href="https://cmdln.org/2018/10/18/setting-the-timeout-with-url_get-in-cfengine-3/">Read More</a>
 			</div>
@@ -103,10 +103,10 @@
 				<h4 class="post-date">2018-08-08</h4>
 			</div>
 			<div class="post-summary"><p>Recently I noticed that my CPU was pretty busy with the desktop search indexing, it brought me to the question:
- How can I disable the desktop search service trackerd?
-  After a brief investigation I found some XDG desktop needed to be edited to include the key Hidden=true.
- This policy disables known trackerd related XDG files when they are found.
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48  body file control { inputs =&gt; { &#34;$(sys.</p></div>
+How can I disable the desktop search service trackerd?
+After a brief investigation I found some XDG desktop needed to be edited to include the key Hidden=true.
+This policy disables known trackerd related XDG files when they are found.
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 body file control { inputs =&gt; { &#34;$(sys.</p></div>
 			<div class="post-list-footer text-center">
 				<a href="https://cmdln.org/2018/08/08/disabling-desktop-search-trackerd-with-cfengine-3/">Read More</a>
 			</div>
@@ -120,7 +120,7 @@
 				<h4 class="post-date">2018-07-19</h4>
 			</div>
 			<div class="post-summary"><p>How can I define custom access promises for cf-serverd without modifying vendored policy?
-  Commonly, when custom access promises are introduced, they are introduced by editing bundle server access_rules in controls/cf_serverd.cf where the default access rules are promised. Modifying policy maintained upstream can complicate future framework upgrades because care must be taken to ensure that modifications are preserved. There is no need to edit the vendored policy file to define custom access promises.</p></div>
+Commonly, when custom access promises are introduced, they are introduced by editing bundle server access_rules in controls/cf_serverd.cf where the default access rules are promised. Modifying policy maintained upstream can complicate future framework upgrades because care must be taken to ensure that modifications are preserved. There is no need to edit the vendored policy file to define custom access promises.</p></div>
 			<div class="post-list-footer text-center">
 				<a href="https://cmdln.org/2018/07/19/augments-driven-access-promises-with-cfengine-3/">Read More</a>
 			</div>
@@ -134,8 +134,8 @@
 				<h4 class="post-date">2017-12-26</h4>
 			</div>
 			<div class="post-summary"><p>Why doesn&#39;t body action if_elapsed work with vars type promises?
-  Let&#39;s start with the details of body action if_elapsed.
- 1 2 3 4 5 6 7  body action if_elapsed(x) # @brief Evaluate the promise every `x` minutes  # @param x The time in minutes between promise evaluations  { ifelapsed =&gt; &#34;$(x)&#34;; expireafter =&gt; &#34;$(x)&#34;; }     body action if_elapsed from the standard library    The ifelapsed action body attribute is the number of minutes before next allowed assessment of a promise.</p></div>
+Let&#39;s start with the details of body action if_elapsed.
+1 2 3 4 5 6 7 body action if_elapsed(x) # @brief Evaluate the promise every `x` minutes # @param x The time in minutes between promise evaluations { ifelapsed =&gt; &#34;$(x)&#34;; expireafter =&gt; &#34;$(x)&#34;; } body action if_elapsed from the standard library The ifelapsed action body attribute is the number of minutes before next allowed assessment of a promise.</p></div>
 			<div class="post-list-footer text-center">
 				<a href="https://cmdln.org/2017/12/26/vars-cant-use-ifelapsed/">Read More</a>
 			</div>
@@ -149,9 +149,9 @@
 				<h4 class="post-date">2017-11-30</h4>
 			</div>
 			<div class="post-summary"><p>What&#39;s the simplest, easiest, no-fuss way to wrap up standalone example?
-  I use ob-cfengine3 with org-mode inside of spacemacs for most of my self contained examples and when I start prototyping new policy.
- When I have a cfengine3 SRC block and I execute it body file control is magically inserted to load the stdlib.
-1 2 3 4 5 6 7  bundle agent main { reports: &#34;$(this.</p></div>
+I use ob-cfengine3 with org-mode inside of spacemacs for most of my self contained examples and when I start prototyping new policy.
+When I have a cfengine3 SRC block and I execute it body file control is magically inserted to load the stdlib.
+1 2 3 4 5 6 7 bundle agent main { reports: &#34;$(this.promise_filename):&#34; printfile =&gt; cat( $(this.</p></div>
 			<div class="post-list-footer text-center">
 				<a href="https://cmdln.org/2017/11/30/easiest-way-to-make-standalone-examples-in-cfengine-3/">Read More</a>
 			</div>

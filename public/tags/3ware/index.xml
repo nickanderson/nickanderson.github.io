@@ -5,18 +5,15 @@
     <link>https://cmdln.org/tags/3ware/</link>
     <description>Recent content in 3ware on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 02 Sep 2006 14:05:38 +0000</lastBuildDate><atom:link href="https://cmdln.org/tags/3ware/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Sat, 02 Sep 2006 14:05:38 +0000</lastBuildDate>
+    <atom:link href="https://cmdln.org/tags/3ware/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Disk Performance</title>
       <link>https://cmdln.org/2006/09/02/disk-performance/</link>
       <pubDate>Sat, 02 Sep 2006 14:05:38 +0000</pubDate>
-      
       <guid>https://cmdln.org/2006/09/02/disk-performance/</guid>
-      <description>So what kind of performance should people expect from a disk or raid?
-How long should it take to create 100G file?
-time dd if=/dev/zero of=mako1 bs=65536 count=163840
-A customer of ours is using this to create a 10G file and its taking about 20 minutes to create the file on a 12 drive raid 5 with 3ware. After setting ra again (in case the customer did not) and I got about 18 minutes on the same command.</description>
+      <description>So what kind of performance should people expect from a disk or raid?&#xA;How long should it take to create 100G file?&#xA;time dd if=/dev/zero of=mako1 bs=65536 count=163840&#xA;A customer of ours is using this to create a 10G file and its taking about 20 minutes to create the file on a 12 drive raid 5 with 3ware. After setting ra again (in case the customer did not) and I got about 18 minutes on the same command.</description>
     </item>
-    
   </channel>
 </rss>

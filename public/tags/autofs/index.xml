@@ -1,21 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>autofs on </title>
+    <title>Autofs on </title>
     <link>https://cmdln.org/tags/autofs/</link>
-    <description>Recent content in autofs on </description>
+    <description>Recent content in Autofs on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 30 Jun 2010 02:53:29 +0000</lastBuildDate><atom:link href="https://cmdln.org/tags/autofs/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Wed, 30 Jun 2010 02:53:29 +0000</lastBuildDate>
+    <atom:link href="https://cmdln.org/tags/autofs/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>autofs: Error logging fail</title>
       <link>https://cmdln.org/2010/06/29/autofs-error-logging-fail/</link>
       <pubDate>Wed, 30 Jun 2010 02:53:29 +0000</pubDate>
-      
       <guid>https://cmdln.org/2010/06/29/autofs-error-logging-fail/</guid>
-      <description>Why do applications have such horrible error messages. Non-specific errors are really not any more helpful than not logging at all.
-I was recently setting up autofs for mounting home directories from an nfs server. The little buggers refused to work right. All I was seeing in the logfile was a notice that an attempt was made, and failed.
-attempting to mount entry /home/nandersofailed to mount /home/nanderso  How helpful is that?</description>
+      <description>Why do applications have such horrible error messages. Non-specific errors are really not any more helpful than not logging at all.&#xA;I was recently setting up autofs for mounting home directories from an nfs server. The little buggers refused to work right. All I was seeing in the logfile was a notice that an attempt was made, and failed.&#xA;attempting to mount entry /home/nanderso&#xD;failed to mount /home/nanderso&#xD;How helpful is that?</description>
     </item>
-    
   </channel>
 </rss>
