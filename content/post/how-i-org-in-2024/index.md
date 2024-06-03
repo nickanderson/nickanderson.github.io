@@ -79,7 +79,7 @@ I read email in `mu4e`, simply being inside of Emacs that facilitate getting ema
 
 I occasionally used `org-web-tools`[^fn:8] to pull web pages into org. Either as a buffer to read, or as a subtree to store.
 
-{{< figure src="output-2024-02-16-17:29:51.gif" caption="<span class=\"figure-number\">Figure 4: </span>gif-screencast illustrating use of org-web-tools-read-as-org." width="100%" >}}
+{{< figure src="output-2024-02-16-17-org-web-tools-read-as-org.gif" caption="<span class=\"figure-number\">Figure 4: </span>gif-screencast illustrating use of org-web-tools-read-as-org." width="100%" >}}
 
 When I wanted to clip a bit of text from a web page I used `org-protocol`[^fn:9] bookmarklets to get the content into Emacs.
 
