@@ -1,33 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>funny on </title>
+    <title>Funny on </title>
     <link>https://cmdln.org/tags/funny/</link>
-    <description>Recent content in funny on </description>
+    <description>Recent content in Funny on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 25 Aug 2009 22:47:56 +0000</lastBuildDate><atom:link href="https://cmdln.org/tags/funny/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Tue, 25 Aug 2009 22:47:56 +0000</lastBuildDate>
+    <atom:link href="https://cmdln.org/tags/funny/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Just a little pickmeup</title>
       <link>https://cmdln.org/2009/08/25/just-a-little-pickmeup/</link>
       <pubDate>Tue, 25 Aug 2009 22:47:56 +0000</pubDate>
-      
       <guid>https://cmdln.org/2009/08/25/just-a-little-pickmeup/</guid>
-      <description>Wow I can’t believe these never made the top 40!
-IBM One Hundred Percent Club
-IBM anthem
-March On With IBM
-IBM rally song
-Inspired by Ben Rockwoods comment today about the IBM Songbook</description>
+      <description>Wow I can’t believe these never made the top 40!&#xA;IBM One Hundred Percent Club&#xA;IBM anthem&#xA;March On With IBM&#xA;IBM rally song&#xA;Inspired by Ben Rockwoods comment today about the IBM Songbook</description>
     </item>
-    
     <item>
       <title>Parable (a short allegorical story designed to illustrate or teach some truth, religious principle, or moral lesson)</title>
       <link>https://cmdln.org/2008/11/03/parable-a-short-allegorical-story-designed-to-illustrate-or-teach-some-truth-religious-principle-or-moral-lesson/</link>
       <pubDate>Mon, 03 Nov 2008 21:05:18 +0000</pubDate>
-      
       <guid>https://cmdln.org/2008/11/03/parable-a-short-allegorical-story-designed-to-illustrate-or-teach-some-truth-religious-principle-or-moral-lesson/</guid>
       <description>&lt;p&gt;Rarely do I get emails that are worthy of even reading let alone sharing with others. This one however, is pretty funny, and seems to be fairly accurate.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

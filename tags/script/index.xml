@@ -1,28 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>script on </title>
+    <title>Script on </title>
     <link>https://cmdln.org/tags/script/</link>
-    <description>Recent content in script on </description>
+    <description>Recent content in Script on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 07 Dec 2008 05:19:26 +0000</lastBuildDate><atom:link href="https://cmdln.org/tags/script/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Sun, 07 Dec 2008 05:19:26 +0000</lastBuildDate>
+    <atom:link href="https://cmdln.org/tags/script/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Notify someone with hook when you update a git working copy</title>
       <link>https://cmdln.org/2008/12/06/notify-someone-with-hook-when-you-update-a-git-working-copy/</link>
       <pubDate>Sun, 07 Dec 2008 05:19:26 +0000</pubDate>
-      
       <guid>https://cmdln.org/2008/12/06/notify-someone-with-hook-when-you-update-a-git-working-copy/</guid>
       <description>Some projects have production code that runs off of a git cloned repository. There may be a case in which you want to notify others when that clone pulls. It is a pretty easy feat with gits post-merge hook. The post-merge hook will run after a merge (think git pull). All you have to do it create a project/.git/hooks/post-merge shell script and chmod +x it. Next time you pull successfully that script will run.</description>
     </item>
-    
     <item>
       <title>Fix virtual email address maildir permissions in Cpanel</title>
       <link>https://cmdln.org/2008/04/17/fix-virtual-email-address-maildir-permissions-in-cpanel/</link>
       <pubDate>Thu, 17 Apr 2008 23:34:20 +0000</pubDate>
-      
       <guid>https://cmdln.org/2008/04/17/fix-virtual-email-address-maildir-permissions-in-cpanel/</guid>
       <description>&lt;p&gt;Im not a big fan of cpanel but I do manage a server that runs it. Recently some update was pushed down that caused about 50% of my users to not be able to access mail. It all boiled down to a permission issue that the cpanel scripts /scripts/mailperm did not take care of. Their scripts do not correct the permissions of the virtual user maildirs.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

@@ -6,7 +6,7 @@
 
 		<meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.92.2" />
+<meta name="generator" content="Hugo 0.123.7">
 
 
 
@@ -101,7 +101,7 @@
 			</div>
 			<div class="post-summary"><p>Besides the gui/vnc consoles you can still use the equivlent of xm console in Citrix XenServer.
 On the host console:
- xe vm-list to get the list of domins running (just note the uuid of the domain you want). list_domains will list the domain name and the uuid of the domains. Match up your uuid so you get the proper dom_id xm console equivlent is /usr/lib/xen/bin/xenconsole dom_id  Its not in the root users $PATH though I think it ought to be.</p></div>
+xe vm-list to get the list of domins running (just note the uuid of the domain you want). list_domains will list the domain name and the uuid of the domains. Match up your uuid so you get the proper dom_id xm console equivlent is /usr/lib/xen/bin/xenconsole dom_id Its not in the root users $PATH though I think it ought to be.</p></div>
 			<div class="post-list-footer text-center">
 				<a href="https://cmdln.org/2010/04/06/how-to-get-console-on-linux-domu-with-xenserver-xm-console-equivlent/">Read More</a>
 			</div>
@@ -115,7 +115,8 @@ On the host console:
 				<h4 class="post-date">2010-04-06</h4>
 			</div>
 			<div class="post-summary"><p>Don’t even start with me about how telnet is horrid. Out side of my control but I recently had issues trying to enable telnet on a server. Typically its pretty straightforward.
- yum install telnet-server chkconfig telnet on chkconfig xinetd on service xinetd start  Unfortunately for me this was not working. Every time I tried to telnet to the host after enabling it I would get an error message.</p></div>
+yum install telnet-server chkconfig telnet on chkconfig xinetd on service xinetd start Unfortunately for me this was not working. Every time I tried to telnet to the host after enabling it I would get an error message.
+telnet hostTrying 203.</p></div>
 			<div class="post-list-footer text-center">
 				<a href="https://cmdln.org/2010/04/06/error-msg-fail-how-to-enable-telnet-on-centosrhel/">Read More</a>
 			</div>
@@ -143,7 +144,7 @@ When you log into the iLOM “daemons” need to initialize.</p></div>
 				<h4 class="post-date">2010-03-20</h4>
 			</div>
 			<div class="post-summary"><p>In the last week my wife and I have both experienced excellent customer service. All too often you only hear about a company when they do something bad (see all my fail posts). I just want to be sure to give kudos to both of these companies.
-  BornFree: My wife ordered some BornFree Spouts as we start transitioning our son to sippy cups. She said about 5 minutes after she hit the order button she realized she should have ordered more.</p></div>
+BornFree: My wife ordered some BornFree Spouts as we start transitioning our son to sippy cups. She said about 5 minutes after she hit the order button she realized she should have ordered more.</p></div>
 			<div class="post-list-footer text-center">
 				<a href="https://cmdln.org/2010/03/20/good-customer-service/">Read More</a>
 			</div>
@@ -213,8 +214,7 @@ Remote kernel logging with netconsole for fun and profit</p></div>
 				<h4 class="post-date">2010-03-04</h4>
 			</div>
 			<div class="post-summary"><p>I like to have as little run in dom0 as possible. However some things you really need checked from dom0, like the status of your raid perhaps. Just some quick instructions on getting Nagios NRPE running in XenServer.
-  Install EPEL repository and disable it by default (remember we don’t want to accidentally install unnecessary packages) wget http://download.fedora.redhat.com/pub/epel/5/$(uname -i)/epel-release-5-3.noarch.rpm rpm -hiv epel-release*.rpm sed -i &rsquo;s/enabled=1/enabled=0/g' /etc/yum.repos.d/epel.repo 
-  Install nrpe and configure it to start on boot yum install &ndash;enablerepo=epel nrpe chkconfig nrpe on</p></div>
+Install EPEL repository and disable it by default (remember we don’t want to accidentally install unnecessary packages) wget http://download.fedora.redhat.com/pub/epel/5/$(uname -i)/epel-release-5-3.noarch.rpm rpm -hiv epel-release*.rpm sed -i &rsquo;s/enabled=1/enabled=0/g&rsquo; /etc/yum.repos.d/epel.repo Install nrpe and configure it to start on boot yum install &ndash;enablerepo=epel nrpe chkconfig nrpe on Modify the firewall to allow NRPE connections.</p></div>
 			<div class="post-list-footer text-center">
 				<a href="https://cmdln.org/2010/03/04/installing-nrpe-on-xenserver/">Read More</a>
 			</div>

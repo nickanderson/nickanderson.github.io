@@ -1,68 +1,54 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>fail on </title>
+    <title>Fail on </title>
     <link>https://cmdln.org/tags/fail/</link>
-    <description>Recent content in fail on </description>
+    <description>Recent content in Fail on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 05 Apr 2011 18:17:28 +0000</lastBuildDate><atom:link href="https://cmdln.org/tags/fail/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Tue, 05 Apr 2011 18:17:28 +0000</lastBuildDate>
+    <atom:link href="https://cmdln.org/tags/fail/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>My April Fools</title>
       <link>https://cmdln.org/2011/04/05/myaprilfools/</link>
       <pubDate>Tue, 05 Apr 2011 18:17:28 +0000</pubDate>
-      
       <guid>https://cmdln.org/2011/04/05/myaprilfools/</guid>
-      <description>April 1st. I had a fairly eventful day, first I found that the phone system at $work has been mis-configured since it was installed. Second I got a call from someone I had worked with a few years back about a system that did not have backups that had a raid hiccup tanking the system a few days ago needing help with a restore.
-The phone system Several months back a new phone system was installed at my office.</description>
+      <description>April 1st. I had a fairly eventful day, first I found that the phone system at $work has been mis-configured since it was installed. Second I got a call from someone I had worked with a few years back about a system that did not have backups that had a raid hiccup tanking the system a few days ago needing help with a restore.&#xA;The phone system Several months back a new phone system was installed at my office.</description>
     </item>
-    
     <item>
       <title>autofs: Error logging fail</title>
       <link>https://cmdln.org/2010/06/29/autofs-error-logging-fail/</link>
       <pubDate>Wed, 30 Jun 2010 02:53:29 +0000</pubDate>
-      
       <guid>https://cmdln.org/2010/06/29/autofs-error-logging-fail/</guid>
-      <description>Why do applications have such horrible error messages. Non-specific errors are really not any more helpful than not logging at all.
-I was recently setting up autofs for mounting home directories from an nfs server. The little buggers refused to work right. All I was seeing in the logfile was a notice that an attempt was made, and failed.
-attempting to mount entry /home/nandersofailed to mount /home/nanderso  How helpful is that?</description>
+      <description>Why do applications have such horrible error messages. Non-specific errors are really not any more helpful than not logging at all.&#xA;I was recently setting up autofs for mounting home directories from an nfs server. The little buggers refused to work right. All I was seeing in the logfile was a notice that an attempt was made, and failed.&#xA;attempting to mount entry /home/nanderso&#xD;failed to mount /home/nanderso&#xD;How helpful is that?</description>
     </item>
-    
     <item>
       <title>Microsoft Mediaroom Personal Server Odyssey</title>
       <link>https://cmdln.org/2010/01/27/microsoft-mediaroom-personal-server-odyssey/</link>
       <pubDate>Wed, 27 Jan 2010 15:09:15 +0000</pubDate>
-      
       <guid>https://cmdln.org/2010/01/27/microsoft-mediaroom-personal-server-odyssey/</guid>
       <description>&lt;p&gt;Ewwww, scary isn’t it. No Its not Halloween, but you may have entered the twilight zone. Right, I never touch Microsoft products. Well in actuality sometimes I do (I just don’t brag about it). Some of the development at $work uses Microsofts Mediaroom, and I have a “Personal Server” (great name right?) that the developers use. I was trying to install the Mediaroom service pack yesterday and took some notes on the process. Some of my friends found it quite entertaining. I found it quite aggravating﻿ as you might imagine.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>HP Support Fail</title>
       <link>https://cmdln.org/2010/01/15/hp-support-fail/</link>
       <pubDate>Fri, 15 Jan 2010 20:12:55 +0000</pubDate>
-      
       <guid>https://cmdln.org/2010/01/15/hp-support-fail/</guid>
       <description>&lt;p&gt;From time to time  I have not so pleasant support experiences. Today I had another.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Support Fail</title>
       <link>https://cmdln.org/2009/08/24/support-fail/</link>
       <pubDate>Mon, 24 Aug 2009 19:12:51 +0000</pubDate>
-      
       <guid>https://cmdln.org/2009/08/24/support-fail/</guid>
-      <description>I am a big fan of chat support. I don’t have to drain my battery waiting on hold until its my turn in the queue. Plus when dealing with error messages its infinitely more helpful to be able to copy/paste to the agent. Sadly finding competent help is still an issue. Here is an excerpt from a recent chat support experience.
- (8:39:41 PM)  Sheldon He: The SSL will need to be re-issued, since they are IP specific.</description>
+      <description>I am a big fan of chat support. I don’t have to drain my battery waiting on hold until its my turn in the queue. Plus when dealing with error messages its infinitely more helpful to be able to copy/paste to the agent. Sadly finding competent help is still an issue. Here is an excerpt from a recent chat support experience.&#xA;(8:39:41 PM) Sheldon He: The SSL will need to be re-issued, since they are IP specific.</description>
     </item>
-    
     <item>
       <title>Cacheing Issue</title>
       <link>https://cmdln.org/2009/07/07/cacheing-issue/</link>
       <pubDate>Tue, 07 Jul 2009 14:49:10 +0000</pubDate>
-      
       <guid>https://cmdln.org/2009/07/07/cacheing-issue/</guid>
       <description>Apparently I have had a caching issue on the blog for a while now. It should be fixed but if anyone notices that your feed is updating but the site is not feel free to drop me a line. Thanks to Warren Guy from planetsysadmin.com for letting me know.</description>
     </item>
-    
   </channel>
 </rss>

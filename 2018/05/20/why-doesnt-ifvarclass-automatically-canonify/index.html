@@ -6,7 +6,7 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.92.2" />
+<meta name="generator" content="Hugo 0.123.7">
 
 
 
@@ -129,30 +129,30 @@ use case for conditioning <code class="verbatim">ifvarclass</code> using a class
 </span><span class="lnt">24
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">main</span>
-  <span class="p">{</span>
-    <span class="kd">classes</span><span class="p">:</span>
-
-      <span class="s">&#34;my-illegal-class&#34;</span><span class="p">;</span>
-
-    <span class="kd">reports</span><span class="p">:</span>
-      <span class="s">&#34;</span><span class="si">$(with)</span><span class="s">&#34;</span> <span class="kr">with</span> <span class="o">=&gt;</span> <span class="nf">join</span><span class="p">(</span> <span class="s">&#34; &#34;</span><span class="p">,</span> <span class="nf">classesmatching</span><span class="p">(</span> <span class="s">&#34;my.illegal.class&#34;</span> <span class="p">)</span> <span class="p">);</span>
-
-      <span class="s">&#34;my-illegal-class is NOT defined (as expected, its invalid)&#34;</span>
-        <span class="kr">unless</span> <span class="o">=&gt;</span> <span class="s">&#34;my-illegal-class&#34;</span><span class="p">;</span>
-
-      <span class="s">&#34;my_illegal_class is defined&#34;</span>
-          <span class="kr">if</span> <span class="o">=&gt;</span> <span class="nf">canonify</span><span class="p">(</span><span class="s">&#34;my-illegal-class&#34;</span><span class="p">);</span>
-
-      <span class="c"># Note, ifvarclass takes expressisons, you couldn&#39;t do that if it were
-</span><span class="c"></span>      <span class="c"># automatically canonified. Here I canonify the string using with, and use
-</span><span class="c"></span>      <span class="c"># it as part of the expression which contains an invalid classcharacter, but
-</span><span class="c"></span>      <span class="c"># its desireable for constructing expressions.
-</span><span class="c"></span>
-      <span class="s">&#34;Slice and dice using `with`&#34;</span>
-        <span class="kr">with</span> <span class="o">=&gt;</span> <span class="nf">canonify</span><span class="p">(</span> <span class="s">&#34;my-illegal-class&#34;</span> <span class="p">),</span>
-        <span class="kr">if</span> <span class="o">=&gt;</span> <span class="s">&#34;linux|</span><span class="si">$(with)</span><span class="s">&#34;</span><span class="p">;</span>
-  <span class="p">}</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="line"><span class="cl">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">main</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">classes</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      <span class="s">&#34;my-illegal-class&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">reports</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">      <span class="s">&#34;</span><span class="si">$(with)</span><span class="s">&#34;</span> <span class="kr">with</span> <span class="o">=&gt;</span> <span class="nf">join</span><span class="p">(</span> <span class="s">&#34; &#34;</span><span class="p">,</span> <span class="nf">classesmatching</span><span class="p">(</span> <span class="s">&#34;my.illegal.class&#34;</span> <span class="p">)</span> <span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      <span class="s">&#34;my-illegal-class is NOT defined (as expected, its invalid)&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="kr">unless</span> <span class="o">=&gt;</span> <span class="s">&#34;my-illegal-class&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      <span class="s">&#34;my_illegal_class is defined&#34;</span>
+</span></span><span class="line"><span class="cl">          <span class="kr">if</span> <span class="o">=&gt;</span> <span class="nf">canonify</span><span class="p">(</span><span class="s">&#34;my-illegal-class&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      <span class="c"># Note, ifvarclass takes expressisons, you couldn&#39;t do that if it were
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>      <span class="c"># automatically canonified. Here I canonify the string using with, and use
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>      <span class="c"># it as part of the expression which contains an invalid classcharacter, but
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>      <span class="c"># its desireable for constructing expressions.
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>
+</span></span><span class="line"><span class="cl">      <span class="s">&#34;Slice and dice using `with`&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="kr">with</span> <span class="o">=&gt;</span> <span class="nf">canonify</span><span class="p">(</span> <span class="s">&#34;my-illegal-class&#34;</span> <span class="p">),</span>
+</span></span><span class="line"><span class="cl">        <span class="kr">if</span> <span class="o">=&gt;</span> <span class="s">&#34;linux|</span><span class="si">$(with)</span><span class="s">&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span></span></span></code></pre></td></tr></table>
 </div>
 </div>
 </div>

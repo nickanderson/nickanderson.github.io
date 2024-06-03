@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>purge on </title>
+    <title>Purge on </title>
     <link>https://cmdln.org/tags/purge/</link>
-    <description>Recent content in purge on </description>
+    <description>Recent content in Purge on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 19 Apr 2008 05:33:14 +0000</lastBuildDate><atom:link href="https://cmdln.org/tags/purge/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Sat, 19 Apr 2008 05:33:14 +0000</lastBuildDate>
+    <atom:link href="https://cmdln.org/tags/purge/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Purge previously uninstalled packages in debian</title>
       <link>https://cmdln.org/2008/04/18/purge-previously-uninstalled-packages-in-debian/</link>
       <pubDate>Sat, 19 Apr 2008 05:33:14 +0000</pubDate>
-      
       <guid>https://cmdln.org/2008/04/18/purge-previously-uninstalled-packages-in-debian/</guid>
       <description>&lt;p&gt;Recently I ordered a server with Debian etch. Unfortunately during testing I noticed that startx was on the system, along with a whole slew of other junk that I don’t generally want on a fresh server. I wanted to remove all of the cruft but I didn’t have the exact package list.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

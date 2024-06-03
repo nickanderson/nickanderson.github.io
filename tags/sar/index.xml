@@ -1,46 +1,40 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>sar on </title>
+    <title>Sar on </title>
     <link>https://cmdln.org/tags/sar/</link>
-    <description>Recent content in sar on </description>
+    <description>Recent content in Sar on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 30 Jan 2009 03:34:39 +0000</lastBuildDate><atom:link href="https://cmdln.org/tags/sar/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Fri, 30 Jan 2009 03:34:39 +0000</lastBuildDate>
+    <atom:link href="https://cmdln.org/tags/sar/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Baseline Analysis is Important, CPU Performance Analysis in Linux Revisited</title>
       <link>https://cmdln.org/2009/01/29/baseline-analysis-is-important-cpu-performance-analysis-in-linux-revisited/</link>
       <pubDate>Fri, 30 Jan 2009 03:34:39 +0000</pubDate>
-      
       <guid>https://cmdln.org/2009/01/29/baseline-analysis-is-important-cpu-performance-analysis-in-linux-revisited/</guid>
       <description>&lt;p&gt;Yesterday I wrote about &lt;a href=http://www.cmdln.org/2009/01/28/cpu-performance-analysis-in-linux/&gt;CPU Performance Analysis in Linux&lt;/a&gt;. I explained how to tell if you are experiencing a CPU bottleneck. This is just a quick followup to show the effect of adding more cpu power.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>CPU Performance Analysis in Linux</title>
       <link>https://cmdln.org/2009/01/28/cpu-performance-analysis-in-linux/</link>
       <pubDate>Wed, 28 Jan 2009 06:03:17 +0000</pubDate>
-      
       <guid>https://cmdln.org/2009/01/28/cpu-performance-analysis-in-linux/</guid>
       <description>&lt;p&gt;A while back I wrote a post &lt;a href=http://www.cmdln.org/2008/04/13/analyzing-linux-system-performance-and-finding-bottle-necks/&gt;Analyzing Linux System Performance and Finding Bottlenecks&lt;/a&gt;. I did’t really give a good explanation of determining if you are CPU bound or not so I am writing this post to clear that up.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Analyzing linux system performance and finding bottle necks</title>
       <link>https://cmdln.org/2008/04/13/analyzing-linux-system-performance-and-finding-bottle-necks/</link>
       <pubDate>Mon, 14 Apr 2008 02:29:17 +0000</pubDate>
-      
       <guid>https://cmdln.org/2008/04/13/analyzing-linux-system-performance-and-finding-bottle-necks/</guid>
       <description>&lt;p&gt;System performance analytics seems to be a frequent question on forums and mailing lists. Finding out why something is slow is generally nontrivial as there are many factors to consider. I have found the sysstat package to be an invaluable tool when looking at system performance. Specifically the command sar gives a wealth of information.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Match string and print preceding line</title>
       <link>https://cmdln.org/2008/04/10/match-string-and-print-preceding-line/</link>
       <pubDate>Thu, 10 Apr 2008 19:59:52 +0000</pubDate>
-      
       <guid>https://cmdln.org/2008/04/10/match-string-and-print-preceding-line/</guid>
       <description>&lt;p&gt;Text processing is fun. Well, fun if you like to beat your head against a wall. Most of the time I just string a few things together to get whatever I am doing done. Its much better to find the shortest way to do something, it spawns less processes, is more efficient and generally a good idea. So if you have ever wanted to match a string from some given output and only print the preceding line here you go.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

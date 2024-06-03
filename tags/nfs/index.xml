@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>nfs on </title>
+    <title>Nfs on </title>
     <link>https://cmdln.org/tags/nfs/</link>
-    <description>Recent content in nfs on </description>
+    <description>Recent content in Nfs on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 08 Apr 2010 17:36:17 +0000</lastBuildDate><atom:link href="https://cmdln.org/tags/nfs/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Thu, 08 Apr 2010 17:36:17 +0000</lastBuildDate>
+    <atom:link href="https://cmdln.org/tags/nfs/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Mount Linux NFS exports in OSX</title>
       <link>https://cmdln.org/2010/04/08/mount-linux-nfs-exports-in-osx/</link>
       <pubDate>Thu, 08 Apr 2010 17:36:17 +0000</pubDate>
-      
       <guid>https://cmdln.org/2010/04/08/mount-linux-nfs-exports-in-osx/</guid>
-      <description>I’m not a fan of OSX and I try to avoid it with the same veracity that I avoid Windows. But I recently needed to have a Linux NFS export mounted on an OSX server. A simple mount server:/export /mymountpoint didn’t work and returned “Operation not permitted”. After a bit of digging I found the solution.
-I needed to instruct the client to use a privledged port by adding the “-P” option.</description>
+      <description>I’m not a fan of OSX and I try to avoid it with the same veracity that I avoid Windows. But I recently needed to have a Linux NFS export mounted on an OSX server. A simple mount server:/export /mymountpoint didn’t work and returned “Operation not permitted”. After a bit of digging I found the solution.&#xA;I needed to instruct the client to use a privledged port by adding the “-P” option.</description>
     </item>
-    
   </channel>
 </rss>

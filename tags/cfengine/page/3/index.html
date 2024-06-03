@@ -2,11 +2,11 @@
 <html lang="en">
 
 	<head>
-		<title> CFEngine &middot;  </title>
+		<title> Cfengine &middot;  </title>
 
 		<meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.92.2" />
+<meta name="generator" content="Hugo 0.123.7">
 
 
 
@@ -75,7 +75,7 @@
 			<div class="container wrapper">
 				<div class="row">
 					<div class="col-xs-12 text-center">
-						<h1 id=>CFEngine</h1>
+						<h1 id=>Cfengine</h1>
 					</div>
 				</div>
 				<ul id="post-list">
@@ -87,8 +87,8 @@
 				<h4 class="post-date">2017-11-20</h4>
 			</div>
 			<div class="post-summary"><p>Is there implicit &#34;canonify&#34;-cation happening in in &#34;classes:&#34; promise type?
-  Yes the agent will automatically canonify classes that you define for your convenience.
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28  bundle agent main # @brief show how classes are automatically canonified during definition  { vars: &#34;invalid_class_string&#34; string =&gt; &#34;my-invalid-class&#34;; classes: @if minimum_version(3.</p></div>
+Yes the agent will automatically canonify classes that you define for your convenience.
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 bundle agent main # @brief show how classes are automatically canonified during definition { vars: &#34;invalid_class_string&#34; string =&gt; &#34;my-invalid-class&#34;; classes: @if minimum_version(3.</p></div>
 			<div class="post-list-footer text-center">
 				<a href="https://cmdln.org/2017/11/20/are-cfegine-classes-automatically-canonified/">Read More</a>
 			</div>
@@ -143,8 +143,8 @@ I have. I even wrote a crappy little perl script to locate the files that contai
 				<h4 class="post-date">2013-03-29</h4>
 			</div>
 			<div class="post-summary"><p>John Sanders shared a pattern for canonifying lists in #CFEngine on irc.freenode.net yesterday. It’s a useful reference so I thought I would replicate it here.
- 1 2 3 4 5 6   &lt;td class=&quot;line-data&quot;&gt; &lt;pre class=&quot;line-pre&quot;&gt;&lt;div class=&quot;line&quot; id=&quot;file-output-LC1&quot;&gt;  % cf-agent -KIf ./example_canonify_list.cf
- R: canonified site: www_example_com  R: canonified site: www_example2_com  R: alternate canonified site: www_example_com  R: alternate canonified site: www_example2_com  !! Method invoked repairs        &lt;div class=&quot;gist-meta&quot;&gt; &lt;a href=&quot;https://gist.</p></div>
+1 2 3 4 5 6 &lt;td class=&quot;line-data&quot;&gt; &lt;pre class=&quot;line-pre&quot;&gt;&lt;div class=&quot;line&quot; id=&quot;file-output-LC1&quot;&gt; % cf-agent -KIf ./example_canonify_list.cf
+R: canonified site: www_example_com R: canonified site: www_example2_com R: alternate canonified site: www_example_com R: alternate canonified site: www_example2_com !! Method invoked repairs &lt;div class=&quot;gist-meta&quot;&gt; &lt;a href=&quot;https://gist.github.com/nickanderson/5271023/raw/d57a43831308cf31f0a5fe237b3d3436ed3d3049/Output&quot; style=&quot;float:right&quot;&gt;view raw&lt;/a&gt; &lt;a href=&quot;https://gist.</p></div>
 			<div class="post-list-footer text-center">
 				<a href="https://cmdln.org/2013/03/29/canonifying-a-list-with-cfengine-3/">Read More</a>
 			</div>
@@ -215,7 +215,7 @@ cf-agent -KIv | grep "cf3&gt;\s*+" | grep -v : But that isn’t really a clear p
 			</div>
 			<div class="post-summary"><p>Methods type promises are powerful abstraction tools in CFEngine 3. Methods allow you to activate bundles (optionally parametrized) from other bundles. This allows encapsulation of knowledge and lends itself to re-usability.
 I just want to share an example of calling bundles dynamically. It’s a contrived example, but I thought it was neat so here it is.
-R: in bundle agent handler1: I got value1  R: in bundle agent handler1: I got value2  &nbsp;!</p></div>
+R: in bundle agent handler1: I got value1 R: in bundle agent handler1: I got value2 &nbsp;!</p></div>
 			<div class="post-list-footer text-center">
 				<a href="https://cmdln.org/2012/10/16/dynamic-method-calls-in-cfengine/">Read More</a>
 			</div>

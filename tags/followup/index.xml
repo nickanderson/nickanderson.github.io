@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>followup on </title>
+    <title>Followup on </title>
     <link>https://cmdln.org/tags/followup/</link>
-    <description>Recent content in followup on </description>
+    <description>Recent content in Followup on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 30 Jan 2009 03:34:39 +0000</lastBuildDate><atom:link href="https://cmdln.org/tags/followup/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Fri, 30 Jan 2009 03:34:39 +0000</lastBuildDate>
+    <atom:link href="https://cmdln.org/tags/followup/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Baseline Analysis is Important, CPU Performance Analysis in Linux Revisited</title>
       <link>https://cmdln.org/2009/01/29/baseline-analysis-is-important-cpu-performance-analysis-in-linux-revisited/</link>
       <pubDate>Fri, 30 Jan 2009 03:34:39 +0000</pubDate>
-      
       <guid>https://cmdln.org/2009/01/29/baseline-analysis-is-important-cpu-performance-analysis-in-linux-revisited/</guid>
       <description>&lt;p&gt;Yesterday I wrote about &lt;a href=http://www.cmdln.org/2009/01/28/cpu-performance-analysis-in-linux/&gt;CPU Performance Analysis in Linux&lt;/a&gt;. I explained how to tell if you are experiencing a CPU bottleneck. This is just a quick followup to show the effect of adding more cpu power.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

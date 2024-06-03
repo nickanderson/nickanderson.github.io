@@ -5,2985 +5,2325 @@
     <link>https://cmdln.org/tags/</link>
     <description>Recent content in Tags on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 05 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://cmdln.org/tags/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Fri, 05 Jan 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://cmdln.org/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>org-mode</title>
+      <title>Org-Mode</title>
       <link>https://cmdln.org/tags/org-mode/</link>
       <pubDate>Fri, 05 Jan 2024 00:00:00 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/org-mode/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>org-roam</title>
+      <title>Org-Roam</title>
       <link>https://cmdln.org/tags/org-roam/</link>
       <pubDate>Fri, 05 Jan 2024 00:00:00 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/org-roam/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>pkm</title>
+      <title>Pkm</title>
       <link>https://cmdln.org/tags/pkm/</link>
       <pubDate>Fri, 05 Jan 2024 00:00:00 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/pkm/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>cfengine3</title>
+      <title>Cfengine3</title>
       <link>https://cmdln.org/tags/cfengine3/</link>
       <pubDate>Wed, 14 Aug 2019 00:00:00 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/cfengine3/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>CFEngine</title>
+      <title>Cfengine</title>
       <link>https://cmdln.org/tags/cfengine/</link>
       <pubDate>Mon, 20 May 2019 00:00:00 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/cfengine/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>mustache</title>
+      <title>Mustache</title>
       <link>https://cmdln.org/tags/mustache/</link>
       <pubDate>Fri, 16 Nov 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/mustache/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>linux</title>
+      <title>Linux</title>
       <link>https://cmdln.org/tags/linux/</link>
       <pubDate>Fri, 05 Jan 2018 13:35:04 -0600</pubDate>
-      
       <guid>https://cmdln.org/tags/linux/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>spacemacs</title>
+      <title>Spacemacs</title>
       <link>https://cmdln.org/tags/spacemacs/</link>
       <pubDate>Sat, 25 Nov 2017 00:00:00 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/spacemacs/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>emacs</title>
+      <title>Emacs</title>
       <link>https://cmdln.org/tags/emacs/</link>
       <pubDate>Tue, 26 Apr 2016 00:00:00 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/emacs/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>FreeBSD</title>
       <link>https://cmdln.org/tags/freebsd/</link>
       <pubDate>Fri, 21 Aug 2015 04:51:59 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/freebsd/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>FreeNAS</title>
       <link>https://cmdln.org/tags/freenas/</link>
       <pubDate>Fri, 21 Aug 2015 04:51:59 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/freenas/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>lopsa</title>
+      <title>Lopsa</title>
       <link>https://cmdln.org/tags/lopsa/</link>
       <pubDate>Thu, 03 Oct 2013 14:12:32 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/lopsa/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>canonify</title>
+      <title>Canonify</title>
       <link>https://cmdln.org/tags/canonify/</link>
       <pubDate>Fri, 29 Mar 2013 14:12:14 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/canonify/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>list</title>
+      <title>List</title>
       <link>https://cmdln.org/tags/list/</link>
       <pubDate>Fri, 29 Mar 2013 14:12:14 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/list/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>pattern</title>
+      <title>Pattern</title>
       <link>https://cmdln.org/tags/pattern/</link>
       <pubDate>Fri, 29 Mar 2013 14:12:14 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/pattern/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>tips</title>
+      <title>Tips</title>
       <link>https://cmdln.org/tags/tips/</link>
       <pubDate>Wed, 13 Mar 2013 17:44:58 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/tips/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>devops</title>
+      <title>Devops</title>
       <link>https://cmdln.org/tags/devops/</link>
       <pubDate>Thu, 06 Dec 2012 15:01:13 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/devops/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>sysadmin</title>
+      <title>Sysadmin</title>
       <link>https://cmdln.org/tags/sysadmin/</link>
       <pubDate>Thu, 06 Dec 2012 15:01:13 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/sysadmin/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>zendmd</title>
+      <title>Zendmd</title>
       <link>https://cmdln.org/tags/zendmd/</link>
       <pubDate>Thu, 06 Dec 2012 15:01:13 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/zendmd/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>zenoss</title>
+      <title>Zenoss</title>
       <link>https://cmdln.org/tags/zenoss/</link>
       <pubDate>Thu, 06 Dec 2012 15:01:13 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/zenoss/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>cf_promises_validated</title>
+      <title>Cf_promises_validated</title>
       <link>https://cmdln.org/tags/cf_promises_validated/</link>
       <pubDate>Thu, 25 Oct 2012 02:07:09 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/cf_promises_validated/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>failsafe.cf</title>
+      <title>Failsafe.cf</title>
       <link>https://cmdln.org/tags/failsafe.cf/</link>
       <pubDate>Thu, 25 Oct 2012 02:07:09 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/failsafe.cf/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>update.cf</title>
+      <title>Update.cf</title>
       <link>https://cmdln.org/tags/update.cf/</link>
       <pubDate>Thu, 25 Oct 2012 02:07:09 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/update.cf/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>allclassesreport</title>
+      <title>Allclassesreport</title>
       <link>https://cmdln.org/tags/allclassesreport/</link>
       <pubDate>Thu, 18 Oct 2012 21:00:49 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/allclassesreport/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>classes</title>
+      <title>Classes</title>
       <link>https://cmdln.org/tags/classes/</link>
       <pubDate>Thu, 18 Oct 2012 21:00:49 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/classes/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>tip</title>
+      <title>Tip</title>
       <link>https://cmdln.org/tags/tip/</link>
       <pubDate>Thu, 18 Oct 2012 21:00:49 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/tip/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>automation</title>
+      <title>Automation</title>
       <link>https://cmdln.org/tags/automation/</link>
       <pubDate>Wed, 01 Aug 2012 13:55:30 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/automation/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>canonical</title>
+      <title>Canonical</title>
       <link>https://cmdln.org/tags/canonical/</link>
       <pubDate>Wed, 01 Aug 2012 13:55:30 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/canonical/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>citrix</title>
+      <title>Citrix</title>
       <link>https://cmdln.org/tags/citrix/</link>
       <pubDate>Wed, 01 Aug 2012 13:55:30 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/citrix/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>cloud</title>
+      <title>Cloud</title>
       <link>https://cmdln.org/tags/cloud/</link>
       <pubDate>Wed, 01 Aug 2012 13:55:30 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/cloud/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>cloudopen</title>
+      <title>Cloudopen</title>
       <link>https://cmdln.org/tags/cloudopen/</link>
       <pubDate>Wed, 01 Aug 2012 13:55:30 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/cloudopen/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>configuration management</title>
+      <title>Configuration Management</title>
       <link>https://cmdln.org/tags/configuration-management/</link>
       <pubDate>Wed, 01 Aug 2012 13:55:30 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/configuration-management/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>confrence</title>
+      <title>Confrence</title>
       <link>https://cmdln.org/tags/confrence/</link>
       <pubDate>Wed, 01 Aug 2012 13:55:30 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/confrence/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>dell</title>
+      <title>Dell</title>
       <link>https://cmdln.org/tags/dell/</link>
       <pubDate>Wed, 01 Aug 2012 13:55:30 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/dell/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>juju</title>
+      <title>Juju</title>
       <link>https://cmdln.org/tags/juju/</link>
       <pubDate>Wed, 01 Aug 2012 13:55:30 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/juju/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>linuxcon</title>
+      <title>Linuxcon</title>
       <link>https://cmdln.org/tags/linuxcon/</link>
       <pubDate>Wed, 01 Aug 2012 13:55:30 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/linuxcon/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>opennebula</title>
+      <title>Opennebula</title>
       <link>https://cmdln.org/tags/opennebula/</link>
       <pubDate>Wed, 01 Aug 2012 13:55:30 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/opennebula/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>openstack</title>
+      <title>Openstack</title>
       <link>https://cmdln.org/tags/openstack/</link>
       <pubDate>Wed, 01 Aug 2012 13:55:30 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/openstack/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>vi</title>
+      <title>Vi</title>
       <link>https://cmdln.org/tags/vi/</link>
       <pubDate>Wed, 01 Aug 2012 13:55:30 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/vi/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>vim</title>
+      <title>Vim</title>
       <link>https://cmdln.org/tags/vim/</link>
       <pubDate>Wed, 01 Aug 2012 13:55:30 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/vim/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>webops</title>
+      <title>Webops</title>
       <link>https://cmdln.org/tags/webops/</link>
       <pubDate>Wed, 01 Aug 2012 13:55:30 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/webops/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>xcp</title>
+      <title>Xcp</title>
       <link>https://cmdln.org/tags/xcp/</link>
       <pubDate>Wed, 01 Aug 2012 13:55:30 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/xcp/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>xen</title>
+      <title>Xen</title>
       <link>https://cmdln.org/tags/xen/</link>
       <pubDate>Wed, 01 Aug 2012 13:55:30 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/xen/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>git</title>
+      <title>Git</title>
       <link>https://cmdln.org/tags/git/</link>
       <pubDate>Tue, 17 Jul 2012 22:36:40 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/git/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Vagrant</title>
       <link>https://cmdln.org/tags/vagrant/</link>
       <pubDate>Sat, 14 Jul 2012 20:02:17 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/vagrant/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>complex</title>
+      <title>Complex</title>
       <link>https://cmdln.org/tags/complex/</link>
       <pubDate>Fri, 13 Jul 2012 20:15:50 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/complex/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>complicated</title>
+      <title>Complicated</title>
       <link>https://cmdln.org/tags/complicated/</link>
       <pubDate>Fri, 13 Jul 2012 20:15:50 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/complicated/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>simple</title>
+      <title>Simple</title>
       <link>https://cmdln.org/tags/simple/</link>
       <pubDate>Fri, 13 Jul 2012 20:15:50 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/simple/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Design Center</title>
       <link>https://cmdln.org/tags/design-center/</link>
       <pubDate>Mon, 04 Jun 2012 19:28:29 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/design-center/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>book review</title>
+      <title>Book Review</title>
       <link>https://cmdln.org/tags/book-review/</link>
       <pubDate>Thu, 29 Mar 2012 15:04:25 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/book-review/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>#photograpy</title>
-      <link>https://cmdln.org/tags/#photograpy/</link>
+      <title>#Photograpy</title>
+      <link>https://cmdln.org/tags/</link>
       <pubDate>Thu, 29 Mar 2012 04:50:54 +0000</pubDate>
-      
-      <guid>https://cmdln.org/tags/#photograpy/</guid>
+      <guid>https://cmdln.org/tags/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>boxcryptor</title>
+      <title>Boxcryptor</title>
       <link>https://cmdln.org/tags/boxcryptor/</link>
       <pubDate>Mon, 27 Feb 2012 20:19:39 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/boxcryptor/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>dropbox</title>
+      <title>Dropbox</title>
       <link>https://cmdln.org/tags/dropbox/</link>
       <pubDate>Mon, 27 Feb 2012 20:19:39 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/dropbox/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>encfs</title>
+      <title>Encfs</title>
       <link>https://cmdln.org/tags/encfs/</link>
       <pubDate>Mon, 27 Feb 2012 20:19:39 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/encfs/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>ubuntu</title>
+      <title>Ubuntu</title>
       <link>https://cmdln.org/tags/ubuntu/</link>
       <pubDate>Mon, 27 Feb 2012 20:19:39 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/ubuntu/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>centos</title>
+      <title>Centos</title>
       <link>https://cmdln.org/tags/centos/</link>
       <pubDate>Sun, 19 Feb 2012 04:55:27 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/centos/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>example</title>
+      <title>Example</title>
       <link>https://cmdln.org/tags/example/</link>
       <pubDate>Sun, 19 Feb 2012 04:55:27 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/example/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>redhat</title>
+      <title>Redhat</title>
       <link>https://cmdln.org/tags/redhat/</link>
       <pubDate>Sun, 19 Feb 2012 04:55:27 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/redhat/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>routing</title>
+      <title>Routing</title>
       <link>https://cmdln.org/tags/routing/</link>
       <pubDate>Sun, 19 Feb 2012 04:55:27 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/routing/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>cf-promises</title>
+      <title>Cf-Promises</title>
       <link>https://cmdln.org/tags/cf-promises/</link>
       <pubDate>Thu, 16 Feb 2012 17:01:38 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/cf-promises/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>pre-commit</title>
+      <title>Pre-Commit</title>
       <link>https://cmdln.org/tags/pre-commit/</link>
       <pubDate>Thu, 16 Feb 2012 17:01:38 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/pre-commit/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>createrepo</title>
+      <title>Createrepo</title>
       <link>https://cmdln.org/tags/createrepo/</link>
       <pubDate>Thu, 16 Feb 2012 07:05:53 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/createrepo/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>password management</title>
+      <title>Password Management</title>
       <link>https://cmdln.org/tags/password-management/</link>
       <pubDate>Thu, 16 Feb 2012 07:05:53 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/password-management/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>routes</title>
+      <title>Routes</title>
       <link>https://cmdln.org/tags/routes/</link>
       <pubDate>Thu, 16 Feb 2012 07:05:53 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/routes/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>selinux</title>
+      <title>Selinux</title>
       <link>https://cmdln.org/tags/selinux/</link>
       <pubDate>Thu, 16 Feb 2012 07:05:53 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/selinux/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>yum</title>
+      <title>Yum</title>
       <link>https://cmdln.org/tags/yum/</link>
       <pubDate>Thu, 16 Feb 2012 07:05:53 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/yum/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>blackout</title>
+      <title>Blackout</title>
       <link>https://cmdln.org/tags/blackout/</link>
       <pubDate>Wed, 18 Jan 2012 15:11:24 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/blackout/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>freedom</title>
+      <title>Freedom</title>
       <link>https://cmdln.org/tags/freedom/</link>
       <pubDate>Wed, 18 Jan 2012 15:11:24 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/freedom/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>PIPA</title>
       <link>https://cmdln.org/tags/pipa/</link>
       <pubDate>Wed, 18 Jan 2012 15:11:24 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/pipa/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>SOPA</title>
       <link>https://cmdln.org/tags/sopa/</link>
       <pubDate>Wed, 18 Jan 2012 15:11:24 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/sopa/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>customer service</title>
+      <title>Customer Service</title>
       <link>https://cmdln.org/tags/customer-service/</link>
       <pubDate>Thu, 15 Dec 2011 17:02:25 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/customer-service/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>win</title>
+      <title>Win</title>
       <link>https://cmdln.org/tags/win/</link>
       <pubDate>Thu, 15 Dec 2011 17:02:25 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/win/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>LISA</title>
       <link>https://cmdln.org/tags/lisa/</link>
       <pubDate>Fri, 18 Nov 2011 18:41:12 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/lisa/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>mentorship</title>
+      <title>Mentorship</title>
       <link>https://cmdln.org/tags/mentorship/</link>
       <pubDate>Thu, 28 Jul 2011 03:42:21 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/mentorship/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>gnome-shell</title>
+      <title>Gnome-Shell</title>
       <link>https://cmdln.org/tags/gnome-shell/</link>
       <pubDate>Thu, 14 Jul 2011 20:11:33 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/gnome-shell/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>gnome 3</title>
+      <title>Gnome 3</title>
       <link>https://cmdln.org/tags/gnome-3/</link>
       <pubDate>Fri, 08 Jul 2011 12:53:16 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/gnome-3/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>unity</title>
+      <title>Unity</title>
       <link>https://cmdln.org/tags/unity/</link>
       <pubDate>Fri, 08 Jul 2011 12:53:16 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/unity/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>check_snmp_extend</title>
+      <title>Check_snmp_extend</title>
       <link>https://cmdln.org/tags/check_snmp_extend/</link>
       <pubDate>Tue, 05 Jul 2011 03:39:54 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/check_snmp_extend/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>github</title>
+      <title>Github</title>
       <link>https://cmdln.org/tags/github/</link>
       <pubDate>Tue, 05 Jul 2011 03:39:54 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/github/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>nagios</title>
+      <title>Nagios</title>
       <link>https://cmdln.org/tags/nagios/</link>
       <pubDate>Tue, 05 Jul 2011 03:39:54 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/nagios/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>news</title>
+      <title>News</title>
       <link>https://cmdln.org/tags/news/</link>
       <pubDate>Fri, 24 Jun 2011 17:41:30 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/news/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>backups</title>
+      <title>Backups</title>
       <link>https://cmdln.org/tags/backups/</link>
       <pubDate>Tue, 05 Apr 2011 18:17:28 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/backups/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>fail</title>
+      <title>Fail</title>
       <link>https://cmdln.org/tags/fail/</link>
       <pubDate>Tue, 05 Apr 2011 18:17:28 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/fail/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>gnome-terminal</title>
+      <title>Gnome-Terminal</title>
       <link>https://cmdln.org/tags/gnome-terminal/</link>
       <pubDate>Wed, 29 Dec 2010 01:36:17 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/gnome-terminal/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>lisa10</title>
+      <title>Lisa10</title>
       <link>https://cmdln.org/tags/lisa10/</link>
       <pubDate>Tue, 09 Nov 2010 15:42:43 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/lisa10/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>firefox</title>
+      <title>Firefox</title>
       <link>https://cmdln.org/tags/firefox/</link>
       <pubDate>Fri, 24 Sep 2010 03:42:57 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/firefox/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>google apps</title>
+      <title>Google Apps</title>
       <link>https://cmdln.org/tags/google-apps/</link>
       <pubDate>Fri, 24 Sep 2010 03:42:57 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/google-apps/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>bind</title>
+      <title>Bind</title>
       <link>https://cmdln.org/tags/bind/</link>
       <pubDate>Mon, 02 Aug 2010 16:21:42 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/bind/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>named</title>
+      <title>Named</title>
       <link>https://cmdln.org/tags/named/</link>
       <pubDate>Mon, 02 Aug 2010 16:21:42 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/named/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>stats</title>
+      <title>Stats</title>
       <link>https://cmdln.org/tags/stats/</link>
       <pubDate>Mon, 02 Aug 2010 16:21:42 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/stats/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>dns</title>
+      <title>Dns</title>
       <link>https://cmdln.org/tags/dns/</link>
       <pubDate>Sun, 01 Aug 2010 18:42:29 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/dns/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>nscd</title>
+      <title>Nscd</title>
       <link>https://cmdln.org/tags/nscd/</link>
       <pubDate>Sun, 01 Aug 2010 18:42:29 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/nscd/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>lvm</title>
+      <title>Lvm</title>
       <link>https://cmdln.org/tags/lvm/</link>
       <pubDate>Tue, 13 Jul 2010 14:45:21 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/lvm/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>vmware</title>
+      <title>Vmware</title>
       <link>https://cmdln.org/tags/vmware/</link>
       <pubDate>Tue, 13 Jul 2010 14:45:21 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/vmware/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>zenpack</title>
+      <title>Zenpack</title>
       <link>https://cmdln.org/tags/zenpack/</link>
       <pubDate>Mon, 12 Jul 2010 15:52:44 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/zenpack/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>nginx</title>
+      <title>Nginx</title>
       <link>https://cmdln.org/tags/nginx/</link>
       <pubDate>Fri, 09 Jul 2010 23:41:53 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/nginx/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>autofs</title>
+      <title>Autofs</title>
       <link>https://cmdln.org/tags/autofs/</link>
       <pubDate>Wed, 30 Jun 2010 02:53:29 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/autofs/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>bash</title>
+      <title>Bash</title>
       <link>https://cmdln.org/tags/bash/</link>
       <pubDate>Thu, 20 May 2010 15:14:41 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/bash/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>emc</title>
+      <title>Emc</title>
       <link>https://cmdln.org/tags/emc/</link>
       <pubDate>Wed, 19 May 2010 18:19:27 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/emc/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>networker</title>
+      <title>Networker</title>
       <link>https://cmdln.org/tags/networker/</link>
       <pubDate>Wed, 19 May 2010 18:19:27 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/networker/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>networking</title>
+      <title>Networking</title>
       <link>https://cmdln.org/tags/networking/</link>
       <pubDate>Mon, 17 May 2010 15:29:06 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/networking/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>podcast</title>
+      <title>Podcast</title>
       <link>https://cmdln.org/tags/podcast/</link>
       <pubDate>Mon, 17 May 2010 15:29:06 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/podcast/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>cpanel</title>
+      <title>Cpanel</title>
       <link>https://cmdln.org/tags/cpanel/</link>
       <pubDate>Sat, 08 May 2010 03:05:12 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/cpanel/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>google</title>
+      <title>Google</title>
       <link>https://cmdln.org/tags/google/</link>
       <pubDate>Thu, 06 May 2010 13:41:36 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/google/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>hack</title>
+      <title>Hack</title>
       <link>https://cmdln.org/tags/hack/</link>
       <pubDate>Thu, 06 May 2010 13:41:36 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/hack/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>bofh</title>
+      <title>Bofh</title>
       <link>https://cmdln.org/tags/bofh/</link>
       <pubDate>Thu, 06 May 2010 02:25:32 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/bofh/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>performance</title>
+      <title>Performance</title>
       <link>https://cmdln.org/tags/performance/</link>
       <pubDate>Thu, 22 Apr 2010 16:26:16 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/performance/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>alm</title>
+      <title>Alm</title>
       <link>https://cmdln.org/tags/alm/</link>
       <pubDate>Fri, 16 Apr 2010 19:13:35 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/alm/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>awr</title>
+      <title>Awr</title>
       <link>https://cmdln.org/tags/awr/</link>
       <pubDate>Fri, 16 Apr 2010 19:13:35 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/awr/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>seo</title>
+      <title>Seo</title>
       <link>https://cmdln.org/tags/seo/</link>
       <pubDate>Fri, 16 Apr 2010 19:13:35 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/seo/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>storage</title>
+      <title>Storage</title>
       <link>https://cmdln.org/tags/storage/</link>
       <pubDate>Thu, 15 Apr 2010 14:26:35 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/storage/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>ulimit</title>
+      <title>Ulimit</title>
       <link>https://cmdln.org/tags/ulimit/</link>
       <pubDate>Mon, 12 Apr 2010 15:47:43 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/ulimit/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>nfs</title>
+      <title>Nfs</title>
       <link>https://cmdln.org/tags/nfs/</link>
       <pubDate>Thu, 08 Apr 2010 17:36:17 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/nfs/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>osx</title>
+      <title>Osx</title>
       <link>https://cmdln.org/tags/osx/</link>
       <pubDate>Thu, 08 Apr 2010 17:36:17 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/osx/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>debian</title>
+      <title>Debian</title>
       <link>https://cmdln.org/tags/debian/</link>
       <pubDate>Wed, 07 Apr 2010 15:04:03 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/debian/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>gentoo</title>
+      <title>Gentoo</title>
       <link>https://cmdln.org/tags/gentoo/</link>
       <pubDate>Wed, 07 Apr 2010 15:04:03 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/gentoo/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>gpg-agent</title>
+      <title>Gpg-Agent</title>
       <link>https://cmdln.org/tags/gpg-agent/</link>
       <pubDate>Wed, 07 Apr 2010 15:04:03 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/gpg-agent/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>keychain</title>
+      <title>Keychain</title>
       <link>https://cmdln.org/tags/keychain/</link>
       <pubDate>Wed, 07 Apr 2010 15:04:03 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/keychain/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>ssh-agent</title>
+      <title>Ssh-Agent</title>
       <link>https://cmdln.org/tags/ssh-agent/</link>
       <pubDate>Wed, 07 Apr 2010 15:04:03 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/ssh-agent/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>cli</title>
+      <title>Cli</title>
       <link>https://cmdln.org/tags/cli/</link>
       <pubDate>Tue, 06 Apr 2010 17:53:36 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/cli/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>XenServer</title>
       <link>https://cmdln.org/tags/xenserver/</link>
       <pubDate>Tue, 06 Apr 2010 17:53:36 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/xenserver/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>telnet</title>
+      <title>Telnet</title>
       <link>https://cmdln.org/tags/telnet/</link>
       <pubDate>Tue, 06 Apr 2010 14:46:30 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/telnet/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>python</title>
+      <title>Python</title>
       <link>https://cmdln.org/tags/python/</link>
       <pubDate>Wed, 31 Mar 2010 17:11:06 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/python/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>sun</title>
+      <title>Sun</title>
       <link>https://cmdln.org/tags/sun/</link>
       <pubDate>Wed, 31 Mar 2010 17:11:06 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/sun/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>bornfree</title>
+      <title>Bornfree</title>
       <link>https://cmdln.org/tags/bornfree/</link>
       <pubDate>Sat, 20 Mar 2010 21:17:10 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/bornfree/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>kudos</title>
+      <title>Kudos</title>
       <link>https://cmdln.org/tags/kudos/</link>
       <pubDate>Sat, 20 Mar 2010 21:17:10 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/kudos/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>notfail</title>
+      <title>Notfail</title>
       <link>https://cmdln.org/tags/notfail/</link>
       <pubDate>Sat, 20 Mar 2010 21:17:10 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/notfail/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>readynas</title>
+      <title>Readynas</title>
       <link>https://cmdln.org/tags/readynas/</link>
       <pubDate>Sat, 20 Mar 2010 21:17:10 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/readynas/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>cacti</title>
+      <title>Cacti</title>
       <link>https://cmdln.org/tags/cacti/</link>
       <pubDate>Tue, 09 Mar 2010 15:42:06 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/cacti/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>sysstat</title>
+      <title>Sysstat</title>
       <link>https://cmdln.org/tags/sysstat/</link>
       <pubDate>Tue, 09 Mar 2010 15:42:06 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/sysstat/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>nrpe</title>
+      <title>Nrpe</title>
       <link>https://cmdln.org/tags/nrpe/</link>
       <pubDate>Mon, 08 Mar 2010 14:51:23 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/nrpe/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>flashback</title>
+      <title>Flashback</title>
       <link>https://cmdln.org/tags/flashback/</link>
       <pubDate>Fri, 05 Mar 2010 15:17:23 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/flashback/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>logging</title>
+      <title>Logging</title>
       <link>https://cmdln.org/tags/logging/</link>
       <pubDate>Fri, 05 Mar 2010 15:17:23 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/logging/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>netconsole</title>
+      <title>Netconsole</title>
       <link>https://cmdln.org/tags/netconsole/</link>
       <pubDate>Fri, 05 Mar 2010 15:17:23 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/netconsole/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>hacking</title>
+      <title>Hacking</title>
       <link>https://cmdln.org/tags/hacking/</link>
       <pubDate>Wed, 03 Mar 2010 14:31:37 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/hacking/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>screen</title>
+      <title>Screen</title>
       <link>https://cmdln.org/tags/screen/</link>
       <pubDate>Tue, 02 Mar 2010 14:31:02 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/screen/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>reverse proxy</title>
+      <title>Reverse Proxy</title>
       <link>https://cmdln.org/tags/reverse-proxy/</link>
       <pubDate>Tue, 02 Mar 2010 05:01:58 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/reverse-proxy/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Discussions</title>
       <link>https://cmdln.org/tags/discussions/</link>
       <pubDate>Fri, 29 Jan 2010 17:52:12 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/discussions/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>spamassassin</title>
+      <title>Spamassassin</title>
       <link>https://cmdln.org/tags/spamassassin/</link>
       <pubDate>Fri, 29 Jan 2010 17:52:12 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/spamassassin/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Mediaroom</title>
       <link>https://cmdln.org/tags/mediaroom/</link>
       <pubDate>Wed, 27 Jan 2010 15:09:15 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/mediaroom/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Microsoft</title>
       <link>https://cmdln.org/tags/microsoft/</link>
       <pubDate>Wed, 27 Jan 2010 15:09:15 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/microsoft/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Personal Server</title>
       <link>https://cmdln.org/tags/personal-server/</link>
       <pubDate>Wed, 27 Jan 2010 15:09:15 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/personal-server/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>shoutout</title>
+      <title>Shoutout</title>
       <link>https://cmdln.org/tags/shoutout/</link>
       <pubDate>Wed, 27 Jan 2010 14:46:29 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/shoutout/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>arccos</title>
+      <title>Arccos</title>
       <link>https://cmdln.org/tags/arccos/</link>
       <pubDate>Sat, 23 Jan 2010 02:32:58 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/arccos/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>backup dvd</title>
+      <title>Backup Dvd</title>
       <link>https://cmdln.org/tags/backup-dvd/</link>
       <pubDate>Sat, 23 Jan 2010 02:32:58 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/backup-dvd/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>copy dvd</title>
+      <title>Copy Dvd</title>
       <link>https://cmdln.org/tags/copy-dvd/</link>
       <pubDate>Sat, 23 Jan 2010 02:32:58 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/copy-dvd/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>decss</title>
+      <title>Decss</title>
       <link>https://cmdln.org/tags/decss/</link>
       <pubDate>Sat, 23 Jan 2010 02:32:58 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/decss/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>ripguard</title>
+      <title>Ripguard</title>
       <link>https://cmdln.org/tags/ripguard/</link>
       <pubDate>Sat, 23 Jan 2010 02:32:58 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/ripguard/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>virtualization</title>
+      <title>Virtualization</title>
       <link>https://cmdln.org/tags/virtualization/</link>
       <pubDate>Tue, 19 Jan 2010 18:07:28 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/virtualization/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>XenCenter</title>
       <link>https://cmdln.org/tags/xencenter/</link>
       <pubDate>Tue, 19 Jan 2010 18:07:28 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/xencenter/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>9</title>
       <link>https://cmdln.org/tags/9/</link>
       <pubDate>Thu, 10 Sep 2009 03:46:36 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/9/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>cable</title>
+      <title>Cable</title>
       <link>https://cmdln.org/tags/cable/</link>
       <pubDate>Tue, 08 Sep 2009 04:47:45 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/cable/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>backup</title>
+      <title>Backup</title>
       <link>https://cmdln.org/tags/backup/</link>
       <pubDate>Fri, 28 Aug 2009 14:19:14 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/backup/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>rsync</title>
+      <title>Rsync</title>
       <link>https://cmdln.org/tags/rsync/</link>
       <pubDate>Fri, 28 Aug 2009 14:19:14 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/rsync/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>windows</title>
+      <title>Windows</title>
       <link>https://cmdln.org/tags/windows/</link>
       <pubDate>Fri, 28 Aug 2009 14:19:14 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/windows/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>erase</title>
+      <title>Erase</title>
       <link>https://cmdln.org/tags/erase/</link>
       <pubDate>Wed, 26 Aug 2009 06:00:44 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/erase/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>shred</title>
+      <title>Shred</title>
       <link>https://cmdln.org/tags/shred/</link>
       <pubDate>Wed, 26 Aug 2009 06:00:44 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/shred/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>funny</title>
+      <title>Funny</title>
       <link>https://cmdln.org/tags/funny/</link>
       <pubDate>Tue, 25 Aug 2009 22:47:56 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/funny/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>command line</title>
+      <title>Command Line</title>
       <link>https://cmdln.org/tags/command-line/</link>
       <pubDate>Sat, 22 Aug 2009 19:07:46 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/command-line/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>console</title>
+      <title>Console</title>
       <link>https://cmdln.org/tags/console/</link>
       <pubDate>Sat, 22 Aug 2009 19:07:46 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/console/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>phog</title>
+      <title>Phog</title>
       <link>https://cmdln.org/tags/phog/</link>
       <pubDate>Thu, 20 Aug 2009 02:47:22 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/phog/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>rant</title>
+      <title>Rant</title>
       <link>https://cmdln.org/tags/rant/</link>
       <pubDate>Thu, 20 Aug 2009 02:47:22 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/rant/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>FUD</title>
       <link>https://cmdln.org/tags/fud/</link>
       <pubDate>Sat, 01 Aug 2009 09:43:01 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/fud/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Puppet</title>
       <link>https://cmdln.org/tags/puppet/</link>
       <pubDate>Thu, 30 Jul 2009 04:57:02 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/puppet/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>structured systems management</title>
+      <title>Structured Systems Management</title>
       <link>https://cmdln.org/tags/structured-systems-management/</link>
       <pubDate>Sat, 18 Jul 2009 06:00:21 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/structured-systems-management/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>proxy</title>
+      <title>Proxy</title>
       <link>https://cmdln.org/tags/proxy/</link>
       <pubDate>Sun, 12 Jul 2009 17:29:21 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/proxy/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>initscript</title>
+      <title>Initscript</title>
       <link>https://cmdln.org/tags/initscript/</link>
       <pubDate>Tue, 07 Jul 2009 00:56:27 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/initscript/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>evolution</title>
+      <title>Evolution</title>
       <link>https://cmdln.org/tags/evolution/</link>
       <pubDate>Thu, 21 May 2009 02:44:29 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/evolution/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>mutt</title>
+      <title>Mutt</title>
       <link>https://cmdln.org/tags/mutt/</link>
       <pubDate>Thu, 21 May 2009 02:44:29 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/mutt/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>three letters</title>
+      <title>Three Letters</title>
       <link>https://cmdln.org/tags/three-letters/</link>
       <pubDate>Tue, 19 May 2009 13:03:53 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/three-letters/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>sqlite</title>
+      <title>Sqlite</title>
       <link>https://cmdln.org/tags/sqlite/</link>
       <pubDate>Wed, 29 Apr 2009 21:40:40 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/sqlite/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>regex</title>
+      <title>Regex</title>
       <link>https://cmdln.org/tags/regex/</link>
       <pubDate>Tue, 28 Apr 2009 18:19:39 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/regex/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>terminal</title>
+      <title>Terminal</title>
       <link>https://cmdln.org/tags/terminal/</link>
       <pubDate>Tue, 28 Apr 2009 18:19:39 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/terminal/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>email</title>
+      <title>Email</title>
       <link>https://cmdln.org/tags/email/</link>
       <pubDate>Thu, 16 Apr 2009 17:45:43 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/email/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>testing</title>
+      <title>Testing</title>
       <link>https://cmdln.org/tags/testing/</link>
       <pubDate>Thu, 16 Apr 2009 17:45:43 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/testing/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>video</title>
+      <title>Video</title>
       <link>https://cmdln.org/tags/video/</link>
       <pubDate>Thu, 19 Mar 2009 04:22:36 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/video/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>decrypt</title>
+      <title>Decrypt</title>
       <link>https://cmdln.org/tags/decrypt/</link>
       <pubDate>Mon, 23 Feb 2009 14:45:04 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/decrypt/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>pdf</title>
+      <title>Pdf</title>
       <link>https://cmdln.org/tags/pdf/</link>
       <pubDate>Mon, 23 Feb 2009 14:45:04 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/pdf/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>gibak</title>
+      <title>Gibak</title>
       <link>https://cmdln.org/tags/gibak/</link>
       <pubDate>Fri, 20 Feb 2009 14:56:53 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/gibak/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>etc</title>
+      <title>Etc</title>
       <link>https://cmdln.org/tags/etc/</link>
       <pubDate>Thu, 19 Feb 2009 15:19:36 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/etc/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>version control</title>
+      <title>Version Control</title>
       <link>https://cmdln.org/tags/version-control/</link>
       <pubDate>Thu, 19 Feb 2009 15:19:36 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/version-control/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>one liner</title>
+      <title>One Liner</title>
       <link>https://cmdln.org/tags/one-liner/</link>
       <pubDate>Wed, 18 Feb 2009 16:08:58 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/one-liner/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>followup</title>
+      <title>Followup</title>
       <link>https://cmdln.org/tags/followup/</link>
       <pubDate>Fri, 30 Jan 2009 03:34:39 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/followup/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>performance analysis</title>
+      <title>Performance Analysis</title>
       <link>https://cmdln.org/tags/performance-analysis/</link>
       <pubDate>Fri, 30 Jan 2009 03:34:39 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/performance-analysis/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>sar</title>
+      <title>Sar</title>
       <link>https://cmdln.org/tags/sar/</link>
       <pubDate>Fri, 30 Jan 2009 03:34:39 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/sar/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>ssh</title>
+      <title>Ssh</title>
       <link>https://cmdln.org/tags/ssh/</link>
       <pubDate>Wed, 17 Dec 2008 17:07:58 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/ssh/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>apache</title>
+      <title>Apache</title>
       <link>https://cmdln.org/tags/apache/</link>
       <pubDate>Fri, 12 Dec 2008 19:41:00 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/apache/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>mod_rewrite</title>
+      <title>Mod_rewrite</title>
       <link>https://cmdln.org/tags/mod_rewrite/</link>
       <pubDate>Fri, 12 Dec 2008 19:41:00 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/mod_rewrite/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>utility</title>
+      <title>Utility</title>
       <link>https://cmdln.org/tags/utility/</link>
       <pubDate>Mon, 08 Dec 2008 18:20:09 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/utility/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>worklog</title>
+      <title>Worklog</title>
       <link>https://cmdln.org/tags/worklog/</link>
       <pubDate>Mon, 08 Dec 2008 18:20:09 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/worklog/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>code</title>
+      <title>Code</title>
       <link>https://cmdln.org/tags/code/</link>
       <pubDate>Sun, 07 Dec 2008 05:19:26 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/code/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>script</title>
+      <title>Script</title>
       <link>https://cmdln.org/tags/script/</link>
       <pubDate>Sun, 07 Dec 2008 05:19:26 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/script/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>monitoring</title>
+      <title>Monitoring</title>
       <link>https://cmdln.org/tags/monitoring/</link>
       <pubDate>Sat, 06 Dec 2008 07:57:12 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/monitoring/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>mysql</title>
+      <title>Mysql</title>
       <link>https://cmdln.org/tags/mysql/</link>
       <pubDate>Sat, 06 Dec 2008 07:57:12 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/mysql/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>gnu screen</title>
+      <title>Gnu Screen</title>
       <link>https://cmdln.org/tags/gnu-screen/</link>
       <pubDate>Fri, 05 Dec 2008 18:01:20 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/gnu-screen/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>shell</title>
+      <title>Shell</title>
       <link>https://cmdln.org/tags/shell/</link>
       <pubDate>Fri, 05 Dec 2008 17:34:01 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/shell/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>conversion</title>
+      <title>Conversion</title>
       <link>https://cmdln.org/tags/conversion/</link>
       <pubDate>Fri, 05 Dec 2008 05:14:20 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/conversion/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>math</title>
+      <title>Math</title>
       <link>https://cmdln.org/tags/math/</link>
       <pubDate>Fri, 05 Dec 2008 05:14:20 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/math/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>units</title>
+      <title>Units</title>
       <link>https://cmdln.org/tags/units/</link>
       <pubDate>Fri, 05 Dec 2008 05:14:20 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/units/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>cron</title>
+      <title>Cron</title>
       <link>https://cmdln.org/tags/cron/</link>
       <pubDate>Wed, 19 Nov 2008 14:57:53 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/cron/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>imap</title>
+      <title>Imap</title>
       <link>https://cmdln.org/tags/imap/</link>
       <pubDate>Sat, 08 Nov 2008 04:09:19 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/imap/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>profiles</title>
+      <title>Profiles</title>
       <link>https://cmdln.org/tags/profiles/</link>
       <pubDate>Sat, 08 Nov 2008 04:09:19 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/profiles/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>off topic</title>
+      <title>Off Topic</title>
       <link>https://cmdln.org/tags/off-topic/</link>
       <pubDate>Mon, 03 Nov 2008 21:05:18 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/off-topic/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>DNS TTL</title>
       <link>https://cmdln.org/tags/dns-ttl/</link>
       <pubDate>Sun, 02 Nov 2008 00:08:08 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/dns-ttl/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>mod_proxy</title>
+      <title>Mod_proxy</title>
       <link>https://cmdln.org/tags/mod_proxy/</link>
       <pubDate>Sun, 02 Nov 2008 00:08:08 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/mod_proxy/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>website migration</title>
+      <title>Website Migration</title>
       <link>https://cmdln.org/tags/website-migration/</link>
       <pubDate>Sun, 02 Nov 2008 00:08:08 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/website-migration/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>bottom posting</title>
+      <title>Bottom Posting</title>
       <link>https://cmdln.org/tags/bottom-posting/</link>
       <pubDate>Fri, 31 Oct 2008 05:28:48 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/bottom-posting/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>email etiquette</title>
+      <title>Email Etiquette</title>
       <link>https://cmdln.org/tags/email-etiquette/</link>
       <pubDate>Fri, 31 Oct 2008 05:28:48 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/email-etiquette/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>top posting</title>
+      <title>Top Posting</title>
       <link>https://cmdln.org/tags/top-posting/</link>
       <pubDate>Fri, 31 Oct 2008 05:28:48 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/top-posting/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>blog</title>
+      <title>Blog</title>
       <link>https://cmdln.org/tags/blog/</link>
       <pubDate>Sun, 26 Oct 2008 15:37:48 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/blog/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>wordpress</title>
+      <title>Wordpress</title>
       <link>https://cmdln.org/tags/wordpress/</link>
       <pubDate>Sun, 26 Oct 2008 15:37:48 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/wordpress/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>gitosis</title>
+      <title>Gitosis</title>
       <link>https://cmdln.org/tags/gitosis/</link>
       <pubDate>Sun, 26 Oct 2008 05:50:59 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/gitosis/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>hosting</title>
+      <title>Hosting</title>
       <link>https://cmdln.org/tags/hosting/</link>
       <pubDate>Sun, 26 Oct 2008 05:50:59 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/hosting/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>test</title>
+      <title>Test</title>
       <link>https://cmdln.org/tags/test/</link>
       <pubDate>Sun, 26 Oct 2008 02:49:58 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/test/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>vimpress</title>
+      <title>Vimpress</title>
       <link>https://cmdln.org/tags/vimpress/</link>
       <pubDate>Sun, 26 Oct 2008 02:49:58 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/vimpress/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>point in time recovery</title>
+      <title>Point in Time Recovery</title>
       <link>https://cmdln.org/tags/point-in-time-recovery/</link>
       <pubDate>Mon, 20 Oct 2008 19:19:07 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/point-in-time-recovery/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>vim undo</title>
+      <title>Vim Undo</title>
       <link>https://cmdln.org/tags/vim-undo/</link>
       <pubDate>Mon, 20 Oct 2008 19:19:07 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/vim-undo/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>python ide</title>
+      <title>Python Ide</title>
       <link>https://cmdln.org/tags/python-ide/</link>
       <pubDate>Sat, 18 Oct 2008 19:19:06 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/python-ide/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>personal growth</title>
+      <title>Personal Growth</title>
       <link>https://cmdln.org/tags/personal-growth/</link>
       <pubDate>Fri, 29 Aug 2008 07:56:58 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/personal-growth/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>sys admin</title>
+      <title>Sys Admin</title>
       <link>https://cmdln.org/tags/sys-admin/</link>
       <pubDate>Fri, 29 Aug 2008 07:56:58 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/sys-admin/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>systems administrator</title>
+      <title>Systems Administrator</title>
       <link>https://cmdln.org/tags/systems-administrator/</link>
       <pubDate>Fri, 29 Aug 2008 07:56:58 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/systems-administrator/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>top 10</title>
+      <title>Top 10</title>
       <link>https://cmdln.org/tags/top-10/</link>
       <pubDate>Fri, 29 Aug 2008 07:56:58 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/top-10/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>kibitz</title>
+      <title>Kibitz</title>
       <link>https://cmdln.org/tags/kibitz/</link>
       <pubDate>Mon, 25 Aug 2008 21:34:33 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/kibitz/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>shared console</title>
+      <title>Shared Console</title>
       <link>https://cmdln.org/tags/shared-console/</link>
       <pubDate>Mon, 25 Aug 2008 21:34:33 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/shared-console/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>shared command line</title>
+      <title>Shared Command Line</title>
       <link>https://cmdln.org/tags/shared-command-line/</link>
       <pubDate>Thu, 14 Aug 2008 01:14:34 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/shared-command-line/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>shared session</title>
+      <title>Shared Session</title>
       <link>https://cmdln.org/tags/shared-session/</link>
       <pubDate>Thu, 14 Aug 2008 01:14:34 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/shared-session/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>shared terminal</title>
+      <title>Shared Terminal</title>
       <link>https://cmdln.org/tags/shared-terminal/</link>
       <pubDate>Thu, 14 Aug 2008 01:14:34 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/shared-terminal/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>corperate sabatoge</title>
+      <title>Corperate Sabatoge</title>
       <link>https://cmdln.org/tags/corperate-sabatoge/</link>
       <pubDate>Thu, 10 Jul 2008 01:07:45 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/corperate-sabatoge/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>dnsmadeeasy</title>
+      <title>Dnsmadeeasy</title>
       <link>https://cmdln.org/tags/dnsmadeeasy/</link>
       <pubDate>Thu, 10 Jul 2008 01:07:45 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/dnsmadeeasy/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>ultradns</title>
+      <title>Ultradns</title>
       <link>https://cmdln.org/tags/ultradns/</link>
       <pubDate>Thu, 10 Jul 2008 01:07:45 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/ultradns/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>kde4</title>
+      <title>Kde4</title>
       <link>https://cmdln.org/tags/kde4/</link>
       <pubDate>Mon, 16 Jun 2008 01:43:05 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/kde4/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>time format</title>
+      <title>Time Format</title>
       <link>https://cmdln.org/tags/time-format/</link>
       <pubDate>Mon, 16 Jun 2008 01:43:05 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/time-format/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>apache2</title>
+      <title>Apache2</title>
       <link>https://cmdln.org/tags/apache2/</link>
       <pubDate>Tue, 10 Jun 2008 13:50:27 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/apache2/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>dynamic proxy</title>
+      <title>Dynamic Proxy</title>
       <link>https://cmdln.org/tags/dynamic-proxy/</link>
       <pubDate>Tue, 10 Jun 2008 13:50:27 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/dynamic-proxy/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>mod-proxy</title>
+      <title>Mod-Proxy</title>
       <link>https://cmdln.org/tags/mod-proxy/</link>
       <pubDate>Tue, 10 Jun 2008 13:50:27 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/mod-proxy/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>mod-rewrite</title>
+      <title>Mod-Rewrite</title>
       <link>https://cmdln.org/tags/mod-rewrite/</link>
       <pubDate>Tue, 10 Jun 2008 13:50:27 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/mod-rewrite/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>bios</title>
+      <title>Bios</title>
       <link>https://cmdln.org/tags/bios/</link>
       <pubDate>Sat, 03 May 2008 22:35:04 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/bios/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>increse timeout</title>
+      <title>Increse Timeout</title>
       <link>https://cmdln.org/tags/increse-timeout/</link>
       <pubDate>Sat, 03 May 2008 22:35:04 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/increse-timeout/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>slowdown</title>
+      <title>Slowdown</title>
       <link>https://cmdln.org/tags/slowdown/</link>
       <pubDate>Sat, 03 May 2008 22:35:04 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/slowdown/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>Add new tag</title>
+      <title>Add New Tag</title>
       <link>https://cmdln.org/tags/add-new-tag/</link>
       <pubDate>Fri, 02 May 2008 00:19:53 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/add-new-tag/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>rinse</title>
+      <title>Rinse</title>
       <link>https://cmdln.org/tags/rinse/</link>
       <pubDate>Fri, 02 May 2008 00:19:53 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/rinse/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>xen-tools</title>
+      <title>Xen-Tools</title>
       <link>https://cmdln.org/tags/xen-tools/</link>
       <pubDate>Fri, 02 May 2008 00:19:53 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/xen-tools/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>book</title>
+      <title>Book</title>
       <link>https://cmdln.org/tags/book/</link>
       <pubDate>Mon, 28 Apr 2008 23:32:23 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/book/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>review</title>
+      <title>Review</title>
       <link>https://cmdln.org/tags/review/</link>
       <pubDate>Mon, 28 Apr 2008 23:32:23 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/review/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>bonnie</title>
+      <title>Bonnie</title>
       <link>https://cmdln.org/tags/bonnie/</link>
       <pubDate>Sat, 26 Apr 2008 19:41:21 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/bonnie/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>xen-create-image</title>
+      <title>Xen-Create-Image</title>
       <link>https://cmdln.org/tags/xen-create-image/</link>
       <pubDate>Fri, 25 Apr 2008 18:12:51 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/xen-create-image/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>bootstrap</title>
+      <title>Bootstrap</title>
       <link>https://cmdln.org/tags/bootstrap/</link>
       <pubDate>Fri, 25 Apr 2008 13:27:59 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/bootstrap/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>centos 5</title>
+      <title>Centos 5</title>
       <link>https://cmdln.org/tags/centos-5/</link>
       <pubDate>Fri, 25 Apr 2008 13:27:59 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/centos-5/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>cleanup</title>
+      <title>Cleanup</title>
       <link>https://cmdln.org/tags/cleanup/</link>
       <pubDate>Sat, 19 Apr 2008 05:33:14 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/cleanup/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>purge</title>
+      <title>Purge</title>
       <link>https://cmdln.org/tags/purge/</link>
       <pubDate>Sat, 19 Apr 2008 05:33:14 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/purge/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>tasksel</title>
+      <title>Tasksel</title>
       <link>https://cmdln.org/tags/tasksel/</link>
       <pubDate>Sat, 19 Apr 2008 05:33:14 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/tasksel/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>fix</title>
+      <title>Fix</title>
       <link>https://cmdln.org/tags/fix/</link>
       <pubDate>Thu, 17 Apr 2008 23:34:20 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/fix/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>maildir</title>
+      <title>Maildir</title>
       <link>https://cmdln.org/tags/maildir/</link>
       <pubDate>Thu, 17 Apr 2008 23:34:20 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/maildir/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>permissions</title>
+      <title>Permissions</title>
       <link>https://cmdln.org/tags/permissions/</link>
       <pubDate>Thu, 17 Apr 2008 23:34:20 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/permissions/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>virtual users</title>
+      <title>Virtual Users</title>
       <link>https://cmdln.org/tags/virtual-users/</link>
       <pubDate>Thu, 17 Apr 2008 23:34:20 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/virtual-users/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>firewall</title>
+      <title>Firewall</title>
       <link>https://cmdln.org/tags/firewall/</link>
       <pubDate>Wed, 16 Apr 2008 23:19:00 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/firewall/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>ftp</title>
+      <title>Ftp</title>
       <link>https://cmdln.org/tags/ftp/</link>
       <pubDate>Wed, 16 Apr 2008 23:19:00 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/ftp/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>pfsense</title>
+      <title>Pfsense</title>
       <link>https://cmdln.org/tags/pfsense/</link>
       <pubDate>Wed, 16 Apr 2008 23:19:00 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/pfsense/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>1700</title>
       <link>https://cmdln.org/tags/1700/</link>
       <pubDate>Wed, 16 Apr 2008 03:50:16 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/1700/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>imaging drum</title>
+      <title>Imaging Drum</title>
       <link>https://cmdln.org/tags/imaging-drum/</link>
       <pubDate>Wed, 16 Apr 2008 03:50:16 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/imaging-drum/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>photo conductor</title>
+      <title>Photo Conductor</title>
       <link>https://cmdln.org/tags/photo-conductor/</link>
       <pubDate>Wed, 16 Apr 2008 03:50:16 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/photo-conductor/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>printer</title>
+      <title>Printer</title>
       <link>https://cmdln.org/tags/printer/</link>
       <pubDate>Wed, 16 Apr 2008 03:50:16 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/printer/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>reset</title>
+      <title>Reset</title>
       <link>https://cmdln.org/tags/reset/</link>
       <pubDate>Wed, 16 Apr 2008 03:50:16 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/reset/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>init</title>
+      <title>Init</title>
       <link>https://cmdln.org/tags/init/</link>
       <pubDate>Mon, 14 Apr 2008 23:36:07 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/init/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>rhel3</title>
+      <title>Rhel3</title>
       <link>https://cmdln.org/tags/rhel3/</link>
       <pubDate>Mon, 14 Apr 2008 23:36:07 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/rhel3/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>sphinx</title>
+      <title>Sphinx</title>
       <link>https://cmdln.org/tags/sphinx/</link>
       <pubDate>Mon, 14 Apr 2008 23:36:07 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/sphinx/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>blocks to megabytes</title>
+      <title>Blocks to Megabytes</title>
       <link>https://cmdln.org/tags/blocks-to-megabytes/</link>
       <pubDate>Mon, 14 Apr 2008 02:29:17 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/blocks-to-megabytes/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>ruby</title>
+      <title>Ruby</title>
       <link>https://cmdln.org/tags/ruby/</link>
       <pubDate>Fri, 11 Apr 2008 18:53:16 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/ruby/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>ticketing system</title>
+      <title>Ticketing System</title>
       <link>https://cmdln.org/tags/ticketing-system/</link>
       <pubDate>Fri, 11 Apr 2008 18:53:16 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/ticketing-system/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>todo</title>
+      <title>Todo</title>
       <link>https://cmdln.org/tags/todo/</link>
       <pubDate>Fri, 11 Apr 2008 18:53:16 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/todo/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>grep</title>
+      <title>Grep</title>
       <link>https://cmdln.org/tags/grep/</link>
       <pubDate>Thu, 10 Apr 2008 19:59:52 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/grep/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>oneliner</title>
+      <title>Oneliner</title>
       <link>https://cmdln.org/tags/oneliner/</link>
       <pubDate>Thu, 10 Apr 2008 19:59:52 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/oneliner/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>pattern matching</title>
+      <title>Pattern Matching</title>
       <link>https://cmdln.org/tags/pattern-matching/</link>
       <pubDate>Thu, 10 Apr 2008 19:59:52 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/pattern-matching/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>previous line</title>
+      <title>Previous Line</title>
       <link>https://cmdln.org/tags/previous-line/</link>
       <pubDate>Thu, 10 Apr 2008 19:59:52 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/previous-line/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>scripting</title>
+      <title>Scripting</title>
       <link>https://cmdln.org/tags/scripting/</link>
       <pubDate>Thu, 10 Apr 2008 19:59:52 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/scripting/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>2.6.42</title>
       <link>https://cmdln.org/tags/2.6.42/</link>
       <pubDate>Wed, 09 Apr 2008 18:45:52 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/2.6.42/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>patch</title>
+      <title>Patch</title>
       <link>https://cmdln.org/tags/patch/</link>
       <pubDate>Wed, 09 Apr 2008 18:45:52 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/patch/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>vmmon</title>
+      <title>Vmmon</title>
       <link>https://cmdln.org/tags/vmmon/</link>
       <pubDate>Wed, 09 Apr 2008 18:45:52 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/vmmon/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>vmnet</title>
+      <title>Vmnet</title>
       <link>https://cmdln.org/tags/vmnet/</link>
       <pubDate>Wed, 09 Apr 2008 18:45:52 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/vmnet/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>delete</title>
+      <title>Delete</title>
       <link>https://cmdln.org/tags/delete/</link>
       <pubDate>Wed, 09 Apr 2008 15:21:09 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/delete/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>faster</title>
+      <title>Faster</title>
       <link>https://cmdln.org/tags/faster/</link>
       <pubDate>Wed, 09 Apr 2008 15:21:09 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/faster/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>find</title>
+      <title>Find</title>
       <link>https://cmdln.org/tags/find/</link>
       <pubDate>Wed, 09 Apr 2008 15:21:09 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/find/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>maintainance</title>
+      <title>Maintainance</title>
       <link>https://cmdln.org/tags/maintainance/</link>
       <pubDate>Wed, 09 Apr 2008 15:21:09 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/maintainance/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>xargs</title>
+      <title>Xargs</title>
       <link>https://cmdln.org/tags/xargs/</link>
       <pubDate>Wed, 09 Apr 2008 15:21:09 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/xargs/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>atime</title>
+      <title>Atime</title>
       <link>https://cmdln.org/tags/atime/</link>
       <pubDate>Mon, 07 Apr 2008 23:16:44 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/atime/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>ctime</title>
+      <title>Ctime</title>
       <link>https://cmdln.org/tags/ctime/</link>
       <pubDate>Mon, 07 Apr 2008 23:16:44 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/ctime/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>file times</title>
+      <title>File Times</title>
       <link>https://cmdln.org/tags/file-times/</link>
       <pubDate>Mon, 07 Apr 2008 23:16:44 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/file-times/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>linux times</title>
+      <title>Linux Times</title>
       <link>https://cmdln.org/tags/linux-times/</link>
       <pubDate>Mon, 07 Apr 2008 23:16:44 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/linux-times/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>mtime</title>
+      <title>Mtime</title>
       <link>https://cmdln.org/tags/mtime/</link>
       <pubDate>Mon, 07 Apr 2008 23:16:44 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/mtime/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>unix times</title>
+      <title>Unix Times</title>
       <link>https://cmdln.org/tags/unix-times/</link>
       <pubDate>Mon, 07 Apr 2008 23:16:44 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/unix-times/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>contribution</title>
+      <title>Contribution</title>
       <link>https://cmdln.org/tags/contribution/</link>
       <pubDate>Mon, 07 Apr 2008 06:04:59 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/contribution/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>highlight</title>
+      <title>Highlight</title>
       <link>https://cmdln.org/tags/highlight/</link>
       <pubDate>Mon, 07 Apr 2008 06:04:59 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/highlight/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>open source</title>
+      <title>Open Source</title>
       <link>https://cmdln.org/tags/open-source/</link>
       <pubDate>Mon, 07 Apr 2008 06:04:59 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/open-source/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>syntax</title>
+      <title>Syntax</title>
       <link>https://cmdln.org/tags/syntax/</link>
       <pubDate>Mon, 07 Apr 2008 06:04:59 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/syntax/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>syntaxhighlighter plus</title>
+      <title>Syntaxhighlighter Plus</title>
       <link>https://cmdln.org/tags/syntaxhighlighter-plus/</link>
       <pubDate>Mon, 07 Apr 2008 06:04:59 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/syntaxhighlighter-plus/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>manual</title>
+      <title>Manual</title>
       <link>https://cmdln.org/tags/manual/</link>
       <pubDate>Sun, 06 Apr 2008 17:15:35 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/manual/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>smtp</title>
+      <title>Smtp</title>
       <link>https://cmdln.org/tags/smtp/</link>
       <pubDate>Sun, 06 Apr 2008 17:15:35 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/smtp/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>spoof</title>
+      <title>Spoof</title>
       <link>https://cmdln.org/tags/spoof/</link>
       <pubDate>Sun, 06 Apr 2008 17:15:35 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/spoof/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>knetworkmanager</title>
+      <title>Knetworkmanager</title>
       <link>https://cmdln.org/tags/knetworkmanager/</link>
       <pubDate>Sun, 06 Apr 2008 04:38:29 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/knetworkmanager/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>kubuntu</title>
+      <title>Kubuntu</title>
       <link>https://cmdln.org/tags/kubuntu/</link>
       <pubDate>Sun, 06 Apr 2008 04:38:29 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/kubuntu/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>NetworkManager</title>
       <link>https://cmdln.org/tags/networkmanager/</link>
       <pubDate>Sun, 06 Apr 2008 04:38:29 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/networkmanager/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>wireless</title>
+      <title>Wireless</title>
       <link>https://cmdln.org/tags/wireless/</link>
       <pubDate>Sun, 06 Apr 2008 04:38:29 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/wireless/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>screencast</title>
+      <title>Screencast</title>
       <link>https://cmdln.org/tags/screencast/</link>
       <pubDate>Mon, 25 Feb 2008 05:16:50 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/screencast/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>bash prompt</title>
+      <title>Bash Prompt</title>
       <link>https://cmdln.org/tags/bash-prompt/</link>
       <pubDate>Mon, 25 Feb 2008 03:59:17 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/bash-prompt/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>bypass</title>
+      <title>Bypass</title>
       <link>https://cmdln.org/tags/bypass/</link>
       <pubDate>Tue, 12 Feb 2008 18:12:18 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/bypass/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>howto</title>
+      <title>Howto</title>
       <link>https://cmdln.org/tags/howto/</link>
       <pubDate>Tue, 12 Feb 2008 18:12:18 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/howto/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>security</title>
+      <title>Security</title>
       <link>https://cmdln.org/tags/security/</link>
       <pubDate>Tue, 12 Feb 2008 18:12:18 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/security/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>tsocks</title>
+      <title>Tsocks</title>
       <link>https://cmdln.org/tags/tsocks/</link>
       <pubDate>Tue, 12 Feb 2008 18:12:18 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/tsocks/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>authprogs</title>
+      <title>Authprogs</title>
       <link>https://cmdln.org/tags/authprogs/</link>
       <pubDate>Mon, 11 Feb 2008 06:01:54 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/authprogs/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>restrict commands</title>
+      <title>Restrict Commands</title>
       <link>https://cmdln.org/tags/restrict-commands/</link>
       <pubDate>Mon, 11 Feb 2008 06:01:54 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/restrict-commands/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>install</title>
+      <title>Install</title>
       <link>https://cmdln.org/tags/install/</link>
       <pubDate>Mon, 11 Feb 2008 02:00:27 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/install/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>setup</title>
+      <title>Setup</title>
       <link>https://cmdln.org/tags/setup/</link>
       <pubDate>Mon, 11 Feb 2008 02:00:27 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/setup/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>walkthrough</title>
+      <title>Walkthrough</title>
       <link>https://cmdln.org/tags/walkthrough/</link>
       <pubDate>Mon, 11 Feb 2008 02:00:27 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/walkthrough/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>zabbix</title>
+      <title>Zabbix</title>
       <link>https://cmdln.org/tags/zabbix/</link>
       <pubDate>Mon, 11 Feb 2008 02:00:27 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/zabbix/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>password</title>
+      <title>Password</title>
       <link>https://cmdln.org/tags/password/</link>
       <pubDate>Sat, 09 Feb 2008 15:13:03 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/password/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>root</title>
+      <title>Root</title>
       <link>https://cmdln.org/tags/root/</link>
       <pubDate>Sat, 09 Feb 2008 15:13:03 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/root/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>self-healing</title>
+      <title>Self-Healing</title>
       <link>https://cmdln.org/tags/self-healing/</link>
       <pubDate>Fri, 08 Feb 2008 23:01:17 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/self-healing/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>.screenrc</title>
+      <title>.Screenrc</title>
       <link>https://cmdln.org/tags/.screenrc/</link>
       <pubDate>Fri, 08 Feb 2008 14:04:26 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/.screenrc/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>commandline</title>
+      <title>Commandline</title>
       <link>https://cmdln.org/tags/commandline/</link>
       <pubDate>Fri, 08 Feb 2008 14:04:26 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/commandline/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>exim</title>
+      <title>Exim</title>
       <link>https://cmdln.org/tags/exim/</link>
       <pubDate>Fri, 08 Feb 2008 03:26:56 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/exim/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>cups</title>
+      <title>Cups</title>
       <link>https://cmdln.org/tags/cups/</link>
       <pubDate>Fri, 08 Feb 2008 03:25:06 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/cups/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>printing</title>
+      <title>Printing</title>
       <link>https://cmdln.org/tags/printing/</link>
       <pubDate>Fri, 08 Feb 2008 03:25:06 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/printing/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>recovery</title>
+      <title>Recovery</title>
       <link>https://cmdln.org/tags/recovery/</link>
       <pubDate>Fri, 08 Feb 2008 03:23:26 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/recovery/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>exiqgrep</title>
+      <title>Exiqgrep</title>
       <link>https://cmdln.org/tags/exiqgrep/</link>
       <pubDate>Fri, 08 Feb 2008 03:22:20 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/exiqgrep/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>queue</title>
+      <title>Queue</title>
       <link>https://cmdln.org/tags/queue/</link>
       <pubDate>Fri, 08 Feb 2008 03:22:20 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/queue/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>bc</title>
+      <title>Bc</title>
       <link>https://cmdln.org/tags/bc/</link>
       <pubDate>Fri, 08 Feb 2008 03:21:15 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/bc/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>scrolling</title>
+      <title>Scrolling</title>
       <link>https://cmdln.org/tags/scrolling/</link>
       <pubDate>Tue, 31 Jul 2007 17:52:56 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/scrolling/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>session</title>
+      <title>Session</title>
       <link>https://cmdln.org/tags/session/</link>
       <pubDate>Fri, 20 Jul 2007 14:07:53 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/session/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>raid</title>
+      <title>Raid</title>
       <link>https://cmdln.org/tags/raid/</link>
       <pubDate>Mon, 04 Sep 2006 14:10:32 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/raid/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>3ware</title>
       <link>https://cmdln.org/tags/3ware/</link>
       <pubDate>Sat, 02 Sep 2006 14:05:38 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/3ware/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>hardware</title>
+      <title>Hardware</title>
       <link>https://cmdln.org/tags/hardware/</link>
       <pubDate>Sat, 02 Sep 2006 14:05:38 +0000</pubDate>
-      
       <guid>https://cmdln.org/tags/hardware/</guid>
       <description></description>
     </item>
-    
   </channel>
 </rss>

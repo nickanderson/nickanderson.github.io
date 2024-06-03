@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>gibak on </title>
+    <title>Gibak on </title>
     <link>https://cmdln.org/tags/gibak/</link>
-    <description>Recent content in gibak on </description>
+    <description>Recent content in Gibak on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 20 Feb 2009 14:56:53 +0000</lastBuildDate><atom:link href="https://cmdln.org/tags/gibak/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Fri, 20 Feb 2009 14:56:53 +0000</lastBuildDate>
+    <atom:link href="https://cmdln.org/tags/gibak/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Revision your home directory with git using gibak</title>
       <link>https://cmdln.org/2009/02/20/revision-home-directory-git-gibak/</link>
       <pubDate>Fri, 20 Feb 2009 14:56:53 +0000</pubDate>
-      
       <guid>https://cmdln.org/2009/02/20/revision-home-directory-git-gibak/</guid>
       <description>&lt;p&gt;Over the last couple days I’ve briefly talked about &lt;a href=&#34;http://www.cmdln.org/2009/02/19/version-your-etc/&#34;&gt;revisioning configs&lt;/a&gt; and &lt;a href=&#34;http://www.cmdln.org/2009/02/18/movin-in-movin-out/&#34;&gt;making your home directory portable&lt;/a&gt;. It seems to have stirred up a bit of discussion over at &lt;a href=&#34;http://standalone-sysadmin.blogspot.com/2009/02/ideas-on-maintaining-customized-shelll.html&#34;&gt;Matt Simmons Standalone Sysadmin&lt;/a&gt;, and &lt;a href=&#34;http://saintaardvarkthecarpeted.com/blog/2009-02/mercurial_for_dotfiles.html&#34;&gt;Hugh Browns mentioned he uses mercurial&lt;/a&gt; for this task.. As I noted in the post about &lt;a href=&#34;http://www.cmdln.org/2009/02/19/version-your-etc/&#34;&gt;managing /etc with version control&lt;/a&gt; I do revision my home directory, or at least pieces of it.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

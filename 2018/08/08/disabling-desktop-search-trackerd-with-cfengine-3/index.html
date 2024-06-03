@@ -6,7 +6,7 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.92.2" />
+<meta name="generator" content="Hugo 0.123.7">
 
 
 
@@ -140,54 +140,54 @@ This policy disables known trackerd related XDG files when they are found.</p>
 </span><span class="lnt">48
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="k">body</span> <span class="k">file</span> <span class="k">control</span>
-  <span class="p">{</span>
-          <span class="kr">inputs</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="s">&#34;</span><span class="si">$(sys.libdir)</span><span class="s">/stdlib.cf&#34;</span> <span class="p">};</span>
-  <span class="p">}</span>
-
-  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">disable_desktop_search</span>
-  <span class="c"># Disables trackerd used by ubuntu desktop search
-</span><span class="c"></span>  <span class="c"># https://askubuntu.com/questions/346211/tracker-store-and-tracker-miner-fs-eating-up-my-cpu-on-every-startup
-</span><span class="c"></span>  <span class="c"># https://gist.github.com/Prezto/75d612cebc9300f83bc74830df3a6410
-</span><span class="c"></span>  <span class="p">{</span>
-    <span class="kd">meta</span><span class="p">:</span>
-        <span class="p">&#34;</span><span class="nv">tags</span><span class="p">&#34;</span> <span class="kt">slist</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="s">&#34;autorun&#34;</span> <span class="p">};</span>
-
-    <span class="kd">vars</span><span class="p">:</span>
-        <span class="p">&#34;</span><span class="nv">desktop_files</span><span class="p">&#34;</span>
-          <span class="kt">slist</span> <span class="o">=&gt;</span> <span class="p">{</span>
-                     <span class="s">&#34;trackerd.desktop&#34;</span><span class="p">,</span>
-                     <span class="s">&#34;tracker-extract.desktop&#34;</span><span class="p">,</span>
-                     <span class="s">&#34;tracker-miner-apps.desktop&#34;</span><span class="p">,</span>
-                     <span class="s">&#34;tracker-miner-fs.desktop&#34;</span><span class="p">,</span>
-                     <span class="s">&#34;tracker-miner-user-guide.desktop&#34;</span><span class="p">,</span>
-                     <span class="s">&#34;tracker-store.desktop&#34;</span><span class="p">,</span>
-          <span class="p">};</span>
-
-        <span class="p">&#34;</span><span class="nv">conf[Hidden]</span><span class="p">&#34;</span> <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;true&#34;</span><span class="p">;</span>
-
-    <span class="kd">files</span><span class="p">:</span>
-
-        <span class="c"># If any known trackerd desktop file exists, make sure that that it
-</span><span class="c"></span>        <span class="c"># contains the option to disable the service.
-</span><span class="c"></span>
-        <span class="s">&#34;/etc/xdg/autostart/</span><span class="si">$(desktop_files)</span><span class="s">&#34;</span>
-          <span class="kr">if</span> <span class="o">=&gt;</span> <span class="nf">fileexists</span><span class="p">(</span> <span class="s">&#34;/etc/xdg/autostart/</span><span class="si">$(desktop_files)</span><span class="s">&#34;</span> <span class="p">),</span>
-          <span class="kr">edit_line</span> <span class="o">=&gt;</span> <span class="nf">set_line_based</span><span class="p">(</span> <span class="s">&#34;</span><span class="si">$(this.bundle)</span><span class="s">.conf&#34;</span><span class="p">,</span>
-                                       <span class="s">&#34;=&#34;</span><span class="p">,</span>
-                                       <span class="s">&#34;</span><span class="se">\s</span><span class="s">*=</span><span class="se">\s</span><span class="s">*&#34;</span><span class="p">,</span>
-                                       <span class="s">&#34;.*&#34;</span><span class="p">,</span>
-                                       <span class="s">&#34;</span><span class="se">\s</span><span class="s">*#</span><span class="se">\s</span><span class="s">*&#34;</span><span class="p">);</span>
-  <span class="p">}</span>
-
-  <span class="err">@</span><span class="nf">if</span> <span class="nf">minimum_version</span><span class="p">(</span><span class="mf">3.12</span><span class="p">)</span>
-  <span class="c"># If this policy file is used as the entry, run the policy
-</span><span class="c"></span>  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">__main__</span>
-  <span class="p">{</span>
-    <span class="kd">methods</span><span class="p">:</span>
-        <span class="s">&#34;disable_desktop_search&#34;</span><span class="p">;</span>
-  <span class="p">}</span>
-  <span class="err">@</span><span class="nf">endif</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="line"><span class="cl">  <span class="k">body</span> <span class="k">file</span> <span class="k">control</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">          <span class="kr">inputs</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="s">&#34;</span><span class="si">$(sys.libdir)</span><span class="s">/stdlib.cf&#34;</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">disable_desktop_search</span>
+</span></span><span class="line"><span class="cl">  <span class="c"># Disables trackerd used by ubuntu desktop search
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="c"># https://askubuntu.com/questions/346211/tracker-store-and-tracker-miner-fs-eating-up-my-cpu-on-every-startup
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="c"># https://gist.github.com/Prezto/75d612cebc9300f83bc74830df3a6410
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">meta</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="s">&#34;tags&#34;</span> <span class="kr">slist</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="s">&#34;autorun&#34;</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">vars</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="s">&#34;desktop_files&#34;</span>
+</span></span><span class="line"><span class="cl">          <span class="kr">slist</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                     <span class="s">&#34;trackerd.desktop&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                     <span class="s">&#34;tracker-extract.desktop&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                     <span class="s">&#34;tracker-miner-apps.desktop&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                     <span class="s">&#34;tracker-miner-fs.desktop&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                     <span class="s">&#34;tracker-miner-user-guide.desktop&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                     <span class="s">&#34;tracker-store.desktop&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="s">&#34;conf[Hidden]&#34;</span> <span class="kr">string</span> <span class="o">=&gt;</span> <span class="s">&#34;true&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">files</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c"># If any known trackerd desktop file exists, make sure that that it
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>        <span class="c"># contains the option to disable the service.
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>
+</span></span><span class="line"><span class="cl">        <span class="s">&#34;/etc/xdg/autostart/</span><span class="si">$(desktop_files)</span><span class="s">&#34;</span>
+</span></span><span class="line"><span class="cl">          <span class="kr">if</span> <span class="o">=&gt;</span> <span class="nf">fileexists</span><span class="p">(</span> <span class="s">&#34;/etc/xdg/autostart/</span><span class="si">$(desktop_files)</span><span class="s">&#34;</span> <span class="p">),</span>
+</span></span><span class="line"><span class="cl">          <span class="kr">edit_line</span> <span class="o">=&gt;</span> <span class="nf">set_line_based</span><span class="p">(</span> <span class="s">&#34;</span><span class="si">$(this.bundle)</span><span class="s">.conf&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                                       <span class="s">&#34;=&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                                       <span class="s">&#34;</span><span class="se">\s</span><span class="s">*=</span><span class="se">\s</span><span class="s">*&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                                       <span class="s">&#34;.*&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                                       <span class="s">&#34;</span><span class="se">\s</span><span class="s">*#</span><span class="se">\s</span><span class="s">*&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="err">@</span><span class="nf">if</span> <span class="nf">minimum_version</span><span class="p">(</span><span class="mf">3.12</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="c"># If this policy file is used as the entry, run the policy
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">__main__</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">methods</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="s">&#34;disable_desktop_search&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="err">@</span><span class="nf">endif</span></span></span></code></pre></td></tr></table>
 </div>
 </div>
 </div>
@@ -206,10 +206,10 @@ leverage bundles and bodies from the standard library (e.g. <code class="verbati
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="k">body</span> <span class="k">file</span> <span class="k">control</span>
-  <span class="p">{</span>
-          <span class="kr">inputs</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="s">&#34;</span><span class="si">$(sys.libdir)</span><span class="s">/stdlib.cf&#34;</span> <span class="p">};</span>
-  <span class="p">}</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="line"><span class="cl">  <span class="k">body</span> <span class="k">file</span> <span class="k">control</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">          <span class="kr">inputs</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="s">&#34;</span><span class="si">$(sys.libdir)</span><span class="s">/stdlib.cf&#34;</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span></span></span></code></pre></td></tr></table>
 </div>
 </div>
 </div>
@@ -228,13 +228,13 @@ can be easily used with the MPF autorun functionality.</p>
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">disable_desktop_search</span>
-  <span class="c"># Disables trackerd used by ubuntu desktop search
-</span><span class="c"></span>  <span class="c"># https://askubuntu.com/questions/346211/tracker-store-and-tracker-miner-fs-eating-up-my-cpu-on-every-startup
-</span><span class="c"></span>  <span class="c"># https://gist.github.com/Prezto/75d612cebc9300f83bc74830df3a6410
-</span><span class="c"></span>  <span class="p">{</span>
-    <span class="kd">meta</span><span class="p">:</span>
-        <span class="p">&#34;</span><span class="nv">tags</span><span class="p">&#34;</span> <span class="kt">slist</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="s">&#34;autorun&#34;</span> <span class="p">};</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="line"><span class="cl">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">disable_desktop_search</span>
+</span></span><span class="line"><span class="cl">  <span class="c"># Disables trackerd used by ubuntu desktop search
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="c"># https://askubuntu.com/questions/346211/tracker-store-and-tracker-miner-fs-eating-up-my-cpu-on-every-startup
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="c"># https://gist.github.com/Prezto/75d612cebc9300f83bc74830df3a6410
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">meta</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="s">&#34;tags&#34;</span> <span class="kr">slist</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="s">&#34;autorun&#34;</span> <span class="p">};</span></span></span></code></pre></td></tr></table>
 </div>
 </div>
 </div>
@@ -255,16 +255,16 @@ The list of known trackerd related XDG files is enumerated.</p>
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-cfengine3" data-lang="cfengine3">    <span class="kd">vars</span><span class="p">:</span>
-        <span class="p">&#34;</span><span class="nv">desktop_files</span><span class="p">&#34;</span>
-          <span class="kt">slist</span> <span class="o">=&gt;</span> <span class="p">{</span>
-                     <span class="s">&#34;trackerd.desktop&#34;</span><span class="p">,</span>
-                     <span class="s">&#34;tracker-extract.desktop&#34;</span><span class="p">,</span>
-                     <span class="s">&#34;tracker-miner-apps.desktop&#34;</span><span class="p">,</span>
-                     <span class="s">&#34;tracker-miner-fs.desktop&#34;</span><span class="p">,</span>
-                     <span class="s">&#34;tracker-miner-user-guide.desktop&#34;</span><span class="p">,</span>
-                     <span class="s">&#34;tracker-store.desktop&#34;</span><span class="p">,</span>
-          <span class="p">};</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="line"><span class="cl">    <span class="kd">vars</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="s">&#34;desktop_files&#34;</span>
+</span></span><span class="line"><span class="cl">          <span class="kr">slist</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                     <span class="s">&#34;trackerd.desktop&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                     <span class="s">&#34;tracker-extract.desktop&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                     <span class="s">&#34;tracker-miner-apps.desktop&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                     <span class="s">&#34;tracker-miner-fs.desktop&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                     <span class="s">&#34;tracker-miner-user-guide.desktop&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                     <span class="s">&#34;tracker-store.desktop&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="p">};</span></span></span></code></pre></td></tr></table>
 </div>
 </div>
 </div>
@@ -276,7 +276,7 @@ The desired configuration is specified in the classic array <code class="verbati
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-cfengine3" data-lang="cfengine3">        <span class="p">&#34;</span><span class="nv">conf[Hidden]</span><span class="p">&#34;</span> <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;true&#34;</span><span class="p">;</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="line"><span class="cl">        <span class="s">&#34;conf[Hidden]&#34;</span> <span class="kr">string</span> <span class="o">=&gt;</span> <span class="s">&#34;true&#34;</span><span class="p">;</span></span></span></code></pre></td></tr></table>
 </div>
 </div>
 </div>
@@ -301,19 +301,19 @@ line entries and the files are repaired if necessary.</p>
 </span><span class="lnt">13
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-cfengine3" data-lang="cfengine3">    <span class="kd">files</span><span class="p">:</span>
-
-        <span class="c"># If any known trackerd desktop file exists, make sure that that it
-</span><span class="c"></span>        <span class="c"># contains the option to disable the service.
-</span><span class="c"></span>
-        <span class="s">&#34;/etc/xdg/autostart/</span><span class="si">$(desktop_files)</span><span class="s">&#34;</span>
-          <span class="kr">if</span> <span class="o">=&gt;</span> <span class="nf">fileexists</span><span class="p">(</span> <span class="s">&#34;/etc/xdg/autostart/</span><span class="si">$(desktop_files)</span><span class="s">&#34;</span> <span class="p">),</span>
-          <span class="kr">edit_line</span> <span class="o">=&gt;</span> <span class="nf">set_line_based</span><span class="p">(</span> <span class="s">&#34;</span><span class="si">$(this.bundle)</span><span class="s">.conf&#34;</span><span class="p">,</span>
-                                       <span class="s">&#34;=&#34;</span><span class="p">,</span>
-                                       <span class="s">&#34;</span><span class="se">\s</span><span class="s">*=</span><span class="se">\s</span><span class="s">*&#34;</span><span class="p">,</span>
-                                       <span class="s">&#34;.*&#34;</span><span class="p">,</span>
-                                       <span class="s">&#34;</span><span class="se">\s</span><span class="s">*#</span><span class="se">\s</span><span class="s">*&#34;</span><span class="p">);</span>
-  <span class="p">}</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="line"><span class="cl">    <span class="kd">files</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c"># If any known trackerd desktop file exists, make sure that that it
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>        <span class="c"># contains the option to disable the service.
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>
+</span></span><span class="line"><span class="cl">        <span class="s">&#34;/etc/xdg/autostart/</span><span class="si">$(desktop_files)</span><span class="s">&#34;</span>
+</span></span><span class="line"><span class="cl">          <span class="kr">if</span> <span class="o">=&gt;</span> <span class="nf">fileexists</span><span class="p">(</span> <span class="s">&#34;/etc/xdg/autostart/</span><span class="si">$(desktop_files)</span><span class="s">&#34;</span> <span class="p">),</span>
+</span></span><span class="line"><span class="cl">          <span class="kr">edit_line</span> <span class="o">=&gt;</span> <span class="nf">set_line_based</span><span class="p">(</span> <span class="s">&#34;</span><span class="si">$(this.bundle)</span><span class="s">.conf&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                                       <span class="s">&#34;=&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                                       <span class="s">&#34;</span><span class="se">\s</span><span class="s">*=</span><span class="se">\s</span><span class="s">*&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                                       <span class="s">&#34;.*&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                                       <span class="s">&#34;</span><span class="se">\s</span><span class="s">*#</span><span class="se">\s</span><span class="s">*&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span></span></span></code></pre></td></tr></table>
 </div>
 </div>
 </div>
@@ -334,14 +334,14 @@ executable library support from the special bundle <code class="verbatim">__main
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="err">@</span><span class="nf">if</span> <span class="nf">minimum_version</span><span class="p">(</span><span class="mf">3.12</span><span class="p">)</span>
-  <span class="c"># If this policy file is used as the entry, run the policy
-</span><span class="c"></span>  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">__main__</span>
-  <span class="p">{</span>
-    <span class="kd">methods</span><span class="p">:</span>
-        <span class="s">&#34;disable_desktop_search&#34;</span><span class="p">;</span>
-  <span class="p">}</span>
-  <span class="err">@</span><span class="nf">endif</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="line"><span class="cl">  <span class="err">@</span><span class="nf">if</span> <span class="nf">minimum_version</span><span class="p">(</span><span class="mf">3.12</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="c"># If this policy file is used as the entry, run the policy
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">__main__</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">methods</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="s">&#34;disable_desktop_search&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="err">@</span><span class="nf">endif</span></span></span></code></pre></td></tr></table>
 </div>
 </div>
 </div>

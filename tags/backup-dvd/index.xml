@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>backup dvd on </title>
+    <title>Backup Dvd on </title>
     <link>https://cmdln.org/tags/backup-dvd/</link>
-    <description>Recent content in backup dvd on </description>
+    <description>Recent content in Backup Dvd on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 23 Jan 2010 02:32:58 +0000</lastBuildDate><atom:link href="https://cmdln.org/tags/backup-dvd/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Sat, 23 Jan 2010 02:32:58 +0000</lastBuildDate>
+    <atom:link href="https://cmdln.org/tags/backup-dvd/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Backing up Disney DVDs</title>
       <link>https://cmdln.org/2010/01/22/backing-up-disney-dvds/</link>
       <pubDate>Sat, 23 Jan 2010 02:32:58 +0000</pubDate>
-      
       <guid>https://cmdln.org/2010/01/22/backing-up-disney-dvds/</guid>
       <description>Many of you know that I had a son about 6 months ago now. What you may not know is that my wife decided to quit her job and start a home daycare so she could be at home with our son. We all know how hard kids can be on DVDs and the like, so its important to be able to back them up. I am not a fan of the encryption or the new copy protections that have been put in place (ARccOS, RipGuard).</description>
     </item>
-    
   </channel>
 </rss>

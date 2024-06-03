@@ -6,7 +6,7 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.92.2" />
+<meta name="generator" content="Hugo 0.123.7">
 
 
 
@@ -111,12 +111,12 @@
 no-dhcp-interface=eth1
 </pre>
 <p>After making the change you should be ready to add entries to the proxy servers /etc/hosts for dnsmasq to use and then test your reverse proxy.</p>
-<p>Lets say you have <a href="http://www.test.com">www.test.com</a> served off of a machine with the ip 192.168.1.2 and you have tickets.office.test.com served off of 192.168.1.3. Lets also assume that your world routeable ip is 123.123.123.123. You will need to make sure that your authoritative dns (the real one that servs for test.com has A records for both <a href="http://www.test.com">www.test.com</a> and tickets.office.test.com pointing to 123.123.123.123. Now on the machine running dnsmasq (in this example also your proxy server) add the following entries to /etc/hosts.</p>
+<p>Lets say you have <a href="https://www.test.com">www.test.com</a> served off of a machine with the ip 192.168.1.2 and you have tickets.office.test.com served off of 192.168.1.3. Lets also assume that your world routeable ip is 123.123.123.123. You will need to make sure that your authoritative dns (the real one that servs for test.com has A records for both <a href="https://www.test.com">www.test.com</a> and tickets.office.test.com pointing to 123.123.123.123. Now on the machine running dnsmasq (in this example also your proxy server) add the following entries to /etc/hosts.</p>
 <pre class="brush: plain; title: ; notranslate" title="">192.168.1.2 www.test.com
 192.168.1.3 tickets.office.test.com
 </pre>
 <p>Go ahead and restart dnsmasq (from making changes to the config, subsequent changes to /etc/hosts should not require dnsmasq restart to pick up changes) and nginx.</p>
-<p>Now tail your proxy.access.log file and start making requests to <a href="http://www.test.com">www.test.com</a> and tickets.office.test.com from both the inside of your lan as well as outside against your world ip. It should all magically serve up the same content.</p>
+<p>Now tail your proxy.access.log file and start making requests to <a href="https://www.test.com">www.test.com</a> and tickets.office.test.com from both the inside of your lan as well as outside against your world ip. It should all magically serve up the same content.</p>
 <p>This type of config can be useful in many situations. You have a small office and budget that reflects that not being able to afford multiple ips but needing to provide web services behind the firewall. You work in a large corporation where someone else manages the firewall and you would like to bring up more web services without waiting for the other person to make the necessary changes to the firewall.</p>
 <p>One of the other benefits this provides is being relatively self documenting  with regard to what web services you host behind the firewall. (you should be able to see all of them in /etc/hosts since you have to override the dns)</p>
 

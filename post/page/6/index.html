@@ -6,7 +6,7 @@
 
 		<meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.92.2" />
+<meta name="generator" content="Hugo 0.123.7">
 
 
 
@@ -87,8 +87,8 @@
 				<h4 class="post-date">2013-03-29</h4>
 			</div>
 			<div class="post-summary"><p>John Sanders shared a pattern for canonifying lists in #CFEngine on irc.freenode.net yesterday. It’s a useful reference so I thought I would replicate it here.
- 1 2 3 4 5 6   &lt;td class=&quot;line-data&quot;&gt; &lt;pre class=&quot;line-pre&quot;&gt;&lt;div class=&quot;line&quot; id=&quot;file-output-LC1&quot;&gt;  % cf-agent -KIf ./example_canonify_list.cf
- R: canonified site: www_example_com  R: canonified site: www_example2_com  R: alternate canonified site: www_example_com  R: alternate canonified site: www_example2_com  !! Method invoked repairs        &lt;div class=&quot;gist-meta&quot;&gt; &lt;a href=&quot;https://gist.</p></div>
+1 2 3 4 5 6 &lt;td class=&quot;line-data&quot;&gt; &lt;pre class=&quot;line-pre&quot;&gt;&lt;div class=&quot;line&quot; id=&quot;file-output-LC1&quot;&gt; % cf-agent -KIf ./example_canonify_list.cf
+R: canonified site: www_example_com R: canonified site: www_example2_com R: alternate canonified site: www_example_com R: alternate canonified site: www_example2_com !! Method invoked repairs &lt;div class=&quot;gist-meta&quot;&gt; &lt;a href=&quot;https://gist.github.com/nickanderson/5271023/raw/d57a43831308cf31f0a5fe237b3d3436ed3d3049/Output&quot; style=&quot;float:right&quot;&gt;view raw&lt;/a&gt; &lt;a href=&quot;https://gist.</p></div>
 			<div class="post-list-footer text-center">
 				<a href="https://cmdln.org/2013/03/29/canonifying-a-list-with-cfengine-3/">Read More</a>
 			</div>
@@ -114,7 +114,7 @@
 				<h4 class="post-link"><a href="https://cmdln.org/2013/03/09/deep-thoughts/">Deep thoughts</a></h4>
 				<h4 class="post-date">2013-03-09</h4>
 			</div>
-			<div class="post-summary"><p>bundle common knowledge(status){vars:"software" string =&gt; "$(status)", policy =&gt; "free";!isUsable::"software" string =&gt; "usable", policy =&gt; "free";isUsable::"software" string =&gt; "reusable", policy =&gt; "free";classes:"isUsable" expression =&gt; regcmp("$(software)", "usable");"reUsable" expression =&gt; regcmp("$(software)", "resuable");reports:Morning|Afternoon|Evening|Night::"Before software can be reusable it first has to be useable.",comment =&gt; "Ralph Johnson";}  </p></div>
+			<div class="post-summary"><p>bundle common knowledge(status){vars:"software" string =&gt; "$(status)", policy =&gt; "free";!isUsable::"software" string =&gt; "usable", policy =&gt; "free";isUsable::"software" string =&gt; "reusable", policy =&gt; "free";classes:"isUsable" expression =&gt; regcmp("$(software)", "usable");"reUsable" expression =&gt; regcmp("$(software)", "resuable");reports:Morning|Afternoon|Evening|Night::"Before software can be reusable it first has to be useable.",comment =&gt; "Ralph Johnson";}</p></div>
 			<div class="post-list-footer text-center">
 				<a href="https://cmdln.org/2013/03/09/deep-thoughts/">Read More</a>
 			</div>
@@ -185,7 +185,7 @@ cf-agent -KIv | grep "cf3&gt;\s*+" | grep -v : But that isn’t really a clear p
 			</div>
 			<div class="post-summary"><p>Methods type promises are powerful abstraction tools in CFEngine 3. Methods allow you to activate bundles (optionally parametrized) from other bundles. This allows encapsulation of knowledge and lends itself to re-usability.
 I just want to share an example of calling bundles dynamically. It’s a contrived example, but I thought it was neat so here it is.
-R: in bundle agent handler1: I got value1  R: in bundle agent handler1: I got value2  &nbsp;!</p></div>
+R: in bundle agent handler1: I got value1 R: in bundle agent handler1: I got value2 &nbsp;!</p></div>
 			<div class="post-list-footer text-center">
 				<a href="https://cmdln.org/2012/10/16/dynamic-method-calls-in-cfengine/">Read More</a>
 			</div>
@@ -201,7 +201,7 @@ R: in bundle agent handler1: I got value1  R: in bundle agent handler1: I got va
 			<div class="post-summary"><p>Are you going to LinuxCon/CloudOpen 2012? I am, and I think I have settled on my picks (at least until I look at the schedule again, lots of great options).
 Special thanks to CFEngine for sponsering me!
 Here are my picks for the minute.
- Building the Open Cloud – Mark Hinkle, Citrix{#9046eff8494ef50f48da95349905592e} The OpenNebula Cloud Platform for Data Center Virtualization – Carlos Martin, OpenNebula{#5561a1f9b3d063dcca4b7abdc5dbc44b} Cloning SysAdmins with the Cloud and Juju – Clint Byrum, Canonical{#82e5d5410f32e11be9bd9bddf2b81570} A Collaborative Approach to Managing Linux Configurations – Diego Zamboni, CFEngine{#da5dea5f6f017f925dac66eec964f13f} Building FOSS Clouds – Joe Brockmeier, Citrix{#c28982d2a4f52cbfbb4000ce030a1771} Automation and DevOps Best Practices – Rob Hirschfeld, Dell{#f0cd279b854c642d12e7d531c68c53f0} Scaling Configuration Management Across Data Center and Cloud – Mark Burgess, CFEngine{#e9936ee3a0369080a61b61f5eb9a88d4} Editing with vi: Advanced Topics, Part I – Aleksey Tsaloikhin, Vertical Sysadmin, Inc.</p></div>
+Building the Open Cloud – Mark Hinkle, Citrix{#9046eff8494ef50f48da95349905592e} The OpenNebula Cloud Platform for Data Center Virtualization – Carlos Martin, OpenNebula{#5561a1f9b3d063dcca4b7abdc5dbc44b} Cloning SysAdmins with the Cloud and Juju – Clint Byrum, Canonical{#82e5d5410f32e11be9bd9bddf2b81570} A Collaborative Approach to Managing Linux Configurations – Diego Zamboni, CFEngine{#da5dea5f6f017f925dac66eec964f13f} Building FOSS Clouds – Joe Brockmeier, Citrix{#c28982d2a4f52cbfbb4000ce030a1771} Automation and DevOps Best Practices – Rob Hirschfeld, Dell{#f0cd279b854c642d12e7d531c68c53f0} Scaling Configuration Management Across Data Center and Cloud – Mark Burgess, CFEngine{#e9936ee3a0369080a61b61f5eb9a88d4} Editing with vi: Advanced Topics, Part I – Aleksey Tsaloikhin, Vertical Sysadmin, Inc.</p></div>
 			<div class="post-list-footer text-center">
 				<a href="https://cmdln.org/2012/08/01/linuxconcloudopen-2012/">Read More</a>
 			</div>

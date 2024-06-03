@@ -5,15 +5,15 @@
     <link>https://cmdln.org/tags/discussions/</link>
     <description>Recent content in Discussions on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 29 Jan 2010 17:52:12 +0000</lastBuildDate><atom:link href="https://cmdln.org/tags/discussions/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Fri, 29 Jan 2010 17:52:12 +0000</lastBuildDate>
+    <atom:link href="https://cmdln.org/tags/discussions/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Home Grown / Open Source vs Appliances</title>
       <link>https://cmdln.org/2010/01/29/home-grown-open-source-vs-appliances/</link>
       <pubDate>Fri, 29 Jan 2010 17:52:12 +0000</pubDate>
-      
       <guid>https://cmdln.org/2010/01/29/home-grown-open-source-vs-appliances/</guid>
       <description>&lt;p&gt;The last few days I have been having a pretty good debate with a friend about the virtues of open source vs Appliances. At times its gotten pretty heated but its all in good fun. The current debate centers around email infrastructure. There are options on the table to use an appliance, or a 3rd party service to control the spam. Of course I was appalled that SpamAssassin and brethren were not on the table.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

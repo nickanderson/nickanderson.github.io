@@ -1,28 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>exim on </title>
+    <title>Exim on </title>
     <link>https://cmdln.org/tags/exim/</link>
-    <description>Recent content in exim on </description>
+    <description>Recent content in Exim on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 08 Feb 2008 03:26:56 +0000</lastBuildDate><atom:link href="https://cmdln.org/tags/exim/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Fri, 08 Feb 2008 03:26:56 +0000</lastBuildDate>
+    <atom:link href="https://cmdln.org/tags/exim/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Who have you delivered mail to?</title>
       <link>https://cmdln.org/2008/02/07/who-have-you-delivered-mail-to/</link>
       <pubDate>Fri, 08 Feb 2008 03:26:56 +0000</pubDate>
-      
       <guid>https://cmdln.org/2008/02/07/who-have-you-delivered-mail-to/</guid>
       <description>&lt;p&gt;The company I work for (&lt;a href=&#34;http://www.absorbentprinting.com&#34; mce_href=&#34;http://www.absorbentprinting.com&#34;&gt;Absorbent Ink&lt;/a&gt;) that makes &lt;a href=&#34;http://www.absorbentprinting.com/corporate-gifts&#34; mce_href=&#34;http://www.absorbentprinting.com/corporate-gifts&#34;&gt;corporate gifts&lt;/a&gt; and other &amp;lt;a href=&amp;ldquo;&lt;a href=&#34;http://www.absorbentprinting.com/unique&#34;&gt;http://www.absorbentprinting.com/unique&lt;/a&gt;_products.php&amp;rdquo; mce_href=&amp;ldquo;&lt;a href=&#34;http://www.absorbentprinting.com/unique_products.php%22%3Epersonalized&#34;&gt;http://www.absorbentprinting.com/unique_products.php&amp;quot;&amp;gt;personalized&lt;/a&gt; products&lt;/a&gt;. has started sending out a &lt;a href=&#34;http://www.absorbentprinting.com/scoop.php&#34; mce_href=&#34;http://www.absorbentprinting.com/scoop.php&#34;&gt;newsletter&lt;/a&gt;. Part of this newsletter process for me has been tuning one of our &lt;a href=&#34;http://www.exim.org&#34; mce_href=&#34;http://www.exim.org&#34;&gt;exim&lt;/a&gt; based mail servers.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>What to do when your exim queue starts getting unruly.</title>
       <link>https://cmdln.org/2008/02/07/what-to-do-when-your-exim-queue-starts-getting-unruly/</link>
       <pubDate>Fri, 08 Feb 2008 03:22:20 +0000</pubDate>
-      
       <guid>https://cmdln.org/2008/02/07/what-to-do-when-your-exim-queue-starts-getting-unruly/</guid>
       <description>&lt;p&gt;Our exim mail server has been getting a bit flakey in the past several weeks. As far as I could tell it was being caused by junk mail getting caught in the queue. After a bit of research I believe I have found a combination of solutions that seems to do the trick (at least for me)&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

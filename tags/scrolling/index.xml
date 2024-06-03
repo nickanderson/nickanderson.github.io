@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>scrolling on </title>
+    <title>Scrolling on </title>
     <link>https://cmdln.org/tags/scrolling/</link>
-    <description>Recent content in scrolling on </description>
+    <description>Recent content in Scrolling on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 31 Jul 2007 17:52:56 +0000</lastBuildDate><atom:link href="https://cmdln.org/tags/scrolling/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Tue, 31 Jul 2007 17:52:56 +0000</lastBuildDate>
+    <atom:link href="https://cmdln.org/tags/scrolling/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Fix terminal scrolling when inside GNU Screen</title>
       <link>https://cmdln.org/2007/07/31/fix-terminal-scrolling-when-inside-gnu-screen/</link>
       <pubDate>Tue, 31 Jul 2007 17:52:56 +0000</pubDate>
-      
       <guid>https://cmdln.org/2007/07/31/fix-terminal-scrolling-when-inside-gnu-screen/</guid>
       <description>&lt;p&gt;My post on &lt;a href=&#34;http://www.cmdln.org/2007/07/20/automatic-session-logging-and-monitoring-with-gnu-screen-for-the-paranoid/&#34; mce_href=&#34;http://www.cmdln.org/2007/07/20/automatic-session-logging-and-monitoring-with-gnu-screen-for-the-paranoid/&#34;&gt; Automatic session logging and monitoring with GNU screen&lt;/a&gt; seems to have been well received. I have had more hits by far on that post today than ever before. I noticed a nagging issue with screen and a friend of mine Travis Cline pointed me to the fix.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

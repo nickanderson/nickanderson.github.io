@@ -1,21 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>emacs on </title>
+    <title>Emacs on </title>
     <link>https://cmdln.org/tags/emacs/</link>
-    <description>Recent content in emacs on </description>
+    <description>Recent content in Emacs on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 26 Apr 2016 00:00:00 +0000</lastBuildDate><atom:link href="https://cmdln.org/tags/emacs/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Tue, 26 Apr 2016 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://cmdln.org/tags/emacs/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How I org with spacemacs</title>
       <link>https://cmdln.org/2016/04/26/how-i-org-with-spacemacs/</link>
       <pubDate>Tue, 26 Apr 2016 00:00:00 +0000</pubDate>
-      
       <guid>https://cmdln.org/2016/04/26/how-i-org-with-spacemacs/</guid>
-      <description>This weekend Neil Watson asked if I could share how I use org-mode with Spacemacs.
- @cmdln_ Care to share with an Emacs illiterate how you got Spacemacs and Org-mode to work together? – @neil_h_watson
-  First of all, I spend most of my time in a terminal, and vim is ingrained in my muscle memory any time I need to edit a file. While Vim is my goto editor I consider myself just a novice Vim user.</description>
+      <description>This weekend Neil Watson asked if I could share how I use org-mode with Spacemacs.&#xA;@cmdln_ Care to share with an Emacs illiterate how you got Spacemacs and Org-mode to work together? – @neil_h_watson&#xA;First of all, I spend most of my time in a terminal, and vim is ingrained in my muscle memory any time I need to edit a file. While Vim is my goto editor I consider myself just a novice Vim user.</description>
     </item>
-    
   </channel>
 </rss>

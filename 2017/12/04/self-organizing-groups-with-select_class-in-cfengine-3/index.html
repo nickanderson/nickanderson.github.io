@@ -6,7 +6,7 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.92.2" />
+<meta name="generator" content="Hugo 0.123.7">
 
 
 
@@ -128,47 +128,47 @@ order each host will always choose the same option.</p>
 </span><span class="lnt">41
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">demo_select_class</span>
-  <span class="p">{</span>
-    <span class="kd">vars</span><span class="p">:</span>
-  
-        <span class="p">&#34;</span><span class="nv">options</span><span class="p">&#34;</span>
-          <span class="kt">slist</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="s">&#34;one&#34;</span><span class="p">,</span> <span class="s">&#34;two&#34;</span> <span class="p">},</span>
-          <span class="kr">meta</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="s">&#34;inventory&#34;</span><span class="p">,</span> <span class="s">&#34;attribute_name=Select Class Options&#34;</span> <span class="p">};</span>
-  
-        <span class="c"># Prefix the options with &#34;select_class_&#34; as select_class will define
-</span><span class="c"></span>        <span class="c"># untagged classes that we will use to define a class tagged for
-</span><span class="c"></span>        <span class="c"># inventory.
-</span><span class="c"></span>  
-        <span class="p">&#34;</span><span class="nv">candidate[$(options)]</span><span class="p">&#34;</span> <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;select_class_</span><span class="si">$(options)</span><span class="s">&#34;</span><span class="p">;</span>
-  
-        <span class="c"># Remember it&#39;s important to provide a stable list order for select_class
-</span><span class="c"></span>        <span class="p">&#34;</span><span class="nv">candidates</span><span class="p">&#34;</span> <span class="kt">slist</span> <span class="o">=&gt;</span> <span class="nf">sort</span><span class="p">(</span> <span class="nf">getvalues</span><span class="p">(</span> <span class="nf">candidate</span> <span class="p">),</span> <span class="nf">lex</span> <span class="p">);</span>
-  
-    <span class="kd">classes</span><span class="p">:</span>
-  
-        <span class="c"># Here we define &#34;selected&#34; and class for the selected option in the form &#34;select_class_&lt;option&gt;&#34;
-</span><span class="c"></span>        <span class="s">&#34;selected&#34;</span>
-          <span class="kr">select_class</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="nv">@(candidates)</span> <span class="p">};</span>
-  
-        <span class="c"># Here we define selected_&lt;option&gt; and tag it for inventory
-</span><span class="c"></span>        <span class="s">&#34;selected_</span><span class="si">$(options)</span><span class="s">&#34;</span>
-          <span class="kr">expression</span> <span class="o">=&gt;</span> <span class="s">&#34;</span><span class="si">$(candidate[$(options)])</span><span class="s">&#34;</span><span class="p">,</span>
-          <span class="kr">scope</span> <span class="o">=&gt;</span> <span class="s">&#34;namespace&#34;</span><span class="p">,</span>
-          <span class="kr">meta</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="s">&#34;inventory&#34;</span><span class="p">,</span> <span class="s">&#34;attribute_name=Selected Class&#34;</span> <span class="p">};</span>
-  
-    <span class="kd">reports</span><span class="p">:</span>
-  
-      <span class="nc">inform_mode|DEBUG|DEBUG_demo_select_class</span><span class="p">::</span>
-  
-        <span class="s">&#34;Selection candidates include </span><span class="si">$(candidates)</span><span class="s">&#34;</span><span class="p">;</span>
-  
-        <span class="s">&#34;I made a selection&#34;</span>
-          <span class="kr">if</span> <span class="o">=&gt;</span> <span class="s">&#34;selected&#34;</span><span class="p">;</span>
-  
-        <span class="s">&#34;I selected </span><span class="si">$(options)</span><span class="s">&#34;</span>
-          <span class="kr">if</span> <span class="o">=&gt;</span> <span class="nf">canonify</span><span class="p">(</span> <span class="s">&#34;</span><span class="si">$(candidate[$(options)])</span><span class="s">&#34;</span> <span class="p">);</span>
-  <span class="p">}</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="line"><span class="cl">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">demo_select_class</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">vars</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">        <span class="s">&#34;options&#34;</span>
+</span></span><span class="line"><span class="cl">          <span class="kr">slist</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="s">&#34;one&#34;</span><span class="p">,</span> <span class="s">&#34;two&#34;</span> <span class="p">},</span>
+</span></span><span class="line"><span class="cl">          <span class="kr">meta</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="s">&#34;inventory&#34;</span><span class="p">,</span> <span class="s">&#34;attribute_name=Select Class Options&#34;</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">        <span class="c"># Prefix the options with &#34;select_class_&#34; as select_class will define
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>        <span class="c"># untagged classes that we will use to define a class tagged for
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>        <span class="c"># inventory.
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  
+</span></span><span class="line"><span class="cl">        <span class="s">&#34;candidate[</span><span class="si">$(options)</span><span class="s">]&#34;</span> <span class="kr">string</span> <span class="o">=&gt;</span> <span class="s">&#34;select_class_</span><span class="si">$(options)</span><span class="s">&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">        <span class="c"># Remember it&#39;s important to provide a stable list order for select_class
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>        <span class="s">&#34;candidates&#34;</span> <span class="kr">slist</span> <span class="o">=&gt;</span> <span class="nf">sort</span><span class="p">(</span> <span class="nf">getvalues</span><span class="p">(</span> <span class="nf">candidate</span> <span class="p">),</span> <span class="nf">lex</span> <span class="p">);</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">    <span class="kd">classes</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">        <span class="c"># Here we define &#34;selected&#34; and class for the selected option in the form &#34;select_class_&lt;option&gt;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>        <span class="s">&#34;selected&#34;</span>
+</span></span><span class="line"><span class="cl">          <span class="kr">select_class</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="nv">@(candidates)</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">        <span class="c"># Here we define selected_&lt;option&gt; and tag it for inventory
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>        <span class="s">&#34;selected_</span><span class="si">$(options)</span><span class="s">&#34;</span>
+</span></span><span class="line"><span class="cl">          <span class="kr">expression</span> <span class="o">=&gt;</span> <span class="s">&#34;</span><span class="si">$(candidate[$(options)])</span><span class="s">&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="kr">scope</span> <span class="o">=&gt;</span> <span class="s">&#34;namespace&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="kr">meta</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="s">&#34;inventory&#34;</span><span class="p">,</span> <span class="s">&#34;attribute_name=Selected Class&#34;</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">    <span class="kd">reports</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">      <span class="nc">inform_mode|DEBUG|DEBUG_demo_select_class</span><span class="p">::</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">        <span class="s">&#34;Selection candidates include </span><span class="si">$(candidates)</span><span class="s">&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">        <span class="s">&#34;I made a selection&#34;</span>
+</span></span><span class="line"><span class="cl">          <span class="kr">if</span> <span class="o">=&gt;</span> <span class="s">&#34;selected&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">        <span class="s">&#34;I selected </span><span class="si">$(options)</span><span class="s">&#34;</span>
+</span></span><span class="line"><span class="cl">          <span class="kr">if</span> <span class="o">=&gt;</span> <span class="nf">canonify</span><span class="p">(</span> <span class="s">&#34;</span><span class="si">$(candidate[$(options)])</span><span class="s">&#34;</span> <span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span></span></span></code></pre></td></tr></table>
 </div>
 </div>
 </div>

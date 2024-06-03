@@ -1,31 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>spacemacs on </title>
+    <title>Spacemacs on </title>
     <link>https://cmdln.org/tags/spacemacs/</link>
-    <description>Recent content in spacemacs on </description>
+    <description>Recent content in Spacemacs on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 25 Nov 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://cmdln.org/tags/spacemacs/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Sat, 25 Nov 2017 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://cmdln.org/tags/spacemacs/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>dot spacemacs</title>
       <link>https://cmdln.org/2017/11/25/dot-spacemacs/</link>
       <pubDate>Sat, 25 Nov 2017 00:00:00 +0000</pubDate>
-      
       <guid>https://cmdln.org/2017/11/25/dot-spacemacs/</guid>
-      <description>When I first tried using Emacs it was to play with Orgmode. I loved Orgmode but being a staunch vim user I really struggled with the key bindings. Ultimately my first attempt to use Orgmode fell by the wayside.
- When I learned about evil mode I gave it another go. I stumbled my way through just enough to get evil-mode working and Orgmode became much more usable. I still primarily interacted with Orgmode via direct files.</description>
+      <description>When I first tried using Emacs it was to play with Orgmode. I loved Orgmode but being a staunch vim user I really struggled with the key bindings. Ultimately my first attempt to use Orgmode fell by the wayside.&#xA;When I learned about evil mode I gave it another go. I stumbled my way through just enough to get evil-mode working and Orgmode became much more usable. I still primarily interacted with Orgmode via direct files.</description>
     </item>
-    
     <item>
       <title>How I org with spacemacs</title>
       <link>https://cmdln.org/2016/04/26/how-i-org-with-spacemacs/</link>
       <pubDate>Tue, 26 Apr 2016 00:00:00 +0000</pubDate>
-      
       <guid>https://cmdln.org/2016/04/26/how-i-org-with-spacemacs/</guid>
-      <description>This weekend Neil Watson asked if I could share how I use org-mode with Spacemacs.
- @cmdln_ Care to share with an Emacs illiterate how you got Spacemacs and Org-mode to work together? – @neil_h_watson
-  First of all, I spend most of my time in a terminal, and vim is ingrained in my muscle memory any time I need to edit a file. While Vim is my goto editor I consider myself just a novice Vim user.</description>
+      <description>This weekend Neil Watson asked if I could share how I use org-mode with Spacemacs.&#xA;@cmdln_ Care to share with an Emacs illiterate how you got Spacemacs and Org-mode to work together? – @neil_h_watson&#xA;First of all, I spend most of my time in a terminal, and vim is ingrained in my muscle memory any time I need to edit a file. While Vim is my goto editor I consider myself just a novice Vim user.</description>
     </item>
-    
   </channel>
 </rss>

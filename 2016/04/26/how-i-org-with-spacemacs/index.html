@@ -6,7 +6,7 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.92.2" />
+<meta name="generator" content="Hugo 0.123.7">
 
 
 
@@ -132,12 +132,12 @@ I enabled the org layer.</p>
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-elisp" data-lang="elisp"><span class="p">(</span><span class="nb">defun</span> <span class="nv">dotspacemacs/layers</span> <span class="p">()</span>
-  <span class="s">&#34;Configuration Layers declaration.
-</span><span class="s">You should not put any user code in this function besides modifying the variable
-</span><span class="s">values.&#34;</span>
-  <span class="p">(</span><span class="nb">setq-default</span>
-   <span class="nv">dotspacemacs-configuration-layers</span> <span class="o">&#39;</span><span class="p">(</span> <span class="nv">org</span> <span class="p">)))</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-elisp" data-lang="elisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nb">defun</span> <span class="nv">dotspacemacs/layers</span> <span class="p">()</span>
+</span></span><span class="line"><span class="cl">  <span class="s">&#34;Configuration Layers declaration.
+</span></span></span><span class="line"><span class="cl"><span class="s">You should not put any user code in this function besides modifying the variable
+</span></span></span><span class="line"><span class="cl"><span class="s">values.&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">setq-default</span>
+</span></span><span class="line"><span class="cl">   <span class="nv">dotspacemacs-configuration-layers</span> <span class="o">&#39;</span><span class="p">(</span> <span class="nv">org</span> <span class="p">)))</span></span></span></code></pre></td></tr></table>
 </div>
 </div>
 </div>
@@ -169,26 +169,26 @@ first theme listed in <code class="verbatim">dotspacemacs-themes</code> in <code
 </span><span class="lnt">20
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-elisp" data-lang="elisp"><span class="p">(</span><span class="nb">defun</span> <span class="nv">dotspacemacs/init</span> <span class="p">()</span>
-  <span class="s">&#34;Initialization function.
-</span><span class="s">This function is called at the very startup of Spacemacs initialization
-</span><span class="s">before layers configuration.
-</span><span class="s">You should not put any user code in there besides modifying the variable
-</span><span class="s">values.&#34;</span>
-  <span class="c1">;; This setq-default sexp is an exhaustive list of all the supported</span>
-  <span class="c1">;; spacemacs settings.</span>
-  <span class="p">(</span><span class="nb">setq-default</span>
-   <span class="c1">;; List of themes, the first of the list is loaded when spacemacs starts.</span>
-   <span class="c1">;; Press &lt;SPC&gt; T n to cycle to the next theme in the list (works great</span>
-   <span class="c1">;; with 2 themes variants, one dark and one light)</span>
-   <span class="nv">dotspacemacs-themes</span> <span class="o">&#39;</span><span class="p">(</span>
-                         <span class="nv">solarized-dark</span>
-                         <span class="nv">spacemacs-dark</span>
-                         <span class="nv">spacemacs-light</span>
-                         <span class="nv">solarized-light</span>
-                         <span class="nv">leuven</span>
-                         <span class="nv">monokai</span>
-                         <span class="nv">zenburn</span><span class="p">)))</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-elisp" data-lang="elisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nb">defun</span> <span class="nv">dotspacemacs/init</span> <span class="p">()</span>
+</span></span><span class="line"><span class="cl">  <span class="s">&#34;Initialization function.
+</span></span></span><span class="line"><span class="cl"><span class="s">This function is called at the very startup of Spacemacs initialization
+</span></span></span><span class="line"><span class="cl"><span class="s">before layers configuration.
+</span></span></span><span class="line"><span class="cl"><span class="s">You should not put any user code in there besides modifying the variable
+</span></span></span><span class="line"><span class="cl"><span class="s">values.&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">;; This setq-default sexp is an exhaustive list of all the supported</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">;; spacemacs settings.</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">setq-default</span>
+</span></span><span class="line"><span class="cl">   <span class="c1">;; List of themes, the first of the list is loaded when spacemacs starts.</span>
+</span></span><span class="line"><span class="cl">   <span class="c1">;; Press &lt;SPC&gt; T n to cycle to the next theme in the list (works great</span>
+</span></span><span class="line"><span class="cl">   <span class="c1">;; with 2 themes variants, one dark and one light)</span>
+</span></span><span class="line"><span class="cl">   <span class="nv">dotspacemacs-themes</span> <span class="o">&#39;</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">                         <span class="nv">solarized-dark</span>
+</span></span><span class="line"><span class="cl">                         <span class="nv">spacemacs-dark</span>
+</span></span><span class="line"><span class="cl">                         <span class="nv">spacemacs-light</span>
+</span></span><span class="line"><span class="cl">                         <span class="nv">solarized-light</span>
+</span></span><span class="line"><span class="cl">                         <span class="nv">leuven</span>
+</span></span><span class="line"><span class="cl">                         <span class="nv">monokai</span>
+</span></span><span class="line"><span class="cl">                         <span class="nv">zenburn</span><span class="p">)))</span></span></span></code></pre></td></tr></table>
 </div>
 </div>
 </div>
@@ -204,10 +204,10 @@ reside within <code class="verbatim">dotspacemacs/user-config</code>.</p>
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-elisp" data-lang="elisp">  <span class="p">(</span><span class="nb">defun</span> <span class="nv">dotspacemacs/user-config</span> <span class="p">()</span>
-    <span class="s">&#34;Configuration function for user code.
-</span><span class="s">  This function is called at the very end of Spacemacs initialization after
-</span><span class="s">  layers configuration. You are free to put any user code.&#34;</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-elisp" data-lang="elisp"><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">defun</span> <span class="nv">dotspacemacs/user-config</span> <span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="s">&#34;Configuration function for user code.
+</span></span></span><span class="line"><span class="cl"><span class="s">  This function is called at the very end of Spacemacs initialization after
+</span></span></span><span class="line"><span class="cl"><span class="s">  layers configuration. You are free to put any user code.&#34;</span></span></span></code></pre></td></tr></table>
 </div>
 </div>
 </div>
@@ -241,26 +241,26 @@ export from org mode.</p>
 </span><span class="lnt">20
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-elisp" data-lang="elisp">    <span class="c1">;; Link abbreviations http://orgmode.org/manual/Link-abbreviations.html#Link-abbreviations</span>
-    <span class="c1">;; This makes it easy to create links in org files to common urls</span>
-    <span class="c1">;; Note: The actual link is not stored in the text, only when rendered</span>
-    <span class="c1">;; Usage: [[zendesk:2753]] or [[redmine:7481][My text]]</span>
-    <span class="p">(</span><span class="nb">setq</span> <span class="nv">org-link-abbrev-alist</span>
-          <span class="o">&#39;</span><span class="p">((</span><span class="s">&#34;zendesk&#34;</span> <span class="o">.</span> <span class="s">&#34;https://cfengine.zendesk.com/agent/tickets/&#34;</span><span class="p">)</span>
-            <span class="p">(</span><span class="s">&#34;redmine&#34;</span> <span class="o">.</span> <span class="s">&#34;https://dev.cfengine.com/issues/&#34;</span><span class="p">)</span>
-            <span class="p">(</span><span class="s">&#34;jira&#34;</span> <span class="o">.</span> <span class="s">&#34;https://tracker.mender.io/browse/&#34;</span><span class="p">)))</span>
-<span class="err">#</span><span class="nv">+BEGIN_SRC</span> <span class="nv">elisp</span>
-
-
-<span class="nv">I</span> <span class="nv">often</span> <span class="nv">link</span> <span class="nv">to</span> <span class="nv">various</span> <span class="nv">screen</span> <span class="nv">shots</span> <span class="nb">or</span> <span class="nv">embed</span> <span class="nv">images</span> <span class="nv">in</span> <span class="nv">my</span> <span class="nv">notes.</span> <span class="nv">This</span> <span class="nv">setting</span>
-<span class="nv">makes</span> <span class="nv">images</span> <span class="nv">render</span> <span class="nv">by</span> <span class="nv">default</span> <span class="nv">directly</span> <span class="nv">within</span> <span class="nv">Emacs</span> <span class="p">(</span><span class="nv">I</span> <span class="nv">think</span> <span class="nv">that</span><span class="ss">&#39;s</span> <span class="nv">pretty</span>
-<span class="nv">neat</span><span class="p">)</span><span class="o">.</span>
-
-<span class="err">#</span><span class="nv">+BEGIN_SRC</span> <span class="nv">elisp</span>
-    <span class="c1">;; Enable automatic inline image rendering</span>
-    <span class="c1">;; =:org-toggle-inline-images=  to disable</span>
-    <span class="c1">; http://orgmode.org/manual/In_002dbuffer-settings.html</span>
-    <span class="p">(</span><span class="nb">setq</span> <span class="nv">org-startup-with-inline-images</span> <span class="no">t</span><span class="p">)</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-elisp" data-lang="elisp"><span class="line"><span class="cl">    <span class="c1">;; Link abbreviations http://orgmode.org/manual/Link-abbreviations.html#Link-abbreviations</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">;; This makes it easy to create links in org files to common urls</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">;; Note: The actual link is not stored in the text, only when rendered</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">;; Usage: [[zendesk:2753]] or [[redmine:7481][My text]]</span>
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="nb">setq</span> <span class="nv">org-link-abbrev-alist</span>
+</span></span><span class="line"><span class="cl">          <span class="o">&#39;</span><span class="p">((</span><span class="s">&#34;zendesk&#34;</span> <span class="o">.</span> <span class="s">&#34;https://cfengine.zendesk.com/agent/tickets/&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="p">(</span><span class="s">&#34;redmine&#34;</span> <span class="o">.</span> <span class="s">&#34;https://dev.cfengine.com/issues/&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="p">(</span><span class="s">&#34;jira&#34;</span> <span class="o">.</span> <span class="s">&#34;https://tracker.mender.io/browse/&#34;</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl"><span class="err">#</span><span class="nv">+BEGIN_SRC</span> <span class="nv">elisp</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">I</span> <span class="nv">often</span> <span class="nv">link</span> <span class="nv">to</span> <span class="nv">various</span> <span class="nv">screen</span> <span class="nv">shots</span> <span class="nb">or</span> <span class="nv">embed</span> <span class="nv">images</span> <span class="nv">in</span> <span class="nv">my</span> <span class="nv">notes.</span> <span class="nv">This</span> <span class="nv">setting</span>
+</span></span><span class="line"><span class="cl"><span class="nv">makes</span> <span class="nv">images</span> <span class="nv">render</span> <span class="nv">by</span> <span class="nv">default</span> <span class="nv">directly</span> <span class="nv">within</span> <span class="nv">Emacs</span> <span class="p">(</span><span class="nv">I</span> <span class="nv">think</span> <span class="nv">that</span><span class="ss">&#39;s</span> <span class="nv">pretty</span>
+</span></span><span class="line"><span class="cl"><span class="nv">neat</span><span class="p">)</span><span class="o">.</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="err">#</span><span class="nv">+BEGIN_SRC</span> <span class="nv">elisp</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">;; Enable automatic inline image rendering</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">;; =:org-toggle-inline-images=  to disable</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">; http://orgmode.org/manual/In_002dbuffer-settings.html</span>
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="nb">setq</span> <span class="nv">org-startup-with-inline-images</span> <span class="no">t</span><span class="p">)</span></span></span></code></pre></td></tr></table>
 </div>
 </div>
 </div>
@@ -283,10 +283,10 @@ that begin with TODO (an entry is simply a line starting with one or more <code 
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-elisp" data-lang="elisp">    <span class="c1">;; Set the org-agenda files</span>
-    <span class="c1">;; Subdirectories must be explicitly specified.</span>
-    <span class="p">(</span><span class="nb">setq</span> <span class="nv">org-agenda-files</span>
-      <span class="o">&#39;</span><span class="p">(</span><span class="s">&#34;~/org&#34;</span> <span class="s">&#34;~/org/cfengine&#34;</span><span class="p">))</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-elisp" data-lang="elisp"><span class="line"><span class="cl">    <span class="c1">;; Set the org-agenda files</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">;; Subdirectories must be explicitly specified.</span>
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="nb">setq</span> <span class="nv">org-agenda-files</span>
+</span></span><span class="line"><span class="cl">      <span class="o">&#39;</span><span class="p">(</span><span class="s">&#34;~/org&#34;</span> <span class="s">&#34;~/org/cfengine&#34;</span><span class="p">))</span></span></span></code></pre></td></tr></table>
 </div>
 </div>
 </div>
@@ -300,8 +300,8 @@ file to another (re-filing).</p>
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-elisp" data-lang="elisp">    <span class="c1">;; Set refile locations to whats in org-agenda</span>
-    <span class="p">(</span><span class="nb">setq</span> <span class="nv">org-refile-targets</span> <span class="p">(</span><span class="nb">quote</span> <span class="p">((</span><span class="nv">org-agenda-files</span> <span class="nb">:maxlevel</span> <span class="o">.</span> <span class="mi">5</span><span class="p">))))</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-elisp" data-lang="elisp"><span class="line"><span class="cl">    <span class="c1">;; Set refile locations to whats in org-agenda</span>
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="nb">setq</span> <span class="nv">org-refile-targets</span> <span class="p">(</span><span class="nb">quote</span> <span class="p">((</span><span class="nv">org-agenda-files</span> <span class="nb">:maxlevel</span> <span class="o">.</span> <span class="mi">5</span><span class="p">))))</span></span></span></code></pre></td></tr></table>
 </div>
 </div>
 </div>
@@ -327,11 +327,11 @@ account for your own time. It even has support for effort estimates.</p>
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-elisp" data-lang="elisp">    <span class="c1">;; Configure custom capture templates</span>
-    <span class="p">(</span><span class="nb">setq</span> <span class="nv">org-capture-templates</span>
-        <span class="o">&#39;</span><span class="p">(</span>
-          <span class="p">(</span><span class="s">&#34;t&#34;</span> <span class="s">&#34;To-do&#34;</span> <span class="nv">entry</span> <span class="p">(</span><span class="nv">file+headline</span> <span class="s">&#34;~/org/cfengine/cfengine.org&#34;</span> <span class="s">&#34;Tasks&#34;</span><span class="p">)</span>
-           <span class="s">&#34;** TODO %\1\n%i\nCreated From: %a\n&#34;</span> <span class="nb">:clock-in</span> <span class="no">t</span> <span class="nb">:clock-resume</span> <span class="no">t</span> <span class="nb">:prepend</span> <span class="no">t</span><span class="p">)))</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-elisp" data-lang="elisp"><span class="line"><span class="cl">    <span class="c1">;; Configure custom capture templates</span>
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="nb">setq</span> <span class="nv">org-capture-templates</span>
+</span></span><span class="line"><span class="cl">        <span class="o">&#39;</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">          <span class="p">(</span><span class="s">&#34;t&#34;</span> <span class="s">&#34;To-do&#34;</span> <span class="nv">entry</span> <span class="p">(</span><span class="nv">file+headline</span> <span class="s">&#34;~/org/cfengine/cfengine.org&#34;</span> <span class="s">&#34;Tasks&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">           <span class="s">&#34;** TODO %\1\n%i\nCreated From: %a\n&#34;</span> <span class="nb">:clock-in</span> <span class="no">t</span> <span class="nb">:clock-resume</span> <span class="no">t</span> <span class="nb">:prepend</span> <span class="no">t</span><span class="p">)))</span></span></span></code></pre></td></tr></table>
 </div>
 </div>
 </div>
@@ -349,10 +349,10 @@ things aligned and it was sub-optimal.</p>
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-elisp" data-lang="elisp">    <span class="c1">;; Keep the indentation well structured by. OMG this is a must have. Makes</span>
-    <span class="c1">;; it feel less like editing a big text file and more like a purpose built</span>
-    <span class="c1">;; editor for org mode that forces the indentation.</span>
-    <span class="p">(</span><span class="nb">setq</span> <span class="nv">org-startup-indented</span> <span class="no">t</span><span class="p">)</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-elisp" data-lang="elisp"><span class="line"><span class="cl">    <span class="c1">;; Keep the indentation well structured by. OMG this is a must have. Makes</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">;; it feel less like editing a big text file and more like a purpose built</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">;; editor for org mode that forces the indentation.</span>
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="nb">setq</span> <span class="nv">org-startup-indented</span> <span class="no">t</span><span class="p">)</span></span></span></code></pre></td></tr></table>
 </div>
 </div>
 </div>
@@ -367,9 +367,9 @@ familiar keys for zooming.</p>
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-elisp" data-lang="elisp">    <span class="c1">;; Ctrl+ and Ctrl - for zooming</span>
-      <span class="p">(</span><span class="nf">define-key</span> <span class="nv">global-map</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">&#34;C-+&#34;</span><span class="p">)</span> <span class="ss">&#39;text-scale-increase</span><span class="p">)</span>
-      <span class="p">(</span><span class="nf">define-key</span> <span class="nv">global-map</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">&#34;C--&#34;</span><span class="p">)</span> <span class="ss">&#39;text-scale-decrease</span><span class="p">)</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-elisp" data-lang="elisp"><span class="line"><span class="cl">    <span class="c1">;; Ctrl+ and Ctrl - for zooming</span>
+</span></span><span class="line"><span class="cl">      <span class="p">(</span><span class="nf">define-key</span> <span class="nv">global-map</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">&#34;C-+&#34;</span><span class="p">)</span> <span class="ss">&#39;text-scale-increase</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="p">(</span><span class="nf">define-key</span> <span class="nv">global-map</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">&#34;C--&#34;</span><span class="p">)</span> <span class="ss">&#39;text-scale-decrease</span><span class="p">)</span></span></span></code></pre></td></tr></table>
 </div>
 </div>
 </div>
@@ -385,9 +385,9 @@ the main agenda dispatch where I search for entries based on tags or content.</p
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-elisp" data-lang="elisp">    <span class="c1">;; Custom mappings go under =o=</span>
-      <span class="p">(</span><span class="nv">spacemacs/set-leader-keys</span>
-       <span class="s">&#34;oa&#34;</span> <span class="ss">&#39;org-agenda</span><span class="p">)</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-elisp" data-lang="elisp"><span class="line"><span class="cl">    <span class="c1">;; Custom mappings go under =o=</span>
+</span></span><span class="line"><span class="cl">      <span class="p">(</span><span class="nv">spacemacs/set-leader-keys</span>
+</span></span><span class="line"><span class="cl">       <span class="s">&#34;oa&#34;</span> <span class="ss">&#39;org-agenda</span><span class="p">)</span></span></span></code></pre></td></tr></table>
 </div>
 </div>
 </div>
@@ -403,9 +403,9 @@ shouldn&#39;t break.</p>
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-elisp" data-lang="elisp">    <span class="c1">;; Unique ids for each captured entry. This makes it so that interdocument</span>
-    <span class="c1">;; links will not break after re-filing entries into other files.</span>
-    <span class="p">(</span><span class="nv">add-hook</span> <span class="ss">&#39;org-cnapture-prepare-finalize-hook</span> <span class="ss">&#39;org-id-get-create</span><span class="p">)</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-elisp" data-lang="elisp"><span class="line"><span class="cl">    <span class="c1">;; Unique ids for each captured entry. This makes it so that interdocument</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">;; links will not break after re-filing entries into other files.</span>
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="nv">add-hook</span> <span class="ss">&#39;org-cnapture-prepare-finalize-hook</span> <span class="ss">&#39;org-id-get-create</span><span class="p">)</span></span></span></code></pre></td></tr></table>
 </div>
 </div>
 </div>
@@ -425,10 +425,10 @@ Seriously, go read and bookmark that page.</p>
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-elisp" data-lang="elisp">    <span class="c1">;; Org Bable makes it possible to execute src blocks and drop the output</span>
-    <span class="c1">;; dirctly below the src block. This is very useful for &#34;Literate Devops&#34;</span>
-    <span class="c1">;; http://howardism.org/Technical/Emacs/literate-devops.html</span>
-    <span class="p">(</span><span class="nv">org-babel-do-load-language</span> <span class="ss">&#39;org-babel-load-languages</span> <span class="o">&#39;</span><span class="p">((</span><span class="nv">sh</span> <span class="o">.</span> <span class="no">t</span><span class="p">)))</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-elisp" data-lang="elisp"><span class="line"><span class="cl">    <span class="c1">;; Org Bable makes it possible to execute src blocks and drop the output</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">;; dirctly below the src block. This is very useful for &#34;Literate Devops&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">;; http://howardism.org/Technical/Emacs/literate-devops.html</span>
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="nv">org-babel-do-load-language</span> <span class="ss">&#39;org-babel-load-languages</span> <span class="o">&#39;</span><span class="p">((</span><span class="nv">sh</span> <span class="o">.</span> <span class="no">t</span><span class="p">)))</span></span></span></code></pre></td></tr></table>
 </div>
 </div>
 </div>
@@ -448,13 +448,13 @@ template&#34; to inserting new cfengine blocks. I can simply type <code class="v
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-elisp" data-lang="elisp">   <span class="c1">;; CFEngine src block template</span>
-   <span class="c1">;; Simply &lt;cfe and press TAB</span>
-    <span class="p">(</span><span class="nv">eval-after-load</span> <span class="ss">&#39;org</span>
-      <span class="o">&#39;</span><span class="p">(</span><span class="nb">progn</span>
-         <span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">&#39;org-structure-template-alist</span>
-           <span class="o">&#39;</span><span class="p">(</span><span class="s">&#34;cfe&#34;</span> <span class="s">&#34;#+begin_src cfengine3\n?\n#+end_src&#34;</span><span class="p">))</span>
-       <span class="p">))</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-elisp" data-lang="elisp"><span class="line"><span class="cl">   <span class="c1">;; CFEngine src block template</span>
+</span></span><span class="line"><span class="cl">   <span class="c1">;; Simply &lt;cfe and press TAB</span>
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="nv">eval-after-load</span> <span class="ss">&#39;org</span>
+</span></span><span class="line"><span class="cl">      <span class="o">&#39;</span><span class="p">(</span><span class="nb">progn</span>
+</span></span><span class="line"><span class="cl">         <span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">&#39;org-structure-template-alist</span>
+</span></span><span class="line"><span class="cl">           <span class="o">&#39;</span><span class="p">(</span><span class="s">&#34;cfe&#34;</span> <span class="s">&#34;#+begin_src cfengine3\n?\n#+end_src&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">       <span class="p">))</span></span></span></code></pre></td></tr></table>
 </div>
 </div>
 </div>
@@ -480,20 +480,20 @@ encrypt entries.</p>
 </span><span class="lnt">14
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-elisp" data-lang="elisp">  <span class="c1">;; Support Encrypting subtrees This allows me to encrypt subtrees that are</span>
-  <span class="c1">;; tagged with crypt automatically. by default I want to encrypt it to myself.</span>
-  <span class="c1">;; but with properties entries I can encrypt to other people. which is useful in</span>
-  <span class="c1">;; a shared file situation</span>
-  <span class="c1">;; http://yenliangl.blogspot.com/2009/12/encrypt-your-important-data-in-emacs.html</span>
-  <span class="c1">;; http://emacs-fu.blogspot.com/2011/02/keeping-your-secrets-secret.html</span>
-  <span class="c1">;; (require &#39;org-crypt)</span>
-  <span class="p">(</span><span class="nv">org-crypt-use-before-save-magic</span><span class="p">)</span>
-  <span class="p">(</span><span class="nb">setq</span> <span class="nv">org-tags-exclude-from-inheritance</span> <span class="p">(</span><span class="nb">quote</span> <span class="p">(</span><span class="s">&#34;crypt&#34;</span><span class="p">)))</span>
-  <span class="o">&#39;</span><span class="p">(</span><span class="nv">org-crypt-disable-auto-save</span> <span class="p">(</span><span class="nb">quote</span> <span class="nv">encrypt</span><span class="p">))</span>
-
-  <span class="c1">;; GPG key to use for encryption</span>
-  <span class="c1">;; Either the Key ID or set to nil to use symmetric encryption.</span>
-  <span class="p">(</span><span class="nb">setq</span> <span class="nv">org-crypt-key</span> <span class="s">&#34;5D1CCC11&#34;</span><span class="p">)</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-elisp" data-lang="elisp"><span class="line"><span class="cl">  <span class="c1">;; Support Encrypting subtrees This allows me to encrypt subtrees that are</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">;; tagged with crypt automatically. by default I want to encrypt it to myself.</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">;; but with properties entries I can encrypt to other people. which is useful in</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">;; a shared file situation</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">;; http://yenliangl.blogspot.com/2009/12/encrypt-your-important-data-in-emacs.html</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">;; http://emacs-fu.blogspot.com/2011/02/keeping-your-secrets-secret.html</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">;; (require &#39;org-crypt)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">org-crypt-use-before-save-magic</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">setq</span> <span class="nv">org-tags-exclude-from-inheritance</span> <span class="p">(</span><span class="nb">quote</span> <span class="p">(</span><span class="s">&#34;crypt&#34;</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl">  <span class="o">&#39;</span><span class="p">(</span><span class="nv">org-crypt-disable-auto-save</span> <span class="p">(</span><span class="nb">quote</span> <span class="nv">encrypt</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">;; GPG key to use for encryption</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">;; Either the Key ID or set to nil to use symmetric encryption.</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">setq</span> <span class="nv">org-crypt-key</span> <span class="s">&#34;5D1CCC11&#34;</span><span class="p">)</span></span></span></code></pre></td></tr></table>
 </div>
 </div>
 </div>

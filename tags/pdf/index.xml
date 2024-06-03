@@ -1,31 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>pdf on </title>
+    <title>Pdf on </title>
     <link>https://cmdln.org/tags/pdf/</link>
-    <description>Recent content in pdf on </description>
+    <description>Recent content in Pdf on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 23 Feb 2009 14:45:04 +0000</lastBuildDate><atom:link href="https://cmdln.org/tags/pdf/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Mon, 23 Feb 2009 14:45:04 +0000</lastBuildDate>
+    <atom:link href="https://cmdln.org/tags/pdf/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Howto: Remove PDF passwords and encryption</title>
       <link>https://cmdln.org/2009/02/23/howto-remove-pdf-passwords-and-encryption/</link>
       <pubDate>Mon, 23 Feb 2009 14:45:04 +0000</pubDate>
-      
       <guid>https://cmdln.org/2009/02/23/howto-remove-pdf-passwords-and-encryption/</guid>
-      <description>Have you ever gotten a pdf with one of those annoying passwords? A while back I bought an e-book and it came with a password. Its really annoying especially if I want to read it on a mobile device. Anyway if you are annoyed as much as I am fear no more.
-Install qpdf
-aptitude install qpdf Decrypt your pdf
-qpdf --password=password --decrypt input.pdf output.pdf  </description>
+      <description>Have you ever gotten a pdf with one of those annoying passwords? A while back I bought an e-book and it came with a password. Its really annoying especially if I want to read it on a mobile device. Anyway if you are annoyed as much as I am fear no more.&#xA;Install qpdf&#xA;aptitude install qpdf&#xD;Decrypt your pdf&#xA;qpdf --password=password --decrypt input.pdf output.pdf&#xD;</description>
     </item>
-    
     <item>
       <title>Print to PDF with cups.</title>
       <link>https://cmdln.org/2008/02/07/print-to-pdf-with-cups/</link>
       <pubDate>Fri, 08 Feb 2008 03:25:06 +0000</pubDate>
-      
       <guid>https://cmdln.org/2008/02/07/print-to-pdf-with-cups/</guid>
       <description>&lt;p&gt;Printing is a pain. I hate printers, I hate paper, but I also hate a bagillion book marks to places and things that may change over time. Its handy to have PDFs around as they are easily searchable, they preserve original layout and they print correctly when you want to print something. So for most of my printing I am printing to PDF and if I need a paper copy later I can always print out that PDF. True many applications can print or export to pdf currently. However using cups-pdf allows you to print to pdf anywhere you can print. Its great when combined with RDP too. For example at one point a &lt;a href=&#34;http://jgarrett.org&#34; mce_href=&#34;http://jgarrett.org&#34;&gt;freind&lt;/a&gt; of mine had to use GreatPlains for parts and order accounting in a production enviornment. GreatPlains allows you to print to screen in only some windows. However with cups-pdf he could print any screen he wished to pdf and view it on his screen.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

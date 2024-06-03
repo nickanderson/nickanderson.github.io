@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>bios on </title>
+    <title>Bios on </title>
     <link>https://cmdln.org/tags/bios/</link>
-    <description>Recent content in bios on </description>
+    <description>Recent content in Bios on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 03 May 2008 22:35:04 +0000</lastBuildDate><atom:link href="https://cmdln.org/tags/bios/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Sat, 03 May 2008 22:35:04 +0000</lastBuildDate>
+    <atom:link href="https://cmdln.org/tags/bios/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Slowdown VMware Bios Screen</title>
       <link>https://cmdln.org/2008/05/03/slowdown-vmware-bios-screen/</link>
       <pubDate>Sat, 03 May 2008 22:35:04 +0000</pubDate>
-      
       <guid>https://cmdln.org/2008/05/03/slowdown-vmware-bios-screen/</guid>
       <description>&lt;p&gt;Working with virtual machines after having worked with physical machines can be a wonderful experience. Wonderful that is until the bios scree blows past you several times.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

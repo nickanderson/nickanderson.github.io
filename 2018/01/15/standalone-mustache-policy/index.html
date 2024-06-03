@@ -6,7 +6,7 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.92.2" />
+<meta name="generator" content="Hugo 0.123.7">
 
 
 
@@ -139,43 +139,43 @@ render <code class="verbatim">/tmp/standalone-mustache.cf.txt</code>.</p>
 </span><span class="lnt">37
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="c"># Standalone policy file for prototyping mustache
-</span><span class="c"></span>  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">main</span>
-  <span class="p">{</span>
-    <span class="kd">vars</span><span class="p">:</span>
-        <span class="p">&#34;</span><span class="nv">datafile</span><span class="p">&#34;</span> <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;</span><span class="si">$(this.promise_filename)</span><span class="s">.json&#34;</span><span class="p">;</span>
-        <span class="p">&#34;</span><span class="nv">template</span><span class="p">&#34;</span> <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;</span><span class="si">$(this.promise_filename)</span><span class="s">.mustache&#34;</span><span class="p">;</span>
-        <span class="p">&#34;</span><span class="nv">target</span><span class="p">&#34;</span> <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;</span><span class="si">$(this.promise_filename)</span><span class="s">.txt&#34;</span><span class="p">;</span>
-
-        <span class="s">&#34;data&#34;</span> <span class="kr">data</span> <span class="o">=&gt;</span> <span class="nf">readjson</span><span class="p">(</span> <span class="err">$</span><span class="p">(</span><span class="nf">datafile</span><span class="p">),</span> <span class="nf">inf</span><span class="p">);</span> 
-
-    <span class="kd">files</span><span class="p">:</span>
-        <span class="s">&#34;</span><span class="si">$(target)</span><span class="s">&#34;</span>
-          <span class="kr">create</span> <span class="o">=&gt;</span> <span class="s">&#34;true&#34;</span><span class="p">,</span>
-          <span class="kr">handle</span> <span class="o">=&gt;</span> <span class="s">&#34;render_target&#34;</span><span class="p">,</span>
-          <span class="kr">template_method</span> <span class="o">=&gt;</span> <span class="s">&#34;mustache&#34;</span><span class="p">,</span>
-          <span class="kr">edit_template</span> <span class="o">=&gt;</span> <span class="s">&#34;</span><span class="si">$(template)</span><span class="s">&#34;</span><span class="p">,</span>
-          <span class="kr">template_data</span> <span class="o">=&gt;</span> <span class="nv">@(data)</span><span class="p">;</span>
-
-    <span class="kd">reports</span><span class="p">:</span>
-        <span class="s">&#34;JSON data file missing. Looking for &#39;</span><span class="si">$(datafile)</span><span class="s">&#39;&#34;</span>
-          <span class="kr">if</span> <span class="o">=&gt;</span> <span class="nf">not</span><span class="p">(</span> <span class="nf">fileexists</span><span class="p">(</span> <span class="err">$</span><span class="p">(</span><span class="nf">datafile</span><span class="p">)</span> <span class="p">));</span>
-
-        <span class="s">&#34;Mustache template missing. Looking for &#39;</span><span class="si">$(template)</span><span class="s">&#39;&#34;</span>
-          <span class="kr">if</span> <span class="o">=&gt;</span> <span class="nf">not</span><span class="p">(</span> <span class="nf">fileexists</span><span class="p">(</span> <span class="err">$</span><span class="p">(</span><span class="nf">template</span><span class="p">)</span> <span class="p">));</span>
-
-        <span class="s">&#34;</span><span class="si">$(target)</span><span class="s">:&#34;</span>
-          <span class="kr">printfile</span> <span class="o">=&gt;</span> <span class="nf">cat</span><span class="p">(</span> <span class="err">$</span><span class="p">(</span><span class="nf">target</span><span class="p">)</span> <span class="p">),</span>
-          <span class="kr">depends_on</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="s">&#34;render_target&#34;</span> <span class="p">};</span>
-  <span class="p">}</span>
-
-  <span class="k">body</span> <span class="k">printfile</span> <span class="nf">cat</span><span class="p">(</span><span class="nv">file</span><span class="p">)</span>
-  <span class="c"># @brief Report the contents of a file
-</span><span class="c"></span>  <span class="c"># @param file The full path of the file to report
-</span><span class="c"></span>  <span class="p">{</span>
-          <span class="kr">file_to_print</span> <span class="o">=&gt;</span> <span class="s">&#34;</span><span class="si">$(file)</span><span class="s">&#34;</span><span class="p">;</span>
-          <span class="kr">number_of_lines</span> <span class="o">=&gt;</span> <span class="s">&#34;inf&#34;</span><span class="p">;</span>
-  <span class="p">}</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="line"><span class="cl">  <span class="c"># Standalone policy file for prototyping mustache
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">main</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">vars</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="s">&#34;datafile&#34;</span> <span class="kr">string</span> <span class="o">=&gt;</span> <span class="s">&#34;</span><span class="si">$(this.promise_filename)</span><span class="s">.json&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="s">&#34;template&#34;</span> <span class="kr">string</span> <span class="o">=&gt;</span> <span class="s">&#34;</span><span class="si">$(this.promise_filename)</span><span class="s">.mustache&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="s">&#34;target&#34;</span> <span class="kr">string</span> <span class="o">=&gt;</span> <span class="s">&#34;</span><span class="si">$(this.promise_filename)</span><span class="s">.txt&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="s">&#34;data&#34;</span> <span class="kr">data</span> <span class="o">=&gt;</span> <span class="nf">readjson</span><span class="p">(</span> <span class="nv">$(datafile)</span><span class="p">,</span> <span class="nf">inf</span><span class="p">);</span> 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">files</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="s">&#34;</span><span class="si">$(target)</span><span class="s">&#34;</span>
+</span></span><span class="line"><span class="cl">          <span class="kr">create</span> <span class="o">=&gt;</span> <span class="s">&#34;true&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="kr">handle</span> <span class="o">=&gt;</span> <span class="s">&#34;render_target&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="kr">template_method</span> <span class="o">=&gt;</span> <span class="s">&#34;mustache&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="kr">edit_template</span> <span class="o">=&gt;</span> <span class="s">&#34;</span><span class="si">$(template)</span><span class="s">&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="kr">template_data</span> <span class="o">=&gt;</span> <span class="nv">@(data)</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">reports</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="s">&#34;JSON data file missing. Looking for &#39;</span><span class="si">$(datafile)</span><span class="s">&#39;&#34;</span>
+</span></span><span class="line"><span class="cl">          <span class="kr">if</span> <span class="o">=&gt;</span> <span class="nf">not</span><span class="p">(</span> <span class="nf">fileexists</span><span class="p">(</span> <span class="nv">$(datafile)</span> <span class="p">));</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="s">&#34;Mustache template missing. Looking for &#39;</span><span class="si">$(template)</span><span class="s">&#39;&#34;</span>
+</span></span><span class="line"><span class="cl">          <span class="kr">if</span> <span class="o">=&gt;</span> <span class="nf">not</span><span class="p">(</span> <span class="nf">fileexists</span><span class="p">(</span> <span class="nv">$(template)</span> <span class="p">));</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="s">&#34;</span><span class="si">$(target)</span><span class="s">:&#34;</span>
+</span></span><span class="line"><span class="cl">          <span class="kr">printfile</span> <span class="o">=&gt;</span> <span class="nf">cat</span><span class="p">(</span> <span class="nv">$(target)</span> <span class="p">),</span>
+</span></span><span class="line"><span class="cl">          <span class="kr">depends_on</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="s">&#34;render_target&#34;</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">body</span> <span class="k">printfile</span> <span class="nf">cat</span><span class="p">(</span><span class="nv">file</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="c"># @brief Report the contents of a file
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="c"># @param file The full path of the file to report
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">          <span class="kr">file_to_print</span> <span class="o">=&gt;</span> <span class="s">&#34;</span><span class="si">$(file)</span><span class="s">&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">          <span class="kr">number_of_lines</span> <span class="o">=&gt;</span> <span class="s">&#34;inf&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span></span></span></code></pre></td></tr></table>
 </div>
 </div>
 </div>
@@ -196,11 +196,11 @@ Now test the policy:</p>
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">  <span class="nb">echo</span> <span class="s1">&#39;{ &#34;msg&#34;: &#34;hello world&#34; }&#39;</span> &gt; 
-  /tmp/standalone-mustache.cf.json
-  <span class="nb">echo</span> <span class="s1">&#39;{{{msg}}}&#39;</span> &gt; /tmp/standalone-mustache.cf.mustache
-  chmod <span class="m">600</span> /tmp/standalone-mustache.cf
-  cf-agent -KIf /tmp/standalone-mustache.cf</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">  <span class="nb">echo</span> <span class="s1">&#39;{ &#34;msg&#34;: &#34;hello world&#34; }&#39;</span> &gt; 
+</span></span><span class="line"><span class="cl">  /tmp/standalone-mustache.cf.json
+</span></span><span class="line"><span class="cl">  <span class="nb">echo</span> <span class="s1">&#39;{{{msg}}}&#39;</span> &gt; /tmp/standalone-mustache.cf.mustache
+</span></span><span class="line"><span class="cl">  chmod <span class="m">600</span> /tmp/standalone-mustache.cf
+</span></span><span class="line"><span class="cl">  cf-agent -KIf /tmp/standalone-mustache.cf</span></span></code></pre></td></tr></table>
 </div>
 </div>
 </div>

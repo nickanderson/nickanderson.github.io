@@ -6,7 +6,7 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.92.2" />
+<meta name="generator" content="Hugo 0.123.7">
 
 
 
@@ -89,8 +89,7 @@ for i in maildir/new/*;do formail -I Status: &lt;"$i" &gt;&gt;mbox;done
 <p>You will want to do that for each maildir (don’t forget the .Subfolder directories). And remember each “folder” or maildir would be a different mbox file. So if you wanted to save sent mail as well …</p>
 <pre class="brush: php; title: ; notranslate" title="">for i in maildir/.Sent/cur*;do formail -I "Status: RO" &lt;"$i" &gt;&gt;sent;done
 for i in maildir/.Sent/new/*;do formail -I Status: &lt;"$i" &gt;&gt;sent;done
-</pre><blockquote>
-</blockquote>
+</pre>
                 </div>
                 
                 <div class="post-comments">

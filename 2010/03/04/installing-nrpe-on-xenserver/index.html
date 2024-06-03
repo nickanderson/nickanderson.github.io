@@ -6,7 +6,7 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.92.2" />
+<meta name="generator" content="Hugo 0.123.7">
 
 
 
@@ -81,7 +81,7 @@
 <li>
 <p>Install EPEL repository and disable it by default (remember we don’t want to accidentally install unnecessary packages) <pre class="brush: bash; title: ; notranslate" title="">wget <a href="http://download.fedora.redhat.com/pub/epel/5/$(uname">http://download.fedora.redhat.com/pub/epel/5/$(uname</a> -i)/epel-release-5-3.noarch.rpm
 rpm -hiv epel-release*.rpm
-sed -i &rsquo;s/enabled=1/enabled=0/g' /etc/yum.repos.d/epel.repo
+sed -i &rsquo;s/enabled=1/enabled=0/g&rsquo; /etc/yum.repos.d/epel.repo
 </pre></p>
 </li>
 <li>

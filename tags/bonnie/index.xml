@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>bonnie on </title>
+    <title>Bonnie on </title>
     <link>https://cmdln.org/tags/bonnie/</link>
-    <description>Recent content in bonnie on </description>
+    <description>Recent content in Bonnie on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 26 Apr 2008 19:41:21 +0000</lastBuildDate><atom:link href="https://cmdln.org/tags/bonnie/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Sat, 26 Apr 2008 19:41:21 +0000</lastBuildDate>
+    <atom:link href="https://cmdln.org/tags/bonnie/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Benchmark hard drive performance in Linux</title>
       <link>https://cmdln.org/2008/04/26/benchmark-hard-drive-performance-in-linux/</link>
       <pubDate>Sat, 26 Apr 2008 19:41:21 +0000</pubDate>
-      
       <guid>https://cmdln.org/2008/04/26/benchmark-hard-drive-performance-in-linux/</guid>
       <description>&lt;p&gt;Bonnie is a great tool to use to benchmark your file system. Just a quick tip on using bonnie.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

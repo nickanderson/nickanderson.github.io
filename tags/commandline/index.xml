@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>commandline on </title>
+    <title>Commandline on </title>
     <link>https://cmdln.org/tags/commandline/</link>
-    <description>Recent content in commandline on </description>
+    <description>Recent content in Commandline on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 08 Feb 2008 14:04:26 +0000</lastBuildDate><atom:link href="https://cmdln.org/tags/commandline/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Fri, 08 Feb 2008 14:04:26 +0000</lastBuildDate>
+    <atom:link href="https://cmdln.org/tags/commandline/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>A nice .screenrc</title>
       <link>https://cmdln.org/2008/02/08/a-nice-screenrc/</link>
       <pubDate>Fri, 08 Feb 2008 14:04:26 +0000</pubDate>
-      
       <guid>https://cmdln.org/2008/02/08/a-nice-screenrc/</guid>
-      <description>Hopefully you already know about screen, its one of the best command line utilites I use. Here is a purty screenrc for you.
-.screenrc</description>
+      <description>Hopefully you already know about screen, its one of the best command line utilites I use. Here is a purty screenrc for you.&#xA;.screenrc</description>
     </item>
-    
   </channel>
 </rss>

@@ -1,37 +1,33 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>security on </title>
+    <title>Security on </title>
     <link>https://cmdln.org/tags/security/</link>
-    <description>Recent content in security on </description>
+    <description>Recent content in Security on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 12 Feb 2008 18:12:18 +0000</lastBuildDate><atom:link href="https://cmdln.org/tags/security/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Tue, 12 Feb 2008 18:12:18 +0000</lastBuildDate>
+    <atom:link href="https://cmdln.org/tags/security/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Get around that pesky firewall filtering with tsocks</title>
       <link>https://cmdln.org/2008/02/12/get-around-that-pesky-firewall-filtering-with-tsocks/</link>
       <pubDate>Tue, 12 Feb 2008 18:12:18 +0000</pubDate>
-      
       <guid>https://cmdln.org/2008/02/12/get-around-that-pesky-firewall-filtering-with-tsocks/</guid>
       <description>&lt;p&gt;I generally don’t have any issues knowing someone might be snooping on a bit of my traffic. However there are times you may want your traffic to be a bit more private. For example if your boss is a raging tyrant and your looking for a new job, and you know the sky would fall if he found out you emailed or happened to be on Career Builder or for that matter had even the slightest idea of abandoning him. Yes I am recounting something from my past, hey at least its distant past :). So if you find yourself in that situation read on for how to use tsocks and ssh as a simple proxy.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Restricting SSH commands</title>
       <link>https://cmdln.org/2008/02/11/restricting-ssh-commands/</link>
       <pubDate>Mon, 11 Feb 2008 06:01:54 +0000</pubDate>
-      
       <guid>https://cmdln.org/2008/02/11/restricting-ssh-commands/</guid>
       <description>&lt;p&gt;SSH is a powerful tool. When combined with ssh keys, it becomes easy to automate remote procedures like backups. However leaving key access wide open can be a bad idea. It is possible to use restrict ssh keys to specific commands, even coming from specific hosts. There is this nice little perl script called &lt;a HREF=&#34;http://www.hackinglinuxexposed.com/tools/authprogs&#34;&gt;Authprogs&lt;/a&gt; that makes this somewhat easier. Ill show you how to use authprogs for an automated rsync over ssh.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Automatic session logging and monitoring with GNU screen for the paranoid.</title>
       <link>https://cmdln.org/2007/07/20/automatic-session-logging-and-monitoring-with-gnu-screen-for-the-paranoid/</link>
       <pubDate>Fri, 20 Jul 2007 14:07:53 +0000</pubDate>
-      
       <guid>https://cmdln.org/2007/07/20/automatic-session-logging-and-monitoring-with-gnu-screen-for-the-paranoid/</guid>
       <description>&lt;p&gt;Yes its been a while since I have checked in. Sorry I’ve just been too busy. But I have a great tip this time. Recently I had the need to do automatic session logging. A 3rd party was going to be logging into one of my servers to check out some software glitches that were happening. I love using GNU Screen for many shell tasks so using it for monitoring was logical. Screen is great for several reasons. First you can detach from it so you can leave the office, go home and re-attach and not have lost your place. Second, you can share another screen. It can be shared input or you can just watch what someone else is doing. Finally screen can do native logging. I wanted to automattically launch a screen session when somone logged in so if I happened to be on the server I could monitor them in real time. I also wanted a log of the session in case I wanted to look over it later or if I was not able to monitor the session live.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

@@ -6,7 +6,7 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.92.2" />
+<meta name="generator" content="Hugo 0.123.7">
 
 
 
@@ -94,13 +94,13 @@ Let&#39;s start with the details of <code class="verbatim">body action if_elapse
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="k">body</span> <span class="k">action</span> <span class="nf">if_elapsed</span><span class="p">(</span><span class="nv">x</span><span class="p">)</span>
-  <span class="c"># @brief Evaluate the promise every `x` minutes
-</span><span class="c"></span>  <span class="c"># @param x The time in minutes between promise evaluations
-</span><span class="c"></span>  <span class="p">{</span>
-        <span class="kr">ifelapsed</span> <span class="o">=&gt;</span> <span class="s">&#34;</span><span class="si">$(x)</span><span class="s">&#34;</span><span class="p">;</span>
-        <span class="kr">expireafter</span> <span class="o">=&gt;</span> <span class="s">&#34;</span><span class="si">$(x)</span><span class="s">&#34;</span><span class="p">;</span>
-  <span class="p">}</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="line"><span class="cl">  <span class="k">body</span> <span class="k">action</span> <span class="nf">if_elapsed</span><span class="p">(</span><span class="nv">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="c"># @brief Evaluate the promise every `x` minutes
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="c"># @param x The time in minutes between promise evaluations
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kr">ifelapsed</span> <span class="o">=&gt;</span> <span class="s">&#34;</span><span class="si">$(x)</span><span class="s">&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kr">expireafter</span> <span class="o">=&gt;</span> <span class="s">&#34;</span><span class="si">$(x)</span><span class="s">&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span></span></span></code></pre></td></tr></table>
 </div>
 </div>
 </div>
@@ -142,14 +142,14 @@ and thus it will not be affected by promise locking.</p>
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">main</span>
-  <span class="p">{</span>
-     <span class="kd">reports</span><span class="p">:</span>
-       <span class="s">&#34;</span><span class="si">$(sys.date)</span><span class="s">&#34;</span><span class="p">;</span>
-       <span class="s">&#34;Hello&#34;</span><span class="p">;</span>
-       <span class="s">&#34;Infrequent hello&#34;</span>
-        <span class="kr">action</span> <span class="o">=&gt;</span> <span class="nf">if_elapsed</span><span class="p">(</span> <span class="s">&#34;5&#34;</span> <span class="p">);</span>
-  <span class="p">}</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="line"><span class="cl">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">main</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">     <span class="kd">reports</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">       <span class="s">&#34;</span><span class="si">$(sys.date)</span><span class="s">&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">       <span class="s">&#34;Hello&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">       <span class="s">&#34;Infrequent hello&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="kr">action</span> <span class="o">=&gt;</span> <span class="nf">if_elapsed</span><span class="p">(</span> <span class="s">&#34;5&#34;</span> <span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span></span></span></code></pre></td></tr></table>
 </div>
 </div>
 </div>
@@ -235,18 +235,18 @@ control attribute.</p>
 </span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-cfengine3" data-lang="cfengine3">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">main</span>
-  <span class="p">{</span>
-    <span class="kd">vars</span><span class="p">:</span>
-        <span class="p">&#34;</span><span class="nv">msg</span><span class="p">&#34;</span> <span class="kt">string</span> <span class="o">=&gt;</span> <span class="s">&#34;Hello World&#34;</span><span class="p">;</span>
-      
-    <span class="kd">reports</span><span class="p">:</span>
-
-        <span class="s">&#34;</span><span class="si">$(sys.date)</span><span class="s">&#34;</span><span class="p">;</span>
-
-        <span class="s">&#34;</span><span class="si">$(msg)</span><span class="s">&#34;</span>
-          <span class="kr">action</span> <span class="o">=&gt;</span> <span class="nf">immediate</span><span class="p">;</span>
-  <span class="p">}</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-cfengine3" data-lang="cfengine3"><span class="line"><span class="cl">  <span class="k">bundle</span> <span class="k">agent</span> <span class="nf">main</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">vars</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="s">&#34;msg&#34;</span> <span class="kr">string</span> <span class="o">=&gt;</span> <span class="s">&#34;Hello World&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      
+</span></span><span class="line"><span class="cl">    <span class="kd">reports</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="s">&#34;</span><span class="si">$(sys.date)</span><span class="s">&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="s">&#34;</span><span class="si">$(msg)</span><span class="s">&#34;</span>
+</span></span><span class="line"><span class="cl">          <span class="kr">action</span> <span class="o">=&gt;</span> <span class="nf">immediate</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span></span></span></code></pre></td></tr></table>
 </div>
 </div>
 </div>
