@@ -6,7 +6,7 @@ draft = false
 author = "Nick Anderson"
 +++
 
-Org-mode is my exocortex, second brain, second mind, mind palace, pensive, and personal knowledge management system. It's very flexible and the features I use as well as how I organize my files continues to change so I collected things here to document how I do things in 2024, I did this in 2023 as well[^fn:1].
+Org-mode is my exocortex, second brain, second mind, mind palace, pensive, personal knowledge management system, and apocrypha. It's very flexible and the features I use as well as how I organize my files continues to change so I collected things here to document how I do things in 2024, I did this in 2023 as well[^fn:1].
 
 No, my Emacs org-mode configuration is not published. However, if you have some question, just reach out.
 
@@ -24,14 +24,14 @@ On the best of days I never leave Emacs and I have a record of everything I did 
 
 ## Statistics {#statistics}
 
-As of Sunday, February 18, 2024
- I had `58MB` of `.org` files in `~/org`. `5071` files and `1222735` lines of text, the largest single file was `1.3MB` and the longest lined file had `26370` lines.
+As of Sunday, June  2, 2024
+ I had `62MB` of `.org` files in `~/org`. `5440` files and `1289665` lines of text, the largest single file was `1.4MB` and the longest lined file had `26370` lines.
 
-`5047` of these files were inside Org-roam[^fn:2], the majority of them (`3688`) were "dailies"[^fn:3]. There were `15776` nodes in total, so about `3` nodes per file. This seemed accurate since many headlines didn't have IDs. IDs got created automatically when I stored a link (which often happened during capture) or attached a file.
+`5412` of these files were inside Org-roam[^fn:2], the majority of them (`3940`) were "dailies"[^fn:3]. There were `16670` nodes in total, so about `3` nodes per file. This seemed accurate since many headlines (I had `58203` headlines) didn't have IDs. IDs got created automatically when I stored a link (which often happened during capture) or attached a file.
 
 {{< figure src="2024-02-18_12-19-16_Screenshot_2024-02-16_152724.png" caption="<span class=\"figure-number\">Figure 1: </span>org-roam-ui visualization of nodes as of January 16th, 2024." width="75%" >}}
 
-Additionally, `~/Syncthing/Orgzly` had `11MB` worth of `.org` files that I synced around to a few devices and the largest `.org` file was `677K` with the most lined file having `49670` lines.
+SSS
 
 
 ## System {#system}
@@ -49,7 +49,7 @@ Capturing was an important concept in my workflow. Fundamentally it's grabbing n
 
 Org-roam was my primary capture interface and I _really_ liked the daily capabilities. Each day I captured notes about everything I was working on into my work log while clocking time. This gave me a nice place to think and process what I was working on[^fn:4] as well as a place to get my bearings and see what I had been working on when I got side-tracked[^fn:5]. Having a new file each day gave me a fresh start and it helped me to avoid performance issues I had previously experienced with large (multi-megabyte) files.
 
-I had `24` org-capture-templates,  `16` org-roam-capture-templates and `75` org-roam-dailies-capture-templates.
+I had `24` org-capture-templates,  `19` org-roam-capture-templates and `78` org-roam-dailies-capture-templates.
 
 <div class="org-youtube"><iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/8A52ZXPhJFk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="YouTube Video"></iframe></div>
 
@@ -73,11 +73,7 @@ Some of the features that I used to get content into Org-mode were not part of o
 
 I used `org-rich-yank`[^fn:7] often, which let me copy text and paste it with context allowing it to be syntax highlighted as well as providing a link back to the source.
 
-<div align="center">
-
-[./attachments/how-i-org-in-2024/org-rich-yank.gif]]
-
-</div>
+{{< figure src="org-rich-yank.gif" caption="<span class=\"figure-number\">Figure 3: </span>gif-screencast illustrating use of org-rich-yank." width="100%" >}}
 
 I read email in `mu4e`, simply being inside of Emacs that facilitate getting emails into org-mode.
 
@@ -177,7 +173,7 @@ For other activities that were typically fast or of uncommon type spanning multi
 I authored much of the content in `org-mode`. I was often able to remain within `org-mode` and preserved a detailed record of my exact activities. When I needed to execute commands, I typically employed `org-babel` so that commands, their outputs, and my contemplations formed a substantial log of my work as it progressed. This log was frequently appropriate for direct transmission to others, for which purpose I capitalized on the ample export back ends available[^fn:20].
 
 
-### Mobile {#mobile}
+## Mobile {#mobile}
 
 Going mobile with `org mode`, I used several different applications:
 
@@ -198,7 +194,7 @@ I filed my Orgzly captures to my main system far less often than I should. They 
 Other applications that I used on mobile that deserve mention:
 
 Logseq
-: I really liked how daily files are featured. I missed a capture capability. I disliked how the share to target is not stable. It shared to the insertion point. So if the app was open in the background that share might have gone to some random place I stopped writing. It was convenient at times, but other times very inconvenient. I didn't love the editing interface. Everything was a headline, so it's a bit ugly when I come to the file in Emacs. I mostly used it in experiments to help a colleague get more from their use.
+: I really liked how daily files are featured. I missed a capture capability. I disliked how the share to target is not stable. It shared to the insertion point. So if the app was open in the background that share might have gone to some random place I stopped writing. It was convenient at times, but other times very inconvenient. I didn't love the editing interface. Everything was a headline, so it's a bit ugly when I come to the file in Emacs. I mostly used it in experiments to help a colleague get more from their use. Unfortunately, it seems they are shifting to a db first model so it's futures alignment with my priorities were in question.
 
 Metanote
 : I didn't see other people mention this one often. I had found it to be a bit slow but the editing UI was not bad. Also, it had a few capture templates as well as Agenda.
@@ -207,159 +203,365 @@ Orgro
 : No longer a read only tool, but I haven't tried it's edit capabilities.
 
 
-### Things I wanted to explore more {#things-i-wanted-to-explore-more}
+## Things I wanted to explore more {#things-i-wanted-to-explore-more}
 
 I had only recently begun to think about myself as being an Emacs user, I have felt like an `org-mode` user but with my need for vi keybindings, Emacs really didn't rise to the forefront of my mind. Here are a bunch of things that I wanted to explore further as I continued on my journey.
 
-ob-translate
-: Translate text in Emacs’ org-mode blocks. <https://github.com/krisajenkins/ob-translate>
 
-md4rd
-: Read Reddit interactively from within Emacs. <https://github.com/ahungry/md4rd>
+### ob-translate {#ob-translate}
 
-Ement.el
-: Ement.el is a Matrix client for Emacs. It aims to be simple, fast, featureful, and reliable. <https://github.com/alphapapa/ement.el>
+Translate text in Emacs’ org-mode blocks.
 
-elfeed
-: Elfeed is an extensible web feed reader for Emacs, supporting both Atom and RSS. <https://github.com/skeeto/elfeed>
+<https://github.com/krisajenkins/ob-translate>
 
-mastadon.el
-: Emacs client for Mastodon and other compatible fediverse servers. <https://codeberg.org/martianh/mastodon.el>
 
-org-chef
-: org-chef is a package for managing recipes in org-mode. One of the main features is that it can automatically extract recipes from websites like allrecipes.com <https://github.com/Chobbes/org-chef>
+### md4rd {#md4rd}
 
-org-drill
-: Org-Drill is an extension for Org mode. Org-Drill uses a spaced repetition algorithm to conduct interactive "drill sessions", using org files as sources of facts to be memorised. Each topic is treated as a "flash card". <https://orgmode.org/worg/org-contrib/org-drill.html>
+Read Reddit interactively from within Emacs.
 
-org-roam-search
-: org-ql like search for org-roam. <https://github.com/natask/org-roam-search>
+<https://github.com/ahungry/md4rd>
 
-org-ql
-: This package provides a query language for Org files. It offers two syntax styles: Lisp-like sexps and search engine-like keywords. <https://github.com/alphapapa/org-ql>
 
-org-edna
-: Extensible Dependencies ’N’ Actions (EDNA) for Org Mode tasks. Edna provides an extensible means of specifying conditions which must be fulfilled before a task can be completed and actions to take once it is. <https://www.nongnu.org/org-edna-el/>
+### Ement.el {#ement-dot-el}
 
-org-mru-clock
-: Do you often clock in to many different little tasks? Are you annoyed that you can’t just clock in to one of your most recent tasks after restarting Emacs? <https://github.com/unhammer/org-mru-clock>.
+Ement.el is a Matrix client for Emacs. It aims to be simple, fast, featureful, and reliable.
 
-org-noter
-: Org-noter’s purpose is to let you create notes that are kept in sync when you scroll through the document, but that are external to it - the notes themselves live in an Org-mode file. <https://github.com/weirdNox/org-noter>
+<https://github.com/alphapapa/ement.el>
 
-org-cv
-: This project exports an org-mode file with reasonably structured items into a latex file, which compiles into a nice CV. <https://titan-c.gitlab.io/org-cv/>
 
-ox-leanpub
-: Ox-leanpub includes Org Mode export backends to publish books and courses with Leanpub. ox-leanpub allows you to write your material entirely in Org mode, and manages the production of the files and directories needed for Leanpub to render your book. <https://github.com/zzamboni/ox-leanpub>
+### elfeed {#elfeed}
 
-org-super-agenda
-: This package lets you “supercharge” your Org daily/weekly agenda. The idea is to group items into sections, rather than having them all in one big list. <https://github.com/alphapapa/org-super-agenda>
+Elfeed is an extensible web feed reader for Emacs, supporting both Atom and RSS.
 
-org-recent-headings
-: This package lets you quickly jump to recently used Org headings using Helm, Ivy, or plain-ol’ completing-read. <https://github.com/alphapapa/org-recent-headings>
+<https://github.com/skeeto/elfeed>
 
-org-sidebar
-: This package presents helpful sidebars for Org buffers. Sidebars are customizable using org-ql queries and org-super-agenda grouping. <https://github.com/alphapapa/org-sidebar>
 
-org-protocol-capture-html
-: You can select text in the page when you capture by clicking a bookmarklet it will be copied into the template, or you can just capture the page title and URL. A selection-grabbing function is used to capture the selection. <https://github.com/alphapapa/org-protocol-capture-html>
+### mastadon.el {#mastadon-dot-el}
 
-emacs-slack
-: Slack from inside Emacs. <https://github.com/yuya373/emacs-slack/>
+Emacs client for Mastodon and other compatible fediverse servers.
 
-literate-calc-mode
-: Literate programming for M-x calc. Displays inline results for calculations, supports variables and updates as you type (if you want). <https://github.com/sulami/literate-calc-mode.el>
+<https://codeberg.org/martianh/mastodon.el>
 
-org-similarity
-: org-similarity is a package to help Emacs org-mode users discover similar or related files. Under the hood, it uses Python and scikit-learn for text feature extraction, and nltk for text pre-processing. More specifically, this package provides a function to recursively scan a given directory for org files, clean their content by stripping the front matter and some undesired characters, tokenize them, replace each token with its respective linguistic stem, generate a TF-IDF sparse matrix, and calculate the cosine similarity between these documents and the buffer you are currently working on. <https://github.com/brunoarine/org-similarity>
 
-focused
-: A package that dims surrounding text. It works with any theme and can be configured to focus in on different regions like sentences, paragraphs or code-blocks. <https://github.com/larstvei/Focus>
+### org-chef {#org-chef}
 
-aggressive-indent-mode
-: A minor mode that keeps your code always indented. It reindents after every change, making it more reliable than electric-indent-mode. <https://github.com/Malabarba/aggressive-indent-mode>
+org-chef is a package for managing recipes in org-mode. One of the main features is that it can automatically extract recipes from websites like allrecipes.com
 
-crux
-: A Collection of Ridiculously Useful eXtensions for Emacs. crux bundles many useful interactive commands to enhance your overall Emacs experience. <https://github.com/bbatsov/crux>
+<https://github.com/Chobbes/org-chef>
 
-osm
-: Osm.el is a tile-based map viewer, with a responsive movable and zoomable display. You can bookmark your favorite locations using regular Emacs bookmarks or create links from Org files to locations.  <https://github.com/minad/osm>
 
-org-ref
-: org-ref makes it easy to insert citations, cross-references, indexes and glossaries as hyper-functional links into org files. <https://github.com/jkitchin/org-ref>
+### org-drill {#org-drill}
 
-org-cite
-: <https://orgmode.org/manual/Citations.html>
+Org-Drill is an extension for Org mode. Org-Drill uses a spaced repetition algorithm to conduct interactive "drill sessions", using org files as sources of facts to be memorised. Each topic is treated as a "flash card".
 
-org-bibtex
-: Org-bibtex is responsible for handling bibtex citation in orgmode. <http://gewhere.github.io/org-bibtex>
+<https://orgmode.org/worg/org-contrib/org-drill.html>
 
-orgmdb
-: Tools for managing your watchlist in org-mode and some functions for interacting with OMDb API. <https://github.com/isamert/orgmdb.el>
 
-org-roam-review
-: Provides commands to categorise and review org-roam nodes for Evergreen note-taking. Notes are surfaced using the spaced-repetition algorithm from org-drill. <https://github.com/chrisbarrett/nursery/blob/main/lisp/org-roam-review.el>
+### org-roam-search {#org-roam-search}
 
-org-pretty-table
-: Draw pretty unicode tables in org-mode and orgtbl-mode. <https://github.com/Fuco1/org-pretty-table>
+org-ql like search for org-roam.
 
-org-roam-timestamps
-: Small package to keep track of the modification and creation time of individual nodes. <https://github.com/tefkah/org-roam-timestamps>
+<https://github.com/natask/org-roam-search>
 
-camcorder.el
-: Record screencasts directly from emacs. <https://github.com/Malabarba/camcorder.el>
 
-org-msg
-: Use org-mode for authoring email. Seems to be centered around mail client use vs org-mime which seems more around emailing from org-mode. <https://github.com/jeremy-compostella/org-msg>
+### org-ql {#org-ql}
 
-gptai
-: One of the many ai related things I want to look into some day. <https://github.com/antonhibl/gptai>
+This package provides a query language for Org files. It offers two syntax styles: Lisp-like sexps and search engine-like keywords. I'd started using the dynamic block feature of this with a custom patch to have a table of TODOs at the top of my daily worklog.
 
-chatgpt
-: One of the many ai related things I want to look into some day. <https://github.com/emacs-openai/chatgpt>
+<https://github.com/alphapapa/org-ql>
 
-codegpt
-: One of the many ai related things I want to look into some day. <https://github.com/emacs-openai/codegpt>
 
-ChatGPT.el
-: One of the many ai related things I want to look into some day. <https://github.com/joshcho/ChatGPT.el>
+### org-edna {#org-edna}
 
-gpt.el
-: One of the many ai related things I want to look into some day. <https://github.com/stuhlmueller/gpt.el>
+Extensible Dependencies ’N’ Actions (EDNA) for Org Mode tasks. Edna provides an extensible means of specifying conditions which must be fulfilled before a task can be completed and actions to take once it is.
 
-chatgpt-arcana.el
-: One of the many ai related things I want to look into some day. <https://github.com/CarlQLange/chatgpt-arcana.el>
+<https://www.nongnu.org/org-edna-el/>
 
-openai-api.el
-: One of the many ai related things I want to look into some day. <https://github.com/benjamin-asdf/openai-api.el>
 
-chatgpt emacs shell
-: One of the many ai related things I want to look into some day. <https://xenodium.com/a-chatgpt-emacs-shell/>
+### org-mru-clock {#org-mru-clock}
 
-pocket-reader.el
-: Client for Pocket ([getpocket.com](https://getpocket.com)) that allows you to manage your reading list (add, remove, delete, tag, view, favorite, etc ..) within Emacs.
+Do you often clock in to many different little tasks? Are you annoyed that you can’t just clock in to one of your most recent tasks after restarting Emacs?
 
-orgrr
-: A replica of org-roam v1 implemented using ripgrep. <https://github.com/rtrppl/orgrr>
+<https://github.com/unhammer/org-mru-clock>.
 
-gkroam
-: Another replica of roam research implemented using ripgrep. <https://github.com/Kinneyzhang/gkroam>
 
-denote
-: Simple note taking tool using predictable and descriptive file-naming scheme. <https://github.com/protesilaos/denote>
+### org-noter {#org-noter}
 
-zk
-: Another simple Zettlekasten implementation for Emacs. <https://github.com/localauthor/zk>
+Org-noter’s purpose is to let you create notes that are kept in sync when you scroll through the document, but that are external to it - the notes themselves live in an Org-mode file.
 
-zettledeft
-: Extends Deft into a basic zettelkasten. As of 2023 the author has ceased maintenance and is moving to denote. <https://github.com/localauthor/zk>
+<https://github.com/weirdNox/org-noter>
 
-<!--listend-->
 
-org-media-note
-: Take notes for video and audio files in org-mode!
-    <https://github.com/yuchen-lea/org-media-note>
+### org-cv {#org-cv}
+
+This project exports an org-mode file with reasonably structured items into a latex file, which compiles into a nice CV. I'd been at Northern.tech for &gt; 10 years with little reason to update any kind of CV, but you never know what the future might bring.
+
+<https://titan-c.gitlab.io/org-cv/>
+
+
+### ox-leanpub {#ox-leanpub}
+
+Ox-leanpub includes Org Mode export backends to publish books and courses with Leanpub. ox-leanpub allows you to write your material entirely in Org mode, and manages the production of the files and directories needed for Leanpub to render your book.
+
+<https://github.com/zzamboni/ox-leanpub>
+
+
+### org-super-agenda {#org-super-agenda}
+
+This package lets you “supercharge” your Org daily/weekly agenda. The idea is to group items into sections, rather than having them all in one big list.
+
+<https://github.com/alphapapa/org-super-agenda>
+
+
+### org-recent-headings {#org-recent-headings}
+
+This package lets you quickly jump to recently used Org headings using Helm, Ivy, or plain-ol’ completing-read.
+
+<https://github.com/alphapapa/org-recent-headings>
+
+
+### org-sidebar {#org-sidebar}
+
+This package presents helpful sidebars for Org buffers. Sidebars are customizable using org-ql queries and org-super-agenda grouping.
+
+<https://github.com/alphapapa/org-sidebar>
+
+
+### org-protocol-capture-html {#org-protocol-capture-html}
+
+You can select text in the page when you capture by clicking a bookmarklet it will be copied into the template, or you can just capture the page title and URL. A selection-grabbing function is used to capture the selection.
+
+<https://github.com/alphapapa/org-protocol-capture-html>
+
+
+### emacs-slack {#emacs-slack}
+
+Slack from inside Emacs. Well, I used slack at work, primarily via the electron app. But, things being inside emacs facilitate an easy flow of information between other places and my org-mode apocrypha.
+
+<https://github.com/yuya373/emacs-slack/>
+
+
+### literate-calc-mode {#literate-calc-mode}
+
+Literate programming for M-x calc. Displays inline results for calculations, supports variables and updates as you type (if you want).
+
+<https://github.com/sulami/literate-calc-mode.el>
+
+
+### org-similarity {#org-similarity}
+
+org-similarity is a package to help Emacs org-mode users discover similar or related files. Under the hood, it uses Python and scikit-learn for text feature extraction, and nltk for text pre-processing. More specifically, this package provides a function to recursively scan a given directory for org files, clean their content by stripping the front matter and some undesired characters, tokenize them, replace each token with its respective linguistic stem, generate a TF-IDF sparse matrix, and calculate the cosine similarity between these documents and the buffer you are currently working on.
+
+<https://github.com/brunoarine/org-similarity>
+
+
+### focused {#focused}
+
+A package that dims surrounding text. It works with any theme and can be configured to focus in on different regions like sentences, paragraphs or code-blocks.
+
+<https://github.com/larstvei/Focus>
+
+
+### aggressive-indent-mode {#aggressive-indent-mode}
+
+A minor mode that keeps your code always indented. It re-indents after every change, making it more reliable than electric-indent-mode.
+
+<https://github.com/Malabarba/aggressive-indent-mode>
+
+
+### crux {#crux}
+
+A Collection of Ridiculously Useful eXtensions for Emacs. crux bundles many useful interactive commands to enhance your overall Emacs experience.
+
+<https://github.com/bbatsov/crux>
+
+
+### osm {#osm}
+
+Osm.el is a tile-based map viewer, with a responsive movable and zoomable display. You can bookmark your favorite locations using regular Emacs bookmarks or create links from Org files to locations.
+
+<https://github.com/minad/osm>
+
+
+### org-ref {#org-ref}
+
+org-ref makes it easy to insert citations, cross-references, indexes and glossaries as hyper-functional links into org files.
+
+<https://github.com/jkitchin/org-ref>
+
+
+### org-cite {#org-cite}
+
+I haven't really used citations, but it seems like I could really benefit from it some day.
+
+<https://orgmode.org/manual/Citations.html>
+
+
+### org-bibtex {#org-bibtex}
+
+Org-bibtex is responsible for handling bibtex citation in orgmode.
+
+<http://gewhere.github.io/org-bibtex>
+
+
+### orgmdb {#orgmdb}
+
+Tools for managing your watchlist in org-mode and some functions for interacting with OMDb API.
+
+<https://github.com/isamert/orgmdb.el>
+
+
+### org-roam-review {#org-roam-review}
+
+Provides commands to categorise and review org-roam nodes for Evergreen note-taking. Notes are surfaced using the spaced-repetition algorithm from org-drill.
+
+<https://github.com/chrisbarrett/nursery/blob/main/lisp/org-roam-review.el>
+
+
+### org-pretty-table {#org-pretty-table}
+
+Draw pretty unicode tables in org-mode and orgtbl-mode.
+
+<https://github.com/Fuco1/org-pretty-table>
+
+
+### org-roam-timestamps {#org-roam-timestamps}
+
+Small package to keep track of the modification and creation time of individual nodes.
+
+<https://github.com/tefkah/org-roam-timestamps>
+
+
+### camcorder.el {#camcorder-dot-el}
+
+Record screencasts directly from emacs. I used this occasionally to record screen casts but it had yet to rise to regular use.
+
+<https://github.com/Malabarba/camcorder.el>
+
+
+### org-msg {#org-msg}
+
+Use org-mode for authoring email. Seems to be centered around mail client use vs org-mime which seems more around emailing from org-mode.
+
+<https://github.com/jeremy-compostella/org-msg>
+
+
+### gptai {#gptai}
+
+One of the many ai related things I want to look into some day.
+
+<https://github.com/antonhibl/gptai>
+
+
+### chatgpt {#chatgpt}
+
+One of the many ai related things I want to look into some day.
+
+<https://github.com/emacs-openai/chatgpt>
+
+
+### codegpt {#codegpt}
+
+One of the many ai related things I want to look into some day.
+
+<https://github.com/emacs-openai/codegpt>
+
+
+### ChatGPT.el {#chatgpt-dot-el}
+
+One of the many ai related things I want to look into some day.
+
+<https://github.com/joshcho/ChatGPT.el>
+
+
+### gpt.el {#gpt-dot-el}
+
+One of the many ai related things I want to look into some day.
+
+<https://github.com/stuhlmueller/gpt.el>
+
+
+### chatgpt-arcana.el {#chatgpt-arcana-dot-el}
+
+One of the many ai related things I want to look into some day.
+
+<https://github.com/CarlQLange/chatgpt-arcana.el>
+
+
+### openai-api.el {#openai-api-dot-el}
+
+One of the many ai related things I want to look into some day.
+
+<https://github.com/benjamin-asdf/openai-api.el>
+
+
+### chatgpt emacs shell {#chatgpt-emacs-shell}
+
+One of the many ai related things I want to look into some day.
+
+<https://xenodium.com/a-chatgpt-emacs-shell/>
+
+
+### pocket-reader.el {#pocket-reader-dot-el}
+
+Client for Pocket ([getpocket.com](https://getpocket.com)) that allows you to manage your reading list (add, remove, delete, tag, view, favorite, etc ..) within Emacs. I sometimes have gone through spurts of use of pocket, but not consistently. If I was to get into it, this is something I wanted to leverage.
+
+
+### gkroam {#gkroam}
+
+Another replica of roam research implemented using ripgrep. <https://github.com/Kinneyzhang/gkroam>
+
+
+### org-media-note {#org-media-note}
+
+For taking notes on video and audio files in org-mode! Very cool for when I have this sort of desire, though it's not a frequent occurrence.
+
+<https://github.com/yuchen-lea/org-media-note>
+
+
+### dslide {#dslide}
+
+In May I came across yet another text based presentation framework, dslide. It looks pretty nice, a direct descendant of org-tree-slide. I really like the idea of using text based slides, when doing trainings I often end up sharing an org-mode document while working through questions and examples, but I still gravitate toward a reveal.js exporter like org-reveal or org-re-reveal.
+
+<https://github.com/positron-solutions/dslide>
+
+
+### org-node {#org-node}
+
+I came across org-node by way of a [post on Mastadon](https://emacs.ch/@meedstrom/112351784622309609) near the end of April. It's an org-roam work-a-like, but avoids the database using `rg` and some custom caching. It's id centric, which would be a good fit for me.
+
+I played with it a bit and intend to keep trying it out but my current org-roam-node-find works well for me. It's fast enough and faster than what I am getting from org-node so far. I don't have any issue with org-roam using sqlite, but the thought of having similar basic functionality without need for that extra bit is one I like.
+
+
+## Things I came across that were interesting, but not for me {#things-i-came-across-that-were-interesting-but-not-for-me}
+
+While these weren't a good fit for me, they might be something you are interested in.
+
+
+### zettledeft {#zettledeft}
+
+Extends Deft into a basic zettelkasten. As of 2023 the author has ceased maintenance and is moving to denote. <https://github.com/localauthor/zk>
+
+
+### denote {#denote}
+
+Simple note taking tool using predictable and descriptive file-naming scheme.  It seemed like a great package, but it's very file based and I felt like my workflow around IDs was better for me. Also felt like a lot of org-roam inertia to overcome to give it a serious try.
+
+<https://github.com/protesilaos/denote>
+
+
+### orgrr {#orgrr}
+
+A replica of org-roam v1 implemented using ripgrep.  It seems pretty fast, but it's was quite file centric and I was pretty happy with my ID based workflow.
+
+<https://github.com/rtrppl/orgrr>
+
+
+### zk {#zk}
+
+Another simple Zettlekasten implementation for Emacs.
+
+<https://github.com/localauthor/zk>
 
 [^fn:1]: How I org in 2023 <https://cmdln.org/2023/03/25/how-i-org-in-2023/>
 [^fn:2]: Org-roam is a plain-text personal knowledge management system. According to the [introduction in the manual](https://www.orgroam.com/manual.html#Introduction) Org-roam is a tool for networked thought. It reproduces some of [Roam Research’](https://roamresearch.com/)s key features within Org-mode. Org-roam allows for effortless non-hierarchical note-taking: with Org-roam, notes flow naturally, making note-taking fun and easy. Really, it facilitates capturing information by extending Org-mode's existing capture system, maintains a sqlite database of nodes (headings) with IDs and other metadata and provides the ability to surface and navigate back links (which nodes link to the current node). <https://www.orgroam.com/>
