@@ -6,8 +6,6 @@ draft = false
 author = "Nick Anderson"
 +++
 
-<span class="timestamp-wrapper"><span class="timestamp">&lt;2025-07-26 Sat&gt;</span></span>
-
 This is my contribution to the [Emacs Carnival 2025-07: Writing Experience](https://gregnewman.io/blog/emacs-carnival-2025-07-writing-experience/).
 
 For me the experience of writing in Emacs is a frequent, ever evolving, largely in org-mode, magical experience that has became critical for the way I operate.
