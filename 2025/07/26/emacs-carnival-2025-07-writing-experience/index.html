@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title> Emacs Carnival 2025-07: Writing Experience &middot;  </title>
+
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.123.7">
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://cmdln.org/css/nix.css">
+
+
+
+
+
+<link href="https://fonts.googleapis.com/css?family=Inconsolata%7COpen+Sans%7CConcert+One" rel="stylesheet">
+
+
+
+
+
+
+    </head>
+
+    <body>
+        <header>
+	<nav class="navbar navbar-dark bg-dark fixed-top navbar-expand-lg font-header">
+		<div class="container-fluid">
+			<a class="navbar-brand" id="green-terminal" href='https://cmdln.org/'>
+				nick@cmdln.org ~ $
+			</a>
+			<button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse-1" 
+					aria-controls="navbar-collapse-1" aria-expanded="false">
+				<span class="visually-hidden">Toggle navigation</span>
+				<span class="navbar-toggler-icon"></span>
+			</button>
+	
+			
+			<div class="collapse navbar-collapse" id="navbar-collapse-1">
+				<ul class="nav navbar-nav ms-auto">
+					<li class="nav-item">
+						<a class="nav-link" href='https://cmdln.org/'>
+							/home/nick</a>
+					</li>
+					
+					
+					
+					<li class="nav-item dropdown">
+						
+						<a class="nav-link" href="https://cmdln.org/post/">~/posts</a>
+						
+					</li>
+					
+				</ul>
+			</div>
+		</div>
+	</nav>
+</header>
+
+        <div class="flex-wrapper">
+            <div class="container wrapper">
+                <h1><a href="https://cmdln.org/2025/07/26/emacs-carnival-2025-07-writing-experience/">Emacs Carnival 2025-07: Writing Experience</a></h1>
+                <span class="post-date">2025-07-26 </span>
+                <div class="post-content">
+                    <p><span class="timestamp-wrapper"><span class="timestamp">&lt;2025-07-26 Sat&gt;</span></span></p>
+<p>This is my contribution to the <a href="https://gregnewman.io/blog/emacs-carnival-2025-07-writing-experience/">Emacs Carnival 2025-07: Writing Experience</a>.</p>
+<p>For me the experience of writing in Emacs is a frequent, ever evolving, largely in org-mode, magical experience that has became critical for the way I operate.</p>
+<p><img src="2025-07-25_18-24-44_Screenshot_20250725_182422.png" alt=""><img src="2025-07-25_18-25-30_Screenshot_20250725_182522.png" alt=""></p>
+<p>I use <a href="https://www.orgroam.com/">org-roam</a> for capturing. I really like the ability to specify the template for a new file separately from the template to append to an existing file. This really helped me switch from a methodology centered around fewer larger files, to one centered around more smaller files.</p>
+<p>I make heavy use of &ldquo;dailies&rdquo; with over 100 templates the last time I looked (<a href="https://fosstodon.org/@nickanderson/114372351550538547">https://fosstodon.org/@nickanderson/114372351550538547</a>). Now, the way I manage those templates heh, well it mostly works for me, but it&rsquo;s sort of a hot mess. I have a massive org-mode file for my org-roam configuration. There are many elisp src blocks. One src block is full of noweb references for all the blocks I want to use. And I load my org-roam config manually, by executing 4 different call lines.</p>
+<p>My <em>work log</em> is my primary workspace. I try to capture for each thing I do during the day. Captures to my work log automatically clock time and the new file each day is seeded with bits of information to help guide me. I use <a href="https://activitywatch.net/">activity-watch-mode</a> to help me keep track of more detailed info like active buffers and modes.</p>
+<p>For example, the top of my work log contains a couple of org-babel call statements and an org-ql dynamic block that will surface unfinished things from the prior three months worth of work log files. I like how I can see the state of my todos yesterday by looking at yesterdays work log file. It helps to provide perspective when reflecting on workloads at various times. And, it creates a natural aging out of a task if I don&rsquo;t get to it and don&rsquo;t explicitly bring it forward.</p>
+<p>So, with a query result full of todos I start capturing notes for everything I do. When it&rsquo;s time for a meeting I will capture with that meeting template. I track some metrics for some meetings and those meeting templates contain links to where those metrics are stored. I will navigate there, execute a babel call and then go back to the meeting note and bring the content from the metrics file into the meeting note via <a href="https://github.com/nobiot/org-transclusion">org-transclusion</a>.</p>
+<p>I make frequent typos, but <code>flyspell</code> let&rsquo;s me know right away if it hasn&rsquo;t already been magically fixed by <code>abbrev-mode</code>. It really is one of those things that makes it feel magical. I type <code>teh</code> and the moment I hit space it&rsquo;s magically fixed to <code>the</code>. In fact, looking at my config I seem to use abbreviations exclusively for fixing typos.</p>
+<p>I use <a href="https://github.com/bnbeckwith/writegood-mode">writegood-mode</a> and have played with <a href="https://github.com/Automattic/harper/blob/master/harper-ls/README.md">harper-ls</a> but I found it a bit slow to leave on so time will tell if it&rsquo;s useful enough to remember manually activating it.</p>
+<p>Some things are secret, and thanks to <a href="https://orgmode.org/manual/Org-Crypt.html">org-crypt</a> I can tag them with <code>:crypt:</code> and they are automatically encrypted for my eyes only with gpg. I use this for some example snippets that contain secrets and also for private notes in my journal and notes about people.</p>
+<p>Visually, <a href="https://github.com/minad/org-modern">org-modern</a>, <a href="https://github.com/jdtsmith/org-modern-indent">org-modern-indent</a>, <a href="https://github.com/awth13/org-appear">org-appear</a>, <a href="https://github.com/casouri/valign">valign</a>, <a href="https://github.com/rnkn/olivetti">olivetti-mode</a>, <a href="https://github.com/sabof/org-bullets">org-bullets</a> help to make things look nice. But I struggle with tables not aligning perfectly all the time. Mostly I have learned to tolerate or ignore it.</p>
+<p>I make heavy use of org-babel. Often, org-mode is my shell. It provides a human readable and annotated log of my work as I do it.</p>
+<p>I use org-rich-yank frequently to take notes on code or any other text that I am reading in emacs.</p>
+<p>Org-mode is my native syntax. I write text once, in org-mode, and quickly re-use it for sending formatted emails, exporting to formatted jira wiki syntax for beautiful comments and descriptions in jira tickets, or to various flavors of markdown, html, pdf and probably anything else my heart desired.</p>
+<p>I check email in Emacs using <a href="https://djcbsoftware.nl/code/mu/mu4e/index.html">mu4e</a>, and so naturally, to write a response I simply capture the email to org-mode and write there. When I am ready to send it I run <a href="https://github.com/org-mime/org-mime/">org-mime</a> to make the subtree or buffer into a properly formatted multipart ascii text / html email.</p>
+<p>While writing I might select some text, call upon <a href="https://github.com/karthink/gptel">gptel</a> to dispatch something to an llm. I have begun exposing tools in Emacs to llms. <a href="https://github.com/choplin/jira-cli-mcp">Jira-cli-mcp</a> tool allows read and write access to tickets via <a href="https://github.com/ankitpokhrel/jira-cli">jira-cli</a>. Most recently, inspired by <a href="https://github.com/skissue/llm-tool-collection">llm-tool-collection</a> and <a href="https://git.bajsicki.com/phil/gptel-got">gptel-got</a> I have created bespoke tools with <a href="https://aider.chat/">Aider</a> via <a href="https://github.com/MatthewZMD/aidermacs">aidermacs</a> and <a href="https://github.com/tninja/aider.el">aider.el</a> and gptel inside Emacs and <a href="https://github.com/google-gemini/gemini-cli">gemini-cli</a>, openai web chat, and gemini web chat outside of Emacs to operate on my org-roam corpus. I now have tools to return todays daily note content, add a new entry to my daily notes, surface recently modified notes, notes with the most references and pull various statistics from my org-roam database. At some point my periodic org-mode stat dump (<a href="https://fosstodon.org/tags/OrgRoamUi">https://fosstodon.org/tags/OrgRoamUi</a>) might be completely llm driven.</p>
+<p>For example, the prompt:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">Use each of the org-roam db statistics that you have access to.
+</span></span><span class="line"><span class="cl">Generate a summary of the results. Do it in the style of a news report.
+</span></span></code></pre></div><p>The tool calls:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">#+begin_tool (db_stats :action &#34;count-files&#34;)
+</span></span><span class="line"><span class="cl">(:name &#34;db_stats&#34; :args (:action &#34;count-files&#34;))
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">There are 5453 files in the org-roam database.
+</span></span><span class="line"><span class="cl">#+end_tool
+</span></span><span class="line"><span class="cl">#+begin_tool (db_stats :action &#34;count-nodes&#34;)
+</span></span><span class="line"><span class="cl">(:name &#34;db_stats&#34; :args (:action &#34;count-nodes&#34;))
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">There are 16723 nodes in the org-roam database.
+</span></span><span class="line"><span class="cl">#+end_tool
+</span></span><span class="line"><span class="cl">#+begin_tool (db_stats :action &#34;count-tags&#34;)
+</span></span><span class="line"><span class="cl">(:name &#34;db_stats&#34; :args (:action &#34;count-tags&#34;))
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">There are 246 unique tags in the org-roam database.
+</span></span><span class="line"><span class="cl">#+end_tool
+</span></span><span class="line"><span class="cl">#+begin_tool (db_stats :action &#34;avg-tags-per-file&#34;)
+</span></span><span class="line"><span class="cl">(:name &#34;db_stats&#34; :args (:action &#34;avg-tags-per-file&#34;))
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">The average number of tags per file is 2.52.
+</span></span><span class="line"><span class="cl">#+end_tool
+</span></span><span class="line"><span class="cl">#+begin_tool (db_stats :action &#34;median-tags-per-file&#34;)
+</span></span><span class="line"><span class="cl">(:name &#34;db_stats&#34; :args (:action &#34;median-tags-per-file&#34;))
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">The median number of tags per file is 0.00.
+</span></span><span class="line"><span class="cl">#+end_tool
+</span></span><span class="line"><span class="cl">#+begin_tool (db_stats :action &#34;info&#34;)
+</span></span><span class="line"><span class="cl">(:name &#34;db_stats&#34; :args (:action &#34;info&#34;))
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Available actions: &#39;count-files&#39;, &#39;count-nodes&#39;, &#39;count-tags&#39;, &#39;avg-tags-per-file&#39;, &#39;median-tags-per-file&#39;,
+</span></span><span class="line"><span class="cl">&#39;max-tags-per-file&#39;, &#39;min-tags-per-file&#39;, &#39;info&#39;.
+</span></span><span class="line"><span class="cl">#+end_tool
+</span></span><span class="line"><span class="cl">#+begin_tool (db_stats :action &#34;max-tags-per-file&#34;)
+</span></span><span class="line"><span class="cl">(:name &#34;db_stats&#34; :args (:action &#34;max-tags-per-file&#34;))
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">The maximum number of tags per file is 122.
+</span></span><span class="line"><span class="cl">#+end_tool
+</span></span><span class="line"><span class="cl">#+begin_tool (db_stats :action &#34;min-tags-per-file&#34;)
+</span></span><span class="line"><span class="cl">(:name &#34;db_stats&#34; :args (:action &#34;min-tags-per-file&#34;))
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">The minimum number of tags per file is 0.
+</span></span><span class="line"><span class="cl">#+end_tool
+</span></span></code></pre></div><p>And the response:</p>
+<blockquote>
+<p>Breaking News from the world of personal knowledge management! An audit of the org-roam database has just concluded, revealing fascinating insights into the structure and organization of information.</p>
+<p>In a stunning development, a total of 5,453 files have been cataloged within the system. These files have given rise to a massive 16,723 nodes, indicating a highly interconnected web of knowledge. The tagging system, a crucial component of org-roam&rsquo;s functionality, shows 246 unique tags in use.</p>
+<p>On average, each file is associated with approximately 2.52 tags, suggesting a robust categorization strategy. However, the median number of tags per file stands at 0.00, which may indicate a segment of the database that is less comprehensively tagged. On the higher end, one file boasts an extraordinary 122 tags, while the minimum remains at zero, reinforcing the observation of varied tagging practices across the dataset.</p>
+<p>This report comes as the org-roam system continues to evolve, with users actively engaging its diverse features, including file, node, and tag management, as well as in-depth statistical analysis. Further details on the system&rsquo;s capabilities can be found using the &lsquo;info&rsquo; action.</p>
+</blockquote>
+<p>On mobile, as an Android user <a href="https://orgzly.com/">Orgzly</a>, or <a href="https://github.com/orgzly-revived/orgzly-android-revived">Orgzly-revived</a> is the obvious answer. It works well for me for quick capture and easy review of a subset of notes via the saved searches and desktop widget. I find it kind of terrible for editing of a long note or interacting with any large note.</p>
+<p>I do serious work on mobile at times, usually when traveling. I enjoy bringing a <a href="https://www.lofree.co/products/lofree-flow-the-smoothest-mechanical-keyboard">keyboard</a> for use on mobile. I often attach my phone to the headrest in front of me and use my tray table for my keyboard. It&rsquo;s significantly more spacious than my laptop and I get the full Emacs and org-mode experience via <a href="https://termux.dev/en/">Termux</a>.</p>
+<p><a href="https://orgro.org/">Orgro</a> is good as well, though I don&rsquo;t find myself using it actively. I do wish for other more beautiful and feature rich org-mode apps, at times I admit I am envious at some of the selection on iOS.</p>
+<p>I have had great success for years using <a href="https://syncthing.net/downloads/">Syncthing</a> and <a href="https://github.com/Catfriend1/syncthing-android">Syncthing-Fork</a> to synchronize subsets of my org-mode notes between multiple devices, including mobile. However, I think I have achieved that success by tempering my expectations and intentionally choosing workflows that minimize potential for synchronization conflicts, to the point of each device having a unique capture template when multiple devices are capturing to the same Syncthing folder.</p>
+<p>It&rsquo;s been decade (well on towards two) since I had have considered using a different tool beyond a peek around. In that time my workflows have changed dramatically, but usually change happens in very small bursts. It takes time to form new habits and see what feels good. I am beginning to approach the sort of longevity, reliability, robustness, and flexibility that I was aiming for.</p>
+
+                </div>
+                
+                <div class="post-comments">
+                    
+                </div>
+                
+            </div>
+            <footer class="footer text-center">
+<p>Copyright &copy; 2025 Nick Anderson -
+<span class="credit">
+	Powered by
+	<a target="_blank" href="https://gohugo.io">Hugo</a>
+	and
+	<a target="_blank" href="https://github.com/LordMathis/hugo-theme-nix/">Nix</a> theme.
+</span>
+</p>
+</footer>
+
+        </div>
+    </body>

@@ -3,24 +3,39 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://cmdln.org/</loc>
-    <lastmod>2024-01-05T00:00:00+00:00</lastmod>
+    <lastmod>2025-07-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://cmdln.org/2024/01/05/how-i-org-in-2024/</loc>
-    <lastmod>2024-01-05T00:00:00+00:00</lastmod>
+    <loc>https://cmdln.org/tags/emacs/</loc>
+    <lastmod>2025-07-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://cmdln.org/2025/07/26/emacs-carnival-2025-07-writing-experience/</loc>
+    <lastmod>2025-07-26T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://cmdln.org/tags/org-mode/</loc>
+    <lastmod>2025-07-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://cmdln.org/post/</loc>
+    <lastmod>2025-07-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://cmdln.org/tags/</loc>
+    <lastmod>2025-07-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://cmdln.org/about/</loc>
+    <lastmod>2024-12-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://cmdln.org/about/bionic-back-and-spare-parts-2/</loc>
+    <lastmod>2024-12-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://cmdln.org/tags/testing/</loc>
+    <lastmod>2024-12-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://cmdln.org/2024/01/05/how-i-org-in-2024/</loc>
     <lastmod>2024-01-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://cmdln.org/tags/org-roam/</loc>
     <lastmod>2024-01-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://cmdln.org/tags/pkm/</loc>
-    <lastmod>2024-01-05T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cmdln.org/post/</loc>
-    <lastmod>2024-01-05T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cmdln.org/tags/</loc>
     <lastmod>2024-01-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://cmdln.org/2023/03/25/how-i-org-in-2023/</loc>
@@ -169,9 +184,6 @@
   </url><url>
     <loc>https://cmdln.org/2017/03/01/goodbye-wordpress-go-hugo/</loc>
     <lastmod>2017-03-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cmdln.org/tags/emacs/</loc>
-    <lastmod>2016-04-26T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://cmdln.org/2016/04/26/how-i-org-with-spacemacs/</loc>
     <lastmod>2016-04-26T00:00:00+00:00</lastmod>
@@ -1046,9 +1058,6 @@
     <loc>https://cmdln.org/tags/email/</loc>
     <lastmod>2009-04-16T17:45:43+00:00</lastmod>
   </url><url>
-    <loc>https://cmdln.org/tags/testing/</loc>
-    <lastmod>2009-04-16T17:45:43+00:00</lastmod>
-  </url><url>
     <loc>https://cmdln.org/2009/04/16/testing-mail-servers-with-swaks/</loc>
     <lastmod>2009-04-16T17:45:43+00:00</lastmod>
   </url><url>
@@ -1771,5 +1780,7 @@
   </url><url>
     <loc>https://cmdln.org/tags/hardware/</loc>
     <lastmod>2006-09-02T14:05:38+00:00</lastmod>
+  </url><url>
+    <loc>https://cmdln.org/about/how-i-org/</loc>
   </url>
 </urlset>

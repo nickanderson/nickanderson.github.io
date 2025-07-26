@@ -6,8 +6,15 @@
     <description>Recent content in Testing on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 16 Apr 2009 17:45:43 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 04 Dec 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://cmdln.org/tags/testing/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bionic back and Spare parts 2</title>
+      <link>https://cmdln.org/about/bionic-back-and-spare-parts-2/</link>
+      <pubDate>Wed, 04 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>https://cmdln.org/about/bionic-back-and-spare-parts-2/</guid>
+      <description>This is a test.</description>
+    </item>
     <item>
       <title>Testing mail servers with swaks</title>
       <link>https://cmdln.org/2009/04/16/testing-mail-servers-with-swaks/</link>

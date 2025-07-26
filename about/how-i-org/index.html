@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title> How I org &middot;  </title>
+
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.123.7">
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://cmdln.org/css/nix.css">
+
+
+
+
+
+<link href="https://fonts.googleapis.com/css?family=Inconsolata%7COpen+Sans%7CConcert+One" rel="stylesheet">
+
+
+
+
+
+
+    </head>
+
+    <body>
+        <header>
+	<nav class="navbar navbar-dark bg-dark fixed-top navbar-expand-lg font-header">
+		<div class="container-fluid">
+			<a class="navbar-brand" id="green-terminal" href='https://cmdln.org/'>
+				nick@cmdln.org ~ $
+			</a>
+			<button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse-1" 
+					aria-controls="navbar-collapse-1" aria-expanded="false">
+				<span class="visually-hidden">Toggle navigation</span>
+				<span class="navbar-toggler-icon"></span>
+			</button>
+	
+			
+			<div class="collapse navbar-collapse" id="navbar-collapse-1">
+				<ul class="nav navbar-nav ms-auto">
+					<li class="nav-item">
+						<a class="nav-link" href='https://cmdln.org/'>
+							/home/nick</a>
+					</li>
+					
+					
+					
+					<li class="nav-item dropdown">
+						
+						<a class="nav-link" href="https://cmdln.org/post/">~/posts</a>
+						
+					</li>
+					
+				</ul>
+			</div>
+		</div>
+	</nav>
+</header>
+
+        <div class="flex-wrapper">
+            <div class="container wrapper">
+                <h1><a href="https://cmdln.org/about/how-i-org/">How I org</a></h1>
+                <span class="post-date">0001-01-01 </span>
+                <div class="post-content">
+                    <p>Org-mode is my exocortex, second brain, second mind, mind palace, pensive, personal knowledge management system, and apocrypha. It&rsquo;s very flexible and the features I use as well as how I organize my files continues to change so I collected things here to document how I do things. I try to snapshot this periodically, so you might be interested in checking out one of those:</p>
+<pre><code>[How I org in 2023](https://cmdln.org/2023/03/25/how-i-org-in-2023/)
+[How I org in 2024](https://cmdln.org/2024/01/05/how-i-org-in-2024/)
+</code></pre>
+<div class="NOTE">
+<p>No, my Emacs org-mode configuration is not published. However, if you have some question, just reach out.</p>
+</div>
+<h2 id="goal">Goal</h2>
+<p>Ideally, I want total recall (what was I doing, who did I talk to, what do I need to do, what have I done), to be able to access my information in 5, 10, 20 or 100 years from now without strife. I want to work and interact with my system efficiently and I want to expand my knowledge and be able to share with others.</p>
+<p>On the best of days I never leave Emacs and I have a full record of everything I did and how much time I spent working on it.</p>
+<h2 id="statistics">Statistics</h2>
+<p>As of Thursday, December  5, 2024
+I had 71MB
+of <code>.org</code> files in <code>~/org</code>. 6101
+files and 1453607
+lines of text, the largest single file was 1.4MB
+and the longest lined file had 26370
+lines.</p>
+<p>6072
+of these files were inside Org-roam, the majority of them (4525
+) were &ldquo;dailies&rdquo;. There were 18749
+nodes in total, so about 3
+nodes per file. This seemed accurate since many headlines (I had 70908
+headlines) didn&rsquo;t have IDs. IDs got created automatically when I stored a link (which often happened during capture) or attached a file.</p>
+<h2 id="system">System <span class="tag"><span class="ATTACH">ATTACH</span></span></h2>
+<p>I don&rsquo;t follow any formal system. I use my own S.H.I.T. (Stuff here&rsquo;n there) methodology.</p>
+<figure><img src="2024-12-05_17-30-23_nick-anderson-shit-method.png"
+         alt="Figure 1: Martti Bergström (@masi@fosstodon.org) uses the Nick Anderson SHIT meethod. https://fosstodon.org/@masi/110266696809445948" width="50%"/><figcaption>
+            <p><span class="figure-number">Figure 1: </span>Martti Bergström (@masi@fosstodon.org) uses the Nick Anderson SHIT meethod. <a href="https://fosstodon.org/@masi/110266696809445948">https://fosstodon.org/@masi/110266696809445948</a></p>
+        </figcaption>
+</figure>
+
+<p>The core of my system are daily notes. I have many different daily notes, but my work log is the one that I spend the most time in. It&rsquo;s where I note down each thing I work on and track how much time I spent working on each thing.</p>
+<h2 id="capture">Capture</h2>
+<p>Capturing is central to my work flow. It&rsquo;s the first thing I do when I sit down and get started working. It&rsquo;s important that I can quickly store new information in my system at any time and I do this most frequently with <code>org-roam-dailies-capture-today</code>.</p>
+<p>Org-roam&rsquo;s capture templates provide a key feature that I found lacking from <code>org-capture</code>, the ability to seed a new file from a template. Prior to using org-roam I had no good way to populate a new file with a bunch of scaffolding. Once I started using org-roam back in 2020 the volume of capture templates I use skyrocketed from less than 10 to 72 now.</p>
+<p>was an important concept in my workflow. Fundamentally it&rsquo;s grabbing new content and putting it somewhere. It facilitated consistency and automated some tedium of organization. I needed capturing to be fast and not interrupt my flow.</p>
+<p>Org-roam was my primary capture interface and I <em>really</em> liked the daily capabilities. Each day I captured notes about everything I was working on into my work log while clocking time. This gave me a nice place to think and process what I was working on as well as a place to get my bearings and see what I had been working on when I got side-tracked. Having a new file each day gave me a fresh start and it helped me to avoid performance issues I had previously experienced with large (multi-megabyte) files.</p>
+<p>I had <code>24</code> org-capture-templates,  <code>19</code> org-roam-capture-templates and <code>95</code> org-roam-dailies-capture-templates.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nf">set</span> <span class="p">(</span><span class="nf">make-local-variable</span> <span class="ss">&#39;org-confirm-babel-evaluate</span><span class="p">)</span> <span class="no">nil</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nb">setq</span> <span class="nv">org-confirm-babel-evaluate</span> <span class="no">nil</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">     <span class="c1">;;; Stefan Monnier &lt;foo at acm.org&gt;. It is the opposite of fill-paragraph</span>
+</span></span><span class="line"><span class="cl">   <span class="p">(</span><span class="nb">defun</span> <span class="nv">unfill-paragraph</span> <span class="p">(</span><span class="kp">&amp;optional</span> <span class="nv">region</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">     <span class="s">&#34;Takes a multi-line paragraph and makes it into a single line of text.&#34;</span>
+</span></span><span class="line"><span class="cl">     <span class="p">(</span><span class="nb">interactive</span> <span class="p">(</span><span class="nb">progn</span> <span class="p">(</span><span class="nf">barf-if-buffer-read-only</span><span class="p">)</span> <span class="o">&#39;</span><span class="p">(</span><span class="no">t</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl">     <span class="p">(</span><span class="nb">let</span> <span class="p">((</span><span class="nv">fill-column</span> <span class="p">(</span><span class="nf">point-max</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">           <span class="c1">;; This would override `fill-column&#39; if it&#39;s an integer.</span>
+</span></span><span class="line"><span class="cl">           <span class="p">(</span><span class="nv">emacs-lisp-docstring-fill-column</span> <span class="no">t</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">       <span class="p">(</span><span class="nv">fill-paragraph</span> <span class="no">nil</span> <span class="nv">region</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">   <span class="c1">;; Handy key definition</span>
+</span></span><span class="line"><span class="cl">   <span class="c1">;;(define-key global-map &#34;\M-Q&#34; &#39;unfill-paragraph)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+                </div>
+                
+                <div class="post-comments">
+                    
+                </div>
+                
+            </div>
+            <footer class="footer text-center">
+<p>Copyright &copy; 2025 Nick Anderson -
+<span class="credit">
+	Powered by
+	<a target="_blank" href="https://gohugo.io">Hugo</a>
+	and
+	<a target="_blank" href="https://github.com/LordMathis/hugo-theme-nix/">Nix</a> theme.
+</span>
+</p>
+</footer>
+
+        </div>
+    </body>

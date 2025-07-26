@@ -6,8 +6,22 @@
     <description>Recent content on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 05 Jan 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 26 Jul 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://cmdln.org/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Emacs Carnival 2025-07: Writing Experience</title>
+      <link>https://cmdln.org/2025/07/26/emacs-carnival-2025-07-writing-experience/</link>
+      <pubDate>Sat, 26 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>https://cmdln.org/2025/07/26/emacs-carnival-2025-07-writing-experience/</guid>
+      <description>&amp;lt;2025-07-26 Sat&amp;gt;&#xA;This is my contribution to the Emacs Carnival 2025-07: Writing Experience.&#xA;For me the experience of writing in Emacs is a frequent, ever evolving, largely in org-mode, magical experience that has became critical for the way I operate.&#xA;I use org-roam for capturing. I really like the ability to specify the template for a new file separately from the template to append to an existing file. This really helped me switch from a methodology centered around fewer larger files, to one centered around more smaller files.</description>
+    </item>
+    <item>
+      <title>Bionic back and Spare parts 2</title>
+      <link>https://cmdln.org/about/bionic-back-and-spare-parts-2/</link>
+      <pubDate>Wed, 04 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>https://cmdln.org/about/bionic-back-and-spare-parts-2/</guid>
+      <description>This is a test.</description>
+    </item>
     <item>
       <title>How I org in 2024</title>
       <link>https://cmdln.org/2024/01/05/how-i-org-in-2024/</link>
@@ -1785,6 +1799,13 @@
       <pubDate>Sat, 02 Sep 2006 14:05:38 +0000</pubDate>
       <guid>https://cmdln.org/2006/09/02/disk-performance/</guid>
       <description>So what kind of performance should people expect from a disk or raid?&#xA;How long should it take to create 100G file?&#xA;time dd if=/dev/zero of=mako1 bs=65536 count=163840&#xA;A customer of ours is using this to create a 10G file and its taking about 20 minutes to create the file on a 12 drive raid 5 with 3ware. After setting ra again (in case the customer did not) and I got about 18 minutes on the same command.</description>
+    </item>
+    <item>
+      <title>How I org</title>
+      <link>https://cmdln.org/about/how-i-org/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://cmdln.org/about/how-i-org/</guid>
+      <description>Org-mode is my exocortex, second brain, second mind, mind palace, pensive, personal knowledge management system, and apocrypha. It&amp;rsquo;s very flexible and the features I use as well as how I organize my files continues to change so I collected things here to document how I do things. I try to snapshot this periodically, so you might be interested in checking out one of those:&#xA;[How I org in 2023](https://cmdln.org/2023/03/25/how-i-org-in-2023/) [How I org in 2024](https://cmdln.</description>
     </item>
   </channel>
 </rss>
