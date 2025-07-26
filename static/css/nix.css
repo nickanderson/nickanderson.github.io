@@ -2,6 +2,23 @@
 	margin: 0;
 }
 
+blockquote {
+    background: #f9f9f9; /* Light gray background */
+    border-left: 10px solid #ccc; /* Gray left border */
+    margin: 1.5em 10px; /* Spacing around the quote */
+    padding: 0.5em 10px; /* Padding inside the quote */
+    quotes: "\201C""\201D""\2018""\2019"; /* Smart quotes */
+    font-style: normal; /* Override default italics if present */
+}
+
+blockquote:before {
+    color: #ccc;
+    content: open-quote;
+    font-size: 4em;
+    line-height: 0.1em;
+    margin-right: 0.25em;
+    vertical-align: -0.4em;
+}
 a:hover {
 	text-decoration: none;
 }
