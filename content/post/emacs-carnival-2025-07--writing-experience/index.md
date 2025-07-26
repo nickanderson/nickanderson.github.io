@@ -12,6 +12,8 @@ For me the experience of writing in Emacs is a frequent, ever evolving, largely 
 
 ![](2025-07-25_18-24-44_Screenshot_20250725_182422.png)![](2025-07-25_18-25-30_Screenshot_20250725_182522.png)
 
+I am a vim convert, but I never had to give up the lovely editing experience and familiar key bindings thanks to [Spacemacs](https://github.com/syl20bnr/spacemacs) and [evil-mode](https://github.com/emacs-evil/evil).
+
 I use [org-roam](https://www.orgroam.com/) for capturing. I really like the ability to specify the template for a new file separately from the template to append to an existing file. This really helped me switch from a methodology centered around fewer larger files, to one centered around more smaller files. I keep an eye on [org-node](https://github.com/meedstrom/org-node) and [org-gnosis](https://github.com/meedstrom/org-node).
 
 I make heavy use of "dailies" with over 100 templates the last time I looked (<https://fosstodon.org/@nickanderson/114372351550538547>). Now, the way I manage those templates heh, well it mostly works for me, but it's sort of a hot mess. I have a massive org-mode file for my org-roam configuration. There are many elisp src blocks. One src block is full of noweb references for all the blocks I want to use. And I load my org-roam config manually, by executing 4 different call lines.
