@@ -1,23 +1,26 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Abouts on </title>
     <link>https://cmdln.org/about/</link>
     <description>Recent content in Abouts on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 26 Jun 2017 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://cmdln.org/about/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>en</language>
+    <lastBuildDate>Wed, 04 Dec 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://cmdln.org/about/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>My Bionic Back</title>
-      <link>https://cmdln.org/about/back-and-spare-parts/</link>
-      <pubDate>Mon, 26 Jun 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://cmdln.org/about/back-and-spare-parts/</guid>
-      <description>OK, ok, it&amp;#39;s not really bionic, … yet.  On [2018-05-29] I had surgery for spinal decompression and Intradural disk herniation repair at L4-L5, anterior fusion at L4-L5, and artificial disc replacement at L5-S1. This documents some history and how I got to that point as well as my recovery.  I am frequently asked &amp;#34;what happened?&amp;#34;, and I don&amp;#39;t recall any specific event, but I wrestled in grade school and high school, and I was know for all kinds of contortions.</description>
+      <title>Bionic back and Spare parts 2</title>
+      <link>https://cmdln.org/about/bionic-back-and-spare-parts-2/</link>
+      <pubDate>Wed, 04 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>https://cmdln.org/about/bionic-back-and-spare-parts-2/</guid>
+      <description>This is a test.</description>
     </item>
-    
+    <item>
+      <title>How I org</title>
+      <link>https://cmdln.org/about/how-i-org/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://cmdln.org/about/how-i-org/</guid>
+      <description>Org-mode is my exocortex, second brain, second mind, mind palace, pensive, personal knowledge management system, and apocrypha. It&amp;rsquo;s very flexible and the features I use as well as how I organize my files continues to change so I collected things here to document how I do things. I try to snapshot this periodically, so you might be interested in checking out one of those:&#xA;[How I org in 2023](https://cmdln.org/2023/03/25/how-i-org-in-2023/) [How I org in 2024](https://cmdln.</description>
+    </item>
   </channel>
 </rss>

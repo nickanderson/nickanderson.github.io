@@ -1,6 +1,11 @@
 * {
 	margin: 0;
 }
+blockquote {
+    background-color: lightgray;
+    border-left: 5px;
+    padding: 50px;
+}
 
 a:hover {
 	text-decoration: none;

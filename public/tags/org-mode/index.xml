@@ -6,8 +6,15 @@
     <description>Recent content in Org-Mode on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 05 Jan 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 26 Jul 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://cmdln.org/tags/org-mode/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Emacs Carnival 2025-07: Writing Experience</title>
+      <link>https://cmdln.org/2025/07/26/emacs-carnival-2025-07-writing-experience/</link>
+      <pubDate>Sat, 26 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>https://cmdln.org/2025/07/26/emacs-carnival-2025-07-writing-experience/</guid>
+      <description>&amp;lt;2025-07-26 Sat&amp;gt;&#xA;This is my contribution to the Emacs Carnival 2025-07: Writing Experience.&#xA;For me the experience of writing in Emacs is a frequent, ever evolving, largely in org-mode, magical experience that has became critical for the way I operate.&#xA;I use org-roam for capturing. I really like the ability to specify the template for a new file separately from the template to append to an existing file. This really helped me switch from a methodology centered around fewer larger files, to one centered around more smaller files.</description>
+    </item>
     <item>
       <title>How I org in 2024</title>
       <link>https://cmdln.org/2024/01/05/how-i-org-in-2024/</link>
@@ -42,6 +49,13 @@
       <pubDate>Tue, 26 Apr 2016 00:00:00 +0000</pubDate>
       <guid>https://cmdln.org/2016/04/26/how-i-org-with-spacemacs/</guid>
       <description>This weekend Neil Watson asked if I could share how I use org-mode with Spacemacs.&#xA;@cmdln_ Care to share with an Emacs illiterate how you got Spacemacs and Org-mode to work together? – @neil_h_watson&#xA;First of all, I spend most of my time in a terminal, and vim is ingrained in my muscle memory any time I need to edit a file. While Vim is my goto editor I consider myself just a novice Vim user.</description>
+    </item>
+    <item>
+      <title>How I org</title>
+      <link>https://cmdln.org/about/how-i-org/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://cmdln.org/about/how-i-org/</guid>
+      <description>Org-mode is my exocortex, second brain, second mind, mind palace, pensive, personal knowledge management system, and apocrypha. It&amp;rsquo;s very flexible and the features I use as well as how I organize my files continues to change so I collected things here to document how I do things. I try to snapshot this periodically, so you might be interested in checking out one of those:&#xA;[How I org in 2023](https://cmdln.org/2023/03/25/how-i-org-in-2023/) [How I org in 2024](https://cmdln.</description>
     </item>
   </channel>
 </rss>
