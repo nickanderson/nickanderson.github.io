@@ -42,56 +42,52 @@ While writing I might select some text, call upon [gptel](https://github.com/kar
 
 For example, the prompt:
 
-```text { linenos=false }
-Use each of the org-roam db statistics that you have access to.
-Generate a summary of the results. Do it in the style of a news report.
-```
+> Use each of the org-roam db statistics that you have access to.
+> Generate a summary of the results. Do it in the style of a news report.
 
 The tool calls:
 
-```text { linenos=false }
-#+begin_tool (db_stats :action "count-files")
-(:name "db_stats" :args (:action "count-files"))
-
-There are 5453 files in the org-roam database.
-#+end_tool
-#+begin_tool (db_stats :action "count-nodes")
-(:name "db_stats" :args (:action "count-nodes"))
-
-There are 16723 nodes in the org-roam database.
-#+end_tool
-#+begin_tool (db_stats :action "count-tags")
-(:name "db_stats" :args (:action "count-tags"))
-
-There are 246 unique tags in the org-roam database.
-#+end_tool
-#+begin_tool (db_stats :action "avg-tags-per-file")
-(:name "db_stats" :args (:action "avg-tags-per-file"))
-
-The average number of tags per file is 2.52.
-#+end_tool
-#+begin_tool (db_stats :action "median-tags-per-file")
-(:name "db_stats" :args (:action "median-tags-per-file"))
-
-The median number of tags per file is 0.00.
-#+end_tool
-#+begin_tool (db_stats :action "info")
-(:name "db_stats" :args (:action "info"))
-
-Available actions: 'count-files', 'count-nodes', 'count-tags', 'avg-tags-per-file', 'median-tags-per-file',
-'max-tags-per-file', 'min-tags-per-file', 'info'.
-#+end_tool
-#+begin_tool (db_stats :action "max-tags-per-file")
-(:name "db_stats" :args (:action "max-tags-per-file"))
-
-The maximum number of tags per file is 122.
-#+end_tool
-#+begin_tool (db_stats :action "min-tags-per-file")
-(:name "db_stats" :args (:action "min-tags-per-file"))
-
-The minimum number of tags per file is 0.
-#+end_tool
-```
+> ,#+begin<sub>tool</sub> (db<sub>stats</sub> :action "count-files")
+> (:name "db<sub>stats</sub>" :args (:action "count-files"))
+>
+> There are 5453 files in the org-roam database.
+> ,#+end<sub>tool</sub>
+> ,#+begin<sub>tool</sub> (db<sub>stats</sub> :action "count-nodes")
+> (:name "db<sub>stats</sub>" :args (:action "count-nodes"))
+>
+> There are 16723 nodes in the org-roam database.
+> ,#+end<sub>tool</sub>
+> ,#+begin<sub>tool</sub> (db<sub>stats</sub> :action "count-tags")
+> (:name "db<sub>stats</sub>" :args (:action "count-tags"))
+>
+> There are 246 unique tags in the org-roam database.
+> ,#+end<sub>tool</sub>
+> ,#+begin<sub>tool</sub> (db<sub>stats</sub> :action "avg-tags-per-file")
+> (:name "db<sub>stats</sub>" :args (:action "avg-tags-per-file"))
+>
+> The average number of tags per file is 2.52.
+> ,#+end<sub>tool</sub>
+> ,#+begin<sub>tool</sub> (db<sub>stats</sub> :action "median-tags-per-file")
+> (:name "db<sub>stats</sub>" :args (:action "median-tags-per-file"))
+>
+> The median number of tags per file is 0.00.
+> ,#+end<sub>tool</sub>
+> ,#+begin<sub>tool</sub> (db<sub>stats</sub> :action "info")
+> (:name "db<sub>stats</sub>" :args (:action "info"))
+>
+> Available actions: 'count-files', 'count-nodes', 'count-tags', 'avg-tags-per-file', 'median-tags-per-file',
+> 'max-tags-per-file', 'min-tags-per-file', 'info'.
+> ,#+end<sub>tool</sub>
+> ,#+begin<sub>tool</sub> (db<sub>stats</sub> :action "max-tags-per-file")
+> (:name "db<sub>stats</sub>" :args (:action "max-tags-per-file"))
+>
+> The maximum number of tags per file is 122.
+> ,#+end<sub>tool</sub>
+> ,#+begin<sub>tool</sub> (db<sub>stats</sub> :action "min-tags-per-file")
+> (:name "db<sub>stats</sub>" :args (:action "min-tags-per-file"))
+>
+> The minimum number of tags per file is 0.
+> ,#+end<sub>tool</sub>
 
 And the response:
 
