@@ -12,13 +12,13 @@ For me the experience of writing in Emacs is a frequent, ever evolving, largely 
 
 ![](2025-07-25_18-24-44_Screenshot_20250725_182422.png)![](2025-07-25_18-25-30_Screenshot_20250725_182522.png)
 
-I use [org-roam](https://www.orgroam.com/) for capturing. I really like the ability to specify the template for a new file separately from the template to append to an existing file. This really helped me switch from a methodology centered around fewer larger files, to one centered around more smaller files.
+I use [org-roam](https://www.orgroam.com/) for capturing. I really like the ability to specify the template for a new file separately from the template to append to an existing file. This really helped me switch from a methodology centered around fewer larger files, to one centered around more smaller files. I keep an eye on [org-node](https://github.com/meedstrom/org-node) and [org-gnosis](https://github.com/meedstrom/org-node).
 
 I make heavy use of "dailies" with over 100 templates the last time I looked (<https://fosstodon.org/@nickanderson/114372351550538547>). Now, the way I manage those templates heh, well it mostly works for me, but it's sort of a hot mess. I have a massive org-mode file for my org-roam configuration. There are many elisp src blocks. One src block is full of noweb references for all the blocks I want to use. And I load my org-roam config manually, by executing 4 different call lines.
 
 My _work log_ is my primary workspace. I try to capture for each thing I do during the day. Captures to my work log automatically clock time and the new file each day is seeded with bits of information to help guide me. I use [activity-watch-mode](https://activitywatch.net/) to help me keep track of more detailed info like active buffers and modes.
 
-For example, the top of my work log contains a couple of org-babel call statements and an org-ql dynamic block that will surface unfinished things from the prior three months worth of work log files. I like how I can see the state of my todos yesterday by looking at yesterdays work log file. It helps to provide perspective when reflecting on workloads at various times. And, it creates a natural aging out of a task if I don't get to it and don't explicitly bring it forward.
+For example, the top of my work log contains a couple of org-babel call statements and an [org-ql](https://github.com/alphapapa/org-ql) dynamic block that will surface unfinished things from the prior three months worth of work log files. I like how I can see the state of my todos yesterday by looking at yesterdays work log file. It helps to provide perspective when reflecting on workloads at various times. And, it creates a natural aging out of a task if I don't get to it and don't explicitly bring it forward.
 
 So, with a query result full of todos I start capturing notes for everything I do. When it's time for a meeting I will capture with that meeting template. I track some metrics for some meetings and those meeting templates contain links to where those metrics are stored. I will navigate there, execute a babel call and then go back to the meeting note and bring the content from the metrics file into the meeting note via [org-transclusion](https://github.com/nobiot/org-transclusion).
 
@@ -32,7 +32,7 @@ Visually, [org-modern](https://github.com/minad/org-modern), [org-modern-indent]
 
 I make heavy use of org-babel. Often, org-mode is my shell. It provides a human readable and annotated log of my work as I do it.
 
-I use org-rich-yank frequently to take notes on code or any other text that I am reading in emacs.
+I use [org-rich-yank](https://github.com/unhammer/org-rich-yank) frequently to take notes on code or any other text that I am reading in emacs.
 
 Org-mode is my native syntax. I write text once, in org-mode, and quickly re-use it for sending formatted emails, exporting to formatted jira wiki syntax for beautiful comments and descriptions in jira tickets, or to various flavors of markdown, html, pdf and probably anything else my heart desired.
 
