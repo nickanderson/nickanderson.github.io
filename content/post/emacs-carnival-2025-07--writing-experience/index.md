@@ -8,7 +8,7 @@ author = "Nick Anderson"
 
 This is my contribution to the [Emacs Carnival 2025-07: Writing Experience](https://gregnewman.io/blog/emacs-carnival-2025-07-writing-experience/).
 
-For me the experience of writing in Emacs is a frequent, ever evolving, largely in org-mode, magical experience that has became critical for the way I operate.
+For me the experience of writing in Emacs is a frequent, ever evolving, largely in org-mode, magical experience that has become critical for the way I operate.
 
 ![](2025-07-25_18-24-44_Screenshot_20250725_182422.png)![](2025-07-25_18-25-30_Screenshot_20250725_182522.png)
 
