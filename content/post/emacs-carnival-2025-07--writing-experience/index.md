@@ -18,6 +18,10 @@ I use [org-roam](https://www.orgroam.com/) for capturing. I really like the abil
 
 I make heavy use of "dailies" with over 100 templates the last time I looked (<https://fosstodon.org/@nickanderson/114372351550538547>). Now, the way I manage those templates heh, well it mostly works for me, but it's sort of a hot mess. I have a massive org-mode file for my org-roam configuration. There are many elisp src blocks. One src block is full of noweb references for all the blocks I want to use. And I load my org-roam config manually, by executing 4 different call lines.
 
+I also use [Yasnippet](https://github.com/joaotavora/yasnippet) frequently but I do not really use tab stops. Something is funky when I insert a babel src block with tab stops inside the block. Also, something was uncomfortable about the binding to advance and I haven't bothered to look into it in years. So, even with just simple templates I get a ton of value from it.
+
+Sometimes, instead of actually typing, I will use [whisper.el](https://github.com/natrys/whisper.el) I think it might be nice to have a separate push to talk button. I look forward to when it can stream.
+
 My _work log_ is my primary workspace. I try to capture for each thing I do during the day. Captures to my work log automatically clock time and the new file each day is seeded with bits of information to help guide me. I use [activity-watch-mode](https://activitywatch.net/) to help me keep track of more detailed info like active buffers and modes.
 
 For example, the top of my work log contains a couple of org-babel call statements and an [org-ql](https://github.com/alphapapa/org-ql) dynamic block that will surface unfinished things from the prior three months worth of work log files. I like how I can see the state of my todos yesterday by looking at yesterdays work log file. It helps to provide perspective when reflecting on workloads at various times. And, it creates a natural aging out of a task if I don't get to it and don't explicitly bring it forward.

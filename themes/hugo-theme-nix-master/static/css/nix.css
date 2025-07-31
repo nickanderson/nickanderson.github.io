@@ -6,6 +6,12 @@ html {
 	height: 100%;
 }
 
+blockquote {
+    background-color: lightgray;
+    border-left: 5px;
+    padding: 50px;
+}
+
 body {
 	background-color: #fdfdfd;
 	height: 100%;
