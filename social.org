@@ -32,3 +32,19 @@
 Ok, this is pretty nice to have a buffer of little org-mode entries from other people.
 
 [[file:./this-is-the-way.jpg]]
+
+**
+:PROPERTIES:
+:ID: 2025-08-16T16:32:49-0500
+:LANG: en
+:TAGS:
+:CONTENT_WARNING:
+:CLIENT:
+:REPLY_TO:
+:REPLY_URL:
+:MOOD: ⊹╰(⌣ʟ⌣)╯⊹
+:END:
+
+[[https://cmdln.org/this-is-the-way.jpg][Org-mode This Is The Way meme]]
+
+Visible for me with [[help:org-display-remote-inline-images]]  and a bit of [[https://emacs.stackexchange.com/a/73431][found elisp]].
