@@ -19,11 +19,7 @@
 **
 :PROPERTIES:
 :ID: 2025-08-16T13:11:29-0500
-<<<<<<< HEAD
 :LANG: En
-=======
-:LANG: English
->>>>>>> 99119059a89f64c2f62eeaffe8dbdbe4af42d50f
 :TAGS:
 :CONTENT_WARNING:
 :CLIENT:
@@ -35,7 +31,6 @@
 Ok, this is pretty nice to have a buffer of little org-mode entries from other people.
 
 [[file:./this-is-the-way.jpg]]
-<<<<<<< HEAD
 
 **
 :PROPERTIES:
@@ -52,5 +47,3 @@ Ok, this is pretty nice to have a buffer of little org-mode entries from other p
 [[https://cmdln.org/this-is-the-way.jpg][Org-mode This Is The Way meme]]
 
 Visible for me with [[help:org-display-remote-inline-images]]  and a bit of [[https://emacs.stackexchange.com/a/73431][found elisp]].
-=======
->>>>>>> 99119059a89f64c2f62eeaffe8dbdbe4af42d50f
