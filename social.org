@@ -7,7 +7,6 @@
 #+CONTACT: mailto:nick@cmdln.org
 #+CONTACT: https://fosstodon.org/@nickanderson
 #+CONTACT: https://linkedin.com/in/hithisisnick
-#+FOLLOW: nickanderson https://cmdln.org/social.org
 #+FOLLOW: andros https://andros.dev/static/social.org
 #+FOLLOW: rossabaker https://rossabaker.com/social.org
 #+FOLLOW: omidmash https://omidmash.de/social.org
