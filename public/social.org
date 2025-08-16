@@ -8,6 +8,7 @@
 #+CONTACT: https://fosstodon.org/@nickanderson
 #+CONTACT: https://linkedin.com/in/hithisisnick
 #+FOLLOW_jane: https://jane.com/social.org
+#+FOLLOW_nickanderson: https://cmdln.org/social.org
 #+FOLLOW_andros: https://andros.dev/static/social.org
 #+FOLLOW_rossabaker: https://rossabaker.com/social.org
 #+FOLLOW_omidmash: https://omidmash.de/social.org
