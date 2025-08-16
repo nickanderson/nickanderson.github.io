@@ -56,16 +56,7 @@ I've finalized the introductory post draft, incorporating all user-provided info
 
 #+end_reasoning
 
-<<<<<<< HEAD
 *** Initializing Org-Social Presence: Nick Anderson
-=======
-<<<<<<< HEAD
-*** Initializing Org-Social Presence: Nick Anderson
-=======
-** Initializing Org-Social Presence: Nick Anderson
->>>>>>> 17b45e9a3eaf6d77e5492a52e4a7f8f695deb635
->>>>>>> e08dace2139b597d1f308b69ea508305727be42a
-
 Well, it was only a matter of time, wasn't it? Apparently, even social interaction can now be meticulously organized and structured within the confines of an Org-mode file. So, here I am.
 
 For those who haven't stumbled upon my digital musings via =(org-publish-project)= or a stray =grep -r "emacs"= command, I am Nick Anderson. My affections lie firmly with the world of open source, with a particular soft spot for the sheer analytical power and delightful versatility of Emacs Org-mode, and the robust, declarative control offered by CFEngine.
