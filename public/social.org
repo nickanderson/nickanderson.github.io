@@ -1,9 +1,7 @@
-<<<<<<< HEAD
 :PROPERTIES:
 :DIR:      ./social.org.d/
 :END:
 =======
->>>>>>> 28093241b987c4338bd1ee9628ee124593e55d1d
 #+TITLE: Nick's org-social
 #+NICK: nickanderson
 #+DESCRIPTION: I love open source, especially Emacs Org-mode and CFEngine.
@@ -16,25 +14,12 @@
 #+FOLLOW: andros https://andros.dev/static/social.org
 #+FOLLOW: rossabaker https://rossabaker.com/social.org
 #+FOLLOW: omidmash https://omidmash.de/social.org
-<<<<<<< HEAD
 #+FOLLOW: johnhamelink https://johnhame.link/social.org
 #+FOLLOW: Eoin https://eoin.site/social.org
 #+FOLLOW: adsan https://adsan.dev/social.org
 #+FOLLOW: emillo https://emillo.net/social.org
 
-* Posts                                                              :ATTACH:
-:PROPERTIES:
-:ID:       a00c7178-4db7-4fb3-b227-519e23086284
-:END:
-=======
-#+FOLLOW: johnhame https://johnhame.link/social.org
-#+FOLLOW: eoin https://eoin.site/social.org
-#+FOLLOW: adsan https://adsan.dev/social.org
-#+FOLLOW: emillo https://emillo.net/social.org
-
 * Posts
->>>>>>> 28093241b987c4338bd1ee9628ee124593e55d1d
-**
 :PROPERTIES:
 :ID: 2025-08-16T13:11:29-0500
 :LANG: En
@@ -65,7 +50,6 @@ Ok, this is pretty nice to have a buffer of little org-mode entries from other p
 [[https://cmdln.org/this-is-the-way.jpg][Org-mode This Is The Way meme]]
 
 Visible for me with [[help:org-display-remote-inline-images]]  and a bit of [[https://emacs.stackexchange.com/a/73431][found elisp]].
-<<<<<<< HEAD
 
 **
 :PROPERTIES:
@@ -102,9 +86,42 @@ Attachment links work nicely for me, but probably not for anyone else on org-soc
 #+DOWNLOADED: file:///tmp/Spectacle.litYVc/Screenshot_20250816_211421.png @ 2025-08-17 09:05:37
 [[attachment:2025-08-17_09-05-37_Screenshot_20250816_211421.png]]
 
-Fully qualified http(s) references can be displayed inline with [[help:org-display-remote-inline-images]]. At least it worked for me with this [[https://emacs.stackexchange.com/a/73431][found elisp]].
+Fully qualified http(s) references can be displayed inline with [[help:org-display-remote-inline-images]]. At least it worked for me with this elisp:
+
+#+caption: https://emacs.stackexchange.com/a/73431
+#+begin_src emacs-lisp
+;; https://blog.tecosaur.com/tmio/2021-04-26-Welcome.html#inline-display-remote
+;; on 2022-09-04 this only works for tramp remote links and not for http / https
+(setq org-display-remote-inline-images 'cache)
+
+;; we look to doom emacs for an example how to get remote images also working
+;; for normal http / https links
+;; 1. image data handler
+(defun org-http-image-data-fn (protocol link _description)
+  "Interpret LINK as an URL to an image file."
+  (when (and (image-type-from-file-name link)
+             (not (eq org-display-remote-inline-images 'skip)))
+    (if-let (buf (url-retrieve-synchronously (concat protocol ":" link)))
+        (with-current-buffer buf
+          (goto-char (point-min))
+          (re-search-forward "\r?\n\r?\n" nil t)
+          (buffer-substring-no-properties (point) (point-max)))
+      (message "Download of image \"%s\" failed" link)
+      nil)))
+
+;; 2. add this as link parameter for http and https
+(org-link-set-parameters "http"  :image-data-fun #'org-http-image-data-fn)
+(org-link-set-parameters "https" :image-data-fun #'org-http-image-data-fn)
+
+;; 3. pull in org-yt which will advise ~org-display-inline-images~ how to do the extra handling
+; (use-package org-yt
+;   :quelpa (org-yt :fetcher github :repo "TobiasZawada/org-yt"))
+(use-package org-yt
+  :vc (:url "https://github.com/TobiasZawada/org-yt"
+          :rev "newest")
+          )
+(require 'org-yt)
+#+end_src
 
 [[https://cmdln.org/social.org.d/2025-08-17_09-11-42_Screenshot_20250817_091058.png]]
 [[https://cmdln.org/social.org.d/2025-08-17_09-05-37_Screenshot_20250816_211421.png]]
-=======
->>>>>>> 28093241b987c4338bd1ee9628ee124593e55d1d
