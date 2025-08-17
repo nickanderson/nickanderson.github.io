@@ -1,7 +1,6 @@
 :PROPERTIES:
 :DIR:      ./social.org.d/
 :END:
-=======
 #+TITLE: Nick's org-social
 #+NICK: nickanderson
 #+DESCRIPTION: I love open source, especially Emacs Org-mode and CFEngine.
