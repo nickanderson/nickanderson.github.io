@@ -1,3 +1,6 @@
+:PROPERTIES:
+:DIR:      ./social.org.d/
+:END:
 #+TITLE: Nick's org-social
 #+NICK: nickanderson
 #+DESCRIPTION: I love open source, especially Emacs Org-mode and CFEngine.
@@ -10,12 +13,15 @@
 #+FOLLOW: andros https://andros.dev/static/social.org
 #+FOLLOW: rossabaker https://rossabaker.com/social.org
 #+FOLLOW: omidmash https://omidmash.de/social.org
-#+FOLLOW: johnhame https://johnhame.link/social.org
-#+FOLLOW: eoin https://eoin.site/social.org
+#+FOLLOW: johnhamelink https://johnhame.link/social.org
+#+FOLLOW: Eoin https://eoin.site/social.org
 #+FOLLOW: adsan https://adsan.dev/social.org
 #+FOLLOW: emillo https://emillo.net/social.org
 
-* Posts
+* Posts                                                              :ATTACH:
+:PROPERTIES:
+:ID:       a00c7178-4db7-4fb3-b227-519e23086284
+:END:
 **
 :PROPERTIES:
 :ID: 2025-08-16T13:11:29-0500
@@ -47,3 +53,43 @@ Ok, this is pretty nice to have a buffer of little org-mode entries from other p
 [[https://cmdln.org/this-is-the-way.jpg][Org-mode This Is The Way meme]]
 
 Visible for me with [[help:org-display-remote-inline-images]]  and a bit of [[https://emacs.stackexchange.com/a/73431][found elisp]].
+
+**
+:PROPERTIES:
+:ID: 2025-08-16T18:36:21-0500
+:LANG: En
+:TAGS: Emacs OrgMode OrgRoam OrgRoamUi pkm
+:CONTENT_WARNING:
+:CLIENT:
+:REPLY_TO:
+:REPLY_URL:
+:MOOD: ⊹╰(⌣ʟ⌣)╯⊹
+:END:
+
+Currently I have 85MB of .org files in ~/org. That's 7999 files, 1743910 lines of text, 92805 headlines, and 8961301 words. The largest single file is 1.4MB and the longest lined file has 26370 lines.
+
+7964 files are inside org-roam, 5984 of those are "dailies", which makes sense considering that I have 19 org-roam-capture-templates and 102 org-roam-dailies-capture-templates. 25154 "nodes" in total.
+
+I have 393 unique tags, 234 used only once, most frequently used is =meeting=.
+
+1.7G of data in~/org-attachments across 6095 files. Mostly png (2080), cf (779), and jpeg (599) files with a median file size of 20K.
+
+I seem to get things done. I have 427 TODOs and 6717 DONE entries across 251 different files. 92304 automatic git commits in the last year.
+
+Attachment links work nicely for me, but probably not for anyone else on org-social.
+
+#+caption: Screenshot from org-roam-ui
+#+DOWNLOADED: file:///tmp/Spectacle.litYVc/Screenshot_20250817_091058.png @ 2025-08-17 09:11:42
+[[attachment:2025-08-17_09-11-42_Screenshot_20250817_091058.png]]
+
+#+DOWNLOADED: file:///tmp/Spectacle.litYVc/Screenshot_20250817_091058.png @ 2025-08-17 09:11:42
+
+
+#+caption: Screenshot from org-roam-ui without dailies
+#+DOWNLOADED: file:///tmp/Spectacle.litYVc/Screenshot_20250816_211421.png @ 2025-08-17 09:05:37
+[[attachment:2025-08-17_09-05-37_Screenshot_20250816_211421.png]]
+
+Fully qualified http(s) references can be displayed inline with [[help:org-display-remote-inline-images]]. At least it worked for me with this [[https://emacs.stackexchange.com/a/73431][found elisp]].
+
+[[https://cmdln.org/social.org.d/2025-08-17_09-11-42_Screenshot_20250817_091058.png]]
+[[https://cmdln.org/social.org.d/2025-08-17_09-05-37_Screenshot_20250816_211421.png]]
