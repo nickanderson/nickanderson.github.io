@@ -1,6 +1,9 @@
+<<<<<<< HEAD
 :PROPERTIES:
 :DIR:      ./social.org.d/
 :END:
+=======
+>>>>>>> 28093241b987c4338bd1ee9628ee124593e55d1d
 #+TITLE: Nick's org-social
 #+NICK: nickanderson
 #+DESCRIPTION: I love open source, especially Emacs Org-mode and CFEngine.
@@ -13,6 +16,7 @@
 #+FOLLOW: andros https://andros.dev/static/social.org
 #+FOLLOW: rossabaker https://rossabaker.com/social.org
 #+FOLLOW: omidmash https://omidmash.de/social.org
+<<<<<<< HEAD
 #+FOLLOW: johnhamelink https://johnhame.link/social.org
 #+FOLLOW: Eoin https://eoin.site/social.org
 #+FOLLOW: adsan https://adsan.dev/social.org
@@ -22,6 +26,14 @@
 :PROPERTIES:
 :ID:       a00c7178-4db7-4fb3-b227-519e23086284
 :END:
+=======
+#+FOLLOW: johnhame https://johnhame.link/social.org
+#+FOLLOW: eoin https://eoin.site/social.org
+#+FOLLOW: adsan https://adsan.dev/social.org
+#+FOLLOW: emillo https://emillo.net/social.org
+
+* Posts
+>>>>>>> 28093241b987c4338bd1ee9628ee124593e55d1d
 **
 :PROPERTIES:
 :ID: 2025-08-16T13:11:29-0500
@@ -53,6 +65,7 @@ Ok, this is pretty nice to have a buffer of little org-mode entries from other p
 [[https://cmdln.org/this-is-the-way.jpg][Org-mode This Is The Way meme]]
 
 Visible for me with [[help:org-display-remote-inline-images]]  and a bit of [[https://emacs.stackexchange.com/a/73431][found elisp]].
+<<<<<<< HEAD
 
 **
 :PROPERTIES:
@@ -93,3 +106,5 @@ Fully qualified http(s) references can be displayed inline with [[help:org-displ
 
 [[https://cmdln.org/social.org.d/2025-08-17_09-11-42_Screenshot_20250817_091058.png]]
 [[https://cmdln.org/social.org.d/2025-08-17_09-05-37_Screenshot_20250816_211421.png]]
+=======
+>>>>>>> 28093241b987c4338bd1ee9628ee124593e55d1d
